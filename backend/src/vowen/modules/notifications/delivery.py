@@ -30,16 +30,22 @@ class Destination:
     telegram_id: int
     language: str
     consent_generation: int
+    notification_generation: int = 0
 
 
 async def destination(db: AsyncSession, uid: UUID) -> Destination | None:
-    user = await db.get(User, uid)
-    contact = await db.get(BotContact, user.telegram_id) if user else None
+    user = await db.get(User, uid, populate_existing=True)
+    contact = await db.get(BotContact, user.telegram_id, populate_existing=True) if user else None
     if not user or not user.is_active or user.paused or not contact or not contact.allowed:
         return None
-    preferences = await db.get(UserPreferences, uid)
+    preferences = await db.get(UserPreferences, uid, populate_existing=True)
+    if preferences is None or "telegram" not in preferences.notification_channels:
+        return None
     return Destination(
-        user.telegram_id, preferences.language if preferences else "en", contact.delivery_generation
+        user.telegram_id,
+        preferences.language,
+        contact.delivery_generation,
+        preferences.notification_generation,
     )
 
 
@@ -62,6 +68,7 @@ async def enqueue(
         available_at=now,
         status="pending" if target else "suppressed",
         consent_generation=target.consent_generation if target else 0,
+        notification_generation=target.notification_generation if target else 0,
     )
     row.authority_versions = await authority_versions(db, row)
     db.add(row)
@@ -103,6 +110,7 @@ async def authorized(db: AsyncSession, d: MemberDelivery, now: datetime) -> Dest
         target is None
         or d.cancellation_requested
         or target.consent_generation != d.consent_generation
+        or target.notification_generation != d.notification_generation
         or now >= d.created_at + timedelta(hours=24)
     ):
         return None
@@ -167,6 +175,13 @@ async def claim(db: AsyncSession, now: datetime) -> Claim | None:
         elif await authorized(db, d, now) is None:
             finish(d, "suppressed")
         else:
+            from vowen.modules.notifications.preferences import allowed_at
+
+            available = await allowed_at(db, d.user_id, now)
+            if available > now:
+                d.available_at = available
+                finish(d, "pending")
+                continue
             d.status, d.lease_id, d.lease_until = "claimed", uuid4(), now + timedelta(minutes=1)
             return Claim(d.id, d.lease_id)
     return None
@@ -197,6 +212,13 @@ async def prepare(db: AsyncSession, task: Claim, now: datetime) -> Destination |
     if target is None:
         finish(d, "suppressed")
         return None
+    from vowen.modules.notifications.preferences import allowed_at
+
+    available = await allowed_at(db, d.user_id, now)
+    if available > now:
+        finish(d, "pending")
+        d.available_at = available
+        return None
     d.status, d.attempts = "sending", d.attempts + 1
     d.lease_until = now + timedelta(minutes=1)
     return target
@@ -221,7 +243,9 @@ async def complete(
         finish(d, "manual_delivery_required" if outcome in {"retry", "blocked"} else outcome)
     if outcome == "blocked":
         user = await db.get(User, d.user_id)
-        contact = await db.get(BotContact, user.telegram_id) if user else None
+        contact = (
+            await db.get(BotContact, user.telegram_id, populate_existing=True) if user else None
+        )
         if contact:
             contact.allowed = False
             contact.delivery_generation += 1

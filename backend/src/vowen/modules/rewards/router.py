@@ -162,6 +162,10 @@ async def transition(
 
 @router.get("/reward-notices", response_model=list[RewardNoticeView])
 async def notices(principal: Member, db: DB) -> list[RewardNoticeView]:
+    from vowen.modules.notifications.preferences import channel
+
+    if not await channel(db, principal.user_id, "in_app"):
+        return []
     rows = (
         await db.scalars(
             select(RewardNotice)

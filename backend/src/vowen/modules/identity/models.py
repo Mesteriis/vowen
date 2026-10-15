@@ -26,3 +26,11 @@ class UserPreferences(Base):
     timezone: Mapped[str] = mapped_column(String(64), default="UTC")
     profile_labels: Mapped[list[str]] = mapped_column(JSONB, default=list)
     profile_version: Mapped[int] = mapped_column(default=1)
+    notification_channels: Mapped[list[str]] = mapped_column(
+        JSONB, default=lambda: ["in_app", "telegram"]
+    )
+    notification_revision: Mapped[int] = mapped_column(default=1)
+    notification_generation: Mapped[int] = mapped_column(default=0)
+    quiet_enabled: Mapped[bool] = mapped_column(default=False)
+    quiet_start: Mapped[int] = mapped_column(default=1320)
+    quiet_end: Mapped[int] = mapped_column(default=480)

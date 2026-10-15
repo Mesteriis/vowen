@@ -10,6 +10,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from vowen.core.clock import Clock
 from vowen.core.config import Settings
+from vowen.core.crypto import PayloadCipher
 from vowen.core.database import check_schema, engine_for, sessions_for
 from vowen.modules.identity.models import User
 from vowen.modules.relations.models import Relation, RelationVersion
@@ -22,6 +23,7 @@ from vowen.modules.rituals.models import (
 )
 from vowen.modules.rituals.schedule import local_slot, slot_days
 from vowen.modules.rituals.schemas import Schedule
+from vowen.modules.surveys.service import generate as generate_surveys
 
 
 async def generate_assignment(
@@ -163,9 +165,16 @@ async def run() -> None:
                     raise RuntimeError("Schema unavailable")
                 async with sessions_for(engine)() as db, db.begin():
                     await generate(db, Clock().now())
+                async with sessions_for(engine)() as db, db.begin():
+                    await generate_surveys(
+                        db,
+                        Clock().now(),
+                        PayloadCipher(settings.data_keyring_file),
+                        settings.public_base_url,
+                    )
                 Path("/tmp/worker-heartbeat").touch()
             except Exception:
-                logging.getLogger("vowen").warning("Ritual scheduling unavailable")
+                logging.getLogger("vowen").warning("Workspace scheduling unavailable")
             try:
                 await asyncio.wait_for(stop.wait(), timeout=15)
             except TimeoutError:

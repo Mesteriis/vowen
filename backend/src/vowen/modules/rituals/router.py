@@ -471,6 +471,10 @@ async def schedule_edit(
 
 @router.get("/ritual-notices", response_model=list[RitualNoticeView])
 async def notices(principal: Member, db: DB) -> list[RitualNoticeView]:
+    from vowen.modules.notifications.preferences import channel
+
+    if not await channel(db, principal.user_id, "in_app"):
+        return []
     rows = (
         await db.scalars(
             select(RitualNotice)

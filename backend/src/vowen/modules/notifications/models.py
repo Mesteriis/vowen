@@ -29,6 +29,7 @@ class MemberDelivery(Base):
     reward_notice_id: Mapped[UUID | None] = mapped_column(
         ForeignKey("reward_notices.id"), unique=True
     )
+    notification_generation: Mapped[int] = mapped_column(default=0, server_default="0")
     consent_generation: Mapped[int] = mapped_column(default=0, server_default="0")
     cancellation_requested: Mapped[bool] = mapped_column(default=False, server_default="false")
     authority_versions: Mapped[dict[str, int]] = mapped_column(

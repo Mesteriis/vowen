@@ -4,7 +4,7 @@ from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
 schemas = json.loads((root / 'contracts/openapi.json').read_text())['components']['schemas']
-used = {'DisciplineCreate':'DisciplineCreate','DisciplineEdit':'DisciplineEdit','DisciplineDecision':'DisciplineDecision','DisciplineVersionView':'DisciplineVersionView','DisciplineHistory':'DisciplineHistory','DisciplineView':'DisciplineRecord','JournalContent':'JournalContent','JournalEdit':'JournalEdit','JournalView':'JournalEntry','SessionTokens':'Tokens', 'MemberView':'Member', 'ParticipantView':'Participant',
+used = {'NotificationPatch':'NotificationPatch','NotificationView':'NotificationSettings','SurveyCreate':'SurveyCreate','SurveyView':'SurveyPlan','WaveView':'SurveyWave','SendWave':'SendWave','DisciplineCreate':'DisciplineCreate','DisciplineEdit':'DisciplineEdit','DisciplineDecision':'DisciplineDecision','DisciplineVersionView':'DisciplineVersionView','DisciplineHistory':'DisciplineHistory','DisciplineView':'DisciplineRecord','JournalContent':'JournalContent','JournalEdit':'JournalEdit','JournalView':'JournalEntry','SessionTokens':'Tokens', 'MemberView':'Member', 'ParticipantView':'Participant',
         'ChallengeRequest':'ChallengeRequest', 'ChallengeCreated':'Challenge',
         'ChallengeProof':'Proof', 'ChallengeStatus':'ChallengeStatus',
         'RefreshRequest':'RefreshRequest', 'ProfilePatch':'ProfilePatch',
@@ -41,6 +41,8 @@ def kotlin_type(prop):
         return 'List<'+kotlin_type(prop['items'])+'>'
     if prop.get('type')=='object':
         return 'Map<String, kotlinx.serialization.json.JsonElement>'
+    if prop.get('type')=='integer' and prop.get('maximum',0)>2147483647:
+        return 'Long'
     kind={'string':'String','boolean':'Boolean','integer':'Int','number':'Double'}.get(prop.get('type'))
     if kind is None:
         raise ValueError('Unsupported native field')

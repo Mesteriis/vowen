@@ -20,11 +20,13 @@ from vowen.modules.auth.schemas import ErrorResponse
 from vowen.modules.discipline.router import router as discipline_router
 from vowen.modules.forms.router import router as forms_router
 from vowen.modules.journal.router import router as journal_router
+from vowen.modules.notifications.preferences import router as notifications_router
 from vowen.modules.relations.router import router as relations_router
 from vowen.modules.rewards.router import router as rewards_router
 from vowen.modules.rituals.evidence import router as evidence_router
 from vowen.modules.rituals.router import router as rituals_router
 from vowen.modules.rules.router import router as rules_router
+from vowen.modules.surveys.router import router as surveys_router
 
 
 def create_app(settings: Settings) -> FastAPI:
@@ -59,6 +61,8 @@ def create_app(settings: Settings) -> FastAPI:
     app.include_router(forms_router)
     app.include_router(discipline_router)
     app.include_router(journal_router)
+    app.include_router(notifications_router)
+    app.include_router(surveys_router)
     app.include_router(rules_router)
     app.include_router(rituals_router)
     app.include_router(evidence_router)

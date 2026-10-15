@@ -169,11 +169,12 @@ async def invite(
     now: datetime,
     base: str,
     cipher: PayloadCipher,
+    version_id: UUID | None = None,
 ) -> InvitationView:
     await active(db, uid)
     f = await form_owned(db, fid, uid)
-    v = await db.get(FormVersion, f.current_version_id)
-    if v is None or v.status != "published":
+    v = await db.get(FormVersion, version_id or f.current_version_id)
+    if v is None or v.form_id != f.id or v.status != "published":
         raise AppError(409, "PUBLISH_REQUIRED")
     selected = set(body.reader_ids) | (
         {body.recipient_user_id} if body.recipient_user_id else set()
@@ -205,7 +206,19 @@ async def invite(
     if body.deliver and telegram_id:
         contact = await db.get(BotContact, telegram_id)
         if contact and contact.allowed:
-            d = Delivery(id=uuid4(), invitation_id=i.id, telegram_id=telegram_id)
+            d = Delivery(
+                id=uuid4(),
+                invitation_id=i.id,
+                telegram_id=telegram_id,
+                consent_generation=contact.delivery_generation,
+            )
+            from vowen.modules.identity.models import UserPreferences
+
+            linked = await db.scalar(select(User).where(User.telegram_id == telegram_id))
+            prefs = await db.get(UserPreferences, linked.id) if linked else None
+            d.notification_generation = prefs.notification_generation if prefs else 0
+            if prefs and "telegram" not in prefs.notification_channels:
+                return await invitation_view(db, i, link)
             seal(d, cipher, {"link": link})
             db.add(d)
     await db.flush()
@@ -300,6 +313,13 @@ async def write_answers(
                 notification = Delivery(
                     id=uuid4(), invitation_id=i.id, telegram_id=reader.telegram_id, kind="response"
                 )
+                from vowen.modules.identity.models import UserPreferences
+
+                prefs = await db.get(UserPreferences, reader.id)
+                notification.consent_generation = contact.delivery_generation
+                notification.notification_generation = prefs.notification_generation if prefs else 0
+                if prefs and "telegram" not in prefs.notification_channels:
+                    continue
                 seal(notification, cipher, {"link": base.rstrip("/") + "/?submission=" + str(s.id)})
                 db.add(notification)
     await db.flush()

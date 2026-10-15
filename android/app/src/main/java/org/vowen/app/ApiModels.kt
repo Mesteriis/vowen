@@ -2,6 +2,12 @@
 package org.vowen.app
 import kotlinx.serialization.Serializable
 
+@Serializable data class NotificationPatch(val channels: List<String>, val expected_version: Int, val quiet_enabled: Boolean, val quiet_end: Int, val quiet_start: Int)
+@Serializable data class NotificationSettings(val channels: List<String>, val quiet_enabled: Boolean, val quiet_end: Int, val quiet_start: Int, val revision: Int, val telegram_connected: Boolean, val timezone: String)
+@Serializable data class SurveyCreate(val deliver: Boolean? = null, val form_version_id: String, val idempotency_key: String, val reader_ids: List<String>, val recipient_id: String, val retention_days: Int? = null, val ritual_assignment_id: String? = null, val schedule: RitualSchedule? = null, val ttl_days: Int? = null)
+@Serializable data class SurveyPlan(val author_id: String, val deliver: Boolean? = null, val form_version_id: String, val id: String, val idempotency_key: String, val owner_paused: Boolean, val reader_ids: List<String>, val recipient_id: String, val recipient_paused: Boolean, val retention_days: Int? = null, val revision: Int, val ritual_assignment_id: String? = null, val schedule: RitualSchedule? = null, val source_effective: Boolean, val title: String, val ttl_days: Int? = null)
+@Serializable data class SurveyWave(val due_at: String, val id: String, val invitation_id: String?, val occurrence_id: String?, val reason: String?, val status: String)
+@Serializable data class SendWave(val expected_version: Int, val idempotency_key: String)
 @Serializable data class DisciplineCreate(val conditions: String, val deadline: String? = null, val description: String, val idempotency_key: String, val occurrence_id: String? = null, val recipient_id: String, val reviewer_ids: List<String>, val rule_version_id: String? = null)
 @Serializable data class DisciplineEdit(val conditions: String, val deadline: String? = null, val description: String, val expected_version: Int, val occurrence_id: String? = null, val rule_version_id: String? = null)
 @Serializable data class DisciplineDecision(val action: String, val comment: String? = null, val expected_version: Int, val version_id: String)
@@ -35,7 +41,7 @@ import kotlinx.serialization.Serializable
 @Serializable data class FormEdit(val expected_version: Int, val schema_body: FormSchema)
 @Serializable data class FormReader(val display_name: String, val id: String)
 @Serializable data class FormAccess(val answers: Map<String, kotlinx.serialization.json.JsonElement>, val context_id: String? = null, val context_kind: String? = null, val csrf_token: String? = null, val expires_at: String, val id: String, val readers: List<FormReader>, val retention_days: Int, val retention_until: String?, val schema_body: FormSchema, val status: String)
-@Serializable data class FormInvitationCreate(val contact_telegram_id: Int? = null, val deliver: Boolean? = null, val reader_ids: List<String>, val recipient_user_id: String? = null, val retention_days: Int? = null, val ttl_days: Int? = null)
+@Serializable data class FormInvitationCreate(val contact_telegram_id: Long? = null, val deliver: Boolean? = null, val reader_ids: List<String>, val recipient_user_id: String? = null, val retention_days: Int? = null, val ttl_days: Int? = null)
 @Serializable data class FormInvitation(val delivery_status: String, val expires_at: String, val id: String, val link: String? = null, val recipient_user_id: String?, val retention_days: Int, val retention_until: String?, val revoked: Boolean, val version_id: String)
 @Serializable data class FormAnswers(val answers: Map<String, kotlinx.serialization.json.JsonElement>)
 @Serializable data class FormSubmit(val acknowledged: Boolean, val answers: Map<String, kotlinx.serialization.json.JsonElement>, val idempotency_key: String)
