@@ -145,3 +145,27 @@ async def test_shared_filter_export_and_disabled_reader(api):
     # A paused author still has their own private diary.
     await client.post("/api/v1/me/pause", headers=auth(tokens[1]))
     assert len((await client.get("/api/v1/journal", headers=auth(tokens[1]))).json()) == 2
+
+
+async def test_author_can_edit_or_remove_existing_paused_reader_without_regranting(api):
+    client, app = api
+    ids, tokens = await members(client, app, 3)
+    e = await create(
+        client, tokens[0], published=True, visibility="selected", reader_ids=[str(ids[1])]
+    )
+    assert (await client.post("/api/v1/me/pause", headers=auth(tokens[1]))).status_code == 204
+    path = "/api/v1/journal/" + e["id"]
+    response = await client.patch(
+        path, headers=auth(tokens[0]), json=edit_body(e, text="Updated while reader paused")
+    )
+    assert response.status_code == 200
+    e = response.json()
+    assert (await client.get("/api/v1/journal", headers=auth(tokens[1]))).json() == []
+    e = (await client.patch(path, headers=auth(tokens[0]), json=edit_body(e, reader_ids=[]))).json()
+    assert e["reader_ids"] == []
+    # Removed inactive readership cannot be added again without an active reader.
+    assert (
+        await client.patch(
+            path, headers=auth(tokens[0]), json=edit_body(e, reader_ids=[str(ids[1])])
+        )
+    ).status_code == 422

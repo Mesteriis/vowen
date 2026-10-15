@@ -62,15 +62,16 @@ async def audience(
         ids = body.reader_ids
         if e.author_id in ids:
             raise AppError(422, "INVALID_INPUT")
+        added = set(ids) - set(await readers(db, e))
         found = list(
             await db.scalars(
                 select(User.id)
-                .where(User.id.in_(ids), User.is_active, ~User.paused)
+                .where(User.id.in_(added), User.is_active, ~User.paused)
                 .order_by(User.id)
                 .with_for_update()
             )
         )
-        if set(found) != set(ids):
+        if set(found) != added:
             raise AppError(422, "INVALID_READER")
     await db.execute(delete(JournalReader).where(JournalReader.entry_id == e.id))
     db.add_all([JournalReader(entry_id=e.id, user_id=uid) for uid in ids])
