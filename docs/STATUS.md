@@ -175,3 +175,8 @@ GitHub CI additionally compiles the instrumentation APK; device tests were run l
 A fresh read-only review found no Critical/Important issue in this completion slice.
 M1's requested remaining implementation tasks are closed; live Telegram acceptance
 and real-device credential lifecycle remain separate. M2 forms have not started.
+
+Remote acceptance: [CI run 38718797091](https://github.com/Mesteriis/vowen/actions/runs/38718797091)
+passed both `backend-web` and `android` for commit
+`f0a226421bcebf74c5213c08469fa20633a0b6f7`. The same commit was fast-forwarded to
+`main`, without code changes. This evidence-only follow-up uses `[skip ci]`.
