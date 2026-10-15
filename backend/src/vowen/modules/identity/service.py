@@ -6,7 +6,7 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from vowen.core.errors import AppError
-from vowen.modules.identity.models import User
+from vowen.modules.identity.models import User, UserPreferences
 
 
 class ProvisionUserCommand(BaseModel):
@@ -19,6 +19,8 @@ async def create_user(db: AsyncSession, command: ProvisionUserCommand, now: date
     try:
         async with db.begin_nested():
             db.add(user)
+            await db.flush()
+            db.add(UserPreferences(user_id=user.id))
             await db.flush()
     except IntegrityError:
         raise AppError(409, "USER_EXISTS") from None

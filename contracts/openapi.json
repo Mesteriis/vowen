@@ -231,15 +231,38 @@
             "title": "Id",
             "type": "string"
           },
+          "language": {
+            "title": "Language",
+            "type": "string"
+          },
           "paused": {
             "title": "Paused",
             "type": "boolean"
+          },
+          "profile_labels": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Profile Labels",
+            "type": "array"
+          },
+          "profile_version": {
+            "title": "Profile Version",
+            "type": "integer"
+          },
+          "timezone": {
+            "title": "Timezone",
+            "type": "string"
           }
         },
         "required": [
           "id",
           "display_name",
-          "paused"
+          "profile_labels",
+          "paused",
+          "language",
+          "timezone",
+          "profile_version"
         ],
         "title": "MemberView",
         "type": "object"
@@ -257,6 +280,109 @@
           "init_data"
         ],
         "title": "MiniAppLogin",
+        "type": "object"
+      },
+      "ParticipantView": {
+        "properties": {
+          "display_name": {
+            "title": "Display Name",
+            "type": "string"
+          },
+          "id": {
+            "format": "uuid",
+            "title": "Id",
+            "type": "string"
+          },
+          "profile_labels": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Profile Labels",
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "display_name",
+          "profile_labels"
+        ],
+        "title": "ParticipantView",
+        "type": "object"
+      },
+      "ProfilePatch": {
+        "additionalProperties": false,
+        "properties": {
+          "display_name": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Display Name"
+          },
+          "expected_version": {
+            "minimum": 1.0,
+            "title": "Expected Version",
+            "type": "integer"
+          },
+          "language": {
+            "anyOf": [
+              {
+                "enum": [
+                  "ru",
+                  "en"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Language"
+          },
+          "profile_labels": {
+            "anyOf": [
+              {
+                "items": {
+                  "enum": [
+                    "dominant",
+                    "submissive",
+                    "switch"
+                  ],
+                  "type": "string"
+                },
+                "maxItems": 3,
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Profile Labels"
+          },
+          "timezone": {
+            "anyOf": [
+              {
+                "maxLength": 64,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Timezone"
+          }
+        },
+        "required": [
+          "expected_version"
+        ],
+        "title": "ProfilePatch",
         "type": "object"
       },
       "ProposeRelationCommand": {
@@ -1428,6 +1554,119 @@
         "summary": "Personal Pause"
       }
     },
+    "/api/v1/me/preferences": {
+      "patch": {
+        "operationId": "preferences_api_v1_me_preferences_patch",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfilePatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MemberView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Content Too Large"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Preferences"
+      }
+    },
     "/api/v1/me/resume": {
       "post": {
         "operationId": "personal_resume_api_v1_me_resume_post",
@@ -1533,7 +1772,7 @@
               "application/json": {
                 "schema": {
                   "items": {
-                    "$ref": "#/components/schemas/MemberView"
+                    "$ref": "#/components/schemas/ParticipantView"
                   },
                   "title": "Response Participants Api V1 Participants Get",
                   "type": "array"

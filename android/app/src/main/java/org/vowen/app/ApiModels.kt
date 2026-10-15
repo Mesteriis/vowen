@@ -3,9 +3,17 @@ package org.vowen.app
 import kotlinx.serialization.Serializable
 
 @Serializable data class Tokens(val access_expires_at: String, val access_token: String, val refresh_token: String, val session_id: String)
-@Serializable data class Member(val display_name: String, val id: String, val paused: Boolean)
+@Serializable data class Member(val display_name: String, val id: String, val language: String, val paused: Boolean, val profile_labels: List<String>, val profile_version: Int, val timezone: String)
+@Serializable data class Participant(val display_name: String, val id: String, val profile_labels: List<String>)
 @Serializable data class ChallengeRequest(val client_nonce: String, val device_label: String)
 @Serializable data class Challenge(val bot_url: String, val challenge_id: String, val display_code: String, val expires_at: String, val poll_secret: String)
 @Serializable data class Proof(val client_nonce: String, val poll_secret: String)
 @Serializable data class ChallengeStatus(val status: String)
 @Serializable data class RefreshRequest(val refresh_token: String)
+@Serializable data class ProfilePatch(val display_name: String? = null, val expected_version: Int, val language: String? = null, val profile_labels: List<String>? = null, val timezone: String? = null)
+@Serializable data class Relation(val agreement_text: String, val consent_user_ids: List<String>, val dominant_user_id: String, val id: String, val relation_version_id: String, val scopes: List<String>, val status: String, val submissive_user_id: String, val version: Int)
+@Serializable data class RelationProposal(val agreement_text: String, val dominant_user_id: String, val scopes: List<String>, val submissive_user_id: String)
+@Serializable data class RelationAcceptance(val expected_version: Int, val relation_version_id: String)
+@Serializable data class ExpectedVersion(val expected_version: Int)
+@Serializable data class RelationChange(val agreement_text: String, val expected_version: Int, val scopes: List<String>)
+@Serializable data class DeviceSession(val client: String, val created_at: String, val device_label: String, val expires_at: String, val id: String, val revoked: Boolean)

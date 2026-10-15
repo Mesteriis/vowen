@@ -23,6 +23,7 @@ from vowen.modules.auth.schemas import (
     InstanceView,
     MemberView,
     MiniAppLogin,
+    ParticipantView,
     RefreshRequest,
     SessionTokens,
     SessionView,
@@ -33,7 +34,9 @@ from vowen.modules.auth.service import (
     resolve_member,
     rotate_refresh,
 )
-from vowen.modules.identity.models import User
+from vowen.modules.identity.models import User, UserPreferences
+from vowen.modules.identity.profile import profile_view, update_profile
+from vowen.modules.identity.schemas import ProfilePatch
 
 router = APIRouter(prefix="/api/v1")
 
@@ -81,13 +84,23 @@ async def refresh(body: RefreshRequest, request: Request, db: DB) -> SessionToke
 async def me(principal: Member, db: DB) -> MemberView:
     user = await db.get(User, principal.user_id)
     assert user is not None
-    return MemberView(id=user.id, display_name=user.display_name, paused=user.paused)
+    return await profile_view(db, user)
 
 
-@router.get("/participants", response_model=list[MemberView])
-async def participants(principal: Member, db: DB) -> list[MemberView]:
-    users = (await db.scalars(select(User).where(User.is_active))).all()
-    return [MemberView(id=u.id, display_name=u.display_name, paused=u.paused) for u in users]
+@router.patch("/me/preferences", response_model=MemberView)
+async def preferences(body: ProfilePatch, principal: Member, db: DB) -> MemberView:
+    return await update_profile(db, principal.user_id, body)
+
+
+@router.get("/participants", response_model=list[ParticipantView])
+async def participants(principal: Member, db: DB) -> list[ParticipantView]:
+    rows = (
+        await db.execute(select(User, UserPreferences).join(UserPreferences).where(User.is_active))
+    ).all()
+    return [
+        ParticipantView(id=u.id, display_name=u.display_name, profile_labels=p.profile_labels)
+        for u, p in rows
+    ]
 
 
 @router.get("/sessions", response_model=list[SessionView])

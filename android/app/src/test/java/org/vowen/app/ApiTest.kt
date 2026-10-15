@@ -22,7 +22,7 @@ class ApiTest {
    val body=if(isRefresh) {
     refreshCount++
     """{"access_token":"new","refresh_token":"rotated","access_expires_at":"2026-10-15T10:15:00Z","session_id":"demo"}"""
-   } else """{"id":"demo","display_name":"Demo","paused":false}"""
+   } else """{"id":"demo","display_name":"Demo","paused":false,"profile_labels":[],"language":"en","timezone":"UTC","profile_version":1}"""
    Response.Builder().request(request).protocol(Protocol.HTTP_1_1).code(code).message("Synthetic").body(body.toResponseBody()).build()
   }.build()
   val api=Api(state,{refresh},{refresh=it},transport)

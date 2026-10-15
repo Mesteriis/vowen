@@ -157,6 +157,23 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/me/preferences": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        /** Preferences */
+        patch: operations["preferences_api_v1_me_preferences_patch"];
+        trace?: never;
+    };
     "/api/v1/me/resume": {
         parameters: {
             query?: never;
@@ -455,13 +472,46 @@ export interface components {
              * Format: uuid
              */
             id: string;
+            /** Language */
+            language: string;
             /** Paused */
             paused: boolean;
+            /** Profile Labels */
+            profile_labels: string[];
+            /** Profile Version */
+            profile_version: number;
+            /** Timezone */
+            timezone: string;
         };
         /** MiniAppLogin */
         MiniAppLogin: {
             /** Init Data */
             init_data: string;
+        };
+        /** ParticipantView */
+        ParticipantView: {
+            /** Display Name */
+            display_name: string;
+            /**
+             * Id
+             * Format: uuid
+             */
+            id: string;
+            /** Profile Labels */
+            profile_labels: string[];
+        };
+        /** ProfilePatch */
+        ProfilePatch: {
+            /** Display Name */
+            display_name?: string | null;
+            /** Expected Version */
+            expected_version: number;
+            /** Language */
+            language?: ("ru" | "en") | null;
+            /** Profile Labels */
+            profile_labels?: ("dominant" | "submissive" | "switch")[] | null;
+            /** Timezone */
+            timezone?: string | null;
         };
         /** ProposeRelationCommand */
         ProposeRelationCommand: {
@@ -1416,6 +1466,102 @@ export interface operations {
             };
         };
     };
+    preferences_api_v1_me_preferences_patch: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ProfilePatch"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["MemberView"];
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Conflict */
+            409: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Content Too Large */
+            413: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Too Many Requests */
+            429: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Service Unavailable */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+        };
+    };
     personal_resume_api_v1_me_resume_post: {
         parameters: {
             query?: never;
@@ -1521,7 +1667,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["MemberView"][];
+                    "application/json": components["schemas"]["ParticipantView"][];
                 };
             };
             /** @description Unauthorized */

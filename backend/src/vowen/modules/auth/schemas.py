@@ -23,10 +23,17 @@ class SessionTokens(BaseModel):
     session_id: UUID
 
 
-class MemberView(BaseModel):
+class ParticipantView(BaseModel):
     id: UUID
     display_name: str
+    profile_labels: list[str]
+
+
+class MemberView(ParticipantView):
     paused: bool
+    language: str
+    timezone: str
+    profile_version: int
 
 
 class SessionView(BaseModel):
