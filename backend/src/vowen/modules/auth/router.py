@@ -18,8 +18,11 @@ from vowen.modules.auth.android_challenge import (
     consume_challenge,
     create_challenge,
 )
+from vowen.modules.auth.debug import debug_available, debug_transaction
 from vowen.modules.auth.models import Session
 from vowen.modules.auth.schemas import (
+    DebugLogin,
+    DebugUserView,
     InstanceView,
     MemberView,
     MiniAppLogin,
@@ -31,6 +34,7 @@ from vowen.modules.auth.schemas import (
 from vowen.modules.auth.service import (
     MemberPrincipal,
     authenticate_miniapp,
+    create_session,
     resolve_member,
     rotate_refresh,
 )
@@ -65,6 +69,25 @@ async def member(
 
 
 Member = Annotated[MemberPrincipal, Depends(member)]
+DebugDB = Annotated[AsyncSession, Depends(debug_transaction, scope="function")]
+
+
+@router.get("/auth/debug/users", response_model=list[DebugUserView])
+async def debug_users(db: DebugDB) -> list[DebugUserView]:
+    users = await db.scalars(
+        select(User).where(User.is_active).order_by(User.display_name, User.id)
+    )
+    return [DebugUserView(id=user.id, display_name=user.display_name) for user in users]
+
+
+@router.post("/auth/debug", response_model=SessionTokens)
+async def debug_login(body: DebugLogin, request: Request, db: DebugDB) -> SessionTokens:
+    user = await db.scalar(select(User).where(User.id == body.user_id).with_for_update())
+    if user is None or not user.is_active:
+        raise AppError(403, "ACCESS_DENIED")
+    return await create_session(
+        db, user, "debug", "Local development", request.app.state.clock.now()
+    )
 
 
 @router.post("/auth/telegram/miniapp", response_model=SessionTokens)
@@ -166,4 +189,7 @@ async def android_consume(
 
 @router.get("/instance", response_model=InstanceView)
 async def instance(request: Request) -> InstanceView:
-    return InstanceView(display_name=request.app.state.settings.app_display_name)
+    return InstanceView(
+        display_name=request.app.state.settings.app_display_name,
+        debug_auth_enabled=debug_available(request),
+    )

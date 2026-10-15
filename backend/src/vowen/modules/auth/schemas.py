@@ -12,6 +12,15 @@ class MiniAppLogin(Input):
     init_data: str = Field(max_length=16384)
 
 
+class DebugLogin(Input):
+    user_id: UUID
+
+
+class DebugUserView(BaseModel):
+    id: UUID
+    display_name: str
+
+
 class RefreshRequest(Input):
     refresh_token: str = Field(min_length=43, max_length=43)
 
@@ -47,6 +56,7 @@ class SessionView(BaseModel):
 
 class InstanceView(BaseModel):
     display_name: str
+    debug_auth_enabled: bool = False
 
 
 class ErrorDetail(BaseModel):

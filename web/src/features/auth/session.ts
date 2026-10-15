@@ -10,10 +10,18 @@ export class SessionClient {
   private loseAuth():void {if(this.tokens){this.tokens=null;this.generation++;this.onAuthLost()}}
 
   async login(initData: string): Promise<void> {
+    return this.authenticate('/auth/telegram/miniapp', {init_data:initData})
+  }
+
+  async loginDebug(userId: string): Promise<void> {
+    return this.authenticate('/auth/debug', {user_id:userId})
+  }
+
+  private async authenticate(path: string, body: unknown): Promise<void> {
     const generation=++this.generation
     this.tokens = null
     this.refreshing = null
-    const tokens = await this.send<Tokens>('/auth/telegram/miniapp', 'POST', {init_data:initData}, false)
+    const tokens = await this.send<Tokens>(path, 'POST', body, false)
     if(generation!==this.generation)throw new Error('AUTH_CONTEXT_CHANGED')
     this.tokens=tokens
   }

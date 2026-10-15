@@ -788,3 +788,19 @@ backup tooling without changing relations, consents, keys or the running applica
 Remaining M6 scope includes full clean-install/negative/security and fault-injection
 acceptance, independent security review, license/notices inventory and a published
 versioned OSS release. Physical Android and partner ritual/reward acceptance remain open.
+
+## Local development authentication (2026-10-15)
+
+Implemented explicit DEBUG_AUTH, disabled by default. It requires
+APP_ENV=development, a loopback public URL and an isolated loopback `_dev`/`_test`
+database. The server rejects unsafe startup settings; disabled/nonlocal debug
+endpoints return 404 before database access. Existing active CLI participants can
+obtain a normal revocable/rotating session without Telegram. No provisioning,
+relationship consent or authorization bypass is performed.
+
+Local validation: **210 backend tests passed**, including debug configuration,
+local peer/Host/Origin checks, denied identities, refresh/revocation/user blocking,
+bilateral consent, scope and pause boundaries. Ruff and mypy passed. The client
+session test covers debug login and denied replacement. Web participant selection
+and the role-dependent visual workspace are being integrated on feat/ui-context;
+this is local development work, not a production deployment or live Telegram proof.
