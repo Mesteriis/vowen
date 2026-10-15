@@ -4,9 +4,14 @@ from vowen.cli.main import app
 
 
 def test_cli_provision_duplicate_disable_and_init(tmp_path, monkeypatch):
-    monkeypatch.setenv(
-        "DATABASE_URL", "postgresql+psycopg://vowen:vowen@127.0.0.1:55432/vowen_test"
+    import os
+
+    test_url = os.environ.get(
+        "TEST_DATABASE_URL", "postgresql+psycopg://vowen:vowen@127.0.0.1:55432/vowen_test"
     )
+    if not test_url.rsplit("/", 1)[-1].endswith("_test"):
+        raise RuntimeError("Dedicated test database required")
+    monkeypatch.setenv("DATABASE_URL", test_url)
     monkeypatch.setenv("DATA_KEYRING_FILE", str(tmp_path / "keyring.json"))
     runner = CliRunner()
     assert runner.invoke(app, ["instance", "init"]).exit_code == 0
@@ -20,7 +25,7 @@ def test_cli_provision_duplicate_disable_and_init(tmp_path, monkeypatch):
     from vowen.core.database import engine_for
 
     async def clean():
-        engine = engine_for("postgresql+psycopg://vowen:vowen@127.0.0.1:55432/vowen_test")
+        engine = engine_for(test_url)
         async with engine.begin() as conn:
             await conn.execute(text("TRUNCATE users CASCADE"))
         await engine.dispose()

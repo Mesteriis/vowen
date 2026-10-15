@@ -2,12 +2,21 @@
 
 import asyncio
 import logging
+import time
+from collections.abc import Awaitable, Callable
+from typing import Any
 from uuid import UUID
 
-from aiogram import Bot, Dispatcher, F, Router
+from aiogram import BaseMiddleware, Bot, Dispatcher, F, Router
 from aiogram.filters import CommandStart
 from aiogram.filters.command import CommandObject
-from aiogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, Message
+from aiogram.types import (
+    CallbackQuery,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    Message,
+    TelegramObject,
+)
 
 from vowen.core.clock import Clock
 from vowen.core.config import Settings
@@ -16,10 +25,44 @@ from vowen.core.errors import AppError
 from vowen.modules.auth.android_challenge import decide_challenge, present_challenge
 
 
+class BotThrottle(BaseMiddleware):
+    def __init__(self) -> None:
+        self.windows: dict[int, tuple[float, int]] = {}
+        self.sweep = 0.0
+
+    async def __call__(
+        self,
+        handler: Callable[[TelegramObject, dict[str, Any]], Awaitable[Any]],
+        event: TelegramObject,
+        data: dict[str, Any],
+    ) -> Any:
+        actor = event.from_user if isinstance(event, (Message, CallbackQuery)) else None
+        if actor is None:
+            return await handler(event, data)
+        now = time.monotonic()
+        if now - self.sweep > 60:
+            self.windows = {
+                key: value for key, value in self.windows.items() if now - value[0] < 60
+            }
+            self.sweep = now
+        start, count = self.windows.get(actor.id, (now, 0))
+        if now - start >= 60:
+            start, count = now, 0
+        if count >= 30 or (actor.id not in self.windows and len(self.windows) >= 10000):
+            if isinstance(event, CallbackQuery):
+                await event.answer("Too many attempts")
+            return None
+        self.windows[actor.id] = (start, count + 1)
+        return await handler(event, data)
+
+
 def build_router(settings: Settings) -> Router:
     engine = engine_for(settings.database_url)
     sessions = sessions_for(engine)
     router = Router()
+    throttle = BotThrottle()
+    router.message.outer_middleware(throttle)
+    router.callback_query.outer_middleware(throttle)
 
     @router.message(CommandStart())
     async def start(message: Message, command: CommandObject) -> None:

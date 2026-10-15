@@ -20,6 +20,7 @@ from vowen.modules.auth.android_challenge import (
 )
 from vowen.modules.auth.models import Session
 from vowen.modules.auth.schemas import (
+    InstanceView,
     MemberView,
     MiniAppLogin,
     RefreshRequest,
@@ -147,3 +148,8 @@ async def android_consume(
     return await consume_challenge(
         db, challenge_id, body.poll_secret, body.client_nonce, request.app.state.clock.now()
     )
+
+
+@router.get("/instance", response_model=InstanceView)
+async def instance(request: Request) -> InstanceView:
+    return InstanceView(display_name=request.app.state.settings.app_display_name)

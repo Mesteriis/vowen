@@ -36,3 +36,17 @@ class SessionView(BaseModel):
     created_at: datetime
     expires_at: datetime
     revoked: bool
+
+
+class InstanceView(BaseModel):
+    display_name: str
+
+
+class ErrorDetail(BaseModel):
+    code: str
+    message: str
+    request_id: str
+
+
+class ErrorResponse(BaseModel):
+    error: ErrorDetail
