@@ -130,3 +130,11 @@ failed in SDK setup before Gradle: setup-android's default obsolete `tools` pack
 was unavailable. Workflow now requests `platform-tools` explicitly, pins Ubuntu 24.04
 and uses current Node-24 action generations. This is a CI infrastructure correction;
 local Android acceptance remains four JVM tests + lint + APK build.
+
+Final remote verification: [CI run 38714636060](https://github.com/Mesteriis/vowen/actions/runs/38714636060)
+completed **successfully for both backend-web and Android**, testing code commit
+`3769ede4cdeaf710ea2237bce12d2bb0e07bf78a` on clean Ubuntu 24.04 runners.
+This includes locked install, PostgreSQL migrations/tests, lint/types, web build,
+contracts/secret scan, Playwright E2E, native Android tests/lint/assembleDebug.
+The final evidence-only documentation commit uses `[skip ci]`; it changes no code,
+configuration, dependencies or checks. Live Telegram/device limitations remain open.
