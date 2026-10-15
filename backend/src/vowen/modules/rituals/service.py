@@ -13,6 +13,7 @@ from vowen.modules.relations.policy import ResourceContext, authorize
 from vowen.modules.rituals.models import (
     Ritual,
     RitualAssignment,
+    RitualEvidence,
     RitualNotice,
     RitualOccurrence,
     RitualReport,
@@ -21,6 +22,8 @@ from vowen.modules.rituals.models import (
     RitualVersion,
 )
 from vowen.modules.rituals.schemas import (
+    EvidencePolicy,
+    EvidenceView,
     OccurrenceView,
     RitualAssignmentView,
     RitualContent,
@@ -123,6 +126,8 @@ async def assignment_view(
     schedule = await db.get(RitualSchedule, a.current_schedule_id)
     assert v is not None and schedule is not None
     return RitualAssignmentView(
+        reward_policy_id=a.reward_policy_id,
+        evidence_policy=EvidencePolicy.model_validate(a.evidence_policy),
         id=a.id,
         ritual_version_id=v.id,
         recipient_id=a.recipient_id,
@@ -159,6 +164,15 @@ async def occurrence_view(
         payload = opened(r, cipher)
         reports.append(
             RitualReportView(
+                links=json.loads(payload.get("links", "[]")),
+                attachments=[
+                    EvidenceView(id=e.id, kind=e.kind, media_type=e.media_type, size=e.size)
+                    for e in (
+                        await db.scalars(
+                            select(RitualEvidence).where(RitualEvidence.report_id == r.id)
+                        )
+                    ).all()
+                ],
                 attempt=r.attempt,
                 id=r.id,
                 text=payload["text"],
@@ -171,6 +185,7 @@ async def occurrence_view(
         )
     live = await effective(db, a)
     return OccurrenceView(
+        evidence_policy=EvidencePolicy.model_validate(a.evidence_policy),
         id=o.id,
         assignment_id=a.id,
         recipient_id=a.recipient_id,

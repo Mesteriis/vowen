@@ -1,3 +1,4 @@
+import re
 import time
 from collections import deque
 from collections.abc import MutableMapping
@@ -52,13 +53,19 @@ class HttpSafety:
                 await self.reject(scope, receive, send, 429, "RATE_LIMITED")
                 return
             window.append(now)
+        body_limit = (
+            12 * 1024 * 1024
+            if re.fullmatch(r"/api/v1/ritual-occurrences/[0-9a-fA-F-]{36}/evidence", path)
+            and scope["method"] == "POST"
+            else 524288
+        )
         body = bytearray()
         while True:
             message = await receive()
             if message["type"] == "http.disconnect":
                 return
             body.extend(message.get("body", b""))
-            if len(body) > 524288:
+            if len(body) > body_limit:
                 await self.reject(scope, receive, send, 413, "BODY_TOO_LARGE")
                 return
             if not message.get("more_body", False):

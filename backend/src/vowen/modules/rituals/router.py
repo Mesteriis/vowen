@@ -13,6 +13,7 @@ from vowen.modules.forms.service import active
 from vowen.modules.identity.models import User
 from vowen.modules.relations.router import cipher_for
 from vowen.modules.relations.schemas import ExpectedVersion
+from vowen.modules.rituals import evidence
 from vowen.modules.rituals import service as rituals
 from vowen.modules.rituals.models import (
     Ritual,
@@ -153,6 +154,7 @@ async def assign(
         recipient_id=body.recipient_id,
         issuer_id=principal.user_id,
         approval_required=body.approval_required,
+        evidence_policy=body.evidence_policy.model_dump(),
         watermark=body.schedule.start_date,
         idempotency_key=body.idempotency_key,
         request_hash=digest,
@@ -171,6 +173,10 @@ async def assign(
     db.add_all([RitualReviewer(assignment_id=a.id, user_id=uid) for uid in body.reviewer_ids])
     await db.flush()
     await rituals.notice(db, a, [a.recipient_id], "assigned", now)
+    if body.reward_version_id is not None:
+        from vowen.modules.rewards.service import configure
+
+        await configure(db, a, body.reward_version_id, now)
     await generate_assignment(db, a, now, 31)
     return await rituals.assignment_view(db, a, cipher_for(request))
 
@@ -263,7 +269,13 @@ async def report(
         )
     )
     if previous is not None:
-        if rituals.opened(previous, cipher_for(request))["text"] != body.text:
+        old = rituals.opened(previous, cipher_for(request))
+        prior = {
+            "text": old["text"],
+            "links": old.get("links", "[]"),
+            "evidence_ids": old.get("evidence_ids", "[]"),
+        }
+        if prior != evidence.report_payload(body):
             raise AppError(409, "IDEMPOTENCY_CONFLICT")
         return await rituals.occurrence_view(
             db, o, a, principal.user_id, request.app.state.clock.now(), cipher_for(request)
@@ -287,11 +299,17 @@ async def report(
         idempotency_key=body.idempotency_key,
         submitted_at=now,
     )
-    rituals.seal(row, {"text": body.text}, cipher_for(request))
+    attachments = await evidence.bindable(db, a, o, principal.user_id, body, now)
+    rituals.seal(row, evidence.report_payload(body), cipher_for(request))
     db.add(row)
     o.status = "submitted" if a.approval_required else "approved"
     o.revision += 1
     await db.flush()
+    for attachment in attachments:
+        attachment.report_id, attachment.expires_at = row.id, None
+    from vowen.modules.rewards.service import award
+
+    await award(db, a, o, now)
     targets = await rituals.reviewers(db, a) if a.approval_required else [a.recipient_id]
     await rituals.notice(db, a, targets, o.status, now, o, event=f"report:{row.id}")
     return await rituals.occurrence_view(db, o, a, principal.user_id, now, cipher_for(request))
@@ -330,6 +348,9 @@ async def review(
         o.expires_at = max(o.expires_at, request.app.state.clock.now() + timedelta(hours=duration))
     o.status = body.decision
     o.revision += 1
+    from vowen.modules.rewards.service import award
+
+    await award(db, a, o, request.app.state.clock.now())
     await rituals.notice(
         db,
         a,

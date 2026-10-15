@@ -23,6 +23,8 @@ used = {'SessionTokens':'Tokens', 'MemberView':'Member', 'ParticipantView':'Part
         'RitualView':'RitualTemplate','RitualAssign':'RitualAssign',
         'RitualAssignmentView':'RitualAssignment','ScheduleEdit':'RitualScheduleEdit',
         'ReportCommand':'RitualReportCommand','ReviewCommand':'RitualReviewCommand',
+        'EvidencePolicy':'EvidencePolicy','EvidenceView':'EvidenceView','EvidenceUpload':'EvidenceUpload','EvidenceDownload':'EvidenceDownload',
+        'RewardContent':'RewardContent','RewardEdit':'RewardEdit','RewardView':'RewardDefinition','GrantCommand':'GrantCommand','GrantTransitionCommand':'GrantTransitionCommand','GrantHistory':'GrantHistory','GrantView':'RewardGrant','RewardNoticeView':'RewardNotice',
         'RitualReportView':'RitualReport','OccurrenceView':'RitualOccurrence','RitualNoticeView':'RitualNotice'}
 
 

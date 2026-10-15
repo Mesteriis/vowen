@@ -73,6 +73,7 @@ async def generate_assignment(
             due = local_slot(day, spec.hour, spec.minute, spec.timezone)
             expires = due + timedelta(hours=spec.window_hours)
             o = RitualOccurrence(
+                reward_policy_id=a.reward_policy_id,
                 assignment_id=a.id,
                 schedule_id=s.id,
                 local_day=day,

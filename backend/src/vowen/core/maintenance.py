@@ -13,6 +13,13 @@ from vowen.modules.forms.models import GuestSession, Invitation, Receipt
 
 
 async def prune_expired(db: AsyncSession, now: datetime) -> None:
+    from vowen.modules.rituals.models import RitualEvidence
+
+    await db.execute(
+        delete(RitualEvidence).where(
+            RitualEvidence.report_id.is_(None), RitualEvidence.expires_at <= now
+        )
+    )
     invitations = (
         await db.scalars(
             select(Invitation)

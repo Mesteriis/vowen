@@ -60,12 +60,50 @@ class RitualView(RitualContent):
     status: str
 
 
+class EvidencePolicy(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    required: bool = False
+    allowed_types: list[Literal["link", "photo", "video"]] = Field(
+        default=["link", "photo", "video"], min_length=1, max_length=3
+    )
+
+    @field_validator("allowed_types")
+    @classmethod
+    def unique_types(
+        cls, value: list[Literal["link", "photo", "video"]]
+    ) -> list[Literal["link", "photo", "video"]]:
+        if len(set(value)) != len(value):
+            raise ValueError("Duplicate type")
+        return value
+
+
+class EvidenceView(BaseModel):
+    id: UUID
+    kind: str
+    media_type: str
+    size: int
+
+
+class EvidenceUpload(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    idempotency_key: UUID
+    kind: Literal["photo", "video"]
+    media_type: Literal["image/jpeg", "image/png", "video/mp4", "video/webm"]
+    data_base64: str = Field(min_length=1, max_length=11184812)
+
+
+class EvidenceDownload(EvidenceView):
+    data_base64: str
+
+
 class RitualAssign(BaseModel):
+    reward_version_id: UUID | None = None
     model_config = ConfigDict(extra="forbid")
     idempotency_key: UUID
     recipient_id: UUID
     reviewer_ids: list[UUID] = Field(max_length=100)
     approval_required: bool = True
+    evidence_policy: EvidencePolicy = Field(default_factory=EvidencePolicy)
     schedule: Schedule
 
     @model_validator(mode="after")
@@ -80,6 +118,8 @@ class RitualAssign(BaseModel):
 
 
 class RitualAssignmentView(BaseModel):
+    reward_policy_id: UUID | None = None
+    evidence_policy: EvidencePolicy = Field(default_factory=EvidencePolicy)
     id: UUID
     ritual_version_id: UUID
     recipient_id: UUID
@@ -105,6 +145,8 @@ class ReportCommand(BaseModel):
     expected_version: int = Field(ge=1)
     idempotency_key: UUID
     text: str = Field(min_length=1, max_length=10000)
+    evidence_ids: list[UUID] = Field(default_factory=list, max_length=3)
+    links: list[str] = Field(default_factory=list, max_length=3)
 
     @field_validator("text")
     @classmethod
@@ -122,6 +164,8 @@ class ReviewCommand(BaseModel):
 
 
 class RitualReportView(BaseModel):
+    links: list[str] = Field(default_factory=list)
+    attachments: list[EvidenceView] = Field(default_factory=list)
     attempt: int
     id: UUID
     text: str
@@ -133,6 +177,7 @@ class RitualReportView(BaseModel):
 
 
 class OccurrenceView(BaseModel):
+    evidence_policy: EvidencePolicy = Field(default_factory=EvidencePolicy)
     id: UUID
     assignment_id: UUID
     recipient_id: UUID

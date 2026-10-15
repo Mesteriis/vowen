@@ -53,7 +53,11 @@ class RitualAssignment(Base):
     current_schedule_id: Mapped[UUID | None] = mapped_column(
         ForeignKey("ritual_schedules.id", use_alter=True, name="current_ritual_schedule")
     )
+    reward_policy_id: Mapped[UUID | None] = mapped_column(
+        ForeignKey("ritual_reward_policies.id", use_alter=True, name="assignment_reward_policy")
+    )
     watermark: Mapped[date] = mapped_column(Date)
+    evidence_policy: Mapped[dict[str, object]] = mapped_column(JSONB)
 
 
 class RitualReviewer(Base):
@@ -85,6 +89,7 @@ class RitualOccurrence(Base):
     id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)
     assignment_id: Mapped[UUID] = mapped_column(ForeignKey("ritual_assignments.id"))
     schedule_id: Mapped[UUID] = mapped_column(ForeignKey("ritual_schedules.id"))
+    reward_policy_id: Mapped[UUID | None] = mapped_column(ForeignKey("ritual_reward_policies.id"))
     local_day: Mapped[date] = mapped_column(Date)
     due_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
@@ -120,3 +125,22 @@ class RitualNotice(Base):
     event_key: Mapped[str] = mapped_column(String(150))
     kind: Mapped[str] = mapped_column(String(30))
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+
+
+class RitualEvidence(Base):
+    __tablename__ = "ritual_evidence"
+    __table_args__ = (UniqueConstraint("occurrence_id", "idempotency_key"),)
+    id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)
+    occurrence_id: Mapped[UUID] = mapped_column(ForeignKey("ritual_occurrences.id"))
+    owner_id: Mapped[UUID] = mapped_column(ForeignKey("users.id"))
+    report_id: Mapped[UUID | None] = mapped_column(ForeignKey("ritual_reports.id"))
+    idempotency_key: Mapped[UUID]
+    digest: Mapped[bytes] = mapped_column(LargeBinary)
+    kind: Mapped[str] = mapped_column(String(10))
+    media_type: Mapped[str] = mapped_column(String(30))
+    size: Mapped[int]
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    expires_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
+    key_id: Mapped[str] = mapped_column(String(100))
+    nonce: Mapped[bytes] = mapped_column(LargeBinary)
+    ciphertext: Mapped[bytes] = mapped_column(LargeBinary)
