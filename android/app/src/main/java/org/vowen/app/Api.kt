@@ -116,6 +116,7 @@ class Api(private val state: InstanceSession,
  suspend fun downloadEvidence(e:EvidenceView):EvidenceDownload=json.decodeFromString(call("/ritual-evidence/${e.id}"))
  suspend fun discardEvidence(e:EvidenceView){call("/ritual-evidence/${e.id}","DELETE")}
  suspend fun rewards():List<RewardDefinition> = json.decodeFromString(call("/rewards"))
+ suspend fun rewardNotices():List<RewardNotice> = json.decodeFromString(call("/reward-notices"))
  suspend fun rewardGrants():List<RewardGrant> = json.decodeFromString(call("/reward-grants"))
  suspend fun saveReward(r:RewardDefinition?,body:RewardContent):RewardDefinition = json.decodeFromString(call(if(r==null)"/rewards" else "/rewards/${r.id}/versions","POST",if(r==null)json.encodeToString(body) else json.encodeToString(RewardEdit(title=body.title,description=body.description,conditions=body.conditions,expected_version=r.revision))))
  suspend fun grantReward(body:GrantCommand):RewardGrant=json.decodeFromString(call("/reward-grants","POST",json.encodeToString(body)))

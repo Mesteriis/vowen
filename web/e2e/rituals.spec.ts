@@ -104,6 +104,8 @@ test('ritual schedule, report, needs changes, revision and approval',async({page
  expect((await readFile('test-results/private-proof.png')).toString('base64')).toBe('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+jS1sAAAAASUVORK5CYII=')
  await recipient.getByRole('button',{name:'Refresh rewards',exact:true}).click()
  await expect(recipient.locator('#rewards .reward-grant')).toHaveCount(1)
+ await expect(recipient.locator('#rewards .reward-notices')).toContainText('You have an update in the app')
+ await expect(recipient.locator('#rewards .reward-notices')).not.toContainText('An evening together')
  await recipient.getByRole('button',{name:'Accept reward',exact:true}).click()
  await expect(recipient.locator('#rewards .reward-grant')).toContainText('Accepted')
  await page.getByRole('button',{name:'Refresh rewards',exact:true}).click()

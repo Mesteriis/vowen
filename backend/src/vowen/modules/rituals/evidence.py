@@ -11,6 +11,7 @@ from uuid import UUID, uuid4
 from fastapi import APIRouter, Request
 from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import load_only
 
 from vowen.core.crypto import EncryptedEnvelope
 from vowen.core.errors import AppError
@@ -243,6 +244,14 @@ async def staged(oid: UUID, principal: Member, db: DB, request: Request) -> list
     rows = (
         await db.scalars(
             select(RitualEvidence)
+            .options(
+                load_only(
+                    RitualEvidence.id,
+                    RitualEvidence.kind,
+                    RitualEvidence.media_type,
+                    RitualEvidence.size,
+                )
+            )
             .where(
                 RitualEvidence.occurrence_id == oid,
                 RitualEvidence.owner_id == principal.user_id,

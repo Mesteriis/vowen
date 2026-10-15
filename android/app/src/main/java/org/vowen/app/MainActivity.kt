@@ -5,6 +5,8 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.Image
 import androidx.compose.ui.res.painterResource
@@ -25,6 +27,7 @@ class MainActivity:ComponentActivity() {
   val guestModel=ViewModelProvider(this)[GuestViewModel::class.java]
   setContent {
    val screen by model.screen.collectAsState()
+   val saveEvidence=rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("application/octet-stream")){model.completeEvidenceSave(it)}
    var origin by remember { mutableStateOf(screen.origin) }
    var choosingInstance by remember {mutableStateOf(false)}
    val context=LocalContext.current
@@ -61,7 +64,7 @@ class MainActivity:ComponentActivity() {
        }
        WorkspaceScreen(member,screen.workspace,screen.sessionId,screen.busy,screen.completed,
         WorkspaceActions(model::refreshWorkspace,model::propose,model::relationAction,model::changeRelation,model::saveProfile,model::revokeSession),
-        FormActions(model::refreshWorkspace,model::saveForm,model::publishForm,model::inviteForm,model::saveFormDraft,model::submitForm,model::deleteFormResult),screen.formLink,RuleActions(model::refreshWorkspace,model::saveRule,model::ruleTemplate,model::assignRule,model::decideRule,model::ruleHistory),RitualActions(model::refreshWorkspace,model::saveRitual,model::ritualTemplate,model::ritualHistory,model::assignRitual,model::scheduleRitual,model::ritualAssignment,model::reportRitual,model::reviewRitual,model::skipRitual,model::uploadEvidence,model::downloadEvidence,model::discardEvidence,model::stagedEvidence),RewardActions(model::refreshWorkspace,model::saveReward,model::grantReward,model::transitionReward))
+        FormActions(model::refreshWorkspace,model::saveForm,model::publishForm,model::inviteForm,model::saveFormDraft,model::submitForm,model::deleteFormResult),screen.formLink,RuleActions(model::refreshWorkspace,model::saveRule,model::ruleTemplate,model::assignRule,model::decideRule,model::ruleHistory),RitualActions(model::refreshWorkspace,model::saveRitual,model::ritualTemplate,model::ritualHistory,model::assignRitual,model::scheduleRitual,model::ritualAssignment,model::reportRitual,model::reviewRitual,model::skipRitual,model::uploadEvidence,{e->model.prepareEvidenceSave(e){saveEvidence.launch(evidenceFileName(e))}},model::discardEvidence,model::stagedEvidence),RewardActions(model::refreshWorkspace,model::saveReward,model::grantReward,model::transitionReward),error=screen.error)
       }
       }
      }

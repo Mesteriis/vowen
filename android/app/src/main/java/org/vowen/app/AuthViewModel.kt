@@ -1,6 +1,9 @@
 package org.vowen.app
 
 import android.app.Application
+import android.net.Uri
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import android.util.Base64
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
@@ -22,6 +25,8 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
  private val preferences=application.getSharedPreferences("instance",0)
  private val mutex=Mutex()
  private var nonce:String?=null
+ private data class EvidenceSave(val evidence:EvidenceView,val origin:String,val sessionId:String,val memberId:String)
+ private var pendingEvidenceSave:EvidenceSave?=null
  init {
   var restoring=false
   preferences.getString("origin",null)?.let { savedOrigin ->
@@ -40,7 +45,7 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
   finally { mutable.value=mutable.value.copy(busy=false,booting=false) }
  } } }
  fun select(origin:String)=run {
-  if(instance.select(origin)) {vault.clear();nonce=null;mutable.value=Screen(origin=instance.origin)}
+  if(instance.select(origin)) {pendingEvidenceSave=null;vault.clear();nonce=null;mutable.value=Screen(origin=instance.origin)}
   preferences.edit().putString("origin",instance.origin).apply()
   val saved=vault.load(instance.origin)
   if(saved!=null) {
@@ -114,11 +119,28 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
 
  fun stagedEvidence(o:RitualOccurrence,done:(List<EvidenceView>)->Unit)=run{done(api.stagedEvidence(o))}
  fun uploadEvidence(o:RitualOccurrence,body:EvidenceUpload,done:(EvidenceView)->Unit)=run{done(api.uploadEvidence(o,body))}
- fun downloadEvidence(e:EvidenceView,done:(EvidenceDownload)->Unit)=run{done(api.downloadEvidence(e))}
+ fun prepareEvidenceSave(e:EvidenceView,ready:()->Unit)=run {
+  val screen=mutable.value
+  pendingEvidenceSave=EvidenceSave(e,instance.origin,screen.sessionId?:error("Sign in again"),screen.member?.id?:error("Sign in again"))
+  ready()
+ }
+ fun completeEvidenceSave(destination:Uri?)=run {
+  val pending=pendingEvidenceSave;pendingEvidenceSave=null
+  if(destination==null)return@run
+  check(pending!=null){"Save request expired"}
+  fun sameSession()=instance.origin==pending.origin&&mutable.value.sessionId==pending.sessionId&&mutable.value.member?.id==pending.memberId
+  check(sameSession()){"Save request expired"}
+  val media=withContext(Dispatchers.IO){api.downloadEvidence(pending.evidence)}
+  check(sameSession()){"Save request expired"}
+  withContext(Dispatchers.IO){
+   val bytes=Base64.decode(media.data_base64,Base64.DEFAULT)
+   getApplication<Application>().contentResolver.openOutputStream(destination)?.use{it.write(bytes)}?:error("Cannot save file")
+  }
+ }
  fun discardEvidence(e:EvidenceView,done:()->Unit)=run{api.discardEvidence(e);done()}
  fun saveReward(r:RewardDefinition?,body:RewardContent)=run{api.saveReward(r,body);loadWorkspace(true)}
  fun grantReward(body:GrantCommand)=run{api.grantReward(body);loadWorkspace(true)}
  fun transitionReward(g:RewardGrant,action:String)=run{api.transitionReward(g,action);loadWorkspace(true)}
  fun logout()=run { try { api.call("/auth/logout","POST") } finally { clear() } }
- private fun clear() { instance.clear();vault.clear();nonce=null;mutable.value=Screen(origin=instance.origin,booting=false) }
+ private fun clear() { pendingEvidenceSave=null;instance.clear();vault.clear();nonce=null;mutable.value=Screen(origin=instance.origin,booting=false) }
 }

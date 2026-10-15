@@ -14,6 +14,7 @@ from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import Mapped, mapped_column
 
 from vowen.core.database import Base
+from vowen.modules.rewards.models import RewardPolicy
 
 
 class Ritual(Base):
@@ -54,7 +55,7 @@ class RitualAssignment(Base):
         ForeignKey("ritual_schedules.id", use_alter=True, name="current_ritual_schedule")
     )
     reward_policy_id: Mapped[UUID | None] = mapped_column(
-        ForeignKey("ritual_reward_policies.id", use_alter=True, name="assignment_reward_policy")
+        ForeignKey(RewardPolicy.id, use_alter=True, name="assignment_reward_policy")
     )
     watermark: Mapped[date] = mapped_column(Date)
     evidence_policy: Mapped[dict[str, object]] = mapped_column(JSONB)
@@ -89,7 +90,7 @@ class RitualOccurrence(Base):
     id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)
     assignment_id: Mapped[UUID] = mapped_column(ForeignKey("ritual_assignments.id"))
     schedule_id: Mapped[UUID] = mapped_column(ForeignKey("ritual_schedules.id"))
-    reward_policy_id: Mapped[UUID | None] = mapped_column(ForeignKey("ritual_reward_policies.id"))
+    reward_policy_id: Mapped[UUID | None] = mapped_column(ForeignKey(RewardPolicy.id))
     local_day: Mapped[date] = mapped_column(Date)
     due_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
     expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))

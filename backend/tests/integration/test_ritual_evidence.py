@@ -210,3 +210,53 @@ async def test_decoded_media_limit_cannot_be_bypassed_by_base64(api):
         },
     )
     assert response.status_code == 413
+
+
+async def test_evidence_lists_select_metadata_without_blob_payload(api):
+    from sqlalchemy import event
+
+    client, app, ids, tokens, template, a, o = await setup_ritual(api)
+    path = f"/api/v1/ritual-occurrences/{o['id']}"
+    proof = (
+        await client.post(
+            path + "/evidence",
+            headers=auth(tokens[1]),
+            json={
+                "idempotency_key": str(uuid4()),
+                "kind": "photo",
+                "media_type": "image/png",
+                "data_base64": base64.b64encode(PNG).decode(),
+            },
+        )
+    ).json()
+    statements = []
+
+    def capture(conn, cursor, statement, parameters, context, executemany):
+        if "SELECT" in statement and "ritual_evidence" in statement:
+            statements.append(statement)
+
+    event.listen(app.state.engine.sync_engine, "before_cursor_execute", capture)
+    try:
+        assert (await client.get(path + "/evidence", headers=auth(tokens[1]))).status_code == 200
+        assert statements and all("ciphertext" not in sql.split("FROM")[0] for sql in statements)
+        assert (
+            await client.post(
+                path + "/report",
+                headers=auth(tokens[1]),
+                json={
+                    "expected_version": o["revision"],
+                    "idempotency_key": str(uuid4()),
+                    "text": "Stored proof",
+                    "evidence_ids": [proof["id"]],
+                },
+            )
+        ).status_code == 200
+        statements.clear()
+        assert (
+            await client.get("/api/v1/ritual-occurrences", headers=auth(tokens[1]))
+        ).status_code == 200
+        assert statements and all("ciphertext" not in sql.split("FROM")[0] for sql in statements)
+    finally:
+        event.remove(app.state.engine.sync_engine, "before_cursor_execute", capture)
+    result = await client.get(f"/api/v1/ritual-evidence/{proof['id']}", headers=auth(tokens[1]))
+    assert base64.b64decode(result.json()["data_base64"]) == PNG

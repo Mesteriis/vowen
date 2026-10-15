@@ -446,3 +446,19 @@ not separately confirmed preferences. Operational details: operations/rewards-ev
 Remaining: neutral Telegram delivery for rituals/rewards, real Telegram login/delivery,
 physical file-picker/video performance and production backup/restore acceptance. No points,
 E2EE, automatic punishment, in-app video player or verification of real-world proof is claimed.
+
+
+Final review corrections: native grant cards now identify issuer/recipient, rejected
+pending uploads can be replaced without losing report text/links, successful catalogue
+save closes the editor, and pending file saves survive Activity recreation as metadata
+bound to origin/session/member. Bytes are re-fetched under current authorization after
+choosing a destination; instance change cancels saving. Both clients now fetch/render
+neutral reward Updates. Ordinary report/staged lists project metadata without loading
+ciphertext blobs. An isolated worker import revealed missing reward-model registration;
+concrete FK targets now register it for standalone worker/CLI execution.
+
+Observed regressions cover every correction (including isolated subprocess failure,
+SQL projection, native HTTP422 recovery, editor completion, Activity recreation and
+instance switch). Updated local totals: 118 backend, 3 Vitest, 8 browser E2E, 11 JVM,
+27 Compose instrumentation tests. The initial branch CI af35bc9 passed both jobs;
+final corrected-code CI is still pending and is recorded separately below when verified.

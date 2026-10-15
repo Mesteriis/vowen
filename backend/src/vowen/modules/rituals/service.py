@@ -5,6 +5,7 @@ from uuid import UUID, uuid4
 from sqlalchemy import select
 from sqlalchemy.dialects.postgresql import insert
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import load_only
 
 from vowen.core.crypto import EncryptedEnvelope, PayloadCipher
 from vowen.core.errors import AppError
@@ -169,7 +170,16 @@ async def occurrence_view(
                     EvidenceView(id=e.id, kind=e.kind, media_type=e.media_type, size=e.size)
                     for e in (
                         await db.scalars(
-                            select(RitualEvidence).where(RitualEvidence.report_id == r.id)
+                            select(RitualEvidence)
+                            .options(
+                                load_only(
+                                    RitualEvidence.id,
+                                    RitualEvidence.kind,
+                                    RitualEvidence.media_type,
+                                    RitualEvidence.size,
+                                )
+                            )
+                            .where(RitualEvidence.report_id == r.id)
                         )
                     ).all()
                 ],

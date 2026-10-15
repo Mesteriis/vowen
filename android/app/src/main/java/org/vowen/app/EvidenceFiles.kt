@@ -15,3 +15,8 @@ internal fun readEvidenceBytes(input:InputStream):ByteArray {
  }
  return result.toByteArray()
 }
+
+internal fun evidenceFileName(e:EvidenceView):String {
+ val extension=mapOf("image/png" to "png","image/jpeg" to "jpg","video/mp4" to "mp4","video/webm" to "webm")[e.media_type]?:"bin"
+ return "evidence-${e.id}.$extension"
+}

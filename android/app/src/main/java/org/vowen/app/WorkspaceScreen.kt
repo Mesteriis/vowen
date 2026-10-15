@@ -19,7 +19,7 @@ data class WorkspaceActions(
 )
 
 @Composable
-fun WorkspaceScreen(member:Member,data:WorkspaceState,currentSessionId:String?,busy:Boolean,completed:Int,actions:WorkspaceActions,formActions:FormActions?=null,formLink:String?=null,ruleActions:RuleActions?=null,ritualActions:RitualActions?=null,rewardActions:RewardActions?=null) {
+fun WorkspaceScreen(member:Member,data:WorkspaceState,currentSessionId:String?,busy:Boolean,completed:Int,actions:WorkspaceActions,formActions:FormActions?=null,formLink:String?=null,ruleActions:RuleActions?=null,ritualActions:RitualActions?=null,rewardActions:RewardActions?=null,error:String?=null) {
  var tab by remember {mutableIntStateOf(0)}
  val ru=member.language=="ru"
  val tabs=listOf("relations","sessions","profile")+(if(formActions!=null)listOf("forms") else emptyList())+(if(ruleActions!=null)listOf("rules") else emptyList())+(if(ritualActions!=null)listOf("rituals") else emptyList())+(if(rewardActions!=null)listOf("rewards") else emptyList())
@@ -32,8 +32,8 @@ fun WorkspaceScreen(member:Member,data:WorkspaceState,currentSessionId:String?,b
    "profile"->ProfileScreen(member,busy,actions.profile)
    "forms"->formActions?.let{NativeFormsScreen(member,data,busy,completed,formLink,it)}
    "rules"->ruleActions?.let{NativeRulesScreen(member,data,busy,completed,it)}
-   "rewards"->rewardActions?.let{NativeRewardsScreen(member,data,busy,it)}
-   "rituals"->ritualActions?.let{NativeRitualsScreen(member,data,busy,completed,it)}
+   "rewards"->rewardActions?.let{NativeRewardsScreen(member,data,busy,it,completed)}
+   "rituals"->ritualActions?.let{NativeRitualsScreen(member,data,busy,completed,it,error)}
   }
  }
  if(LocalConfiguration.current.screenWidthDp>=720){

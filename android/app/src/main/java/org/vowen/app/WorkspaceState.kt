@@ -15,8 +15,9 @@ data class WorkspaceState(
  val ritualOccurrences:List<RitualOccurrence> = emptyList(),
  val ritualNotices:List<RitualNotice> = emptyList(),
  val rewards:List<RewardDefinition> = emptyList(),
+ val rewardNotices:List<RewardNotice> = emptyList(),
  val rewardGrants:List<RewardGrant> = emptyList(),
  val ritualHistory:List<RitualTemplate> = emptyList()
 )
 
-suspend fun Api.workspace():WorkspaceState = WorkspaceState(relations(),participants(),sessions(),forms(),formInvitations(),formResults(),rules(),ruleAssignments(),rituals=rituals(),ritualAssignments=ritualAssignments(),ritualOccurrences=ritualOccurrences(),ritualNotices=ritualNotices(),rewards=rewards(),rewardGrants=rewardGrants())
+suspend fun Api.workspace():WorkspaceState = WorkspaceState(relations(),participants(),sessions(),forms(),formInvitations(),formResults(),rules(),ruleAssignments(),rituals=rituals(),ritualAssignments=ritualAssignments(),ritualOccurrences=ritualOccurrences(),ritualNotices=ritualNotices(),rewards=rewards(),rewardGrants=rewardGrants(),rewardNotices=rewardNotices())

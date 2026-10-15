@@ -42,8 +42,15 @@ no report/file access. Staged files are owner-only. Each read is checked again; 
 file URL can survive permission withdrawal.
 
 Both clients support required policy, links, photo/video choice and protected retrieval.
-Android uses OpenDocument and CreateDocument with bounded IO; no storage permission,
-source-URI persistence or automatic external media playback. Upload retry preserves its
+Android uses OpenDocument and CreateDocument with bounded IO. Pending save metadata
+is retained in the ViewModel and bound to origin/session/member; the Activity-root
+result callback re-fetches bytes under current authorization after a destination is
+chosen. Activity recreation preserves the request; session/instance change cancels it.
+No plaintext media is saved in instance state. After process death a new save request
+is needed; a late destination result produces a visible error, never silent success.
+No storage permission,
+source-URI persistence or automatic external media playback. Rejected pending files can be replaced without discarding report text/links, and failures
+are visible inside the report dialog. Upload retry preserves its
 request key, and report retry preserves the proof list and request key.
 
 ## Rewards
@@ -62,7 +69,7 @@ report completion run the same DB effect in the approval transaction. Current is
 rewards.grant authority is required at that moment; withdrawn authority suppresses a new
 offer but never retracts an existing one. Unique `(occurrence_id, reward_policy_id,
 recipient_id)` prevents duplicate grants. The DB effect and neutral in-app notices commit
-with approval; no network runs inside this transaction. Manual idempotency is issuer/key
+with approval and are rendered in both clients' neutral Updates surface; no network runs inside this transaction. Manual idempotency is issuer/key
 scoped and conflicts if the recipient or reward version changes.
 
 No points, streak ledger, automatic punishment or Telegram reward/evidence delivery is

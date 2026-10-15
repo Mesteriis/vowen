@@ -39,20 +39,14 @@ data class RitualActions(
  val review:(RitualOccurrence,String,String)->Unit,
  val skip:(RitualOccurrence)->Unit,
  val upload:((RitualOccurrence,EvidenceUpload,(EvidenceView)->Unit)->Unit)?=null,
- val download:((EvidenceView,(EvidenceDownload)->Unit)->Unit)?=null,
+ val saveEvidence:((EvidenceView)->Unit)?=null,
  val discard:((EvidenceView,()->Unit)->Unit)?=null,
  val staged:((RitualOccurrence,(List<EvidenceView>)->Unit)->Unit)?=null
 )
-@Composable fun NativeRitualsScreen(member:Member,data:WorkspaceState,busy:Boolean,completed:Int,actions:RitualActions) {
+@Composable fun NativeRitualsScreen(member:Member,data:WorkspaceState,busy:Boolean,completed:Int,actions:RitualActions,error:String?=null) {
  val ru=member.language=="ru"
  val context=LocalContext.current
- val scope=rememberCoroutineScope()
  var mediaError by remember{mutableStateOf<String?>(null)}
- var pendingDownload by remember{mutableStateOf<EvidenceDownload?>(null)}
- val saveEvidence=rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("application/octet-stream")){uri->
-  val download=pendingDownload;pendingDownload=null
-  if(uri!=null&&download!=null)scope.launch{try{withContext(Dispatchers.IO){context.contentResolver.openOutputStream(uri)?.use{it.write(Base64.decode(download.data_base64,Base64.DEFAULT))}?:error("Cannot save file")}}catch(error:Exception){mediaError=error.message}}
- }
 
  fun label(value:String)=ritualStateLabel(value,ru)
  fun time(value:String)=OffsetDateTime.parse(value).atZoneSameInstant(ZoneId.of(member.timezone)).format(DateTimeFormatter.ofPattern("d MMM uuuu, HH:mm VV",if(ru)Locale.forLanguageTag("ru") else Locale.UK))
@@ -83,7 +77,7 @@ data class RitualActions(
     Text(t("Report until: ","Отчёт до: ")+time(o.expires_at),style=MaterialTheme.typography.bodySmall)
     o.reports.forEach {r->HorizontalDivider();Text(t("Attempt ","Попытка ")+r.attempt);Text(r.text);r.decision?.let{Text(label(it))};r.comment?.let{if(it.isNotEmpty())Text(it)}
      r.links.orEmpty().forEach{link->TextButton(onClick={runCatching{context.startActivity(Intent(Intent.ACTION_VIEW,Uri.parse(link)))}.onFailure{mediaError="Cannot open external link"}}){Text(t("Open evidence link · external site","Открыть доказательство · внешний сайт"))}}
-     r.attachments.orEmpty().forEach{e->actions.download?.let{download->TextButton(onClick={download(e){file->pendingDownload=file;val extension=mapOf("image/png" to "png","image/jpeg" to "jpg","video/mp4" to "mp4","video/webm" to "webm")[e.media_type]?:"bin";saveEvidence.launch("evidence-${e.id}.$extension")}},enabled=!busy){Text(if(e.kind=="photo")t("Save photo evidence","Сохранить фото-доказательство") else t("Save video evidence","Сохранить видео-доказательство"))}}}
+     r.attachments.orEmpty().forEach{e->actions.saveEvidence?.let{save->TextButton(onClick={save(e)},enabled=!busy){Text(if(e.kind=="photo")t("Save photo evidence","Сохранить фото-доказательство") else t("Save video evidence","Сохранить видео-доказательство"))}}}
     }
     if(o.can_report&&!member.paused)TextButton(onClick={reporting=o},enabled=!busy,modifier=Modifier.testTag("report-${o.id}")){Text(t("Write report","Написать отчёт"))}
     if(o.can_review&&!member.paused)TextButton(onClick={reviewing=o},enabled=!busy,modifier=Modifier.testTag("review-${o.id}")){Text(t("Review report","Проверить отчёт"))}
@@ -112,11 +106,11 @@ data class RitualActions(
   }
   if(data.ritualNotices.isNotEmpty()) {Text(t("Updates","Обновления"),style=MaterialTheme.typography.titleLarge);data.ritualNotices.take(5).forEach{Text(t("You have an update in the app","У вас есть обновление в приложении"));Text(time(it.created_at),style=MaterialTheme.typography.bodySmall)}}
  }
- reporting?.let {o->key(o.id){RitualReportDialog(o,busy,ru,actions,{reporting=null})}}
+ reporting?.let {o->key(o.id){RitualReportDialog(o,busy,ru,actions,error,{reporting=null})}}
  reviewing?.let {o->key(o.id){var comment by remember{mutableStateOf("")};AlertDialog(onDismissRequest={if(!busy)reviewing=null},title={Text(o.title)},text={Column(Modifier.verticalScroll(rememberScrollState())){Text(o.reports.lastOrNull()?.text?:"");OutlinedTextField(comment,{if(it.length<=10000)comment=it},label={Text(t("Review comment","Комментарий проверяющего"))},enabled=!busy)}},confirmButton={TextButton(onClick={actions.review(o,"approved",comment)},enabled=!busy,modifier=Modifier.testTag("ritual-approve")){Text(t("Approve report","Одобрить отчёт"))}},dismissButton={Column{TextButton(onClick={actions.review(o,"needs_changes",comment)},enabled=!busy,modifier=Modifier.testTag("ritual-request-changes")){Text(t("Request changes","Вернуть на доработку"))};TextButton(onClick={reviewing=null},enabled=!busy){Text(t("Cancel","Отмена"))}}})}}
 }
 
-@Composable private fun RitualReportDialog(o:RitualOccurrence,busy:Boolean,ru:Boolean,actions:RitualActions,cancel:()->Unit){
+@Composable private fun RitualReportDialog(o:RitualOccurrence,busy:Boolean,ru:Boolean,actions:RitualActions,requestError:String?,cancel:()->Unit){
  fun t(en:String,r:String)=if(ru)r else en
  val context=LocalContext.current;val scope=rememberCoroutineScope()
  var text by remember{mutableStateOf("")};var links by remember{mutableStateOf("")};var requestKey by remember{mutableStateOf(UUID.randomUUID().toString())}
@@ -139,9 +133,12 @@ data class RitualActions(
   OutlinedTextField(text,{if(it.length<=10000){text=it;requestKey=UUID.randomUUID().toString()}},label={Text(t("Ritual report","Отчёт ритуала"))},enabled=!busy,modifier=Modifier.testTag("ritual-report-text"))
   if("link" in allowed)OutlinedTextField(links,{if(it.length<=6146){links=it;requestKey=UUID.randomUUID().toString()}},label={Text(t("Evidence links · HTTPS, one per line","Ссылки-доказательства · HTTPS, по одной на строку"))},enabled=!busy,modifier=Modifier.testTag("ritual-evidence-links"))
   if(actions.upload!=null&&("photo" in allowed||"video" in allowed))TextButton(onClick={picker.launch((if("photo" in allowed)listOf("image/jpeg","image/png") else emptyList()).plus(if("video" in allowed)listOf("video/mp4","video/webm") else emptyList()).toTypedArray())},enabled=!busy&&!reading&&pending==null&&uploaded.size+linkList.size<3){Text(t("Choose photo or video","Выбрать фото или видео"))}
-  pending?.let{body->TextButton(onClick={sendUpload(body)},enabled=!busy&&!reading){Text(t("Retry evidence upload","Повторить загрузку доказательства"))}}
+  pending?.let{body->
+   TextButton(onClick={sendUpload(body)},enabled=!busy&&!reading){Text(t("Retry evidence upload","Повторить загрузку доказательства"))}
+   TextButton(onClick={pending=null;error=null},enabled=!busy&&!reading){Text(t("Replace pending file","Заменить ожидающий файл"))}
+  }
   uploaded.forEach{e->Text("${if(e.kind=="photo")t("Photo","Фото") else t("Video","Видео")} · ${e.media_type}");actions.discard?.let{discard->TextButton(onClick={discard(e){uploaded=uploaded-e;requestKey=UUID.randomUUID().toString()}},enabled=!busy){Text(t("Remove evidence","Удалить доказательство"))}}}
-  error?.let{Text(it,color=MaterialTheme.colorScheme.error)}
+  (error?:requestError)?.let{Text(it,color=MaterialTheme.colorScheme.error)}
  }},confirmButton={TextButton(onClick={actions.report(o,text,requestKey,linkList,uploaded.map{it.id})},enabled=!busy&&!reading&&pending==null&&text.isNotBlank()&&enough&&valid,modifier=Modifier.testTag("submit-ritual-report")){Text(t("Submit report","Отправить отчёт"))}},dismissButton={TextButton(onClick=cancel,enabled=!busy&&!reading){Text(t("Cancel","Отмена"))}})
 }
 
