@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type {components} from '../../shared/api'
 type Schedule=components['schemas']['Schedule']
-const props=defineProps<{modelValue:Schedule;ru:boolean;fixedZone?:boolean}>()
+const props=defineProps<{modelValue:Schedule;ru:boolean;fixedZone?:boolean;windowLabel?:string}>()
 const emit=defineEmits<{ 'update:modelValue':[Schedule] }>()
 const t=(en:string,ru:string)=>props.ru?ru:en
 function set(patch:Partial<Schedule>){emit('update:modelValue',{...props.modelValue,...patch})}
@@ -15,7 +15,7 @@ function weekday(day:number){const days=props.modelValue.weekdays??[];set({weekd
   <div class="field-pair"><label>{{t('Start date','Дата начала')}}<input type="date" :value="modelValue.start_date" required @input="set({start_date:($event.target as HTMLInputElement).value})"></label>
   <label>{{t('Local time','Локальное время')}}<input type="time" :value="`${String(modelValue.hour).padStart(2,'0')}:${String(modelValue.minute).padStart(2,'0')}`" required @input="time"></label></div>
   <label>{{t('IANA schedule timezone','Часовой пояс IANA')}}<input :value="modelValue.timezone" :readonly="fixedZone" required maxlength="100" @input="set({timezone:($event.target as HTMLInputElement).value})"></label>
-  <label>{{t('Report window (hours)','Окно отчёта (часы)')}}<input type="number" :value="modelValue.window_hours??24" min="1" max="168" required @input="set({window_hours:Number(($event.target as HTMLInputElement).value)})"></label>
+  <label>{{windowLabel??t('Report window (hours)','Окно отчёта (часы)')}}<input type="number" :value="modelValue.window_hours??24" min="1" max="168" required @input="set({window_hours:Number(($event.target as HTMLInputElement).value)})"></label>
   <p class="muted">{{t('DST: missing time shifts by the gap; repeated time uses its first occurrence. Pauses create no missed obligations.','DST: отсутствующее время сдвигается на разрыв, повторяющееся берётся один раз. Пауза не создаёт пропусков.')}}</p>
  </div>
 </template>

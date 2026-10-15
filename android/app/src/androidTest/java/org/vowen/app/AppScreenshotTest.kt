@@ -20,6 +20,19 @@ class AppScreenshotTest {
   try {
    ActivityScenario.launch(MainActivity::class.java).use{
     compose.waitUntil(10000){compose.onAllNodesWithTag("tab-discipline").fetchSemanticsNodes().isNotEmpty()}
+    compose.onNodeWithTag("tab-surveys").performScrollTo().performClick()
+    compose.onNodeWithTag("new-survey").performScrollTo().assertExists()
+    compose.onNodeWithTag("tab-notifications").performScrollTo().performClick()
+    compose.onNodeWithTag("save-notifications").performScrollTo().assertExists()
+    java.io.File(context.cacheDir,"m5-app-notifications.png").outputStream().use{out->inst.uiAutomation.takeScreenshot()!!.compress(android.graphics.Bitmap.CompressFormat.PNG,100,out)}
+    compose.onNodeWithTag("Appearance").performScrollTo().performClick()
+    compose.onNodeWithText("Light").performClick()
+    compose.waitForIdle()
+    it.onActivity{activity->org.junit.Assert.assertTrue(androidx.core.view.WindowCompat.getInsetsController(activity.window,activity.window.decorView).isAppearanceLightStatusBars)}
+    compose.onNodeWithTag("save-notifications").performScrollTo().assertExists()
+    java.io.File(context.cacheDir,"m5-app-notifications-light.png").outputStream().use{out->inst.uiAutomation.takeScreenshot()!!.compress(android.graphics.Bitmap.CompressFormat.PNG,100,out)}
+    compose.onNodeWithTag("Appearance").performScrollTo().performClick()
+    compose.onNodeWithText("Dark").performClick()
     compose.onNodeWithTag("tab-discipline").performScrollTo().performClick()
     compose.onNodeWithTag("new-discipline").performScrollTo().assertExists()
     java.io.File(context.cacheDir,"m4-app-discipline.png").outputStream().use{out->inst.uiAutomation.takeScreenshot()!!.compress(android.graphics.Bitmap.CompressFormat.PNG,100,out)}

@@ -15,7 +15,11 @@ data class FormActions(
  val invite:(FormTemplate,FormInvitationCreate)->Unit,
  val draft:(String,Map<String,kotlinx.serialization.json.JsonElement>)->Unit,
  val submit:(String,FormSubmit)->Unit,
- val delete:(String)->Unit
+ val delete:(String)->Unit,
+ val archive:((FormTemplate)->Unit)?=null,
+ val management:((FormTemplate,(List<FormInvitation>)->Unit)->Unit)?=null,
+ val revoke:((FormInvitation)->Unit)?=null,
+ val removeReader:((FormInvitation,String)->Unit)?=null
 )
 
 @Composable
@@ -26,6 +30,12 @@ fun NativeFormsScreen(member:Member,data:WorkspaceState,busy:Boolean,completed:I
  var inviting by remember {mutableStateOf<FormTemplate?>(null)}
  var filling by remember {mutableStateOf<FormAccess?>(null)}
  var deleting by remember {mutableStateOf<FormResult?>(null)}
+ var managed by remember {mutableStateOf<FormTemplate?>(null)}
+ var invitations by remember {mutableStateOf(emptyList<FormInvitation>())}
+ var days by remember {mutableStateOf("7")}
+ var retention by remember {mutableStateOf("90")}
+ var deliver by remember {mutableStateOf(false)}
+ var contact by remember {mutableStateOf("")}
  var recipient by remember {mutableStateOf<String?>(null)}
  var readers by remember {mutableStateOf<List<String>>(emptyList())}
  val clipboard=LocalClipboardManager.current
@@ -35,10 +45,13 @@ fun NativeFormsScreen(member:Member,data:WorkspaceState,busy:Boolean,completed:I
   Button(onClick={editor=true;editing=null}) {Text(if(ru)"Новая анкета" else "New form")}
   TextButton(onClick=actions.refresh,enabled=!busy) {Text(if(ru)"Обновить анкеты" else "Refresh forms")}
   if(editor)NativeFormEditor(editing?.schema_body,ru,busy,{actions.save(editing,it)},{editor=false},identity=editing?.version_id?:"new")
+  LaunchedEffect(completed){managed?.let{f->actions.management?.invoke(f){invitations=it}}}
   data.forms.forEach {f->
    Text(f.schema_body.title+" · "+f.status)
    TextButton(onClick={editing=f;editor=true}) {Text(if(f.status=="draft")if(ru)"Редактировать" else "Edit" else if(ru)"Новая версия" else "New version")}
    if(f.status=="draft")Button(onClick={actions.publish(f)},enabled=!busy) {Text(if(ru)"Опубликовать" else "Publish")}
+   if(f.status!="archived")actions.archive?.let{archive->TextButton(onClick={archive(f)},enabled=!busy){Text(if(ru)"Архивировать анкету" else "Archive form")}}
+   actions.management?.let{load->TextButton(onClick={load(f){invitations=it;managed=f}},enabled=!busy){Text(if(ru)"Управлять приглашениями" else "Manage invitations")}}
    if(f.status=="published")Button(onClick={inviting=f;recipient=null;readers=emptyList()},enabled=!busy) {Text(if(ru)"Пригласить" else "Invite")}
   }
   inviting?.let {f->
@@ -48,8 +61,21 @@ fun NativeFormsScreen(member:Member,data:WorkspaceState,busy:Boolean,completed:I
     TextButton(onClick={recipient=p.id}){Text((if(recipient==p.id)"✓ " else "")+p.display_name)}
     Row {Checkbox(checked=p.id in readers,onCheckedChange={checked->readers=if(checked)readers+p.id else readers-p.id});Text((if(ru)"Читатель: " else "Reader: ")+p.display_name)}
    }
-   Text(if(ru)"Приглашение: 7 дней. Хранение: 90 дней. Ссылка секретная." else "Invitation: 7 days. Retention: 90 days. The link is secret.")
-   Button(onClick={actions.invite(f,FormInvitationCreate(reader_ids=readers,recipient_user_id=recipient))},enabled=!busy) {Text(if(ru)"Создать приглашение" else "Create invitation")}
+   OutlinedTextField(days,{days=it},label={Text(if(ru)"Срок приглашения, дней" else "Invitation days")},enabled=!busy)
+   OutlinedTextField(retention,{retention=it},label={Text(if(ru)"Хранение ответа, дней" else "Retention days")},enabled=!busy)
+   Row{Checkbox(deliver,{deliver=it},enabled=!busy);Text(if(ru)"Попробовать доставку в Telegram" else "Try Telegram delivery")}
+   if(deliver&&recipient==null)OutlinedTextField(contact,{contact=it},label={Text("Telegram contact ID")},enabled=!busy)
+   Text(if(ru)"Ссылка секретная; первый обладатель может активировать её. Это не подтверждение личности." else "The link is secret; its first holder can activate it. It does not verify identity.")
+   Button(onClick={actions.invite(f,FormInvitationCreate(reader_ids=readers,recipient_user_id=recipient,ttl_days=days.toInt(),retention_days=retention.toInt(),deliver=deliver,contact_telegram_id=if(deliver&&recipient==null)contact.toLongOrNull() else null))},enabled=!busy&&days.toIntOrNull() in 1..7&&retention.toIntOrNull() in 1..365&&(!deliver||recipient!=null||contact.toLongOrNull()?.let{it>0}==true)) {Text(if(ru)"Создать приглашение" else "Create invitation")}
+  }
+  managed?.let {f->
+   Text(f.schema_body.title+" · "+if(ru)"Приглашения" else "Invitations")
+   if(invitations.isEmpty())Text(if(ru)"Нет приглашений" else "No invitations")
+   invitations.forEach{i->
+    Text("${i.id} · ${i.delivery_status} · ${i.expires_at}")
+    actions.revoke?.let{revoke->TextButton(onClick={revoke(i)},enabled=!busy&&!i.revoked){Text(if(ru)"Отозвать приглашение" else "Revoke invitation")}}
+    actions.removeReader?.let{remove->M4Choice(if(ru)"Удалить читателя" else "Remove reader","",data.participants.map{it.id to it.display_name},busy){remove(i,it)}}
+   }
   }
   link?.let {
    OutlinedTextField(value=it,onValueChange={},readOnly=true,label={Text(if(ru)"Ссылка приглашения" else "Invitation link")},modifier=Modifier.fillMaxWidth())

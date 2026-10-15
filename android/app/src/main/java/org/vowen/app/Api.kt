@@ -137,4 +137,17 @@ class Api(private val state: InstanceSession,
  suspend fun grantReward(body:GrantCommand):RewardGrant=json.decodeFromString(call("/reward-grants","POST",json.encodeToString(body)))
  suspend fun transitionReward(g:RewardGrant,action:String):RewardGrant=json.decodeFromString(call("/reward-grants/${g.id}/transitions","POST",json.encodeToString(GrantTransitionCommand(expected_version=g.revision,action=action))))
 
+ suspend fun notificationSettings():NotificationSettings=json.decodeFromString(call("/me/notifications"))
+ suspend fun updateNotifications(body:NotificationPatch):NotificationSettings=json.decodeFromString(call("/me/notifications","PATCH",json.encodeToString(body)))
+ suspend fun surveys():List<SurveyPlan> = json.decodeFromString(call("/survey-schedules"))
+ suspend fun createSurvey(body:SurveyCreate):SurveyPlan=json.decodeFromString(call("/survey-schedules","POST",json.encodeToString(body)))
+ suspend fun transitionSurvey(p:SurveyPlan,action:String):SurveyPlan{require(action in listOf("pause","resume"));return json.decodeFromString(call("/survey-schedules/${p.id}/$action","POST",json.encodeToString(ExpectedVersion(p.revision))))}
+ suspend fun sendSurvey(p:SurveyPlan,key:String):SurveyWave=json.decodeFromString(call("/survey-schedules/${p.id}/send-now","POST",json.encodeToString(SendWave(p.revision,key))))
+ suspend fun surveyWaves(p:SurveyPlan):List<SurveyWave> = json.decodeFromString(call("/survey-schedules/${p.id}/waves"))
+
+ suspend fun formManagement(f:FormTemplate):List<FormInvitation> = json.decodeFromString(call("/forms/${f.id}/invitations"))
+ suspend fun archiveForm(f:FormTemplate){call("/forms/${f.id}/archive","POST",json.encodeToString(ExpectedVersion(f.revision)))}
+ suspend fun revokeFormInvitation(i:FormInvitation){call("/forms/invitations/${i.id}","DELETE")}
+ suspend fun removeFormReader(i:FormInvitation,uid:String){call("/forms/invitations/${i.id}/readers/$uid","DELETE")}
+
 }

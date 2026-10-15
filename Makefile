@@ -23,7 +23,10 @@ test-integration:
 test-web:
 	pnpm --dir web test
 test-e2e:
-	pnpm --dir web exec playwright test
+	# Fresh synthetic API/DB per feature file preserves the production auth rate limit.
+	@for spec in web/e2e/*.spec.ts; do \
+		pnpm --dir web exec playwright test "$${spec#web/}" --output "test-results/$${spec##*/}" || exit $$?; \
+	done
 build-web:
 	pnpm --dir web build
 build-android:

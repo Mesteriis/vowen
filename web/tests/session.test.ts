@@ -45,3 +45,38 @@ it('binds native fetch to its global receiver', async () => {
   try { await expect(new SessionClient().get('/instance')).resolves.toEqual({}) }
   finally {globalThis.fetch=original}
 })
+
+it('invalidates private UI once when refresh is revoked without a retry loop',async()=>{
+ const lost=vi.fn()
+ const fetcher=vi.fn(async(input:RequestInfo|URL,options?:RequestInit)=>{void options;return String(input).endsWith('/miniapp')?new Response(JSON.stringify({access_token:'old',refresh_token:'revoked'})):new Response('{}',{status:401})})
+ const client=new SessionClient(fetcher,lost)
+ await client.login('synthetic')
+ await expect(client.get('/me')).rejects.toThrow()
+ expect(lost).toHaveBeenCalledTimes(1)
+ expect(fetcher).toHaveBeenCalledTimes(3)
+ await expect(client.get('/me')).rejects.toThrow()
+ expect((fetcher.mock.calls[3]![1]?.headers as Record<string,string>).Authorization).toBeUndefined()
+ expect(lost).toHaveBeenCalledTimes(1)
+})
+
+it('does not let a stale failed refresh clear a newer login',async()=>{
+ let finishRefresh:((response:Response)=>void)|undefined
+ let logins=0
+ const lost=vi.fn()
+ const fetcher=vi.fn(async(input:RequestInfo|URL,options?:RequestInit)=>{
+  const path=String(input)
+  if(path.endsWith('/miniapp')){logins++;return new Response(JSON.stringify({access_token:logins===1?'old':'new',refresh_token:'refresh'}))}
+  if(path.endsWith('/refresh'))return new Promise<Response>(resolve=>{finishRefresh=resolve})
+  return new Response('{}',{status:(options?.headers as Record<string,string>).Authorization==='Bearer new'?200:401})
+ })
+ const client=new SessionClient(fetcher,lost)
+ await client.login('first')
+ const pending=client.get('/me')
+ const rejected=expect(pending).rejects.toThrow()
+ await vi.waitFor(()=>expect(finishRefresh).toBeDefined())
+ await client.login('second')
+ finishRefresh!(new Response('{}',{status:401}))
+ await rejected
+ await expect(client.get('/me')).resolves.toEqual({})
+ expect(lost).not.toHaveBeenCalled()
+})

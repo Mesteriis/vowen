@@ -22,7 +22,8 @@ VOWEN_AGENT_BRIEF.md; no separate matching brief was found beside the archive.
   member/guest answers, receipts, encrypted drafts, reader snapshots and delivery outbox.
 - **M3: rules, rituals, rewards and Telegram delivery implemented; live recipient acceptance pending.** See dated evidence below.
 - **M4: implemented and locally verified.** Discipline and private diary, server ACL, encrypted versions/content and Mini App/native Android screens. See latest evidence below.
-- **M5–M6: pending.** Repeated surveys, quiet hours/channel settings, full client acceptance and production release. Dedicated deployment is recorded below.
+- **M5: implemented and locally verified; production/live acceptance separate.** Repeated internal surveys, approved-ritual feedback, personal channels/quiet hours and both clients. See M5 evidence below.
+- **M6: pending.** Production release and operational acceptance. Dedicated M4 deployment is recorded below.
 
 ## Implemented behavior
 
@@ -622,3 +623,53 @@ locks. This is server-side acceptance, not a real-participant Android/Mini App
 session or a Telegram notification receipt test. New discipline scopes still
 require each participant's personal agreement. Ongoing scheduled backup policy,
 physical Android acceptance and independent security review remain separate.
+
+
+## 2026-10-15 — M5 surveys, notifications and client completion
+
+Immutable survey plans pin a published form version, one internal recipient and
+explicit readers. Once/daily/selected-weekday schedules create new invitations and
+server drafts per wave, leaving old answers unchanged. PostgreSQL uniqueness plus
+plan locks fence concurrent ticks/manual retries. Downtime processing is bounded;
+expired, paused and before-creation periods are recorded as skipped. Feedback binds
+an assignment/direct authority revision and creates one wave after approval.
+Revocation is checked at generation and before queued invitation delivery. Author
+and recipient independently control their own pause. No participant consent or
+relationship scope was created/confirmed by this work. Automatic guest subscriptions
+remain outside this slice; fresh manual guest invitation/receipt flows are preserved.
+
+Personal in-app/Telegram choices and timezone-aware quiet intervals now cover member
+and form outboxes. Quiet deferrals consume no send attempts, including settings
+changed after claim; editing quiet hours re-evaluates deferrals without removing real
+retry backoff. Telegram off/on generations prevent cancelled and late-committing
+outboxes from resurrecting. Selecting a channel cannot opt into the bot. Neutral
+blocked-bot handling and existing uncertain-send fencing remain. In-flight sends
+cannot be recalled; form notices retain bounded at-least-once retry semantics.
+
+Mini App and native Compose have periodic/approved-ritual creation, reader selection,
+manual wave, independent pauses, history and notification editors. Android also has
+editable invitation lifetime/retention/delivery, invitation revoke, reader removal
+and form archive. Device-local light/dark/system themes cover member/guest entry.
+Stale refresh responses cannot clear or replace a newer login. Permanent web auth
+failure unmounts private panels and requests reopening through
+Telegram, preserving assertion replay protection. Native advanced conditional form
+editing/preview, diary file export and automatic App Links remain explicitly deferred
+in ANDROID_CAPABILITIES.md; no WebView or fake success was added.
+
+Local gates: **197 PostgreSQL/backend tests**, **5 Vitest**, **13 browser E2E**,
+**14 JVM tests**, **39 Compose instrumentation tests** on the dedicated Android 16
+AVD. Ruff/ESLint, mypy/vue-tsc, web/Android builds and Android lint passed. Contracts
+regenerated without drift; tracked-tree/history secret heuristic passed. Migration
+0017/0018 upgrade/downgrade rehearsal preserved existing synthetic profiles, forms
+and encrypted journal rows, followed by a real API read/decryption. DST regressions
+cover fold/gap waves and quiet boundaries through both repeated intervals.
+
+Browser E2E now launches a fresh synthetic API/database seed per feature file. The
+expanded suite exceeded the genuine 20/minute localhost login limit in one shared
+server; production limiter/replay checks remain unchanged. All feature files are
+discovered and failures preserve their exit code. Failed test-auth reuse/selectors
+and missing test flush/defaults were corrected rather than weakening checks.
+
+No production deployment, live Telegram delivery or physical Android acceptance is
+claimed. The deployed M4/schema0016 remains the baseline; M5 needs an explicit backup,
+restore rehearsal and 0017/0018 deployment. Detailed behavior/rollback: M5.md.

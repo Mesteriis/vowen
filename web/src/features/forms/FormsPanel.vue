@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import {onMounted,ref,watch} from 'vue'
+import SurveysPanel from '../surveys/SurveysPanel.vue'
 import FormEditor from './FormEditor.vue'
 import FormRunner from './FormRunner.vue'
 import type {SessionClient} from '../auth/session'
 import type {components} from '../../shared/api'
 import type {Form,Schema,Access,Result,Invitation,AnswerMap} from './types'
-const props=defineProps<{client:SessionClient;ru:boolean;participants:components['schemas']['ParticipantView'][]}>()
+const props=defineProps<{client:SessionClient;me:components['schemas']['MemberView'];ru:boolean;participants:components['schemas']['ParticipantView'][]}>()
 const forms=ref<Form[]>([]),assigned=ref<Access[]>([]),results=ref<Result[]>([])
 const editing=ref<Form|null>(null),editor=ref(false),inviting=ref<Form|null>(null),opened=ref<Access|null>(null)
 const recipient=ref(''),readers=ref<string[]>([]),link=ref(''),busy=ref(false),error=ref(''),message=ref(''),deliver=ref(false),contact=ref(''),ttl=ref(7),retention=ref(90),invitations=ref<Invitation[]>([])
@@ -43,6 +44,7 @@ async function remove(){await run(async()=>{if(!deleting.value)return;await prop
    <p>{{ru?'Ссылка секретная; первый обладатель может открыть её. Это не подтверждение личности.':'The link is secret; its first holder can activate it. It does not verify identity.'}}</p>
    <article v-for="i in invitations" :key="i.id"><p>{{i.id}} · {{i.delivery_status}} · {{i.revoked?'revoked':i.expires_at}}</p><button :disabled="busy||i.revoked" @click="run(async()=>{await client.delete('/forms/invitations/'+i.id);i.revoked=true})">{{ru?'Отозвать приглашение':'Revoke invitation'}}</button><label>{{ru?'Удалить читателя':'Remove reader'}}<select @change="run(async()=>{const uid=($event.target as HTMLSelectElement).value;if(uid)await client.delete('/forms/invitations/'+i.id+'/readers/'+uid)})"><option value="">—</option><option v-for="p in participants" :key="p.id" :value="p.id">{{p.display_name}}</option></select></label></article>
   </section>
+  <SurveysPanel :client="client" :me="me" :participants="participants" :ru="ru" @changed="run(load)" />
   <h3>{{ru?'Мне назначены':'Assigned to me'}}</h3><article v-for="a in assigned" :key="a.id"><p>{{a.schema_body.title}} · {{a.status}}</p><button v-if="a.status==='draft'" @click="opened=a">{{ru?'Заполнить':'Fill form'}}</button></article>
   <section v-if="opened"><h3>{{opened.schema_body.title}}</h3><p>{{ru?'Читатели результатов:':'Results readers:'}} {{opened.readers.map(r=>r.display_name).join(', ')||'—'}}</p><p>{{ru?'Хранение до':'Retained until'}} {{opened.retention_until??(opened.retention_days+' '+(ru?'дней после отправки':'days after submission'))}}</p><FormRunner :key="opened.id" :schema="opened.schema_body" :initial="opened.answers" :ru="ru" :busy="busy" @save="draft" @submit="submit" /></section>
   <h3>{{ru?'Доступные ответы':'Available responses'}}</h3><article v-for="r in results" :key="r.id"><h4>{{r.schema_body.title}}</h4><dl v-for="q in r.schema_body.questions.filter(q=>r.answers[q.id]!==undefined)" :key="q.id"><dt>{{q.label}}</dt><dd>{{r.answers[q.id]}}</dd></dl><button v-if="r.can_delete" @click="deleting=r">{{ru?'Удалить свой ответ':'Delete own response'}}</button></article>

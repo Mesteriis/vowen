@@ -8,6 +8,8 @@ import androidx.activity.compose.setContent
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.core.view.WindowCompat
 import androidx.compose.foundation.Image
 import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.rememberScrollState
@@ -34,11 +36,16 @@ class MainActivity:ComponentActivity() {
    val guest by guestModel.visibleState
    var firstFrame by remember {mutableStateOf(true)}
    LaunchedEffect(Unit){withFrameNanos{};firstFrame=false}
-   VowenTheme {
+   val appearancePreferences=remember{getSharedPreferences("appearance",0)}
+   var appearance by remember{mutableStateOf(appearancePreferences.getString("theme","dark")?:"dark")}
+   val lightSystemBars=appearance=="light"||(appearance=="system"&&!isSystemInDarkTheme())
+   SideEffect{WindowCompat.getInsetsController(window,window.decorView).apply{isAppearanceLightStatusBars=lightSystemBars;isAppearanceLightNavigationBars=lightSystemBars}}
+   VowenTheme(appearance=appearance) {
     StartupGate(firstFrame||screen.booting) {
     Surface(Modifier.fillMaxSize()) {
      Column(Modifier.safeDrawingPadding().padding(24.dp).verticalScroll(rememberScrollState()),verticalArrangement=Arrangement.spacedBy(16.dp)) {
       Row(verticalAlignment=androidx.compose.ui.Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)){Image(painterResource(R.drawable.vowen_crest),contentDescription=null,modifier=Modifier.size(40.dp));Column{Text("Vowen",style=MaterialTheme.typography.headlineMedium,color=MaterialTheme.colorScheme.primary);screen.member?.let{Text(it.display_name,style=MaterialTheme.typography.bodySmall)}};if(screen.member!=null)TextButton(onClick={choosingInstance=!choosingInstance},enabled=!screen.busy){Text(if(screen.member?.language=="ru")"Инстанс" else "Instance")}}
+      M4Choice(if(screen.member?.language=="ru")"Оформление" else "Appearance",appearance,listOf("dark" to if(screen.member?.language=="ru")"Тёмное" else "Dark","light" to if(screen.member?.language=="ru")"Светлое" else "Light","system" to if(screen.member?.language=="ru")"Системное" else "System"),false){appearance=it;appearancePreferences.edit().putString("theme",it).apply()}
       if(screen.member==null||choosingInstance||guest)TextButton(onClick={if(guest)guestModel.close() else guestModel.visibleState.value=true},enabled=!guestModel.busyState.value) {Text("Guest form / Гостевая анкета")}
       if(guest)NativeGuestScreen(guestModel) {guestModel.close()}
       if(!guest) {
@@ -64,7 +71,7 @@ class MainActivity:ComponentActivity() {
        }
        WorkspaceScreen(member,screen.workspace,screen.sessionId,screen.busy,screen.completed,
         WorkspaceActions(model::refreshWorkspace,model::propose,model::relationAction,model::changeRelation,model::saveProfile,model::revokeSession),
-        FormActions(model::refreshWorkspace,model::saveForm,model::publishForm,model::inviteForm,model::saveFormDraft,model::submitForm,model::deleteFormResult),screen.formLink,RuleActions(model::refreshWorkspace,model::saveRule,model::ruleTemplate,model::assignRule,model::decideRule,model::ruleHistory),RitualActions(model::refreshWorkspace,model::saveRitual,model::ritualTemplate,model::ritualHistory,model::assignRitual,model::scheduleRitual,model::ritualAssignment,model::reportRitual,model::reviewRitual,model::skipRitual,model::uploadEvidence,{e->model.prepareEvidenceSave(e){saveEvidence.launch(evidenceFileName(e))}},model::discardEvidence,model::stagedEvidence),RewardActions(model::refreshWorkspace,model::saveReward,model::grantReward,model::transitionReward),error=screen.error,disciplineActions=DisciplineActions(model::refreshWorkspace,model::createDiscipline,model::reviseDiscipline,model::decideDiscipline),journalActions=JournalActions(model::refreshWorkspace,model::saveJournal,model::deleteJournal))
+        FormActions(model::refreshWorkspace,model::saveForm,model::publishForm,model::inviteForm,model::saveFormDraft,model::submitForm,model::deleteFormResult,model::archiveForm,model::formManagement,model::revokeFormInvitation,model::removeFormReader),screen.formLink,RuleActions(model::refreshWorkspace,model::saveRule,model::ruleTemplate,model::assignRule,model::decideRule,model::ruleHistory),RitualActions(model::refreshWorkspace,model::saveRitual,model::ritualTemplate,model::ritualHistory,model::assignRitual,model::scheduleRitual,model::ritualAssignment,model::reportRitual,model::reviewRitual,model::skipRitual,model::uploadEvidence,{e->model.prepareEvidenceSave(e){saveEvidence.launch(evidenceFileName(e))}},model::discardEvidence,model::stagedEvidence),RewardActions(model::refreshWorkspace,model::saveReward,model::grantReward,model::transitionReward),error=screen.error,disciplineActions=DisciplineActions(model::refreshWorkspace,model::createDiscipline,model::reviseDiscipline,model::decideDiscipline),journalActions=JournalActions(model::refreshWorkspace,model::saveJournal,model::deleteJournal),surveyActions=SurveyActions(model::createSurvey,model::transitionSurvey,model::sendSurvey,model::surveyWaves),notificationActions=NotificationActions(model::updateNotifications))
       }
       }
      }

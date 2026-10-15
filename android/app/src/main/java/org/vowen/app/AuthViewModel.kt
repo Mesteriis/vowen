@@ -146,6 +146,15 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
  fun saveReward(r:RewardDefinition?,body:RewardContent)=run{api.saveReward(r,body);loadWorkspace(true)}
  fun grantReward(body:GrantCommand)=run{api.grantReward(body);loadWorkspace(true)}
  fun transitionReward(g:RewardGrant,action:String)=run{api.transitionReward(g,action);loadWorkspace(true)}
+ fun formManagement(f:FormTemplate,done:(List<FormInvitation>)->Unit)=run{done(api.formManagement(f))}
+ fun archiveForm(f:FormTemplate)=run{api.archiveForm(f);loadWorkspace(true)}
+ fun revokeFormInvitation(i:FormInvitation)=run{api.revokeFormInvitation(i);loadWorkspace(true)}
+ fun removeFormReader(i:FormInvitation,uid:String)=run{api.removeFormReader(i,uid);loadWorkspace(true)}
+ fun createSurvey(body:SurveyCreate)=run{api.createSurvey(body);loadWorkspace(true)}
+ fun transitionSurvey(p:SurveyPlan,action:String)=run{api.transitionSurvey(p,action);loadWorkspace(true)}
+ fun sendSurvey(p:SurveyPlan,key:String,done:()->Unit)=run{api.sendSurvey(p,key);done();loadWorkspace(true)}
+ fun surveyWaves(p:SurveyPlan,done:(List<SurveyWave>)->Unit)=run{done(api.surveyWaves(p))}
+ fun updateNotifications(body:NotificationPatch)=run{api.updateNotifications(body);loadWorkspace(true)}
  fun logout()=run { try { api.call("/auth/logout","POST") } finally { clear() } }
  private fun clear() { pendingEvidenceSave=null;instance.clear();vault.clear();nonce=null;mutable.value=Screen(origin=instance.origin,booting=false) }
 }

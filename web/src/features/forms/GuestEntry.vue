@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AppearanceSelect from "../appearance/AppearanceSelect.vue"
 import {onMounted,onUnmounted,ref} from 'vue'
 import FormRunner from './FormRunner.vue'
 import type {components} from '../../shared/api'
@@ -47,7 +48,7 @@ async function issueReceipt(){await run(async()=>{const r=await call<{public_id:
 async function remove(){await run(async()=>{await call('/submission','DELETE');deleted.value=true;result.value=null;data.value=null;confirmDelete.value=false;receipt.value=''})}
 </script>
 <template>
- <main><header><span>Vowen</span><button @click="ru=!ru">{{ru?'EN':'RU'}}</button></header><h1>{{ru?'Гостевая анкета':'Guest form'}}</h1>
+ <main><header><AppearanceSelect :ru="ru" /><span>Vowen</span><button @click="ru=!ru">{{ru?'EN':'RU'}}</button></header><h1>{{ru?'Гостевая анкета':'Guest form'}}</h1>
   <p>{{ru?'Ссылка даёт доступ только к одной анкете. Аккаунт не создаётся; Telegram не нужен.':'This secret link grants access to one form. No account is created; Telegram is not required.'}}</p>
   <p>{{ru?'Ответ не анонимный. Оператор сервера имеет технический доступ. Проверка возраста — только ваше подтверждение.':'Responses are not anonymous. The server operator has technical access. Age is self-confirmed only.'}}</p>
   <p v-if="error" role="alert">{{error}}</p><p role="status">{{message}}</p>

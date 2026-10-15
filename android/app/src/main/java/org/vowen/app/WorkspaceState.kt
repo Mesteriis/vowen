@@ -19,7 +19,9 @@ data class WorkspaceState(
  val rewardGrants:List<RewardGrant> = emptyList(),
  val ritualHistory:List<RitualTemplate> = emptyList(),
  val discipline:List<DisciplineRecord> = emptyList(),
- val journal:List<JournalEntry> = emptyList()
+ val journal:List<JournalEntry> = emptyList(),
+ val surveys:List<SurveyPlan> = emptyList(),
+ val notificationSettings:NotificationSettings? = null
 )
 
-suspend fun Api.workspace():WorkspaceState = WorkspaceState(relations(),participants(),sessions(),forms(),formInvitations(),formResults(),rules(),ruleAssignments(),rituals=rituals(),ritualAssignments=ritualAssignments(),ritualOccurrences=ritualOccurrences(),ritualNotices=ritualNotices(),rewards=rewards(),rewardGrants=rewardGrants(),rewardNotices=rewardNotices(),discipline=discipline(),journal=journal())
+suspend fun Api.workspace():WorkspaceState = WorkspaceState(relations(),participants(),sessions(),forms(),formInvitations(),formResults(),rules(),ruleAssignments(),rituals=rituals(),ritualAssignments=ritualAssignments(),ritualOccurrences=ritualOccurrences(),ritualNotices=ritualNotices(),rewards=rewards(),rewardGrants=rewardGrants(),rewardNotices=rewardNotices(),discipline=discipline(),journal=journal(),surveys=surveys(),notificationSettings=notificationSettings())

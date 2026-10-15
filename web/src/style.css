@@ -10,3 +10,18 @@ dialog.ritual-dialog{position:fixed;margin:auto;color:#f3e9dc}dialog.ritual-dial
 .occurrence-row a{color:var(--gold);text-underline-offset:4px}
 
 input[type=file]::file-selector-button{font:inherit;background:var(--raised);color:var(--gold);border:1px solid #806344;border-radius:6px;padding:8px 12px;margin-inline-end:12px;cursor:pointer}
+
+.appearance-select{margin:0;font-size:.8rem}.appearance-select select{min-height:36px;padding:4px 8px;margin-top:2px}header{flex-wrap:wrap}
+:root[data-theme=light]{color-scheme:light;background:#f5eee4;color:#30251d;--surface:#fffbf5;--raised:#eadfd2;--gold:#76501b;--muted:#6f5b49;--border:#b19b81;--rose:#93483f}
+:root[data-theme=light] label{color:#493626}
+:root[data-theme=light] input:not([type=checkbox]):not([type=radio]),:root[data-theme=light] select,:root[data-theme=light] textarea{background:#fffdf9;color:#30251d;border-color:#9c8060}
+:root[data-theme=light] input::placeholder,:root[data-theme=light] textarea::placeholder{color:#79614c}
+:root[data-theme=light] .workspace-nav nav a{color:#493626}
+:root[data-theme=light] .workspace-nav nav a:first-child{background:#63322f;color:#fff0e2}
+:root[data-theme=light] .workspace-nav nav a:hover{background:#e9d5c4;color:#493626}
+:root[data-theme=light] .secondary,:root[data-theme=light] button[type=button]{background:#eadfd2;color:#62431d}
+:root[data-theme=light] .report-attempt{background:#f3e9dc}
+:root[data-theme=light] .status-tag{color:#76501b;border-color:#9c8060}
+:root[data-theme=light] .status-tag[data-status=approved]{color:#345b35;border-color:#688c6a}
+:root[data-theme=light] .status-tag[data-status=needs_changes],:root[data-theme=light] [role=alert]{color:#8d3228}
+:root[data-theme=light] dialog.ritual-dialog{color:#30251d}

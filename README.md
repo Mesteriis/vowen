@@ -4,12 +4,13 @@ Self-hosted, single-instance workspace for consenting adult relationship partici
 N participants, explicit contextual authority, Telegram identity and operator-only
 account provisioning. No registration, multi-tenancy or public social network.
 
-**Technical alpha.** M0–M4 are implemented: CLI provisioning, authentication,
+**Technical alpha.** M0–M5 are implemented: CLI provisioning, authentication,
 contextual relationships, forms, rules, rituals/evidence, rewards, discipline and
 private diary, with Mini App and native Android screens. Telegram ritual/reward
 delivery is implemented; live delivery and physical-device acceptance remain open.
-M5 client/settings completion and M6 release acceptance remain unfinished.
-See [actual evidence and gaps](docs/STATUS.md), [M4 behavior](docs/M4.md).
+Recurring surveys, quiet hours and channel settings are implemented. M6 release
+acceptance remains open. M5 has not been deployed to production.
+See [actual evidence and gaps](docs/STATUS.md), [M4 behavior](docs/M4.md), [M5 behavior and limits](docs/M5.md).
 [Русский](README.ru.md).
 
 Python 3.13, PostgreSQL 17, Vue/TypeScript and native Kotlin/Compose. MIT and the

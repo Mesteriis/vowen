@@ -250,3 +250,11 @@ HTTPS обязателен для production. Адрес должен быть �
 Обязательны healthchecks, graceful shutdown, минимальные privileges контейнеров, лимиты запросов и размеров тела. Настройки доступа к FastAPI docs/OpenAPI в production отделить от необходимости иметь публичный `contracts/openapi.json` в OSS-репозитории.
 
 До объявления MVP рабочим нужны проверенные инструкции backup/restore: БД, вложения при наличии и ключи с независимым защищённым хранением. Восстановление проверяется на отдельной установке синтетическим зашифрованным ответом. Обновление включает backup, миграцию и описанную стратегию возврата через восстановление; не обещать безопасный downgrade любой миграции.
+
+## M5 runtime additions
+
+`modules/surveys` stores immutable plans and unique waves. The existing schedule worker
+processes rituals first, then survey plans in a separate transaction. Notification
+preferences in the identity profile are personal and independently versioned. Both
+form and member outboxes capture channel/opt-in generations and recheck current
+rights/quiet hours before network I/O. See [M5 contracts and limits](M5.md).

@@ -1,4 +1,4 @@
-# Android capabilities at M4
+# Android capabilities at M5
 
 | Flow | Native Android | Mini App / guest web |
 |---|---|---|
@@ -9,8 +9,8 @@
 | Supplied crest / velvet startup | Local assets, actual bootstrap | Local assets, actual loading |
 | Basic form builder / new version / publish | Implemented, ten question kinds | Implemented |
 | Conditional rule editor / preview | Existing rules preserved; editor deferred | Implemented |
-| Internal and guest invitation / reader selection | Implemented, default 7-day invite / 90-day retention after submission | Implemented, editable limits |
-| Reader removal / invitation revoke / archive | Use Mini App | Implemented |
+| Internal and guest invitation / reader selection | Implemented, editable TTL/retention and optional Telegram delivery | Implemented, editable limits |
+| Reader removal / invitation revoke / archive | Native screens implemented | Implemented |
 | Internal drafts / review / submit / results / delete | Implemented | Implemented |
 | Ritual evidence: links, photo/video, required policy | Native system picker/save; protected API, bounded memory | Implemented, authenticated download |
 | Discipline: exact rule/event link, proposal/revision, personal consent, transitions/comments/history | Native Compose | Implemented |
@@ -19,6 +19,9 @@
 | Reward catalogue, manual/automatic offers, accept/decline/deliver/cancel | Native Compose | Implemented |
 | Guest form / independent receipt / delete | Native entry by pasting HTTPS link | Standalone /f and /r, no Telegram |
 | Guest credential persistence | Memory-only ViewModel survives activity recreation; closing loses draft capability | Secure HttpOnly cookie, at most 24 hours |
+| Recurring surveys: periodic/approved ritual, fixed version, own pause, waves | Native Compose | Implemented |
+| Personal notification channels and DST-aware quiet hours | Native Compose | Implemented |
+| Device-local dark/light/system appearance | Native Material theme | Member and guest web |
 | Automatic App Links | Not implemented | Secret links open in browser |
 
 Android guest entry is separate from the selected member instance and never attaches

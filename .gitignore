@@ -30,3 +30,6 @@ artifacts/deployment/
 
 # Local synthetic M4 emulator/screenshots and test evidence
 artifacts/m4/
+
+# Local synthetic M5 emulator and migration evidence
+artifacts/m5/

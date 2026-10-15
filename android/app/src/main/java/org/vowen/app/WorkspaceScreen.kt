@@ -19,15 +19,17 @@ data class WorkspaceActions(
 )
 
 @Composable
-fun WorkspaceScreen(member:Member,data:WorkspaceState,currentSessionId:String?,busy:Boolean,completed:Int,actions:WorkspaceActions,formActions:FormActions?=null,formLink:String?=null,ruleActions:RuleActions?=null,ritualActions:RitualActions?=null,rewardActions:RewardActions?=null,error:String?=null,disciplineActions:DisciplineActions?=null,journalActions:JournalActions?=null) {
+fun WorkspaceScreen(member:Member,data:WorkspaceState,currentSessionId:String?,busy:Boolean,completed:Int,actions:WorkspaceActions,formActions:FormActions?=null,formLink:String?=null,ruleActions:RuleActions?=null,ritualActions:RitualActions?=null,rewardActions:RewardActions?=null,error:String?=null,disciplineActions:DisciplineActions?=null,journalActions:JournalActions?=null,surveyActions:SurveyActions?=null,notificationActions:NotificationActions?=null) {
  var tab by remember {mutableIntStateOf(0)}
  val ru=member.language=="ru"
  val tabs=listOf("relations","sessions","profile")+(if(formActions!=null)listOf("forms") else emptyList())+(if(ruleActions!=null)listOf("rules") else emptyList())+(if(ritualActions!=null)listOf("rituals") else emptyList())+(if(rewardActions!=null)listOf("rewards") else emptyList())
- val allTabs=tabs+(if(disciplineActions!=null)listOf("discipline") else emptyList())+(if(journalActions!=null)listOf("journal") else emptyList())
- val labels=if(ru)mapOf("relations" to "Отношения","sessions" to "Сессии","profile" to "Профиль","forms" to "Анкеты","rules" to "Правила","rituals" to "Ритуалы","rewards" to "Награды","discipline" to "Дисциплина","journal" to "Дневник") else mapOf("relations" to "Relations","sessions" to "Sessions","profile" to "Profile","forms" to "Forms","rules" to "Rules","rituals" to "Rituals","rewards" to "Rewards","discipline" to "Discipline","journal" to "Diary")
+ val allTabs=tabs+(if(surveyActions!=null)listOf("surveys") else emptyList())+(if(notificationActions!=null)listOf("notifications") else emptyList())+(if(disciplineActions!=null)listOf("discipline") else emptyList())+(if(journalActions!=null)listOf("journal") else emptyList())
+ val labels=if(ru)mapOf("surveys" to "Повторные анкеты","notifications" to "Уведомления","relations" to "Отношения","sessions" to "Сессии","profile" to "Профиль","forms" to "Анкеты","rules" to "Правила","rituals" to "Ритуалы","rewards" to "Награды","discipline" to "Дисциплина","journal" to "Дневник") else mapOf("surveys" to "Recurring surveys","notifications" to "Notifications","relations" to "Relations","sessions" to "Sessions","profile" to "Profile","forms" to "Forms","rules" to "Rules","rituals" to "Rituals","rewards" to "Rewards","discipline" to "Discipline","journal" to "Diary")
  val content:@Composable ()->Unit={
   if(allTabs.getOrNull(tab) !in listOf("rituals","rewards"))TextButton(onClick=actions.refresh,enabled=!busy,modifier=Modifier.testTag("workspace-refresh")){Text(if(ru)"Обновить данные" else "Refresh data")}
   when(allTabs.getOrNull(tab)){
+   "surveys"->surveyActions?.let{NativeSurveysScreen(member,data,busy,completed,it)}
+   "notifications"->notificationActions?.let{NativeNotificationScreen(data.notificationSettings,busy,it,ru)}
    "discipline"->disciplineActions?.let{NativeDisciplineScreen(member,data,busy,completed,it)}
    "journal"->journalActions?.let{NativeJournalScreen(member,data,busy,completed,it)}
    "relations"->RelationsScreen(member,data,busy,completed,actions)

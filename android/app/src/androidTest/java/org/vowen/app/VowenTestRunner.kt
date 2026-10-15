@@ -31,7 +31,8 @@ class TestApplication:VowenApplication(){
     "/rewards"->"[]"
     "/reward-grants"->json.encodeToString(listOf(RewardGrant(id="g",reward_version_id="v",issuer_id="a",recipient_id="b",occurrence_id="o",reward_policy_id="p",revision=1,status="offered",created_at="2026-10-15T09:00Z",title="An evening together",description="Choose a shared activity.",conditions="By agreement",history=listOf(GrantHistory(revision=1,status="offered",actor_id="a",created_at="2026-10-15T09:00Z")))))
     "/participants"->json.encodeToString(listOf(Participant(id="a",display_name="Demo A",profile_labels=emptyList()),Participant(id="b",display_name="Synthetic QA",profile_labels=emptyList())))
-    "/discipline-records","/journal","/relations","/sessions","/forms","/form-invitations","/form-submissions","/rules","/rule-assignments","/rituals","/ritual-assignments","/ritual-notices"->"[]"
+    "/me/notifications"->json.encodeToString(NotificationSettings(channels=listOf("in_app","telegram"),quiet_enabled=false,quiet_start=1320,quiet_end=480,revision=1,telegram_connected=false,timezone="UTC"))
+    "/survey-schedules","/discipline-records","/journal","/relations","/sessions","/forms","/form-invitations","/form-submissions","/rules","/rule-assignments","/rituals","/ritual-assignments","/ritual-notices"->"[]"
     else->error("Unexpected synthetic screenshot request")
    }
    Response.Builder().request(chain.request()).protocol(Protocol.HTTP_1_1).code(200).message("Synthetic QA").body(body.toResponseBody("application/json".toMediaType())).build()

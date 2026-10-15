@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AppearanceSelect from "./features/appearance/AppearanceSelect.vue"
 import { computed, ref, onMounted } from 'vue'
 import DisciplinePanel from './features/discipline/DisciplinePanel.vue'
 import JournalPanel from './features/journal/JournalPanel.vue'
@@ -6,6 +7,7 @@ import RewardsPanel from './features/rewards/RewardsPanel.vue'
 import RitualsPanel from './features/rituals/RitualsPanel.vue'
 import RulesPanel from './features/rules/RulesPanel.vue'
 import FormsPanel from './features/forms/FormsPanel.vue'
+import NotificationSettings from './features/notifications/NotificationSettings.vue'
 import ProfileSettings from './features/profile/ProfileSettings.vue'
 import { SessionClient } from './features/auth/session'
 import type { components } from './shared/api'
@@ -13,7 +15,8 @@ type Participant = components['schemas']['ParticipantView']
 type Me = components['schemas']['MemberView']
 type Relation = components['schemas']['RelationView']
 type Session = components['schemas']['SessionView']
-const client = new SessionClient()
+const reAuth=ref(false)
+const client = new SessionClient(undefined,()=>{me.value=null;relations.value=[];participants.value=[];sessions.value=[];reAuth.value=true})
 const instanceName=ref('Vowen'),booting=ref(true)
 onMounted(async()=>{try{instanceName.value=(await client.get<{display_name:string}>('/instance')).display_name}catch{error.value='NETWORK_ERROR'}finally{booting.value=false}})
 const ru = ref(navigator.language.startsWith('ru'))
@@ -40,6 +43,7 @@ async function login(){await run(async()=>{
  telegram.ready()
  await client.login(telegram.initData)
  await load()
+ reAuth.value=false
 })}
 async function logout(){await run(async()=>{try{await client.logout()}finally{me.value=null;relations.value=[];participants.value=[];sessions.value=[]}})}
 async function personal(){await run(async()=>{await client.post(me.value?.paused?'/me/resume':'/me/pause');await load()})}
@@ -57,11 +61,12 @@ function name(id:string){return participants.value.find(p=>p.id===id)?.display_n
 <template>
  <div v-if="booting" class="startup-screen" role="status" :aria-label="ru?'Загрузка Vowen':'Loading Vowen'"><img src="/brand/vowen-velvet.webp" alt=""><div><span class="brand-wordmark">Vowen</span><p>{{ru?'Открываем ваше пространство…':'Opening your workspace…'}}</p></div></div>
  <main :class="{'member-workspace':!!me}" :aria-busy="booting">
-  <aside v-if="me" class="workspace-nav" aria-label="Workspace"><a class="nav-brand" href="#home"><img src="/brand/vowen-crest.webp" alt=""><span>{{instanceName}}</span></a><nav><a href="#rituals">{{ru?'Мой день · Ритуалы':'My day · Rituals'}}</a><a href="#rewards">{{ru?'Награды':'Rewards'}}</a><a href="#discipline">{{ru?'Дисциплина':'Discipline'}}</a><a href="#journal">{{ru?'Дневник':'Diary'}}</a><a href="#rules">{{ru?'Правила':'Rules'}}</a><a href="#forms">{{ru?'Анкеты и опросы':'Forms & surveys'}}</a><a href="#relations">{{t.relations}}</a><a href="#profile">{{ru?'Профиль':'Profile'}}</a><a href="#sessions">{{t.sessions}}</a></nav><p>{{ru?'Ближе, чем слова.':'Closer through care.'}}</p></aside>
+  <aside v-if="me" class="workspace-nav" aria-label="Workspace"><a class="nav-brand" href="#home"><img src="/brand/vowen-crest.webp" alt=""><span>{{instanceName}}</span></a><nav><a href="#rituals">{{ru?'Мой день · Ритуалы':'My day · Rituals'}}</a><a href="#rewards">{{ru?'Награды':'Rewards'}}</a><a href="#discipline">{{ru?'Дисциплина':'Discipline'}}</a><a href="#journal">{{ru?'Дневник':'Diary'}}</a><a href="#rules">{{ru?'Правила':'Rules'}}</a><a href="#forms">{{ru?'Анкеты и опросы':'Forms & surveys'}}</a><a href="#relations">{{t.relations}}</a><a href="#surveys">{{ru?'Повторные анкеты':'Recurring surveys'}}</a><a href="#notifications">{{ru?'Уведомления':'Notifications'}}</a><a href="#profile">{{ru?'Профиль':'Profile'}}</a><a href="#sessions">{{t.sessions}}</a></nav><p>{{ru?'Ближе, чем слова.':'Closer through care.'}}</p></aside>
   <div class="workspace-content" id="home">
-  <header><a class="app-brand" href="#home"><img src="/brand/vowen-crest.webp" alt=""><span>{{instanceName}}</span></a><button @click="ru=!ru" :aria-label="ru?'English':'Русский'">{{ru?'EN':'RU'}}</button></header>
+  <header><AppearanceSelect :ru="ru" /><a class="app-brand" href="#home"><img src="/brand/vowen-crest.webp" alt=""><span>{{instanceName}}</span></a><button @click="ru=!ru" :aria-label="ru?'English':'Русский'">{{ru?'EN':'RU'}}</button></header>
   <h1>{{me?(ru?'Ваш день, ':'Your day, ')+me.display_name:t.title}}</h1><p class="workspace-tagline muted">{{ru?'Ваш ритм. Ваши договорённости.':'Your rhythm. Your agreements.'}}</p>
   <p v-if="error" role="alert">{{t.error}}: {{error}}</p>
+  <p v-if="reAuth" role="alert">{{ru?'Сессия завершена. Закройте приложение и откройте его заново через бота для нового входа.':'Session ended. Close this app and reopen it through the bot to sign in again.'}}</p>
   <section v-if="!me"><p>{{t.closed}}</p><button :disabled="busy" @click="login">{{t.login}}</button></section>
   <template v-else>
    <section class="member-controls"><h2>{{me.display_name}}</h2><button :disabled="busy" @click="run(load)">{{t.refresh}}</button><p v-if="me.paused">⏸ {{t.pause}}</p><button :disabled="busy" @click="personal">{{me.paused?t.resume:t.pause}}</button> <button :disabled="busy" @click="logout">{{t.logout}}</button></section>
@@ -70,7 +75,8 @@ function name(id:string){return participants.value.find(p=>p.id===id)?.display_n
    <DisciplinePanel :client="client" :ru="ru" :me="me" :participants="participants" />
    <JournalPanel :client="client" :ru="ru" :me="me" :participants="participants" />
    <RulesPanel :client="client" :ru="ru" :me="me" :participants="participants" />
-   <FormsPanel :client="client" :ru="ru" :participants="participants" />
+   <FormsPanel :me="me" :client="client" :ru="ru" :participants="participants" />
+   <NotificationSettings :key="me.timezone" :client="client" :ru="ru" />
    <ProfileSettings :member="me" :client="client" :ru="ru" @saved="member => {me=member;ru=member.language==='ru'}" />
    <section id="relations"><h2>{{t.relations}}</h2><p v-if="!relations.length">{{t.empty}}</p>
     <article v-for="relation in relations" :key="relation.id">
