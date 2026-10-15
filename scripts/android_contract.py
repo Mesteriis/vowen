@@ -4,7 +4,7 @@ from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
 schemas = json.loads((root / 'contracts/openapi.json').read_text())['components']['schemas']
-used = {'SessionTokens':'Tokens', 'MemberView':'Member', 'ParticipantView':'Participant',
+used = {'DisciplineCreate':'DisciplineCreate','DisciplineEdit':'DisciplineEdit','DisciplineDecision':'DisciplineDecision','DisciplineVersionView':'DisciplineVersionView','DisciplineHistory':'DisciplineHistory','DisciplineView':'DisciplineRecord','JournalContent':'JournalContent','JournalEdit':'JournalEdit','JournalView':'JournalEntry','SessionTokens':'Tokens', 'MemberView':'Member', 'ParticipantView':'Participant',
         'ChallengeRequest':'ChallengeRequest', 'ChallengeCreated':'Challenge',
         'ChallengeProof':'Proof', 'ChallengeStatus':'ChallengeStatus',
         'RefreshRequest':'RefreshRequest', 'ProfilePatch':'ProfilePatch',

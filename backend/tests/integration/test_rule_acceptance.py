@@ -197,3 +197,24 @@ async def test_replacement_records_revocation_time_without_rewriting_consent(api
     revoked = next(x for x in history if x["id"] == old["id"])
     assert revoked["accepted_at"] == old["accepted_at"]
     assert datetime.fromisoformat(revoked["decided_at"]) == later
+
+
+async def test_recipient_cannot_modify_assigned_rule_or_create_replacement(api):
+    client, _, ids, tokens, rule = await setup_rule(api)
+    a = (await assign(client, tokens[0], rule, ids[1], [ids[0]])).json()
+    assert (await action(client, tokens[1], a, "accept")).status_code == 200
+    body = {
+        "expected_version": rule["revision"],
+        "title": "Changed by recipient",
+        "description": "No",
+    }
+    assert (
+        await client.patch(f"/api/v1/rules/{rule['id']}", headers=auth(tokens[1]), json=body)
+    ).status_code == 404
+    assert (
+        await client.post(
+            f"/api/v1/rules/{rule['id']}/versions", headers=auth(tokens[1]), json=body
+        )
+    ).status_code == 404
+    visible = (await client.get("/api/v1/rule-assignments", headers=auth(tokens[1]))).json()
+    assert visible[0]["description"] == "sensitive-rule-content"

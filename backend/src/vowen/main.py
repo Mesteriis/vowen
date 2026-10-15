@@ -17,7 +17,9 @@ from vowen.core.http_safety import HttpSafety
 from vowen.core.maintenance import maintenance_loop
 from vowen.modules.auth.router import router
 from vowen.modules.auth.schemas import ErrorResponse
+from vowen.modules.discipline.router import router as discipline_router
 from vowen.modules.forms.router import router as forms_router
+from vowen.modules.journal.router import router as journal_router
 from vowen.modules.relations.router import router as relations_router
 from vowen.modules.rewards.router import router as rewards_router
 from vowen.modules.rituals.evidence import router as evidence_router
@@ -55,6 +57,8 @@ def create_app(settings: Settings) -> FastAPI:
     app.include_router(router)
     app.include_router(relations_router)
     app.include_router(forms_router)
+    app.include_router(discipline_router)
+    app.include_router(journal_router)
     app.include_router(rules_router)
     app.include_router(rituals_router)
     app.include_router(evidence_router)

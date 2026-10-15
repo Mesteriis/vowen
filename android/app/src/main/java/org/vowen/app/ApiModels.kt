@@ -2,6 +2,15 @@
 package org.vowen.app
 import kotlinx.serialization.Serializable
 
+@Serializable data class DisciplineCreate(val conditions: String, val deadline: String? = null, val description: String, val idempotency_key: String, val occurrence_id: String? = null, val recipient_id: String, val reviewer_ids: List<String>, val rule_version_id: String? = null)
+@Serializable data class DisciplineEdit(val conditions: String, val deadline: String? = null, val description: String, val expected_version: Int, val occurrence_id: String? = null, val rule_version_id: String? = null)
+@Serializable data class DisciplineDecision(val action: String, val comment: String? = null, val expected_version: Int, val version_id: String)
+@Serializable data class DisciplineVersionView(val conditions: String, val created_at: String, val deadline: String? = null, val description: String, val id: String, val occurrence_id: String? = null, val rule_title: String?, val rule_version_id: String? = null)
+@Serializable data class DisciplineHistory(val actor_id: String, val comment: String, val created_at: String, val revision: Int, val status: String, val version_id: String)
+@Serializable data class DisciplineRecord(val author_id: String, val effective: Boolean, val history: List<DisciplineHistory>, val id: String, val recipient_id: String, val reviewer_ids: List<String>, val revision: Int, val status: String, val version_id: String, val versions: List<DisciplineVersionView>)
+@Serializable data class JournalContent(val date: String, val mood: String? = null, val published: Boolean? = null, val reader_ids: List<String>? = null, val tags: List<String>? = null, val text: String, val title: String, val visibility: String? = null)
+@Serializable data class JournalEdit(val date: String, val expected_version: Int, val mood: String? = null, val published: Boolean? = null, val reader_ids: List<String>? = null, val refresh_audience: Boolean? = null, val tags: List<String>? = null, val text: String, val title: String, val visibility: String? = null)
+@Serializable data class JournalEntry(val author_id: String, val created_at: String, val date: String, val id: String, val mood: String? = null, val published: Boolean? = null, val reader_ids: List<String>? = null, val revision: Int, val tags: List<String>? = null, val text: String, val title: String, val updated_at: String, val visibility: String? = null)
 @Serializable data class Tokens(val access_expires_at: String, val access_token: String, val refresh_token: String, val session_id: String)
 @Serializable data class Member(val display_name: String, val id: String, val language: String, val paused: Boolean, val profile_labels: List<String>, val profile_version: Int, val timezone: String)
 @Serializable data class Participant(val display_name: String, val id: String, val profile_labels: List<String>)
