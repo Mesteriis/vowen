@@ -121,3 +121,12 @@ cross-instance isolation. Then close remaining M1 UI/CLI acceptance before M2 fo
 
 Local run commands and production boundary details: README.md and
 `docs/operations/bootstrap.md`. This is not the completed product or production MVP.
+
+## Publication / remote CI follow-up
+
+Implementation published to `main`. First Linux backend/web job passed its combined
+install/migration/lint/typecheck/tests/build/contracts/secret-scan step. Android job
+failed in SDK setup before Gradle: setup-android's default obsolete `tools` package
+was unavailable. Workflow now requests `platform-tools` explicitly, pins Ubuntu 24.04
+and uses current Node-24 action generations. This is a CI infrastructure correction;
+local Android acceptance remains four JVM tests + lint + APK build.
