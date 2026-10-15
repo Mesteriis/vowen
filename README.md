@@ -9,7 +9,9 @@ contextual relationships, forms, rules, rituals/evidence, rewards, discipline an
 private diary, with Mini App and native Android screens. Telegram ritual/reward
 delivery is implemented; live delivery and physical-device acceptance remain open.
 Recurring surveys, quiet hours and channel settings are implemented. M6 release
-acceptance remains open. M5 has not been deployed to production.
+acceptance remains open. M5 is deployed with schema 0018; own-account live survey
+notifications, quiet deferral and cancellation checks passed. Partner ritual/reward
+acceptance remains separate.
 See [actual evidence and gaps](docs/STATUS.md), [M4 behavior](docs/M4.md), [M5 behavior and limits](docs/M5.md).
 [Русский](README.ru.md).
 

@@ -2,8 +2,8 @@
 
 The owner deployment uses an unprivileged Debian 13 LXC with Docker, a private
 HTTP Caddy origin, and a separate nginx-ui HTTPS edge. The application source
-was initially deployed from `b0356dd`; M4 is deployed from `859908c` with schema
-0016. No development database or users were copied. See dated deployment evidence
+was initially deployed from `b0356dd`; M5 is deployed from `f60013d` with schema
+0018. No development database or users were copied. See dated deployment evidence
 in [STATUS](STATUS.md).
 
 The files in `deploy/pve` are an example for this topology. Before reuse, replace
@@ -71,9 +71,12 @@ has no Git metadata. Preserve machine-local edge files and secret/config hashes.
 Stop API/worker/poller for the final consistent dump, restore it into a separate
 DB with the backed-up keyring, then rehearse both upgrade and downgrade. Compare
 all existing table fingerprints before resuming writers; only the Alembic version
-and explicitly added empty tables may differ for 0015/0016. Keep original source
-and old image tags until acceptance. Never downgrade after new M4 data is written
-without a separate preservation/rollback decision.
+and explicitly added empty tables may differ for 0015/0016. For 0017/0018, compare
+existing rows projected onto their original columns: new notification columns
+have preserving defaults, so full-row hashes legitimately change. Verify the new
+plan/wave tables separately and decrypt existing encrypted content with the backed-up
+keyring. Keep original source and old image tags until acceptance. Never downgrade
+after new milestone data is written without a separate preservation/rollback decision.
 
 A second `compose run api` conflicts with the running API's fixed proxy-network
 address. Use the `migrate` service for one-off backend jobs instead. Read-only

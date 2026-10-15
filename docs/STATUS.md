@@ -22,8 +22,8 @@ VOWEN_AGENT_BRIEF.md; no separate matching brief was found beside the archive.
   member/guest answers, receipts, encrypted drafts, reader snapshots and delivery outbox.
 - **M3: rules, rituals, rewards and Telegram delivery implemented; live recipient acceptance pending.** See dated evidence below.
 - **M4: implemented and locally verified.** Discipline and private diary, server ACL, encrypted versions/content and Mini App/native Android screens. See latest evidence below.
-- **M5: implemented and locally verified; production/live acceptance separate.** Repeated internal surveys, approved-ritual feedback, personal channels/quiet hours and both clients. See M5 evidence below.
-- **M6: pending.** Production release and operational acceptance. Dedicated M4 deployment is recorded below.
+- **M5: implemented, deployed and own-account live survey notifications verified.** Repeated internal surveys, approved-ritual feedback, personal channels/quiet hours and both clients. See M5 evidence below.
+- **M6: pending.** Production release and operational acceptance. Dedicated M5 deployment is recorded below.
 
 ## Implemented behavior
 
@@ -670,6 +670,59 @@ server; production limiter/replay checks remain unchanged. All feature files are
 discovered and failures preserve their exit code. Failed test-auth reuse/selectors
 and missing test flush/defaults were corrected rather than weakening checks.
 
-No production deployment, live Telegram delivery or physical Android acceptance is
-claimed. The deployed M4/schema0016 remains the baseline; M5 needs an explicit backup,
-restore rehearsal and 0017/0018 deployment. Detailed behavior/rollback: M5.md.
+Production deployment and own-account live survey delivery were subsequently
+verified below. Physical Android and partner ritual/reward acceptance remain open.
+Detailed behavior/rollback: M5.md.
+
+
+## 2026-10-15 — M5 production deployment and live survey acceptance
+
+Deployed application source **f60013de8b0df7c96309b1ccf42213edcf13c867**, schema
+**0018**. Both CI jobs passed for that exact source:
+https://github.com/Mesteriis/vowen/actions/runs/38791252067.
+Documentation-only follow-up commits do not change the deployed application SHA.
+
+Stopped API/worker/bot writers before the PostgreSQL custom dump; backed up original
+source, keyring/token/configuration and table fingerprints with root-only access.
+An authenticated AES-256-GCM off-host copy was recovered in memory, using a separate
+owner-only recovery key. Restore into a disposable database reproduced every original
+table fingerprint and decrypted the existing encrypted content with the backed-up
+keyring. Rehearsed 0016 → 0018 → 0016: upgrade preserved every original column and
+created empty plan/wave tables; downgrade reproduced the full baseline exactly.
+Production 0017/0018 migration then preserved all legacy-column fingerprints.
+Existing edge configuration and secret/key hashes remained unchanged.
+
+Public TLS/readiness/static/CSP/body-cap/secret-denial checks passed. Unauthenticated
+notification settings and survey-plan endpoints return 401. The served Mini App
+contains M5 code. API/db/worker healthy, proxy/bot running, zero restarts at acceptance.
+Only the production bot poller runs. **198 backend tests passed on the server** in a
+separate migrated disposable database with frozen dev dependencies, synthetic keys
+and no production secrets mounted. An initial QA harness lacked contracts and inherited
+token-file configuration; correcting the harness yielded the full passing suite.
+
+The owner personally approved a Telegram login on the selected personal account.
+A synthetic, self-recipient survey with no readers or submitted answers exercised:
+
+- Quiet deferral: pending with zero send attempts; restoring normal settings delivered
+  exactly one neutral notice. Retrying the same manual wave returned the same wave.
+- Bot `/notifications_off`, then `/notifications_on`: the queued old notice remained
+  cancelled, with zero send attempts and its encrypted payload cleared.
+- Telegram channel off/on in the application: the queued notice remained cancelled
+  without altering bot opt-in.
+- Pausing the owner's technical plan: the queued notice remained cancelled.
+
+Bounded chat observation found exactly one notice across the four test invitations.
+Final outbox states: one delivered (one attempt), three manual-delivery-required
+(zero attempts); all payloads cleared. Original logical channel/quiet settings and
+bot opt-in were restored; cancellation generation fences intentionally advanced.
+The technical plan is paused, its form archived, invitations revoked and acceptance
+session revoked. Technical history remains for audit; no participant answers were
+created. Both disposable databases were removed.
+
+After cleanup, original data across **22 business tables** still matched baseline
+projections and existing encrypted content decrypted. Relationship scopes and personal
+consents were unchanged; no new permissions or partner consent were accepted.
+Live partner ritual/reward delivery, global relationship revocation and physical
+Android acceptance are not proven by this own-account test. Automated authorization
+coverage passed; those live scenarios, recurring backup policy and independent security
+review remain separate acceptance work.
