@@ -8,7 +8,8 @@ data class WorkspaceState(
  val formInvitations:List<FormAccess> = emptyList(),
  val formResults:List<FormResult> = emptyList(),
  val rules:List<RuleTemplate> = emptyList(),
- val ruleAssignments:List<RuleAssignment> = emptyList()
+ val ruleAssignments:List<RuleAssignment> = emptyList(),
+ val ruleHistory:List<RuleTemplate> = emptyList()
 )
 
 suspend fun Api.workspace():WorkspaceState = WorkspaceState(relations(),participants(),sessions(),forms(),formInvitations(),formResults(),rules(),ruleAssignments())

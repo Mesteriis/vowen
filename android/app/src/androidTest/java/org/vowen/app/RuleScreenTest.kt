@@ -1,6 +1,10 @@
 package org.vowen.app
 
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
 import org.junit.Assert.*
@@ -25,7 +29,8 @@ class RuleScreenTest {
  }
  @Test fun pausedRecipientCanWithdrawButCannotAccept() {
   var result:String?=null
-  compose.setContent {MaterialTheme {NativeRulesScreen(member.copy(paused=true),WorkspaceState(ruleAssignments=listOf(assigned.copy(status="active",effective=false))),false,0,actions(onDecision={_,s->result=s}))}}
+  compose.setContent {MaterialTheme {NativeRulesScreen(member.copy(paused=true),WorkspaceState(ruleAssignments=listOf(assigned.copy(status="active",effective=true))),false,0,actions(onDecision={_,s->result=s}))}}
+  compose.onNodeWithText("active · inactive").assertExists()
   compose.onNodeWithTag("pause-rule-assignment").performClick()
   assertEquals("pause",result)
   compose.onNodeWithTag("accept-rule-assignment").assertDoesNotExist()
@@ -40,4 +45,20 @@ class RuleScreenTest {
   assertEquals("Synthetic title",saved!!.title)
   assertEquals("Synthetic description",saved!!.description)
  }
+ @Test fun authorCanReadOlderPublishedTextAfterStartingReplacementDraft() {
+  val old=RuleTemplate(author_id="b",description="Old published text",id="rule",revision=3,status="published",title="Rule",version_id="v1")
+  val draft=old.copy(description="Replacement draft text",status="draft",version_id="v2")
+  var requested:String?=null
+  compose.setContent {MaterialTheme {NativeRulesScreen(member,WorkspaceState(rules=listOf(draft),ruleHistory=listOf(old,draft)),false,0,actions().copy(history={requested=it.id}))}}
+  compose.onNodeWithTag("rule-history-rule").performClick()
+  assertEquals("rule",requested)
+  compose.onNodeWithText("Old published text").assertExists()
+ }
+ @Test fun longConsentTextCanBeScrolledToItsEnd() {
+  val long=assigned.copy(description=(1..150).joinToString("\n"){"Synthetic line $it"}+"\nEND OF EXACT RULE")
+  compose.setContent {MaterialTheme {Column(Modifier.verticalScroll(rememberScrollState())) {NativeRulesScreen(member,WorkspaceState(ruleAssignments=listOf(long)),false,0,actions())}}}
+  compose.onNodeWithTag("accept-rule-assignment").performScrollTo().performClick()
+  compose.onNodeWithTag("rule-review-end").performScrollTo().assertIsDisplayed()
+ }
+
 }

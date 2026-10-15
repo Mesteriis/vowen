@@ -53,7 +53,7 @@ class MainActivity:ComponentActivity() {
        Button(onClick={model.logout()},enabled=!screen.busy) {Text(if(member.language=="ru")"Выйти" else "Sign out")}
        WorkspaceScreen(member,screen.workspace,screen.sessionId,screen.busy,screen.completed,
         WorkspaceActions(model::refreshWorkspace,model::propose,model::relationAction,model::changeRelation,model::saveProfile,model::revokeSession),
-        FormActions(model::refreshWorkspace,model::saveForm,model::publishForm,model::inviteForm,model::saveFormDraft,model::submitForm,model::deleteFormResult),screen.formLink,RuleActions(model::refreshWorkspace,model::saveRule,model::ruleTemplate,model::assignRule,model::decideRule))
+        FormActions(model::refreshWorkspace,model::saveForm,model::publishForm,model::inviteForm,model::saveFormDraft,model::submitForm,model::deleteFormResult),screen.formLink,RuleActions(model::refreshWorkspace,model::saveRule,model::ruleTemplate,model::assignRule,model::decideRule,model::ruleHistory))
       }
       }
      }

@@ -66,7 +66,7 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
  }
  fun pause()=run {
   api.call(if(mutable.value.member?.paused==true) "/me/resume" else "/me/pause","POST")
-  mutable.value=mutable.value.copy(member=api.me())
+  loadWorkspace()
  }
  private suspend fun loadWorkspace(changed:Boolean=false) {
   val member=api.me()
@@ -94,6 +94,7 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
  fun saveFormDraft(id:String,answers:Map<String,kotlinx.serialization.json.JsonElement>)=run {api.saveFormDraft(id,answers);loadWorkspace(true)}
  fun submitForm(id:String,command:FormSubmit)=run {api.submitForm(id,command);loadWorkspace(true)}
  fun deleteFormResult(id:String)=run {api.deleteFormResult(id);loadWorkspace(true)}
+ fun ruleHistory(rule:RuleTemplate)=run {val history=api.ruleHistory(rule);mutable.value=mutable.value.copy(workspace=mutable.value.workspace.copy(ruleHistory=history))}
  fun saveRule(rule:RuleTemplate?,body:RuleContent)=run {api.saveRule(rule,body);loadWorkspace(true)}
  fun ruleTemplate(rule:RuleTemplate,action:String)=run {api.ruleTemplate(rule,action);loadWorkspace(true)}
  fun assignRule(rule:RuleTemplate,body:RuleAssign)=run {api.assignRule(rule,body);loadWorkspace(true)}

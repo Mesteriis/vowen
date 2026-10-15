@@ -283,11 +283,11 @@ relation on each read/change. Personal or relationship pause disables effective 
 recipients retain history and the ability to pause/revoke/decline. No punishment is created.
 
 Mini App and native Android support authoring/editing/publication/new version/archive,
-individual recipient/manager selection, exact text confirmation, decline, pause/revoke
-and assignment history. Server remains authoritative. OpenAPI and TS/Kotlin DTOs updated.
+individual recipient/manager selection, exact text confirmation, decline, pause/revoke,
+assignment history and explicit author-only template version history. Server remains authoritative. OpenAPI and TS/Kotlin DTOs updated.
 
-Verified locally: 90 backend tests on PostgreSQL, 3 Vitest, 6 real API/browser E2E,
-10 Android JVM tests and 14 Compose tests on the owned Android 16 AVD; ruff, mypy,
+Verified locally: 91 backend tests on PostgreSQL, 3 Vitest, 6 real API/browser E2E,
+10 Android JVM tests and 16 Compose tests on the owned Android 16 AVD; ruff, mypy,
 ESLint, vue-tsc, web production build, native lint/debug APK/instrumentation APK,
 contract regeneration and heuristic secret scan. Full-suite fault injection previously
 restored hardcoded schema 0008; it now restores the actual original revision.
@@ -297,3 +297,18 @@ not the whole milestone. Schedules/DST/catch-up, rituals/reports/reviews, reward
 M3 notifications are still absent. Next concrete slice: deterministic occurrence scheduling
 and per-recipient rituals with concurrent report/review tests. Live Telegram and physical
 Android/native-to-server acceptance remain separate and unverified. No new dependencies.
+
+Whole-branch review findings were fixed with observed regressions: author version history
+in both clients, scrolling to the end of a 10k-capable native review body, immediate pause
+presentation and refreshed assignment state, removal of the recipient from manager selection,
+and correct previous-assignment revocation time while preserving original acceptance time.
+The first remote run failed in the browser due to cross-page ordering: recipient refreshed
+before sender assignment completed. E2E now waits for the sender's server-backed pending
+assignment before refreshing the recipient; no production behavior or check was bypassed.
+
+State-model decisions: accepting an explicit published version atomically replaces only the
+same recipient's active assignment. Acceptance need not follow publication order; the UI shows
+the exact text/ID and replacement warning. Paused/declined/revoked assignments cannot be
+silently resumed or reissued for the same version: a new version/consent is required. The cost
+is an additional proposal instead of a resume shortcut. Live Telegram and physical-device
+acceptance are still excluded, so test success is not delivery or real-device proof.

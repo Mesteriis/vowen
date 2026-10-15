@@ -161,3 +161,39 @@ async def test_author_version_history_is_separate_from_recipient_acl(api):
     history = (await client.get(path, headers=auth(tokens[0]))).json()
     assert {x["status"] for x in history} == {"draft", "published"}
     assert {x["description"] for x in history} == {"Next draft", "sensitive-rule-content"}
+
+
+async def test_replacement_records_revocation_time_without_rewriting_consent(api):
+    from datetime import datetime, timedelta
+
+    from conftest import NOW
+
+    client, app, ids, tokens, rule = await setup_rule(api)
+    old = (await assign(client, tokens[0], rule, ids[1], [ids[0]])).json()
+    old = (await action(client, tokens[1], old, "accept")).json()
+    newer = (
+        await client.post(
+            f"/api/v1/rules/{rule['id']}/versions",
+            headers=auth(tokens[0]),
+            json={
+                "expected_version": rule["revision"],
+                "title": "Replacement",
+                "description": "New consent",
+            },
+        )
+    ).json()
+    newer = (
+        await client.post(
+            f"/api/v1/rules/{rule['id']}/publish",
+            headers=auth(tokens[0]),
+            json={"expected_version": newer["revision"]},
+        )
+    ).json()
+    pending = (await assign(client, tokens[0], newer, ids[1], [ids[0]])).json()
+    later = NOW + timedelta(minutes=1)
+    app.state.clock = type("LaterClock", (), {"now": lambda self: later})()
+    assert (await action(client, tokens[1], pending, "accept")).status_code == 200
+    history = (await client.get("/api/v1/rule-assignments", headers=auth(tokens[1]))).json()
+    revoked = next(x for x in history if x["id"] == old["id"])
+    assert revoked["accepted_at"] == old["accepted_at"]
+    assert datetime.fromisoformat(revoked["decided_at"]) == later

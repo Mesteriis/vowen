@@ -1,6 +1,8 @@
 package org.vowen.app
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -12,7 +14,8 @@ data class RuleActions(
  val save:(RuleTemplate?,RuleContent)->Unit,
  val template:(RuleTemplate,String)->Unit,
  val assign:(RuleTemplate,RuleAssign)->Unit,
- val decision:(RuleAssignment,String)->Unit
+ val decision:(RuleAssignment,String)->Unit,
+ val history:(RuleTemplate)->Unit = {}
 )
 
 @Composable
@@ -37,14 +40,19 @@ fun NativeRulesScreen(member:Member,data:WorkspaceState,busy:Boolean,completed:I
    TextButton(onClick={selected=rule;editing=true;assigning=null},enabled=!busy&&!member.paused) {Text(if(rule.status=="draft")t("Edit rule draft","Изменить черновик правила") else t("New rule version","Новая версия правила"))}
    if(rule.status=="draft")TextButton(onClick={actions.template(rule,"publish")},enabled=!busy&&!member.paused) {Text(t("Publish rule","Опубликовать правило"))}
    if(rule.status=="published")TextButton(onClick={assigning=rule;editing=false},enabled=!busy&&!member.paused) {Text(t("Assign rule","Назначить правило"))}
+   TextButton(onClick={actions.history(rule)},enabled=!busy,modifier=Modifier.testTag("rule-history-${rule.id}")){Text(t("Rule version history","История версий правила"))}
    if(rule.status!="archived")TextButton(onClick={actions.template(rule,"archive")},enabled=!busy) {Text(t("Archive rule","Архивировать правило"))}
+  }
+  if(data.ruleHistory.isNotEmpty()) {
+   Text(t("Version history","История версий"),style=MaterialTheme.typography.titleLarge)
+   data.ruleHistory.forEach {v->Text(v.title);Text(v.description);Text("${v.status} · ${v.version_id}")}
   }
   assigning?.let {rule->key(rule.id,rule.version_id){RuleAssignmentEditor(rule,member,data.participants,busy,ru,{actions.assign(rule,it)},{assigning=null})}}
   Text(t("Assignments and history","Назначения и история"),style=MaterialTheme.typography.titleLarge)
   data.ruleAssignments.forEach {a->
    Text("${a.title} · ${name(a.recipient_id)}",style=MaterialTheme.typography.titleMedium)
    Text(a.description)
-   Text("${a.status} · ${if(a.effective)t("effective","действует") else t("inactive","не действует")}")
+   Text("${a.status} · ${if(a.effective&&!(member.paused&&a.recipient_id==member.id))t("effective","действует") else t("inactive","не действует")}")
    Text(a.rule_version_id)
    Text(t("Managers: ","Управляющие: ")+a.manager_ids.joinToString {name(it)})
    a.accepted_at?.let {Text(t("Accepted: ","Принято: ")+it)}
@@ -56,11 +64,11 @@ fun NativeRulesScreen(member:Member,data:WorkspaceState,busy:Boolean,completed:I
    if(a.status!="revoked")TextButton(onClick={actions.decision(a,"revoke")},enabled=!busy) {Text(t("Revoke rule","Отозвать правило"))}
   }
  }
- review?.let {a->AlertDialog(onDismissRequest={if(!busy)review=null},title={Text(t("Review exact rule version","Подтверждение точной версии"))},text={Column {
+ review?.let {a->AlertDialog(onDismissRequest={if(!busy)review=null},title={Text(t("Review exact rule version","Подтверждение точной версии"))},text={Column(Modifier.verticalScroll(rememberScrollState())) {
   Text(a.title)
   Text(a.description,Modifier.testTag("rule-review"))
   Text(a.rule_version_id)
-  Text(t("Acceptance replaces the previously active version.","Принятие заменит ранее действовавшую версию."))
+  Text(t("Acceptance replaces the previously active version.","Принятие заменит ранее действовавшую версию."),Modifier.testTag("rule-review-end"))
  }},confirmButton={TextButton(onClick={actions.decision(a,"accept")},enabled=!busy&&!member.paused,modifier=Modifier.testTag("confirm-rule-acceptance")){Text(t("Confirm rule acceptance","Подтверждаю принятие"))}},dismissButton={TextButton(onClick={review=null},enabled=!busy){Text(t("Cancel","Отмена"))}})}
 }
 

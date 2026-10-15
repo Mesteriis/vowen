@@ -233,6 +233,7 @@ async def decide(
         ).all()
         for old in previous:
             old.status = "revoked"
+            old.decided_at = request.app.state.clock.now()
             old.revision += 1
         await db.flush()
         assignment.status = "active"

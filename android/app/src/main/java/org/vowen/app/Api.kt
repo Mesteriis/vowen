@@ -77,6 +77,7 @@ class Api(private val state: InstanceSession,
  suspend fun submitForm(id:String,command:FormSubmit):FormResult = json.decodeFromString(call("/form-invitations/$id/submit","POST",json.encodeToString(command)))
  suspend fun deleteFormResult(id:String) {call("/form-submissions/$id","DELETE")}
  suspend fun rules():List<RuleTemplate> = json.decodeFromString(call("/rules"))
+ suspend fun ruleHistory(rule:RuleTemplate):List<RuleTemplate> = json.decodeFromString(call("/rules/${rule.id}/versions"))
  suspend fun ruleAssignments():List<RuleAssignment> = json.decodeFromString(call("/rule-assignments"))
  suspend fun saveRule(rule:RuleTemplate?,body:RuleContent):RuleTemplate {
   if(rule==null)return json.decodeFromString(call("/rules","POST",json.encodeToString(body)))
