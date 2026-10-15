@@ -1,0 +1,13 @@
+name: Bug report
+description: Report a reproducible bug using synthetic data only
+body:
+  - type: markdown
+    attributes:
+      value: Do not include intimate records, real identities, addresses, tokens, initData or dumps. Use private security reporting for vulnerabilities.
+  - type: textarea
+    id: reproduction
+    attributes: {label: Synthetic reproduction, description: Steps and expected versus actual behavior}
+    validations: {required: true}
+  - type: textarea
+    id: environment
+    attributes: {label: Versions, description: App version and OS version only; no machine identifiers}

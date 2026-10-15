@@ -15,3 +15,9 @@ Ruling: readiness reports unavailable/mismatched database; liveness remains
 available for diagnosis. Protected DB work cannot run against a mismatched schema.
 Ruling: execute the supplied milestone checklist directly; track evidence in
 STATUS.md rather than reformatting it into another implementation plan.
+
+User later explicitly confirmed Mesteriis and authorized switching gh; the remote
+was created under that account. Fixed proxy/API addresses share a configurable
+internal subnet; Caddy alone is trusted to supply client addresses. One API replica
+uses bounded in-memory throttling; multi-replica deployment needs shared rate limits.
+Expiry maintenance runs in the API process; the business outbox worker begins in M2.

@@ -1,7 +1,7 @@
 name: vowen
 services:
   db:
-    image: postgres:17.6-alpine
+    image: postgres:17.11-alpine
     environment:
       POSTGRES_USER: vowen
       POSTGRES_DB: vowen
@@ -13,5 +13,76 @@ services:
       timeout: 3s
       retries: 20
     restart: unless-stopped
+  migrate:
+    build: {context: ., dockerfile: deploy/Dockerfile.backend}
+    user: "${APP_UID:-1000}:${APP_GID:-1000}"
+    environment: &backend_environment
+      DATABASE_URL: postgresql+psycopg://vowen:${POSTGRES_PASSWORD:-vowen}@db:5432/vowen
+      TELEGRAM_BOT_TOKEN_FILE: /run/vowen/bot-token
+      DATA_KEYRING_FILE: /run/vowen/keyring.json
+      TELEGRAM_BOT_USERNAME: ${TELEGRAM_BOT_USERNAME:-vowen_example_bot}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-https://localhost}
+      APP_DISPLAY_NAME: ${APP_DISPLAY_NAME:-Vowen}
+      FORWARDED_ALLOW_IPS: ${PROXY_IP:-10.253.240.2}
+    command: [alembic, upgrade, head]
+    depends_on: {db: {condition: service_healthy}}
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+  api:
+    build: {context: ., dockerfile: deploy/Dockerfile.backend}
+    user: "${APP_UID:-1000}:${APP_GID:-1000}"
+    environment: *backend_environment
+    volumes: ['./secrets:/run/vowen:ro']
+    networks:
+      default:
+      proxy_link:
+        aliases: [vowen-api]
+        ipv4_address: ${API_PROXY_IP:-10.253.240.3}
+    depends_on: {migrate: {condition: service_completed_successfully}}
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    restart: unless-stopped
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/ready')"]
+      interval: 5s
+      timeout: 4s
+      retries: 10
+  bot:
+    profiles: [telegram]
+    build: {context: ., dockerfile: deploy/Dockerfile.backend}
+    user: "${APP_UID:-1000}:${APP_GID:-1000}"
+    environment: *backend_environment
+    volumes: ['./secrets:/run/vowen:ro']
+    command: [python, -m, vowen.integrations.telegram.bot]
+    depends_on: {api: {condition: service_healthy}}
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    restart: unless-stopped
+  proxy:
+    build: {context: ., dockerfile: deploy/Dockerfile.web}
+    environment: {PUBLIC_HOST: "${PUBLIC_HOST:-localhost}"}
+    ports: ['127.0.0.1:8443:443', '127.0.0.1:8080:80']
+    networks:
+      egress:
+      proxy_link:
+        ipv4_address: ${PROXY_IP:-10.253.240.2}
+    volumes: [caddy_data:/data, caddy_config:/config]
+    depends_on: {api: {condition: service_healthy}}
+    security_opt: [no-new-privileges:true]
+    restart: unless-stopped
 volumes:
+  caddy_data:
+  caddy_config:
   database:
+
+networks:
+  egress:
+  proxy_link:
+    internal: true
+    ipam:
+      config:
+        - subnet: ${PROXY_SUBNET:-10.253.240.0/29}

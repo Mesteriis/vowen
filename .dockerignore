@@ -1,0 +1,13 @@
+.git
+.serena
+.superpowers
+.env
+.env.*
+secrets
+**/.venv
+**/node_modules
+**/dist
+**/build
+**/.gradle
+**/__pycache__
+android/local.properties
