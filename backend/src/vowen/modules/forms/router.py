@@ -6,7 +6,7 @@ from urllib.parse import urlsplit
 from uuid import UUID, uuid4
 
 from fastapi import APIRouter, Depends, Request, Response
-from sqlalchemy import select
+from sqlalchemy import or_, select, update
 
 from vowen.core.crypto import PayloadCipher
 from vowen.core.errors import AppError
@@ -28,6 +28,7 @@ from vowen.modules.forms.schemas import (
     FormEdit,
     FormSchema,
     FormView,
+    GuestSessionView,
     InvitationCreate,
     InvitationView,
     SubmissionView,
@@ -169,7 +170,9 @@ async def assigned(request: Request, principal: Member, db: DB, crypto: Cipher) 
                 Invitation.recipient_user_id == principal.user_id,
                 Invitation.revoked_at.is_(None),
                 Invitation.expires_at > now(request),
-                Invitation.retention_until > now(request),
+                or_(
+                    Invitation.retention_until.is_(None), Invitation.retention_until > now(request)
+                ),
             )
         )
     ).all()
@@ -225,6 +228,7 @@ async def readable(db: DB, sid: UUID, uid: UUID, request: Request) -> tuple[Invi
     reader = await db.get(InvitationReader, (i.id, uid))
     if (
         s.status != "submitted"
+        or i.retention_until is None
         or i.retention_until <= now(request)
         or (i.recipient_user_id != uid and reader is None)
     ):
@@ -284,7 +288,12 @@ async def remove(sid: UUID, request: Request, principal: Member, db: DB) -> Resp
 
 
 async def guest(
-    request: Request, db: DB, *, writing: bool = False, filling: bool = False
+    request: Request,
+    db: DB,
+    *,
+    writing: bool = False,
+    filling: bool = False,
+    check_context: bool = True,
 ) -> tuple[GuestSession, Invitation]:
     if writing:
         origin(request)
@@ -293,6 +302,9 @@ async def guest(
     if gs is None or gs.expires_at <= now(request):
         raise AppError(401, "INVALID_GUEST_SESSION")
     i = await svc.locked_invitation(db, gs.invitation_id)
+    expected = request.headers.get("x-guest-context")
+    if check_context and expected and expected != str(gs.receipt_id or i.id):
+        raise AppError(409, "GUEST_CONTEXT_CHANGED")
     if writing and not hmac.compare_digest(
         gs.csrf_hash, svc.digest(request.headers.get("x-csrf-token", ""))
     ):
@@ -305,9 +317,68 @@ async def guest(
             raise AppError(403, "SCOPE_DENIED")
     else:
         svc.live(i, now(request))
-    if i.retention_until <= now(request):
+    if i.retention_until is not None and i.retention_until <= now(request):
         raise AppError(410, "RESPONSE_EXPIRED")
     return gs, i
+
+
+async def replacement(
+    request: Request, db: DB, proof: Exchange, iid: UUID, receipt_id: UUID | None
+) -> GuestSession | None:
+    token = request.cookies.get(COOKIE)
+    if not token:
+        return None
+    old = await db.scalar(select(GuestSession).where(GuestSession.token_hash == svc.digest(token)))
+    if old is None or old.expires_at <= now(request):
+        return None
+    prior = await db.get(Invitation, old.invitation_id)
+    if prior is None:
+        return None
+    if old.receipt_id:
+        prior_receipt = await db.get(Receipt, old.receipt_id)
+        if (
+            prior_receipt is None
+            or prior_receipt.revoked_at
+            or prior_receipt.expires_at <= now(request)
+        ):
+            return None
+    elif prior.revoked_at or prior.expires_at <= now(request):
+        return None
+    if prior.retention_until is not None and prior.retention_until <= now(request):
+        return None
+    if old.invitation_id == iid and old.receipt_id == receipt_id:
+        return None
+    if old.invitation_id == iid and old.receipt_id is None and receipt_id is not None:
+        return None  # A submitted response can safely become its own read/delete receipt.
+    if not proof.replace_session:
+        raise AppError(409, "SESSION_REPLACEMENT_REQUIRED")
+    if not hmac.compare_digest(old.csrf_hash, svc.digest(request.headers.get("x-csrf-token", ""))):
+        raise AppError(403, "INVALID_CSRF")
+    return old
+
+
+async def abandon(db: DB, old: GuestSession | None, at: datetime) -> None:
+    if old is not None:
+        changed = await db.scalar(
+            update(GuestSession)
+            .where(GuestSession.id == old.id, GuestSession.expires_at > at)
+            .values(expires_at=at)
+            .returning(GuestSession.id)
+        )
+        if changed is None:
+            raise AppError(409, "GUEST_CONTEXT_CHANGED")
+
+
+@router.get("/guest/session", response_model=GuestSessionView)
+async def guest_context(request: Request, db: DB) -> GuestSessionView:
+    gs, i = await guest(request, db, check_context=False)
+    csrf = secrets.token_urlsafe(32)
+    gs.csrf_hash = svc.digest(csrf)
+    return GuestSessionView(
+        public_id=gs.receipt_id or i.id,
+        kind="receipt" if gs.receipt_id else "invitation",
+        csrf_token=csrf,
+    )
 
 
 @router.post("/guest/invitations/exchange", response_model=FormAccess)
@@ -319,6 +390,7 @@ async def exchange(
     svc.live(i, now(request))
     if i.token_hash is None or not hmac.compare_digest(i.token_hash, svc.digest(body.token)):
         raise AppError(401, "INVALID_INVITATION")
+    old = await replacement(request, db, body, i.id, None)
     if i.activated_at:
         gs, owned = (
             await guest(request, db, filling=True) if request.cookies.get(COOKIE) else (None, None)
@@ -328,10 +400,11 @@ async def exchange(
         csrf = secrets.token_urlsafe(32)
         gs.csrf_hash = svc.digest(csrf)
     else:
+        await abandon(db, old, now(request))
         i.activated_at = now(request)
         token, csrf = await svc.new_guest(db, i, now(request))
         set_cookie(response, token)
-    return await svc.access(db, i, crypto, csrf)
+    return await svc.access(db, i, crypto, csrf, context_id=i.id, context_kind="invitation")
 
 
 @router.get("/guest/form", response_model=FormAccess)
@@ -339,7 +412,14 @@ async def guest_form(request: Request, db: DB, crypto: Cipher) -> FormAccess:
     gs, i = await guest(request, db)
     csrf = secrets.token_urlsafe(32)
     gs.csrf_hash = svc.digest(csrf)
-    return await svc.access(db, i, crypto, csrf)
+    return await svc.access(
+        db,
+        i,
+        crypto,
+        csrf,
+        context_id=gs.receipt_id or i.id,
+        context_kind="receipt" if gs.receipt_id else "invitation",
+    )
 
 
 @router.put("/guest/draft", response_model=FormAccess)
@@ -393,6 +473,7 @@ async def issue_receipt(request: Request, db: DB) -> Exchange:
     for r in old:
         r.revoked_at = now(request)
     token = secrets.token_urlsafe(32)
+    assert i.retention_until is not None
     r = Receipt(
         id=uuid4(), submission_id=s.id, token_hash=svc.digest(token), expires_at=i.retention_until
     )
@@ -420,6 +501,8 @@ async def receipt_exchange(
     await db.refresh(s)
     if r.revoked_at or s.status != "submitted":
         raise AppError(401, "INVALID_RECEIPT")
+    old = await replacement(request, db, body, i.id, r.id)
+    await abandon(db, old, now(request))
     token, csrf = await svc.new_guest(db, i, now(request), r)
     set_cookie(response, token)
-    return await svc.access(db, i, crypto, csrf)
+    return await svc.access(db, i, crypto, csrf, context_id=r.id, context_kind="receipt")

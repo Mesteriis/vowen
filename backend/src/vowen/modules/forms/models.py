@@ -35,7 +35,8 @@ class Invitation(Base):
     activated_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     revoked_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
     expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
-    retention_until: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    retention_days: Mapped[int] = mapped_column(default=90)
+    retention_until: Mapped[datetime | None] = mapped_column(DateTime(timezone=True))
 
 
 class InvitationReader(Base):

@@ -177,7 +177,7 @@ class InvitationCreate(Input):
     recipient_user_id: UUID | None = None
     reader_ids: list[UUID] = Field(max_length=100)
     ttl_days: int = Field(default=7, ge=1, le=7)
-    retention_days: int = Field(default=30, ge=1, le=365)
+    retention_days: int = Field(default=90, ge=1, le=365)
     deliver: bool = False
     contact_telegram_id: int | None = Field(default=None, gt=0, le=9223372036854775807)
 
@@ -200,6 +200,7 @@ class Submit(Answers):
 class Exchange(Input):
     public_id: UUID
     token: str = Field(min_length=40, max_length=100)
+    replace_session: bool = False
 
 
 class ReaderView(BaseModel):
@@ -220,17 +221,22 @@ class InvitationView(BaseModel):
     version_id: UUID
     recipient_user_id: UUID | None
     expires_at: str
-    retention_until: str
+    retention_until: str | None
+    retention_days: int
     revoked: bool
     delivery_status: str
     link: str | None = None
 
 
 class FormAccess(BaseModel):
+    expires_at: str
+    context_id: UUID | None = None
+    context_kind: str | None = None
     id: UUID
     schema_body: FormSchema
     readers: list[ReaderView]
-    retention_until: str
+    retention_until: str | None
+    retention_days: int
     status: str
     answers: dict[str, JsonValue]
     csrf_token: str | None = None
@@ -244,3 +250,9 @@ class SubmissionView(BaseModel):
     readers: list[ReaderView]
     status: str
     answers: dict[str, JsonValue]
+
+
+class GuestSessionView(BaseModel):
+    public_id: UUID
+    kind: str
+    csrf_token: str

@@ -73,7 +73,7 @@ async def test_retention_prunes_payload_and_guest_rate_limits(api):
     from vowen.core.maintenance import prune_expired
 
     async with app.state.sessions() as db, db.begin():
-        await prune_expired(db, NOW + timedelta(days=2))
+        await prune_expired(db, NOW + timedelta(days=8))
     async with app.state.sessions() as db:
         row = await db.scalar(select(Submission))
         assert row.ciphertext is None
@@ -86,3 +86,34 @@ async def test_retention_prunes_payload_and_guest_rate_limits(api):
         )
         statuses.append(r.status_code)
     assert 429 in statuses
+
+
+async def test_retention_starts_at_submission_not_invitation_and_does_not_expire_draft_early(api):
+    c, app, ids, h, f = await setup_forms(api)
+    p = "/api/v1/forms/" + f["id"]
+    await c.post(p + "/publish", headers=h[0], json={"expected_version": 1})
+    i = (
+        await c.post(
+            p + "/invitations",
+            headers=h[0],
+            json={"recipient_user_id": str(ids[1]), "reader_ids": [], "retention_days": 1},
+        )
+    ).json()
+    app.state.clock = type("Clock", (), {"now": lambda self: NOW + timedelta(days=6)})()
+    from test_sessions import auth, login
+    from test_telegram_validation import signed
+
+    fresh = auth((await login(c, signed(100000000002, offset=6 * 86400))).json())
+    ip = "/api/v1/form-invitations/" + i["id"]
+    draft = await c.put(ip + "/draft", headers=fresh, json={"answers": {"q": "day six"}})
+    assert draft.status_code == 200
+    assert draft.json()["retention_until"] is None
+    submitted = await c.post(
+        ip + "/submit",
+        headers=fresh,
+        json={"answers": {"q": "day six"}, "idempotency_key": str(uuid4()), "acknowledged": True},
+    )
+    assert submitted.status_code == 200
+    final = (await c.get(ip, headers=fresh)).json()
+    assert final["retention_until"] == (NOW + timedelta(days=7)).isoformat()
+    assert final["retention_days"] == 1

@@ -21,7 +21,7 @@ def invitation(
     reader_id: list[UUID] = typer.Option([]),
     recipient_id: UUID | None = None,
     ttl_days: int = 7,
-    retention_days: int = 30,
+    retention_days: int = 90,
     deliver: bool = False,
     contact_telegram_id: int | None = None,
 ) -> None:

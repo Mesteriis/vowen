@@ -433,6 +433,23 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/guest/session": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Guest Context */
+        get: operations["guest_context_api_v1_guest_session_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/guest/submission": {
         parameters: {
             query?: never;
@@ -840,6 +857,11 @@ export interface components {
              * Format: uuid
              */
             public_id: string;
+            /**
+             * Replace Session
+             * @default false
+             */
+            replace_session: boolean;
             /** Token */
             token: string;
         };
@@ -854,8 +876,14 @@ export interface components {
             answers: {
                 [key: string]: components["schemas"]["JsonValue"];
             };
+            /** Context Id */
+            context_id?: string | null;
+            /** Context Kind */
+            context_kind?: string | null;
             /** Csrf Token */
             csrf_token?: string | null;
+            /** Expires At */
+            expires_at: string;
             /**
              * Id
              * Format: uuid
@@ -863,8 +891,10 @@ export interface components {
             id: string;
             /** Readers */
             readers: components["schemas"]["ReaderView"][];
+            /** Retention Days */
+            retention_days: number;
             /** Retention Until */
-            retention_until: string;
+            retention_until: string | null;
             schema_body: components["schemas"]["FormSchema"];
             /** Status */
             status: string;
@@ -911,6 +941,18 @@ export interface components {
              */
             version_id: string;
         };
+        /** GuestSessionView */
+        GuestSessionView: {
+            /** Csrf Token */
+            csrf_token: string;
+            /** Kind */
+            kind: string;
+            /**
+             * Public Id
+             * Format: uuid
+             */
+            public_id: string;
+        };
         /** InstanceView */
         InstanceView: {
             /** Display Name */
@@ -931,7 +973,7 @@ export interface components {
             recipient_user_id?: string | null;
             /**
              * Retention Days
-             * @default 30
+             * @default 90
              */
             retention_days: number;
             /**
@@ -955,8 +997,10 @@ export interface components {
             link?: string | null;
             /** Recipient User Id */
             recipient_user_id: string | null;
+            /** Retention Days */
+            retention_days: number;
             /** Retention Until */
-            retention_until: string;
+            retention_until: string | null;
             /** Revoked */
             revoked: boolean;
             /**
@@ -3899,6 +3943,98 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["FormAccess"];
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Conflict */
+            409: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Content Too Large */
+            413: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Too Many Requests */
+            429: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Service Unavailable */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+        };
+    };
+    guest_context_api_v1_guest_session_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["GuestSessionView"];
                 };
             };
             /** @description Unauthorized */

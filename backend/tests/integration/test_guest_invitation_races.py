@@ -112,3 +112,45 @@ async def test_submit_revoke_and_duplicate_exchange_are_serialized(api):
         assert (
             await g.put("/api/v1/guest/draft", headers=csrf, json={"answers": {}})
         ).status_code == 410
+
+
+async def test_new_guest_capability_requires_explicit_abandonment_and_restores_bound_context(api):
+    c, app, ids, h, i = await guest_invite(api)
+    fid = (await c.get("/api/v1/forms", headers=h[0])).json()[0]["id"]
+    other = (
+        await c.post("/api/v1/forms/" + fid + "/invitations", headers=h[0], json={"reader_ids": []})
+    ).json()
+    async with httpx.AsyncClient(
+        transport=httpx.ASGITransport(app=app), base_url="https://test"
+    ) as g:
+        opened = await g.post(
+            "/api/v1/guest/invitations/exchange",
+            headers={"Origin": "https://test"},
+            json={"public_id": i["id"], "token": i["link"].split("#token=")[1]},
+        )
+        headers = {
+            "Origin": "https://test",
+            "X-CSRF-Token": opened.json()["csrf_token"],
+            "X-Guest-Context": i["id"],
+        }
+        await g.put("/api/v1/guest/draft", headers=headers, json={"answers": {"q": "Keep draft A"}})
+        proof = {"public_id": other["id"], "token": other["link"].split("#token=")[1]}
+        denied = await g.post(
+            "/api/v1/guest/invitations/exchange", headers={"Origin": "https://test"}, json=proof
+        )
+        assert denied.status_code == 409
+        assert denied.json()["error"]["code"] == "SESSION_REPLACEMENT_REQUIRED"
+        saved = await g.get("/api/v1/guest/form", headers={"X-Guest-Context": i["id"]})
+        assert saved.json()["answers"] == {"q": "Keep draft A"}
+        assert saved.json()["context_id"] == i["id"]
+        headers["X-CSRF-Token"] = saved.json()["csrf_token"]
+        accepted = await g.post(
+            "/api/v1/guest/invitations/exchange",
+            headers=headers,
+            json={**proof, "replace_session": True},
+        )
+        assert accepted.status_code == 200
+        assert accepted.json()["context_id"] == other["id"]
+        assert (
+            await g.get("/api/v1/guest/form", headers={"X-Guest-Context": i["id"]})
+        ).status_code == 409

@@ -72,7 +72,7 @@ async def claim_delivery(
             not authorized
             or i is None
             or (d.kind == "invitation" and (i.revoked_at or i.expires_at <= now))
-            or i.retention_until <= now
+            or (i.retention_until is not None and i.retention_until <= now)
             or contact is None
             or not contact.allowed
             or d.attempts >= 3

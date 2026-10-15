@@ -153,7 +153,8 @@ async def invitation_view(
         version_id=i.version_id,
         recipient_user_id=i.recipient_user_id,
         expires_at=i.expires_at.isoformat(),
-        retention_until=i.retention_until.isoformat(),
+        retention_until=i.retention_until.isoformat() if i.retention_until else None,
+        retention_days=i.retention_days,
         revoked=i.revoked_at is not None,
         delivery_status=d.status if d else "manual_delivery_required",
         link=link,
@@ -188,7 +189,8 @@ async def invite(
         recipient_user_id=body.recipient_user_id,
         token_hash=digest(secret) if secret else None,
         expires_at=now + timedelta(days=body.ttl_days),
-        retention_until=now + timedelta(days=body.retention_days),
+        retention_days=body.retention_days,
+        retention_until=None,
     )
     db.add(i)
     await db.flush()
@@ -218,7 +220,11 @@ async def locked_invitation(db: AsyncSession, iid: UUID) -> Invitation:
 
 
 def live(i: Invitation, now: datetime) -> None:
-    if i.revoked_at is not None or i.expires_at <= now or i.retention_until <= now:
+    if (
+        i.revoked_at is not None
+        or i.expires_at <= now
+        or (i.retention_until is not None and i.retention_until <= now)
+    ):
         raise AppError(410, "INVITATION_CLOSED")
 
 
@@ -229,16 +235,25 @@ async def submission(db: AsyncSession, i: Invitation) -> Submission:
 
 
 async def access(
-    db: AsyncSession, i: Invitation, cipher: PayloadCipher, csrf: str | None = None
+    db: AsyncSession,
+    i: Invitation,
+    cipher: PayloadCipher,
+    csrf: str | None = None,
+    context_id: UUID | None = None,
+    context_kind: str | None = None,
 ) -> FormAccess:
     v = await db.get(FormVersion, i.version_id)
     assert v is not None
     s = await submission(db, i)
     return FormAccess(
+        expires_at=i.expires_at.isoformat(),
+        context_id=context_id,
+        context_kind=context_kind,
         id=i.id,
         schema_body=FormSchema.model_validate(v.schema_body),
         readers=await readers(db, i),
-        retention_until=i.retention_until.isoformat(),
+        retention_until=i.retention_until.isoformat() if i.retention_until else None,
+        retention_days=i.retention_days,
         status=s.status,
         answers=opened(s, cipher),
         csrf_token=csrf,
@@ -271,6 +286,7 @@ async def write_answers(
     seal(s, cipher, clean)
     if command:
         s.status, s.idempotency_key = "submitted", command.idempotency_key
+        i.retention_until = now + timedelta(days=i.retention_days)
         audience = (
             await db.scalars(
                 select(User)

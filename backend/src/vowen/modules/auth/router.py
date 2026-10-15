@@ -49,7 +49,8 @@ async def transaction(request: Request) -> AsyncIterator[AsyncSession]:
             yield db
 
 
-DB = Annotated[AsyncSession, Depends(transaction)]
+# Commit/rollback must finish before any success body or Set-Cookie leaves the server.
+DB = Annotated[AsyncSession, Depends(transaction, scope="function")]
 bearer = HTTPBearer(auto_error=False)
 
 

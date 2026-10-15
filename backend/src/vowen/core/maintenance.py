@@ -26,7 +26,7 @@ async def prune_expired(db: AsyncSession, now: datetime) -> None:
     ).all()
     for invitation in invitations:
         response = await forms.submission(db, invitation)
-        if invitation.retention_until <= now:
+        if invitation.retention_until is not None and invitation.retention_until <= now:
             await forms.withdraw(db, response, now)
         elif response.status == "draft":
             forms.clear(response)

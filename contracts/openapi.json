@@ -246,6 +246,11 @@
             "title": "Public Id",
             "type": "string"
           },
+          "replace_session": {
+            "default": false,
+            "title": "Replace Session",
+            "type": "boolean"
+          },
           "token": {
             "maxLength": 100,
             "minLength": 40,
@@ -284,6 +289,29 @@
             "title": "Answers",
             "type": "object"
           },
+          "context_id": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Context Id"
+          },
+          "context_kind": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Context Kind"
+          },
           "csrf_token": {
             "anyOf": [
               {
@@ -294,6 +322,10 @@
               }
             ],
             "title": "Csrf Token"
+          },
+          "expires_at": {
+            "title": "Expires At",
+            "type": "string"
           },
           "id": {
             "format": "uuid",
@@ -307,9 +339,20 @@
             "title": "Readers",
             "type": "array"
           },
+          "retention_days": {
+            "title": "Retention Days",
+            "type": "integer"
+          },
           "retention_until": {
-            "title": "Retention Until",
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Retention Until"
           },
           "schema_body": {
             "$ref": "#/components/schemas/FormSchema"
@@ -320,10 +363,12 @@
           }
         },
         "required": [
+          "expires_at",
           "id",
           "schema_body",
           "readers",
           "retention_until",
+          "retention_days",
           "status",
           "answers"
         ],
@@ -424,6 +469,30 @@
         "title": "FormView",
         "type": "object"
       },
+      "GuestSessionView": {
+        "properties": {
+          "csrf_token": {
+            "title": "Csrf Token",
+            "type": "string"
+          },
+          "kind": {
+            "title": "Kind",
+            "type": "string"
+          },
+          "public_id": {
+            "format": "uuid",
+            "title": "Public Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "public_id",
+          "kind",
+          "csrf_token"
+        ],
+        "title": "GuestSessionView",
+        "type": "object"
+      },
       "InstanceView": {
         "properties": {
           "display_name": {
@@ -480,7 +549,7 @@
             "title": "Recipient User Id"
           },
           "retention_days": {
-            "default": 30,
+            "default": 90,
             "maximum": 365.0,
             "minimum": 1.0,
             "title": "Retention Days",
@@ -538,9 +607,20 @@
             ],
             "title": "Recipient User Id"
           },
+          "retention_days": {
+            "title": "Retention Days",
+            "type": "integer"
+          },
           "retention_until": {
-            "title": "Retention Until",
-            "type": "string"
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Retention Until"
           },
           "revoked": {
             "title": "Revoked",
@@ -558,6 +638,7 @@
           "recipient_user_id",
           "expires_at",
           "retention_until",
+          "retention_days",
           "revoked",
           "delivery_status"
         ],
@@ -4453,6 +4534,104 @@
           }
         },
         "summary": "Receipt Exchange"
+      }
+    },
+    "/api/v1/guest/session": {
+      "get": {
+        "operationId": "guest_context_api_v1_guest_session_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuestSessionView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Content Too Large"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "summary": "Guest Context"
       }
     },
     "/api/v1/guest/submission": {
