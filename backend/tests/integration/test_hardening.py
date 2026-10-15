@@ -26,13 +26,16 @@ async def test_readiness_schema_guard_and_headers(api):
     client, app = api
     assert (await client.get("/health/ready")).status_code == 200
     async with app.state.engine.begin() as conn:
+        original = await conn.scalar(text("SELECT version_num FROM alembic_version"))
         await conn.execute(text("UPDATE alembic_version SET version_num='incompatible'"))
     try:
         assert (await client.get("/health/ready")).status_code == 503
         assert (await client.get("/api/v1/me")).status_code == 503
     finally:
         async with app.state.engine.begin() as conn:
-            await conn.execute(text("UPDATE alembic_version SET version_num='0008'"))
+            await conn.execute(
+                text("UPDATE alembic_version SET version_num=:revision"), {"revision": original}
+            )
     response = await client.get("/health/live")
     assert response.headers["cache-control"] == "no-store"
     invalid = await client.post("/api/v1/auth/telegram/miniapp", content=b"{" + b"x" * 524288)

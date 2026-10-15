@@ -16,7 +16,9 @@ used = {'SessionTokens':'Tokens', 'MemberView':'Member', 'ParticipantView':'Part
         'FormEdit':'FormEdit','ReaderView':'FormReader','FormAccess':'FormAccess',
         'InvitationCreate':'FormInvitationCreate','InvitationView':'FormInvitation',
         'Answers':'FormAnswers','Submit':'FormSubmit','SubmissionView':'FormResult',
-        'Exchange':'GuestExchange'}
+        'Exchange':'GuestExchange','RuleContent':'RuleContent','RuleEdit':'RuleEdit',
+        'RuleView':'RuleTemplate','RuleAssign':'RuleAssign','RuleDecision':'RuleDecision',
+        'RuleAssignmentView':'RuleAssignment'}
 
 
 def kotlin_type(prop):
