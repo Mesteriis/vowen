@@ -1,0 +1,9 @@
+# Private HTTP origin behind the Spain nginx-ui/Cloudflare HTTPS edge.
+# All direct network ingress is blocked except nginx-ui by guest nftables.
+services:
+  proxy:
+    environment:
+      PUBLIC_HOST: http://vowen.example.test
+    ports: !override ['192.0.2.51:80:80']
+    volumes:
+      - './deploy/pve/Caddyfile.edge:/etc/caddy/Caddyfile:ro'

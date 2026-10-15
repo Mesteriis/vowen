@@ -24,3 +24,6 @@ test-results/
 .serena/
 
 .impeccable/review/
+
+# Machine-local deployment verification screenshots
+artifacts/deployment/

@@ -28,6 +28,7 @@ jobs:
       - run: pnpm --dir web exec playwright install --with-deps chromium
       - run: make test-e2e
       - run: docker compose config --quiet
+      - run: docker compose -f compose.yaml -f deploy/pve/compose.edge.yaml config --quiet
   android:
     runs-on: ubuntu-24.04
     steps:

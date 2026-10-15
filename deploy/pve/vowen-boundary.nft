@@ -1,0 +1,35 @@
+#!/usr/sbin/nft -f
+# Guest-only namespace. Never flush Docker's rules or the PVE host ruleset.
+table inet vowen_boundary
+flush table inet vowen_boundary
+table inet vowen_boundary {
+    set private4 {
+        type ipv4_addr; flags interval;
+        elements = { 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16,
+                     100.64.0.0/10, 169.254.0.0/16 }
+    }
+    chain input {
+        type filter hook input priority -10; policy accept;
+        ct state established,related accept
+        # PVE monitor uses ping; allow health probes without opening management ports.
+        iifname "eth0" ip saddr 192.0.2.2 icmp type echo-request accept
+        iifname "eth0" ip saddr 192.0.2.7 tcp dport 80 accept
+        iifname "eth0" counter drop
+    }
+    chain output {
+        type filter hook output priority -10; policy accept;
+        ct state established,related accept
+        oifname "eth0" ip daddr 192.0.2.1 udp dport 53 accept
+        oifname "eth0" ip daddr 192.0.2.1 tcp dport 53 accept
+        oifname "eth0" ip daddr @private4 counter drop
+    }
+    chain forward {
+        type filter hook forward priority -10; policy accept;
+        ct state established,related accept
+        iifname "eth0" ip saddr 192.0.2.7 tcp dport 80 accept
+        iifname "eth0" counter drop
+        oifname "eth0" ip daddr 192.0.2.1 udp dport 53 accept
+        oifname "eth0" ip daddr 192.0.2.1 tcp dport 53 accept
+        oifname "eth0" ip daddr @private4 counter drop
+    }
+}

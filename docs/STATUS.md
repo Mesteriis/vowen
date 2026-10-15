@@ -505,3 +505,26 @@ instance has zero active, unpaused, opted-in linked members; no message was sent
 inferred recipient or synthetic Telegram ID. Actual Telegram receipt remains unverified,
 as do production restore and physical-device acceptance. Quiet hours and additional
 channel settings remain open; form-delivery retry semantics are unchanged.
+
+## Dedicated deployment — 2026-10-15
+
+Application source `b0356dd` built and running in a fresh dedicated unprivileged
+PVE LXC. nginx-ui issued a managed HTTP01 certificate; public and LAN HTTPS
+readiness/static checks passed without bypass. API/db/ritual worker healthy;
+Telegram poller running separately from local development. Default bot menu
+read back successfully with the public Web App URL. BotFather UI readback confirms Menu Button Enabled, direct app link
+`t.me/Vowen_Bot/vowen` created, and Same-Origin Restriction enabled. Main App
+remains Disabled (also confirmed by Bot API); menu/direct-link launch is configured.
+Native separate-window clicks were unreliable, so the owner saved the direct app.
+
+`python3 scripts/check_deployment.py https://vowen.sh-inc.ru` passed TLS,
+readiness, static Mini App, guest CSP, secret-file denial, session denial,
+invalid Telegram signature and ordinary 512KiB body cap. Guest restart restored
+services; guest-only nft boundary validated, origin ingress denied from Mac,
+allowed from edge; private egress denied and public HTTPS allowed. PVE-only ICMP
+health probes prevent false automatic recovery. Initial PostgreSQL dump restored
+into an isolated scratch DB: Alembic `0014`, zero users. Same-host backup exists;
+off-host encrypted backup and real participant flows remain unverified.
+
+See [deployment operations](DEPLOYMENT_PVE.md). This is deployment evidence,
+not acceptance of real Telegram ritual/reward notifications or participant consent.
