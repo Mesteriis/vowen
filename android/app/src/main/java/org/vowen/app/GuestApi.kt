@@ -34,11 +34,13 @@ class GuestApi(origin:String,private val client:OkHttpClient=OkHttpClient.Builde
  private val json=Json {ignoreUnknownKeys=true;explicitNulls=false}
  private var cookie:String?=null
  private var csrf:String?=null
+ private var context:String?=null
  private suspend fun call(path:String,method:String="GET",body:String?=null):String = withContext(Dispatchers.IO) {
   require(path.startsWith('/')&&!path.startsWith("//"))
   val request=Request.Builder().url(origin+"/api/v1/guest"+path).header("Origin",origin)
   cookie?.let {request.header("Cookie",it)}
   csrf?.let {request.header("X-CSRF-Token",it)}
+  context?.let {request.header("X-Guest-Context",it)}
   if(method!="GET")request.method(method,(body?:"{}").toRequestBody("application/json".toMediaType()))
   client.newCall(request.build()).execute().use {response->
    if(!response.isSuccessful)throw IllegalStateException("HTTP ${response.code}")
@@ -49,6 +51,7 @@ class GuestApi(origin:String,private val client:OkHttpClient=OkHttpClient.Builde
  suspend fun exchange(proof:GuestExchange,receipt:Boolean):FormAccess {
   val access:FormAccess=json.decodeFromString(call(if(receipt)"/receipts/exchange" else "/invitations/exchange","POST",json.encodeToString(proof)))
   csrf=access.csrf_token
+  context=proof.public_id
   return access
  }
  suspend fun save(answers:Map<String,JsonElement>):FormAccess = json.decodeFromString(call("/draft","PUT",json.encodeToString(FormAnswers(answers))))

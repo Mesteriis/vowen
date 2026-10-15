@@ -34,7 +34,7 @@ fun NativeFormsScreen(member:Member,data:WorkspaceState,busy:Boolean,completed:I
   Text(if(ru)"Анкеты" else "Forms",style=MaterialTheme.typography.headlineMedium)
   Button(onClick={editor=true;editing=null}) {Text(if(ru)"Новая анкета" else "New form")}
   TextButton(onClick=actions.refresh,enabled=!busy) {Text(if(ru)"Обновить анкеты" else "Refresh forms")}
-  if(editor)NativeFormEditor(editing?.schema_body,ru,busy,{actions.save(editing,it)},{editor=false})
+  if(editor)NativeFormEditor(editing?.schema_body,ru,busy,{actions.save(editing,it)},{editor=false},identity=editing?.version_id?:"new")
   data.forms.forEach {f->
    Text(f.schema_body.title+" · "+f.status)
    TextButton(onClick={editing=f;editor=true}) {Text(if(f.status=="draft")if(ru)"Редактировать" else "Edit" else if(ru)"Новая версия" else "New version")}
@@ -48,7 +48,7 @@ fun NativeFormsScreen(member:Member,data:WorkspaceState,busy:Boolean,completed:I
     TextButton(onClick={recipient=p.id}){Text((if(recipient==p.id)"✓ " else "")+p.display_name)}
     Row {Checkbox(checked=p.id in readers,onCheckedChange={checked->readers=if(checked)readers+p.id else readers-p.id});Text((if(ru)"Читатель: " else "Reader: ")+p.display_name)}
    }
-   Text(if(ru)"Приглашение: 7 дней. Хранение: 30 дней. Ссылка секретная." else "Invitation: 7 days. Retention: 30 days. The link is secret.")
+   Text(if(ru)"Приглашение: 7 дней. Хранение: 90 дней. Ссылка секретная." else "Invitation: 7 days. Retention: 90 days. The link is secret.")
    Button(onClick={actions.invite(f,FormInvitationCreate(reader_ids=readers,recipient_user_id=recipient))},enabled=!busy) {Text(if(ru)"Создать приглашение" else "Create invitation")}
   }
   link?.let {
@@ -60,7 +60,7 @@ fun NativeFormsScreen(member:Member,data:WorkspaceState,busy:Boolean,completed:I
   filling?.let {a->
    Text(a.schema_body.title)
    Text((if(ru)"Читатели: " else "Results readers: ")+a.readers.joinToString {it.display_name})
-   Text((if(ru)"Хранение до: " else "Retained until: ")+a.retention_until)
+   Text((if(ru)"Хранение до: " else "Retained until: ")+(a.retention_until?:"${a.retention_days} "+if(ru)"дней после отправки" else "days after submission"))
    key(a.id){NativeFormRunner(a.schema_body,a.answers,ru,busy,false,{actions.draft(a.id,it)},{actions.submit(a.id,it)})}
   }
   Text(if(ru)"Доступные ответы" else "Available responses")

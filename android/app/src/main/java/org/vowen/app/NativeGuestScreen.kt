@@ -9,21 +9,20 @@ import androidx.compose.ui.text.AnnotatedString
 import kotlinx.coroutines.launch
 
 @Composable
-fun NativeGuestScreen(onClose:()->Unit) {
- var link by remember {mutableStateOf("")}
- var ru by remember {mutableStateOf(java.util.Locale.getDefault().language=="ru")}
- var access by remember {mutableStateOf<FormAccess?>(null)}
- var result by remember {mutableStateOf<FormResult?>(null)}
- var api by remember {mutableStateOf<GuestApi?>(null)}
- var apiOrigin by remember {mutableStateOf("")}
- var receiptMode by remember {mutableStateOf(false)}
- var receiptLink by remember {mutableStateOf<String?>(null)}
- var busy by remember {mutableStateOf(false)}
- var message by remember {mutableStateOf("")}
- var confirm by remember {mutableStateOf(false)}
- val scope=rememberCoroutineScope()
+fun NativeGuestScreen(model:GuestViewModel,onClose:()->Unit) {
+ var link by model.linkState
+ var ru by model.ruState
+ var access by model.accessState
+ var result by model.resultState
+ var api by model.apiState
+ var apiOrigin by model.apiOriginState
+ var receiptMode by model.receiptModeState
+ var receiptLink by model.receiptLinkState
+ var busy by model.busyState
+ var message by model.messageState
+ var confirm by model.confirmState
  val clipboard=LocalClipboardManager.current
- fun run(action:suspend ()->Unit){if(busy)return;scope.launch {busy=true;message="";try {action()}catch(_:Exception){message=if(ru)"Запрос не подтверждён. Ввод остаётся в этом окне." else "Request not confirmed. Your input remains in this window."}finally{busy=false}}}
+ fun run(action:suspend ()->Unit)=model.runAction(action)
  Column {
   Text(if(ru)"Гостевая анкета" else "Guest form",style=MaterialTheme.typography.headlineMedium)
   TextButton(onClick={ru=!ru}){Text(if(ru)"EN" else "RU")}
@@ -36,7 +35,7 @@ fun NativeGuestScreen(onClose:()->Unit) {
     val transport=api?.takeIf {apiOrigin==parsed.origin}?:GuestApi(parsed.origin).also {api=it;apiOrigin=parsed.origin}
     receiptMode=parsed.receipt
     val a=transport.exchange(parsed.proof,parsed.receipt)
-    access=a;link=""
+    access=a;link="";model.draftState.value=NativeFormDraft(a.answers)
     if(a.status=="submitted")result=transport.result()
    }},enabled=!busy){Text(if(ru)"Открыть анкету / квитанцию" else "Open form / receipt")}
   }
@@ -44,9 +43,9 @@ fun NativeGuestScreen(onClose:()->Unit) {
   access?.let {a->
    Text(a.schema_body.title)
    Text((if(ru)"Читатели результатов: " else "Results readers: ")+a.readers.joinToString {it.display_name})
-   Text((if(ru)"Хранение до: " else "Retained until: ")+a.retention_until)
+   Text((if(ru)"Хранение до: " else "Retained until: ")+(a.retention_until?:"${a.retention_days} "+if(ru)"дней после отправки" else "days after submission"))
    Text(if(ru)"Можно удалить ответ. Резервные копии удаляются по политике хранения. Возраст подтверждается только вами." else "You can delete your response. Backups expire by retention policy. Age is self-confirmed only.")
-   if(result==null&&!receiptMode&&a.status=="draft")NativeFormRunner(a.schema_body,a.answers,ru,busy,true,{answers->run {api!!.save(answers);message=if(ru)"Черновик сохранён" else "Draft saved"}},{command->run {result=api!!.submit(command)}})
+   if(result==null&&!receiptMode&&a.status=="draft")NativeFormRunner(a.schema_body,a.answers,ru,busy,true,{answers->run {access=api!!.save(answers);message=if(ru)"Черновик сохранён" else "Draft saved"}},{command->run {result=api!!.submit(command)}},state=model.draftState.value)
    result?.let {r->
     Text(if(ru)"Ответ отправлен" else "Response submitted")
     r.schema_body.questions.filter {r.answers.containsKey(it.id)}.forEach {q->Text(q.label+": "+r.answers[q.id])}

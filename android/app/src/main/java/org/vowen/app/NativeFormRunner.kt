@@ -32,12 +32,20 @@ fun formVisible(q:FormQuestion,answers:Map<String,JsonElement>):Boolean {
  return (visibility.all?:emptyList()).all(::matches)&&((visibility.any?:emptyList()).isEmpty()||(visibility.any?:emptyList()).any(::matches))
 }
 
+class NativeFormDraft(initial:Map<String,JsonElement>) {
+ val answersState=mutableStateOf(initial)
+ val reviewState=mutableStateOf(false)
+ val acknowledgedState=mutableStateOf(false)
+ val key=UUID.randomUUID().toString()
+}
+
 @Composable
-fun NativeFormRunner(schema:FormSchema,initial:Map<String,JsonElement>,ru:Boolean,busy:Boolean,guest:Boolean,onSave:(Map<String,JsonElement>)->Unit,onSubmit:(FormSubmit)->Unit) {
- var answers by remember(schema) {mutableStateOf(initial)}
- var review by remember(schema) {mutableStateOf(false)}
- var acknowledged by remember(schema) {mutableStateOf(false)}
- val key=remember(schema) {UUID.randomUUID().toString()}
+fun NativeFormRunner(schema:FormSchema,initial:Map<String,JsonElement>,ru:Boolean,busy:Boolean,guest:Boolean,onSave:(Map<String,JsonElement>)->Unit,onSubmit:(FormSubmit)->Unit,state:NativeFormDraft?=null) {
+ val draft=state?:remember(schema) {NativeFormDraft(initial)}
+ var answers by draft.answersState
+ var review by draft.reviewState
+ var acknowledged by draft.acknowledgedState
+ val key=draft.key
  val clean=mutableMapOf<String,JsonElement>()
  val questions=schema.questions.filter {q->if(formVisible(q,clean)){answers[q.id]?.let {clean[q.id]=it};true}else false}
  fun update(id:String,value:JsonElement){answers=answers+(id to value)}

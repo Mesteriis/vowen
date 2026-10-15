@@ -8,9 +8,9 @@ import androidx.compose.ui.platform.testTag
 import java.util.UUID
 
 @Composable
-fun NativeFormEditor(initial:FormSchema?,ru:Boolean,busy:Boolean,onSave:(FormSchema)->Unit,onCancel:()->Unit) {
+fun NativeFormEditor(initial:FormSchema?,ru:Boolean,busy:Boolean,onSave:(FormSchema)->Unit,onCancel:()->Unit,identity:String?=null) {
  fun question()=FormQuestion(id="q_"+UUID.randomUUID().toString().replace("-",""),kind="short_text",label="",required=false,options=emptyList())
- var schema by remember {mutableStateOf(initial?:FormSchema(title="",questions=listOf(question())))}
+ var schema by remember(initial,identity) {mutableStateOf(initial?:FormSchema(title="",questions=listOf(question())))}
  var kindIndex by remember {mutableStateOf<Int?>(null)}
  val kinds=listOf("short_text","long_text","number","date","boolean","single_choice","multiple_choice","scale","rating","acknowledgement")
  fun update(index:Int,q:FormQuestion){schema=schema.copy(questions=schema.questions.mapIndexed {i,old->if(i==index)q else old})}

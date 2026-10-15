@@ -30,7 +30,7 @@ class FormApiTest {
    val r=chain.request();captured.add(r)
    Response.Builder().request(r).protocol(Protocol.HTTP_1_1).code(200).message("Synthetic")
     .header("Set-Cookie","__Host-vowen_guest=synthetic-cookie; Secure; HttpOnly; Path=/")
-    .body("""{"id":"i","schema_body":{"title":"T","questions":[]},"readers":[],"retention_until":"future","status":"draft","answers":{},"csrf_token":"synthetic-csrf"}""".toResponseBody()).build()
+    .body("""{"id":"i","schema_body":{"title":"T","questions":[]},"readers":[],"retention_until":"future","retention_days":90,"expires_at":"future","status":"draft","answers":{},"csrf_token":"synthetic-csrf"}""".toResponseBody()).build()
   }.build()
   val api=GuestApi("https://instance.example",transport)
   api.exchange(GuestExchange(public_id="i",token="a".repeat(43)),false)

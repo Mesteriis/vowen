@@ -5,6 +5,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.Modifier
+import androidx.test.core.app.ActivityScenario
+import androidx.lifecycle.ViewModelProvider
+import androidx.compose.runtime.*
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
 import kotlinx.serialization.json.*
@@ -47,9 +50,45 @@ class FormScreenTest {
   assertEquals("short_text",saved!!.questions.single().kind)
  }
  @Test fun nativeGuestRejectsNonHttpsLinkBeforeNetwork() {
-  compose.setContent {MaterialTheme {Column(Modifier.verticalScroll(rememberScrollState())) {NativeGuestScreen {}}}}
+  val guestModel=GuestViewModel()
+  compose.setContent {MaterialTheme {Column(Modifier.verticalScroll(rememberScrollState())) {NativeGuestScreen(guestModel) {}}}}
   compose.onNodeWithText("Secret form or receipt link").performTextInput("http://unsafe.example/f/id#token=secret")
   compose.onNodeWithText("Open form / receipt").performScrollTo().performClick()
   compose.onNodeWithText("Request not confirmed. Your input remains in this window.").assertExists()
+ }
+ @Test fun switchingTemplateResetsUnsavedEditorBeforeSavingNewTarget() {
+  var initial by mutableStateOf(FormSchema(title="Template A",questions=listOf(FormQuestion(id="a",kind="short_text",label="Question A"))))
+  var saved:FormSchema?=null
+  compose.setContent {MaterialTheme {Column(Modifier.verticalScroll(rememberScrollState())) {NativeFormEditor(initial,false,false,{saved=it},{})}}}
+  compose.onNodeWithTag("native-form-title").performTextReplacement("Unsaved A")
+  compose.runOnIdle {initial=FormSchema(title="Template B",questions=listOf(FormQuestion(id="b",kind="short_text",label="Question B")))}
+  compose.onNodeWithTag("native-form-title").assertTextContains("Template B")
+  compose.onNodeWithTag("native-form-save").performScrollTo().performClick()
+  assertEquals("b",saved!!.questions.single().id)
+ }
+ @Test fun activityRecreationKeepsGuestCookieRouteAndUnsavedInputInMemory() {
+  val scenario=ActivityScenario.launch(MainActivity::class.java)
+  var transport:GuestApi?=null
+  var key:String?=null
+  try {
+   compose.onNodeWithText("Guest form / Гостевая анкета").performClick()
+   scenario.onActivity {activity->
+    val m=ViewModelProvider(activity)[GuestViewModel::class.java]
+    transport=GuestApi("https://instance.example")
+    m.apiState.value=transport
+    m.accessState.value=FormAccess(id="i",schema_body=schema,readers=emptyList(),answers=emptyMap(),status="draft",retention_until=null,retention_days=90,expires_at="future")
+    m.draftState.value=NativeFormDraft(mapOf("q" to JsonPrimitive("Unsaved before rotation")))
+    key=m.draftState.value!!.key
+   }
+   compose.onNodeWithTag("form-answer-q").assertTextContains("Unsaved before rotation")
+   scenario.recreate()
+   compose.onNodeWithTag("form-answer-q").assertTextContains("Unsaved before rotation")
+   scenario.onActivity {activity->
+    val m=ViewModelProvider(activity)[GuestViewModel::class.java]
+    assertTrue(m.visibleState.value)
+    assertSame(transport,m.apiState.value)
+    assertEquals(key,m.draftState.value!!.key)
+   }
+  } finally {scenario.close()}
  }
 }
