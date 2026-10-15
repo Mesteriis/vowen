@@ -1,7 +1,7 @@
 import {expect,type Page} from '@playwright/test'
 
 export async function openSection(page:Page,section:string){
- const desktop=page.locator(`.workspace-nav a[href="#${section}"]`)
+ const desktop=page.locator(`.workspace-nav nav a[href="#${section}"]`)
  if(await desktop.isVisible())await desktop.click()
  else{
   const primary=page.locator(`.mobile-bottom-nav a[href="#${section}"]`)

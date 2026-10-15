@@ -1,9 +1,9 @@
 import {openSection,proposeRelationship} from './workspace'
 import { test, expect, type Page } from '@playwright/test'
-import { createHmac } from 'node:crypto'
+import { createHmac,randomUUID } from 'node:crypto'
 
 function signed(id:number) {
- const fields:Record<string,string> = {auth_date:String(Math.floor(Date.now()/1000)),query_id:'synthetic-'+id,user:JSON.stringify({id,first_name:'Demo'})}
+ const fields:Record<string,string> = {auth_date:String(Math.floor(Date.now()/1000)),query_id:'synthetic-'+randomUUID(),user:JSON.stringify({id,first_name:'Demo'})}
  const secret=createHmac('sha256','WebAppData').update('123456:synthetic_test_token_not_a_real_credential').digest()
  fields.hash=createHmac('sha256',secret).update(Object.entries(fields).sort(([a],[b])=>a.localeCompare(b)).map(([k,v])=>`${k}=${v}`).join('\n')).digest('hex')
  return new URLSearchParams(fields).toString()
@@ -82,4 +82,52 @@ test('Telegram launch keeps the preloader until verification and never flashes t
  await expect(page.locator('.startup-screen')).toHaveCount(0)
  await expect(page.locator('.entry-workspace')).toHaveCount(0)
  await expect(page.getByRole('combobox',{name:'Relationship context'})).toBeVisible()
+})
+
+test('home distinguishes API failure from an empty day and recovers on retry',async({page})=>{
+ let unavailable=true
+ await page.route('**/api/v1/ritual-occurrences',route=>unavailable?route.fulfill({status:503,contentType:'application/json',body:'{"error":{"code":"UNAVAILABLE"}}'}):route.continue())
+ await telegram(page,100000000205)
+ await expect(page.getByText('Your day could not be loaded. Try refreshing.',{exact:false})).toBeVisible()
+ await expect(page.locator('.home-stats strong')).toHaveText(['—','—','—','—'])
+ await expect(page.getByRole('heading',{name:'Room for your own rhythm',exact:true})).toHaveCount(0)
+ unavailable=false
+ await page.getByRole('button',{name:'Try again',exact:true}).click()
+ await expect(page.getByRole('heading',{name:'Room for your own rhythm',exact:true})).toBeVisible()
+ await expect(page.locator('.home-stats strong')).toHaveText(['0','0','0','0'])
+})
+
+test('every section fits phone and tablet widths with usable outline controls',async({page},testInfo)=>{
+ await telegram(page,100000000206)
+ for(const viewport of [{width:390,height:844},{width:768,height:1024},{width:1024,height:768}]){
+  await page.setViewportSize(viewport)
+  for(const section of ['home','rituals','rules','journal','rewards','forms','discipline','relations','notifications','profile','sessions']){
+   await openSection(page,section)
+   const dimensions=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}))
+   expect(dimensions.scroll,`${section} at ${viewport.width}px`).toBeLessThanOrEqual(dimensions.width)
+   const undersized=await page.locator('.workspace-content button').evaluateAll(buttons=>buttons.filter(b=>{const rect=b.getBoundingClientRect();return rect.width>0&&rect.height>0&&rect.height<43}).map(b=>b.textContent))
+   expect(undersized,`${section} touch targets`).toEqual([])
+   await page.screenshot({path:testInfo.outputPath(`${section}-${viewport.width}.png`)})
+  }
+ }
+})
+
+
+test('compact session rows identify this device and revoke another session',async({browser,page})=>{
+ await telegram(page,100000000207)
+ const otherContext=await browser.newContext({locale:'en-US'}),other=await otherContext.newPage()
+ await telegram(other,100000000207)
+ await page.getByRole('button',{name:'Refresh',exact:true}).click()
+ await openSection(page,'sessions')
+ await expect(page.locator('.session-row[data-current="true"]')).toContainText('This device')
+ await expect(page.locator('.session-row[data-current="false"]')).toHaveCount(1)
+ const row=page.locator('.session-row[data-current="false"]')
+ expect(await row.evaluate(e=>e.getBoundingClientRect().height)).toBeLessThanOrEqual(70)
+ await row.getByRole('button',{name:'Revoke session Telegram Mini App',exact:true}).click()
+ await expect(page.locator('.session-list>.session-row')).toHaveCount(1)
+ await page.getByText('Access history · 1',{exact:true}).click()
+ await expect(page.locator('.session-history')).toContainText('Revoked')
+ await other.getByRole('button',{name:'Refresh',exact:true}).click()
+ await expect(other.locator('.member-workspace')).toHaveCount(0)
+ await otherContext.close()
 })

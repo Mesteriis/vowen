@@ -63,7 +63,7 @@ data class RitualActions(
  Column(verticalArrangement=Arrangement.spacedBy(8.dp)) {
   mediaError?.let{Text(it,color=MaterialTheme.colorScheme.error)}
   Text(t("Rituals","Ритуалы"),style=MaterialTheme.typography.headlineMedium)
-  Row {TextButton(onClick=actions.refresh,enabled=!busy){Text(t("Refresh rituals","Обновить ритуалы"))};Button(onClick={selected=null;editing=true},enabled=!busy&&!member.paused){Text(t("New ritual","Новый ритуал"))}}
+  Row {TextButton(onClick=actions.refresh,enabled=!busy){Text(t("Refresh rituals","Обновить ритуалы"))};VowenActionButton(onClick={selected=null;editing=true},enabled=!busy&&!member.paused){Text(t("New ritual","Новый ритуал"))}}
   var filtering by remember {mutableStateOf(false)}
   Box {TextButton(onClick={filtering=true}){Text(t("Status: ","Статус: ")+(if(filter=="all")t("All","Все") else label(filter)))};DropdownMenu(filtering,{filtering=false}) {listOf("all","scheduled","submitted","approved","needs_changes","missed","skipped","cancelled").forEach {s->DropdownMenuItem(text={Text(if(s=="all")t("All","Все") else label(s))},onClick={filter=s;filtering=false})}}}
   if(data.ritualOccurrences.isEmpty())Text(t("No visible occurrences yet.","Пока нет доступных выполнений."))
@@ -146,7 +146,7 @@ data class RitualActions(
  var title by remember{mutableStateOf(r?.title?:"")};var description by remember{mutableStateOf(r?.description?:"")}
  OutlinedTextField(title,{if(it.length<=200)title=it},label={Text(if(ru)"Название ритуала" else "Ritual title")},enabled=!busy)
  OutlinedTextField(description,{if(it.length<=10000)description=it},label={Text(if(ru)"Описание ритуала" else "Ritual description")},enabled=!busy)
- Button(onClick={save(RitualContent(title=title,description=description))},enabled=!busy&&title.isNotBlank()&&description.isNotBlank()){Text(if(ru)"Сохранить ритуал" else "Save ritual")}
+ VowenActionButton(onClick={save(RitualContent(title=title,description=description))},enabled=!busy&&title.isNotBlank()&&description.isNotBlank()){Text(if(ru)"Сохранить ритуал" else "Save ritual")}
  TextButton(onClick=cancel,enabled=!busy){Text(if(ru)"Отмена" else "Cancel")}
 }
 @Composable private fun RitualAssignmentEditor(member:Member,participants:List<Participant>,rewards:List<RewardDefinition>,template:RitualTemplate?,assignment:RitualAssignment?,busy:Boolean,ru:Boolean,assign:(RitualAssign)->Unit,edit:(RitualSchedule)->Unit,cancel:()->Unit){
@@ -177,7 +177,7 @@ data class RitualActions(
  OutlinedTextField(window,{window=it},label={Text(t("Report window · hours","Окно отчёта · часы"))},enabled=!busy)
  Text(t("DST: missing time shifts by the gap; repeated time uses the first occurrence. Schedule edits begin tomorrow or later.","DST: отсутствующее время сдвигается на разрыв, повторяющееся — один раз. Изменения — со следующего дня."),style=MaterialTheme.typography.bodySmall)
  val valid=evidenceTypes.isNotEmpty() && hour.toIntOrNull() in 0..23 && minute.toIntOrNull() in 0..59 && window.toIntOrNull() in 1..168 && runCatching{LocalDate.parse(date);ZoneId.of(timezone)}.isSuccess && (kind!="weekly"||days.isNotEmpty())
- Button(onClick={val s=RitualSchedule(hour=hour.toInt(),minute=minute.toInt(),kind=kind,timezone=timezone,start_date=date,weekdays=days,window_hours=window.toInt());if(template!=null)assign(RitualAssign(evidence_policy=EvidencePolicy(required=evidenceRequired,allowed_types=evidenceTypes),reward_version_id=reward,approval_required=approval,idempotency_key=key,recipient_id=recipient,reviewer_ids=reviewers,schedule=s)) else edit(s)},enabled=!busy&&valid&&(template==null||(recipient.isNotEmpty()&&(!approval||reviewers.isNotEmpty())))){Text(if(template==null)t("Save schedule","Сохранить расписание") else t("Create ritual assignment","Создать назначение ритуала"))}
+ VowenActionButton(onClick={val s=RitualSchedule(hour=hour.toInt(),minute=minute.toInt(),kind=kind,timezone=timezone,start_date=date,weekdays=days,window_hours=window.toInt());if(template!=null)assign(RitualAssign(evidence_policy=EvidencePolicy(required=evidenceRequired,allowed_types=evidenceTypes),reward_version_id=reward,approval_required=approval,idempotency_key=key,recipient_id=recipient,reviewer_ids=reviewers,schedule=s)) else edit(s)},enabled=!busy&&valid&&(template==null||(recipient.isNotEmpty()&&(!approval||reviewers.isNotEmpty())))){Text(if(template==null)t("Save schedule","Сохранить расписание") else t("Create ritual assignment","Создать назначение ритуала"))}
  TextButton(onClick=cancel,enabled=!busy){Text(t("Cancel","Отмена"))}
 }
 

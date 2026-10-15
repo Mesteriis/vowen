@@ -57,3 +57,14 @@ Dark-only revision: mobile menu, profile and return-to-home were exercised throu
 real controls. An unlabeled avatar button was corrected to name its profile action;
 the mobile destination dialog now has an explicit heading label. Light mode was
 inspected before the owner removed it; it is no longer a supported state.
+
+## Owner density revision
+
+A later owner review rejected the oversized record treatment. Session records now
+use body typography and62px mobile rows, an adjacent compact outline action, current
+device identification and collapsed access history. Other record titles, card
+padding, text rhythm and repeated headings were reduced across the interface.
+Personal pages no longer spend a row on an irrelevant relationship selector.
+The initial design captures are historical; final mobile/tablet captures are refreshed
+after this revision. Native outline controls compile; full native design QA remains
+a separate pending slice.

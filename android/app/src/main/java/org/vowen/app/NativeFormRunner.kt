@@ -78,17 +78,17 @@ fun NativeFormRunner(schema:FormSchema,initial:Map<String,JsonElement>,ru:Boolea
     }
    }
    Text(if(ru)"При ошибке ввод остаётся в этом окне; сохранение требует ответа сервера." else "Failed requests keep input in this window; saving requires server confirmation.")
-   Button(onClick={onSave(answers)},enabled=!busy) {Text(if(ru)"Сохранить черновик" else "Save draft")}
+   VowenActionButton(onClick={onSave(answers)},enabled=!busy) {Text(if(ru)"Сохранить черновик" else "Save draft")}
    Row {
     Checkbox(checked=acknowledged,onCheckedChange={acknowledged=it},enabled=!busy,modifier=Modifier.testTag("form-ack"))
     Text(if(ru) if(guest)"Мне 18 лет или больше; я ознакомился с читателями и хранением" else "Я ознакомился с читателями и хранением" else if(guest)"I am 18 or older and have reviewed readers and retention" else "I have reviewed readers and retention")
    }
-   Button(onClick={review=true},enabled=!busy&&acknowledged,modifier=Modifier.testTag("form-review")) {Text(if(ru)"Проверить ответы" else "Review answers")}
+   VowenActionButton(onClick={review=true},enabled=!busy&&acknowledged,modifier=Modifier.testTag("form-review")) {Text(if(ru)"Проверить ответы" else "Review answers")}
   } else {
    Text(if(ru)"Проверьте ответы перед отправкой" else "Review before sending")
    questions.forEach {q->Text(q.label+": "+(answers[q.id]?.toString()?:"—"))}
-   Button(onClick={review=false},enabled=!busy) {Text(if(ru)"Изменить" else "Edit answers")}
-   Button(onClick={onSubmit(FormSubmit(answers=answers,idempotency_key=key,acknowledged=true))},enabled=!busy,modifier=Modifier.testTag("form-send")) {Text(if(ru)"Отправить ответы" else "Send answers")}
+   VowenActionButton(onClick={review=false},enabled=!busy) {Text(if(ru)"Изменить" else "Edit answers")}
+   VowenActionButton(onClick={onSubmit(FormSubmit(answers=answers,idempotency_key=key,acknowledged=true))},enabled=!busy,modifier=Modifier.testTag("form-send")) {Text(if(ru)"Отправить ответы" else "Send answers")}
   }
  }
 }

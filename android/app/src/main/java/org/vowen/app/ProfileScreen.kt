@@ -27,6 +27,6 @@ fun ProfileScreen(member:Member,busy:Boolean,onSave:(ProfilePatch)->Unit) {
   listOf("dominant","submissive","switch").forEach {label->
    Row {Checkbox(label in labels,{checked->labels=if(checked)labels+label else labels-label},enabled=!busy,modifier=Modifier.testTag("profile-$label").semantics {contentDescription=label});Text(label)}
   }
-  Button(onClick={onSave(ProfilePatch(expected_version=member.profile_version,display_name=name,language=language,timezone=timezone,profile_labels=labels))},enabled=!busy&&name.isNotBlank()&&timezone.isNotBlank(),modifier=Modifier.testTag("profile-save")) {Text(if(ru)"Сохранить профиль" else "Save profile")}
+  VowenActionButton(onClick={onSave(ProfilePatch(expected_version=member.profile_version,display_name=name,language=language,timezone=timezone,profile_labels=labels))},enabled=!busy&&name.isNotBlank()&&timezone.isNotBlank(),modifier=Modifier.testTag("profile-save")) {Text(if(ru)"Сохранить профиль" else "Save profile")}
  }
 }

@@ -25,7 +25,7 @@ fun NativeJournalScreen(member:Member,data:WorkspaceState,busy:Boolean,completed
   Text(t("Diary","Дневник"),style=MaterialTheme.typography.headlineSmall)
   Text(t("Private by default. Relationships do not grant diary access.","По умолчанию приватный. Отношения не открывают доступ к дневнику."))
   TextButton(onClick=actions.refresh,enabled=!busy){Text(t("Refresh diary","Обновить дневник"))}
-  Button(onClick={selected=null;editing=true},enabled=!busy,modifier=Modifier.testTag("new-journal")){Text(t("New diary entry","Новая запись дневника"))}
+  VowenActionButton(onClick={selected=null;editing=true},enabled=!busy,modifier=Modifier.testTag("new-journal")){Text(t("New diary entry","Новая запись дневника"))}
   OutlinedTextField(search,{search=it},label={Text(t("Search accessible entries","Поиск доступных записей"))},modifier=Modifier.testTag("journal-search"))
   OutlinedTextField(tag,{tag=it},label={Text(t("Filter by tag","Фильтр по тегу"))})
   if(editing)key(selected?.id,selected?.revision){JournalEditor(member,data,selected,busy,actions.save,{editing=false})}
@@ -71,7 +71,7 @@ private fun JournalEditor(member:Member,data:WorkspaceState,entry:JournalEntry?,
    Text(t("Editing text never expands the readership snapshot.","Редактирование текста не расширяет список читателей."))
    if(entry!=null)Row{Checkbox(refresh,{refresh=it},enabled=!busy);Text(t("Explicitly refresh current member snapshot","Явно обновить список текущих участников"))}
   }
-  Button(onClick={save(entry,JournalContent(date=date,title=title,text=text,mood=mood.ifBlank{null},tags=tags.split(',').map{it.trim()}.filter{it.isNotEmpty()},published=published,visibility=visibility,reader_ids=if(visibility=="private")emptyList() else readers),refresh)},enabled=!busy&&title.isNotBlank()&&text.isNotBlank()&&runCatching{LocalDate.parse(date)}.isSuccess,modifier=Modifier.testTag("save-journal")){Text(t("Save diary entry","Сохранить запись дневника"))}
+  VowenActionButton(onClick={save(entry,JournalContent(date=date,title=title,text=text,mood=mood.ifBlank{null},tags=tags.split(',').map{it.trim()}.filter{it.isNotEmpty()},published=published,visibility=visibility,reader_ids=if(visibility=="private")emptyList() else readers),refresh)},enabled=!busy&&title.isNotBlank()&&text.isNotBlank()&&runCatching{LocalDate.parse(date)}.isSuccess,modifier=Modifier.testTag("save-journal")){Text(t("Save diary entry","Сохранить запись дневника"))}
   TextButton(onClick=cancel,enabled=!busy){Text(t("Cancel","Отмена"))}
  }
 }

@@ -28,7 +28,7 @@ fun NativeDisciplineScreen(member:Member,data:WorkspaceState,busy:Boolean,comple
   Text(t("Discipline","Дисциплина"),style=MaterialTheme.typography.headlineSmall)
   Text(t("An alleged event is not an agreed fact. Acceptance is personal and can be withdrawn.","Предполагаемое событие не является установленным фактом. Согласие личное и может быть отозвано."))
   TextButton(onClick=actions.refresh,enabled=!busy){Text(t("Refresh discipline","Обновить дисциплину"))}
-  Button(onClick={selected=null;editing=true},enabled=!busy&&!member.paused,modifier=Modifier.testTag("new-discipline")){Text(t("New discipline proposal","Новое дисциплинарное предложение"))}
+  VowenActionButton(onClick={selected=null;editing=true},enabled=!busy&&!member.paused,modifier=Modifier.testTag("new-discipline")){Text(t("New discipline proposal","Новое дисциплинарное предложение"))}
   if(editing) key(selected?.id,selected?.revision){DisciplineEditor(member,data,selected,busy,actions,{editing=false})}
   OutlinedTextField(comment,{if(it.length<=5000)comment=it},label={Text(t("Transition comment","Комментарий к действию"))},enabled=!busy,modifier=Modifier.testTag("discipline-comment"))
   if(data.discipline.isEmpty())Text(t("No visible discipline records","Нет доступных дисциплинарных записей"))
@@ -90,7 +90,7 @@ private fun DisciplineEditor(member:Member,data:WorkspaceState,record:Discipline
   Text(t("Explicit reviewers with current authority","Назначенные проверяющие с актуальными полномочиями"))
   data.participants.filter{it.id!=recipient}.forEach{p->Row{Checkbox(p.id in reviewers,{checked->reviewers=if(checked)reviewers+p.id else reviewers-p.id},enabled=!busy&&record==null,modifier=Modifier.testTag("discipline-reviewer-${p.id}"));Text(p.display_name)}}
   Text(t("Every revised version requires fresh recipient acceptance.","Новая версия требует нового согласия адресата."))
-  Button(onClick={if(record==null)actions.create(DisciplineCreate(description=description,conditions=conditions,deadline=deadline.ifBlank{null},rule_version_id=rule.ifBlank{null},occurrence_id=occurrence.ifBlank{null},recipient_id=recipient,reviewer_ids=reviewers,idempotency_key=key)) else actions.revise(record,DisciplineEdit(description=description,conditions=conditions,deadline=deadline.ifBlank{null},rule_version_id=rule.ifBlank{null},occurrence_id=occurrence.ifBlank{null},expected_version=record.revision))},enabled=!busy&&recipient.isNotBlank()&&description.isNotBlank()&&conditions.isNotBlank()&&reviewers.isNotEmpty(),modifier=Modifier.testTag("save-discipline")){Text(t("Send discipline proposal","Отправить дисциплинарное предложение"))}
+  VowenActionButton(onClick={if(record==null)actions.create(DisciplineCreate(description=description,conditions=conditions,deadline=deadline.ifBlank{null},rule_version_id=rule.ifBlank{null},occurrence_id=occurrence.ifBlank{null},recipient_id=recipient,reviewer_ids=reviewers,idempotency_key=key)) else actions.revise(record,DisciplineEdit(description=description,conditions=conditions,deadline=deadline.ifBlank{null},rule_version_id=rule.ifBlank{null},occurrence_id=occurrence.ifBlank{null},expected_version=record.revision))},enabled=!busy&&recipient.isNotBlank()&&description.isNotBlank()&&conditions.isNotBlank()&&reviewers.isNotEmpty(),modifier=Modifier.testTag("save-discipline")){Text(t("Send discipline proposal","Отправить дисциплинарное предложение"))}
   TextButton(onClick=cancel,enabled=!busy){Text(t("Cancel","Отмена"))}
  }
 }

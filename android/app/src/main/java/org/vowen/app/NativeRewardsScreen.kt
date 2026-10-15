@@ -24,13 +24,13 @@ data class RewardActions(val refresh:()->Unit,val save:(RewardDefinition?,Reward
  var requestKey by remember{mutableStateOf(UUID.randomUUID().toString())}
  Column(verticalArrangement=Arrangement.spacedBy(8.dp)){
   Text(t("Rewards","Награды"),style=MaterialTheme.typography.headlineMedium)
-  Row{TextButton(onClick=actions.refresh,enabled=!busy){Text(t("Refresh rewards","Обновить награды"))};Button(onClick={selected=null;editing=true},enabled=!busy&&!member.paused){Text(t("New reward","Новая награда"))}}
+  Row{TextButton(onClick=actions.refresh,enabled=!busy){Text(t("Refresh rewards","Обновить награды"))};VowenActionButton(onClick={selected=null;editing=true},enabled=!busy&&!member.paused){Text(t("New reward","Новая награда"))}}
   if(editing)key(selected?.id,selected?.revision){
    var title by remember{mutableStateOf(selected?.title?:"")};var description by remember{mutableStateOf(selected?.description?:"")};var conditions by remember{mutableStateOf(selected?.conditions?:"")}
    OutlinedTextField(title,{if(it.length<=200)title=it},label={Text(t("Reward title","Название награды"))},enabled=!busy)
    OutlinedTextField(description,{if(it.length<=10000)description=it},label={Text(t("Reward description","Описание награды"))},enabled=!busy)
    OutlinedTextField(conditions,{if(it.length<=10000)conditions=it},label={Text(t("Reward conditions","Условия награды"))},enabled=!busy)
-   Button(onClick={actions.save(selected,RewardContent(title=title,description=description,conditions=conditions))},enabled=!busy&&!member.paused&&title.isNotBlank()&&description.isNotBlank()){Text(t("Save reward","Сохранить награду"))}
+   VowenActionButton(onClick={actions.save(selected,RewardContent(title=title,description=description,conditions=conditions))},enabled=!busy&&!member.paused&&title.isNotBlank()&&description.isNotBlank()){Text(t("Save reward","Сохранить награду"))}
    TextButton(onClick={editing=false},enabled=!busy){Text(t("Close editor","Закрыть редактор"))}
   }
   Text(t("Your grants","Ваши выдачи"),style=MaterialTheme.typography.titleLarge)
@@ -55,7 +55,7 @@ data class RewardActions(val refresh:()->Unit,val save:(RewardDefinition?,Reward
    Row{TextButton(onClick={offering=r;recipient="";requestKey=UUID.randomUUID().toString()},enabled=!busy&&!member.paused){Text(t("Offer reward","Предложить награду"))};TextButton(onClick={selected=r;editing=true},enabled=!busy&&!member.paused){Text(t("New reward version","Новая версия награды"))}}
   }
   offering?.let{r->Text(r.title);Box{TextButton(onClick={expanded=true},enabled=!busy){Text(data.participants.find{it.id==recipient}?.display_name?:t("Reward recipient","Получатель награды"))};DropdownMenu(expanded,{expanded=false}){data.participants.filter{it.id!=member.id}.forEach{p->DropdownMenuItem(text={Text(p.display_name)},onClick={recipient=p.id;requestKey=UUID.randomUUID().toString();expanded=false})}}}
-   Button(onClick={actions.grant(GrantCommand(reward_version_id=r.version_id,recipient_id=recipient,idempotency_key=requestKey))},enabled=!busy&&!member.paused&&recipient.isNotEmpty()){Text(t("Confirm reward offer","Подтвердить предложение награды"))};TextButton(onClick={offering=null},enabled=!busy){Text(t("Close offer","Закрыть предложение"))}
+   VowenActionButton(onClick={actions.grant(GrantCommand(reward_version_id=r.version_id,recipient_id=recipient,idempotency_key=requestKey))},enabled=!busy&&!member.paused&&recipient.isNotEmpty()){Text(t("Confirm reward offer","Подтвердить предложение награды"))};TextButton(onClick={offering=null},enabled=!busy){Text(t("Close offer","Закрыть предложение"))}
   }
 
  }

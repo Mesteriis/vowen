@@ -30,7 +30,7 @@ fun NativeGuestScreen(model:GuestViewModel,onClose:()->Unit) {
   Text(if(ru)"Гостевой сеанс хранится только в памяти. До закрытия сохраните квитанцию; потерянный черновик открывается через новое приглашение." else "The guest session stays in memory. Save your receipt before closing; a lost draft session requires a new invitation.")
   if(access==null) {
    OutlinedTextField(link,{link=it},label={Text(if(ru)"Секретная ссылка анкеты или квитанции" else "Secret form or receipt link")},enabled=!busy,modifier=Modifier.fillMaxWidth())
-   Button(onClick={run {
+   VowenActionButton(onClick={run {
     val parsed=GuestLink.parse(link)
     val transport=api?.takeIf {apiOrigin==parsed.origin}?:GuestApi(parsed.origin).also {api=it;apiOrigin=parsed.origin}
     receiptMode=parsed.receipt
@@ -49,12 +49,12 @@ fun NativeGuestScreen(model:GuestViewModel,onClose:()->Unit) {
    result?.let {r->
     Text(if(ru)"Ответ отправлен" else "Response submitted")
     r.schema_body.questions.filter {r.answers.containsKey(it.id)}.forEach {q->Text(q.label+": "+r.answers[q.id])}
-    if(!receiptMode)Button(onClick={run {receiptLink=api!!.receipt()}},enabled=!busy){Text(if(ru)"Создать квитанцию" else "Create receipt")}
+    if(!receiptMode)VowenActionButton(onClick={run {receiptLink=api!!.receipt()}},enabled=!busy){Text(if(ru)"Создать квитанцию" else "Create receipt")}
     receiptLink?.let {value->OutlinedTextField(value,{},readOnly=true,label={Text(if(ru)"Ссылка квитанции" else "Receipt link")});TextButton(onClick={clipboard.setText(AnnotatedString(value))}){Text(if(ru)"Копировать квитанцию" else "Copy receipt")}}
-    Button(onClick={confirm=true},enabled=!busy){Text(if(ru)"Удалить ответ" else "Delete response")}
+    VowenActionButton(onClick={confirm=true},enabled=!busy){Text(if(ru)"Удалить ответ" else "Delete response")}
    }
   }
   TextButton(onClick=onClose,enabled=!busy){Text(if(ru)"Закрыть гостевой сеанс" else "Close guest session")}
  }
- if(confirm)AlertDialog(onDismissRequest={confirm=false},title={Text(if(ru)"Удалить ответ?" else "Delete response?")},confirmButton={Button(onClick={run {api!!.delete();access=null;result=null;receiptLink=null;confirm=false;api=null;message=if(ru)"Ответ удалён" else "Response deleted"}},enabled=!busy){Text(if(ru)"Подтвердить удаление" else "Confirm deletion")}},dismissButton={TextButton(onClick={confirm=false}){Text(if(ru)"Отмена" else "Cancel")}})
+ if(confirm)AlertDialog(onDismissRequest={confirm=false},title={Text(if(ru)"Удалить ответ?" else "Delete response?")},confirmButton={VowenActionButton(onClick={run {api!!.delete();access=null;result=null;receiptLink=null;confirm=false;api=null;message=if(ru)"Ответ удалён" else "Response deleted"}},enabled=!busy){Text(if(ru)"Подтвердить удаление" else "Confirm deletion")}},dismissButton={TextButton(onClick={confirm=false}){Text(if(ru)"Отмена" else "Cancel")}})
 }

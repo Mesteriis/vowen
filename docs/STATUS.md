@@ -833,3 +833,23 @@ and instrumentation regression scenarios cover legacy light preferences.
 Local web lint/typecheck/unit tests/build passed. Android testDebugUnitTest,
 lintDebug, assembleDebug and assembleDebugAndroidTest passed. Instrumentation
 scenarios were compiled, not executed on a device for this slice.
+
+## Compact controls and responsive web acceptance (2026-10-15)
+
+Owner feedback replaced oversized card/list spacing with a denser application
+rhythm. Web actions use outlines, smaller typography and reduced padding. Native
+primary actions now share a compact OutlinedButton with unchanged callbacks/tags.
+Touch targets remain44px; compact session actions paint a smaller outline within
+that target. Session rows show name/status/time and an adjacent revoke action,
+identify the current device and collapse revoked/expired records into history.
+Personal pages omit the irrelevant relationship selector while preserving pause,
+refresh and sign-out. Recurring surveys render once within Forms & surveys.
+
+Local checks:210 backend tests,12 web unit tests,18 real-API browser scenarios passed;
+the browser suite traverses all11 sections at390/768/1024 widths, verifies overflow
+and touch targets, distinguishes home load failures from empty data, checks automatic
+Telegram entry and revokes another session through the compact list. M4 regressions
+were fixed: confirmation completion is awaited before refreshing authority, and
+confirmation dialogs are centered within the viewport. Native unit/lint/APK and
+instrumentation-APK builds passed; native instrumentation was not executed here.
+Exact-commit CI results will be recorded after the final integration run.

@@ -30,8 +30,8 @@ fun NativeFormEditor(initial:FormSchema?,ru:Boolean,busy:Boolean,onSave:(FormSch
    if(q.visibility!=null)Text(if(ru)"Условия сохранены. Изменяйте их в Mini App." else "Existing conditions are preserved. Edit conditions in Mini App.")
    TextButton(onClick={schema=schema.copy(questions=schema.questions.filterIndexed {j,_->i!=j})},enabled=schema.questions.size>1) {Text(if(ru)"Удалить вопрос" else "Remove question")}
   }
-  Button(onClick={schema=schema.copy(questions=schema.questions+question())},enabled=schema.questions.size<100) {Text(if(ru)"Добавить вопрос" else "Add question")}
-  Button(onClick={onSave(schema)},enabled=!busy,modifier=Modifier.testTag("native-form-save")) {Text(if(ru)"Сохранить анкету" else "Save form")}
+  VowenActionButton(onClick={schema=schema.copy(questions=schema.questions+question())},enabled=schema.questions.size<100) {Text(if(ru)"Добавить вопрос" else "Add question")}
+  VowenActionButton(onClick={onSave(schema)},enabled=!busy,modifier=Modifier.testTag("native-form-save")) {Text(if(ru)"Сохранить анкету" else "Save form")}
   TextButton(onClick=onCancel) {Text(if(ru)"Отмена" else "Cancel")}
  }
  kindIndex?.let {index->AlertDialog(onDismissRequest={kindIndex=null},title={Text("Question type / Тип вопроса")},text={Column {kinds.forEach {kind->TextButton(onClick={val q=schema.questions[index];update(index,q.copy(kind=kind,options=if(kind.contains("choice"))listOf(FormOption("o1","Option 1"),FormOption("o2","Option 2")) else emptyList()));kindIndex=null}){Text(kind)}}}},confirmButton={})}

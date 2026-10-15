@@ -47,18 +47,18 @@ class MainActivity:ComponentActivity() {
       if(!guest) {
       if(screen.member==null||choosingInstance){
       OutlinedTextField(value=origin,onValueChange={origin=it},label={Text(stringResource(R.string.instance))},singleLine=true,enabled=!screen.busy)
-      Button(onClick={model.select(origin)},enabled=!screen.busy) {Text(stringResource(R.string.connect))}
+      VowenActionButton(onClick={model.select(origin)},enabled=!screen.busy) {Text(stringResource(R.string.connect))}
       if(screen.origin.isNotBlank()) Text(screen.origin)
       }
       screen.error?.let { Text(it,color=MaterialTheme.colorScheme.error) }
       if(screen.busy) LinearProgressIndicator(Modifier.fillMaxWidth())
       if(screen.member==null && screen.origin.isNotBlank()) {
-       Button(onClick={model.begin()},enabled=!screen.busy) {Text(stringResource(R.string.signin))}
+       VowenActionButton(onClick={model.begin()},enabled=!screen.busy) {Text(stringResource(R.string.signin))}
       }
       screen.challenge?.let { challenge ->
        Text("${stringResource(R.string.confirm)}: ${challenge.display_code}",style=MaterialTheme.typography.headlineSmall)
-       Button(onClick={context.startActivity(Intent(Intent.ACTION_VIEW,Uri.parse(challenge.bot_url)))},enabled=!screen.busy) {Text("Telegram")}
-       Button(onClick={model.poll()},enabled=!screen.busy) {Text(stringResource(R.string.poll))}
+       VowenActionButton(onClick={context.startActivity(Intent(Intent.ACTION_VIEW,Uri.parse(challenge.bot_url)))},enabled=!screen.busy) {Text("Telegram")}
+       VowenActionButton(onClick={model.poll()},enabled=!screen.busy) {Text(stringResource(R.string.poll))}
       }
       screen.member?.let { member ->
        Row {

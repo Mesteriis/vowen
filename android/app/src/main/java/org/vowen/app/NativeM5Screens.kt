@@ -37,7 +37,7 @@ fun NativeNotificationScreen(settings:NotificationSettings?,busy:Boolean,actions
   Text(t("Profile timezone: ","Часовой пояс профиля: ")+settings.timezone)
   Text(t("Telegram waits until quiet hours end. Tasks stay available. Re-enabling a channel does not resend cancelled messages.","Telegram ждёт окончания тишины. Задания доступны. Повторное включение канала не возвращает отменённые сообщения."))
   val a=minutes(start);val b=minutes(end)
-  Button(onClick={actions.save(NotificationPatch(channels=channels,expected_version=settings.revision,quiet_enabled=quiet,quiet_start=a!!,quiet_end=b!!))},enabled=!busy&&a!=null&&b!=null&&(!quiet||a!=b),modifier=Modifier.testTag("save-notifications")){Text(t("Save notifications","Сохранить уведомления"))}
+  VowenActionButton(onClick={actions.save(NotificationPatch(channels=channels,expected_version=settings.revision,quiet_enabled=quiet,quiet_start=a!!,quiet_end=b!!))},enabled=!busy&&a!=null&&b!=null&&(!quiet||a!=b),modifier=Modifier.testTag("save-notifications")){Text(t("Save notifications","Сохранить уведомления"))}
  }
 }
 
@@ -54,7 +54,7 @@ fun NativeSurveysScreen(member:Member,data:WorkspaceState,busy:Boolean,completed
  Column(verticalArrangement=Arrangement.spacedBy(8.dp)){
   Text(t("Recurring surveys","Повторные анкеты"),style=MaterialTheme.typography.headlineSmall)
   Text(t("Each wave uses a fixed published form version and explicit readers. Guests use fresh manual invitations.","Каждая волна закрепляет опубликованную версию и читателей. Для гостей создавайте новые приглашения вручную."))
-  Button(onClick={editing=true},enabled=!busy&&!member.paused,modifier=Modifier.testTag("new-survey")){Text(t("New survey schedule","Новое расписание анкеты"))}
+  VowenActionButton(onClick={editing=true},enabled=!busy&&!member.paused,modifier=Modifier.testTag("new-survey")){Text(t("New survey schedule","Новое расписание анкеты"))}
   if(editing)SurveyEditor(member,data,busy,actions.create){editing=false}
   if(data.surveys.isEmpty())Text(t("No survey schedules yet","Пока нет расписаний анкет"))
   data.surveys.forEach{p->Card(Modifier.fillMaxWidth()){Column(Modifier.padding(16.dp),verticalArrangement=Arrangement.spacedBy(8.dp)){
@@ -103,7 +103,7 @@ private fun SurveyEditor(member:Member,data:WorkspaceState,busy:Boolean,save:(Su
  Text(t("DST: missing time shifts forward; repeated time runs once. Each participant controls their own pause.","DST: отсутствующее время сдвигается вперёд; повторяющееся выполняется один раз. Каждый управляет своей паузой."))
  val source=data.ritualAssignments.find{it.id==assignment}
  val valid=version.isNotBlank()&&retention.toIntOrNull() in 1..365&&ttl.toIntOrNull() in 1..7&&(if(mode=="feedback")source!=null else recipient.isNotBlank()&&hour.toIntOrNull() in 0..23&&minute.toIntOrNull() in 0..59&&window.toIntOrNull() in 1..168&&(kind!="weekly"||days.isNotEmpty())&&runCatching{LocalDate.parse(date);ZoneId.of(zone)}.isSuccess)
- Button(onClick={save(SurveyCreate(form_version_id=version,recipient_id=if(mode=="feedback")source!!.recipient_id else recipient,reader_ids=readers,schedule=if(mode=="periodic")RitualSchedule(kind=kind,timezone=zone,start_date=date,hour=hour.toInt(),minute=minute.toInt(),weekdays=days,window_hours=window.toInt()) else null,ritual_assignment_id=if(mode=="feedback")assignment else null,retention_days=retention.toInt(),ttl_days=ttl.toInt(),deliver=deliver,idempotency_key=key))},enabled=!busy&&valid,modifier=Modifier.testTag("create-survey")){Text(t("Create survey schedule","Создать расписание анкеты"))}
+ VowenActionButton(onClick={save(SurveyCreate(form_version_id=version,recipient_id=if(mode=="feedback")source!!.recipient_id else recipient,reader_ids=readers,schedule=if(mode=="periodic")RitualSchedule(kind=kind,timezone=zone,start_date=date,hour=hour.toInt(),minute=minute.toInt(),weekdays=days,window_hours=window.toInt()) else null,ritual_assignment_id=if(mode=="feedback")assignment else null,retention_days=retention.toInt(),ttl_days=ttl.toInt(),deliver=deliver,idempotency_key=key))},enabled=!busy&&valid,modifier=Modifier.testTag("create-survey")){Text(t("Create survey schedule","Создать расписание анкеты"))}
  TextButton(onClick=cancel,enabled=!busy){Text(t("Cancel","Отмена"))}
 }
 

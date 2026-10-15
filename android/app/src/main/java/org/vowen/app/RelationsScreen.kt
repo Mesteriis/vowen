@@ -29,7 +29,7 @@ fun RelationsScreen(member:Member,data:WorkspaceState,busy:Boolean,completed:Int
     Text("${relation.status} · v${relation.version} · ${relation.consent_user_ids.size}/2")
     Text(relation.agreement_text)
     Text(relation.scopes.joinToString(", "))
-    if(relation.status=="proposed" && member.id !in relation.consent_user_ids) Button(onClick={confirmation=relation to "accept"},enabled=!busy,modifier=Modifier.testTag("accept-${relation.id}")){Text(if(ru)"Рассмотреть и подтвердить" else "Review and accept")}
+    if(relation.status=="proposed" && member.id !in relation.consent_user_ids) VowenActionButton(onClick={confirmation=relation to "accept"},enabled=!busy,modifier=Modifier.testTag("accept-${relation.id}")){Text(if(ru)"Рассмотреть и подтвердить" else "Review and accept")}
     if(relation.status in listOf("active","proposed")) TextButton(onClick={confirmation=relation to "pause"},enabled=!busy){Text(if(ru)"Приостановить" else "Pause")}
     if(relation.status=="paused") TextButton(onClick={confirmation=relation to "resume"},enabled=!busy){Text(if(ru)"Запросить возобновление" else "Request resumption")}
     if(relation.status!="revoked") {
@@ -38,7 +38,7 @@ fun RelationsScreen(member:Member,data:WorkspaceState,busy:Boolean,completed:Int
     }
    }}
   }
-  Button(onClick={proposing=true},enabled=!busy&&data.participants.any {it.id!=member.id},modifier=Modifier.testTag("propose-relation")){Text(if(ru)"Предложить отношения" else "Propose relationship")}
+  VowenActionButton(onClick={proposing=true},enabled=!busy&&data.participants.any {it.id!=member.id},modifier=Modifier.testTag("propose-relation")){Text(if(ru)"Предложить отношения" else "Propose relationship")}
  }
  confirmation?.let {(relation,action)->
   AlertDialog(onDismissRequest={if(!busy)confirmation=null},title={Text(if(ru)"Подтвердить действие" else "Confirm action")},text={Column(Modifier.heightIn(max=350.dp).verticalScroll(rememberScrollState())) {

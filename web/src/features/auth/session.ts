@@ -7,6 +7,8 @@ export class SessionClient {
   private refreshing: Promise<void> | null = null
   constructor(private fetcher: typeof fetch = fetch.bind(globalThis),private onAuthLost:()=>void=()=>{}) {}
 
+  get sessionId():string|null {return this.tokens?.session_id??null}
+
   private loseAuth():void {if(this.tokens){this.tokens=null;this.generation++;this.onAuthLost()}}
 
   async login(initData: string): Promise<void> {

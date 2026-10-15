@@ -31,7 +31,7 @@ fun NativeRulesScreen(member:Member,data:WorkspaceState,busy:Boolean,completed:I
  Column {
   Text(t("Rules","Правила"),style=MaterialTheme.typography.headlineSmall)
   TextButton(onClick=actions.refresh,enabled=!busy) {Text(t("Refresh rules","Обновить правила"))}
-  Button(onClick={selected=null;editing=true;assigning=null},enabled=!busy&&!member.paused,modifier=Modifier.testTag("new-rule")) {Text(t("New rule","Новое правило"))}
+  VowenActionButton(onClick={selected=null;editing=true;assigning=null},enabled=!busy&&!member.paused,modifier=Modifier.testTag("new-rule")) {Text(t("New rule","Новое правило"))}
   if(editing) key(selected?.id,selected?.revision) {RuleEditor(selected,busy||member.paused,ru,{actions.save(selected,it)},{editing=false})}
   data.rules.forEach {rule->
    Text(rule.title,style=MaterialTheme.typography.titleMedium)
@@ -79,7 +79,7 @@ private fun RuleEditor(rule:RuleTemplate?,busy:Boolean,ru:Boolean,save:(RuleCont
  Column {
   OutlinedTextField(title,{if(it.length<=200)title=it},label={Text(if(ru)"Название правила" else "Rule title")},enabled=!busy,modifier=Modifier.testTag("rule-title"))
   OutlinedTextField(description,{if(it.length<=10000)description=it},label={Text(if(ru)"Описание правила" else "Rule description")},enabled=!busy,modifier=Modifier.testTag("rule-description"))
-  Button(onClick={save(RuleContent(title=title,description=description))},enabled=!busy&&title.isNotBlank()&&description.isNotBlank(),modifier=Modifier.testTag("save-rule")) {Text(if(ru)"Сохранить правило" else "Save rule")}
+  VowenActionButton(onClick={save(RuleContent(title=title,description=description))},enabled=!busy&&title.isNotBlank()&&description.isNotBlank(),modifier=Modifier.testTag("save-rule")) {Text(if(ru)"Сохранить правило" else "Save rule")}
   TextButton(onClick=cancel,enabled=!busy){Text(if(ru)"Отмена" else "Cancel")}
  }
 }
@@ -97,7 +97,7 @@ private fun RuleAssignmentEditor(rule:RuleTemplate,member:Member,participants:Li
   }
   Text(if(ru)"Явные управляющие с актуальными полномочиями" else "Explicit managers with current authority")
   participants.filter{it.id!=recipient}.forEach {p->Row {Checkbox(p.id in managers,{checked->managers=if(checked)managers+p.id else managers-p.id},enabled=!busy);Text(p.display_name)}}
-  Button(onClick={save(RuleAssign(rule_version_id=rule.version_id,recipient_id=recipient,manager_ids=managers))},enabled=!busy&&recipient.isNotEmpty()){Text(if(ru)"Предложить правило" else "Send rule proposal")}
+  VowenActionButton(onClick={save(RuleAssign(rule_version_id=rule.version_id,recipient_id=recipient,manager_ids=managers))},enabled=!busy&&recipient.isNotEmpty()){Text(if(ru)"Предложить правило" else "Send rule proposal")}
   TextButton(onClick=cancel,enabled=!busy){Text(if(ru)"Отмена" else "Cancel")}
  }
 }
