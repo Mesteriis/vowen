@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {onMounted,ref} from 'vue'
+import {onMounted,ref,watch} from 'vue'
 import FormEditor from './FormEditor.vue'
 import FormRunner from './FormRunner.vue'
 import type {SessionClient} from '../auth/session'
@@ -8,10 +8,11 @@ import type {Form,Schema,Access,Result,Invitation,AnswerMap} from './types'
 const props=defineProps<{client:SessionClient;ru:boolean;participants:components['schemas']['ParticipantView'][]}>()
 const forms=ref<Form[]>([]),assigned=ref<Access[]>([]),results=ref<Result[]>([])
 const editing=ref<Form|null>(null),editor=ref(false),inviting=ref<Form|null>(null),opened=ref<Access|null>(null)
-const recipient=ref(''),readers=ref<string[]>([]),link=ref(''),busy=ref(false),error=ref(''),message=ref(''),deliver=ref(false),contact=ref(''),ttl=ref(7),retention=ref(30),invitations=ref<Invitation[]>([])
+const recipient=ref(''),readers=ref<string[]>([]),link=ref(''),busy=ref(false),error=ref(''),message=ref(''),deliver=ref(false),contact=ref(''),ttl=ref(7),retention=ref(90),invitations=ref<Invitation[]>([])
 async function run(action:()=>Promise<void>){busy.value=true;error.value='';message.value='';try{await action()}catch(e){error.value=e instanceof Error?e.message:'NETWORK_ERROR'}finally{busy.value=false}}
 async function load(){forms.value=await props.client.get<Form[]>('/forms');assigned.value=await props.client.get<Access[]>('/form-invitations');results.value=await props.client.get<Result[]>('/form-submissions')}
 onMounted(()=>run(load))
+watch([recipient,readers,ttl,retention,deliver,contact],()=>{link.value=''})
 async function save(schema:Schema){await run(async()=>{
  if(editing.value){const f=editing.value;await props.client[f.status==='draft'?'patch':'post']('/forms/'+f.id+(f.status==='draft'?'':'/versions'),{expected_version:f.revision,schema_body:schema})}
  else await props.client.post('/forms',schema)
@@ -20,7 +21,7 @@ async function save(schema:Schema){await run(async()=>{
 function edit(f:Form|null){editing.value=f;editor.value=true}
 async function publish(f:Form){await run(async()=>{await props.client.post('/forms/'+f.id+'/publish',{expected_version:f.revision});await load()})}
 async function invite(f:Form){inviting.value=f;recipient.value='';readers.value=[];link.value='';await run(async()=>{invitations.value=await props.client.get<Invitation[]>('/forms/'+f.id+'/invitations')})}
-async function createInvitation(){await run(async()=>{if(!inviting.value)return;const i=await props.client.post<Invitation>('/forms/'+inviting.value.id+'/invitations',{recipient_user_id:recipient.value||null,reader_ids:readers.value,ttl_days:ttl.value,retention_days:retention.value,deliver:deliver.value,contact_telegram_id:contact.value?Number(contact.value):null});link.value=i.link??'';message.value=i.delivery_status;invitations.value.push(i);await load()})}
+async function createInvitation(){await run(async()=>{if(!inviting.value)return;link.value='';const i=await props.client.post<Invitation>('/forms/'+inviting.value.id+'/invitations',{recipient_user_id:recipient.value||null,reader_ids:readers.value,ttl_days:ttl.value,retention_days:retention.value,deliver:deliver.value,contact_telegram_id:contact.value?Number(contact.value):null});link.value=i.link??'';message.value=i.delivery_status;invitations.value.push(i);await load()})}
 async function draft(a:AnswerMap){await run(async()=>{if(!opened.value)return;await props.client.put('/form-invitations/'+opened.value.id+'/draft',{answers:a});message.value=props.ru?'Черновик сохранён':'Draft saved'})}
 async function submit(a:AnswerMap,key:string){await run(async()=>{if(!opened.value)return;await props.client.post('/form-invitations/'+opened.value.id+'/submit',{answers:a,idempotency_key:key,acknowledged:true});opened.value=null;await load()})}
 async function copyLink(){await run(async()=>{await navigator.clipboard.writeText(link.value);message.value=props.ru?'Скопировано':'Copied'})}
@@ -43,7 +44,7 @@ async function remove(){await run(async()=>{if(!deleting.value)return;await prop
    <article v-for="i in invitations" :key="i.id"><p>{{i.id}} · {{i.delivery_status}} · {{i.revoked?'revoked':i.expires_at}}</p><button :disabled="busy||i.revoked" @click="run(async()=>{await client.delete('/forms/invitations/'+i.id);i.revoked=true})">{{ru?'Отозвать приглашение':'Revoke invitation'}}</button><label>{{ru?'Удалить читателя':'Remove reader'}}<select @change="run(async()=>{const uid=($event.target as HTMLSelectElement).value;if(uid)await client.delete('/forms/invitations/'+i.id+'/readers/'+uid)})"><option value="">—</option><option v-for="p in participants" :key="p.id" :value="p.id">{{p.display_name}}</option></select></label></article>
   </section>
   <h3>{{ru?'Мне назначены':'Assigned to me'}}</h3><article v-for="a in assigned" :key="a.id"><p>{{a.schema_body.title}} · {{a.status}}</p><button v-if="a.status==='draft'" @click="opened=a">{{ru?'Заполнить':'Fill form'}}</button></article>
-  <section v-if="opened"><h3>{{opened.schema_body.title}}</h3><p>{{ru?'Читатели результатов:':'Results readers:'}} {{opened.readers.map(r=>r.display_name).join(', ')||'—'}}</p><p>{{ru?'Хранение до':'Retained until'}} {{opened.retention_until}}</p><FormRunner :key="opened.id" :schema="opened.schema_body" :initial="opened.answers" :ru="ru" :busy="busy" @save="draft" @submit="submit" /></section>
+  <section v-if="opened"><h3>{{opened.schema_body.title}}</h3><p>{{ru?'Читатели результатов:':'Results readers:'}} {{opened.readers.map(r=>r.display_name).join(', ')||'—'}}</p><p>{{ru?'Хранение до':'Retained until'}} {{opened.retention_until??(opened.retention_days+' '+(ru?'дней после отправки':'days after submission'))}}</p><FormRunner :key="opened.id" :schema="opened.schema_body" :initial="opened.answers" :ru="ru" :busy="busy" @save="draft" @submit="submit" /></section>
   <h3>{{ru?'Доступные ответы':'Available responses'}}</h3><article v-for="r in results" :key="r.id"><h4>{{r.schema_body.title}}</h4><dl v-for="q in r.schema_body.questions.filter(q=>r.answers[q.id]!==undefined)" :key="q.id"><dt>{{q.label}}</dt><dd>{{r.answers[q.id]}}</dd></dl><button v-if="r.can_delete" @click="deleting=r">{{ru?'Удалить свой ответ':'Delete own response'}}</button></article>
   <div v-if="deleting" role="alertdialog" aria-label="Delete response"><p>{{ru?'Удалить тело ответа и отозвать доступ читателей?':'Delete the response body and revoke reader access?'}}</p><button :disabled="busy" @click="remove">{{ru?'Подтвердить удаление':'Confirm deletion'}}</button><button @click="deleting=null">{{ru?'Отмена':'Cancel'}}</button></div>
  </section>

@@ -36,7 +36,7 @@ function conditionValue(c:{question_id:string;value?:unknown;op?:string},event:E
   </fieldset>
   <button :disabled="schema.questions.length>=100" @click="schema.questions.push(question())">{{ru?'Добавить вопрос':'Add question'}}</button>
   <button @click="preview=!preview">{{ru?'Предпросмотр':'Preview'}}</button>
-  <FormRunner v-if="preview" :schema="schema" :initial="{}" :ru="ru" :busy="true" />
+  <p v-if="preview">{{ru?'Предпросмотр: ответы не сохраняются':'Preview: answers are not saved'}}</p><FormRunner v-if="preview" :schema="schema" :initial="{}" :ru="ru" :busy="false" preview />
   <button :disabled="busy" @click="emit('save',schema)">{{ru?'Сохранить анкету':'Save form'}}</button><button @click="emit('cancel')">{{ru?'Отмена':'Cancel'}}</button>
  </section>
 </template>

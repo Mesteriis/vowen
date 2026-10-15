@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {computed,ref,toRaw} from 'vue'
 import {isVisible,type Schema,type AnswerMap} from './types'
-const props=defineProps<{schema:Schema;initial:AnswerMap;ru:boolean;busy:boolean;guest?:boolean}>()
+const props=defineProps<{schema:Schema;initial:AnswerMap;ru:boolean;busy:boolean;guest?:boolean;preview?:boolean}>()
 const emit=defineEmits<{save:[AnswerMap];submit:[AnswerMap,string]}>()
 const answers=ref<AnswerMap>(structuredClone(toRaw(props.initial))),review=ref(false),ack=ref(false)
 const key=crypto.randomUUID()
@@ -26,16 +26,18 @@ function multi(id:string,option:string,event:Event){const previous=answers.value
     <label v-else-if="q.kind==='boolean'">{{q.label}}<select :value="answers[q.id]===true?'true':answers[q.id]===false?'false':''" @change="answers[q.id]=($event.target as HTMLSelectElement).value===''?null:($event.target as HTMLSelectElement).value==='true'"><option value="">—</option><option value="true">{{ru?'Да':'Yes'}}</option><option value="false">{{ru?'Нет':'No'}}</option></select></label>
     <label v-else><input type="checkbox" :checked="answers[q.id]===true" @change="answers[q.id]=($event.target as HTMLInputElement).checked">{{q.label}}</label>
    </fieldset>
+   <template v-if="!preview">
    <p>{{ru?'Ввод сохраняется только после успешного запроса. При ошибке он остаётся в этом окне.':'Input is saved only after a successful request. Failed requests keep your input in this window.'}}</p>
    <button :disabled="busy" @click="emit('save',answers)">{{ru?'Сохранить черновик':'Save draft'}}</button>
    <label><input v-model="ack" type="checkbox">{{guest?(ru?'Мне 18 лет или больше; я ознакомился с читателями и сроком хранения':'I am 18 or older and have reviewed the readers and retention'):(ru?'Я ознакомился с читателями и сроком хранения':'I have reviewed the readers and retention')}}</label>
-   <button :disabled="busy||!ack" @click="review=true">{{ru?'Проверить ответы':'Review answers'}}</button>
+   </template>
+   <button :disabled="busy||(!preview&&!ack)" @click="review=true">{{ru?'Проверить ответы':'Review answers'}}</button>
   </template>
   <template v-else>
    <h3>{{ru?'Проверка перед отправкой':'Review before sending'}}</h3>
    <dl v-for="q in visible" :key="q.id"><dt>{{q.label}}</dt><dd>{{answers[q.id]}}</dd></dl>
    <button :disabled="busy" @click="review=false">{{ru?'Изменить':'Edit answers'}}</button>
-   <button :disabled="busy" @click="emit('submit',answers,key)">{{ru?'Отправить ответы':'Send answers'}}</button>
+   <button v-if="!preview" :disabled="busy" @click="emit('submit',answers,key)">{{ru?'Отправить ответы':'Send answers'}}</button>
   </template>
  </div>
 </template>
