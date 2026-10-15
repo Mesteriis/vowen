@@ -2,7 +2,7 @@ from sqlalchemy import text
 from sqlalchemy.ext.asyncio import AsyncEngine, async_sessionmaker, create_async_engine
 from sqlalchemy.orm import DeclarativeBase
 
-SCHEMA_REVISION = "0009"
+SCHEMA_REVISION = "0010"
 
 
 class Base(DeclarativeBase):

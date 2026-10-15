@@ -19,6 +19,7 @@ from vowen.modules.auth.router import router
 from vowen.modules.auth.schemas import ErrorResponse
 from vowen.modules.forms.router import router as forms_router
 from vowen.modules.relations.router import router as relations_router
+from vowen.modules.rituals.router import router as rituals_router
 from vowen.modules.rules.router import router as rules_router
 
 
@@ -53,6 +54,7 @@ def create_app(settings: Settings) -> FastAPI:
     app.include_router(relations_router)
     app.include_router(forms_router)
     app.include_router(rules_router)
+    app.include_router(rituals_router)
 
     @app.exception_handler(AppError)
     async def app_error(request: Request, error: AppError) -> JSONResponse:

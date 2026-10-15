@@ -23,6 +23,7 @@ from vowen.modules.relations.service import (
     propose_relation,
     view_relation,
 )
+from vowen.modules.rituals.service import suspend
 
 router = APIRouter(prefix="/api/v1")
 
@@ -67,6 +68,13 @@ async def accept(
     await accept_relation(
         db, principal, relation, body.relation_version_id, request.app.state.clock.now()
     )
+    if relation.status == "active":
+        await suspend(
+            db,
+            request.app.state.clock.now(),
+            relation.dominant_user_id,
+            relation.submissive_user_id,
+        )
     return await view_relation(db, relation, cipher_for(request))
 
 
@@ -77,6 +85,9 @@ async def pause(
     relation = await owned_relation(db, principal, relation_id, body.expected_version)
     if relation.status not in ("active", "proposed"):
         raise AppError(409, "CONFLICT")
+    await suspend(
+        db, request.app.state.clock.now(), relation.dominant_user_id, relation.submissive_user_id
+    )
     relation.status = "paused"
     relation.version += 1
     return await view_relation(db, relation, cipher_for(request))
@@ -89,6 +100,9 @@ async def revoke(
     relation = await owned_relation(db, principal, relation_id, body.expected_version)
     if relation.status == "revoked":
         raise AppError(409, "CONFLICT")
+    await suspend(
+        db, request.app.state.clock.now(), relation.dominant_user_id, relation.submissive_user_id
+    )
     relation.status = "revoked"
     relation.version += 1
     return await view_relation(db, relation, cipher_for(request))
@@ -119,22 +133,28 @@ async def change(
     if relation.status == "revoked":
         raise AppError(409, "CONFLICT")
     cipher = cipher_for(request)
+    await suspend(
+        db, request.app.state.clock.now(), relation.dominant_user_id, relation.submissive_user_id
+    )
     await new_version(db, relation, body, cipher)
     relation.version += 1
     return await view_relation(db, relation, cipher)
 
 
 @router.post("/me/pause", status_code=204)
-async def personal_pause(principal: Member, db: DB) -> Response:
+async def personal_pause(principal: Member, db: DB, request: Request) -> Response:
     user = await db.get(User, principal.user_id, with_for_update=True)
     assert user is not None
+    await suspend(db, request.app.state.clock.now(), target_id=principal.user_id)
     user.paused = True
     return Response(status_code=204)
 
 
 @router.post("/me/resume", status_code=204)
-async def personal_resume(principal: Member, db: DB) -> Response:
+async def personal_resume(principal: Member, db: DB, request: Request) -> Response:
     user = await db.get(User, principal.user_id, with_for_update=True)
     assert user is not None
+    if user.paused:
+        await suspend(db, request.app.state.clock.now(), target_id=principal.user_id)
     user.paused = False
     return Response(status_code=204)

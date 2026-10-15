@@ -18,7 +18,12 @@ used = {'SessionTokens':'Tokens', 'MemberView':'Member', 'ParticipantView':'Part
         'Answers':'FormAnswers','Submit':'FormSubmit','SubmissionView':'FormResult',
         'Exchange':'GuestExchange','RuleContent':'RuleContent','RuleEdit':'RuleEdit',
         'RuleView':'RuleTemplate','RuleAssign':'RuleAssign','RuleDecision':'RuleDecision',
-        'RuleAssignmentView':'RuleAssignment'}
+        'RuleAssignmentView':'RuleAssignment',
+        'Schedule':'RitualSchedule','RitualContent':'RitualContent','RitualEdit':'RitualEdit',
+        'RitualView':'RitualTemplate','RitualAssign':'RitualAssign',
+        'RitualAssignmentView':'RitualAssignment','ScheduleEdit':'RitualScheduleEdit',
+        'ReportCommand':'RitualReportCommand','ReviewCommand':'RitualReviewCommand',
+        'RitualReportView':'RitualReport','OccurrenceView':'RitualOccurrence','RitualNoticeView':'RitualNotice'}
 
 
 def kotlin_type(prop):
