@@ -255,3 +255,9 @@ passed both `backend-web` and `android` on clean Ubuntu runners for commit
 to `main`. This final evidence-only documentation commit uses `[skip ci]` and changes
 no implementation or validation configuration. Native instrumentation ran locally;
 remote CI runs JVM/lint/build gates and compiles the instrumentation APK.
+
+The final multi-tab regression also covers declining capability replacement and then
+saving the original tab's still-visible input. A stale synchronizer token now triggers
+one refresh/retry only if the server session identity and scope still match that page.
+Replacement exchanges are excluded from automatic retry. The five browser E2E pass
+with this case; no guest input is dropped or silently sent to a different capability.

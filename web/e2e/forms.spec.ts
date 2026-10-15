@@ -64,6 +64,13 @@ test('visual creation, guest draft, review, receipt, reader result and withdrawa
  await recovery.goto(receipt)
  await recovery.getByRole('button',{name:'Open receipt',exact:true}).click()
  await expect(recovery.getByRole('alertdialog',{name:'Replace guest session'})).toBeVisible()
+ // Declining replacement must leave the existing draft usable, even though
+ // the warning refreshed that session's synchronizer token in another tab.
+ await recovery.getByRole('button',{name:'Cancel',exact:true}).click()
+ await otherGuest.getByLabel('Your answer',{exact:true}).fill('Draft still usable after declining')
+ await otherGuest.getByRole('button',{name:'Save draft',exact:true}).click()
+ await expect(otherGuest.getByText('Draft saved',{exact:true})).toBeVisible()
+ await recovery.getByRole('button',{name:'Open receipt',exact:true}).click()
  await recovery.getByRole('button',{name:'Close previous session and open link',exact:true}).click()
  await recovery.getByRole('button',{name:'Delete response',exact:true}).click()
  await recovery.getByRole('button',{name:'Confirm deletion',exact:true}).click()

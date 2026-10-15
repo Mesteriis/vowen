@@ -1,13 +1,30 @@
 <script setup lang="ts">
 import {onMounted,onUnmounted,ref} from 'vue'
 import FormRunner from './FormRunner.vue'
+import type {components} from '../../shared/api'
 import type {Access,Result,AnswerMap} from './types'
 const replacing=ref(false)
 const ru=ref(navigator.language.startsWith('ru')),data=ref<Access|null>(null),result=ref<Result|null>(null),busy=ref(false),error=ref(''),message=ref(''),receipt=ref(''),confirmDelete=ref(false),deleted=ref(false)
 let csrf=''
 const receiptMode=location.pathname.startsWith('/r/'),publicId=location.pathname.split('/')[2]??''
 let token=new URLSearchParams(location.hash.slice(1)).get('token')??''
-async function call<T>(path:string,method='GET',body?:unknown):Promise<T>{const response=await fetch('/api/v1/guest'+path,{method,credentials:'same-origin',cache:'no-store',redirect:'error',headers:{'Content-Type':'application/json','X-CSRF-Token':csrf,'X-Guest-Context':publicId},body:body===undefined?undefined:JSON.stringify(body)});if(!response.ok){const e=await response.json().catch(()=>null) as {error?:{code:string}}|null;throw new Error(e?.error?.code??'NETWORK_ERROR')}return response.status===204?undefined as T:await response.json() as T}
+async function call<T>(path:string,method='GET',body?:unknown,retry=true):Promise<T>{
+ const response=await fetch('/api/v1/guest'+path,{method,credentials:'same-origin',cache:'no-store',redirect:'error',headers:{'Content-Type':'application/json','X-CSRF-Token':csrf,'X-Guest-Context':publicId},body:body===undefined?undefined:JSON.stringify(body)})
+ if(!response.ok){
+  const error=await response.json().catch(()=>null) as {error?:{code?:string}}|null
+  const code=error?.error?.code??'NETWORK_ERROR'
+  // Another tab can refresh the synchronizer token. Retry only the same live
+  // capability; replacement exchanges always require their explicit warning.
+  if(retry&&method!=='GET'&&!path.endsWith('/exchange')&&response.status===403&&code==='INVALID_CSRF'){
+   const context=await call<components['schemas']['GuestSessionView']>('/session','GET',undefined,false)
+   if(context.public_id!==publicId||context.kind!==(receiptMode?'receipt':'invitation'))throw new Error('GUEST_CONTEXT_CHANGED')
+   csrf=context.csrf_token
+   return call<T>(path,method,body,false)
+  }
+  throw new Error(code)
+ }
+ return response.status===204?undefined as T:await response.json() as T
+}
 async function run(action:()=>Promise<void>){busy.value=true;error.value='';message.value='';try{await action()}catch(e){error.value=e instanceof Error?e.message:'NETWORK_ERROR'}finally{busy.value=false}}
 async function restore(){const a=await call<Access>('/form');if(a.context_id!==publicId||a.context_kind!==(receiptMode?'receipt':'invitation'))throw new Error('INVITATION_MISMATCH');data.value=a;csrf=a.csrf_token??'';if(a.status==='submitted')result.value=await call<Result>('/submission')}
 function readToken(){token=new URLSearchParams(location.hash.slice(1)).get('token')??'';if(token&&!data.value){error.value='';replacing.value=false;deleted.value=false}}
