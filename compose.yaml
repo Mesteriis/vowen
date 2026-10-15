@@ -1,0 +1,17 @@
+name: vowen
+services:
+  db:
+    image: postgres:17.6-alpine
+    environment:
+      POSTGRES_USER: vowen
+      POSTGRES_DB: vowen
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-vowen}
+    volumes: [database:/var/lib/postgresql/data]
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U vowen -d vowen']
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+volumes:
+  database:
