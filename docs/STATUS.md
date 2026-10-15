@@ -248,3 +248,10 @@ A fault-injected COMMIT regression also exposed the pre-existing request-scoped 
 transaction: success/cookie could be sent before a failing commit. The shared dependency
 now has function scope, committing before response transmission; the failure test returns
 503 without Set-Cookie. Full auth/session/relations/forms regression suite was rerun.
+
+Remote acceptance: [CI run 38727788915](https://github.com/Mesteriis/vowen/actions/runs/38727788915)
+passed both `backend-web` and `android` on clean Ubuntu runners for commit
+`39dddce0c6ea1921ce79f69b2ac66dca7f4798a0`. The identical commit was fast-forwarded
+to `main`. This final evidence-only documentation commit uses `[skip ci]` and changes
+no implementation or validation configuration. Native instrumentation ran locally;
+remote CI runs JVM/lint/build gates and compiles the instrumentation APK.
