@@ -34,5 +34,5 @@ async def seed():
         await engine.dispose()
 
 asyncio.run(seed())
-app = create_app(Settings(database_url=url,telegram_bot_token_file=token,data_keyring_file=keyring))
+app = create_app(Settings(database_url=url,telegram_bot_token_file=token,data_keyring_file=keyring,public_base_url="http://127.0.0.1:5174"))
 uvicorn.run(app,host='127.0.0.1',port=8001,access_log=False,log_level='warning')

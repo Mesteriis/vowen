@@ -25,4 +25,9 @@ for path, expected in [('/health/ready', 'status'), ('/api/v1/instance', 'displa
 with urllib.request.urlopen('https://localhost:8443/', context=context) as response:
     assert 'text/html' in response.headers['Content-Type']
     assert 'Content-Security-Policy' in response.headers
+for path in ['/f/00000000-0000-0000-0000-000000000001', '/r/00000000-0000-0000-0000-000000000001']:
+    with urllib.request.urlopen('https://localhost:8443'+path, context=context) as response:
+        assert 'telegram.org' not in response.headers['Content-Security-Policy']
+        assert response.headers['X-Robots-Tag'] == 'noindex, nofollow'
+        assert 'telegram.org' not in response.read().decode()
 print('Compose HTTPS API/static routing: PASS (local CA trust explicitly bypassed)')

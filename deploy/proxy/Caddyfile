@@ -12,6 +12,16 @@
     handle @api {
         reverse_proxy vowen-api:8000
     }
+    @guest path /f/* /r/*
+    handle @guest {
+        header {
+            Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'"
+            X-Robots-Tag "noindex, nofollow"
+        }
+        root * /srv
+        try_files {path} /index.html
+        file_server
+    }
     handle {
         root * /srv
         try_files {path} /index.html
