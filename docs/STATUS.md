@@ -211,7 +211,7 @@ no Telegram script or trackers; deployed CSP excludes external scripts and frami
 Android: native basic template creation/editing/publication, invitation/reader selection,
 member drafts/review/submit/results/withdrawal, and guest form/receipt entry by pasting
 an HTTPS link. No WebView. Native guest transport never shares member bearer tokens.
-Guest credentials remain in memory: save the independent receipt before closing;
+Guest credentials and unsaved input survive activity recreation in a memory-only ViewModel; save the independent receipt before closing;
 a lost draft session requires sender revocation and a new invitation. Conditional
 editing, custom invitation TTL/retention, archive and reader reduction use Mini App;
 Android preserves and renders existing conditions. See docs/ANDROID_CAPABILITIES.md.
@@ -225,11 +225,26 @@ Submission notifications contain neutral text, never answer/question/title conte
 Bot worker rechecks current contact, invitation/reader and response state. Telegram
 network delivery has not been exercised; synthetic bot transport/worker tests passed.
 
-Local evidence: 83 backend tests on PostgreSQL; strict ruff/mypy/vue-tsc/ESLint;
+Local evidence: 86 backend tests on PostgreSQL; strict ruff/mypy/vue-tsc/ESLint;
 3 Vitest tests; 5 browser E2E (including complete internal and guest lifecycles);
-10 Android JVM tests; 9 Compose tests on the dedicated Android 16 emulator; Android
+10 Android JVM tests; 11 Compose tests on the dedicated Android 16 emulator; Android
 lint/debug APK/instrumentation APK; production web build; regenerated OpenAPI, TS,
 Kotlin and standalone form-schema contracts. Compose rebuilt/migrated and actual
 loopback HTTPS API/static/guest CSP routing passed (local CA trust explicitly bypassed
 only in the smoke script). Live Telegram and physical-device credential lifecycle
 remain unverified. M3–M6 are not implemented. Remote CI result is recorded separately.
+
+Final whole-branch review identified five issues, all fixed with observed RED→GREEN
+regressions: Android activity recreation preserves route/transport/input/idempotency;
+native editor target switching resets state; interactive non-persisting preview covers
+conditions and review; default retention is 90 days after submission (independent of
+invitation/draft expiry); a different live guest capability cannot silently replace the
+cookie and restored receipt URLs are bound to their actual receipt context. Replacement
+requires an explicit warning, same-origin request and current synchronizer CSRF.
+Migration 0008 adds the retention duration and clears draft retention dates; any
+pre-release submitted row retains its existing expiry rather than inventing a timestamp.
+
+A fault-injected COMMIT regression also exposed the pre-existing request-scoped yield
+transaction: success/cookie could be sent before a failing commit. The shared dependency
+now has function scope, committing before response transmission; the failure test returns
+503 without Set-Cookie. Full auth/session/relations/forms regression suite was rerun.

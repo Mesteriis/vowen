@@ -36,7 +36,7 @@ TELEGRAM_BOT_TOKEN_FILE takes precedence and Compose continues to use files.
 
 Form schema is a bounded declarative language; published bodies remain immutable.
 Reader snapshots grant result access independently of authority relations and template
-authorship. Invitation TTL defaults to 7 days (maximum 7); retention defaults to 30 days
+authorship. Invitation TTL defaults to 7 days (maximum 7); retention defaults to 90 days after submission
 (maximum 365), both chosen implementation defaults rather than new customer requests.
 Guests use a separate hashed capability namespace and host cookie, never member tokens.
 Receipts survive invite expiry until retention and grant only response read/delete.

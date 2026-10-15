@@ -6,11 +6,11 @@
 | Relationships, sessions, profile | Implemented | Implemented |
 | Basic form builder / new version / publish | Implemented, ten question kinds | Implemented |
 | Conditional rule editor / preview | Existing rules preserved; editor deferred | Implemented |
-| Internal and guest invitation / reader selection | Implemented, default 7-day invite / 30-day retention | Implemented, editable limits |
+| Internal and guest invitation / reader selection | Implemented, default 7-day invite / 90-day retention after submission | Implemented, editable limits |
 | Reader removal / invitation revoke / archive | Use Mini App | Implemented |
 | Internal drafts / review / submit / results / delete | Implemented | Implemented |
 | Guest form / independent receipt / delete | Native entry by pasting HTTPS link | Standalone /f and /r, no Telegram |
-| Guest credential persistence | Memory only; closing loses draft capability | Secure HttpOnly cookie, at most 24 hours |
+| Guest credential persistence | Memory-only ViewModel survives activity recreation; closing loses draft capability | Secure HttpOnly cookie, at most 24 hours |
 | Automatic App Links | Not implemented | Secret links open in browser |
 
 Android guest entry is separate from the selected member instance and never attaches
