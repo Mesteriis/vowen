@@ -94,6 +94,10 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
  fun saveFormDraft(id:String,answers:Map<String,kotlinx.serialization.json.JsonElement>)=run {api.saveFormDraft(id,answers);loadWorkspace(true)}
  fun submitForm(id:String,command:FormSubmit)=run {api.submitForm(id,command);loadWorkspace(true)}
  fun deleteFormResult(id:String)=run {api.deleteFormResult(id);loadWorkspace(true)}
+ fun saveRule(rule:RuleTemplate?,body:RuleContent)=run {api.saveRule(rule,body);loadWorkspace(true)}
+ fun ruleTemplate(rule:RuleTemplate,action:String)=run {api.ruleTemplate(rule,action);loadWorkspace(true)}
+ fun assignRule(rule:RuleTemplate,body:RuleAssign)=run {api.assignRule(rule,body);loadWorkspace(true)}
+ fun decideRule(assignment:RuleAssignment,action:String)=run {api.decideRule(assignment,action);loadWorkspace(true)}
  fun logout()=run { try { api.call("/auth/logout","POST") } finally { clear() } }
  private fun clear() { instance.clear();vault.clear();nonce=null;mutable.value=Screen(origin=instance.origin) }
 }

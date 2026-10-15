@@ -6,7 +6,9 @@ data class WorkspaceState(
  val sessions:List<DeviceSession> = emptyList(),
  val forms:List<FormTemplate> = emptyList(),
  val formInvitations:List<FormAccess> = emptyList(),
- val formResults:List<FormResult> = emptyList()
+ val formResults:List<FormResult> = emptyList(),
+ val rules:List<RuleTemplate> = emptyList(),
+ val ruleAssignments:List<RuleAssignment> = emptyList()
 )
 
-suspend fun Api.workspace():WorkspaceState = WorkspaceState(relations(),participants(),sessions(),forms(),formInvitations(),formResults())
+suspend fun Api.workspace():WorkspaceState = WorkspaceState(relations(),participants(),sessions(),forms(),formInvitations(),formResults(),rules(),ruleAssignments())

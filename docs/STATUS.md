@@ -267,3 +267,33 @@ Final remote verification including the multi-tab fix:
 passed `backend-web` and `android` for code commit
 `3a5b1e826d0d03e5ae9163c1835e4790e8b3aa1e`. The implementation is fast-forwarded
 unchanged to `main`; this evidence-only follow-up uses `[skip ci]`.
+
+## M3 / rules slice — 2026-10-15
+
+Implemented rule templates with encrypted title/description, draft editing, publication,
+new immutable versions and archival (Alembic 0009). Separate assignments carry exact
+version consent, recipient, explicit managers, optimistic revision and decision times.
+Recipient acceptance/decline is independent; acceptance atomically replaces only that
+recipient's prior active version. Duplicate assignment and conflicting decisions return
+409. Published text cannot be mutated. Old consent remains in assignment history.
+Author-only version history is separate from assignment access; authors are not
+implicitly managers. Each assignment is created individually, returning its own status
+or error rather than a batch-wide success. Managers need a current direct `rules.assign`
+relation on each read/change. Personal or relationship pause disables effective authority;
+recipients retain history and the ability to pause/revoke/decline. No punishment is created.
+
+Mini App and native Android support authoring/editing/publication/new version/archive,
+individual recipient/manager selection, exact text confirmation, decline, pause/revoke
+and assignment history. Server remains authoritative. OpenAPI and TS/Kotlin DTOs updated.
+
+Verified locally: 90 backend tests on PostgreSQL, 3 Vitest, 6 real API/browser E2E,
+10 Android JVM tests and 14 Compose tests on the owned Android 16 AVD; ruff, mypy,
+ESLint, vue-tsc, web production build, native lint/debug APK/instrumentation APK,
+contract regeneration and heuristic secret scan. Full-suite fault injection previously
+restored hardcoded schema 0008; it now restores the actual original revision.
+
+Scope decision: M3 ships in domain slices; this closes its first two checklist items,
+not the whole milestone. Schedules/DST/catch-up, rituals/reports/reviews, rewards and
+M3 notifications are still absent. Next concrete slice: deterministic occurrence scheduling
+and per-recipient rituals with concurrent report/review tests. Live Telegram and physical
+Android/native-to-server acceptance remain separate and unverified. No new dependencies.

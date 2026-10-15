@@ -1,9 +1,11 @@
-# Android capabilities at M2
+# Android capabilities at M2 + M3 rules
 
 | Flow | Native Android | Mini App / guest web |
 |---|---|---|
 | Member login | Bot challenge, HTTPS, encrypted refresh | Telegram Mini App |
 | Relationships, sessions, profile | Implemented | Implemented |
+| Rules: drafts, versions, publish/archive, assignment, consent/history | Native screens implemented | Implemented |
+| Rituals, schedules, rewards | Not implemented | Not implemented |
 | Basic form builder / new version / publish | Implemented, ten question kinds | Implemented |
 | Conditional rule editor / preview | Existing rules preserved; editor deferred | Implemented |
 | Internal and guest invitation / reader selection | Implemented, default 7-day invite / 90-day retention after submission | Implemented, editable limits |

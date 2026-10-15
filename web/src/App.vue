@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, onMounted } from 'vue'
+import RulesPanel from './features/rules/RulesPanel.vue'
 import FormsPanel from './features/forms/FormsPanel.vue'
 import ProfileSettings from './features/profile/ProfileSettings.vue'
 import { SessionClient } from './features/auth/session'
@@ -57,6 +58,7 @@ function name(id:string){return participants.value.find(p=>p.id===id)?.display_n
   <section v-if="!me"><p>{{t.closed}}</p><button :disabled="busy" @click="login">{{t.login}}</button></section>
   <template v-else>
    <section><h2>{{me.display_name}}</h2><button :disabled="busy" @click="run(load)">{{t.refresh}}</button><p v-if="me.paused">⏸ {{t.pause}}</p><button :disabled="busy" @click="personal">{{me.paused?t.resume:t.pause}}</button> <button :disabled="busy" @click="logout">{{t.logout}}</button></section>
+   <RulesPanel :client="client" :ru="ru" :me="me" :participants="participants" />
    <FormsPanel :client="client" :ru="ru" :participants="participants" />
    <ProfileSettings :member="me" :client="client" :ru="ru" @saved="member => {me=member;ru=member.language==='ru'}" />
    <section><h2>{{t.relations}}</h2><p v-if="!relations.length">{{t.empty}}</p>

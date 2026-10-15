@@ -76,4 +76,21 @@ class Api(private val state: InstanceSession,
  suspend fun saveFormDraft(id:String,answers:Map<String,kotlinx.serialization.json.JsonElement>):FormAccess = json.decodeFromString(call("/form-invitations/$id/draft","PUT",json.encodeToString(FormAnswers(answers))))
  suspend fun submitForm(id:String,command:FormSubmit):FormResult = json.decodeFromString(call("/form-invitations/$id/submit","POST",json.encodeToString(command)))
  suspend fun deleteFormResult(id:String) {call("/form-submissions/$id","DELETE")}
+ suspend fun rules():List<RuleTemplate> = json.decodeFromString(call("/rules"))
+ suspend fun ruleAssignments():List<RuleAssignment> = json.decodeFromString(call("/rule-assignments"))
+ suspend fun saveRule(rule:RuleTemplate?,body:RuleContent):RuleTemplate {
+  if(rule==null)return json.decodeFromString(call("/rules","POST",json.encodeToString(body)))
+  val path="/rules/${rule.id}"+if(rule.status=="draft")"" else "/versions"
+  return json.decodeFromString(call(path,if(rule.status=="draft")"PATCH" else "POST",json.encodeToString(RuleEdit(title=body.title,description=body.description,expected_version=rule.revision))))
+ }
+ suspend fun ruleTemplate(rule:RuleTemplate,action:String):RuleTemplate {
+  require(action in listOf("publish","archive"))
+  return json.decodeFromString(call("/rules/${rule.id}/$action","POST",json.encodeToString(ExpectedVersion(rule.revision))))
+ }
+ suspend fun assignRule(rule:RuleTemplate,body:RuleAssign):RuleAssignment = json.decodeFromString(call("/rules/${rule.id}/assignments","POST",json.encodeToString(body)))
+ suspend fun decideRule(assignment:RuleAssignment,action:String):RuleAssignment {
+  require(action in listOf("accept","decline","pause","revoke"))
+  return json.decodeFromString(call("/rule-assignments/${assignment.id}/$action","POST",json.encodeToString(RuleDecision(assignment.revision,assignment.rule_version_id))))
+ }
+
 }
