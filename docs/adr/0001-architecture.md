@@ -31,3 +31,21 @@ CLI agreement text is read from a UTF-8 file to avoid putting intimate text in
 shell history. CLI can only propose, and cannot consent for a participant.
 Direct runtime accepts BOT_API_TOKEN/TELEGRAM_BOT_TOKEN as SecretStr; configured
 TELEGRAM_BOT_TOKEN_FILE takes precedence and Compose continues to use files.
+
+## M2 implementation defaults
+
+Form schema is a bounded declarative language; published bodies remain immutable.
+Reader snapshots grant result access independently of authority relations and template
+authorship. Invitation TTL defaults to 7 days (maximum 7); retention defaults to 30 days
+(maximum 365), both chosen implementation defaults rather than new customer requests.
+Guests use a separate hashed capability namespace and host cookie, never member tokens.
+Receipts survive invite expiry until retention and grant only response read/delete.
+The notification_deliveries table doubles as a typed durable outbox. Delivery is bounded
+at-least-once: a crash after sending but before acknowledgement can duplicate a neutral
+message. No exactly-once Telegram guarantee. Links are encrypted until terminal delivery.
+Native Android provides a basic editor; conditional editing and advanced invitation
+management remain in Mini App as allowed by PRODUCT_SPEC 8.1. Native guest sessions
+are volatile and independent of member credentials; receipts support recovery after
+submission. Costs: losing a native draft session requires a replacement invitation.
+Local default public URL includes mapped HTTPS port 8443; deployed operators must
+set PUBLIC_BASE_URL to their actual public HTTPS origin (also used for guest Origin checks).

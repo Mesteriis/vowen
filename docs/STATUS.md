@@ -18,8 +18,9 @@ VOWEN_AGENT_BRIEF.md; no separate matching brief was found beside the archive.
   Mini App authentication, Android bot confirmation, sessions and contextual relations
   are implemented. Both client projects build; the browser flow ran against actual
   API/PostgreSQL with synthetic signed Telegram data.
-- **M2–M6: not implemented.** No forms, guest access, diary, ritual, discipline,
-  reward or notification feature claims. No fake success endpoints for these modules.
+- **M2: implemented and locally verified; remote CI acceptance below.** Versioned forms,
+  member/guest answers, receipts, encrypted drafts, reader snapshots and delivery outbox.
+- **M3–M6: not implemented.** No diary, ritual, discipline or reward feature claims.
 
 ## Implemented behavior
 
@@ -180,3 +181,55 @@ Remote acceptance: [CI run 38718797091](https://github.com/Mesteriis/vowen/actio
 passed both `backend-web` and `android` for commit
 `f0a226421bcebf74c5213c08469fa20633a0b6f7`. The same commit was fast-forwarded to
 `main`, without code changes. This evidence-only follow-up uses `[skip ci]`.
+
+## M2 forms continuation — 2026-10-15
+
+Supersedes the historical M2 and native-client limitations above. M2 now implements
+versioned questionnaires/surveys and all ten MVP question kinds. Publication freezes
+schema bodies; edits create a new version. Previous-question conditions (`all/any`,
+`equals/not_equals/contains/answered`) are interpreted without code execution.
+The server drops hidden answers and validates visible required values and bounds.
+
+Internal invitations bind one member and one immutable version. Guest invitations
+activate only on explicit POST; GET/HEAD previews remain neutral. Separate hashed
+invitation/session/receipt secrets, Secure HttpOnly host cookies, Origin + synchronizer
+CSRF and expiry/revocation checks restrict guests to their response. Receipt sessions
+cannot write drafts or submit. No authentication or invitation path creates users.
+
+Drafts and final answers use the existing AES-256-GCM envelope, with record-specific
+AAD. Authors cannot read others' drafts or inherit result access. Reader IDs are
+snapshotted at invitation creation, can only be reduced, and are shown to respondents.
+Respondents retain access to their submitted answers until retention expiry; withdrawal
+clears ciphertext/nonce/key metadata and closes reader access. Cleanup prunes expired
+drafts and retained bodies. Offline backups still follow operator retention policy.
+
+Mini App: visual builder, conditions/options, preview, publication/new versions,
+internal/guest invitations, secret-link copy, reader removal, revocation, drafts,
+explicit review/submit, results and withdrawal. Standalone /f and /r guest pages load
+no Telegram script or trackers; deployed CSP excludes external scripts and framing.
+
+Android: native basic template creation/editing/publication, invitation/reader selection,
+member drafts/review/submit/results/withdrawal, and guest form/receipt entry by pasting
+an HTTPS link. No WebView. Native guest transport never shares member bearer tokens.
+Guest credentials remain in memory: save the independent receipt before closing;
+a lost draft session requires sender revocation and a new invitation. Conditional
+editing, custom invitation TTL/retention, archive and reader reduction use Mini App;
+Android preserves and renders existing conditions. See docs/ANDROID_CAPABILITIES.md.
+
+`appctl forms invite` issues published-form invitations through the same service;
+stdout is a sensitive capability link, stderr reports delivery status. Optional bot
+contacts require explicit private-chat /notifications_on and can opt out. The durable
+notification_deliveries table serves as the transactional outbox, with SKIP LOCKED
+claim, lease ownership, bounded retries, protected link payload and terminal cleanup.
+Submission notifications contain neutral text, never answer/question/title content.
+Bot worker rechecks current contact, invitation/reader and response state. Telegram
+network delivery has not been exercised; synthetic bot transport/worker tests passed.
+
+Local evidence: 83 backend tests on PostgreSQL; strict ruff/mypy/vue-tsc/ESLint;
+3 Vitest tests; 5 browser E2E (including complete internal and guest lifecycles);
+10 Android JVM tests; 9 Compose tests on the dedicated Android 16 emulator; Android
+lint/debug APK/instrumentation APK; production web build; regenerated OpenAPI, TS,
+Kotlin and standalone form-schema contracts. Compose rebuilt/migrated and actual
+loopback HTTPS API/static/guest CSP routing passed (local CA trust explicitly bypassed
+only in the smoke script). Live Telegram and physical-device credential lifecycle
+remain unverified. M3–M6 are not implemented. Remote CI result is recorded separately.

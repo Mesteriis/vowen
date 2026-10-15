@@ -110,3 +110,30 @@ No bot is started by the test suite. Live Telegram is a separate acceptance step
 on an explicitly selected **disposable emulator** with
 `ANDROID_SERIAL=emulator-NNNN ./gradlew connectedDebugAndroidTest` from `android/`.
 Do not run device tests without an explicit target.
+
+## M2 questionnaires and guest responses
+
+Members can create forms visually, preview, publish immutable versions and issue
+invitations with an explicit results-reader list. Mini App supports conditional editing
+and advanced invitation management; native Android supports a basic builder and filling.
+The standalone `/f/<id>#token=<secret>` guest entry requires no Telegram or account.
+Guests review readers/retention, save encrypted drafts, explicitly submit, and retain
+read/delete access through an independent `/r/<id>#token=<secret>` receipt link.
+Links and receipt secrets are sensitive. Responses are not anonymous or E2EE.
+
+```sh
+appctl forms invite FORM_UUID --reader-id READER_UUID --recipient-id MEMBER_UUID
+# Omit --recipient-id for a guest. Optional delivery requires an opted-in bot contact:
+appctl forms invite FORM_UUID --reader-id READER_UUID --deliver --contact-telegram-id TELEGRAM_ID
+```
+
+CLI stdout contains the secret link; do not redirect it to public logs. Stderr reports
+`manual_delivery_required` if automatic delivery is unavailable. Private bot commands
+`/notifications_on` and `/notifications_off` control contacts without creating members.
+The bot process drains the transactional outbox; live delivery is a separate acceptance.
+Use `PUBLIC_BASE_URL=https://localhost:8443` for the default local proxy, or the actual
+public HTTPS origin for deployment. It must match the guest browser Origin.
+
+[Android capability matrix](docs/ANDROID_CAPABILITIES.md) documents native limits,
+including volatile guest sessions and deferred conditional editing. [Status](docs/STATUS.md)
+separates automated evidence from live Telegram and physical-device checks.

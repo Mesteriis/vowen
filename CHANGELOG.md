@@ -18,3 +18,9 @@ Live Telegram and real-device acceptance are pending. M2–M6 are not implemente
 - Native relationship, session and profile screens, with explicit confirmation.
 - Fixed Android nonce/poll-secret field ordering; typed member API coverage.
 - Native Compose instrumentation coverage on a disposable Android emulator.
+
+### M2 forms
+- Versioned ten-type questionnaires/surveys, server conditions and private encrypted answers.
+- Internal recipient binding, explicit reader snapshots, scoped guest sessions and independent receipts.
+- Mini App visual builder and complete internal/guest response lifecycle; native basic builder and renderer.
+- Operator invitations and consent-gated bot contacts with a protected transactional delivery outbox.

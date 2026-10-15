@@ -141,16 +141,16 @@
 
 **Файлы:** модуль `forms`, `contracts/form-schema`, web forms builder/renderer и guest entry, Android forms renderer, минимальные `outbox`/`notification_deliveries`, `backend/tests/integration/test_{forms_versions,form_audience,guest_invitation_races}.py`, `web/tests/guest-form.spec.ts`.
 
-- [ ] Зафиксировать DTO схемы и тесты каждого MVP-типа, limits, неизвестных fields/options и server-side conditional visibility.
-- [ ] Тестами закрепить неизменяемую опубликованную версию, адресата внутреннего приглашения, скрытый черновик и reader snapshot.
-- [ ] Реализовать web-конструктор, preview, публикацию, внутреннее приглашение и заполнение в web/Android.
-- [ ] Создать тесты обмена гостевого секрета, preview GET без расхода, CSRF, expiry/revoke, запрета member endpoints и чужих IDs.
-- [ ] Реализовать encrypted draft, атомарный submit, idempotency, guest cookie и receipt/delete. Повтор submit не увеличивает число ответов и users.
-- [ ] Реализовать копирование ссылки и опциональную доставку через bot contact; отсутствие контакта возвращает `manual_delivery_required`.
-- [ ] Для доставки ввести outbox claim/lease и protected delivery payload; проверить повтор задачи, удаление секрета после завершения и отсутствие тела ответа в уведомлении.
-- [ ] Выполнить браузерный E2E «создать → пригласить гостя → заполнить → увидеть разрешённым читателем → удалить».
-- [ ] Проверить concurrent submit против revoke в реальном PostgreSQL, а не последовательным мок-тестом.
-- [ ] Обновить OpenAPI, таблицу возможностей Android и документацию; сделать commits по завершённым подзадачам.
+- [x] Зафиксировать DTO схемы и тесты каждого MVP-типа, limits, неизвестных fields/options и server-side conditional visibility.
+- [x] Тестами закрепить неизменяемую опубликованную версию, адресата внутреннего приглашения, скрытый черновик и reader snapshot.
+- [x] Реализовать web-конструктор, preview, публикацию, внутреннее приглашение и заполнение в web/Android.
+- [x] Создать тесты обмена гостевого секрета, preview GET без расхода, CSRF, expiry/revoke, запрета member endpoints и чужих IDs.
+- [x] Реализовать encrypted draft, атомарный submit, idempotency, guest cookie и receipt/delete. Повтор submit не увеличивает число ответов и users.
+- [x] Реализовать копирование ссылки и опциональную доставку через bot contact; отсутствие контакта возвращает `manual_delivery_required`.
+- [x] Для доставки ввести outbox claim/lease и protected delivery payload; проверить повтор задачи, удаление секрета после завершения и отсутствие тела ответа в уведомлении.
+- [x] Выполнить браузерный E2E «создать → пригласить гостя → заполнить → увидеть разрешённым читателем → удалить».
+- [x] Проверить concurrent submit против revoke в реальном PostgreSQL, а не последовательным мок-тестом.
+- [x] Обновить OpenAPI, таблицу возможностей Android и документацию; сделать commits по завершённым подзадачам.
 
 **Критерий M2:** реальные формы создаются без редактирования JSON вручную; внутренний и внешний ответы доступны только разрешённым сторонам; гостевой сценарий работает без Telegram; автоаккаунтов нет; plaintext ответов отсутствует в логах и основных DB columns.
 
