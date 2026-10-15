@@ -656,7 +656,7 @@ Telegram, preserving assertion replay protection. Native advanced conditional fo
 editing/preview, diary file export and automatic App Links remain explicitly deferred
 in ANDROID_CAPABILITIES.md; no WebView or fake success was added.
 
-Local gates: **197 PostgreSQL/backend tests**, **5 Vitest**, **13 browser E2E**,
+Local gates: **198 PostgreSQL/backend tests**, **5 Vitest**, **13 browser E2E**,
 **14 JVM tests**, **39 Compose instrumentation tests** on the dedicated Android 16
 AVD. Ruff/ESLint, mypy/vue-tsc, web/Android builds and Android lint passed. Contracts
 regenerated without drift; tracked-tree/history secret heuristic passed. Migration

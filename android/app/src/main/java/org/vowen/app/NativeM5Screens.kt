@@ -64,7 +64,7 @@ fun NativeSurveysScreen(member:Member,data:WorkspaceState,busy:Boolean,completed
    Text(t("Readers: ","Читатели: ")+p.reader_ids.joinToString{ name(it) })
    Text(p.schedule?.let{"${ritualStateLabel(it.kind,ru)} · ${it.hour}:${it.minute.toString().padStart(2,'0')} ${it.timezone}"}?:t("After approved ritual","После принятого ритуала"))
    Text(t("Author pause: ","Пауза автора: ")+p.owner_paused+ t(" · recipient pause: "," · пауза получателя: ")+p.recipient_paused)
-   if(!p.source_effective)Text(t("Source permissions changed. Create a new schedule after consent.","Полномочия источника изменились. После согласия создайте новое расписание."))
+   if(!p.source_effective)Text(t("Form or source authority unavailable. Review before creating a new schedule.","Анкета или полномочия источника недоступны. Проверьте их перед созданием нового расписания."))
    val paused=if(p.author_id==member.id)p.owner_paused else p.recipient_paused
    TextButton(onClick={actions.transition(p,if(paused)"resume" else "pause")},enabled=!busy&&(!paused||!member.paused),modifier=Modifier.testTag("pause-survey-${p.id}")){Text(if(paused)t("Resume my survey schedule","Снять мою паузу анкеты") else t("Pause my survey schedule","Поставить мою паузу анкеты"))}
    if(p.author_id==member.id)TextButton(onClick={val key=manualKeys.getOrPut(p.id){UUID.randomUUID().toString()};actions.send(p,key){manualKeys.remove(p.id);actions.history(p){waves=it;history=p.id}}},enabled=!busy&&!member.paused&&!p.owner_paused&&!p.recipient_paused&&p.source_effective,modifier=Modifier.testTag("send-survey-${p.id}")){Text(t("Send a new wave now","Создать новую волну сейчас"))}

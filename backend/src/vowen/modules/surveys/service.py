@@ -23,6 +23,9 @@ def command(p: SurveySchedule) -> SurveyCreate:
 
 
 async def source_effective(db: AsyncSession, p: SurveySchedule) -> bool:
+    version = await db.get(FormVersion, p.form_version_id, populate_existing=True)
+    if version is None or version.status != "published":
+        return False
     if p.ritual_assignment_id is None:
         return True
     a = await db.get(RitualAssignment, p.ritual_assignment_id, populate_existing=True)

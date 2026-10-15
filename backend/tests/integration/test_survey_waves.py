@@ -265,12 +265,29 @@ async def test_survey_dst_has_one_local_wave(api, day, first, second, expected):
     assert len(waves) == 1 and waves[0]["due_at"] == expected
 
 
-async def test_archived_version_and_paused_reader_do_not_generate_invites(api):
+async def test_archived_version_blocks_waves_and_client_source_state(api):
     c, app, _, h, f, plan, _ = await setup(api)
     await c.post(
         f"/api/v1/forms/{f['id']}/archive", headers=h[0], json={"expected_version": f["revision"]}
     )
     await generate(app, NOW + timedelta(days=1))
     waves = (await c.get(f"/api/v1/survey-schedules/{plan['id']}/waves", headers=h[0])).json()
+    plans = (await c.get("/api/v1/survey-schedules", headers=h[0])).json()
+    assert next(p for p in plans if p["id"] == plan["id"])["source_effective"] is False
     assert waves[-1]["reason"] == "source_unavailable"
     assert sum(w["status"] == "created" for w in waves) == 1
+
+
+async def test_paused_selected_reader_skips_wave_without_changing_audience(api):
+    c, app, ids, h, _, _, body = await setup(api)
+    body.update(idempotency_key=str(uuid4()), reader_ids=[str(ids[2])])
+    response = await c.post("/api/v1/survey-schedules", headers=h[0], json=body)
+    assert response.status_code == 200
+    plan = response.json()
+    async with app.state.sessions() as db, db.begin():
+        await db.execute(text("UPDATE users SET paused=true WHERE id=:id"), {"id": ids[2]})
+    await generate(app, NOW + timedelta(days=1))
+    waves = (await c.get(f"/api/v1/survey-schedules/{plan['id']}/waves", headers=h[0])).json()
+    assert waves[-1]["reason"] == "audience_unavailable"
+    plans = (await c.get("/api/v1/survey-schedules", headers=h[0])).json()
+    assert next(p for p in plans if p["id"] == plan["id"])["reader_ids"] == [str(ids[2])]
