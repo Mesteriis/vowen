@@ -1,0 +1,30 @@
+{
+  "name": "vowen-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "packageManager": "pnpm@11.5.1",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vue-tsc --noEmit && vite build",
+    "typecheck": "vue-tsc --noEmit",
+    "lint": "eslint src tests",
+    "test": "vitest run",
+    "generate-api": "openapi-typescript ../contracts/openapi.json -o src/shared/api.d.ts"
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.51.0",
+    "@types/node": "^24.19.2",
+    "@vitejs/plugin-vue": "^6.0.10",
+    "eslint": "^10.12.0",
+    "openapi-typescript": "^7.6.1",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.0.0",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.4",
+    "vue-tsc": "^3.0.0"
+  }
+}
