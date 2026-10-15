@@ -136,6 +136,14 @@ def main() -> None:
             )
             archive_tree(assets, output / "vowen-web.tar.gz", epoch)
         else:
+            java = (
+                str(Path(os.environ["JAVA_HOME"]) / "bin/java")
+                if os.environ.get("JAVA_HOME")
+                else "java"
+            )
+            manifest["java_runtime"] = subprocess.check_output(
+                [java, "-version"], stderr=subprocess.STDOUT, text=True
+            ).strip()
             environment = dict(os.environ, SOURCE_DATE_EPOCH=str(epoch))
             sdk = environment.get("ANDROID_HOME") or environment.get("ANDROID_SDK_ROOT")
             if not sdk:
