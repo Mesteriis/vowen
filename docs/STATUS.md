@@ -16,3 +16,10 @@ AEAD binding, Telegram freshness/type/signature/reordered replay, no auto-users,
 concurrent assertion consumption, refresh rotation/reuse, session ownership,
 and live access revocation after disable/re-enable. mypy passed 15 source files.
 Remote created at https://github.com/Mesteriis/vowen; first push pending review.
+
+M1.3/M1.4 backend slice: 29 tests passed. Android challenge secrets are hashed,
+explicit bot approval is separate from /start, duplicate callbacks are idempotent.
+Relations require two exact-version consents; pause/resume and scope expansion
+create a new consent round. Policy denies transitive and unrelated targets,
+missing object ACL, guest/operator principals, and private-journal actions.
+Agreement ciphertext marker absence checked in PostgreSQL. Live bot not tested.

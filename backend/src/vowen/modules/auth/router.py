@@ -9,6 +9,15 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from vowen.core.database import check_schema
 from vowen.core.errors import AppError
+from vowen.modules.auth.android_challenge import (
+    ChallengeCreated,
+    ChallengeProof,
+    ChallengeRequest,
+    ChallengeStatus,
+    check_proof,
+    consume_challenge,
+    create_challenge,
+)
 from vowen.modules.auth.models import Session
 from vowen.modules.auth.schemas import (
     MemberView,
@@ -108,3 +117,33 @@ async def revoke(session_id: UUID, principal: Member, db: DB) -> Response:
 async def logout(principal: Member, db: DB) -> Response:
     await revoke_owned(db, principal, principal.session_id)
     return Response(status_code=204)
+
+
+@router.post("/auth/android/challenges", response_model=ChallengeCreated)
+async def android_create(body: ChallengeRequest, request: Request, db: DB) -> ChallengeCreated:
+    return await create_challenge(
+        db,
+        body.client_nonce,
+        body.device_label,
+        request.app.state.settings.telegram_bot_username,
+        request.app.state.clock.now(),
+    )
+
+
+@router.post("/auth/android/challenges/{challenge_id}/status", response_model=ChallengeStatus)
+async def android_status(
+    challenge_id: UUID, body: ChallengeProof, request: Request, db: DB
+) -> ChallengeStatus:
+    challenge = await check_proof(
+        db, challenge_id, body.poll_secret, body.client_nonce, request.app.state.clock.now()
+    )
+    return ChallengeStatus(status=challenge.status)
+
+
+@router.post("/auth/android/challenges/{challenge_id}/consume", response_model=SessionTokens)
+async def android_consume(
+    challenge_id: UUID, body: ChallengeProof, request: Request, db: DB
+) -> SessionTokens:
+    return await consume_challenge(
+        db, challenge_id, body.poll_secret, body.client_nonce, request.app.state.clock.now()
+    )

@@ -12,6 +12,7 @@ from vowen.core.config import Settings
 from vowen.core.database import check_schema, engine_for, sessions_for
 from vowen.core.errors import AppError
 from vowen.modules.auth.router import router
+from vowen.modules.relations.router import router as relations_router
 
 
 def create_app(settings: Settings) -> FastAPI:
@@ -32,6 +33,7 @@ def create_app(settings: Settings) -> FastAPI:
     )
     app.state.clock = Clock()
     app.include_router(router)
+    app.include_router(relations_router)
 
     @app.exception_handler(AppError)
     async def app_error(request: Request, error: AppError) -> JSONResponse:
