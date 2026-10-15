@@ -584,3 +584,41 @@ No production migration or deployment was performed. Live Telegram, physical
 Android acceptance, production backup/restore and independent security review
 remain separate. Remote CI is run on `feat/m4`; its final immutable SHA/run result
 is reported in the task delivery rather than inferred from these local checks.
+
+## 2026-10-15 — M4 deployment and data-preservation acceptance
+
+Deployed application source **859908ceec4de98dd58c6e085b5659d0c44ff357**, whose
+backend-web and Android CI passed at
+https://github.com/Mesteriis/vowen/actions/runs/38775635431.
+The archive deployment has no `.git`; 265 tracked file hashes matched the exact
+release archive, excluding four intentionally preserved machine-local edge files.
+
+API, worker and Telegram poller were stopped for a consistent backup and schema
+change. Backed up PostgreSQL custom dump, keyring/token/configuration and original
+source; preserved pre-M4 image tags. A separate authenticated AES-256-GCM encrypted
+backup was copied off the server, with its recovery key stored separately under
+owner-only permissions. AEAD roundtrip and dump-header checks passed.
+
+Restored the dump into an isolated scratch DB. Every table fingerprint matched;
+existing encrypted content decrypted with the backed-up keyring. Rehearsed
+0014 → 0016 → 0014 before the production migration: existing rows remained
+identical and the six new M4 tables were empty. Applied 0015/0016 to production
+while writers remained stopped. ALL pre-existing table fingerprints, except the
+expected Alembic revision row, were identical; encrypted content remained readable.
+After startup, identity/profile/relationship/version/consent/rule/response/report/
+reward fingerprints still matched. No participant sessions were impersonated,
+new permissions granted or consents accepted by the operator.
+
+API/db/worker healthy; proxy and bot running with zero restarts at acceptance.
+Public TLS/readiness/static/CSP/body-cap/secret-denial checks passed. Live M4
+list/export endpoints reject missing or invalid bearer tokens with 401. Public
+Mini App assets contain the M4 discipline/diary code. Live Telegram `getMe` matched
+the configured bot identity; no test message sent. Guest nftables isolation and
+Docker services remained active; local Telegram poller remains off.
+
+**31 M4/rules authorization and privacy tests passed on the server** using a
+separate migrated disposable test DB, synthetic identities/keys and frozen dev
+locks. This is server-side acceptance, not a real-participant Android/Mini App
+session or a Telegram notification receipt test. New discipline scopes still
+require each participant's personal agreement. Ongoing scheduled backup policy,
+physical Android acceptance and independent security review remain separate.

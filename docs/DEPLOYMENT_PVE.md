@@ -2,7 +2,9 @@
 
 The owner deployment uses an unprivileged Debian 13 LXC with Docker, a private
 HTTP Caddy origin, and a separate nginx-ui HTTPS edge. The application source
-was deployed from `b0356dd`; no development database or users were copied.
+was initially deployed from `b0356dd`; M4 is deployed from `859908c` with schema
+0016. No development database or users were copied. See dated deployment evidence
+in [STATUS](STATUS.md).
 
 The files in `deploy/pve` are an example for this topology. Before reuse, replace
 the reserved example domain `vowen.example.test`, TEST-NET origin/edge/PVE/DNS addresses consistently, including Caddy's trusted proxy.
@@ -61,3 +63,22 @@ separate step. Provision participants explicitly through the CLI; Telegram
 contact/start does not create an application user. Consent and notification
 opt-in must come from each participant. End-to-end ritual/reward/revocation
 acceptance needs distinct real participants and remains separate from deployment.
+
+## Updating an archive deployment
+
+Read the current schema/service health and `.deployed-revision`; an archive checkout
+has no Git metadata. Preserve machine-local edge files and secret/config hashes.
+Stop API/worker/poller for the final consistent dump, restore it into a separate
+DB with the backed-up keyring, then rehearse both upgrade and downgrade. Compare
+all existing table fingerprints before resuming writers; only the Alembic version
+and explicitly added empty tables may differ for 0015/0016. Keep original source
+and old image tags until acceptance. Never downgrade after new M4 data is written
+without a separate preservation/rollback decision.
+
+A second `compose run api` conflicts with the running API's fixed proxy-network
+address. Use the `migrate` service for one-off backend jobs instead. Read-only
+crypto verification needs an explicit read-only keyring bind; synthetic acceptance
+tests use their own DB and generated keys, with no production secret bind. Ensure
+commands cannot consume the remainder of a streamed shell script: execute a saved
+script, or disable stdin on commands that do not need it. Never print resolved
+Compose configuration or database URLs.
