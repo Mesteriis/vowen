@@ -31,6 +31,10 @@ async def set_user_active(db: AsyncSession, telegram_id: int, active: bool, now:
     user = await db.scalar(select(User).where(User.telegram_id == telegram_id).with_for_update())
     if user is None:
         raise AppError(404, "NOT_FOUND")
+    if user.is_active != active:
+        from vowen.modules.rituals.service import suspend
+
+        await suspend(db, now, actor_id=user.id)
     user.is_active = active
     if not active:
         from vowen.modules.auth.service import revoke_user_sessions

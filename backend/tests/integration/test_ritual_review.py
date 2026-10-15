@@ -417,3 +417,100 @@ async def test_late_needs_changes_provides_a_real_resubmission_window(api):
             },
         )
     ).status_code == 200
+
+
+async def test_assignment_resume_never_recovers_its_paused_interval(api):
+    client, app, ids, tokens, template, a, o = await setup_ritual(api)
+    a = (
+        await client.post(
+            f"/api/v1/ritual-assignments/{a['id']}/pause",
+            headers=auth(tokens[1]),
+            json={"expected_version": a["revision"]},
+        )
+    ).json()
+    later = NOW + timedelta(days=5)
+    app.state.clock = type("LaterClock", (), {"now": lambda self: later})()
+    tokens[1] = (
+        await login(client, signed(100000000002, offset=5 * 86400, query_id=str(uuid4())))
+    ).json()
+    response = await client.post(
+        f"/api/v1/ritual-assignments/{a['id']}/resume",
+        headers=auth(tokens[1]),
+        json={"expected_version": a["revision"]},
+    )
+    assert response.status_code == 200
+    rows = (await client.get("/api/v1/ritual-occurrences", headers=auth(tokens[1]))).json()
+    assert len(rows) == 1 and rows[0]["status"] == "cancelled"
+
+
+async def test_assign_only_issuer_manages_metadata_without_report_access(api):
+    client, app, ids, tokens, template, a, o = await setup_ritual(api)
+    relation = (await client.get("/api/v1/relations", headers=auth(tokens[0]))).json()[0]
+    relation = (
+        await client.post(
+            f"/api/v1/relations/{relation['id']}/versions",
+            headers=auth(tokens[0]),
+            json={
+                "expected_version": relation["version"],
+                "scopes": ["rituals.assign"],
+                "agreement_text": "Assign only",
+            },
+        )
+    ).json()
+    relation = (await accept(client, tokens[0], relation)).json()
+    assert (await accept(client, tokens[1], relation)).status_code == 200
+    body = {
+        "recipient_id": str(ids[1]),
+        "reviewer_ids": [],
+        "approval_required": False,
+        "idempotency_key": str(uuid4()),
+        "schedule": {
+            "kind": "daily",
+            "timezone": "UTC",
+            "hour": 9,
+            "minute": 0,
+            "start_date": "2026-10-15",
+        },
+    }
+    result = (
+        await client.post(
+            f"/api/v1/rituals/{template['id']}/assignments", headers=auth(tokens[0]), json=body
+        )
+    ).json()
+    rows = (await client.get("/api/v1/ritual-assignments", headers=auth(tokens[0]))).json()
+    assert result["id"] in {r["id"] for r in rows}
+    occurrences = (await client.get("/api/v1/ritual-occurrences", headers=auth(tokens[0]))).json()
+    assert result["id"] not in {r["assignment_id"] for r in occurrences}
+    paused = await client.post(
+        f"/api/v1/ritual-assignments/{result['id']}/pause",
+        headers=auth(tokens[0]),
+        json={"expected_version": result["revision"]},
+    )
+    assert paused.status_code == 200
+    revoked = await client.post(
+        f"/api/v1/ritual-assignments/{result['id']}/revoke",
+        headers=auth(tokens[0]),
+        json={"expected_version": paused.json()["revision"]},
+    )
+    assert revoked.status_code == 200
+
+
+async def test_account_reenable_never_recovers_disabled_interval(api):
+    from vowen.modules.identity.service import set_user_active
+
+    client, app, ids, tokens, template, a, o = await setup_ritual(api)
+    async with app.state.sessions() as db, db.begin():
+        await set_user_active(db, 100000000002, False, NOW)
+    later = NOW + timedelta(days=5)
+    async with app.state.sessions() as db, db.begin():
+        await set_user_active(db, 100000000002, True, later)
+    from vowen.modules.rituals.worker import generate
+
+    async with app.state.sessions() as db, db.begin():
+        await generate(db, later)
+    app.state.clock = type("LaterClock", (), {"now": lambda self: later})()
+    token = (
+        await login(client, signed(100000000002, offset=5 * 86400, query_id=str(uuid4())))
+    ).json()
+    rows = (await client.get("/api/v1/ritual-occurrences", headers=auth(token))).json()
+    assert len(rows) == 1 and rows[0]["status"] == "cancelled"

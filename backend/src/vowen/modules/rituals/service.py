@@ -106,6 +106,12 @@ async def can_review(db: AsyncSession, a: RitualAssignment, uid: UUID) -> bool:
     return await scoped(db, uid, a.recipient_id, "rituals.review", set(await reviewers(db, a)))
 
 
+async def can_manage(db: AsyncSession, a: RitualAssignment, uid: UUID) -> bool:
+    return a.issuer_id == uid and await scoped(
+        db, uid, a.recipient_id, "rituals.assign", {a.issuer_id}
+    )
+
+
 async def visible(db: AsyncSession, a: RitualAssignment, uid: UUID) -> bool:
     return a.recipient_id == uid or await can_review(db, a, uid)
 

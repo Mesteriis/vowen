@@ -206,6 +206,7 @@ async def assigned(db: DB, uid: UUID) -> list[RitualAssignment]:
             select(RitualAssignment)
             .where(
                 (RitualAssignment.recipient_id == uid)
+                | (RitualAssignment.issuer_id == uid)
                 | RitualAssignment.id.in_(
                     select(RitualReviewer.assignment_id).where(RitualReviewer.user_id == uid)
                 )
@@ -221,6 +222,7 @@ async def assignments(principal: Member, db: DB, request: Request) -> list[Ritua
         await rituals.assignment_view(db, a, cipher_for(request))
         for a in await assigned(db, principal.user_id)
         if await rituals.visible(db, a, principal.user_id)
+        or await rituals.can_manage(db, a, principal.user_id)
     ]
 
 
@@ -371,7 +373,7 @@ async def assignment_action(
     if a is None:
         raise AppError(404, "NOT_FOUND")
     recipient = a.recipient_id == principal.user_id
-    if not recipient and (a.issuer_id != principal.user_id or not await rituals.effective(db, a)):
+    if not recipient and (not await rituals.can_manage(db, a, principal.user_id)):
         raise AppError(403, "ACCESS_DENIED")
     if a.revision != body.expected_version:
         raise AppError(409, "VERSION_CONFLICT")
@@ -382,6 +384,7 @@ async def assignment_action(
             db, a.issuer_id, a.recipient_id, "rituals.assign", {a.issuer_id}
         ):
             raise AppError(403, "ACCESS_DENIED")
+        await generate_assignment(db, a, request.app.state.clock.now(), 31)
         a.status = "active"
     else:
         a.status = "paused" if action == "pause" else "revoked"
