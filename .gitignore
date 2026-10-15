@@ -22,3 +22,5 @@ secrets/
 playwright-report/
 test-results/
 .serena/
+
+.impeccable/review/

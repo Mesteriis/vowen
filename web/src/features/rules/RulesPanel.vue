@@ -43,7 +43,7 @@ async function decide(a:Assignment,action:string){await run(async()=>{
 })}
 </script>
 <template>
- <section aria-labelledby="rules-heading">
+ <section id="rules" aria-labelledby="rules-heading">
   <h2 id="rules-heading">{{t('Rules','Правила')}}</h2>
   <button :disabled="busy" @click="run(load)">{{t('Refresh rules','Обновить правила')}}</button>
   <button :disabled="busy||me.paused" @click="edit(null)">{{t('New rule','Новое правило')}}</button>

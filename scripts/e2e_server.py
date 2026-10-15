@@ -28,7 +28,7 @@ async def seed():
     try:
         async with sessions_for(engine)() as db, db.begin():
             await db.execute(text('TRUNCATE users CASCADE'))
-            for i in range(4):
+            for i in range(6):
                 await create_user(db, ProvisionUserCommand(telegram_id=100000000201+i,display_name=f'Demo {i+1}'),Clock().now())
     finally:
         await engine.dispose()

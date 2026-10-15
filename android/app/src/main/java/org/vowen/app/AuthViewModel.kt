@@ -13,7 +13,7 @@ import java.security.SecureRandom
 
 /** One serialized auth lane: switching instances cannot race an old network response. */
 class AuthViewModel(application:Application):AndroidViewModel(application) {
- data class Screen(val origin:String="",val member:Member?=null,val challenge:Challenge?=null,val busy:Boolean=false,val error:String?=null,val workspace:WorkspaceState=WorkspaceState(),val sessionId:String?=null,val completed:Int=0,val formLink:String?=null)
+ data class Screen(val origin:String="",val member:Member?=null,val challenge:Challenge?=null,val busy:Boolean=false,val error:String?=null,val workspace:WorkspaceState=WorkspaceState(),val sessionId:String?=null,val completed:Int=0,val formLink:String?=null,val booting:Boolean=true)
  private val mutable=MutableStateFlow(Screen())
  val screen=mutable.asStateFlow()
  private val instance=InstanceSession()
@@ -23,18 +23,21 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
  private val mutex=Mutex()
  private var nonce:String?=null
  init {
+  var restoring=false
   preferences.getString("origin",null)?.let { savedOrigin ->
    try {
     instance.select(savedOrigin)
     mutable.value=Screen(origin=instance.origin)
+    restoring=true
     run { vault.load(instance.origin)?.let { tokens(api.refresh(it)) } }
    } catch (_: IllegalArgumentException) { vault.clear(); preferences.edit().clear().apply() }
   }
+  if(!restoring)mutable.value=mutable.value.copy(booting=false)
  }
  private fun run(action:suspend ()->Unit) { viewModelScope.launch { mutex.withLock {
   mutable.value=mutable.value.copy(busy=true,error=null)
   try { action() } catch(_:Exception) { if(instance.accessToken==null && mutable.value.member!=null) clear(); mutable.value=mutable.value.copy(error="Request failed. Retry or sign in again. / Ошибка запроса. Повторите вход.") }
-  finally { mutable.value=mutable.value.copy(busy=false) }
+  finally { mutable.value=mutable.value.copy(busy=false,booting=false) }
  } } }
  fun select(origin:String)=run {
   if(instance.select(origin)) {vault.clear();nonce=null;mutable.value=Screen(origin=instance.origin)}
@@ -99,6 +102,15 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
  fun ruleTemplate(rule:RuleTemplate,action:String)=run {api.ruleTemplate(rule,action);loadWorkspace(true)}
  fun assignRule(rule:RuleTemplate,body:RuleAssign)=run {api.assignRule(rule,body);loadWorkspace(true)}
  fun decideRule(assignment:RuleAssignment,action:String)=run {api.decideRule(assignment,action);loadWorkspace(true)}
+ fun saveRitual(r:RitualTemplate?,body:RitualContent)=run{api.saveRitual(r,body);loadWorkspace(true)}
+ fun ritualTemplate(r:RitualTemplate,action:String)=run{api.ritualTemplate(r,action);loadWorkspace(true)}
+ fun ritualHistory(r:RitualTemplate)=run{val history=api.ritualHistory(r);mutable.value=mutable.value.copy(workspace=mutable.value.workspace.copy(ritualHistory=history))}
+ fun assignRitual(r:RitualTemplate,body:RitualAssign)=run{api.assignRitual(r,body);loadWorkspace(true)}
+ fun scheduleRitual(a:RitualAssignment,s:RitualSchedule)=run{api.scheduleRitual(a,s);loadWorkspace(true)}
+ fun ritualAssignment(a:RitualAssignment,action:String)=run{api.ritualAssignment(a,action);loadWorkspace(true)}
+ fun reportRitual(o:RitualOccurrence,text:String,key:String)=run{api.reportRitual(o,text,key);loadWorkspace(true)}
+ fun reviewRitual(o:RitualOccurrence,decision:String,comment:String)=run{api.reviewRitual(o,decision,comment);loadWorkspace(true)}
+ fun skipRitual(o:RitualOccurrence)=run{api.skipRitual(o);loadWorkspace(true)}
  fun logout()=run { try { api.call("/auth/logout","POST") } finally { clear() } }
- private fun clear() { instance.clear();vault.clear();nonce=null;mutable.value=Screen(origin=instance.origin) }
+ private fun clear() { instance.clear();vault.clear();nonce=null;mutable.value=Screen(origin=instance.origin,booting=false) }
 }

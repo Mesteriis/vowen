@@ -29,7 +29,7 @@ const deleting=ref<Result|null>(null)
 async function remove(){await run(async()=>{if(!deleting.value)return;await props.client.delete('/form-submissions/'+deleting.value.id);deleting.value=null;await load()})}
 </script>
 <template>
- <section><h2>{{ru?'Анкеты':'Forms'}}</h2><p v-if="error" role="alert">{{error}}</p><p role="status">{{message}}</p>
+ <section id="forms"><h2>{{ru?'Анкеты':'Forms'}}</h2><p v-if="error" role="alert">{{error}}</p><p role="status">{{message}}</p>
   <button :disabled="busy" @click="run(load)">{{ru?'Обновить анкеты':'Refresh forms'}}</button><button @click="edit(null)">{{ru?'Новая анкета':'New form'}}</button>
   <FormEditor v-if="editor" :key="editing?.version_id??'new'" :initial="editing?.schema_body" :ru="ru" :busy="busy" @save="save" @cancel="editor=false" />
   <article v-for="f in forms" :key="f.id"><h3>{{f.schema_body.title}}</h3><p>{{f.status}} · v{{f.revision}}</p><button @click="edit(f)">{{f.status==='draft'?(ru?'Редактировать':'Edit'):(ru?'Новая версия':'New version')}}</button><button v-if="f.status==='draft'" :disabled="busy" @click="publish(f)">{{ru?'Опубликовать':'Publish'}}</button><button v-if="f.status==='published'" @click="invite(f)">{{ru?'Пригласить':'Invite'}}</button><button v-if="f.status!=='archived'" @click="run(async()=>{await client.post('/forms/'+f.id+'/archive',{expected_version:f.revision});await load()})">{{ru?'Архивировать':'Archive'}}</button></article>

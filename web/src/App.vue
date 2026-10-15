@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, onMounted } from 'vue'
+import RitualsPanel from './features/rituals/RitualsPanel.vue'
 import RulesPanel from './features/rules/RulesPanel.vue'
 import FormsPanel from './features/forms/FormsPanel.vue'
 import ProfileSettings from './features/profile/ProfileSettings.vue'
@@ -10,8 +11,8 @@ type Me = components['schemas']['MemberView']
 type Relation = components['schemas']['RelationView']
 type Session = components['schemas']['SessionView']
 const client = new SessionClient()
-const instanceName=ref('Vowen')
-onMounted(async()=>{try{instanceName.value=(await client.get<{display_name:string}>('/instance')).display_name}catch{error.value='NETWORK_ERROR'}})
+const instanceName=ref('Vowen'),booting=ref(true)
+onMounted(async()=>{try{instanceName.value=(await client.get<{display_name:string}>('/instance')).display_name}catch{error.value='NETWORK_ERROR'}finally{booting.value=false}})
 const ru = ref(navigator.language.startsWith('ru'))
 const t = computed(() => ru.value ? {
  refresh:'Обновить',title:'Ваше пространство',login:'Войти через Telegram',closed:'Доступ только для пользователей, созданных оператором.',open:'Откройте приложение через Telegram-бота.',logout:'Выйти',pause:'Личная пауза',resume:'Снять личную паузу',relations:'Отношения',propose:'Предложить',target:'Участник',direction:'Направление',dominant:'Я предлагаю полномочия относительно участника',submissive:'Участник получает полномочия относительно меня',agreement:'Текст соглашения',accept:'Подтвердить эту версию и полномочия',relationPause:'Приостановить',relationResume:'Запросить возобновление',revoke:'Отозвать',sessions:'Сессии',empty:'Пока нет отношений',alpha:'Техническая alpha · M0–M2',error:'Ошибка',scope:'Полномочия',note:'Серверный оператор имеет технический доступ к данным. Это не E2EE.'
@@ -51,17 +52,21 @@ async function revokeSession(id:string){await run(async()=>{await client.delete(
 function name(id:string){return participants.value.find(p=>p.id===id)?.display_name??id}
 </script>
 <template>
- <main>
-  <header><span>{{instanceName}}</span><button @click="ru=!ru" :aria-label="ru?'English':'Русский'">{{ru?'EN':'RU'}}</button></header>
-  <p class="muted">{{t.alpha}}</p><h1>{{t.title}}</h1>
+ <div v-if="booting" class="startup-screen" role="status" :aria-label="ru?'Загрузка Vowen':'Loading Vowen'"><img src="/brand/vowen-velvet.webp" alt=""><div><span class="brand-wordmark">Vowen</span><p>{{ru?'Открываем ваше пространство…':'Opening your workspace…'}}</p></div></div>
+ <main :class="{'member-workspace':!!me}" :aria-busy="booting">
+  <aside v-if="me" class="workspace-nav" aria-label="Workspace"><a class="nav-brand" href="#home"><img src="/brand/vowen-crest.webp" alt=""><span>{{instanceName}}</span></a><nav><a href="#rituals">{{ru?'Мой день · Ритуалы':'My day · Rituals'}}</a><a href="#rules">{{ru?'Правила':'Rules'}}</a><a href="#forms">{{ru?'Анкеты и опросы':'Forms & surveys'}}</a><a href="#relations">{{t.relations}}</a><a href="#profile">{{ru?'Профиль':'Profile'}}</a><a href="#sessions">{{t.sessions}}</a></nav><p>{{ru?'Ближе, чем слова.':'Closer through care.'}}</p></aside>
+  <div class="workspace-content" id="home">
+  <header><a class="app-brand" href="#home"><img src="/brand/vowen-crest.webp" alt=""><span>{{instanceName}}</span></a><button @click="ru=!ru" :aria-label="ru?'English':'Русский'">{{ru?'EN':'RU'}}</button></header>
+  <h1>{{me?(ru?'Ваш день, ':'Your day, ')+me.display_name:t.title}}</h1><p class="muted">{{ru?'Ваш ритм. Ваши договорённости.':'Your rhythm. Your agreements.'}}</p>
   <p v-if="error" role="alert">{{t.error}}: {{error}}</p>
   <section v-if="!me"><p>{{t.closed}}</p><button :disabled="busy" @click="login">{{t.login}}</button></section>
   <template v-else>
-   <section><h2>{{me.display_name}}</h2><button :disabled="busy" @click="run(load)">{{t.refresh}}</button><p v-if="me.paused">⏸ {{t.pause}}</p><button :disabled="busy" @click="personal">{{me.paused?t.resume:t.pause}}</button> <button :disabled="busy" @click="logout">{{t.logout}}</button></section>
+   <section class="member-controls"><h2>{{me.display_name}}</h2><button :disabled="busy" @click="run(load)">{{t.refresh}}</button><p v-if="me.paused">⏸ {{t.pause}}</p><button :disabled="busy" @click="personal">{{me.paused?t.resume:t.pause}}</button> <button :disabled="busy" @click="logout">{{t.logout}}</button></section>
+   <RitualsPanel :client="client" :ru="ru" :me="me" :participants="participants" />
    <RulesPanel :client="client" :ru="ru" :me="me" :participants="participants" />
    <FormsPanel :client="client" :ru="ru" :participants="participants" />
    <ProfileSettings :member="me" :client="client" :ru="ru" @saved="member => {me=member;ru=member.language==='ru'}" />
-   <section><h2>{{t.relations}}</h2><p v-if="!relations.length">{{t.empty}}</p>
+   <section id="relations"><h2>{{t.relations}}</h2><p v-if="!relations.length">{{t.empty}}</p>
     <article v-for="relation in relations" :key="relation.id">
      <h3>{{name(relation.dominant_user_id)}} → {{name(relation.submissive_user_id)}}</h3>
      <p>{{relation.status}} · v{{relation.version}} · {{relation.consent_user_ids.length}}/2</p>
@@ -78,8 +83,9 @@ function name(id:string){return participants.value.find(p=>p.id===id)?.display_n
      <label>{{t.agreement}}<textarea v-model="agreement" required maxlength="10000" rows="5" /></label><button :disabled="busy || !scopes.length">{{t.propose}}</button>
     </form>
    </section>
-   <section><h2>{{t.sessions}}</h2><article v-for="session in sessions" :key="session.id"><p>{{session.device_label}} · {{session.revoked?'revoked':'active'}}</p><button v-if="!session.revoked" :disabled="busy" @click="revokeSession(session.id)">{{t.revoke}}</button></article></section>
+   <section id="sessions"><h2>{{t.sessions}}</h2><article v-for="session in sessions" :key="session.id"><p>{{session.device_label}} · {{session.revoked?'revoked':'active'}}</p><button v-if="!session.revoked" :disabled="busy" @click="revokeSession(session.id)">{{t.revoke}}</button></article></section>
   </template>
   <footer>{{t.note}}</footer>
+  </div>
  </main>
 </template>

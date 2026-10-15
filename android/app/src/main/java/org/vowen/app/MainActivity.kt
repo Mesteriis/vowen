@@ -6,6 +6,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.Image
+import androidx.compose.ui.res.painterResource
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
@@ -26,10 +28,13 @@ class MainActivity:ComponentActivity() {
    var origin by remember { mutableStateOf(screen.origin) }
    val context=LocalContext.current
    val guest by guestModel.visibleState
-   MaterialTheme {
+   var firstFrame by remember {mutableStateOf(true)}
+   LaunchedEffect(Unit){withFrameNanos{};firstFrame=false}
+   VowenTheme {
+    StartupGate(firstFrame||screen.booting) {
     Surface(Modifier.fillMaxSize()) {
      Column(Modifier.safeDrawingPadding().padding(24.dp).verticalScroll(rememberScrollState()),verticalArrangement=Arrangement.spacedBy(16.dp)) {
-      Text("Vowen",style=MaterialTheme.typography.headlineLarge)
+      Row(verticalAlignment=androidx.compose.ui.Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(12.dp)){Image(painterResource(R.drawable.vowen_crest),contentDescription=null,modifier=Modifier.size(52.dp));Text("Vowen",style=MaterialTheme.typography.headlineLarge,color=MaterialTheme.colorScheme.primary)}
       Text(stringResource(R.string.alpha))
       TextButton(onClick={if(guest)guestModel.close() else guestModel.visibleState.value=true},enabled=!guestModel.busyState.value) {Text("Guest form / Гостевая анкета")}
       if(guest)NativeGuestScreen(guestModel) {guestModel.close()}
@@ -53,10 +58,11 @@ class MainActivity:ComponentActivity() {
        Button(onClick={model.logout()},enabled=!screen.busy) {Text(if(member.language=="ru")"Выйти" else "Sign out")}
        WorkspaceScreen(member,screen.workspace,screen.sessionId,screen.busy,screen.completed,
         WorkspaceActions(model::refreshWorkspace,model::propose,model::relationAction,model::changeRelation,model::saveProfile,model::revokeSession),
-        FormActions(model::refreshWorkspace,model::saveForm,model::publishForm,model::inviteForm,model::saveFormDraft,model::submitForm,model::deleteFormResult),screen.formLink,RuleActions(model::refreshWorkspace,model::saveRule,model::ruleTemplate,model::assignRule,model::decideRule,model::ruleHistory))
+        FormActions(model::refreshWorkspace,model::saveForm,model::publishForm,model::inviteForm,model::saveFormDraft,model::submitForm,model::deleteFormResult),screen.formLink,RuleActions(model::refreshWorkspace,model::saveRule,model::ruleTemplate,model::assignRule,model::decideRule,model::ruleHistory),RitualActions(model::refreshWorkspace,model::saveRitual,model::ritualTemplate,model::ritualHistory,model::assignRitual,model::scheduleRitual,model::ritualAssignment,model::reportRitual,model::reviewRitual,model::skipRitual))
       }
       }
      }
+    }
     }
    }
   }

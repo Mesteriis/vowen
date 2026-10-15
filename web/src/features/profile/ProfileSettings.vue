@@ -15,7 +15,7 @@ async function save(){busy.value=true;error.value='';try{
 }catch(e){error.value=e instanceof Error&&e.message==='CONFLICT'?t.value.conflict:e instanceof Error?e.message:'NETWORK_ERROR'}finally{busy.value=false}}
 </script>
 <template>
- <section><h2>{{t.title}}</h2><p v-if="error" role="alert">{{error}}</p>
+ <section id="profile"><h2>{{t.title}}</h2><p v-if="error" role="alert">{{error}}</p>
  <form @submit.prevent="save">
  <label>{{t.name}}<input v-model="displayName" required maxlength="100" :disabled="busy"></label>
  <label>{{t.language}}<select v-model="language" :disabled="busy"><option value="en">English</option><option value="ru">Русский</option></select></label>

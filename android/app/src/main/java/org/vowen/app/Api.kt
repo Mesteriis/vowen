@@ -94,4 +94,21 @@ class Api(private val state: InstanceSession,
   return json.decodeFromString(call("/rule-assignments/${assignment.id}/$action","POST",json.encodeToString(RuleDecision(assignment.revision,assignment.rule_version_id))))
  }
 
+ suspend fun rituals():List<RitualTemplate> = json.decodeFromString(call("/rituals"))
+ suspend fun ritualAssignments():List<RitualAssignment> = json.decodeFromString(call("/ritual-assignments"))
+ suspend fun ritualOccurrences():List<RitualOccurrence> = json.decodeFromString(call("/ritual-occurrences"))
+ suspend fun ritualNotices():List<RitualNotice> = json.decodeFromString(call("/ritual-notices"))
+ suspend fun ritualHistory(r:RitualTemplate):List<RitualTemplate> = json.decodeFromString(call("/rituals/${r.id}/versions"))
+ suspend fun saveRitual(r:RitualTemplate?,body:RitualContent):RitualTemplate {
+  if(r==null)return json.decodeFromString(call("/rituals","POST",json.encodeToString(body)))
+  return json.decodeFromString(call("/rituals/${r.id}"+if(r.status=="draft")"" else "/versions",if(r.status=="draft")"PATCH" else "POST",json.encodeToString(RitualEdit(description=body.description,title=body.title,expected_version=r.revision))))
+ }
+ suspend fun ritualTemplate(r:RitualTemplate,action:String):RitualTemplate {require(action in listOf("publish","archive"));return json.decodeFromString(call("/rituals/${r.id}/$action","POST",json.encodeToString(ExpectedVersion(r.revision))))}
+ suspend fun assignRitual(r:RitualTemplate,body:RitualAssign):RitualAssignment = json.decodeFromString(call("/rituals/${r.id}/assignments","POST",json.encodeToString(body)))
+ suspend fun scheduleRitual(a:RitualAssignment,s:RitualSchedule):RitualAssignment = json.decodeFromString(call("/ritual-assignments/${a.id}/schedule","PUT",json.encodeToString(RitualScheduleEdit(expected_version=a.revision,schedule=s))))
+ suspend fun ritualAssignment(a:RitualAssignment,action:String):RitualAssignment {require(action in listOf("pause","resume","revoke"));return json.decodeFromString(call("/ritual-assignments/${a.id}/$action","POST",json.encodeToString(ExpectedVersion(a.revision))))}
+ suspend fun reportRitual(o:RitualOccurrence,text:String,key:String):RitualOccurrence = json.decodeFromString(call("/ritual-occurrences/${o.id}/report","POST",json.encodeToString(RitualReportCommand(expected_version=o.revision,idempotency_key=key,text=text))))
+ suspend fun reviewRitual(o:RitualOccurrence,decision:String,comment:String):RitualOccurrence {require(decision in listOf("approved","needs_changes"));return json.decodeFromString(call("/ritual-occurrences/${o.id}/review","POST",json.encodeToString(RitualReviewCommand(expected_version=o.revision,decision=decision,comment=comment))))}
+ suspend fun skipRitual(o:RitualOccurrence):RitualOccurrence = json.decodeFromString(call("/ritual-occurrences/${o.id}/skip","POST",json.encodeToString(ExpectedVersion(o.revision))))
+
 }
