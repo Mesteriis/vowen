@@ -460,5 +460,11 @@ concrete FK targets now register it for standalone worker/CLI execution.
 Observed regressions cover every correction (including isolated subprocess failure,
 SQL projection, native HTTP422 recovery, editor completion, Activity recreation and
 instance switch). Updated local totals: 118 backend, 3 Vitest, 8 browser E2E, 11 JVM,
-27 Compose instrumentation tests. The initial branch CI af35bc9 passed both jobs;
-final corrected-code CI is still pending and is recorded separately below when verified.
+27 Compose instrumentation tests. Both CI jobs (backend-web, android) passed for
+final code 9958ae1fffc2a85527a1a934c5b642c625982fa0:
+https://github.com/Mesteriis/vowen/actions/runs/38757822831.
+Final actual MainActivity phone/tablet captures passed their screenshot tests and
+the scored visual corrections were accepted. For stable recaptures only, animations
+were temporarily disabled on the owned AVD and their original settings restored;
+no physical device was changed. This is visual evidence using synthetic test transport,
+not proof of native-to-production file transfer or live Telegram delivery.
