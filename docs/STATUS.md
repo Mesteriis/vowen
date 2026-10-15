@@ -528,3 +528,7 @@ off-host encrypted backup and real participant flows remain unverified.
 
 See [deployment operations](DEPLOYMENT_PVE.md). This is deployment evidence,
 not acceptance of real Telegram ritual/reward notifications or participant consent.
+
+Native Telegram screenshot also confirms the deployed Mini App opens and displays
+ACCESS_DENIED for the unprovisioned participant. This is the expected boundary
+on the fresh zero-user instance; successful participant login is not yet verified.
