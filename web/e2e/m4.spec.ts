@@ -21,6 +21,7 @@ test('discipline personal consent, revision, history and confirmation',async({pa
  await page.getByLabel('Agreement text',{exact:true}).fill('Synthetic discipline authority')
  await page.getByRole('button',{name:'Propose',exact:true}).click()
  await page.getByRole('button',{name:'Accept this exact version and scopes',exact:true}).click()
+ await expect(page.getByText('Version 2 · Consents 1/2',{exact:true})).toBeVisible()
  await recipient.getByRole('button',{name:'Refresh',exact:true}).click()
  await openSection(recipient,'relations')
  await recipient.getByRole('button',{name:'Accept this exact version and scopes',exact:true}).click()
