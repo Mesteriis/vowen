@@ -4,6 +4,7 @@ import asyncio
 import logging
 import time
 from collections.abc import Awaitable, Callable
+from pathlib import Path
 from typing import Any
 from uuid import UUID
 
@@ -84,6 +85,7 @@ def build_router(settings: Settings) -> Router:
                 db.add(contact)
             contact.allowed = (message.text or "").split("@")[0] == "/notifications_on"
             if not contact.allowed:
+                contact.delivery_generation = (contact.delivery_generation or 0) + 1
                 uid = await db.scalar(
                     select(User.id).where(User.telegram_id == contact.telegram_id)
                 )
@@ -162,7 +164,7 @@ def build_router(settings: Settings) -> Router:
 
 async def deliver_updates(
     sessions: async_sessionmaker[AsyncSession],
-    cipher: PayloadCipher,
+    keyring: Path,
     bot: Bot,
     base_url: str,
 ) -> None:
@@ -177,7 +179,7 @@ async def deliver_updates(
 
     # A form delivery failure must not starve the independent member queue.
     try:
-        await deliver_one(sessions, cipher, send)
+        await deliver_one(sessions, PayloadCipher(keyring), send)
     except Exception:
         logging.getLogger("vowen").warning("Form notification delivery unavailable")
     try:
@@ -209,7 +211,7 @@ async def run() -> None:
             while True:
                 await deliver_updates(
                     worker_sessions,
-                    PayloadCipher(settings.data_keyring_file),
+                    settings.data_keyring_file,
                     bot,
                     settings.public_base_url,
                 )

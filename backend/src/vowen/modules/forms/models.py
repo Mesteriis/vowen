@@ -79,6 +79,7 @@ class BotContact(Base):
     __tablename__ = "bot_contacts"
     telegram_id: Mapped[int] = mapped_column(BigInteger, primary_key=True, autoincrement=False)
     allowed: Mapped[bool] = mapped_column(default=False)
+    delivery_generation: Mapped[int] = mapped_column(default=0, server_default="0")
 
 
 class Delivery(Base):

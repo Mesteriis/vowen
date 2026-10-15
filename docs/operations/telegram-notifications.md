@@ -1,6 +1,6 @@
 # Telegram ritual and reward notifications
 
-Apply Alembic 0013 (`make migrate`); rebuild API, ritual worker and bot together.
+Apply Alembic 0013–0014 (`make migrate`); rebuild API, ritual worker and bot together.
 The existing `telegram` Compose profile runs the bot and its delivery loop:
 `docker compose --profile telegram up -d --build bot`.
 The Compose token is read from `secrets/bot-token`; local Python reads `.env`
@@ -27,11 +27,16 @@ required at event creation and checked again at claim and immediately before sen
 Ritual delivery requires effective assignment plus executor/current explicit reviewer
 access; reward delivery requires the fixed issuer/recipient and current direct
 rewards.grant authority. In-app earned history remains readable after withdrawal,
-but no new Telegram delivery is made under withdrawn authority.
+but no new Telegram delivery is made under withdrawn authority. Each delivery records
+applicable direct relation revisions; a pause/version change and renewed consent
+cannot authorize an uncommitted old event that escaped the cancellation query.
 
-Pause, account disable, relation pause/revoke/version change and bot opt-out suppress
+Pause (including an individual assignment), account disable, relation pause/revoke/
+version change and bot opt-out suppress
 pending/claimed deliveries transactionally. Restoring permission does not resurrect
-cancelled messages. Sending requests already in flight cannot be recalled reliably;
+cancelled messages. A monotonic contact consent generation also fences events
+enqueued concurrently with opt-out. In-flight rows retain cancellation intent: an
+explicit429 response cannot put a cancelled send back into the retry queue. Sending requests already in flight cannot be recalled reliably;
 there is a small unavoidable interval between the final DB commit and Telegram send.
 No database transaction is held across network IO. The message contains no private
 resource content even in that interval; resource reads still use their current ACL.
@@ -56,6 +61,8 @@ contact and ends this delivery. Bad request/exhausted429 ends as
 `manual_delivery_required`. Other network/server errors are conservatively uncertain;
 no error payload, token or message is logged. Successful rows are terminal. Each tick
 handles at most one form and one member delivery, independently, every five seconds.
+Keyring loading is isolated inside the guarded form branch on each tick; a failed
+load does not stop member notifications or permanently terminate the worker.
 The Bot API parameters and retry semantics follow the
 [official API](https://core.telegram.org/bots/api#sendmessage) and
 [ResponseParameters](https://core.telegram.org/bots/api#responseparameters).

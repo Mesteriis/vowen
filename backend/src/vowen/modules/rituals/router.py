@@ -408,6 +408,9 @@ async def assignment_action(
         await generate_assignment(db, a, request.app.state.clock.now(), 31)
         a.status = "active"
     else:
+        from vowen.modules.notifications.delivery import suppress_assignment
+
+        await suppress_assignment(db, a.id)
         a.status = "paused" if action == "pause" else "revoked"
         rows = (
             await db.scalars(

@@ -5,13 +5,15 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta
 from uuid import UUID, uuid4
 
-from sqlalchemy import or_, select
+from sqlalchemy import case, or_, select, update
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
+from sqlalchemy.sql.elements import ColumnElement
 
 from vowen.core.clock import Clock
 from vowen.modules.forms.models import BotContact
 from vowen.modules.identity.models import User, UserPreferences
 from vowen.modules.notifications.models import MemberDelivery
+from vowen.modules.relations.models import Relation
 from vowen.modules.rewards.models import RewardGrant, RewardNotice
 from vowen.modules.rituals import service as rituals
 from vowen.modules.rituals.models import RitualAssignment, RitualNotice, RitualOccurrence
@@ -27,6 +29,7 @@ class Claim:
 class Destination:
     telegram_id: int
     language: str
+    consent_generation: int
 
 
 async def destination(db: AsyncSession, uid: UUID) -> Destination | None:
@@ -35,7 +38,9 @@ async def destination(db: AsyncSession, uid: UUID) -> Destination | None:
     if not user or not user.is_active or user.paused or not contact or not contact.allowed:
         return None
     preferences = await db.get(UserPreferences, uid)
-    return Destination(user.telegram_id, preferences.language if preferences else "en")
+    return Destination(
+        user.telegram_id, preferences.language if preferences else "en", contact.delivery_generation
+    )
 
 
 async def enqueue(
@@ -47,22 +52,59 @@ async def enqueue(
     reward_notice_id: UUID | None = None,
     occurrence_revision: int | None = None,
 ) -> None:
-    db.add(
-        MemberDelivery(
-            user_id=uid,
-            ritual_notice_id=ritual_notice_id,
-            reward_notice_id=reward_notice_id,
-            occurrence_revision=occurrence_revision,
-            created_at=now,
-            available_at=now,
-            status="pending" if await destination(db, uid) else "suppressed",
-        )
+    target = await destination(db, uid)
+    row = MemberDelivery(
+        user_id=uid,
+        ritual_notice_id=ritual_notice_id,
+        reward_notice_id=reward_notice_id,
+        occurrence_revision=occurrence_revision,
+        created_at=now,
+        available_at=now,
+        status="pending" if target else "suppressed",
+        consent_generation=target.consent_generation if target else 0,
     )
+    row.authority_versions = await authority_versions(db, row)
+    db.add(row)
+
+
+async def authority_versions(db: AsyncSession, d: MemberDelivery) -> dict[str, int]:
+    # Revocation/version changes can commit while the event/outbox is still invisible.
+    # Record the applicable direct relation revisions so a later restoration cannot
+    # authorize an event queued under the old interval. No transitive relations.
+    actors = {d.user_id}
+    if d.ritual_notice_id:
+        n = await db.get(RitualNotice, d.ritual_notice_id)
+        a = await db.get(RitualAssignment, n.assignment_id) if n else None
+        if a is None:
+            return {}
+        actors.add(a.issuer_id)
+        recipient_id = a.recipient_id
+    else:
+        rn = await db.get(RewardNotice, d.reward_notice_id)
+        g = await db.get(RewardGrant, rn.grant_id) if rn else None
+        if g is None:
+            return {}
+        actors.add(g.issuer_id)
+        recipient_id = g.recipient_id
+    rows = (
+        await db.execute(
+            select(Relation.id, Relation.version).where(
+                Relation.dominant_user_id.in_(actors),
+                Relation.submissive_user_id == recipient_id,
+            )
+        )
+    ).all()
+    return {str(rid): revision for rid, revision in rows}
 
 
 async def authorized(db: AsyncSession, d: MemberDelivery, now: datetime) -> Destination | None:
     target = await destination(db, d.user_id)
-    if target is None or now >= d.created_at + timedelta(hours=24):
+    if (
+        target is None
+        or d.cancellation_requested
+        or target.consent_generation != d.consent_generation
+        or now >= d.created_at + timedelta(hours=24)
+    ):
         return None
     if d.ritual_notice_id:
         n = await db.get(RitualNotice, d.ritual_notice_id)
@@ -93,6 +135,8 @@ async def authorized(db: AsyncSession, d: MemberDelivery, now: datetime) -> Dest
         ):
             return None
     else:
+        return None
+    if d.authority_versions != await authority_versions(db, d):
         return None
     return target
 
@@ -168,7 +212,9 @@ async def complete(
     d = await leased(db, task, "sending", now)
     if d is None:
         return False
-    if outcome == "retry" and d.attempts < 3:
+    if outcome == "retry" and d.cancellation_requested:
+        finish(d, "suppressed")
+    elif outcome == "retry" and d.attempts < 3:
         finish(d, "pending")
         d.available_at = now + timedelta(seconds=max(1, retry_after))
     else:
@@ -178,6 +224,7 @@ async def complete(
         contact = await db.get(BotContact, user.telegram_id) if user else None
         if contact:
             contact.allowed = False
+            contact.delivery_generation += 1
     return True
 
 
@@ -224,17 +271,30 @@ async def deliver_one(
     return True
 
 
-async def suppress_recipient(db: AsyncSession, uid: UUID) -> None:
-    from sqlalchemy import update
-
+async def cancel_where(db: AsyncSession, condition: ColumnElement[bool]) -> None:
+    sending = MemberDelivery.status == "sending"
     await db.execute(
         update(MemberDelivery)
         .where(
-            MemberDelivery.user_id == uid,
-            MemberDelivery.status.in_(["pending", "claimed"]),
+            MemberDelivery.status.in_(["pending", "claimed", "sending"]),
+            condition,
         )
-        .values(status="suppressed", lease_id=None, lease_until=None)
+        .values(
+            cancellation_requested=True,
+            status=case((sending, MemberDelivery.status), else_="suppressed"),
+            lease_id=case((sending, MemberDelivery.lease_id), else_=None),
+            lease_until=case((sending, MemberDelivery.lease_until), else_=None),
+        )
     )
+
+
+async def suppress_recipient(db: AsyncSession, uid: UUID) -> None:
+    await cancel_where(db, MemberDelivery.user_id == uid)
+
+
+async def suppress_assignment(db: AsyncSession, aid: UUID) -> None:
+    notices = select(RitualNotice.id).where(RitualNotice.assignment_id == aid)
+    await cancel_where(db, MemberDelivery.ritual_notice_id.in_(notices))
 
 
 async def suppress_scope(
@@ -243,7 +303,7 @@ async def suppress_scope(
     target_id: UUID | None = None,
 ) -> None:
     """Persist denial even if consent is restored before the next worker tick."""
-    from sqlalchemy import and_, update
+    from sqlalchemy import and_
 
     if actor_id is not None and target_id is not None:
         ritual_match = and_(
@@ -268,14 +328,10 @@ async def suppress_scope(
         )
     ritual_ids = select(RitualNotice.id).join(RitualAssignment).where(ritual_match)
     reward_ids = select(RewardNotice.id).join(RewardGrant).where(reward_match)
-    await db.execute(
-        update(MemberDelivery)
-        .where(
-            MemberDelivery.status.in_(["pending", "claimed"]),
-            or_(
-                MemberDelivery.ritual_notice_id.in_(ritual_ids),
-                MemberDelivery.reward_notice_id.in_(reward_ids),
-            ),
-        )
-        .values(status="suppressed", lease_id=None, lease_until=None)
+    await cancel_where(
+        db,
+        or_(
+            MemberDelivery.ritual_notice_id.in_(ritual_ids),
+            MemberDelivery.reward_notice_id.in_(reward_ids),
+        ),
     )

@@ -4,6 +4,7 @@ from datetime import datetime
 from uuid import UUID, uuid4
 
 from sqlalchemy import CheckConstraint, DateTime, ForeignKey, Index, String
+from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import Mapped, mapped_column
 
 from vowen.core.database import Base
@@ -27,6 +28,11 @@ class MemberDelivery(Base):
     )
     reward_notice_id: Mapped[UUID | None] = mapped_column(
         ForeignKey("reward_notices.id"), unique=True
+    )
+    consent_generation: Mapped[int] = mapped_column(default=0, server_default="0")
+    cancellation_requested: Mapped[bool] = mapped_column(default=False, server_default="false")
+    authority_versions: Mapped[dict[str, int]] = mapped_column(
+        JSONB, default=dict, server_default="{}"
     )
     occurrence_revision: Mapped[int | None]
     status: Mapped[str] = mapped_column(String(32), default="pending")

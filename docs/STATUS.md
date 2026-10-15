@@ -468,3 +468,32 @@ the scored visual corrections were accepted. For stable recaptures only, animati
 were temporarily disabled on the owned AVD and their original settings restored;
 no physical device was changed. This is visual evidence using synthetic test transport,
 not proof of native-to-production file transfer or live Telegram delivery.
+
+## 2026-10-15 — M3 Telegram ritual/reward delivery
+
+Implemented neutral Telegram delivery for new ritual assignment/due/report/review
+notices and reward lifecycle notices. Migrations 0013–0014 add unique transactional
+member-delivery rows, fenced leases, consent generations, direct relation revision
+snapshots and durable in-flight cancellation. No historical backfill. Contacts remain
+separate from provisioned members; opt-in, active/unpaused membership and current
+explicit domain authority are checked again before sending. Rapid pause/resume,
+assignment pause and opt-out/on cannot resurrect cancelled queued events, including
+uncommitted enqueue and delayed429 interleavings. Earned in-app history is retained.
+
+Successful delivery is terminal. Only explicit429 rejection retries after retry_after,
+at most three attempts. Timeout/crash after starting a send is uncertain and is never
+automatically resent; Forbidden disables the contact. No network transaction or
+private resource content in Telegram. Both queues run independently each tick; keyring
+failure is isolated to forms and recovers on a later tick. Operational behavior and
+starting limits: [telegram-notifications](operations/telegram-notifications.md).
+
+Fresh review found four Important cases, all reproduced RED and fixed with regressions;
+no Critical/minor findings. A related relation-restore race was also reproduced and
+fixed.27 focused PostgreSQL notification tests pass. Final whole-suite/CI results are
+recorded below when verified.
+
+Live getMe accepted the .env token and matched the configured bot username. The local
+instance has zero active, unpaused, opted-in linked members; no message was sent to an
+inferred recipient or synthetic Telegram ID. Actual Telegram receipt remains unverified,
+as do production restore and physical-device acceptance. Quiet hours and additional
+channel settings remain open; form-delivery retry semantics are unchanged.
