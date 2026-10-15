@@ -85,3 +85,10 @@ tests use their own DB and generated keys, with no production secret bind. Ensur
 commands cannot consume the remainder of a streamed shell script: execute a saved
 script, or disable stdin on commands that do not need it. Never print resolved
 Compose configuration or database URLs.
+
+## Scheduled backups and release artifacts
+
+See [M6 operator procedures](M6.md) for the PVE systemd timer, encrypted restic
+repository, scoped retention, conditional off-host replication and artifact builds.
+Use the same exclusive backup lock for deployments and key rotation. The automation
+does not replace a restore rehearsal before a schema migration.

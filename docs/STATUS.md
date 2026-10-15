@@ -23,7 +23,7 @@ VOWEN_AGENT_BRIEF.md; no separate matching brief was found beside the archive.
 - **M3: rules, rituals, rewards and Telegram delivery implemented; live recipient acceptance pending.** See dated evidence below.
 - **M4: implemented and locally verified.** Discipline and private diary, server ACL, encrypted versions/content and Mini App/native Android screens. See latest evidence below.
 - **M5: implemented, deployed and own-account live survey notifications verified.** Repeated internal surveys, approved-ritual feedback, personal channels/quiet hours and both clients. See M5 evidence below.
-- **M6: pending.** Production release and operational acceptance. Dedicated M5 deployment is recorded below.
+- **M6: in progress.** Reproducible release artifacts and scheduled encrypted backups are implemented; remaining operational/security acceptance is open. Dedicated M5 deployment is recorded below.
 
 ## Implemented behavior
 
@@ -726,3 +726,65 @@ Live partner ritual/reward delivery, global relationship revocation and physical
 Android acceptance are not proven by this own-account test. Automated authorization
 coverage passed; those live scenarios, recurring backup policy and independent security
 review remain separate acceptance work.
+
+
+## 2026-10-15 — M6 reproducible artifacts and automatic backups
+
+This slice implements release artifact generation and automated backups; it does
+not declare every M6 acceptance item complete. See [operator commands](M6.md).
+
+Release builds use clean committed Git archives, frozen locks, digest-pinned base
+images, an exact dependency-free uv_build backend and pinned BuildKit. Source/web
+archives normalize metadata. Both linux/amd64 OCI images are built twice without
+layer cache and compared by digest. Release Android runs unit tests/lint in two clean
+builds and compares unsigned APK hashes. Release versionCode comes from the commit
+epoch in minutes; versionName includes the source revision. Manifests and SHA256SUMS
+accompany artifacts. CI uploads public unsigned artifacts for14days without production
+or signing secrets; it does not implicitly push a registry or publish a GitHub release.
+
+Local uncached image repeat builds and clean unsigned APK repeat builds passed.
+The first image comparison correctly failed: uv's random cache directories and
+source-ctime cache hints were included in the image. No-cache installation and
+removal of build-only cache hints plus their RECORD entries corrected the cause;
+runtime package records remain intact. The Java action rejected a four-component
+version; the workflow now installs the exact official Temurin archive by checksum
+through its jdkfile provider, rather than selecting a floating Java release.
+
+The owner had no prior signing key and requested personal use. A separate personal
+release key was generated outside the repository, with an owner-only password file.
+A release APK was signed and verified; repeated signing produced identical bytes.
+The key/password have a separate encrypted owner-only backup, recovered in memory.
+Neither private signing material nor the password entered Git or CI. This is a
+personal release signature, not a store release or physical-device acceptance.
+
+**17 operations tests passed locally**, including real restic encryption/restore,
+wrong-password rejection, actual calendar retention, preservation of another host/tag,
+no pruning after capture/check/restore failure, private credential permissions,
+reproducible tar archives and safe off-host failure recovery. Existing API contracts
+regenerated without drift; secret heuristic and diff checks passed. Standard CI and
+release artifact CI are recorded separately for the exact accepted revisions.
+
+Installed the daily backup timer on the PVE host and an hourly encrypted-repository
+pull job on the owner's Mac. The backup repository is on a separate backup disk,
+outside the LXC. Default schedule03:45 Europe/Madrid plus0–5min jitter, persistent
+catch-up; retention is keep-last3 plus7daily/4weekly/6monthly calendar buckets, scoped
+to the instance/tag. These are starter operator defaults. The job captures a consistent
+online PostgreSQL dump and stable source/configuration/original keys, creates an
+encrypted snapshot, checks it, restores and compares the archive hash before pruning.
+It checks the repository again after pruning. Source/key changes or any unverified
+capture abort before retention. Application writers continue running.
+
+The first real service run succeeded; its encrypted repository was copied to the Mac,
+checked and restored there. Every captured manifest hash matched. That off-host dump
+was then restored into a separate server database: schema0018 and **22 business-table
+fingerprints matched the live instance**; its original backed-up keyring decrypted
+existing content. The scratch DB and temporary server restore material were removed.
+The daily timer is enabled/active; the Mac launchd job completed its first run with0.
+Off-host replication depends on Mac/network availability, not an always-on remote vault.
+Failure exits are visible in systemd/launchd; external alert delivery is not configured.
+
+The deployed application remains M5 sourcef60013d/schema0018. This work installs
+backup tooling without changing relations, consents, keys or the running application.
+Remaining M6 scope includes full clean-install/negative/security and fault-injection
+acceptance, independent security review, license/notices inventory and a published
+versioned OSS release. Physical Android and partner ritual/reward acceptance remain open.

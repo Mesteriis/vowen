@@ -14,6 +14,7 @@ notifications, quiet deferral and cancellation checks passed. Partner ritual/rew
 acceptance remains separate.
 See [actual evidence and gaps](docs/STATUS.md), [M4 behavior](docs/M4.md), [M5 behavior and limits](docs/M5.md).
 [Русский](README.ru.md).
+[Release artifacts and automatic backups](docs/M6.md).
 
 Python 3.13, PostgreSQL 17, Vue/TypeScript and native Kotlin/Compose. MIT and the
 working name are starting defaults; branding/domain availability has not been checked.
