@@ -107,6 +107,17 @@ async def test_approved_occurrence_grants_once_and_freezes_policy_version(api):
     )
     assert a.status_code == 200
     a = a.json()
+    updated = await client.post(
+        f"/api/v1/rewards/{reward['id']}/versions",
+        headers=auth(tokens[0]),
+        json={
+            "expected_version": reward["revision"],
+            "title": "Changed later",
+            "description": "New catalogue version",
+            "conditions": "",
+        },
+    )
+    assert updated.status_code == 200 and updated.json()["version_id"] != reward["version_id"]
     o = next(
         x
         for x in (await client.get("/api/v1/ritual-occurrences", headers=auth(tokens[1]))).json()
@@ -134,6 +145,7 @@ async def test_approved_occurrence_grants_once_and_freezes_policy_version(api):
         await client.post(path + "/report", headers=auth(tokens[1]), json=command)
     ).status_code == 200
     grants = (await client.get("/api/v1/reward-grants", headers=auth(tokens[1]))).json()
+    assert grants[0]["title"] == "Quiet evening"
     assert (
         len(grants) == 1
         and grants[0]["occurrence_id"] == o["id"]
@@ -192,3 +204,99 @@ async def test_manual_grant_requires_direct_scope_and_no_review_autoapproval_gra
     assert response.status_code == 200
     grants = (await client.get("/api/v1/reward-grants", headers=auth(tokens[1]))).json()
     assert len(grants) == 1 and grants[0]["status"] == "offered"
+
+
+async def test_reward_transition_race_and_decline_are_final(api):
+    client, app, ids, tokens, ritual, reward = await reward_setup(api)
+    command = {
+        "reward_version_id": reward["version_id"],
+        "recipient_id": str(ids[1]),
+        "idempotency_key": str(uuid4()),
+    }
+    g = (await client.post("/api/v1/reward-grants", headers=auth(tokens[0]), json=command)).json()
+    path = f"/api/v1/reward-grants/{g['id']}/transitions"
+    responses = await asyncio.gather(
+        client.post(
+            path, headers=auth(tokens[1]), json={"expected_version": 1, "action": "accept"}
+        ),
+        client.post(
+            path, headers=auth(tokens[0]), json={"expected_version": 1, "action": "cancel"}
+        ),
+    )
+    assert sorted(r.status_code for r in responses) == [200, 409]
+    winner = next(r.json() for r in responses if r.status_code == 200)
+    assert len(winner["history"]) == 2
+    command["idempotency_key"] = str(uuid4())
+    g = (await client.post("/api/v1/reward-grants", headers=auth(tokens[0]), json=command)).json()
+    path = f"/api/v1/reward-grants/{g['id']}/transitions"
+    denied = await client.post(
+        path, headers=auth(tokens[1]), json={"expected_version": 1, "action": "decline"}
+    )
+    assert denied.status_code == 200 and denied.json()["status"] == "declined"
+    assert (
+        await client.post(
+            path, headers=auth(tokens[0]), json={"expected_version": 2, "action": "deliver"}
+        )
+    ).status_code == 409
+
+
+async def test_withdrawn_reward_scope_prevents_new_auto_grant_without_erasing_history(api):
+    client, app, ids, tokens, ritual, reward = await reward_setup(api)
+    a = (
+        await client.post(
+            f"/api/v1/rituals/{ritual['id']}/assignments",
+            headers=auth(tokens[0]),
+            json={
+                "idempotency_key": str(uuid4()),
+                "recipient_id": str(ids[1]),
+                "reviewer_ids": [str(ids[0])],
+                "reward_version_id": reward["version_id"],
+                "schedule": {
+                    "kind": "once",
+                    "timezone": "UTC",
+                    "hour": 9,
+                    "minute": 0,
+                    "start_date": "2026-10-15",
+                },
+            },
+        )
+    ).json()
+    o = next(
+        x
+        for x in (await client.get("/api/v1/ritual-occurrences", headers=auth(tokens[1]))).json()
+        if x["assignment_id"] == a["id"]
+    )
+    path = f"/api/v1/ritual-occurrences/{o['id']}"
+    o = (
+        await client.post(
+            path + "/report",
+            headers=auth(tokens[1]),
+            json={
+                "expected_version": o["revision"],
+                "idempotency_key": str(uuid4()),
+                "text": "Submitted before reward authority withdrawal",
+            },
+        )
+    ).json()
+    relation = (await client.get("/api/v1/relations", headers=auth(tokens[0]))).json()[0]
+    relation = (
+        await client.post(
+            f"/api/v1/relations/{relation['id']}/versions",
+            headers=auth(tokens[0]),
+            json={
+                "expected_version": relation["version"],
+                "agreement_text": "Ritual review remains, reward authority withdrawn",
+                "scopes": ["rituals.assign", "rituals.review"],
+            },
+        )
+    ).json()
+    relation = (await accept(client, tokens[0], relation)).json()
+    assert (await accept(client, tokens[1], relation)).status_code == 200
+    assert (
+        await client.post(
+            path + "/review",
+            headers=auth(tokens[0]),
+            json={"expected_version": o["revision"], "decision": "approved"},
+        )
+    ).status_code == 200
+    assert (await client.get("/api/v1/reward-grants", headers=auth(tokens[1]))).json() == []

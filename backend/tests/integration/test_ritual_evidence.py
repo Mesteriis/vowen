@@ -64,6 +64,10 @@ async def test_required_evidence_is_bound_to_immutable_report_attempt_and_curren
     response = await client.post(path + "/evidence", headers=auth(tokens[1]), json=upload)
     assert response.status_code == 200
     proof = response.json()
+    staged = await client.get(path + "/evidence", headers=auth(tokens[1]))
+    assert staged.status_code == 200 and [x["id"] for x in staged.json()] == [proof["id"]]
+    assert (await client.get(path + "/evidence", headers=auth(tokens[0]))).status_code == 404
+
     assert (await client.post(path + "/evidence", headers=auth(tokens[1]), json=upload)).json()[
         "id"
     ] == proof["id"]
@@ -189,3 +193,20 @@ async def test_evidence_quotas_video_and_reviewer_withdrawal(api):
     assert (await client.get(download, headers=auth(tokens[1]))).status_code == 200
     # A public/non-member request cannot consume a large JSON body at an unrelated endpoint.
     assert (await client.post("/api/v1/auth/telegram", content=b"x" * 524289)).status_code == 413
+
+
+async def test_decoded_media_limit_cannot_be_bypassed_by_base64(api):
+    client, app, ids, tokens, template, a, o = await setup_ritual(api)
+    response = await client.post(
+        f"/api/v1/ritual-occurrences/{o['id']}/evidence",
+        headers=auth(tokens[1]),
+        json={
+            "idempotency_key": str(uuid4()),
+            "kind": "photo",
+            "media_type": "image/png",
+            "data_base64": base64.b64encode(
+                b"\x89PNG\r\n\x1a\n" + b"x" * (8 * 1024 * 1024 - 7)
+            ).decode(),
+        },
+    )
+    assert response.status_code == 413

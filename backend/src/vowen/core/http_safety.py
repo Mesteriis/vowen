@@ -31,9 +31,12 @@ class HttpSafety:
             path.startswith("/api/v1/auth/")
             or path.startswith("/api/v1/guest/")
             or path.endswith("/submit")
+            or (path.startswith("/api/v1/ritual-occurrences/") and path.endswith("/evidence"))
         ):
             group = (
-                "status"
+                "evidence"
+                if path.endswith("/evidence")
+                else "status"
                 if path.endswith("/status")
                 else "refresh"
                 if path.endswith("/refresh")
@@ -64,10 +67,11 @@ class HttpSafety:
             message = await receive()
             if message["type"] == "http.disconnect":
                 return
-            body.extend(message.get("body", b""))
-            if len(body) > body_limit:
+            chunk = message.get("body", b"")
+            if len(body) + len(chunk) > body_limit:
                 await self.reject(scope, receive, send, 413, "BODY_TOO_LARGE")
                 return
+            body.extend(chunk)
             if not message.get("more_body", False):
                 break
         delivered = False

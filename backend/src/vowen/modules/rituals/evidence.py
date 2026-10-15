@@ -232,3 +232,24 @@ async def discard(eid: UUID, principal: Member, db: DB) -> None:
     if e is None or e.owner_id != principal.user_id or e.report_id is not None:
         raise AppError(404, "NOT_FOUND")
     await db.delete(e)
+
+
+@router.get("/ritual-occurrences/{oid}/evidence", response_model=list[EvidenceView])
+async def staged(oid: UUID, principal: Member, db: DB, request: Request) -> list[EvidenceView]:
+    o = await db.get(RitualOccurrence, oid)
+    a = await db.get(RitualAssignment, o.assignment_id) if o else None
+    if a is None or a.recipient_id != principal.user_id:
+        raise AppError(404, "NOT_FOUND")
+    rows = (
+        await db.scalars(
+            select(RitualEvidence)
+            .where(
+                RitualEvidence.occurrence_id == oid,
+                RitualEvidence.owner_id == principal.user_id,
+                RitualEvidence.report_id.is_(None),
+                RitualEvidence.expires_at > request.app.state.clock.now(),
+            )
+            .order_by(RitualEvidence.created_at, RitualEvidence.id)
+        )
+    ).all()
+    return [view(e) for e in rows]

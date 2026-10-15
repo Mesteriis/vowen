@@ -5,8 +5,21 @@
         X-Content-Type-Options "nosniff"
         Content-Security-Policy "default-src 'self'; script-src 'self' https://telegram.org; style-src 'self'; connect-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors https://web.telegram.org https://webk.telegram.org https://webz.telegram.org"
     }
-    request_body {
-        max_size 512KB
+    @evidenceUpload {
+        method POST
+        path_regexp evidence ^/api/v1/ritual-occurrences/[0-9a-fA-F-]{36}/evidence$
+    }
+    @normalBody {
+        not {
+            method POST
+            path_regexp normalEvidence ^/api/v1/ritual-occurrences/[0-9a-fA-F-]{36}/evidence$
+        }
+    }
+    request_body @evidenceUpload {
+        max_size 12MiB
+    }
+    request_body @normalBody {
+        max_size 512KiB
     }
     @api path /api/* /health/*
     handle @api {
