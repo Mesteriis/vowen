@@ -13,7 +13,7 @@ import java.security.SecureRandom
 
 /** One serialized auth lane: switching instances cannot race an old network response. */
 class AuthViewModel(application:Application):AndroidViewModel(application) {
- data class Screen(val origin:String="",val member:Member?=null,val challenge:Challenge?=null,val busy:Boolean=false,val error:String?=null)
+ data class Screen(val origin:String="",val member:Member?=null,val challenge:Challenge?=null,val busy:Boolean=false,val error:String?=null,val workspace:WorkspaceState=WorkspaceState(),val sessionId:String?=null,val completed:Int=0)
  private val mutable=MutableStateFlow(Screen())
  val screen=mutable.asStateFlow()
  private val instance=InstanceSession()
@@ -47,7 +47,7 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
  private suspend fun tokens(tokens:Tokens) {
   vault.save(instance.origin,tokens.refresh_token)
   instance.accessToken=tokens.access_token
-  mutable.value=mutable.value.copy(member=api.me(),challenge=null)
+  mutable.value=mutable.value.copy(member=api.me(),challenge=null,workspace=api.workspace(),sessionId=tokens.session_id)
   nonce=null
  }
  fun begin()=run {
@@ -67,6 +67,22 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
  fun pause()=run {
   api.call(if(mutable.value.member?.paused==true) "/me/resume" else "/me/pause","POST")
   mutable.value=mutable.value.copy(member=api.me())
+ }
+ private suspend fun loadWorkspace(changed:Boolean=false) {
+  val member=api.me()
+  val workspace=api.workspace()
+  mutable.value=mutable.value.copy(member=member,workspace=workspace,completed=mutable.value.completed+if(changed)1 else 0)
+ }
+ fun refreshWorkspace()=run {loadWorkspace()}
+ fun propose(proposal:RelationProposal)=run {api.propose(proposal);loadWorkspace(true)}
+ fun relationAction(relation:Relation,action:String)=run {api.transition(relation,action);loadWorkspace(true)}
+ fun changeRelation(relation:Relation,agreement:String,scopes:List<String>)=run {
+  api.change(relation,RelationChange(agreement_text=agreement,expected_version=relation.version,scopes=scopes));loadWorkspace(true)
+ }
+ fun saveProfile(patch:ProfilePatch)=run {api.updateProfile(patch);loadWorkspace(true)}
+ fun revokeSession(session:DeviceSession)=run {
+  api.revokeSession(session.id)
+  if(session.id==mutable.value.sessionId) clear() else loadWorkspace(true)
  }
  fun logout()=run { try { api.call("/auth/logout","POST") } finally { clear() } }
  private fun clear() { instance.clear();vault.clear();nonce=null;mutable.value=Screen(origin=instance.origin) }

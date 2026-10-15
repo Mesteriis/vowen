@@ -21,3 +21,13 @@ was created under that account. Fixed proxy/API addresses share a configurable
 internal subnet; Caddy alone is trusted to supply client addresses. One API replica
 uses bounded in-memory throttling; multi-replica deployment needs shared rate limits.
 Expiry maintenance runs in the API process; the business outbox worker begins in M2.
+
+M1 completion, 2026-10-15: profile preferences initially include display name,
+RU/EN language, IANA timezone and optional dominant/submissive/switch self-labels.
+Defaults are EN/UTC/empty labels; labels never grant authority. Preferences are
+private; participant selection exposes only UUID/name/labels. Updates require
+profile_version and never accept operator-owned identity/activation fields.
+CLI agreement text is read from a UTF-8 file to avoid putting intimate text in
+shell history. CLI can only propose, and cannot consent for a participant.
+Direct runtime accepts BOT_API_TOKEN/TELEGRAM_BOT_TOKEN as SecretStr; configured
+TELEGRAM_BOT_TOKEN_FILE takes precedence and Compose continues to use files.

@@ -49,3 +49,16 @@ test('unknown Telegram identity is denied without self-registration',async({page
  await expect(page.getByRole('alert')).toContainText('ACCESS_DENIED')
  await expect(page.getByRole('heading',{name:'Relationships'})).toHaveCount(0)
 })
+
+test('profile preferences persist after refresh without exposing operator fields',async({page})=>{
+ await telegram(page,100000000203)
+ await page.getByLabel('Display name',{exact:true}).fill('Updated demo')
+ await page.getByLabel('IANA timezone',{exact:true}).fill('Europe/Madrid')
+ await page.getByRole('checkbox',{name:'switch',exact:true}).check()
+ await page.getByRole('button',{name:'Save profile',exact:true}).click()
+ await expect(page.getByRole('heading',{name:'Updated demo',exact:true})).toBeVisible()
+ await page.getByRole('button',{name:'Refresh',exact:true}).click()
+ await expect(page.getByLabel('IANA timezone',{exact:true})).toHaveValue('Europe/Madrid')
+ await expect(page.getByRole('checkbox',{name:'switch',exact:true})).toBeChecked()
+ await expect(page.getByText('Profile labels do not grant permissions.')).toBeVisible()
+})

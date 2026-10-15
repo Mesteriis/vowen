@@ -27,7 +27,7 @@ test-e2e:
 build-web:
 	pnpm --dir web build
 build-android:
-	cd android && ./gradlew testDebugUnitTest lintDebug assembleDebug
+	cd android && ./gradlew testDebugUnitTest lintDebug assembleDebug assembleDebugAndroidTest
 contracts:
 	uv run --project backend python scripts/export_contract.py
 	uv run --project backend python scripts/android_contract.py

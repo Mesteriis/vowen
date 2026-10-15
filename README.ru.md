@@ -48,3 +48,15 @@ make contracts check-contracts secret-scan
 `make build-android` требует JDK 17, SDK 36 и build-tools 36.0.0.
 APK: `android/app/build/outputs/apk/debug/app-debug.apk`; это debug APK.
 [Эксплуатация](docs/operations/bootstrap.md), [безопасность](SECURITY.md).
+
+Задачи M1 по интерфейсам реализованы: Android поддерживает предложения и новые
+версии отношений, рассмотрение точной версии, согласие, паузу, возобновление,
+отзыв и управление собственными сессиями. Отзыв текущей сессии удаляет локальные
+учётные данные. В обоих клиентах редактируются имя, RU/EN, IANA timezone и метки
+самоописания; метки не предоставляют полномочий.
+
+Оператор предлагает соглашение из UTF-8-файла (`appctl relations propose`,
+`--dominant-id`, `--submissive-id`, повторяемый `--scope`, `--agreement-file`).
+Подтверждение за участника через CLI отсутствует. Полная команда — в README.md.
+Токен `BOT_API_TOKEN` в игнорируемом `.env` поддержан для запуска на хосте;
+Compose продолжает читать `TELEGRAM_BOT_TOKEN_FILE`. Живой Telegram тестами не вызывается.

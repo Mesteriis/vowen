@@ -44,8 +44,10 @@ class MainActivity:ComponentActivity() {
       }
       screen.member?.let { member ->
        Text(member.display_name,style=MaterialTheme.typography.headlineMedium)
-       Button(onClick={model.pause()},enabled=!screen.busy) {Text(stringResource(if(member.paused) R.string.resume else R.string.pause))}
-       Button(onClick={model.logout()},enabled=!screen.busy) {Text(stringResource(R.string.logout))}
+       Button(onClick={model.pause()},enabled=!screen.busy) {Text(if(member.language=="ru") if(member.paused)"Снять личную паузу" else "Личная пауза" else if(member.paused)"End personal pause" else "Personal pause")}
+       Button(onClick={model.logout()},enabled=!screen.busy) {Text(if(member.language=="ru")"Выйти" else "Sign out")}
+       WorkspaceScreen(member,screen.workspace,screen.sessionId,screen.busy,screen.completed,
+        WorkspaceActions(model::refreshWorkspace,model::propose,model::relationAction,model::changeRelation,model::saveProfile,model::revokeSession))
       }
      }
     }

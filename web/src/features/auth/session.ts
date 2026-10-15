@@ -13,6 +13,7 @@ export class SessionClient {
 
   async get<T>(path: string): Promise<T> { return this.send<T>(path, 'GET') }
   async post<T>(path: string, body?: unknown): Promise<T> { return this.send<T>(path, 'POST', body) }
+  async patch<T>(path: string, body: unknown): Promise<T> { return this.send<T>(path, 'PATCH', body) }
   async delete(path: string): Promise<void> { return this.send<void>(path, 'DELETE') }
 
   async logout(): Promise<void> {

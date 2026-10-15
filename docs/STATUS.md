@@ -138,3 +138,40 @@ This includes locked install, PostgreSQL migrations/tests, lint/types, web build
 contracts/secret scan, Playwright E2E, native Android tests/lint/assembleDebug.
 The final evidence-only documentation commit uses `[skip ci]`; it changes no code,
 configuration, dependencies or checks. Live Telegram/device limitations remain open.
+
+## M1 completion continuation — 2026-10-15
+
+The earlier list of missing M1 UI/CLI tasks is superseded by this section.
+
+Implemented: native relationship proposals and new agreement versions; exact-version
+review/accept, pause, resumption and revocation; own session list with current-session
+marker, creation/expiry/status and targeted revoke confirmation. Self-revoke immediately
+clears local access, encrypted refresh and workspace state. No WebView wrapper.
+
+Both clients now edit private profile preferences: display name, EN/RU, IANA timezone,
+and self-description labels. `PATCH /me/preferences` binds the authenticated user,
+requires profile_version, rejects privileged/unknown/null fields, and remains available
+on personal pause. Participant DTOs expose no language/timezone/session/Telegram ID.
+Migration 0006 backfills existing members and new CLI users get preferences atomically.
+
+`appctl relations propose` uses OperatorContext and the shared relation service. It
+reads UTF-8 agreement text from a bounded file, prints only UUID, creates zero consents,
+and rejects duplicates/invalid scope/files. No CLI acceptance command exists.
+
+Native contract tests found a previous positional-DTo bug: nonce and poll_secret were
+reversed. Named arguments now bind both independently; the regression test failed
+before the fix and passed after. User-supplied BOT_API_TOKEN in ignored .env is recognized
+without printing it; Settings uses SecretStr and file precedence. Compose still uses
+file-based secrets. Live Telegram remains explicitly excluded from this continuation.
+
+Evidence: 51 backend tests on PostgreSQL, 6 native JVM tests, 3 web unit tests and 3
+browser E2E; strict mypy/ruff/vue-tsc/ESLint; web production build; Android lint,
+assembleDebug and assembleDebugAndroidTest. Five native Compose tests passed on an
+isolated Android 16 emulator (proposal, exact-version consent, new-version editor,
+selected self-session confirmation, profile form). They use synthetic rendering state
+and typed API transport tests; this does not prove live Telegram or real-device Keystore.
+GitHub CI additionally compiles the instrumentation APK; device tests were run locally.
+
+A fresh read-only review found no Critical/Important issue in this completion slice.
+M1's requested remaining implementation tasks are closed; live Telegram acceptance
+and real-device credential lifecycle remain separate. M2 forms have not started.

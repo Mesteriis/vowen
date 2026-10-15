@@ -82,3 +82,31 @@ only `compose.dev.yaml` adds a loopback port. No worker service is advertised
 before the M2 outbox is implemented.
 
 [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Specification](docs/PRODUCT_SPEC.md)
+
+## M1 member controls
+
+Both clients support profile preferences (display name, RU/EN, IANA timezone and
+self-description labels). Labels confer no authority. Android now also provides
+relationship proposal/revision/review/accept/pause/resume/revoke and own-session
+management; revoking the current session clears local credentials immediately.
+New agreement versions and resumption still require separate consent from both.
+
+Operators can propose an agreement, never accept on someone's behalf:
+
+```sh
+uv run --project backend appctl relations propose \
+  --dominant-id USER_UUID_A --submissive-id USER_UUID_B \
+  --scope rules.assign --scope rituals.review \
+  --agreement-file /private/path/agreement.txt
+```
+
+The command prints only the relation UUID. Keep agreement files outside Git.
+Direct host runtime additionally accepts `BOT_API_TOKEN` or `TELEGRAM_BOT_TOKEN`
+in the ignored `.env`; it is masked in settings representations. A configured
+`TELEGRAM_BOT_TOKEN_FILE` takes precedence. Compose retains file-based secrets.
+No bot is started by the test suite. Live Telegram is a separate acceptance step.
+
+`make build-android` also builds the instrumentation APK. Native UI tests can be run
+on an explicitly selected **disposable emulator** with
+`ANDROID_SERIAL=emulator-NNNN ./gradlew connectedDebugAndroidTest` from `android/`.
+Do not run device tests without an explicit target.

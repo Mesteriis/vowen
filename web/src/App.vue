@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { computed, ref, onMounted } from 'vue'
+import ProfileSettings from './features/profile/ProfileSettings.vue'
 import { SessionClient } from './features/auth/session'
 import type { components } from './shared/api'
+type Participant = components['schemas']['ParticipantView']
 type Me = components['schemas']['MemberView']
 type Relation = components['schemas']['RelationView']
 type Session = components['schemas']['SessionView']
@@ -14,15 +16,16 @@ const t = computed(() => ru.value ? {
 } : {
  refresh:'Refresh',title:'Your workspace',login:'Sign in with Telegram',closed:'Only operator-provisioned members can enter.',open:'Open this app through your Telegram bot.',logout:'Sign out',pause:'Personal pause',resume:'End personal pause',relations:'Relationships',propose:'Propose',target:'Participant',direction:'Direction',dominant:'I request authority relative to this participant',submissive:'This participant receives authority relative to me',agreement:'Agreement text',accept:'Accept this exact version and scopes',relationPause:'Pause',relationResume:'Request resumption',revoke:'Revoke',sessions:'Sessions',empty:'No relationships yet',alpha:'Technical alpha · M0/M1 only',error:'Error',scope:'Scopes',note:'The server operator has technical access to data. This is not E2EE.'
 })
-const me=ref<Me|null>(null), relations=ref<Relation[]>([]), participants=ref<Me[]>([]), sessions=ref<Session[]>([])
+const me=ref<Me|null>(null), relations=ref<Relation[]>([]), participants=ref<Participant[]>([]), sessions=ref<Session[]>([])
 const error=ref(''), busy=ref(false), target=ref(''), direction=ref('dominant'), agreement=ref('')
 const scopes=ref<string[]>(['rules.assign'])
 const scopeOptions=['rules.assign','rituals.assign','rituals.review','discipline.propose','discipline.review','rewards.grant']
 async function run(action:()=>Promise<void>) {busy.value=true;error.value='';try{await action()}catch(e){error.value=e instanceof Error?e.message:'NETWORK_ERROR'}finally{busy.value=false}}
 async function load(){
  me.value=await client.get<Me>('/me')
+ ru.value=me.value.language==='ru'
  relations.value=await client.get<Relation[]>('/relations')
- participants.value=await client.get<Me[]>('/participants')
+ participants.value=await client.get<Participant[]>('/participants')
  sessions.value=await client.get<Session[]>('/sessions')
 }
 async function login(){await run(async()=>{
@@ -53,6 +56,7 @@ function name(id:string){return participants.value.find(p=>p.id===id)?.display_n
   <section v-if="!me"><p>{{t.closed}}</p><button :disabled="busy" @click="login">{{t.login}}</button></section>
   <template v-else>
    <section><h2>{{me.display_name}}</h2><button :disabled="busy" @click="run(load)">{{t.refresh}}</button><p v-if="me.paused">⏸ {{t.pause}}</p><button :disabled="busy" @click="personal">{{me.paused?t.resume:t.pause}}</button> <button :disabled="busy" @click="logout">{{t.logout}}</button></section>
+   <ProfileSettings :member="me" :client="client" :ru="ru" @saved="member => {me=member;ru=member.language==='ru'}" />
    <section><h2>{{t.relations}}</h2><p v-if="!relations.length">{{t.empty}}</p>
     <article v-for="relation in relations" :key="relation.id">
      <h3>{{name(relation.dominant_user_id)}} → {{name(relation.submissive_user_id)}}</h3>
