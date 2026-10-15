@@ -109,3 +109,33 @@ async def test_bot_private_start_and_forwarded_callback_do_not_autoapprove(api, 
     assert bot.session.replies[-1] == "Too many attempts"
     await router.shutdown.trigger()
     await bot.session.close()
+
+
+async def test_notification_contact_opt_in_does_not_create_member(api):
+    from sqlalchemy import func, select
+
+    from vowen.modules.forms.models import BotContact
+    from vowen.modules.identity.models import User
+
+    client, app = api
+    bot = Bot(BOT_TOKEN, session=TelegramTransport())
+    dispatcher = Dispatcher()
+    router = build_router(app.state.settings)
+    dispatcher.include_router(router)
+    actor = TelegramUser(id=100000000009, is_bot=False, first_name="Synthetic")
+    for index, command in enumerate(["/notifications_on", "/notifications_off"]):
+        message = Message(
+            message_id=index + 1,
+            date=NOW,
+            chat=Chat(id=actor.id, type="private"),
+            from_user=actor,
+            text=command,
+            entities=[{"type": "bot_command", "offset": 0, "length": len(command)}],
+        )
+        await dispatcher.feed_update(bot, Update(update_id=index + 1, message=message))
+        async with app.state.sessions() as db:
+            contact = await db.get(BotContact, actor.id)
+            assert contact is not None and contact.allowed == (index == 0)
+            assert await db.scalar(select(func.count()).select_from(User)) == 0
+    await router.emit_shutdown()
+    await bot.session.close()

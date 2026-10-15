@@ -21,7 +21,7 @@ services:
       TELEGRAM_BOT_TOKEN_FILE: /run/vowen/bot-token
       DATA_KEYRING_FILE: /run/vowen/keyring.json
       TELEGRAM_BOT_USERNAME: ${TELEGRAM_BOT_USERNAME:-vowen_example_bot}
-      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-https://localhost}
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-https://localhost:8443}
       APP_DISPLAY_NAME: ${APP_DISPLAY_NAME:-Vowen}
       FORWARDED_ALLOW_IPS: ${PROXY_IP:-10.253.240.2}
     command: [alembic, upgrade, head]

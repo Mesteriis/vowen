@@ -5,6 +5,7 @@ from typing import Any
 import typer
 from sqlalchemy import select
 
+from vowen.cli.forms import forms_app
 from vowen.cli.relations import relations
 from vowen.core.clock import Clock
 from vowen.core.config import Settings
@@ -16,6 +17,7 @@ from vowen.modules.identity.models import User
 from vowen.modules.identity.service import ProvisionUserCommand, create_user, set_user_active
 
 app = typer.Typer(pretty_exceptions_enable=False)
+app.add_typer(forms_app, name="forms")
 users = typer.Typer()
 instance = typer.Typer()
 app.add_typer(users, name="users")

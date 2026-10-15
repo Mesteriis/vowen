@@ -8,7 +8,7 @@ from typing import Any
 from uuid import UUID
 
 from aiogram import BaseMiddleware, Bot, Dispatcher, F, Router
-from aiogram.filters import CommandStart
+from aiogram.filters import Command, CommandStart
 from aiogram.filters.command import CommandObject
 from aiogram.types import (
     CallbackQuery,
@@ -20,9 +20,12 @@ from aiogram.types import (
 
 from vowen.core.clock import Clock
 from vowen.core.config import Settings
+from vowen.core.crypto import PayloadCipher
 from vowen.core.database import check_schema, engine_for, sessions_for
 from vowen.core.errors import AppError
 from vowen.modules.auth.android_challenge import decide_challenge, present_challenge
+from vowen.modules.forms.delivery import deliver_one
+from vowen.modules.forms.models import BotContact
 
 
 class BotThrottle(BaseMiddleware):
@@ -63,6 +66,18 @@ def build_router(settings: Settings) -> Router:
     throttle = BotThrottle()
     router.message.outer_middleware(throttle)
     router.callback_query.outer_middleware(throttle)
+
+    @router.message(Command("notifications_on", "notifications_off"))
+    async def contact_preferences(message: Message) -> None:
+        if message.chat.type != "private" or message.from_user is None:
+            return
+        async with sessions() as db, db.begin():
+            contact = await db.get(BotContact, message.from_user.id, with_for_update=True)
+            if contact is None:
+                contact = BotContact(telegram_id=message.from_user.id)
+                db.add(contact)
+            contact.allowed = (message.text or "").split("@")[0] == "/notifications_on"
+        await message.answer("Notification preference saved / Настройка уведомлений сохранена")
 
     @router.message(CommandStart())
     async def start(message: Message, command: CommandObject) -> None:
@@ -149,7 +164,29 @@ async def run() -> None:
             raise RuntimeError("Configured bot username does not match token")
         dispatcher = Dispatcher()
         dispatcher.include_router(build_router(settings))
-        await dispatcher.start_polling(bot, allowed_updates=["message", "callback_query"])
+        worker_engine = engine_for(settings.database_url)
+        worker_sessions = sessions_for(worker_engine)
+
+        async def send(chat_id: int, text: str) -> None:
+            await bot.send_message(chat_id, text)
+
+        async def worker() -> None:
+            while True:
+                try:
+                    await deliver_one(
+                        worker_sessions, PayloadCipher(settings.data_keyring_file), send
+                    )
+                except Exception:
+                    logging.getLogger("vowen").warning("Notification delivery unavailable")
+                await asyncio.sleep(5)
+
+        delivery_task = asyncio.create_task(worker())
+        try:
+            await dispatcher.start_polling(bot, allowed_updates=["message", "callback_query"])
+        finally:
+            delivery_task.cancel()
+            await asyncio.gather(delivery_task, return_exceptions=True)
+            await worker_engine.dispose()
 
 
 if __name__ == "__main__":

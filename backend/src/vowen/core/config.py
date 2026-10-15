@@ -14,7 +14,7 @@ class Settings(BaseSettings):
     telegram_bot_username: str = "vowen_example_bot"
     data_keyring_file: Path = Path("secrets/keyring.json")
     app_display_name: str = "Vowen"
-    public_base_url: str = "https://localhost"
+    public_base_url: str = "https://localhost:8443"
     default_timezone: str = "UTC"
     log_level: str = "WARNING"
 
