@@ -821,3 +821,15 @@ form in between. Outside Telegram, normal/manual and guarded local DEBUG_AUTH en
 remain available. Current visual work is the Vue slice; Android design is pending.
 See root design-qa.md for evidence and remaining acceptance, rather than treating
 local build success as visual or live Telegram proof.
+
+## Dark-only product decision (2026-10-15)
+
+The owner explicitly removed light/system themes. Web member and guest entry now
+force dark appearance and normalize legacy stored choices; there is no theme
+selector or light palette. Native Android likewise uses only the dark palette,
+clears the legacy preference and keeps light-content system bars. Updated browser
+and instrumentation regression scenarios cover legacy light preferences.
+
+Local web lint/typecheck/unit tests/build passed. Android testDebugUnitTest,
+lintDebug, assembleDebug and assembleDebugAndroidTest passed. Instrumentation
+scenarios were compiled, not executed on a device for this slice.

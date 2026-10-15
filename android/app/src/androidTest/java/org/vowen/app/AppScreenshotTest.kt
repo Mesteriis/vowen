@@ -14,6 +14,7 @@ class AppScreenshotTest {
   val inst=InstrumentationRegistry.getInstrumentation()
   val context=inst.targetContext
   val preferences=context.getSharedPreferences("instance",0)
+  context.getSharedPreferences("appearance",0).edit().putString("theme","light").commit()
   TestApplication.screenshotFixture=true
   preferences.edit().putString("origin","https://qa.vowen.invalid").commit()
   TokenVault(context).save("https://qa.vowen.invalid","synthetic-screen-refresh")
@@ -25,14 +26,8 @@ class AppScreenshotTest {
     compose.onNodeWithTag("tab-notifications").performScrollTo().performClick()
     compose.onNodeWithTag("save-notifications").performScrollTo().assertExists()
     java.io.File(context.cacheDir,"m5-app-notifications.png").outputStream().use{out->inst.uiAutomation.takeScreenshot()!!.compress(android.graphics.Bitmap.CompressFormat.PNG,100,out)}
-    compose.onNodeWithTag("Appearance").performScrollTo().performClick()
-    compose.onNodeWithText("Light").performClick()
-    compose.waitForIdle()
-    it.onActivity{activity->org.junit.Assert.assertTrue(androidx.core.view.WindowCompat.getInsetsController(activity.window,activity.window.decorView).isAppearanceLightStatusBars)}
-    compose.onNodeWithTag("save-notifications").performScrollTo().assertExists()
-    java.io.File(context.cacheDir,"m5-app-notifications-light.png").outputStream().use{out->inst.uiAutomation.takeScreenshot()!!.compress(android.graphics.Bitmap.CompressFormat.PNG,100,out)}
-    compose.onNodeWithTag("Appearance").performScrollTo().performClick()
-    compose.onNodeWithText("Dark").performClick()
+    compose.onNodeWithTag("Appearance").assertDoesNotExist()
+    it.onActivity{activity->org.junit.Assert.assertFalse(androidx.core.view.WindowCompat.getInsetsController(activity.window,activity.window.decorView).isAppearanceLightStatusBars)}
     compose.onNodeWithTag("tab-discipline").performScrollTo().performClick()
     compose.onNodeWithTag("new-discipline").performScrollTo().assertExists()
     java.io.File(context.cacheDir,"m4-app-discipline.png").outputStream().use{out->inst.uiAutomation.takeScreenshot()!!.compress(android.graphics.Bitmap.CompressFormat.PNG,100,out)}

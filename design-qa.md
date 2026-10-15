@@ -22,7 +22,7 @@ Mandatory surfaces:
 - Spacing: desktop sidebar, main/aside composition, four real counters, agenda and
   diary/forms shortcuts; mobile single column and five destination bottom bar.
 - Colors: warm gold, rose active selection, near-black surfaces; the owner's later
-  request adds a separate plain velvet page background. Light theme keeps semantic tokens.
+  request adds a separate plain velvet page background. The owner subsequently removed light/system themes entirely; all clients remain dark.
 - Assets: supplied crest and embossed emblem retained. The emblem does not fill or
   stretch to the viewport. Original pixels are preserved with a render-time feather
   mask. A generated emblem edit was rejected because it changed the motif. Generated
@@ -49,6 +49,11 @@ login form mounted during automatic authentication.
 
 ## Remaining acceptance
 
-Finish responsive interaction checks, error/empty/light states and the exact-commit
+Finish responsive interaction checks, error/empty states and the exact-commit
 CI browser scenarios. Record console findings and final screenshots. Until these
 are complete, this report remains blocked and does not claim full design acceptance.
+
+Dark-only revision: mobile menu, profile and return-to-home were exercised through
+real controls. An unlabeled avatar button was corrected to name its profile action;
+the mobile destination dialog now has an explicit heading label. Light mode was
+inspected before the owner removed it; it is no longer a supported state.
