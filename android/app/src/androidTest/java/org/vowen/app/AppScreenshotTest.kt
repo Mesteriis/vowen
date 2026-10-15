@@ -29,6 +29,15 @@ class AppScreenshotTest {
     val values=android.content.ContentValues().apply{put(android.provider.MediaStore.Images.Media.DISPLAY_NAME,if(width>=600)"rituals-app-reviewed-tablet.png" else "rituals-app-reviewed-phone.png");put(android.provider.MediaStore.Images.Media.MIME_TYPE,"image/png");put(android.provider.MediaStore.Images.Media.RELATIVE_PATH,"Pictures/VowenQA")}
     val uri=context.contentResolver.insert(android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI,values)!!
     context.contentResolver.openOutputStream(uri)!!.use{bitmap.compress(android.graphics.Bitmap.CompressFormat.PNG,100,it)}
+    fun capture(name:String){val picture=inst.uiAutomation.takeScreenshot()!!;val meta=android.content.ContentValues().apply{put(android.provider.MediaStore.Images.Media.DISPLAY_NAME,name);put(android.provider.MediaStore.Images.Media.MIME_TYPE,"image/png");put(android.provider.MediaStore.Images.Media.RELATIVE_PATH,"Pictures/VowenQA")};val target=context.contentResolver.insert(android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI,meta)!!;context.contentResolver.openOutputStream(target)!!.use{picture.compress(android.graphics.Bitmap.CompressFormat.PNG,100,it)}}
+    compose.onNodeWithTag("report-o").performScrollTo().performClick()
+    compose.onNodeWithTag("ritual-evidence-links").assertExists()
+    compose.waitForIdle();capture(if(width>=720)"evidence-app-tablet.png" else "evidence-app-phone.png")
+    compose.onNodeWithText("Cancel").performClick()
+    compose.onNodeWithTag("tab-rewards").performScrollTo().performClick()
+    compose.onNodeWithText("Vowen",useUnmergedTree=true).performScrollTo()
+    compose.waitForIdle();capture(if(width>=720)"rewards-app-tablet.png" else "rewards-app-phone.png")
+
    }
   } finally {TokenVault(context).clear();preferences.edit().clear().commit();TestApplication.screenshotFixture=false}
  }

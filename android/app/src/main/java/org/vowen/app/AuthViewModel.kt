@@ -108,9 +108,17 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
  fun assignRitual(r:RitualTemplate,body:RitualAssign)=run{api.assignRitual(r,body);loadWorkspace(true)}
  fun scheduleRitual(a:RitualAssignment,s:RitualSchedule)=run{api.scheduleRitual(a,s);loadWorkspace(true)}
  fun ritualAssignment(a:RitualAssignment,action:String)=run{api.ritualAssignment(a,action);loadWorkspace(true)}
- fun reportRitual(o:RitualOccurrence,text:String,key:String)=run{api.reportRitual(o,text,key);loadWorkspace(true)}
+ fun reportRitual(o:RitualOccurrence,text:String,key:String,links:List<String>,evidenceIds:List<String>)=run{api.reportRitual(o,text,key,links,evidenceIds);loadWorkspace(true)}
  fun reviewRitual(o:RitualOccurrence,decision:String,comment:String)=run{api.reviewRitual(o,decision,comment);loadWorkspace(true)}
  fun skipRitual(o:RitualOccurrence)=run{api.skipRitual(o);loadWorkspace(true)}
+
+ fun stagedEvidence(o:RitualOccurrence,done:(List<EvidenceView>)->Unit)=run{done(api.stagedEvidence(o))}
+ fun uploadEvidence(o:RitualOccurrence,body:EvidenceUpload,done:(EvidenceView)->Unit)=run{done(api.uploadEvidence(o,body))}
+ fun downloadEvidence(e:EvidenceView,done:(EvidenceDownload)->Unit)=run{done(api.downloadEvidence(e))}
+ fun discardEvidence(e:EvidenceView,done:()->Unit)=run{api.discardEvidence(e);done()}
+ fun saveReward(r:RewardDefinition?,body:RewardContent)=run{api.saveReward(r,body);loadWorkspace(true)}
+ fun grantReward(body:GrantCommand)=run{api.grantReward(body);loadWorkspace(true)}
+ fun transitionReward(g:RewardGrant,action:String)=run{api.transitionReward(g,action);loadWorkspace(true)}
  fun logout()=run { try { api.call("/auth/logout","POST") } finally { clear() } }
  private fun clear() { instance.clear();vault.clear();nonce=null;mutable.value=Screen(origin=instance.origin,booting=false) }
 }

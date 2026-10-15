@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, onMounted } from 'vue'
+import RewardsPanel from './features/rewards/RewardsPanel.vue'
 import RitualsPanel from './features/rituals/RitualsPanel.vue'
 import RulesPanel from './features/rules/RulesPanel.vue'
 import FormsPanel from './features/forms/FormsPanel.vue'
@@ -54,7 +55,7 @@ function name(id:string){return participants.value.find(p=>p.id===id)?.display_n
 <template>
  <div v-if="booting" class="startup-screen" role="status" :aria-label="ru?'Загрузка Vowen':'Loading Vowen'"><img src="/brand/vowen-velvet.webp" alt=""><div><span class="brand-wordmark">Vowen</span><p>{{ru?'Открываем ваше пространство…':'Opening your workspace…'}}</p></div></div>
  <main :class="{'member-workspace':!!me}" :aria-busy="booting">
-  <aside v-if="me" class="workspace-nav" aria-label="Workspace"><a class="nav-brand" href="#home"><img src="/brand/vowen-crest.webp" alt=""><span>{{instanceName}}</span></a><nav><a href="#rituals">{{ru?'Мой день · Ритуалы':'My day · Rituals'}}</a><a href="#rules">{{ru?'Правила':'Rules'}}</a><a href="#forms">{{ru?'Анкеты и опросы':'Forms & surveys'}}</a><a href="#relations">{{t.relations}}</a><a href="#profile">{{ru?'Профиль':'Profile'}}</a><a href="#sessions">{{t.sessions}}</a></nav><p>{{ru?'Ближе, чем слова.':'Closer through care.'}}</p></aside>
+  <aside v-if="me" class="workspace-nav" aria-label="Workspace"><a class="nav-brand" href="#home"><img src="/brand/vowen-crest.webp" alt=""><span>{{instanceName}}</span></a><nav><a href="#rituals">{{ru?'Мой день · Ритуалы':'My day · Rituals'}}</a><a href="#rewards">{{ru?'Награды':'Rewards'}}</a><a href="#rules">{{ru?'Правила':'Rules'}}</a><a href="#forms">{{ru?'Анкеты и опросы':'Forms & surveys'}}</a><a href="#relations">{{t.relations}}</a><a href="#profile">{{ru?'Профиль':'Profile'}}</a><a href="#sessions">{{t.sessions}}</a></nav><p>{{ru?'Ближе, чем слова.':'Closer through care.'}}</p></aside>
   <div class="workspace-content" id="home">
   <header><a class="app-brand" href="#home"><img src="/brand/vowen-crest.webp" alt=""><span>{{instanceName}}</span></a><button @click="ru=!ru" :aria-label="ru?'English':'Русский'">{{ru?'EN':'RU'}}</button></header>
   <h1>{{me?(ru?'Ваш день, ':'Your day, ')+me.display_name:t.title}}</h1><p class="workspace-tagline muted">{{ru?'Ваш ритм. Ваши договорённости.':'Your rhythm. Your agreements.'}}</p>
@@ -63,6 +64,7 @@ function name(id:string){return participants.value.find(p=>p.id===id)?.display_n
   <template v-else>
    <section class="member-controls"><h2>{{me.display_name}}</h2><button :disabled="busy" @click="run(load)">{{t.refresh}}</button><p v-if="me.paused">⏸ {{t.pause}}</p><button :disabled="busy" @click="personal">{{me.paused?t.resume:t.pause}}</button> <button :disabled="busy" @click="logout">{{t.logout}}</button></section>
    <RitualsPanel :client="client" :ru="ru" :me="me" :participants="participants" />
+   <RewardsPanel :client="client" :ru="ru" :me="me" :participants="participants" />
    <RulesPanel :client="client" :ru="ru" :me="me" :participants="participants" />
    <FormsPanel :client="client" :ru="ru" :participants="participants" />
    <ProfileSettings :member="me" :client="client" :ru="ru" @saved="member => {me=member;ru=member.language==='ru'}" />

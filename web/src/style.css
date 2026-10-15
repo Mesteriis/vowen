@@ -6,3 +6,7 @@
 dialog.ritual-dialog{position:fixed;margin:auto;color:#f3e9dc}dialog.ritual-dialog::backdrop{background:#000b}dialog:not([open]){display:none}
 
 @media(max-width:760px){.workspace-nav nav{margin-bottom:8px;padding-bottom:0}.member-workspace h1{margin:12px 0 4px}.workspace-tagline{margin:0;font-size:.85rem}.member-controls{margin:10px 0;padding:8px 10px;gap:6px}.member-controls h2{display:none}.member-controls button{padding:8px;font-size:.75rem}.ritual-workspace{margin-top:12px;padding:16px}.ritual-workspace>.section-heading p{display:none}.ritual-summary{margin:12px 0;gap:10px}.ritual-summary>div{padding:8px 0;display:flex;gap:8px}.ritual-summary strong{font-size:24px}.ritual-summary span{font-size:.7rem;margin:0}.ritual-columns .section-heading h3{margin:8px 0}.filter-label{margin:4px 0}.occurrence-row{padding:12px 0}.occurrence-heading h4{margin-bottom:4px}}
+
+.occurrence-row a{color:var(--gold);text-underline-offset:4px}
+
+input[type=file]::file-selector-button{font:inherit;background:var(--raised);color:var(--gold);border:1px solid #806344;border-radius:6px;padding:8px 12px;margin-inline-end:12px;cursor:pointer}

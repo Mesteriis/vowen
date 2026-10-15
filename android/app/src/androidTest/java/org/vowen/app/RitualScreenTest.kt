@@ -16,10 +16,10 @@ class RitualScreenTest {
  @get:Rule val compose=createComposeRule()
  private val member=Member(id="b",display_name="Demo",paused=false,profile_labels=emptyList(),language="en",timezone="UTC",profile_version=1)
  private val o=RitualOccurrence(approval_required=true,assignment_id="a",can_report=true,can_review=false,description="Synthetic ritual",due_at="2026-10-15T09:00Z",expires_at="2026-10-16T09:00Z",id="o",local_day="2026-10-15",recipient_id="b",reports=emptyList(),revision=7,status="needs_changes",title="Presence")
- private fun actions(report:(RitualOccurrence,String,String)->Unit={_,_,_->},review:(RitualOccurrence,String,String)->Unit={_,_,_->})=RitualActions({}, {_,_->}, {_,_->}, {}, {_,_->}, {_,_->}, {_,_->}, report,review,{})
+ private fun actions(report:(RitualOccurrence,String,String,List<String>,List<String>)->Unit={_,_,_,_,_->},review:(RitualOccurrence,String,String)->Unit={_,_,_->})=RitualActions({}, {_,_->}, {_,_->}, {}, {_,_->}, {_,_->}, {_,_->}, report,review,{})
  @Test fun reportCarriesOccurrenceRevisionAndStableRequestIdentity() {
   var sent:Triple<RitualOccurrence,String,String>?=null
-  compose.setContent{MaterialTheme{NativeRitualsScreen(member,WorkspaceState(ritualOccurrences=listOf(o)),false,0,actions(report={a,b,c->sent=Triple(a,b,c)}))}}
+  compose.setContent{MaterialTheme{NativeRitualsScreen(member,WorkspaceState(ritualOccurrences=listOf(o)),false,0,actions(report={a,b,c,_,_->sent=Triple(a,b,c)}))}}
   compose.onNodeWithText("Changes requested").assertExists()
   compose.onNodeWithText("Due: 15 Oct 2026, 09:00 UTC").assertExists()
   compose.onNodeWithTag("report-o").performClick()
@@ -56,6 +56,18 @@ class RitualScreenTest {
   compose.onNodeWithText("Assign ritual").performScrollTo().performClick()
   compose.onNodeWithContentDescription("Reviewer: Demo A").performScrollTo().assertIsOff().performClick().assertIsOn()
   compose.onNodeWithContentDescription("Approval required").assertIsOn()
+ }
+
+ @Test fun requiredEvidenceBlocksSubmissionUntilLinkIsProvided() {
+  var sent:List<String>?=null
+  val required=o.copy(evidence_policy=EvidencePolicy(required=true,allowed_types=listOf("link")))
+  compose.setContent{VowenTheme{NativeRitualsScreen(member,WorkspaceState(ritualOccurrences=listOf(required)),false,0,actions(report={_,_,_,links,_->sent=links}))}}
+  compose.onNodeWithTag("report-o").performClick()
+  compose.onNodeWithTag("ritual-report-text").performTextInput("Completed")
+  compose.onNodeWithTag("submit-ritual-report").assertIsNotEnabled()
+  compose.onNodeWithTag("ritual-evidence-links").performTextInput("https://example.org/proof")
+  compose.onNodeWithTag("submit-ritual-report").assertIsEnabled().performClick()
+  assertEquals(listOf("https://example.org/proof"),sent)
  }
 
 }

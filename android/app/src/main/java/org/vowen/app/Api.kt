@@ -107,8 +107,18 @@ class Api(private val state: InstanceSession,
  suspend fun assignRitual(r:RitualTemplate,body:RitualAssign):RitualAssignment = json.decodeFromString(call("/rituals/${r.id}/assignments","POST",json.encodeToString(body)))
  suspend fun scheduleRitual(a:RitualAssignment,s:RitualSchedule):RitualAssignment = json.decodeFromString(call("/ritual-assignments/${a.id}/schedule","PUT",json.encodeToString(RitualScheduleEdit(expected_version=a.revision,schedule=s))))
  suspend fun ritualAssignment(a:RitualAssignment,action:String):RitualAssignment {require(action in listOf("pause","resume","revoke"));return json.decodeFromString(call("/ritual-assignments/${a.id}/$action","POST",json.encodeToString(ExpectedVersion(a.revision))))}
- suspend fun reportRitual(o:RitualOccurrence,text:String,key:String):RitualOccurrence = json.decodeFromString(call("/ritual-occurrences/${o.id}/report","POST",json.encodeToString(RitualReportCommand(expected_version=o.revision,idempotency_key=key,text=text))))
+ suspend fun reportRitual(o:RitualOccurrence,text:String,key:String,links:List<String>,evidenceIds:List<String>):RitualOccurrence = json.decodeFromString(call("/ritual-occurrences/${o.id}/report","POST",json.encodeToString(RitualReportCommand(expected_version=o.revision,idempotency_key=key,text=text,links=links,evidence_ids=evidenceIds))))
  suspend fun reviewRitual(o:RitualOccurrence,decision:String,comment:String):RitualOccurrence {require(decision in listOf("approved","needs_changes"));return json.decodeFromString(call("/ritual-occurrences/${o.id}/review","POST",json.encodeToString(RitualReviewCommand(expected_version=o.revision,decision=decision,comment=comment))))}
  suspend fun skipRitual(o:RitualOccurrence):RitualOccurrence = json.decodeFromString(call("/ritual-occurrences/${o.id}/skip","POST",json.encodeToString(ExpectedVersion(o.revision))))
+
+ suspend fun stagedEvidence(o:RitualOccurrence):List<EvidenceView> = json.decodeFromString(call("/ritual-occurrences/${o.id}/evidence"))
+ suspend fun uploadEvidence(o:RitualOccurrence,body:EvidenceUpload):EvidenceView=json.decodeFromString(call("/ritual-occurrences/${o.id}/evidence","POST",json.encodeToString(body)))
+ suspend fun downloadEvidence(e:EvidenceView):EvidenceDownload=json.decodeFromString(call("/ritual-evidence/${e.id}"))
+ suspend fun discardEvidence(e:EvidenceView){call("/ritual-evidence/${e.id}","DELETE")}
+ suspend fun rewards():List<RewardDefinition> = json.decodeFromString(call("/rewards"))
+ suspend fun rewardGrants():List<RewardGrant> = json.decodeFromString(call("/reward-grants"))
+ suspend fun saveReward(r:RewardDefinition?,body:RewardContent):RewardDefinition = json.decodeFromString(call(if(r==null)"/rewards" else "/rewards/${r.id}/versions","POST",if(r==null)json.encodeToString(body) else json.encodeToString(RewardEdit(title=body.title,description=body.description,conditions=body.conditions,expected_version=r.revision))))
+ suspend fun grantReward(body:GrantCommand):RewardGrant=json.decodeFromString(call("/reward-grants","POST",json.encodeToString(body)))
+ suspend fun transitionReward(g:RewardGrant,action:String):RewardGrant=json.decodeFromString(call("/reward-grants/${g.id}/transitions","POST",json.encodeToString(GrantTransitionCommand(expected_version=g.revision,action=action))))
 
 }
