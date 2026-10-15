@@ -95,6 +95,8 @@ def main() -> None:
                             "--platform",
                             "linux/amd64",
                             "--no-cache",
+                            "--tag",
+                            f"vowen-{name}:{revision[:12]}",
                             "--provenance=false",
                             "--sbom=false",
                             "--build-arg",
