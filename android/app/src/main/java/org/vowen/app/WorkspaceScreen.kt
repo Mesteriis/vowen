@@ -1,12 +1,12 @@
 package org.vowen.app
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.horizontalScroll
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.unit.dp
 
 /** Every action is wired to a real member API command by the host ViewModel. */
 data class WorkspaceActions(
@@ -20,22 +20,34 @@ data class WorkspaceActions(
 
 @Composable
 fun WorkspaceScreen(member:Member,data:WorkspaceState,currentSessionId:String?,busy:Boolean,completed:Int,actions:WorkspaceActions,formActions:FormActions?=null,formLink:String?=null,ruleActions:RuleActions?=null,ritualActions:RitualActions?=null) {
- var tab by remember { mutableIntStateOf(0) }
+ var tab by remember {mutableIntStateOf(0)}
  val ru=member.language=="ru"
- Column {
-  TextButton(onClick=actions.refresh,enabled=!busy,modifier=Modifier.testTag("workspace-refresh")) {Text(if(ru)"Обновить данные" else "Refresh data")}
-  Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState())) {
-   (listOf("relations" to if(ru)"Отношения" else "Relations","sessions" to if(ru)"Сессии" else "Sessions","profile" to if(ru)"Профиль" else "Profile")+if(formActions!=null)listOf("forms" to if(ru)"Анкеты" else "Forms") else emptyList()) .plus(if(ruleActions!=null)listOf("rules" to if(ru)"Правила" else "Rules") else emptyList()).plus(if(ritualActions!=null)listOf("rituals" to if(ru)"Ритуалы" else "Rituals") else emptyList()).forEachIndexed {index,item->
-    TextButton(onClick={tab=index},modifier=Modifier.testTag("tab-${item.first}")) {Text(item.second)}
-   }
+ val tabs=listOf("relations","sessions","profile")+(if(formActions!=null)listOf("forms") else emptyList())+(if(ruleActions!=null)listOf("rules") else emptyList())+(if(ritualActions!=null)listOf("rituals") else emptyList())
+ val labels=if(ru)mapOf("relations" to "Отношения","sessions" to "Сессии","profile" to "Профиль","forms" to "Анкеты","rules" to "Правила","rituals" to "Ритуалы") else mapOf("relations" to "Relations","sessions" to "Sessions","profile" to "Profile","forms" to "Forms","rules" to "Rules","rituals" to "Rituals")
+ val content:@Composable ()->Unit={
+  if(tabs.getOrNull(tab)!="rituals")TextButton(onClick=actions.refresh,enabled=!busy,modifier=Modifier.testTag("workspace-refresh")){Text(if(ru)"Обновить данные" else "Refresh data")}
+  when(tabs.getOrNull(tab)){
+   "relations"->RelationsScreen(member,data,busy,completed,actions)
+   "sessions"->SessionsScreen(member,data.sessions,currentSessionId,busy,completed,actions.revokeSession)
+   "profile"->ProfileScreen(member,busy,actions.profile)
+   "forms"->formActions?.let{NativeFormsScreen(member,data,busy,completed,formLink,it)}
+   "rules"->ruleActions?.let{NativeRulesScreen(member,data,busy,completed,it)}
+   "rituals"->ritualActions?.let{NativeRitualsScreen(member,data,busy,completed,it)}
   }
-  when(tab) {
-   0 -> RelationsScreen(member,data,busy,completed,actions)
-   1 -> SessionsScreen(member,data.sessions,currentSessionId,busy,completed,actions.revokeSession)
-   2 -> ProfileScreen(member,busy,actions.profile)
-   3 -> if(formActions!=null)NativeFormsScreen(member,data,busy,completed,formLink,formActions) else ruleActions?.let {NativeRulesScreen(member,data,busy,completed,it)}
-   4 -> ruleActions?.let {NativeRulesScreen(member,data,busy,completed,it)}
-   5 -> ritualActions?.let {NativeRitualsScreen(member,data,busy,completed,it)}
+ }
+ if(LocalConfiguration.current.screenWidthDp>=720){
+  Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(24.dp)){
+   Column(Modifier.width(156.dp).testTag("expanded-navigation"),verticalArrangement=Arrangement.spacedBy(4.dp)){
+    tabs.forEachIndexed{index,name->NavigationDrawerItem(label={Text(labels.getValue(name))},selected=tab==index,onClick={tab=index},modifier=Modifier.testTag("tab-$name"))}
+   }
+   Column(Modifier.weight(1f)){content()}
+  }
+ }else{
+  Column{
+   ScrollableTabRow(selectedTabIndex=tab,edgePadding=0.dp,containerColor=MaterialTheme.colorScheme.background,divider={}){
+    tabs.forEachIndexed{index,name->Tab(selected=tab==index,onClick={tab=index},modifier=Modifier.testTag("tab-$name"),text={Text(labels.getValue(name))})}
+   }
+   content()
   }
  }
 }

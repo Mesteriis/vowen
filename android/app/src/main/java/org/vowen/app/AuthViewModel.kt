@@ -18,7 +18,7 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
  val screen=mutable.asStateFlow()
  private val instance=InstanceSession()
  private val vault=TokenVault(application)
- private val api=Api(instance,{vault.load(instance.origin)},{vault.save(instance.origin,it)},clearRefresh={vault.clear()})
+ private val api=(application as VowenApplication).createApi(instance,{vault.load(instance.origin)},{vault.save(instance.origin,it)},{vault.clear()})
  private val preferences=application.getSharedPreferences("instance",0)
  private val mutex=Mutex()
  private var nonce:String?=null

@@ -57,7 +57,7 @@ function name(id:string){return participants.value.find(p=>p.id===id)?.display_n
   <aside v-if="me" class="workspace-nav" aria-label="Workspace"><a class="nav-brand" href="#home"><img src="/brand/vowen-crest.webp" alt=""><span>{{instanceName}}</span></a><nav><a href="#rituals">{{ru?'Мой день · Ритуалы':'My day · Rituals'}}</a><a href="#rules">{{ru?'Правила':'Rules'}}</a><a href="#forms">{{ru?'Анкеты и опросы':'Forms & surveys'}}</a><a href="#relations">{{t.relations}}</a><a href="#profile">{{ru?'Профиль':'Profile'}}</a><a href="#sessions">{{t.sessions}}</a></nav><p>{{ru?'Ближе, чем слова.':'Closer through care.'}}</p></aside>
   <div class="workspace-content" id="home">
   <header><a class="app-brand" href="#home"><img src="/brand/vowen-crest.webp" alt=""><span>{{instanceName}}</span></a><button @click="ru=!ru" :aria-label="ru?'English':'Русский'">{{ru?'EN':'RU'}}</button></header>
-  <h1>{{me?(ru?'Ваш день, ':'Your day, ')+me.display_name:t.title}}</h1><p class="muted">{{ru?'Ваш ритм. Ваши договорённости.':'Your rhythm. Your agreements.'}}</p>
+  <h1>{{me?(ru?'Ваш день, ':'Your day, ')+me.display_name:t.title}}</h1><p class="workspace-tagline muted">{{ru?'Ваш ритм. Ваши договорённости.':'Your rhythm. Your agreements.'}}</p>
   <p v-if="error" role="alert">{{t.error}}: {{error}}</p>
   <section v-if="!me"><p>{{t.closed}}</p><button :disabled="busy" @click="login">{{t.login}}</button></section>
   <template v-else>

@@ -1,0 +1,35 @@
+package org.vowen.app
+
+import android.app.Application
+import android.content.Context
+import androidx.test.runner.AndroidJUnitRunner
+import kotlinx.serialization.json.Json
+import okhttp3.OkHttpClient
+import okhttp3.Protocol
+import okhttp3.Response
+import okhttp3.ResponseBody.Companion.toResponseBody
+import okhttp3.MediaType.Companion.toMediaType
+
+/** Test APK only: the release application has no fixture toggle or fake auth provider. */
+class VowenTestRunner:AndroidJUnitRunner(){
+ override fun newApplication(cl:ClassLoader,className:String,context:Context):Application = super.newApplication(cl,TestApplication::class.java.name,context)
+}
+class TestApplication:VowenApplication(){
+ companion object {var screenshotFixture=false}
+ override fun createApi(state:InstanceSession,load:()->String?,save:(String)->Unit,clear:()->Unit):Api {
+  if(!screenshotFixture)return super.createApi(state,load,save,clear)
+  val json=Json
+  val client=OkHttpClient.Builder().addInterceptor{chain->
+   val path=chain.request().url.encodedPath.removePrefix("/api/v1")
+   val body=when(path){
+    "/auth/refresh"->json.encodeToString(Tokens(access_expires_at="2099-01-01T00:00Z",access_token="synthetic-screen-access",refresh_token="synthetic-screen-refresh",session_id="synthetic-session"))
+    "/me"->json.encodeToString(Member(display_name="Synthetic QA",id="b",language="en",paused=false,profile_labels=emptyList(),profile_version=1,timezone="UTC"))
+    "/ritual-occurrences"->json.encodeToString(listOf(RitualOccurrence(approval_required=true,assignment_id="a",can_report=true,can_review=false,description="Take a quiet moment and report.",due_at="2026-10-15T09:00Z",expires_at="2026-10-16T09:00Z",id="o",local_day="2026-10-15",recipient_id="b",reports=emptyList(),revision=1,status="scheduled",title="Morning presence")))
+    "/participants","/relations","/sessions","/forms","/form-invitations","/form-submissions","/rules","/rule-assignments","/rituals","/ritual-assignments","/ritual-notices"->"[]"
+    else->error("Unexpected synthetic screenshot request")
+   }
+   Response.Builder().request(chain.request()).protocol(Protocol.HTTP_1_1).code(200).message("Synthetic QA").body(body.toResponseBody("application/json".toMediaType())).build()
+  }.build()
+  return Api(state,load,save,client,clear)
+ }
+}

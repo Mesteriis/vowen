@@ -4,7 +4,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.graphics.asAndroidBitmap
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.test.*
@@ -21,6 +20,8 @@ class RitualScreenTest {
  @Test fun reportCarriesOccurrenceRevisionAndStableRequestIdentity() {
   var sent:Triple<RitualOccurrence,String,String>?=null
   compose.setContent{MaterialTheme{NativeRitualsScreen(member,WorkspaceState(ritualOccurrences=listOf(o)),false,0,actions(report={a,b,c->sent=Triple(a,b,c)}))}}
+  compose.onNodeWithText("Changes requested").assertExists()
+  compose.onNodeWithText("Due: 15 Oct 2026, 09:00 UTC").assertExists()
   compose.onNodeWithTag("report-o").performClick()
   compose.onNodeWithTag("ritual-report-text").performTextInput("Synthetic revised report")
   compose.onNodeWithTag("submit-ritual-report").performClick()
@@ -47,17 +48,14 @@ class RitualScreenTest {
   compose.onNodeWithText("Ready workspace").assertExists()
   compose.onNodeWithTag("vowen-startup").assertDoesNotExist()
  }
- @Test fun renderReferenceThemeWithRealNativeRitualComponents() {
-  compose.setContent{VowenTheme{androidx.compose.material3.Surface{androidx.compose.foundation.layout.Column(androidx.compose.ui.Modifier.fillMaxSize().verticalScroll(androidx.compose.foundation.rememberScrollState()).padding(16.dp)){
-   androidx.compose.foundation.layout.Row(verticalAlignment=androidx.compose.ui.Alignment.CenterVertically){androidx.compose.foundation.Image(androidx.compose.ui.res.painterResource(R.drawable.vowen_crest),null,androidx.compose.ui.Modifier.size(48.dp));androidx.compose.material3.Text("Vowen",style=androidx.compose.material3.MaterialTheme.typography.headlineLarge,color=androidx.compose.material3.MaterialTheme.colorScheme.primary)}
-   NativeRitualsScreen(member,WorkspaceState(ritualOccurrences=listOf(o.copy(status="scheduled"))),false,0,actions())
-  }}}}
-  compose.waitForIdle()
-  val context=androidx.test.platform.app.InstrumentationRegistry.getInstrumentation().targetContext
-  val width=context.resources.configuration.screenWidthDp
-  val values=android.content.ContentValues().apply{put(android.provider.MediaStore.Images.Media.DISPLAY_NAME,if(width>=600)"rituals-final-tablet.png" else "rituals-final-phone.png");put(android.provider.MediaStore.Images.Media.MIME_TYPE,"image/png");put(android.provider.MediaStore.Images.Media.RELATIVE_PATH,"Pictures/VowenQA")}
-  val uri=context.contentResolver.insert(android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI,values)!!
-  context.contentResolver.openOutputStream(uri)!!.use{compose.onRoot().captureToImage().asAndroidBitmap().compress(android.graphics.Bitmap.CompressFormat.PNG,100,it)}
+
+ @Test fun reviewerControlsExposeNamesAndCheckedState() {
+  val template=RitualTemplate(description="Synthetic",id="r",revision=2,status="published",title="Presence",version_id="v")
+  val data=WorkspaceState(rituals=listOf(template),participants=listOf(Participant(display_name="Demo A",id="a",profile_labels=emptyList()),Participant(display_name="Demo B",id="b",profile_labels=emptyList())))
+  compose.setContent{VowenTheme{Column(androidx.compose.ui.Modifier.verticalScroll(androidx.compose.foundation.rememberScrollState())){NativeRitualsScreen(member.copy(id="a"),data,false,0,actions())}}}
+  compose.onNodeWithText("Assign ritual").performScrollTo().performClick()
+  compose.onNodeWithContentDescription("Reviewer: Demo A").performScrollTo().assertIsOff().performClick().assertIsOn()
+  compose.onNodeWithContentDescription("Approval required").assertIsOn()
  }
 
 }
