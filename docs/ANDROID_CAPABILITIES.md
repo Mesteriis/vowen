@@ -1,4 +1,4 @@
-# Android capabilities at M2 + M3
+# Android capabilities at M4
 
 | Flow | Native Android | Mini App / guest web |
 |---|---|---|
@@ -13,6 +13,9 @@
 | Reader removal / invitation revoke / archive | Use Mini App | Implemented |
 | Internal drafts / review / submit / results / delete | Implemented | Implemented |
 | Ritual evidence: links, photo/video, required policy | Native system picker/save; protected API, bounded memory | Implemented, authenticated download |
+| Discipline: exact rule/event link, proposal/revision, personal consent, transitions/comments/history | Native Compose | Implemented |
+| Diary: private drafts, explicit/snapshot readers, edit/delete, search/tags | Native Compose | Implemented |
+| Diary ACL-filtered JSON file export | Not implemented | Implemented |
 | Reward catalogue, manual/automatic offers, accept/decline/deliver/cancel | Native Compose | Implemented |
 | Guest form / independent receipt / delete | Native entry by pasting HTTPS link | Standalone /f and /r, no Telegram |
 | Guest credential persistence | Memory-only ViewModel survives activity recreation; closing loses draft capability | Secure HttpOnly cookie, at most 24 hours |

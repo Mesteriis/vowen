@@ -107,6 +107,11 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
  fun ruleTemplate(rule:RuleTemplate,action:String)=run {api.ruleTemplate(rule,action);loadWorkspace(true)}
  fun assignRule(rule:RuleTemplate,body:RuleAssign)=run {api.assignRule(rule,body);loadWorkspace(true)}
  fun decideRule(assignment:RuleAssignment,action:String)=run {api.decideRule(assignment,action);loadWorkspace(true)}
+ fun createDiscipline(body:DisciplineCreate)=run{api.createDiscipline(body);loadWorkspace(true)}
+ fun reviseDiscipline(r:DisciplineRecord,body:DisciplineEdit)=run{api.reviseDiscipline(r,body);loadWorkspace(true)}
+ fun decideDiscipline(r:DisciplineRecord,action:String,comment:String)=run{api.decideDiscipline(r,action,comment);loadWorkspace(true)}
+ fun saveJournal(e:JournalEntry?,body:JournalContent,refresh:Boolean)=run{api.saveJournal(e,body,refresh);loadWorkspace(true)}
+ fun deleteJournal(e:JournalEntry)=run{api.deleteJournal(e);loadWorkspace(true)}
  fun saveRitual(r:RitualTemplate?,body:RitualContent)=run{api.saveRitual(r,body);loadWorkspace(true)}
  fun ritualTemplate(r:RitualTemplate,action:String)=run{api.ritualTemplate(r,action);loadWorkspace(true)}
  fun ritualHistory(r:RitualTemplate)=run{val history=api.ritualHistory(r);mutable.value=mutable.value.copy(workspace=mutable.value.workspace.copy(ritualHistory=history))}

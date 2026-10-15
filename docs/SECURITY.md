@@ -118,3 +118,20 @@ Rate limits на auth, создание challenge, guest exchange, submit и bot
 ## 9. Обязательные отрицательные тесты
 
 Поддельный/stale/future `initData`; дубликаты query keys; повтор Telegram assertion; неизвестный и заблокированный ID; stolen start token без poll secret; подтверждение другим Telegram-пользователем; двойной consume; refresh reuse; блокировка при ещё действующем access; нетранзитивные связи; отказ приватного дневника даже Dominant; доступ к чужому черновику; гостевой token на member endpoint; чужой invitation ID; одновременная отправка; revoke против submit; GET preview без расходования токена; повторный worker без двойной награды; plaintext-marker отсутствует в БД/логах; подмена AEAD payload; потеря/ротация ключа; удаление и восстановление backup.
+
+## M4 implementation boundaries
+
+Discipline proposals require direct current `discipline.propose` authority; only
+named current reviewers can confirm completion. Recipient acceptance binds an exact
+immutable version and cannot be performed by its author, reviewer or operator.
+Recipients cannot rewrite assigned rule text or discipline conditions. Dispute and
+withdrawal suspend execution, including during a personal pause. Content changes
+require a new version and personal acceptance. See [transition matrix](M4.md).
+
+Diary readership is independent of relationships. Entries default to private drafts;
+published audiences are explicit reader lists or author-controlled member snapshots.
+Future members are excluded until an explicit audience refresh. Lists, filters and
+JSON exports apply the same ACL as detail reads; there are no cross-user totals or
+plaintext text indexes. Entry deletion removes ciphertext and reader rows; edited
+bodies and diary content are not copied into audit/outbox/notifications. This does
+not remove backups or copies already obtained, and server key access is not E2EE.

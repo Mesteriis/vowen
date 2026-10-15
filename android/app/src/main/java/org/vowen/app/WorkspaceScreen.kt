@@ -19,14 +19,17 @@ data class WorkspaceActions(
 )
 
 @Composable
-fun WorkspaceScreen(member:Member,data:WorkspaceState,currentSessionId:String?,busy:Boolean,completed:Int,actions:WorkspaceActions,formActions:FormActions?=null,formLink:String?=null,ruleActions:RuleActions?=null,ritualActions:RitualActions?=null,rewardActions:RewardActions?=null,error:String?=null) {
+fun WorkspaceScreen(member:Member,data:WorkspaceState,currentSessionId:String?,busy:Boolean,completed:Int,actions:WorkspaceActions,formActions:FormActions?=null,formLink:String?=null,ruleActions:RuleActions?=null,ritualActions:RitualActions?=null,rewardActions:RewardActions?=null,error:String?=null,disciplineActions:DisciplineActions?=null,journalActions:JournalActions?=null) {
  var tab by remember {mutableIntStateOf(0)}
  val ru=member.language=="ru"
  val tabs=listOf("relations","sessions","profile")+(if(formActions!=null)listOf("forms") else emptyList())+(if(ruleActions!=null)listOf("rules") else emptyList())+(if(ritualActions!=null)listOf("rituals") else emptyList())+(if(rewardActions!=null)listOf("rewards") else emptyList())
- val labels=if(ru)mapOf("relations" to "Отношения","sessions" to "Сессии","profile" to "Профиль","forms" to "Анкеты","rules" to "Правила","rituals" to "Ритуалы","rewards" to "Награды") else mapOf("relations" to "Relations","sessions" to "Sessions","profile" to "Profile","forms" to "Forms","rules" to "Rules","rituals" to "Rituals","rewards" to "Rewards")
+ val allTabs=tabs+(if(disciplineActions!=null)listOf("discipline") else emptyList())+(if(journalActions!=null)listOf("journal") else emptyList())
+ val labels=if(ru)mapOf("relations" to "Отношения","sessions" to "Сессии","profile" to "Профиль","forms" to "Анкеты","rules" to "Правила","rituals" to "Ритуалы","rewards" to "Награды","discipline" to "Дисциплина","journal" to "Дневник") else mapOf("relations" to "Relations","sessions" to "Sessions","profile" to "Profile","forms" to "Forms","rules" to "Rules","rituals" to "Rituals","rewards" to "Rewards","discipline" to "Discipline","journal" to "Diary")
  val content:@Composable ()->Unit={
-  if(tabs.getOrNull(tab) !in listOf("rituals","rewards"))TextButton(onClick=actions.refresh,enabled=!busy,modifier=Modifier.testTag("workspace-refresh")){Text(if(ru)"Обновить данные" else "Refresh data")}
-  when(tabs.getOrNull(tab)){
+  if(allTabs.getOrNull(tab) !in listOf("rituals","rewards"))TextButton(onClick=actions.refresh,enabled=!busy,modifier=Modifier.testTag("workspace-refresh")){Text(if(ru)"Обновить данные" else "Refresh data")}
+  when(allTabs.getOrNull(tab)){
+   "discipline"->disciplineActions?.let{NativeDisciplineScreen(member,data,busy,completed,it)}
+   "journal"->journalActions?.let{NativeJournalScreen(member,data,busy,completed,it)}
    "relations"->RelationsScreen(member,data,busy,completed,actions)
    "sessions"->SessionsScreen(member,data.sessions,currentSessionId,busy,completed,actions.revokeSession)
    "profile"->ProfileScreen(member,busy,actions.profile)
@@ -39,14 +42,14 @@ fun WorkspaceScreen(member:Member,data:WorkspaceState,currentSessionId:String?,b
  if(LocalConfiguration.current.screenWidthDp>=720){
   Row(Modifier.fillMaxWidth(),horizontalArrangement=Arrangement.spacedBy(24.dp)){
    Column(Modifier.width(156.dp).testTag("expanded-navigation"),verticalArrangement=Arrangement.spacedBy(4.dp)){
-    tabs.forEachIndexed{index,name->NavigationDrawerItem(label={Text(labels.getValue(name))},selected=tab==index,onClick={tab=index},modifier=Modifier.testTag("tab-$name"))}
+    allTabs.forEachIndexed{index,name->NavigationDrawerItem(label={Text(labels.getValue(name))},selected=tab==index,onClick={tab=index},modifier=Modifier.testTag("tab-$name"))}
    }
    Column(Modifier.weight(1f)){content()}
   }
  }else{
   Column{
    ScrollableTabRow(selectedTabIndex=tab,edgePadding=0.dp,containerColor=MaterialTheme.colorScheme.background,divider={}){
-    tabs.forEachIndexed{index,name->Tab(selected=tab==index,onClick={tab=index},modifier=Modifier.testTag("tab-$name"),text={Text(labels.getValue(name))})}
+    allTabs.forEachIndexed{index,name->Tab(selected=tab==index,onClick={tab=index},modifier=Modifier.testTag("tab-$name"),text={Text(labels.getValue(name))})}
    }
    content()
   }

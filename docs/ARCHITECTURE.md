@@ -126,7 +126,7 @@ vowen/
 | Rituals | `rituals`, `ritual_versions`, `ritual_assignments`, `ritual_assignment_reviewers`, `ritual_occurrences`, `ritual_reports` |
 | Discipline | `discipline_records`, `discipline_versions`, `discipline_transitions`, `discipline_reviewers` |
 | Rewards | `reward_definitions`, `reward_definition_versions`, `ritual_reward_policies`, `reward_grants` |
-| Journal | `journal_entries`, `journal_entry_readers`, `journal_tags` |
+| Journal | `journal_entries`, `journal_readers`; date, title, body, mood and tags encrypted together |
 | Forms | `forms`, `form_versions`, `form_invitations`, `form_invitation_readers`, `form_submissions`, `guest_sessions`, `submission_receipts` |
 | Surveys, M5 | `survey_schedules`, `survey_waves` |
 | Operations | `outbox_events`, `scheduled_jobs`, `notification_deliveries`, `audit_events`, `idempotency_records` |
@@ -173,9 +173,9 @@ Principal-типов два: `MemberPrincipal` и `GuestPrincipal`. CLI полу
 | Personal pause | `POST /me/pause`, `POST /me/resume` |
 | Rules | `/rules`, `/rules/{id}/versions`, `/rule-assignments`, `/rule-assignments/{id}/accept` |
 | Rituals | `/rituals`, `/ritual-assignments`, `/ritual-occurrences`, `/ritual-occurrences/{id}/submit`, `/review` |
-| Discipline | `/discipline-records`, `/discipline-records/{id}/transitions` |
+| Discipline | `/discipline-records`, `/discipline-records/{id}`, `/discipline-records/{id}/versions`, `/discipline-records/{id}/transitions` |
 | Rewards | `/rewards`, `/reward-grants`, `/reward-grants/{id}/transitions` |
-| Journal | `/journal`, `/journal/{id}`, `/journal/{id}/readers` |
+| Journal | `/journal`, `/journal/export`, `/journal/{id}`, `/journal/{id}/delete`; reader ACL edited atomically with entry |
 | Forms management | `/forms`, `/forms/{id}/versions`, `/forms/{id}/publish`, `/form-invitations`, `/form-invitations/{id}/revoke` |
 | Internal responses | `/my/form-invitations`, `/my/form-invitations/{id}/draft`, `/submit`, `/form-submissions/{id}` |
 | Guest | `POST /guest/invitations/exchange`, `GET /guest/form`, `PUT /guest/draft`, `POST /guest/submit`, `DELETE /guest/submission` |

@@ -10,6 +10,28 @@ import org.junit.Test
 /** Real shipped MainActivity/navigation/insets, synthetic test-only transport. No live-auth claim. */
 class AppScreenshotTest {
  @get:Rule val compose=createEmptyComposeRule()
+ @Test fun actualMainActivityM4Navigation(){
+  val inst=InstrumentationRegistry.getInstrumentation()
+  val context=inst.targetContext
+  val preferences=context.getSharedPreferences("instance",0)
+  TestApplication.screenshotFixture=true
+  preferences.edit().putString("origin","https://qa.vowen.invalid").commit()
+  TokenVault(context).save("https://qa.vowen.invalid","synthetic-screen-refresh")
+  try {
+   ActivityScenario.launch(MainActivity::class.java).use{
+    compose.waitUntil(10000){compose.onAllNodesWithTag("tab-discipline").fetchSemanticsNodes().isNotEmpty()}
+    compose.onNodeWithTag("tab-discipline").performScrollTo().performClick()
+    compose.onNodeWithTag("new-discipline").performScrollTo().assertExists()
+    java.io.File(context.cacheDir,"m4-app-discipline.png").outputStream().use{out->inst.uiAutomation.takeScreenshot()!!.compress(android.graphics.Bitmap.CompressFormat.PNG,100,out)}
+    compose.onNodeWithTag("tab-journal").performScrollTo().performClick()
+    compose.onNodeWithTag("new-journal").performScrollTo().performClick()
+    compose.onNodeWithTag("journal-title").performScrollTo().performTextInput("Synthetic private reflection")
+    compose.onNodeWithTag("journal-text").performScrollTo().performTextInput("This is synthetic QA content.")
+    compose.onNodeWithTag("journal-published").performScrollTo().assertIsOff()
+    java.io.File(context.cacheDir,"m4-app-journal.png").outputStream().use{out->inst.uiAutomation.takeScreenshot()!!.compress(android.graphics.Bitmap.CompressFormat.PNG,100,out)}
+   }
+  } finally {TokenVault(context).clear();preferences.edit().clear().commit();TestApplication.screenshotFixture=false}
+ }
  @Test fun actualMainActivityRitualViewport(){
   val inst=InstrumentationRegistry.getInstrumentation()
   val context=inst.targetContext

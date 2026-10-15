@@ -94,6 +94,21 @@ class Api(private val state: InstanceSession,
   return json.decodeFromString(call("/rule-assignments/${assignment.id}/$action","POST",json.encodeToString(RuleDecision(assignment.revision,assignment.rule_version_id))))
  }
 
+ suspend fun discipline():List<DisciplineRecord> = json.decodeFromString(call("/discipline-records"))
+ suspend fun createDiscipline(body:DisciplineCreate):DisciplineRecord = json.decodeFromString(call("/discipline-records","POST",json.encodeToString(body)))
+ suspend fun reviseDiscipline(r:DisciplineRecord,body:DisciplineEdit):DisciplineRecord = json.decodeFromString(call("/discipline-records/${r.id}/versions","POST",json.encodeToString(body)))
+ suspend fun decideDiscipline(r:DisciplineRecord,action:String,comment:String):DisciplineRecord {
+  require(action in listOf("accept","start","complete","confirm","dispute","decline","cancel"))
+  return json.decodeFromString(call("/discipline-records/${r.id}/transitions","POST",json.encodeToString(DisciplineDecision(action=action,comment=comment,expected_version=r.revision,version_id=r.version_id))))
+ }
+ suspend fun journal():List<JournalEntry> = json.decodeFromString(call("/journal"))
+ suspend fun saveJournal(e:JournalEntry?,body:JournalContent,refreshAudience:Boolean):JournalEntry {
+  if(e==null)return json.decodeFromString(call("/journal","POST",json.encodeToString(body)))
+  val edit=JournalEdit(date=body.date,expected_version=e.revision,title=body.title,text=body.text,mood=body.mood,tags=body.tags,visibility=body.visibility,reader_ids=body.reader_ids,published=body.published,refresh_audience=refreshAudience)
+  return json.decodeFromString(call("/journal/${e.id}","PATCH",json.encodeToString(edit)))
+ }
+ suspend fun deleteJournal(e:JournalEntry) {call("/journal/${e.id}/delete","POST",json.encodeToString(ExpectedVersion(e.revision)))}
+
  suspend fun rituals():List<RitualTemplate> = json.decodeFromString(call("/rituals"))
  suspend fun ritualAssignments():List<RitualAssignment> = json.decodeFromString(call("/ritual-assignments"))
  suspend fun ritualOccurrences():List<RitualOccurrence> = json.decodeFromString(call("/ritual-occurrences"))

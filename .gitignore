@@ -27,3 +27,6 @@ test-results/
 
 # Machine-local deployment verification screenshots
 artifacts/deployment/
+
+# Local synthetic M4 emulator/screenshots and test evidence
+artifacts/m4/

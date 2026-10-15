@@ -20,8 +20,9 @@ VOWEN_AGENT_BRIEF.md; no separate matching brief was found beside the archive.
   API/PostgreSQL with synthetic signed Telegram data.
 - **M2: implemented and locally verified; remote CI acceptance below.** Versioned forms,
   member/guest answers, receipts, encrypted drafts, reader snapshots and delivery outbox.
-- **M3: rules, rituals and rewards implemented; Telegram notification delivery pending.** See dated evidence below.
-- **M4–M6: pending.** Diary, discipline and production release are not implemented.
+- **M3: rules, rituals, rewards and Telegram delivery implemented; live recipient acceptance pending.** See dated evidence below.
+- **M4: implemented and locally verified.** Discipline and private diary, server ACL, encrypted versions/content and Mini App/native Android screens. See latest evidence below.
+- **M5–M6: pending.** Repeated surveys, quiet hours/channel settings, full client acceptance and production release. Dedicated deployment is recorded below.
 
 ## Implemented behavior
 
@@ -532,3 +533,54 @@ not acceptance of real Telegram ritual/reward notifications or participant conse
 Native Telegram screenshot also confirms the deployed Mini App opens and displays
 ACCESS_DENIED for the unprovisioned participant. This is the expected boundary
 on the fresh zero-user instance; successful participant login is not yet verified.
+
+## 2026-10-15 — M4 discipline and private diary
+
+Implemented discipline records with optional exact accepted rule-version and
+recipient-bound ritual-occurrence links, fixed author/recipient/explicit reviewer
+set, immutable encrypted content versions and encrypted transition comments.
+Recipient-only acceptance/start/completion, reviewer-only confirmation, dispute,
+decline and cancellation follow the documented [matrix](M4.md). New versions
+require fresh acceptance; terminal records cannot be rewritten. Current direct
+scopes, active/unpaused membership, optimistic revisions and PostgreSQL locks are
+checked on mutations. Authority reads refresh previously loaded membership under
+lock; a reproduced stale ORM pause case is covered. Conflicting reviews yield one
+success and one conflict. Author-scoped idempotent creation rejects changed retries.
+
+Recipients cannot edit assigned rule text or discipline conditions. Personal pause,
+dispute, decline and withdrawal remain available without dominant confirmation.
+No automatic discipline, physical-action generation, escalation or presumed finding
+of violation was introduced. No real participant rules or disciplinary records
+were imported or created by this work.
+
+Diary entries default to private drafts, with encrypted date/title/body/mood/tags,
+explicit readers and all-current-member snapshots. Unrelated new members never
+join a snapshot through content editing. Only the author edits/deletes or explicitly
+refreshes an audience. Shared detail/list/search/tag/export checks current ACL;
+paused/inactive readers cannot read. Existing paused readership does not block
+owner editing/removal and cannot be re-added while inactive. Deleted entries lose
+ciphertext and reader rows. There are no plaintext search indexes, diary history
+copies or diary notification/outbox bodies. Relationships and operator context do
+not grant diary access. This remains server-side encryption, not E2EE.
+
+Mini App and native Compose Android provide proposals, exact-version review,
+transitions/comments/history and diary CRUD/audience/filtering. Mini App supports
+ACL-filtered JSON file export; native diary file export remains unimplemented.
+Both clients expose RU/EN labels. Actual shipped MainActivity navigation and screen
+captures ran with synthetic AndroidTest-only transport; they do not prove live
+Android-to-production or Telegram delivery. No physical device was modified.
+
+Validation after final corrections: **171 backend tests**, **3 Vitest tests**,
+**10 real API/PostgreSQL/browser E2E**, **12 Android JVM tests**, and **34 Android
+instrumentation tests** on the dedicated Android 16 AVD. Ruff/ESLint, mypy/vue-tsc,
+web build, Android lint/debug APK/test APK build, generated contract drift check,
+heuristic secret scan and diff whitespace check passed. Earlier concurrent test
+runs sharing the disposable database interfered; those failed runs were discarded
+and the complete suites rerun sequentially. Browser fixtures now use separate
+synthetic M4 participants, preserving the original M1–M3 tests.
+
+Migrations 0015/0016 were applied to the disposable PostgreSQL test database.
+No production migration or deployment was performed. Live Telegram, physical
+Android acceptance, production backup/restore and independent security review
+remain separate. Remote CI is run on `feat/m4`; its final immutable SHA/run result
+is reported in the task delivery rather than inferred from these local checks.
