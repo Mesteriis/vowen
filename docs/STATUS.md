@@ -489,8 +489,16 @@ starting limits: [telegram-notifications](operations/telegram-notifications.md).
 
 Fresh review found four Important cases, all reproduced RED and fixed with regressions;
 no Critical/minor findings. A related relation-restore race was also reproduced and
-fixed.27 focused PostgreSQL notification tests pass. Final whole-suite/CI results are
-recorded below when verified.
+fixed. 27 focused PostgreSQL notification tests pass. Final local gates passed:
+145 backend tests, 3 Vitest, 8 real API/browser E2E, Ruff/ESLint, strict Python/TS
+types, web build, generated contract drift check and heuristic secret scan. Rebuilt
+Compose API/worker/proxy are healthy; HTTPS routing and scoped evidence-body smokes
+pass. The isolated bot image imports and resolves all model dependencies. Android
+source is unchanged in this slice; its CI build/tests run with the final code below.
+
+Both CI jobs (backend-web, android) passed for final code
+03434d70d92ef84f30af096b0146e03b5b26f38b:
+https://github.com/Mesteriis/vowen/actions/runs/38763081842.
 
 Live getMe accepted the .env token and matched the configured bot username. The local
 instance has zero active, unpaused, opted-in linked members; no message was sent to an
