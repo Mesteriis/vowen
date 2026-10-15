@@ -34,6 +34,7 @@ from vowen.modules.rituals.schemas import (
     RitualEdit,
     RitualNoticeView,
     RitualView,
+    Schedule,
     ScheduleEdit,
 )
 from vowen.modules.rituals.worker import generate_assignment
@@ -320,6 +321,11 @@ async def review(
         principal.user_id,
         request.app.state.clock.now(),
     )
+    if body.decision == "needs_changes":
+        schedule = await db.get(RitualSchedule, o.schedule_id)
+        assert schedule is not None
+        duration = Schedule.model_validate(schedule.spec).window_hours
+        o.expires_at = max(o.expires_at, request.app.state.clock.now() + timedelta(hours=duration))
     o.status = body.decision
     o.revision += 1
     await rituals.notice(

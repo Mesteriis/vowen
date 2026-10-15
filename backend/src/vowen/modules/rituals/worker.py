@@ -54,7 +54,7 @@ async def generate_assignment(
         elif o.expires_at <= now:
             o.status = "missed"
             o.revision += 1
-        elif o.status == "scheduled" and o.due_at <= now:
+        elif o.status == "scheduled" and o.due_at <= now and o.local_day == today:
             await rituals.notice(db, a, [a.recipient_id], "due", now, o)
     if not live:
         a.watermark = max(a.watermark, today + timedelta(days=1))
@@ -82,7 +82,7 @@ async def generate_assignment(
             )
             db.add(o)
             await db.flush()
-            if due <= now < expires:
+            if due <= now < expires and day == today:
                 await rituals.notice(db, a, [a.recipient_id], "due", now, o)
     if end >= a.watermark:
         a.watermark = end + timedelta(days=1)
@@ -121,6 +121,7 @@ async def generate(
                 unavailable,
                 RitualOccurrence.expires_at <= now,
                 (RitualOccurrence.due_at <= now)
+                & (RitualOccurrence.local_day == local_today)
                 & ~exists(
                     select(RitualNotice.id).where(
                         RitualNotice.occurrence_id == RitualOccurrence.id,

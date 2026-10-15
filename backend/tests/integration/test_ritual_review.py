@@ -1,5 +1,5 @@
 import asyncio
-from datetime import timedelta
+from datetime import datetime, timedelta
 from uuid import uuid4
 
 from conftest import NOW
@@ -9,7 +9,7 @@ from test_sessions import auth, login
 from test_telegram_validation import signed
 
 
-async def setup_ritual(api, approval=True):
+async def setup_ritual(api, approval=True, window_hours=24):
     client, app = api
     ids, tokens = await members(client, app, 4)
     for actor in (0, 2):
@@ -52,7 +52,7 @@ async def setup_ritual(api, approval=True):
             "hour": 9,
             "minute": 0,
             "start_date": "2026-10-15",
-            "window_hours": 24,
+            "window_hours": window_hours,
         },
     }
     response = await client.post(
@@ -273,3 +273,147 @@ async def test_pause_interval_survives_worker_downtime(api):
         await generate(db, later)
     rows = (await client.get("/api/v1/ritual-occurrences", headers=auth(tokens[1]))).json()
     assert len(rows) == 1 and rows[0]["status"] == "cancelled"
+
+
+async def test_recovery_does_not_notify_every_old_open_slot(api):
+    from vowen.modules.rituals.worker import generate
+
+    client, app, ids, tokens, template, a, o = await setup_ritual(api, window_hours=168)
+    async with app.state.sessions() as db, db.begin():
+        await generate(db, NOW + timedelta(days=5))
+    async with app.state.engine.connect() as conn:
+        count = await conn.scalar(text("SELECT count(*) FROM ritual_notices WHERE kind='due'"))
+    assert count == 2  # Initial live day plus current recovery day, never days 2..5.
+
+
+async def test_multiple_recipients_and_concurrent_assignment_retry_are_isolated(api):
+    client, app, ids, tokens, template, a, o = await setup_ritual(api)
+    relation = (
+        await client.post(
+            "/api/v1/relations",
+            headers=auth(tokens[0]),
+            json={
+                "dominant_user_id": str(ids[0]),
+                "submissive_user_id": str(ids[3]),
+                "scopes": ["rituals.assign", "rituals.review"],
+                "agreement_text": "Second independent recipient",
+            },
+        )
+    ).json()
+    relation = (await accept(client, tokens[0], relation)).json()
+    await accept(client, tokens[3], relation)
+    body = {
+        "recipient_id": str(ids[3]),
+        "reviewer_ids": [str(ids[0])],
+        "idempotency_key": str(uuid4()),
+        "schedule": {
+            "kind": "daily",
+            "timezone": "UTC",
+            "hour": 9,
+            "minute": 0,
+            "start_date": "2026-10-15",
+        },
+    }
+    results = await asyncio.gather(
+        *(
+            client.post(
+                f"/api/v1/rituals/{template['id']}/assignments", headers=auth(tokens[0]), json=body
+            )
+            for _ in range(3)
+        )
+    )
+    assert all(r.status_code == 200 for r in results)
+    assert len({r.json()["id"] for r in results}) == 1
+    rows = (await client.get("/api/v1/ritual-occurrences", headers=auth(tokens[3]))).json()
+    assert len(rows) == 1 and rows[0]["id"] != o["id"]
+    assert (
+        await client.post(
+            f"/api/v1/ritual-occurrences/{o['id']}/report",
+            headers=auth(tokens[3]),
+            json={
+                "expected_version": o["revision"],
+                "idempotency_key": str(uuid4()),
+                "text": "Wrong recipient",
+            },
+        )
+    ).status_code == 403
+
+
+async def test_reviewer_authority_withdrawal_does_not_inherit_another_reviewers_scope(api):
+    client, app, ids, tokens, template, a, o = await setup_ritual(api)
+    path = f"/api/v1/ritual-occurrences/{o['id']}"
+    o = (
+        await client.post(
+            path + "/report",
+            headers=auth(tokens[1]),
+            json={
+                "expected_version": o["revision"],
+                "idempotency_key": str(uuid4()),
+                "text": "Ready for explicit review",
+            },
+        )
+    ).json()
+    relation = (await client.get("/api/v1/relations", headers=auth(tokens[2]))).json()[0]
+    assert (
+        await client.post(
+            f"/api/v1/relations/{relation['id']}/pause",
+            headers=auth(tokens[2]),
+            json={"expected_version": relation["version"]},
+        )
+    ).status_code == 200
+    assert (await client.get("/api/v1/ritual-occurrences", headers=auth(tokens[2]))).json() == []
+    review = {"expected_version": o["revision"], "decision": "approved"}
+    assert (
+        await client.post(path + "/review", headers=auth(tokens[2]), json=review)
+    ).status_code == 403
+    assert (
+        await client.post(path + "/review", headers=auth(tokens[0]), json=review)
+    ).status_code == 200
+
+
+async def test_late_needs_changes_provides_a_real_resubmission_window(api):
+    client, app, ids, tokens, template, a, o = await setup_ritual(api)
+    path = f"/api/v1/ritual-occurrences/{o['id']}"
+    o = (
+        await client.post(
+            path + "/report",
+            headers=auth(tokens[1]),
+            json={
+                "expected_version": o["revision"],
+                "idempotency_key": str(uuid4()),
+                "text": "Timely first attempt",
+            },
+        )
+    ).json()
+    later = NOW + timedelta(days=2)
+    app.state.clock = type("LaterClock", (), {"now": lambda self: later})()
+    tokens = [
+        (
+            await login(client, signed(100000000001 + i, offset=2 * 86400, query_id=str(uuid4())))
+        ).json()
+        for i in range(4)
+    ]
+    reviewed = await client.post(
+        path + "/review",
+        headers=auth(tokens[0]),
+        json={
+            "expected_version": o["revision"],
+            "decision": "needs_changes",
+            "comment": "Add detail",
+        },
+    )
+    assert reviewed.status_code == 200
+    o = (await client.get("/api/v1/ritual-occurrences", headers=auth(tokens[1]))).json()[0]
+    assert o["can_report"] is True
+    assert datetime.fromisoformat(o["expires_at"]) == later + timedelta(hours=24)
+    assert (
+        await client.post(
+            path + "/report",
+            headers=auth(tokens[1]),
+            json={
+                "expected_version": o["revision"],
+                "idempotency_key": str(uuid4()),
+                "text": "Real revised attempt",
+            },
+        )
+    ).status_code == 200
