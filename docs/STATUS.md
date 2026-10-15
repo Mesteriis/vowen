@@ -312,3 +312,12 @@ the exact text/ID and replacement warning. Paused/declined/revoked assignments c
 silently resumed or reissued for the same version: a new version/consent is required. The cost
 is an additional proposal instead of a resume shortcut. Live Telegram and physical-device
 acceptance are still excluded, so test success is not delivery or real-device proof.
+
+Remote verification: [CI run 38733136234](https://github.com/Mesteriis/vowen/actions/runs/38733136234)
+passed both `backend-web` and `android` for code commit
+`7cb5f4f4a9fa6a26fac5ecc06a064d630216b0a5`, including the review fixes and browser
+ordering regression. The same implementation is fast-forwarded to `main`. This final
+evidence-only documentation commit uses `[skip ci]`; it changes no code or test configuration.
+Final rebuilt Compose API/proxy/migration are healthy and the loopback HTTPS smoke passed.
+Remote CI compiles Compose instrumentation; the 16 actual instrumentation tests ran locally
+on the owned Android 16 AVD, now stopped. No live bot request was made.
