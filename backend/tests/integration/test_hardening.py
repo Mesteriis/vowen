@@ -32,7 +32,7 @@ async def test_readiness_schema_guard_and_headers(api):
         assert (await client.get("/api/v1/me")).status_code == 503
     finally:
         async with app.state.engine.begin() as conn:
-            await conn.execute(text("UPDATE alembic_version SET version_num='0006'"))
+            await conn.execute(text("UPDATE alembic_version SET version_num='0007'"))
     response = await client.get("/health/live")
     assert response.headers["cache-control"] == "no-store"
     invalid = await client.post("/api/v1/auth/telegram/miniapp", content=b"{" + b"x" * 524288)

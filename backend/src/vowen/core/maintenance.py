@@ -8,9 +8,35 @@ from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 from vowen.core.clock import Clock
 from vowen.modules.auth.android_challenge import AndroidChallenge
 from vowen.modules.auth.models import AccessToken, RefreshToken, Session, TelegramAssertion
+from vowen.modules.forms import service as forms
+from vowen.modules.forms.models import GuestSession, Invitation, Receipt
 
 
 async def prune_expired(db: AsyncSession, now: datetime) -> None:
+    invitations = (
+        await db.scalars(
+            select(Invitation)
+            .where(
+                (Invitation.retention_until <= now)
+                | (Invitation.expires_at <= now)
+                | Invitation.revoked_at.is_not(None)
+            )
+            .with_for_update(skip_locked=True)
+        )
+    ).all()
+    for invitation in invitations:
+        response = await forms.submission(db, invitation)
+        if invitation.retention_until <= now:
+            await forms.withdraw(db, response, now)
+        elif response.status == "draft":
+            forms.clear(response)
+    await db.execute(delete(GuestSession).where(GuestSession.expires_at <= now))
+    await db.execute(
+        delete(GuestSession).where(
+            GuestSession.receipt_id.in_(select(Receipt.id).where(Receipt.expires_at <= now))
+        )
+    )
+    await db.execute(delete(Receipt).where(Receipt.expires_at <= now))
     await db.execute(delete(AndroidChallenge).where(AndroidChallenge.expires_at <= now))
     await db.execute(delete(TelegramAssertion).where(TelegramAssertion.expires_at <= now))
     expired = select(Session.id).where(Session.expires_at <= now)

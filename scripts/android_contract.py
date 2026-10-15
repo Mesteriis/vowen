@@ -10,7 +10,13 @@ used = {'SessionTokens':'Tokens', 'MemberView':'Member', 'ParticipantView':'Part
         'RefreshRequest':'RefreshRequest', 'ProfilePatch':'ProfilePatch',
         'RelationView':'Relation', 'ProposeRelationCommand':'RelationProposal',
         'AcceptRelation':'RelationAcceptance', 'ExpectedVersion':'ExpectedVersion',
-        'ChangeVersion':'RelationChange', 'SessionView':'DeviceSession'}
+        'ChangeVersion':'RelationChange', 'SessionView':'DeviceSession',
+        'FormSchema':'FormSchema', 'Question':'FormQuestion', 'Option':'FormOption',
+        'Condition':'FormCondition','Visibility':'FormVisibility','FormView':'FormTemplate',
+        'FormEdit':'FormEdit','ReaderView':'FormReader','FormAccess':'FormAccess',
+        'InvitationCreate':'FormInvitationCreate','InvitationView':'FormInvitation',
+        'Answers':'FormAnswers','Submit':'FormSubmit','SubmissionView':'FormResult',
+        'Exchange':'GuestExchange'}
 
 
 def kotlin_type(prop):
@@ -20,10 +26,13 @@ def kotlin_type(prop):
             raise ValueError('Unsupported union')
         return kotlin_type(choices[0])+'?'
     if '$ref' in prop:
-        return used[prop['$ref'].split('/')[-1]]
+        name=prop['$ref'].split('/')[-1]
+        return 'kotlinx.serialization.json.JsonElement' if name=='JsonValue' else used[name]
     if prop.get('type')=='array':
         return 'List<'+kotlin_type(prop['items'])+'>'
-    kind={'string':'String','boolean':'Boolean','integer':'Int'}.get(prop.get('type'))
+    if prop.get('type')=='object':
+        return 'Map<String, kotlinx.serialization.json.JsonElement>'
+    kind={'string':'String','boolean':'Boolean','integer':'Int','number':'Double'}.get(prop.get('type'))
     if kind is None:
         raise ValueError('Unsupported native field')
     return kind
@@ -35,7 +44,7 @@ for source,target in used.items():
     fields=[]
     for name,prop in schemas[source]['properties'].items():
         kind=kotlin_type(prop)
-        if name not in schemas[source]['required']:
+        if name not in schemas[source].get('required', []):
             if not kind.endswith('?'):
                 kind+='?'
             kind+=' = null'

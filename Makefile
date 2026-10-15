@@ -33,6 +33,6 @@ contracts:
 	uv run --project backend python scripts/android_contract.py
 	pnpm --dir web generate-api
 check-contracts: contracts
-	git diff --exit-code -- contracts/openapi.json web/src/shared/api.d.ts android/app/src/main/java/org/vowen/app/ApiModels.kt
+	git diff --exit-code -- contracts/openapi.json contracts/form-schema/schema.json web/src/shared/api.d.ts android/app/src/main/java/org/vowen/app/ApiModels.kt
 secret-scan:
 	python3 scripts/secret_scan.py

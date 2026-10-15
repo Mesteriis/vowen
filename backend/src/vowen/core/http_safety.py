@@ -26,7 +26,11 @@ class HttpSafety:
             }
             self.last_sweep = now
         path = scope["path"]
-        if path.startswith("/api/v1/auth/"):
+        if (
+            path.startswith("/api/v1/auth/")
+            or path.startswith("/api/v1/guest/")
+            or path.endswith("/submit")
+        ):
             group = (
                 "status"
                 if path.endswith("/status")
@@ -76,6 +80,7 @@ class HttpSafety:
                         (b"cache-control", b"no-store"),
                         (b"x-content-type-options", b"nosniff"),
                         (b"referrer-policy", b"no-referrer"),
+                        (b"x-robots-tag", b"noindex, nofollow"),
                     ]
                 )
                 message = {**message, "headers": headers}

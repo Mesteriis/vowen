@@ -23,6 +23,7 @@ async def api(tmp_path: Path):
         ),
         telegram_bot_token_file=token_file,
         data_keyring_file=tmp_path / "keyring.json",
+        public_base_url="https://test",
     )
     if not settings.database_url.rsplit("/", 1)[-1].endswith("_test"):
         raise RuntimeError("Tests require a dedicated database ending in _test")
