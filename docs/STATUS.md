@@ -261,3 +261,9 @@ saving the original tab's still-visible input. A stale synchronizer token now tr
 one refresh/retry only if the server session identity and scope still match that page.
 Replacement exchanges are excluded from automatic retry. The five browser E2E pass
 with this case; no guest input is dropped or silently sent to a different capability.
+
+Final remote verification including the multi-tab fix:
+[CI run 38729308233](https://github.com/Mesteriis/vowen/actions/runs/38729308233)
+passed `backend-web` and `android` for code commit
+`3a5b1e826d0d03e5ae9163c1835e4790e8b3aa1e`. The implementation is fast-forwarded
+unchanged to `main`; this evidence-only follow-up uses `[skip ci]`.
