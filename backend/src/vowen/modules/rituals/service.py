@@ -10,6 +10,7 @@ from sqlalchemy.orm import load_only
 from vowen.core.crypto import EncryptedEnvelope, PayloadCipher
 from vowen.core.errors import AppError
 from vowen.modules.auth.service import MemberPrincipal
+from vowen.modules.notifications.models import MemberDelivery  # noqa: F401
 from vowen.modules.relations.policy import ResourceContext, authorize
 from vowen.modules.rituals.models import (
     Ritual,
@@ -235,7 +236,7 @@ async def notice(
     event: str | None = None,
 ) -> None:
     for uid in user_ids:
-        await db.execute(
+        nid = await db.scalar(
             insert(RitualNotice)
             .values(
                 id=uuid4(),
@@ -247,7 +248,14 @@ async def notice(
                 event_key=event or f"{kind}:{o.id if o else a.id}",
             )
             .on_conflict_do_nothing()
+            .returning(RitualNotice.id)
         )
+        if nid:
+            from vowen.modules.notifications.delivery import enqueue
+
+            await enqueue(
+                db, uid, now, ritual_notice_id=nid, occurrence_revision=o.revision if o else None
+            )
 
 
 async def suspend(
@@ -257,6 +265,9 @@ async def suspend(
     from datetime import timedelta
     from zoneinfo import ZoneInfo
 
+    from vowen.modules.notifications.delivery import suppress_scope
+
+    await suppress_scope(db, actor_id, target_id)
     query = select(RitualAssignment).where(RitualAssignment.status != "revoked")
     if actor_id is not None and target_id is not None:
         query = query.where(

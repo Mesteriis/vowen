@@ -78,12 +78,15 @@ async def record(db: AsyncSession, g: RewardGrant, uid: UUID, now: datetime) -> 
             created_at=now,
         )
     )
+    from vowen.modules.notifications.delivery import enqueue
+
     for target in {g.recipient_id, g.issuer_id}:
+        nid = uuid4()
         db.add(
-            RewardNotice(
-                id=uuid4(), grant_id=g.id, user_id=target, revision=g.revision, created_at=now
-            )
+            RewardNotice(id=nid, grant_id=g.id, user_id=target, revision=g.revision, created_at=now)
         )
+        await db.flush()
+        await enqueue(db, target, now, reward_notice_id=nid)
 
 
 async def award(db: AsyncSession, a: RitualAssignment, o: RitualOccurrence, now: datetime) -> None:

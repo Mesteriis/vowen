@@ -14,9 +14,12 @@ from aiogram.types import (
     CallbackQuery,
     InlineKeyboardButton,
     InlineKeyboardMarkup,
+    LinkPreviewOptions,
     Message,
     TelegramObject,
 )
+from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
 from vowen.core.clock import Clock
 from vowen.core.config import Settings
@@ -26,6 +29,9 @@ from vowen.core.errors import AppError
 from vowen.modules.auth.android_challenge import decide_challenge, present_challenge
 from vowen.modules.forms.delivery import deliver_one
 from vowen.modules.forms.models import BotContact
+from vowen.modules.identity.models import User
+from vowen.modules.notifications.delivery import deliver_one as deliver_member
+from vowen.modules.notifications.delivery import suppress_recipient
 
 
 class BotThrottle(BaseMiddleware):
@@ -77,6 +83,12 @@ def build_router(settings: Settings) -> Router:
                 contact = BotContact(telegram_id=message.from_user.id)
                 db.add(contact)
             contact.allowed = (message.text or "").split("@")[0] == "/notifications_on"
+            if not contact.allowed:
+                uid = await db.scalar(
+                    select(User.id).where(User.telegram_id == contact.telegram_id)
+                )
+                if uid:
+                    await suppress_recipient(db, uid)
         await message.answer("Notification preference saved / Настройка уведомлений сохранена")
 
     @router.message(CommandStart())
@@ -148,6 +160,32 @@ def build_router(settings: Settings) -> Router:
     return router
 
 
+async def deliver_updates(
+    sessions: async_sessionmaker[AsyncSession],
+    cipher: PayloadCipher,
+    bot: Bot,
+    base_url: str,
+) -> None:
+    async def send(chat_id: int, text: str) -> None:
+        await bot.send_message(
+            chat_id,
+            text,
+            parse_mode=None,
+            link_preview_options=LinkPreviewOptions(is_disabled=True),
+            request_timeout=30,
+        )
+
+    # A form delivery failure must not starve the independent member queue.
+    try:
+        await deliver_one(sessions, cipher, send)
+    except Exception:
+        logging.getLogger("vowen").warning("Form notification delivery unavailable")
+    try:
+        await deliver_member(sessions, base_url, send)
+    except Exception:
+        logging.getLogger("vowen").warning("Member notification delivery unavailable")
+
+
 async def run() -> None:
     settings = Settings()
     engine = engine_for(settings.database_url)
@@ -167,17 +205,14 @@ async def run() -> None:
         worker_engine = engine_for(settings.database_url)
         worker_sessions = sessions_for(worker_engine)
 
-        async def send(chat_id: int, text: str) -> None:
-            await bot.send_message(chat_id, text)
-
         async def worker() -> None:
             while True:
-                try:
-                    await deliver_one(
-                        worker_sessions, PayloadCipher(settings.data_keyring_file), send
-                    )
-                except Exception:
-                    logging.getLogger("vowen").warning("Notification delivery unavailable")
+                await deliver_updates(
+                    worker_sessions,
+                    PayloadCipher(settings.data_keyring_file),
+                    bot,
+                    settings.public_base_url,
+                )
                 await asyncio.sleep(5)
 
         delivery_task = asyncio.create_task(worker())
