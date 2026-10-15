@@ -804,3 +804,20 @@ bilateral consent, scope and pause boundaries. Ruff and mypy passed. The client
 session test covers debug login and denied replacement. Web participant selection
 and the role-dependent visual workspace are being integrated on feat/ui-context;
 this is local development work, not a production deployment or live Telegram proof.
+
+## Contextual web interface — integration in progress
+
+The real Mini App now has a shared day, a relationship selector, desktop sidebar
+and mobile bottom navigation. Contextual roles derive from relationship endpoints;
+profile labels grant no permissions. Assignment/proposal controls use current
+bilateral consents and scopes; API authorization remains authoritative. Personal
+pause, consent withdrawal, diary and sessions remain reachable. Existing recurring
+surveys remain available within Forms & surveys.
+
+Added supplied branding, a separate plain velvet page background, and a feathered
+render of the original embossed emblem. Automatic Telegram entry keeps the startup
+screen until authentication and profile loading finish, without mounting a login
+form in between. Outside Telegram, normal/manual and guarded local DEBUG_AUTH entry
+remain available. Current visual work is the Vue slice; Android design is pending.
+See root design-qa.md for evidence and remaining acceptance, rather than treating
+local build success as visual or live Telegram proof.

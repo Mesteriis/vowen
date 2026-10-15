@@ -13,6 +13,7 @@
     "generate-api": "openapi-typescript ../contracts/openapi.json -o src/shared/api.d.ts"
   },
   "dependencies": {
+    "@tabler/icons-vue": "3.49.0",
     "vue": "^3.5.13"
   },
   "devDependencies": {

@@ -36,3 +36,9 @@ artifacts/m5/
 
 # Local release outputs and acceptance evidence
 artifacts/release/
+
+# Local synthetic interface preview, never a production login entry
+web/.design-preview/
+
+# Local synthetic design QA captures
+artifacts/design/

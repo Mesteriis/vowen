@@ -1,3 +1,4 @@
+import {openSection,proposeRelationship} from './workspace'
 import {test,expect,type Page} from '@playwright/test'
 import {createHmac,randomUUID} from 'node:crypto'
 async function login(page:Page,id:number){
@@ -7,20 +8,25 @@ async function login(page:Page,id:number){
  await page.route('https://telegram.org/**',r=>r.fulfill({contentType:'application/javascript',body:''}))
  await page.addInitScript(raw=>Object.assign(window,{Telegram:{WebApp:{initData:raw,ready:()=>{}}}}),new URLSearchParams(fields).toString())
  await page.goto('/')
- await page.getByRole('button',{name:'Sign in with Telegram',exact:true}).click()
+ await expect(page.locator('.startup-screen')).toHaveCount(0)
 }
 test('discipline personal consent, revision, history and confirmation',async({page,browser})=>{
  await login(page,100000000207)
  const ctx=await browser.newContext({locale:'en-US'}),recipient=await ctx.newPage()
  await login(recipient,100000000208)
+ await proposeRelationship(page)
  await page.getByRole('combobox',{name:'Participant',exact:true}).selectOption({label:'Demo 8'})
- await page.getByRole('checkbox',{name:'discipline.propose',exact:true}).check()
- await page.getByRole('checkbox',{name:'discipline.review',exact:true}).check()
+ await page.getByRole('checkbox',{name:'Propose discipline',exact:true}).check()
+ await page.getByRole('checkbox',{name:'Review discipline',exact:true}).check()
  await page.getByLabel('Agreement text',{exact:true}).fill('Synthetic discipline authority')
  await page.getByRole('button',{name:'Propose',exact:true}).click()
  await page.getByRole('button',{name:'Accept this exact version and scopes',exact:true}).click()
  await recipient.getByRole('button',{name:'Refresh',exact:true}).click()
+ await openSection(recipient,'relations')
  await recipient.getByRole('button',{name:'Accept this exact version and scopes',exact:true}).click()
+ await page.getByRole('button',{name:'Refresh',exact:true}).click()
+ await openSection(page,'rules')
+ await openSection(recipient,'rules')
  const rules=page.locator('#rules'),recipientRules=recipient.locator('#rules')
  await rules.getByRole('button',{name:'New rule',exact:true}).click()
  await rules.getByLabel('Rule title',{exact:true}).fill('M4 agreed rule')
@@ -36,6 +42,8 @@ test('discipline personal consent, revision, history and confirmation',async({pa
  await recipientRules.getByRole('button',{name:'Accept rule',exact:true}).click()
  await recipientRules.getByRole('button',{name:'Confirm rule acceptance',exact:true}).click()
  await expect(recipientRules.getByText('active · effective',{exact:true})).toBeVisible()
+ await openSection(page,'discipline')
+ await openSection(recipient,'discipline')
  const panel=page.locator('#discipline'), rp=recipient.locator('#discipline')
  await panel.getByRole('button',{name:'Refresh discipline',exact:true}).click()
 
@@ -78,6 +86,8 @@ test('private diary, explicit readers, safe rendering and revocation',async({pag
  await login(page,100000000209)
  const ctx=await browser.newContext({locale:'en-US'}),reader=await ctx.newPage()
  await login(reader,100000000210)
+ await openSection(page,'journal')
+ await openSection(reader,'journal')
  const panel=page.locator('#journal'),rp=reader.locator('#journal')
  await panel.getByRole('button',{name:'New diary entry',exact:true}).click()
  await panel.getByLabel('Entry title',{exact:true}).fill('Private reflection')

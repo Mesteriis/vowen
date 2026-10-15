@@ -86,3 +86,19 @@ Keystore управляет криптографическими ключами 
 - Допустимость и условия публикации приложения в конкретном магазине.
 - Правовые обязанности конкретного оператора в конкретной юрисдикции.
 - Фактическая безопасность, сборка и тесты будущего приложения: исходный код ещё должен быть создан.
+
+### Plain velvet interface background (2026-10-15)
+
+`web/public/brand/vowen-velvet-texture.webp` is a generated texture created using the
+built-in image generation tool; it is not a participant photo. Final prompt:
+
+> Seamless repeating website background texture. Square flat edge-to-edge macro
+> photograph of very dark black velvet, dense soft short pile, fine irregular
+> directional fibers, subtle charcoal highlights and deep black shadows. Uniform
+> small-scale matte texture, orthographic straight-on diffuse grazing light,
+> tileable edges. No emblem, logo, text, objects, people, folds, spotlight or vignette.
+
+The owner-supplied velvet emblem remains unchanged. Its outer background is softly
+masked in CSS so it blends into this separate page texture, without scaling the
+emblem to fill the viewport. The generated emblem edit was rejected because it
+changed the original motif; it is not used by the app.

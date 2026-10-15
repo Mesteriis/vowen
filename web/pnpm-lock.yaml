@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@tabler/icons-vue':
+        specifier: 3.49.0
+        version: 3.49.0(vue@3.5.44(typescript@5.9.3))
       vue:
         specifier: ^3.5.13
         version: 3.5.44(typescript@5.9.3)
@@ -413,6 +416,14 @@ packages:
 
   '@rolldown/pluginutils@1.0.1':
     resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
+
+  '@tabler/icons-vue@3.49.0':
+    resolution: {integrity: sha512-p/g2/aVsUTdGaLwgV+X/E3vc+j8XkXWV2NgXAVT31/6sMf/CFAI3uvJ1r6YCi/UT8U2ctaF5fXUWr18bNVVr7g==}
+    peerDependencies:
+      vue: '>=3.0.1'
+
+  '@tabler/icons@3.49.0':
+    resolution: {integrity: sha512-l+GnSkFETx0U26icxv1VUFnxxiTqXfCcVRiRAnyMwibupM2S2L/hSaZ9gmSgz01rkrsH/93NvLsxykqdanc6lw==}
 
   '@types/chai@5.2.3':
     resolution: {integrity: sha512-Mw558oeA9fFbv65/y4mHtXDs9bPnFMZAL/jxdPFUpOHHIXX91mcgEHbS5Lahr+pwZFR8A7GQleRWeI6cGFC2UA==}
@@ -1443,6 +1454,13 @@ snapshots:
     optional: true
 
   '@rolldown/pluginutils@1.0.1': {}
+
+  '@tabler/icons-vue@3.49.0(vue@3.5.44(typescript@5.9.3))':
+    dependencies:
+      '@tabler/icons': 3.49.0
+      vue: 3.5.44(typescript@5.9.3)
+
+  '@tabler/icons@3.49.0': {}
 
   '@types/chai@5.2.3':
     dependencies:

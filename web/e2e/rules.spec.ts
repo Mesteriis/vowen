@@ -1,3 +1,4 @@
+import {openSection,proposeRelationship} from './workspace'
 import {test,expect} from '@playwright/test'
 import {createHmac,randomUUID} from 'node:crypto'
 async function login(page:import('@playwright/test').Page,id:number){
@@ -7,20 +8,25 @@ async function login(page:import('@playwright/test').Page,id:number){
  await page.route('https://telegram.org/**',r=>r.fulfill({contentType:'application/javascript',body:''}))
  await page.addInitScript(raw=>Object.assign(window,{Telegram:{WebApp:{initData:raw,ready:()=>{}}}}),new URLSearchParams(fields).toString())
  await page.goto('/')
- await page.getByRole('button',{name:'Sign in with Telegram',exact:true}).click()
+ await expect(page.locator('.startup-screen')).toHaveCount(0)
 }
 test('rule exact consent, separate replacement and recipient pause',async({page,browser})=>{
  await login(page,100000000204)
  const context=await browser.newContext({locale:'en-US'})
  const recipient=await context.newPage()
  await login(recipient,100000000202)
+ await proposeRelationship(page)
  await page.getByRole('combobox',{name:'Participant',exact:true}).selectOption({label:'Demo 2'})
  await page.getByLabel('Agreement text',{exact:true}).fill('Synthetic rules authority')
  await page.getByRole('button',{name:'Propose',exact:true}).click()
  await page.getByRole('button',{name:'Accept this exact version and scopes',exact:true}).click()
  await recipient.getByRole('button',{name:'Refresh',exact:true}).click()
+ await openSection(recipient,'relations')
  await recipient.getByRole('button',{name:'Accept this exact version and scopes',exact:true}).click()
  await expect(recipient.getByRole('button',{name:'Accept this exact version and scopes',exact:true})).toHaveCount(0)
+ await page.getByRole('button',{name:'Refresh',exact:true}).click()
+ await openSection(page,'rules')
+ await openSection(recipient,'rules')
  await page.getByRole('button',{name:'New rule',exact:true}).click()
  await page.getByLabel('Rule title',{exact:true}).fill('Daily check-in')
  await page.getByLabel('Rule description',{exact:true}).fill('First agreed text')

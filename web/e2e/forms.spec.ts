@@ -1,3 +1,4 @@
+import {openSection} from './workspace'
 import {test,expect} from '@playwright/test'
 import {createHmac,randomUUID} from 'node:crypto'
 
@@ -8,7 +9,8 @@ async function member(page:import('@playwright/test').Page,id:number) {
  await page.route('https://telegram.org/**',r=>r.fulfill({contentType:'application/javascript',body:''}))
  await page.addInitScript(raw=>Object.assign(window,{Telegram:{WebApp:{initData:raw,ready:()=>{}}}}),new URLSearchParams(fields).toString())
  await page.goto('/')
- await page.getByRole('button',{name:'Sign in with Telegram'}).click()
+ await expect(page.locator('.startup-screen')).toHaveCount(0)
+ await openSection(page,'forms')
 }
 
 test('visual creation, guest draft, review, receipt, reader result and withdrawal',async({page,browser})=>{

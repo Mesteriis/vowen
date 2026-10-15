@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import {onMounted,ref,watch} from 'vue'
+import {onMounted,ref,watch,computed} from 'vue'
 import type {components} from '../../shared/api'
 import type {SessionClient} from '../auth/session'
+import {useWorkspaceView} from '../workspace/context'
 type Rule=components['schemas']['RuleView']
 type Assignment=components['schemas']['RuleAssignmentView']
 const props=defineProps<{client:SessionClient;ru:boolean;me:components['schemas']['MemberView'];participants:components['schemas']['ParticipantView'][]}>()
+const view=useWorkspaceView()
 const templates=ref<Rule[]>([]),assignments=ref<Assignment[]>([]),busy=ref(false),error=ref('')
+const recipients=computed(()=>props.participants.filter(p=>view.recipients('rules.assign').includes(p.id)))
+const visibleAssignments=computed(()=>assignments.value.filter(view.rule))
 const history=ref<Rule[]>([]),historyFor=ref('')
 const editor=ref(false),selected=ref<Rule|null>(null),title=ref(''),description=ref('')
 const assigning=ref<Rule|null>(null),recipient=ref(''),managers=ref<string[]>([]),review=ref<Assignment|null>(null)
@@ -17,6 +21,7 @@ async function load(){
 }
 async function run(fn:()=>Promise<void>){busy.value=true;error.value='';try{await fn()}catch(e){error.value=e instanceof Error?e.message:'NETWORK_ERROR'}finally{busy.value=false}}
 onMounted(()=>run(load))
+watch(view.revision,()=>{recipient.value='';void run(load)})
 watch(recipient,id=>{managers.value=managers.value.filter(manager=>manager!==id)})
 watch(()=>props.me.paused,()=>{
  assignments.value=assignments.value.filter(a=>!props.me.paused||a.recipient_id===props.me.id)
@@ -56,10 +61,10 @@ async function decide(a:Assignment,action:string){await run(async()=>{
    <button type="button" :disabled="busy" @click="editor=false">{{t('Cancel','Отмена')}}</button>
   </form>
   <article v-for="rule in templates" :key="rule.id">
-   <h3>{{rule.title}}</h3><p>{{rule.description}}</p><p>{{rule.status}} · {{rule.version_id}}</p>
+   <h3>{{rule.title}}</h3><p>{{rule.description}}</p><p class="muted">{{rule.status==='draft'?t('Draft','Черновик'):rule.status==='published'?t('Published','Опубликовано'):t('Archived','В архиве')}} · {{t('Version','Версия')}} {{rule.revision}}</p>
    <button :disabled="busy||me.paused" @click="edit(rule)">{{rule.status==='draft'?t('Edit rule draft','Изменить черновик правила'):t('New rule version','Новая версия правила')}}</button>
    <button v-if="rule.status==='draft'" :disabled="busy||me.paused" @click="transition(rule,'publish')">{{t('Publish rule','Опубликовать правило')}}</button>
-   <button v-if="rule.status==='published'" :disabled="busy||me.paused" @click="startAssign(rule)">{{t('Assign rule','Назначить правило')}}</button>
+   <button v-if="rule.status==='published'&&recipients.length" :disabled="busy||me.paused" @click="startAssign(rule)">{{t('Assign rule','Назначить правило')}}</button>
    <button :disabled="busy" @click="showHistory(rule)">{{t('Rule version history','История версий правила')}}</button>
    <button v-if="rule.status!=='archived'" :disabled="busy" @click="transition(rule,'archive')">{{t('Archive rule','Архивировать правило')}}</button>
   </article>
@@ -70,7 +75,7 @@ async function decide(a:Assignment,action:string){await run(async()=>{
   </section>
   <form v-if="assigning" @submit.prevent="assign">
    <h3>{{assigning.title}}</h3>
-   <label>{{t('Rule recipient','Адресат правила')}}<select v-model="recipient" required><option value="" disabled>—</option><option v-for="p in participants.filter(p=>p.id!==me.id)" :key="p.id" :value="p.id">{{p.display_name}}</option></select></label>
+   <label>{{t('Rule recipient','Адресат правила')}}<select v-model="recipient" required><option value="" disabled>—</option><option v-for="p in recipients" :key="p.id" :value="p.id">{{p.display_name}}</option></select></label>
    <fieldset><legend>{{t('Explicit managers','Управляющие')}}</legend><label v-for="p in participants.filter(p=>p.id!==recipient)" :key="p.id"><input v-model="managers" type="checkbox" :value="p.id">{{t('Manager: ','Управляющий: ')}}{{p.display_name}}</label></fieldset>
    <p>{{t('Only managers with current rules authority can act. Each recipient decides separately.','Требуются актуальные полномочия управляющих. Каждый адресат решает отдельно.')}}</p>
    <button :disabled="busy||me.paused">{{t('Send rule proposal','Предложить правило')}}</button>
@@ -78,7 +83,7 @@ async function decide(a:Assignment,action:string){await run(async()=>{
   </form>
   <h3>{{t('Assignments and history','Назначения и история')}}</h3>
   <p v-if="!assignments.length">{{t('No visible assignments','Нет доступных назначений')}}</p>
-  <article v-for="a in assignments" :key="a.id">
+  <article v-for="a in visibleAssignments" :key="a.id">
    <h4>{{a.title}} · {{name(a.recipient_id)}}</h4><p>{{a.description}}</p>
    <p>{{a.status}} · {{a.effective&&!(me.paused&&a.recipient_id===me.id)?'effective':'inactive'}}</p>
    <p>{{t('Version','Версия')}}: {{a.rule_version_id}}</p>

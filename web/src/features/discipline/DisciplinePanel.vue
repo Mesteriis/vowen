@@ -1,12 +1,16 @@
 <script setup lang="ts">
-import {onMounted,ref,watch} from 'vue'
+import {onMounted,ref,watch,computed} from 'vue'
 import type {components} from '../../shared/api'
 import type {SessionClient} from '../auth/session'
+import {useWorkspaceView} from '../workspace/context'
 type RecordView=components['schemas']['DisciplineView']
 type Assignment=components['schemas']['RuleAssignmentView']
 type Occurrence=components['schemas']['OccurrenceView']
 const props=defineProps<{client:SessionClient;ru:boolean;me:components['schemas']['MemberView'];participants:components['schemas']['ParticipantView'][]}>()
+const view=useWorkspaceView()
 const rows=ref<RecordView[]>([]),rules=ref<Assignment[]>([]),occurrences=ref<Occurrence[]>([])
+const recipients=computed(()=>props.participants.filter(p=>view.recipients('discipline.propose').includes(p.id)))
+const visibleRows=computed(()=>rows.value.filter(r=>view.pair(r.author_id,r.recipient_id)||!!view.selected.value&&r.recipient_id===(view.selected.value.dominant_user_id===props.me.id?view.selected.value.submissive_user_id:view.selected.value.dominant_user_id)&&r.reviewer_ids.includes(props.me.id)))
 const busy=ref(false),error=ref(''),editing=ref(false),selected=ref<RecordView|null>(null),review=ref<RecordView|null>(null),history=ref('')
 const recipient=ref(''),reviewers=ref<string[]>([]),description=ref(''),conditions=ref(''),deadline=ref(''),rule=ref(''),occurrence=ref(''),comment=ref(''),key=ref('')
 const t=(en:string,ru:string)=>props.ru?ru:en
@@ -15,6 +19,7 @@ const current=(r:RecordView)=>r.versions.find(v=>v.id===r.version_id)!
 async function load(){rows.value=await props.client.get<RecordView[]>('/discipline-records');rules.value=await props.client.get<Assignment[]>('/rule-assignments');occurrences.value=await props.client.get<Occurrence[]>('/ritual-occurrences')}
 async function run(fn:()=>Promise<void>){busy.value=true;error.value='';try{await fn()}catch(e){error.value=e instanceof Error?e.message:'NETWORK_ERROR';rows.value=[]}finally{busy.value=false}}
 onMounted(()=>run(load))
+watch(view.revision,()=>{recipient.value='';void run(load)})
 watch(()=>props.me.paused,()=>{rows.value=rows.value.filter(r=>r.recipient_id===props.me.id);review.value=null;void run(load)})
 function edit(r:RecordView|null){const v=r?current(r):null;selected.value=r;recipient.value=r?.recipient_id??'';reviewers.value=r?.reviewer_ids??[];description.value=v?.description??'';conditions.value=v?.conditions??'';deadline.value=v?.deadline??'';rule.value=v?.rule_version_id??'';occurrence.value=v?.occurrence_id??'';key.value=crypto.randomUUID();editing.value=true}
 async function save(){await run(async()=>{
@@ -30,10 +35,10 @@ async function act(r:RecordView,action:string){await run(async()=>{await props.c
  <h2 id="discipline-heading">{{t('Discipline','Дисциплина')}}</h2>
  <p>{{t('A proposal describes an alleged event, not an agreed fact. Acceptance is personal and can be withdrawn.','Предложение описывает предполагаемое событие, а не установленный факт. Согласие личное и может быть отозвано.')}}</p>
  <button :disabled="busy" @click="run(load)">{{t('Refresh discipline','Обновить дисциплину')}}</button>
- <button :disabled="busy||me.paused" @click="edit(null)">{{t('New discipline proposal','Новое дисциплинарное предложение')}}</button>
+ <button :disabled="busy||me.paused" v-if="recipients.length" @click="edit(null)">{{t('New discipline proposal','Новое дисциплинарное предложение')}}</button>
  <p v-if="error" role="alert">{{error}}</p>
  <form v-if="editing" @submit.prevent="save">
-  <label>{{t('Discipline recipient','Адресат записи')}}<select :aria-label="t('Discipline recipient','Адресат записи')" v-model="recipient" required :disabled="!!selected||busy" @change="rule='';occurrence='';reviewers=reviewers.filter(id=>id!==recipient)"><option value="" disabled>—</option><option v-for="p in participants.filter(p=>p.id!==me.id)" :key="p.id" :value="p.id">{{p.display_name}}</option></select></label>
+  <label>{{t('Discipline recipient','Адресат записи')}}<select :aria-label="t('Discipline recipient','Адресат записи')" v-model="recipient" required :disabled="!!selected||busy" @change="rule='';occurrence='';reviewers=reviewers.filter(id=>id!==recipient)"><option value="" disabled>—</option><option v-for="p in recipients" :key="p.id" :value="p.id">{{p.display_name}}</option></select></label>
   <label>{{t('Description of alleged event','Описание предполагаемого события')}}<textarea v-model="description" required maxlength="10000" /></label>
   <label>{{t('Proposed conditions','Предлагаемые условия')}}<textarea v-model="conditions" required maxlength="10000" /></label>
   <label>{{t('Deadline (ISO 8601 with timezone, optional)','Срок (ISO 8601 с часовым поясом, необязательно)')}}<input v-model="deadline" placeholder="2026-11-01T18:00:00+01:00"></label>
@@ -45,7 +50,7 @@ async function act(r:RecordView,action:string){await run(async()=>{await props.c
  </form>
  <p v-if="!rows.length">{{t('No visible discipline records','Нет доступных дисциплинарных записей')}}</p>
  <label>{{t('Transition comment (optional)','Комментарий к действию (необязательно)')}}<textarea v-model="comment" maxlength="5000" /></label>
- <article v-for="r in rows" :key="r.id">
+ <article v-for="r in visibleRows" :key="r.id">
   <h3>{{name(r.author_id)}} → {{name(r.recipient_id)}}</h3><p>{{current(r).description}}</p><p>{{current(r).conditions}}</p><p>{{r.status}}</p>
   <p>{{t('Reviewers','Проверяющие')}}: {{r.reviewer_ids.map(name).join(', ')}}</p>
   <p>{{t('Exact version','Точная версия')}}: {{r.version_id}}</p>
