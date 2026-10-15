@@ -1,4 +1,4 @@
-# Android capabilities at M2 + M3 rules
+# Android capabilities at M2 + M3
 
 | Flow | Native Android | Mini App / guest web |
 |---|---|---|
@@ -7,12 +7,13 @@
 | Rules: drafts, versions, publish/archive, assignment, consent/history | Native screens implemented | Implemented |
 | Ritual templates, schedules, occurrences, reports/reviews/history | Native screens implemented | Implemented |
 | Supplied crest / velvet startup | Local assets, actual bootstrap | Local assets, actual loading |
-| Rewards | Not implemented | Not implemented |
 | Basic form builder / new version / publish | Implemented, ten question kinds | Implemented |
 | Conditional rule editor / preview | Existing rules preserved; editor deferred | Implemented |
 | Internal and guest invitation / reader selection | Implemented, default 7-day invite / 90-day retention after submission | Implemented, editable limits |
 | Reader removal / invitation revoke / archive | Use Mini App | Implemented |
 | Internal drafts / review / submit / results / delete | Implemented | Implemented |
+| Ritual evidence: links, photo/video, required policy | Native system picker/save; protected API, bounded memory | Implemented, authenticated download |
+| Reward catalogue, manual/automatic offers, accept/decline/deliver/cancel | Native Compose | Implemented |
 | Guest form / independent receipt / delete | Native entry by pasting HTTPS link | Standalone /f and /r, no Telegram |
 | Guest credential persistence | Memory-only ViewModel survives activity recreation; closing loses draft capability | Secure HttpOnly cookie, at most 24 hours |
 | Automatic App Links | Not implemented | Secret links open in browser |

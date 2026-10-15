@@ -204,3 +204,8 @@ The velvet image is centered against the startup canvas with a serif wordmark an
 - **Don't** reproduce miniature low-contrast showcase text in functional controls.
 - **Don't** invent portraits, ratings, points or activity metrics to fill the design.
 - **Don't** add a fake loading percentage or a cosmetic minimum startup delay.
+
+<!-- Implementation extension 2026-10-15: rewards reuse catalogue rows and grant cards
+with status/history and explicit native actions; reports add bounded file selection
+and HTTPS links inside the existing protected dialog. These preserve current tokens.
+Recipient grants lead on native; catalogue follows. Files are saved/downloaded explicitly. -->

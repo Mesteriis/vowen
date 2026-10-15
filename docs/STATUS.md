@@ -20,7 +20,7 @@ VOWEN_AGENT_BRIEF.md; no separate matching brief was found beside the archive.
   API/PostgreSQL with synthetic signed Telegram data.
 - **M2: implemented and locally verified; remote CI acceptance below.** Versioned forms,
   member/guest answers, receipts, encrypted drafts, reader snapshots and delivery outbox.
-- **M3: rules and rituals slices implemented; rewards pending.** See dated evidence below.
+- **M3: rules, rituals and rewards implemented; Telegram notification delivery pending.** See dated evidence below.
 - **M4–M6: pending.** Diary, discipline and production release are not implemented.
 
 ## Implemented behavior
@@ -393,3 +393,56 @@ HTTPS smoke passed, and served crest/velvet/font bytes match the repository asse
 The local-CA bypass belongs only to the loopback smoke script. This evidence-only
 follow-up uses [skip ci]; the identical checked implementation is fast-forwarded
 to main. No production release, live Telegram delivery or physical-device claim.
+
+
+## M3 / rewards and execution evidence — 2026-10-15
+
+The user's direct follow-up brings HTTPS link/photo/video proof into this slice,
+overriding the original attachment deferral for ritual reports. Alembic 0011 stores
+bounded AES-GCM encrypted media in PostgreSQL, with occurrence/owner/report binding,
+unique request keys, serialized quotas and 24-hour cleanup of unsubmitted uploads.
+Assignments fix required/optional proof and allowed kinds. Reports keep immutable
+attempts, encrypted links and attached proof; retry with changed proof conflicts.
+Closing/reopening a report restores staged uploads; owners can discard them.
+Downloads recheck report ACL each time; author/assign-only authority does not read
+proof. URLs are never fetched or embedded. JPEG/PNG/MP4/WebM basic signatures are
+checked; original metadata is preserved and no antivirus/transcoding claim is made.
+
+Alembic 0012 adds encrypted immutable reward versions, explicit assignment policies,
+unique manual/automatic grants and append-only transition history. Recipient accepts
+or declines an offer; issuer delivers an accepted offer or cancels an undelivered one
+with current rewards.grant scope. Delivered/declined/cancelled are final. Earned history
+survives pauses and relationship withdrawal. Both approval paths (explicit reviewer and
+configured approval-free completion) atomically offer the exact policy version with
+neutral in-app notices. Current direct grant scope is required for a new automatic offer;
+existing earned grants are never retracted. Concurrent decisions and duplicate events
+cannot create another grant for the same occurrence/policy/recipient.
+
+Both Mini App and native Compose Android implement catalogue/version creation, manual
+offers, automatic reward choice at assignment, transitions/history, proof requirements,
+HTTPS links, photo/video upload and protected download/save. Android uses system
+OpenDocument/CreateDocument, bounded off-main-thread IO and no stored source URI.
+Native grant actions lead ahead of the author catalogue. Existing supplied artwork,
+local serif and adaptive navigation are preserved.
+
+Local evidence: 116 backend tests on PostgreSQL, 3 Vitest, 8 real API/browser E2E,
+11 JVM tests and 23 Compose tests on the owned Android 16 AVD. The combined browser
+path accepts a rule, assigns a ritual with required proof/reward, uploads/restores a
+photo, submits/revises/approves, verifies byte-identical authenticated download and one
+automatic grant, accepts/delivers it, then creates and declines a manual offer.
+Native screen tests check required-proof gating/callback fields and earned acceptance
+while paused; actual MainActivity screenshots cover phone/tablet proof dialogs and
+reward navigation with an AndroidTest-only synthetic transport. They do not prove
+native-to-real-server auth, physical picker/Keystore behavior or real-device video IO.
+
+Implementation defaults: optional proof/all types unless author selects otherwise;
+8 MiB/file, three proofs/report, 32 MiB/occurrence, 128 MiB/member; 24h staged expiry.
+Base64 transport increases transfer/memory overhead, and encrypted DB blobs enlarge
+backups. Bound proof follows report history without a separate expiry/deletion policy.
+Automatic policy is fixed for an assignment and requires current grant scope at approval;
+changing proof/reward policy requires a new assignment. These are starting decisions,
+not separately confirmed preferences. Operational details: operations/rewards-evidence.md.
+
+Remaining: neutral Telegram delivery for rituals/rewards, real Telegram login/delivery,
+physical file-picker/video performance and production backup/restore acceptance. No points,
+E2EE, automatic punishment, in-app video player or verification of real-world proof is claimed.
