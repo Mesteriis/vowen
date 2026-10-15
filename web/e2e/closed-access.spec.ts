@@ -117,6 +117,9 @@ test('compact session rows identify this device and revoke another session',asyn
  await telegram(page,100000000207)
  const otherContext=await browser.newContext({locale:'en-US'}),other=await otherContext.newPage()
  await telegram(other,100000000207)
+ // Let initial panel reads finish before revocation; otherwise an in-flight
+ // read can already end this session before the explicit refresh below.
+ await other.waitForLoadState('networkidle')
  await page.getByRole('button',{name:'Refresh',exact:true}).click()
  await openSection(page,'sessions')
  await expect(page.locator('.session-row[data-current="true"]')).toContainText('This device')
