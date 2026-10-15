@@ -5,6 +5,7 @@ from typing import Any
 import typer
 from sqlalchemy import select
 
+from vowen.cli.relations import relations
 from vowen.core.clock import Clock
 from vowen.core.config import Settings
 from vowen.core.crypto import init_keyring
@@ -19,6 +20,7 @@ users = typer.Typer()
 instance = typer.Typer()
 app.add_typer(users, name="users")
 app.add_typer(instance, name="instance")
+app.add_typer(relations, name="relations")
 
 
 async def execute_user(action: str, telegram_id: int = 0, display_name: str = "") -> None:
