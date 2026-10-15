@@ -45,8 +45,6 @@ def main() -> None:
             args.alias,
             "--ks-pass",
             f"file:{args.password_file}",
-            "--key-pass",
-            f"file:{args.password_file}",
             "--v1-signing-enabled",
             "false",
             "--out",

@@ -43,7 +43,7 @@ secret-scan:
 .PHONY: test-ops release-images release-android
 RELEASE_DIR ?= artifacts/release/$(shell git rev-parse --short HEAD)
 test-ops:
-	uv run --project backend ruff check --config backend/pyproject.toml scripts/release.py scripts/sign_apk.py scripts/ops scripts/tests
+	uv run --project backend ruff check --config backend/pyproject.toml scripts/release.py scripts/sign_apk.py scripts/normalize_install.py scripts/ops scripts/tests
 	uv run --project backend pytest scripts/tests -q
 release-images:
 	python3 scripts/release.py --kind images --verify-repeat --output $(RELEASE_DIR)/images

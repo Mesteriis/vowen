@@ -173,3 +173,75 @@ def test_real_restic_roundtrip_wrong_key_and_scoped_retention(tmp_path):
     )
     assert rejected.returncode != 0
     assert not rejected.stdout
+
+
+def test_calendar_retention_really_removes_old_duplicates_but_keeps_other_sets(
+    tmp_path,
+):
+    import json
+    import subprocess
+
+    repo, key = tmp_path / "repo", tmp_path / "password"
+    key.write_text("synthetic fixture password")
+    key.chmod(0o600)
+    environment = dict(
+        os.environ, RESTIC_REPOSITORY=str(repo), RESTIC_PASSWORD_FILE=str(key)
+    )
+    subprocess.run(["restic", "init"], env=environment, check=True, capture_output=True)
+    for hour in range(6):
+        subprocess.run(
+            [
+                "restic",
+                "backup",
+                "--stdin",
+                "--stdin-filename",
+                "snapshot.tar",
+                "--host",
+                "vowen-ct999",
+                "--tag",
+                "vowen-app",
+                "--time",
+                f"2025-01-01 0{hour}:00:00",
+            ],
+            input=b"synthetic fixture",
+            env=environment,
+            check=True,
+            capture_output=True,
+        )
+    subprocess.run(
+        [
+            "restic",
+            "backup",
+            "--stdin",
+            "--stdin-filename",
+            "other",
+            "--host",
+            "other-host",
+            "--tag",
+            "other-tag",
+            "--time",
+            "2025-01-01 01:00:00",
+        ],
+        input=b"other fixture",
+        env=environment,
+        check=True,
+        capture_output=True,
+    )
+    subprocess.run(
+        backup.retention_command("vowen-ct999", 7, 4, 6),
+        env=environment,
+        check=True,
+        capture_output=True,
+    )
+    result = subprocess.run(
+        ["restic", "snapshots", "--json"],
+        env=environment,
+        check=True,
+        capture_output=True,
+    )
+    snapshots = json.loads(result.stdout)
+    own = [s for s in snapshots if s["hostname"] == "vowen-ct999"]
+    # Newer restic also preserves the oldest snapshot when calendar buckets are sparse.
+    assert 3 <= len(own) < 6
+    assert {s["time"][11:13] for s in own} >= {"03", "04", "05"}
+    assert len([s for s in snapshots if s["hostname"] == "other-host"]) == 1

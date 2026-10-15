@@ -3,7 +3,12 @@ COPY --from=ghcr.io/astral-sh/uv:0.12.11@sha256:79c6f4776b851471cc73b7d21d0cc834
 WORKDIR /app/backend
 COPY backend/pyproject.toml backend/uv.lock ./
 COPY backend/src ./src
-RUN uv sync --frozen --no-dev
+COPY scripts/normalize_install.py /tmp/normalize_install.py
+ARG SOURCE_DATE_EPOCH=0
+RUN find . -exec touch -h -d "@$SOURCE_DATE_EPOCH" {} + \
+    && uv sync --frozen --no-dev --no-cache --no-editable \
+    && python /tmp/normalize_install.py .venv/lib/python3.13/site-packages \
+    && rm /tmp/normalize_install.py
 COPY backend/alembic.ini ./
 COPY backend/migrations ./migrations
 ENV PATH="/app/backend/.venv/bin:$PATH"

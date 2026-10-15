@@ -151,6 +151,8 @@ def main() -> None:
                         "testReleaseUnitTest",
                         "lintRelease",
                         "assembleRelease",
+                        f"-PvowenVersionCode={epoch // 60}",
+                        f"-PvowenVersionName=0.1.0-alpha+{revision[:7]}",
                     ],
                     cwd=tree / "android",
                     env=environment,

@@ -4,6 +4,7 @@ on:
   push:
     branches: [feat/m6]
     tags: ['v*']
+    paths-ignore: ['docs/**', 'README.md', 'README.ru.md']
 permissions:
   contents: read
 jobs:

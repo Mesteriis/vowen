@@ -31,3 +31,29 @@ def test_archive_rejects_symlink(tmp_path):
 
     with pytest.raises(ValueError):
         release.archive_tree(tree, tmp_path / "out.tar.gz", 1234567890)
+
+
+def test_normalize_install_removes_only_cache_metadata_and_updates_record(tmp_path):
+    import csv
+
+    normalize_spec = importlib.util.spec_from_file_location(
+        "normalize_install", MODULE.parent / "normalize_install.py"
+    )
+    module = importlib.util.module_from_spec(normalize_spec)
+    normalize_spec.loader.exec_module(module)
+    dist = tmp_path / "fixture-1.dist-info"
+    dist.mkdir()
+    (dist / "uv_cache.json").write_text('{"timestamp":"variable fixture"}')
+    metadata = dist / "METADATA"
+    metadata.write_bytes(b"public package metadata")
+    rows = [
+        ["fixture-1.dist-info/uv_cache.json", "variable-hash", "42"],
+        ["fixture-1.dist-info/METADATA", "unchanged-hash", "23"],
+    ]
+    with (dist / "RECORD").open("w", newline="") as stream:
+        csv.writer(stream).writerows(rows)
+    module.normalize(tmp_path)
+    assert not (dist / "uv_cache.json").exists()
+    assert metadata.read_bytes() == b"public package metadata"
+    with (dist / "RECORD").open(newline="") as stream:
+        assert list(csv.reader(stream)) == rows[1:]
