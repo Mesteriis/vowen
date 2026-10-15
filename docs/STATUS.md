@@ -376,3 +376,10 @@ performance and production backup/restore remain unverified or unimplemented; at
 remain outside the initial MVP. Next concrete M3 slice: reward catalogue and manual grant,
 then an idempotent automatic grant from approved occurrence with a PostgreSQL race test
 and the full rule → ritual → approval → exactly-one-reward E2E.
+
+The first final CI found a pre-existing internal-form E2E ordering race: the preview
+already displayed the answer before submission committed, so the author's refresh
+could happen too early. A 500ms injected submit delay reproduced the failure locally.
+The test now waits for the recipient's server-loaded result article before the author
+refreshes, and waits for deletion to finish before checking reader withdrawal. No
+production behavior, timeout, retry or CI check was relaxed.
