@@ -20,7 +20,8 @@ VOWEN_AGENT_BRIEF.md; no separate matching brief was found beside the archive.
   API/PostgreSQL with synthetic signed Telegram data.
 - **M2: implemented and locally verified; remote CI acceptance below.** Versioned forms,
   member/guest answers, receipts, encrypted drafts, reader snapshots and delivery outbox.
-- **M3–M6: not implemented.** No diary, ritual, discipline or reward feature claims.
+- **M3: rules and rituals slices implemented; rewards pending.** See dated evidence below.
+- **M4–M6: pending.** Diary, discipline and production release are not implemented.
 
 ## Implemented behavior
 
@@ -321,3 +322,57 @@ evidence-only documentation commit uses `[skip ci]`; it changes no code or test 
 Final rebuilt Compose API/proxy/migration are healthy and the loopback HTTPS smoke passed.
 Remote CI compiles Compose instrumentation; the 16 actual instrumentation tests ran locally
 on the owned Android 16 AVD, now stopped. No live bot request was made.
+
+
+## M3 / rituals and brand assets — 2026-10-15
+
+Alembic 0010 adds immutable encrypted ritual versions, per-recipient assignments,
+versioned once/daily/weekly schedules, unique local-day occurrences, encrypted report
+attempts and explicit reviewer decisions. The worker bounds recovery (50 assignments,
+31 days per transaction), handles DST gaps/folds including half-hour transitions,
+keeps submitted reports available for review and suppresses old due-notice bursts.
+Concurrent retries preserve one assignment/report/slot; incompatible reviewers return
+one success and one revision conflict. Authors do not gain access to reports by authoring
+or assigning. Issuers with current assign-only scope can manage assignment metadata.
+
+Mini App and native Compose Android implement creation/publication/version history,
+individual assignment/schedule editing, pause/resume/revoke, reports, revisions, review
+and history. User-supplied gold crest and velvet startup art are bundled locally in both
+clients. Startup follows actual loading and releases after failure, without a timed delay.
+The dark gold/burgundy direction comes from the supplied showcase; screen contents are
+real ACL-visible records, with no fabricated participants, progress or reward data.
+Android uses selected tabs on phone and a sidebar at expanded width. The same locally
+bundled OFL Cormorant Garamond display face supplies headings/wordmarks in both clients;
+system body/control fonts remain readable. State labels are RU/EN and times explicitly
+use the member profile timezone. Mobile first occurrence title/state viewport assertions
+cover the compact top area.
+
+Verified locally on the final implementation: 107 backend tests on PostgreSQL, 3 Vitest,
+8 real API/browser E2E, 10 Android JVM tests, native lint/debug/instrumentation APK build,
+and 21 Compose instrumentation tests on the owned Android 16 AVD. Real MainActivity
+phone/tablet viewport screenshots use an AndroidTest-only synthetic transport; they
+prove native layout/navigation/insets, not native-to-live-server authentication.
+Ruff, strict mypy, ESLint, vue-tsc, web build, contract regeneration and heuristic secret
+scan passed. No runtime dependencies were added.
+
+Whole-branch review fixes have observed RED-to-GREEN regressions: assignment resume
+skips the paused interval even when worker was stopped; assign-only issuers retain
+metadata management without report access; native checkboxes have explicit accessible
+names. A further regression covers account disable/re-enable during worker downtime.
+Personal, relationship, assignment and account withdrawal cancel open slots and advance
+watermarks, so disabled days cannot become retrospective obligations. Submitted history
+is retained. No automatic punishment exists.
+
+Scheduling decisions (implementation defaults, not separately confirmed preferences):
+report window 24h, configurable 1–168; needs_changes renews that same window from review
+time; future schedule edits start tomorrow or later; only one pending edit; timezone
+changes require a separate assignment. Paused/disabled days are never replayed. These
+tradeoffs and operational commands are in operations/rituals.md.
+
+Live Telegram acceptance is limited to Bot API getMe for the supplied token. No bot
+message, real member login or ritual delivery is claimed. Ritual notifications are
+neutral in-app records. Rewards, Telegram ritual delivery, attachments, physical-device
+performance and production backup/restore remain unverified or unimplemented; attachments
+remain outside the initial MVP. Next concrete M3 slice: reward catalogue and manual grant,
+then an idempotent automatic grant from approved occurrence with a PostgreSQL race test
+and the full rule → ritual → approval → exactly-one-reward E2E.

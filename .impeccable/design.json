@@ -1,0 +1,427 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-15T13:51:46.624637+00:00",
+  "title": "Design System: Vowen",
+  "extensions": {
+    "colorMeta": {
+      "background": {
+        "role": "neutral",
+        "displayName": "Background",
+        "tonalRamp": [
+          "oklch(15% 0.0027 67.63)",
+          "oklch(26% 0.0027 67.63)",
+          "oklch(38% 0.0027 67.63)",
+          "oklch(49% 0.0027 67.63)",
+          "oklch(61% 0.0027 67.63)",
+          "oklch(72% 0.0027 67.63)",
+          "oklch(84% 0.0027 67.63)",
+          "oklch(95% 0.0027 67.63)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "tonalRamp": [
+          "oklch(15% 0.0062 56.01)",
+          "oklch(26% 0.0062 56.01)",
+          "oklch(38% 0.0062 56.01)",
+          "oklch(49% 0.0062 56.01)",
+          "oklch(61% 0.0062 56.01)",
+          "oklch(72% 0.0062 56.01)",
+          "oklch(84% 0.0062 56.01)",
+          "oklch(95% 0.0062 56.01)"
+        ]
+      },
+      "raised": {
+        "role": "neutral",
+        "displayName": "Raised",
+        "tonalRamp": [
+          "oklch(15% 0.0121 55.72)",
+          "oklch(26% 0.0121 55.72)",
+          "oklch(38% 0.0121 55.72)",
+          "oklch(49% 0.0121 55.72)",
+          "oklch(61% 0.0121 55.72)",
+          "oklch(72% 0.0121 55.72)",
+          "oklch(84% 0.0121 55.72)",
+          "oklch(95% 0.0121 55.72)"
+        ]
+      },
+      "inset": {
+        "role": "neutral",
+        "displayName": "Inset",
+        "tonalRamp": [
+          "oklch(15% 0.0026 67.65)",
+          "oklch(26% 0.0026 67.65)",
+          "oklch(38% 0.0026 67.65)",
+          "oklch(49% 0.0026 67.65)",
+          "oklch(61% 0.0026 67.65)",
+          "oklch(72% 0.0026 67.65)",
+          "oklch(84% 0.0026 67.65)",
+          "oklch(95% 0.0026 67.65)"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Text",
+        "tonalRamp": [
+          "oklch(15% 0.0205 74.66)",
+          "oklch(26% 0.0205 74.66)",
+          "oklch(38% 0.0205 74.66)",
+          "oklch(49% 0.0205 74.66)",
+          "oklch(61% 0.0205 74.66)",
+          "oklch(72% 0.0205 74.66)",
+          "oklch(84% 0.0205 74.66)",
+          "oklch(95% 0.0205 74.66)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15% 0.0365 70.03)",
+          "oklch(26% 0.0365 70.03)",
+          "oklch(38% 0.0365 70.03)",
+          "oklch(49% 0.0365 70.03)",
+          "oklch(61% 0.0365 70.03)",
+          "oklch(72% 0.0365 70.03)",
+          "oklch(84% 0.0365 70.03)",
+          "oklch(95% 0.0365 70.03)"
+        ]
+      },
+      "gold": {
+        "role": "primary",
+        "displayName": "Gold",
+        "tonalRamp": [
+          "oklch(15% 0.0961 80.31)",
+          "oklch(26% 0.0961 80.31)",
+          "oklch(38% 0.0961 80.31)",
+          "oklch(49% 0.0961 80.31)",
+          "oklch(61% 0.0961 80.31)",
+          "oklch(72% 0.0961 80.31)",
+          "oklch(84% 0.0961 80.31)",
+          "oklch(95% 0.0961 80.31)"
+        ]
+      },
+      "gold-hover": {
+        "role": "primary",
+        "displayName": "Gold Hover",
+        "tonalRamp": [
+          "oklch(15% 0.0709 79.28)",
+          "oklch(26% 0.0709 79.28)",
+          "oklch(38% 0.0709 79.28)",
+          "oklch(49% 0.0709 79.28)",
+          "oklch(61% 0.0709 79.28)",
+          "oklch(72% 0.0709 79.28)",
+          "oklch(84% 0.0709 79.28)",
+          "oklch(95% 0.0709 79.28)"
+        ]
+      },
+      "on-gold": {
+        "role": "primary",
+        "displayName": "On Gold",
+        "tonalRamp": [
+          "oklch(15% 0.0264 60.70)",
+          "oklch(26% 0.0264 60.70)",
+          "oklch(38% 0.0264 60.70)",
+          "oklch(49% 0.0264 60.70)",
+          "oklch(61% 0.0264 60.70)",
+          "oklch(72% 0.0264 60.70)",
+          "oklch(84% 0.0264 60.70)",
+          "oklch(95% 0.0264 60.70)"
+        ]
+      },
+      "burgundy": {
+        "role": "secondary",
+        "displayName": "Burgundy",
+        "tonalRamp": [
+          "oklch(15% 0.0712 24.63)",
+          "oklch(26% 0.0712 24.63)",
+          "oklch(38% 0.0712 24.63)",
+          "oklch(49% 0.0712 24.63)",
+          "oklch(61% 0.0712 24.63)",
+          "oklch(72% 0.0712 24.63)",
+          "oklch(84% 0.0712 24.63)",
+          "oklch(95% 0.0712 24.63)"
+        ]
+      },
+      "rose": {
+        "role": "secondary",
+        "displayName": "Rose",
+        "tonalRamp": [
+          "oklch(15% 0.0832 28.27)",
+          "oklch(26% 0.0832 28.27)",
+          "oklch(38% 0.0832 28.27)",
+          "oklch(49% 0.0832 28.27)",
+          "oklch(61% 0.0832 28.27)",
+          "oklch(72% 0.0832 28.27)",
+          "oklch(84% 0.0832 28.27)",
+          "oklch(95% 0.0832 28.27)"
+        ]
+      },
+      "outline": {
+        "role": "neutral",
+        "displayName": "Outline",
+        "tonalRamp": [
+          "oklch(15% 0.0387 64.82)",
+          "oklch(26% 0.0387 64.82)",
+          "oklch(38% 0.0387 64.82)",
+          "oklch(49% 0.0387 64.82)",
+          "oklch(61% 0.0387 64.82)",
+          "oklch(72% 0.0387 64.82)",
+          "oklch(84% 0.0387 64.82)",
+          "oklch(95% 0.0387 64.82)"
+        ]
+      },
+      "control-outline": {
+        "role": "neutral",
+        "displayName": "Control Outline",
+        "tonalRamp": [
+          "oklch(15% 0.0585 67.83)",
+          "oklch(26% 0.0585 67.83)",
+          "oklch(38% 0.0585 67.83)",
+          "oklch(49% 0.0585 67.83)",
+          "oklch(61% 0.0585 67.83)",
+          "oklch(72% 0.0585 67.83)",
+          "oklch(84% 0.0585 67.83)",
+          "oklch(95% 0.0585 67.83)"
+        ]
+      },
+      "focus": {
+        "role": "neutral",
+        "displayName": "Focus",
+        "tonalRamp": [
+          "oklch(15% 0.1095 77.38)",
+          "oklch(26% 0.1095 77.38)",
+          "oklch(38% 0.1095 77.38)",
+          "oklch(49% 0.1095 77.38)",
+          "oklch(61% 0.1095 77.38)",
+          "oklch(72% 0.1095 77.38)",
+          "oklch(84% 0.1095 77.38)",
+          "oklch(95% 0.1095 77.38)"
+        ]
+      },
+      "error": {
+        "role": "neutral",
+        "displayName": "Error",
+        "tonalRamp": [
+          "oklch(15% 0.0848 29.71)",
+          "oklch(26% 0.0848 29.71)",
+          "oklch(38% 0.0848 29.71)",
+          "oklch(49% 0.0848 29.71)",
+          "oklch(61% 0.0848 29.71)",
+          "oklch(72% 0.0848 29.71)",
+          "oklch(84% 0.0848 29.71)",
+          "oklch(95% 0.0848 29.71)"
+        ]
+      },
+      "approved": {
+        "role": "neutral",
+        "displayName": "Approved",
+        "tonalRamp": [
+          "oklch(15% 0.0507 146.02)",
+          "oklch(26% 0.0507 146.02)",
+          "oklch(38% 0.0507 146.02)",
+          "oklch(49% 0.0507 146.02)",
+          "oklch(61% 0.0507 146.02)",
+          "oklch(72% 0.0507 146.02)",
+          "oklch(84% 0.0507 146.02)",
+          "oklch(95% 0.0507 146.02)"
+        ]
+      },
+      "approved-outline": {
+        "role": "neutral",
+        "displayName": "Approved Outline",
+        "tonalRamp": [
+          "oklch(15% 0.0650 146.12)",
+          "oklch(26% 0.0650 146.12)",
+          "oklch(38% 0.0650 146.12)",
+          "oklch(49% 0.0650 146.12)",
+          "oklch(61% 0.0650 146.12)",
+          "oklch(72% 0.0650 146.12)",
+          "oklch(84% 0.0650 146.12)",
+          "oklch(95% 0.0650 146.12)"
+        ]
+      },
+      "startup": {
+        "role": "neutral",
+        "displayName": "Startup",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.88)",
+          "oklch(26% 0.0000 89.88)",
+          "oklch(38% 0.0000 89.88)",
+          "oklch(49% 0.0000 89.88)",
+          "oklch(61% 0.0000 89.88)",
+          "oklch(72% 0.0000 89.88)",
+          "oklch(84% 0.0000 89.88)",
+          "oklch(95% 0.0000 89.88)"
+        ]
+      },
+      "native-outline": {
+        "role": "neutral",
+        "displayName": "Native Outline",
+        "tonalRamp": [
+          "oklch(15% 0.0591 69.92)",
+          "oklch(26% 0.0591 69.92)",
+          "oklch(38% 0.0591 69.92)",
+          "oklch(49% 0.0591 69.92)",
+          "oklch(61% 0.0591 69.92)",
+          "oklch(72% 0.0591 69.92)",
+          "oklch(84% 0.0591 69.92)",
+          "oklch(95% 0.0591 69.92)"
+        ]
+      },
+      "native-surface-low": {
+        "role": "neutral",
+        "displayName": "Native Surface Low",
+        "tonalRamp": [
+          "oklch(15% 0.0064 55.96)",
+          "oklch(26% 0.0064 55.96)",
+          "oklch(38% 0.0064 55.96)",
+          "oklch(49% 0.0064 55.96)",
+          "oklch(61% 0.0064 55.96)",
+          "oklch(72% 0.0064 55.96)",
+          "oklch(84% 0.0064 55.96)",
+          "oklch(95% 0.0064 55.96)"
+        ]
+      },
+      "native-surface-highest": {
+        "role": "neutral",
+        "displayName": "Native Surface Highest",
+        "tonalRamp": [
+          "oklch(15% 0.0186 59.75)",
+          "oklch(26% 0.0186 59.75)",
+          "oklch(38% 0.0186 59.75)",
+          "oklch(49% 0.0186 59.75)",
+          "oklch(61% 0.0186 59.75)",
+          "oklch(72% 0.0186 59.75)",
+          "oklch(84% 0.0186 59.75)",
+          "oklch(95% 0.0186 59.75)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Section headline",
+        "purpose": "Web section headings; bundled Cormorant Garamond also fills native display/headline/titleLarge/titleMedium roles."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "scroll-behavior",
+        "value": "smooth",
+        "purpose": "Web scrolling; auto when prefers-reduced-motion is reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "web-intermediate-max",
+        "value": "1100px"
+      },
+      {
+        "name": "web-compact-max",
+        "value": "760px"
+      },
+      {
+        "name": "android-expanded-min",
+        "value": "720dp"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Filled gold submission or creation action.",
+      "html": "<button class=\"ds-primary\">New ritual</button>",
+      "css": ".ds-primary{font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;line-height:1.55;min-height:44px;padding:10px 17px;border-radius:6px;border:1px solid #bd915b;background:var(--gold,#e4bd7a);color:#25190f;cursor:pointer;font-size:.9rem;font-weight:600;}.ds-primary:hover{background:#f1d3a3}.ds-primary:focus-visible{outline:3px solid #f3c276;outline-offset:4px}.ds-primary:disabled{opacity:.5;cursor:not-allowed}"
+    },
+    {
+      "name": "Secondary action",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Quiet supporting action.",
+      "html": "<button class=\"ds-secondary\">Cancel</button>",
+      "css": ".ds-secondary{font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;line-height:1.55;min-height:44px;padding:10px 17px;border-radius:6px;border:1px solid #bd915b;background:var(--gold,#e4bd7a);color:#25190f;cursor:pointer;font-size:.9rem;font-weight:600;background:var(--raised,#221c18);color:var(--gold,#e4bd7a);border-color:#806344}.ds-secondary:hover{background:#352820}.ds-secondary:focus-visible{outline:3px solid #f3c276;outline-offset:4px}.ds-secondary:disabled{opacity:.5;cursor:not-allowed}"
+    },
+    {
+      "name": "Report field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Labeled multiline report input.",
+      "html": "<label class=\"ds-label\">Ritual report<textarea class=\"ds-field\" rows=\"3\" placeholder=\"Write your report\"></textarea></label>",
+      "css": ".ds-label{font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;line-height:1.55;display:block;color:#e7d7c3}.ds-field{font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;line-height:1.55;display:block;width:100%;min-height:44px;padding:11px 12px;margin-top:6px;border:1px solid #806344;border-radius:6px;background:#100f0e;color:#f3e9dc;resize:vertical}.ds-field::placeholder{color:#b9a58d}.ds-field:focus-visible{outline:3px solid #f3c276;outline-offset:4px}"
+    },
+    {
+      "name": "Section surface",
+      "kind": "card",
+      "refersTo": "section",
+      "description": "Major web content container.",
+      "html": "<section class=\"ds-section\"><h2>Rituals</h2><p>A little intention. A shared rhythm.</p></section>",
+      "css": ".ds-section{font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;line-height:1.55;background:var(--surface,#191614);color:#f3e9dc;border:1px solid var(--border,#574432);border-radius:12px;padding:28px}.ds-section h2{font:400 28px/1.2 \"Cormorant Garamond\",Georgia,serif;margin:0 0 8px}.ds-section p{color:var(--muted,#c0ad98);margin:4px 0}"
+    },
+    {
+      "name": "Status tag",
+      "kind": "chip",
+      "refersTo": "status-tag",
+      "description": "Noninteractive occurrence state label.",
+      "html": "<span class=\"ds-tag\">scheduled</span> <span class=\"ds-tag ds-approved\">approved</span>",
+      "css": ".ds-tag{font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;line-height:1.55;font-size:.75rem;border:1px solid #806344;color:var(--gold,#e4bd7a);padding:4px 8px;border-radius:5px;white-space:nowrap}.ds-approved{color:#c1dfc2;border-color:#688c6a}"
+    },
+    {
+      "name": "Workspace navigation",
+      "kind": "nav",
+      "refersTo": "navigation-link",
+      "description": "Anchor navigation with the current first-link emphasis.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#rituals\">My day · Rituals</a><a href=\"#rules\">Rules</a></nav>",
+      "css": ".ds-nav{font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;line-height:1.55;display:grid;gap:8px}.ds-nav a{display:block;padding:13px 16px;color:#e6d6c3;text-decoration:none;border-radius:8px;font-size:.95rem}.ds-nav a:first-child{background:#63322f;color:#fff0e2}.ds-nav a:hover{background:#34251f}.ds-nav a:focus-visible{outline:3px solid #f3c276;outline-offset:4px}"
+    },
+    {
+      "name": "Report attempt",
+      "kind": "custom",
+      "refersTo": "report-attempt",
+      "description": "Inset report history entry, preserving content line breaks.",
+      "html": "<div class=\"ds-attempt\"><p class=\"ds-meta\">Attempt 1</p><p>A quiet moment, recorded.</p></div>",
+      "css": ".ds-attempt{font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",sans-serif;line-height:1.55;padding:12px 16px;background:#100f0e;color:#f3e9dc;margin:10px 0}.ds-attempt p{white-space:pre-wrap}.ds-meta{color:var(--muted,#c0ad98);font-size:.9rem}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Dark velvet and warm gold",
+    "overview": "The supplied Luxury Rituals Showcase defines the material world: near-black velvet, restrained gold, burgundy accents and warm ivory text. The Gold V Heart-Knot Crest identifies the workspace; the Embossed Velvet V Emblem belongs to startup. Both assets remain local.\n\nDaily screens use readable content, quiet divisions and serif headings. Web and native Android share this palette and identity; Android retains Compose Material components and platform interaction patterns rather than copying browser geometry.",
+    "keyCharacteristics": [
+      "Dark tonal surfaces with warm, readable text.",
+      "Gold actions and burgundy navigation emphasis.",
+      "Serif headings paired with system UI body text.",
+      "Local crest and velvet startup artwork; responsive native interactions."
+    ],
+    "rules": [
+      {
+        "name": "The Material Continuity Rule",
+        "body": "Keep the supplied crest, velvet artwork and warm dark palette together across clients.",
+        "section": "colors"
+      },
+      {
+        "name": "The Readable Ritual Rule",
+        "body": "Use serif type for headings and system UI type for reports, forms and controls; preserve readable wrapping for long content.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tonal Depth Rule",
+        "body": "Separate daily surfaces with tone and fine warm borders; do not add decorative drop shadows to the extracted web system.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do preserve the user-supplied crest and startup artwork as local assets.",
+      "Do keep gold focus outlines visible and respect reduced-motion scrolling.",
+      "Do retain native Android controls, typography roles and adaptive navigation.",
+      "Do present explicit status text alongside status color."
+    ],
+    "donts": [
+      "Don't reproduce miniature low-contrast showcase text in functional controls.",
+      "Don't invent portraits, ratings, points or activity metrics to fill the design.",
+      "Don't add a fake loading percentage or a cosmetic minimum startup delay."
+    ]
+  }
+}

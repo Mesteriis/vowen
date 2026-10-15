@@ -5,7 +5,9 @@
 | Member login | Bot challenge, HTTPS, encrypted refresh | Telegram Mini App |
 | Relationships, sessions, profile | Implemented | Implemented |
 | Rules: drafts, versions, publish/archive, assignment, consent/history | Native screens implemented | Implemented |
-| Rituals, schedules, rewards | Not implemented | Not implemented |
+| Ritual templates, schedules, occurrences, reports/reviews/history | Native screens implemented | Implemented |
+| Supplied crest / velvet startup | Local assets, actual bootstrap | Local assets, actual loading |
+| Rewards | Not implemented | Not implemented |
 | Basic form builder / new version / publish | Implemented, ten question kinds | Implemented |
 | Conditional rule editor / preview | Existing rules preserved; editor deferred | Implemented |
 | Internal and guest invitation / reader selection | Implemented, default 7-day invite / 90-day retention after submission | Implemented, editable limits |
