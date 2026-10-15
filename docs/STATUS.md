@@ -383,3 +383,13 @@ could happen too early. A 500ms injected submit delay reproduced the failure loc
 The test now waits for the recipient's server-loaded result article before the author
 refreshes, and waits for deletion to finish before checking reader withdrawal. No
 production behavior, timeout, retry or CI check was relaxed.
+
+Final remote verification: [CI run 38747181628](https://github.com/Mesteriis/vowen/actions/runs/38747181628)
+passed both backend-web and android for implementation/test commit
+`d6dd97db05e1c0c4c19f160716efbb79811bc847`. Remote Android runs JVM/lint/build
+and compiles instrumentation; 21 actual Compose tests ran locally on the owned
+Android 16 AVD, now stopped. Final rebuilt API/worker/proxy are healthy, loopback
+HTTPS smoke passed, and served crest/velvet/font bytes match the repository assets.
+The local-CA bypass belongs only to the loopback smoke script. This evidence-only
+follow-up uses [skip ci]; the identical checked implementation is fast-forwarded
+to main. No production release, live Telegram delivery or physical-device claim.
