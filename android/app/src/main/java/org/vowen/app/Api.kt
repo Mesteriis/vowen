@@ -63,4 +63,17 @@ class Api(private val state: InstanceSession,
  suspend fun change(relation:Relation,change:RelationChange):Relation = json.decodeFromString(call("/relations/${relation.id}/versions","POST",json.encodeToString(change)))
  suspend fun updateProfile(patch:ProfilePatch):Member = json.decodeFromString(call("/me/preferences","PATCH",json.encodeToString(patch)))
  suspend fun revokeSession(id:String) {call("/sessions/$id","DELETE")}
+ suspend fun forms():List<FormTemplate> = json.decodeFromString(call("/forms"))
+ suspend fun formInvitations():List<FormAccess> = json.decodeFromString(call("/form-invitations"))
+ suspend fun formResults():List<FormResult> = json.decodeFromString(call("/form-submissions"))
+ suspend fun saveForm(id:String?,schema:FormSchema,revision:Int=1,draft:Boolean=true):FormTemplate {
+  val path=if(id==null) "/forms" else "/forms/$id"+if(draft) "" else "/versions"
+  val body=if(id==null) json.encodeToString(schema) else json.encodeToString(FormEdit(expected_version=revision,schema_body=schema))
+  return json.decodeFromString(call(path,if(id!=null&&draft) "PATCH" else "POST",body))
+ }
+ suspend fun publishForm(form:FormTemplate):FormTemplate = json.decodeFromString(call("/forms/${form.id}/publish","POST",json.encodeToString(ExpectedVersion(form.revision))))
+ suspend fun inviteForm(formId:String,command:FormInvitationCreate):FormInvitation = json.decodeFromString(call("/forms/$formId/invitations","POST",json.encodeToString(command)))
+ suspend fun saveFormDraft(id:String,answers:Map<String,kotlinx.serialization.json.JsonElement>):FormAccess = json.decodeFromString(call("/form-invitations/$id/draft","PUT",json.encodeToString(FormAnswers(answers))))
+ suspend fun submitForm(id:String,command:FormSubmit):FormResult = json.decodeFromString(call("/form-invitations/$id/submit","POST",json.encodeToString(command)))
+ suspend fun deleteFormResult(id:String) {call("/form-submissions/$id","DELETE")}
 }

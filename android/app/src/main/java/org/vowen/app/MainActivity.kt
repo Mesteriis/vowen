@@ -24,11 +24,15 @@ class MainActivity:ComponentActivity() {
    val screen by model.screen.collectAsState()
    var origin by remember { mutableStateOf(screen.origin) }
    val context=LocalContext.current
+   var guest by remember {mutableStateOf(false)}
    MaterialTheme {
     Surface(Modifier.fillMaxSize()) {
      Column(Modifier.safeDrawingPadding().padding(24.dp).verticalScroll(rememberScrollState()),verticalArrangement=Arrangement.spacedBy(16.dp)) {
       Text("Vowen",style=MaterialTheme.typography.headlineLarge)
       Text(stringResource(R.string.alpha))
+      TextButton(onClick={guest=!guest}) {Text("Guest form / Гостевая анкета")}
+      if(guest)NativeGuestScreen {guest=false}
+      if(!guest) {
       OutlinedTextField(value=origin,onValueChange={origin=it},label={Text(stringResource(R.string.instance))},singleLine=true,enabled=!screen.busy)
       Button(onClick={model.select(origin)},enabled=!screen.busy) {Text(stringResource(R.string.connect))}
       if(screen.origin.isNotBlank()) Text(screen.origin)
@@ -47,7 +51,9 @@ class MainActivity:ComponentActivity() {
        Button(onClick={model.pause()},enabled=!screen.busy) {Text(if(member.language=="ru") if(member.paused)"Снять личную паузу" else "Личная пауза" else if(member.paused)"End personal pause" else "Personal pause")}
        Button(onClick={model.logout()},enabled=!screen.busy) {Text(if(member.language=="ru")"Выйти" else "Sign out")}
        WorkspaceScreen(member,screen.workspace,screen.sessionId,screen.busy,screen.completed,
-        WorkspaceActions(model::refreshWorkspace,model::propose,model::relationAction,model::changeRelation,model::saveProfile,model::revokeSession))
+        WorkspaceActions(model::refreshWorkspace,model::propose,model::relationAction,model::changeRelation,model::saveProfile,model::revokeSession),
+        FormActions(model::refreshWorkspace,model::saveForm,model::publishForm,model::inviteForm,model::saveFormDraft,model::submitForm,model::deleteFormResult),screen.formLink)
+      }
       }
      }
     }

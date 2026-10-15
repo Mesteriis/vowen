@@ -13,7 +13,7 @@ import java.security.SecureRandom
 
 /** One serialized auth lane: switching instances cannot race an old network response. */
 class AuthViewModel(application:Application):AndroidViewModel(application) {
- data class Screen(val origin:String="",val member:Member?=null,val challenge:Challenge?=null,val busy:Boolean=false,val error:String?=null,val workspace:WorkspaceState=WorkspaceState(),val sessionId:String?=null,val completed:Int=0)
+ data class Screen(val origin:String="",val member:Member?=null,val challenge:Challenge?=null,val busy:Boolean=false,val error:String?=null,val workspace:WorkspaceState=WorkspaceState(),val sessionId:String?=null,val completed:Int=0,val formLink:String?=null)
  private val mutable=MutableStateFlow(Screen())
  val screen=mutable.asStateFlow()
  private val instance=InstanceSession()
@@ -84,6 +84,16 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
   api.revokeSession(session.id)
   if(session.id==mutable.value.sessionId) clear() else loadWorkspace(true)
  }
+ fun saveForm(template:FormTemplate?,schema:FormSchema)=run {api.saveForm(template?.id,schema,template?.revision?:1,template?.status=="draft"||template==null);loadWorkspace(true)}
+ fun publishForm(template:FormTemplate)=run {api.publishForm(template);loadWorkspace(true)}
+ fun inviteForm(template:FormTemplate,command:FormInvitationCreate)=run {
+  val invitation=api.inviteForm(template.id,command)
+  mutable.value=mutable.value.copy(formLink=invitation.link,error=invitation.delivery_status)
+  loadWorkspace(true)
+ }
+ fun saveFormDraft(id:String,answers:Map<String,kotlinx.serialization.json.JsonElement>)=run {api.saveFormDraft(id,answers);loadWorkspace(true)}
+ fun submitForm(id:String,command:FormSubmit)=run {api.submitForm(id,command);loadWorkspace(true)}
+ fun deleteFormResult(id:String)=run {api.deleteFormResult(id);loadWorkspace(true)}
  fun logout()=run { try { api.call("/auth/logout","POST") } finally { clear() } }
  private fun clear() { instance.clear();vault.clear();nonce=null;mutable.value=Screen(origin=instance.origin) }
 }

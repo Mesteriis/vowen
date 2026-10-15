@@ -17,13 +17,13 @@ data class WorkspaceActions(
 )
 
 @Composable
-fun WorkspaceScreen(member:Member,data:WorkspaceState,currentSessionId:String?,busy:Boolean,completed:Int,actions:WorkspaceActions) {
+fun WorkspaceScreen(member:Member,data:WorkspaceState,currentSessionId:String?,busy:Boolean,completed:Int,actions:WorkspaceActions,formActions:FormActions?=null,formLink:String?=null) {
  var tab by remember { mutableIntStateOf(0) }
  val ru=member.language=="ru"
  Column {
   TextButton(onClick=actions.refresh,enabled=!busy,modifier=Modifier.testTag("workspace-refresh")) {Text(if(ru)"Обновить данные" else "Refresh data")}
   Row(Modifier.fillMaxWidth()) {
-   listOf("relations" to if(ru)"Отношения" else "Relations","sessions" to if(ru)"Сессии" else "Sessions","profile" to if(ru)"Профиль" else "Profile").forEachIndexed {index,item->
+   (listOf("relations" to if(ru)"Отношения" else "Relations","sessions" to if(ru)"Сессии" else "Sessions","profile" to if(ru)"Профиль" else "Profile")+if(formActions!=null)listOf("forms" to if(ru)"Анкеты" else "Forms") else emptyList()).forEachIndexed {index,item->
     TextButton(onClick={tab=index},modifier=Modifier.weight(1f).testTag("tab-${item.first}")) {Text(item.second)}
    }
   }
@@ -31,6 +31,7 @@ fun WorkspaceScreen(member:Member,data:WorkspaceState,currentSessionId:String?,b
    0 -> RelationsScreen(member,data,busy,completed,actions)
    1 -> SessionsScreen(member,data.sessions,currentSessionId,busy,completed,actions.revokeSession)
    2 -> ProfileScreen(member,busy,actions.profile)
+   3 -> formActions?.let {NativeFormsScreen(member,data,busy,completed,formLink,it)}
   }
  }
 }
