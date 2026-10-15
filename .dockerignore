@@ -11,3 +11,7 @@ secrets
 **/.gradle
 **/__pycache__
 android/local.properties
+
+artifacts
+*.jks
+*.keystore

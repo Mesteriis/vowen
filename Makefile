@@ -39,3 +39,13 @@ check-contracts: contracts
 	git diff --exit-code -- contracts/openapi.json contracts/form-schema/schema.json web/src/shared/api.d.ts android/app/src/main/java/org/vowen/app/ApiModels.kt
 secret-scan:
 	python3 scripts/secret_scan.py
+
+.PHONY: test-ops release-images release-android
+RELEASE_DIR ?= artifacts/release/$(shell git rev-parse --short HEAD)
+test-ops:
+	uv run --project backend ruff check --config backend/pyproject.toml scripts/release.py scripts/sign_apk.py scripts/ops scripts/tests
+	uv run --project backend pytest scripts/tests -q
+release-images:
+	python3 scripts/release.py --kind images --verify-repeat --output $(RELEASE_DIR)/images
+release-android:
+	python3 scripts/release.py --kind android --verify-repeat --output $(RELEASE_DIR)/android

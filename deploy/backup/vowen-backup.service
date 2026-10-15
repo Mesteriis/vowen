@@ -1,0 +1,15 @@
+[Unit]
+Description=Encrypted Vowen application backup and verified retention
+After=pve-guests.service
+
+[Service]
+Type=oneshot
+EnvironmentFile=/etc/vowen/backup.env
+ExecStart=/usr/bin/python3 /usr/local/lib/vowen/backup.py --ctid ${VOWEN_CTID}
+UMask=0077
+RuntimeDirectory=vowen-backup
+RuntimeDirectoryMode=0700
+Nice=10
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7
+TimeoutStartSec=1h
