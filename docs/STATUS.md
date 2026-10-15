@@ -853,3 +853,12 @@ were fixed: confirmation completion is awaited before refreshing authority, and
 confirmation dialogs are centered within the viewport. Native unit/lint/APK and
 instrumentation-APK builds passed; native instrumentation was not executed here.
 Exact-commit CI results will be recorded after the final integration run.
+
+Final web visual acceptance: all11 pages were inspected again on phone and tablet;
+root design-qa.md now records a passed result limited to the Mini App. Exact390/768/
+1024 browser checks cover33 section/viewport pairs. The integration39c3e72 checks CI
+passed backend-web and Android:
+https://github.com/Mesteriis/vowen/actions/runs/38813788301
+A final time-field layout fix passed the complete18-scenario browser suite locally
+and is submitted with the QA report to the same CI workflow. Native physical-device
+visual acceptance and live Telegram remain pending; production is unchanged.

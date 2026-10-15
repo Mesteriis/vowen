@@ -22,8 +22,8 @@ async function save(){await run(async()=>{if(!value.value)return;const v=value.v
 <label><input v-model="value.channels" type="checkbox" value="telegram">Telegram</label>
 <p>{{value.telegram_connected?t('Bot connected','Бот подключён'):t('Bot not connected','Бот не подключён')}}. {{t('Enable delivery personally with /notifications_on in the bot. Channel selection does not grant consent.','Включите доставку лично командой /notifications_on в боте. Выбор канала не заменяет согласие.')}}</p>
 <label><input v-model="value.quiet_enabled" type="checkbox">{{t('Quiet hours','Тихие часы')}}</label>
-<label>{{t('Quiet from','Тишина с')}}<input type="time" :value="clock(value.quiet_start)" required @input="value.quiet_start=minute($event)"></label>
-<label>{{t('Quiet until','Тишина до')}}<input type="time" :value="clock(value.quiet_end)" required @input="value.quiet_end=minute($event)"></label>
+<div class="quiet-hours-fields"><label>{{t('Quiet from','Тишина с')}}<input type="time" :value="clock(value.quiet_start)" required @input="value.quiet_start=minute($event)"></label>
+<label>{{t('Quiet until','Тишина до')}}<input type="time" :value="clock(value.quiet_end)" required @input="value.quiet_end=minute($event)"></label></div>
 <p>{{t('Profile timezone','Часовой пояс профиля')}}: {{value.timezone}}. {{t('Telegram delivery waits; tasks remain available. Turning a channel back on does not resend cancelled messages.','Telegram ждёт окончания тишины; задания доступны. Повторное включение канала не возвращает отменённые сообщения.')}}</p>
 <button :disabled="value.quiet_enabled&&value.quiet_start===value.quiet_end">{{t('Save notifications','Сохранить уведомления')}}</button></fieldset></form>
 </section>
