@@ -13,6 +13,7 @@ const recipients=computed(()=>props.participants.filter(p=>view.recipients('disc
 const visibleRows=computed(()=>rows.value.filter(r=>view.pair(r.author_id,r.recipient_id)||!!view.selected.value&&r.recipient_id===(view.selected.value.dominant_user_id===props.me.id?view.selected.value.submissive_user_id:view.selected.value.dominant_user_id)&&r.reviewer_ids.includes(props.me.id)))
 const busy=ref(false),error=ref(''),editing=ref(false),selected=ref<RecordView|null>(null),review=ref<RecordView|null>(null),history=ref('')
 const recipient=ref(''),reviewers=ref<string[]>([]),description=ref(''),conditions=ref(''),deadline=ref(''),rule=ref(''),occurrence=ref(''),comment=ref(''),key=ref('')
+watch(rule,id=>{if(!selected.value){const assigned=rules.value.find(r=>r.rule_version_id===id);if(assigned?.discipline)conditions.value=assigned.discipline}})
 const t=(en:string,ru:string)=>props.ru?ru:en
 const name=(id:string)=>props.participants.find(p=>p.id===id)?.display_name??id
 const current=(r:RecordView)=>r.versions.find(v=>v.id===r.version_id)!

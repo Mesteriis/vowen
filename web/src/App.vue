@@ -3,7 +3,7 @@ import {computed,ref,onMounted,onUnmounted,provide,watch,nextTick} from 'vue'
 import WorkspaceHome from './features/workspace/WorkspaceHome.vue'
 import SessionList from './features/sessions/SessionList.vue'
 import {workspaceKey,partnerId,relationRole,scopeLabel,statusLabel,type Section} from './features/workspace/context'
-import {IconChevronDown,IconHome,IconSun,IconShieldCheck,IconNotebook,IconGift,IconFileText,IconScale,IconUsers,IconBell,IconSettings,IconDevices,IconPlayerPause,IconPlayerPlay,IconLogout,IconDots,IconX,IconRefresh,IconLock} from '@tabler/icons-vue'
+import {IconChevronDown,IconHome,IconSun,IconShieldCheck,IconNotebook,IconGift,IconFileText,IconScale,IconUsers,IconBell,IconSettings,IconDevices,IconLogout,IconDots,IconX,IconRefresh,IconLock} from '@tabler/icons-vue'
 import DisciplinePanel from './features/discipline/DisciplinePanel.vue'
 import JournalPanel from './features/journal/JournalPanel.vue'
 import RewardsPanel from './features/rewards/RewardsPanel.vue'
@@ -51,7 +51,7 @@ async function login(){await run(async()=>{
 })}
 async function loginDebug(){await run(async()=>{await client.loginDebug(debugUser.value);await load();reAuth.value=false})}
 async function logout(){await run(async()=>{try{await client.logout()}finally{me.value=null;relations.value=[];participants.value=[];sessions.value=[]}})}
-async function personal(){await run(async()=>{await client.post(me.value?.paused?'/me/resume':'/me/pause');await load()})}
+
 async function propose(){await run(async()=>{
  if(!me.value) return
  await client.post('/relations',{dominant_user_id:direction.value==='dominant'?me.value.id:target.value,submissive_user_id:direction.value==='dominant'?target.value:me.value.id,scopes:scopes.value,agreement_text:agreement.value})
@@ -78,14 +78,15 @@ const revision=computed(()=>[refreshTick.value,contextId.value,me.value?.id,me.v
 provide(workspaceKey,{selected,member:computed(()=>me.value),relations:computed(()=>relations.value),revision,navigate})
 watch(relations,rows=>{if(contextId.value&&!rows.some(r=>r.id===contextId.value))contextId.value=''})
 watch(me,value=>{if(!value){contextId.value='';section.value='home';more.value?.close()}})
+function refreshOnReturn(){if(me.value&&!busy.value&&!document.hidden)void run(load)}
 function syncHash(){const id=location.hash.slice(1);section.value=id==='surveys'?'forms':sections.includes(id as Section)?id as Section:'home'}
 async function navigate(id:Section){section.value=id;more.value?.close();if(location.hash!=='#'+id)location.hash=id;await nextTick();document.getElementById('workspace-title')?.focus({preventScroll:true});window.scrollTo({top:0,behavior:'auto'})}
 const dateLabel=computed(()=>new Intl.DateTimeFormat(ru.value?'ru-RU':'en-GB',{timeZone:me.value?.timezone??'UTC',day:'numeric',month:'long',weekday:'long'}).format(now.value))
 const clockLabel=computed(()=>new Intl.DateTimeFormat(ru.value?'ru-RU':'en-GB',{timeZone:me.value?.timezone??'UTC',hour:'2-digit',minute:'2-digit'}).format(now.value))
 const greeting=computed(()=>{const hour=Number(new Intl.DateTimeFormat('en-GB',{timeZone:me.value?.timezone??'UTC',hour:'numeric',hourCycle:'h23'}).format(now.value));return ru.value?(hour<6?'Доброй ночи':hour<12?'Доброе утро':hour<18?'Добрый день':'Добрый вечер'):(hour<6?'Good evening':hour<12?'Good morning':hour<18?'Good afternoon':'Good evening')})
 let clockTimer:ReturnType<typeof setInterval>|undefined
-onMounted(()=>{syncHash();window.addEventListener('hashchange',syncHash);clockTimer=setInterval(()=>now.value=new Date(),60000)})
-onUnmounted(()=>{window.removeEventListener('hashchange',syncHash);if(clockTimer)clearInterval(clockTimer)})
+onMounted(()=>{window.addEventListener('focus',refreshOnReturn);document.addEventListener('visibilitychange',refreshOnReturn);syncHash();window.addEventListener('hashchange',syncHash);clockTimer=setInterval(()=>now.value=new Date(),60000)})
+onUnmounted(()=>{window.removeEventListener('focus',refreshOnReturn);document.removeEventListener('visibilitychange',refreshOnReturn);window.removeEventListener('hashchange',syncHash);if(clockTimer)clearInterval(clockTimer)})
 </script>
 <template>
  <div v-if="booting" class="startup-screen" role="status" :aria-label="ru?'Загрузка Vowen':'Loading Vowen'"><img src="/brand/vowen-velvet.webp" alt=""><div><span class="brand-wordmark">Vowen</span><p>{{ru?'Открываем ваше пространство…':'Opening your workspace…'}}</p></div></div>
@@ -97,13 +98,13 @@ onUnmounted(()=>{window.removeEventListener('hashchange',syncHash);if(clockTimer
   <aside class="workspace-nav" :aria-label="ru?'Основная навигация':'Main navigation'"><a class="nav-brand" href="#home" @click.prevent="navigate('home')"><img src="/brand/vowen-crest.webp" alt=""><span>{{instanceName}}</span></a><p class="brand-caption">RITUALS MAKE US CLOSER</p><nav><a v-for="id in sections" :key="id" :href="'#'+id" :aria-current="section===id?'page':undefined" @click.prevent="navigate(id)"><component :is="icons[id]" :size="20" :stroke-width="1.5" /><span>{{label(id)}}</span></a></nav><p class="nav-footer">{{ru?'Больше, чем правила.':'More than rules.'}}<br>{{ru?'Ближе, чем слова.':'Closer than words.'}}</p></aside>
   <div class="workspace-content"><p v-if="debugAuth" class="debug-session" role="status">DEBUG · {{ru?'Локальная разработка':'Local development'}}</p>
    <header class="workspace-header"><a class="app-brand mobile-brand" href="#home" @click.prevent="navigate('home')"><img src="/brand/vowen-crest.webp" alt=""><span>{{instanceName}}</span></a><div class="page-intro"><span class="eyebrow">{{ru?'ВАШЕ ПРОСТРАНСТВО':'YOUR WORKSPACE'}}</span><h1 id="workspace-title" tabindex="-1">{{section==='home'?greeting+', '+me.display_name:label(section)}}</h1><p v-if="section==='home'">{{ru?'Близость начинается с внимания.':'Closeness begins with attention.'}}</p></div><div class="header-date"><time>{{dateLabel}}</time><strong>{{clockLabel}}</strong></div><button class="profile-shortcut" :aria-label="me.display_name+' · '+(ru?'Мой профиль':'My profile')" @click="navigate('profile')"><span class="person-monogram" aria-hidden="true">{{me.display_name.slice(0,1)}}</span><span><strong>{{me.display_name}}</strong><small>{{ru?'Моё пространство':'My workspace'}}</small></span></button></header>
-   <div class="workspace-toolbar" :class="{'personal-toolbar':!contextual}"><label v-if="contextual" class="context-picker"><IconUsers :size="18" /><span class="sr-only">{{ru?'Контекст отношений':'Relationship context'}}</span><select v-model="contextId"><option value="">{{ru?'Общий день · все отношения':'Shared day · all relationships'}}</option><option v-for="r in relations" :key="r.id" :value="r.id">{{name(partnerId(r,me.id)??'')}} · {{relationRole(r,me.id)==='dominant'?'Dominant':'Submissive'}} · {{statusLabel(r.status,ru)}}</option></select></label><div class="toolbar-actions"><button class="icon-button" :disabled="busy" :aria-label="t.refresh" @click="run(load)"><IconRefresh :size="18" /></button><button class="pause-button" :disabled="busy" @click="personal"><IconPlayerPlay v-if="me.paused" :size="16" /><IconPlayerPause v-else :size="16" />{{me.paused?t.resume:t.pause}}</button><button class="icon-button" :aria-label="t.logout" :disabled="busy" @click="logout"><IconLogout :size="18" /></button></div></div>
+   <div class="workspace-toolbar" :class="{'personal-toolbar':!contextual}"><label v-if="contextual" class="context-picker"><IconUsers :size="18" /><span class="sr-only">{{ru?'Контекст отношений':'Relationship context'}}</span><select v-model="contextId"><option value="">{{ru?'Общий день · все отношения':'Shared day · all relationships'}}</option><option v-for="r in relations" :key="r.id" :value="r.id">{{name(partnerId(r,me.id)??'')}} · {{relationRole(r,me.id)==='dominant'?'Dominant':'Submissive'}} · {{statusLabel(r.status,ru)}}</option></select></label><div class="toolbar-actions"><button class="icon-button" :disabled="busy" :aria-label="t.refresh" @click="run(load)"><IconRefresh :size="18" /></button><button class="icon-button" :aria-label="t.logout" :disabled="busy" @click="logout"><IconLogout :size="18" /></button></div></div>
    <p v-if="me.paused" class="context-banner pause-banner" role="status">{{ru?'Вы на личной паузе. Доступ к своему дневнику, истории и отзыву согласия сохраняется.':'You are on a personal pause. Your diary, history and consent withdrawal remain available.'}}</p>
    <div v-if="selected&&contextual" class="context-banner"><span><strong>{{contextName}}</strong> · {{contextRole==='dominant'?(ru?'Вы — Dominant в этих отношениях':'You are Dominant in this relationship'):(ru?'Вы — Submissive в этих отношениях':'You are Submissive in this relationship')}} · {{statusLabel(selected.status,ru)}}</span><button class="quiet-button" @click="navigate('relations')">{{ru?'Соглашение и права':'Agreement & permissions'}}</button></div>
    <p v-if="error" role="alert">{{ru?'Не удалось выполнить действие. Обновите данные и повторите.':'The action could not be completed. Refresh and try again.'}}</p>
    <WorkspaceHome v-show="section==='home'" :client="client" :me="me" :participants="participants" :relations="relations" :ru="ru" :active="section==='home'" @navigate="navigate" @context="id=>contextId=id" />
-   <RitualsPanel v-show="section==='rituals'" :client="client" :ru="ru" :me="me" :participants="participants" />
-   <RewardsPanel v-show="section==='rewards'" :client="client" :ru="ru" :me="me" :participants="participants" />
+   <RitualsPanel :active="section==='rituals'" v-show="section==='rituals'" :client="client" :ru="ru" :me="me" :participants="participants" />
+   <RewardsPanel :active="section==='rewards'" v-show="section==='rewards'" :client="client" :ru="ru" :me="me" :participants="participants" />
    <DisciplinePanel v-show="section==='discipline'" :client="client" :ru="ru" :me="me" :participants="participants" />
    <JournalPanel v-show="section==='journal'" :client="client" :ru="ru" :me="me" :participants="participants" />
    <RulesPanel v-show="section==='rules'" :client="client" :ru="ru" :me="me" :participants="participants" />

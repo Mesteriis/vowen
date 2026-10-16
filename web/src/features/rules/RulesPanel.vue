@@ -11,7 +11,7 @@ const templates=ref<Rule[]>([]),assignments=ref<Assignment[]>([]),busy=ref(false
 const recipients=computed(()=>props.participants.filter(p=>view.recipients('rules.assign').includes(p.id)))
 const visibleAssignments=computed(()=>assignments.value.filter(view.rule))
 const history=ref<Rule[]>([]),historyFor=ref('')
-const editor=ref(false),selected=ref<Rule|null>(null),title=ref(''),description=ref('')
+const editor=ref(false),selected=ref<Rule|null>(null),title=ref(''),description=ref(''),discipline=ref('')
 const assigning=ref<Rule|null>(null),recipient=ref(''),managers=ref<string[]>([]),review=ref<Assignment|null>(null)
 const t=(en:string,ru:string)=>props.ru?ru:en
 const name=(id:string)=>props.participants.find(p=>p.id===id)?.display_name??id
@@ -27,10 +27,10 @@ watch(()=>props.me.paused,()=>{
  assignments.value=assignments.value.filter(a=>!props.me.paused||a.recipient_id===props.me.id)
  void run(load)
 })
-function edit(rule:Rule|null){selected.value=rule;title.value=rule?.title??'';description.value=rule?.description??'';editor.value=true;assigning.value=null}
+function edit(rule:Rule|null){selected.value=rule;title.value=rule?.title??'';description.value=rule?.description??'';discipline.value=rule?.discipline??'';editor.value=true;assigning.value=null}
 async function showHistory(rule:Rule){await run(async()=>{history.value=await props.client.get<Rule[]>(`/rules/${rule.id}/versions`);historyFor.value=rule.id})}
 async function save(){await run(async()=>{
- const r=selected.value,body={title:title.value,description:description.value}
+ const r=selected.value,body={title:title.value,description:description.value,discipline:discipline.value}
  if(!r)await props.client.post('/rules',body)
  else if(r.status==='draft')await props.client.patch(`/rules/${r.id}`,{...body,expected_version:r.revision})
  else await props.client.post(`/rules/${r.id}/versions`,{...body,expected_version:r.revision})
@@ -57,7 +57,7 @@ async function decide(a:Assignment,action:string){await run(async()=>{
    <label>{{t('Rule title','Название правила')}}<input v-model="title" required maxlength="200"></label>
    <label>{{t('Rule description','Описание правила')}}<textarea v-model="description" required maxlength="10000" rows="5" /></label>
    <p v-if="selected?.status!=='draft'&&selected">{{t('A new version requires new consent. The accepted version continues until replacement.','Новая версия требует нового согласия. Принятая действует до замены.')}}</p>
-   <button :disabled="busy||me.paused">{{t('Save rule','Сохранить правило')}}</button>
+   <label>{{t('Rule discipline','Дисциплина по правилу')}}<textarea v-model="discipline" maxlength="10000" rows="3" /></label><button :disabled="busy||me.paused">{{t('Save rule','Сохранить правило')}}</button>
    <button type="button" :disabled="busy" @click="editor=false">{{t('Cancel','Отмена')}}</button>
   </form>
   <article v-for="rule in templates" :key="rule.id">
@@ -84,7 +84,7 @@ async function decide(a:Assignment,action:string){await run(async()=>{
   <h3>{{t('Assignments and history','Назначения и история')}}</h3>
   <p v-if="!assignments.length">{{t('No visible assignments','Нет доступных назначений')}}</p>
   <article v-for="a in visibleAssignments" :key="a.id">
-   <h4>{{a.title}} · {{name(a.recipient_id)}}</h4><p>{{a.description}}</p>
+   <h4>{{a.title}} · {{name(a.recipient_id)}}</h4><p>{{a.description}}</p><p v-if="a.discipline">{{t('Discipline: ','Дисциплина: ')}}{{a.discipline}}</p>
    <p>{{a.status}} · {{a.effective&&!(me.paused&&a.recipient_id===me.id)?'effective':'inactive'}}</p>
    <p>{{t('Version','Версия')}}: {{a.rule_version_id}}</p>
    <p>{{t('Managers','Управляющие')}}: {{a.manager_ids.map(name).join(', ')||'—'}}</p>
@@ -97,7 +97,7 @@ async function decide(a:Assignment,action:string){await run(async()=>{
    <button v-if="a.status!=='revoked'" :disabled="busy" @click="decide(a,'revoke')">{{t('Revoke rule','Отозвать правило')}}</button>
   </article>
   <div v-if="review" role="dialog" aria-modal="true" :aria-label="t('Review exact rule version','Подтверждение точной версии правила')">
-   <h3>{{review.title}}</h3><p>{{review.description}}</p><p>{{review.rule_version_id}}</p>
+   <h3>{{review.title}}</h3><p>{{review.description}}</p><p v-if="review.discipline">{{t('Discipline: ','Дисциплина: ')}}{{review.discipline}}</p><p>{{review.rule_version_id}}</p>
    <p>{{t('Accepting replaces the previously active version of this rule.','Принятие заменит ранее действовавшую версию этого правила.')}}</p>
    <button :disabled="busy||me.paused" @click="decide(review,'accept')">{{t('Confirm rule acceptance','Подтверждаю принятие правила')}}</button>
    <button :disabled="busy" @click="review=null">{{t('Cancel','Отмена')}}</button>

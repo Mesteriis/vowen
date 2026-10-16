@@ -26,14 +26,16 @@ const mine=computed(()=>visible.value.filter(o=>o.recipient_id===props.me.id&&['
 const reviews=computed(()=>visible.value.filter(o=>o.can_review&&!props.me.paused))
 const offered=computed(()=>grants.value.filter(g=>view.pair(g.issuer_id,g.recipient_id)&&g.recipient_id===props.me.id&&g.status==='offered'))
 const pendingForms=computed(()=>forms.value.filter(f=>f.status==='draft'))
-const agenda=computed(()=>[...new Map([...mine.value,...reviews.value].map(o=>[o.id,o])).values()].sort((a,b)=>a.due_at.localeCompare(b.due_at)).slice(0,5))
+const team=computed(()=>visible.value.filter(o=>o.recipient_id!==props.me.id&&assignments.value.some(a=>a.id===o.assignment_id&&a.issuer_id===props.me.id)))
+const agenda=computed(()=>[...new Map([...mine.value,...team.value,...reviews.value].map(o=>[o.id,o])).values()].sort((a,b)=>a.due_at.localeCompare(b.due_at)).slice(0,5))
 const upcoming=computed(()=>visible.value.filter(o=>o.status==='scheduled').sort((a,b)=>a.due_at.localeCompare(b.due_at)).slice(0,4))
 const connected=computed(()=>props.relations.filter(r=>r.status!=='revoked'))
 const visibleNotices=computed(()=>notices.value.filter(n=>!view.selected.value||assignments.value.some(a=>a.id===n.assignment_id&&view.assignment(a))).slice(0,4))
 function name(id:string){return props.participants.find(p=>p.id===id)?.display_name??t('Participant','Участник')}
 function when(value:string){return new Intl.DateTimeFormat(props.ru?'ru-RU':'en-GB',{timeZone:props.me.timezone,day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}).format(new Date(value))}
+const dominantContext=computed(()=>view.selected.value?.dominant_user_id===props.me.id)
 const stats=computed(()=>[
- {icon:IconCalendar,value:mine.value.length,label:t('For you','Ваши выполнения'),section:'rituals' as Section},
+ {icon:IconCalendar,value:dominantContext.value?team.value.length:mine.value.length,label:dominantContext.value?t('Participant schedule','График подчинённых'):t('For you','Ваши выполнения'),section:'rituals' as Section},
  {icon:IconClipboardCheck,value:reviews.value.length,label:t('To review','Ждут проверки'),section:'rituals' as Section},
  {icon:IconGift,value:offered.value.length,label:t('Reward offers','Предложено наград'),section:'rewards' as Section},
  {icon:IconFileText,value:pendingForms.value.length,label:t('Personal forms','Личные анкеты'),section:'forms' as Section}
@@ -49,7 +51,7 @@ const stats=computed(()=>[
    <p v-if="busy" role="status" class="empty-state">{{t('Bringing your day together…','Собираем ваш день…')}}</p>
    <p v-else-if="error" class="muted">{{t('Your day is temporarily unavailable.','Ваш день временно недоступен.')}}</p>
    <div v-else-if="!agenda.length" class="home-empty"><IconCircleCheck :size="30" :stroke-width="1.2" /><h3>{{t('Room for your own rhythm','Есть место для своего ритма')}}</h3><p>{{t('Your rituals and reports awaiting review will appear here.','Здесь появятся ваши выполнения и отчёты, которые ждут проверки.')}}</p><a href="#rituals" @click.prevent="emit('navigate','rituals')">{{t('Open rituals','Открыть ритуалы')}}</a></div>
-   <a v-for="o in agenda" v-else :key="o.id" href="#rituals" class="day-row" @click.prevent="emit('navigate','rituals')"><span class="day-marker" :data-status="o.status"><IconClipboardCheck v-if="o.can_review" :size="21" /><IconCircleCheck v-else :size="21" /></span><span><strong>{{o.title}}</strong><small>{{o.can_review?t('Your review is requested','Ждёт вашей проверки'):statusLabel(o.status,ru)}} · {{when(o.due_at)}}</small></span><IconChevronRight :size="16" /></a>
+   <a v-for="o in agenda" v-else :key="o.id" href="#rituals" class="day-row" @click.prevent="emit('navigate','rituals')"><span class="day-marker" :data-status="o.status"><IconClipboardCheck v-if="o.can_review" :size="21" /><IconCircleCheck v-else :size="21" /></span><span><strong>{{o.title}}</strong><small>{{o.recipient_id!==me.id?name(o.recipient_id)+' · ':''}}{{o.can_review?t('Your review is requested','Ждёт вашей проверки'):statusLabel(o.status,ru)}} · {{when(o.due_at)}}</small></span><IconChevronRight :size="16" /></a>
   </section>
   <div class="personal-shortcuts"><a href="#journal" @click.prevent="emit('navigate','journal')"><IconNotebook :size="26" :stroke-width="1.5" /><h3>{{t('Diary','Дневник')}}</h3><p>{{t('A little room for yourself. Private by default.','Немного пространства для себя. Приватно по умолчанию.')}}</p><span>{{t('Open your diary','Открыть дневник')}}<IconArrowUpRight :size="16" /></span></a><a href="#forms" @click.prevent="emit('navigate','forms')"><IconFileText :size="26" :stroke-width="1.5" /><h3>{{t('Forms & surveys','Анкеты и опросы')}}</h3><p>{{pendingForms.length?t('You have personal forms to complete.','Есть личные анкеты для заполнения.'):t('Questions that help you understand one another.','Вопросы, которые помогают услышать друг друга.')}}</p><span>{{t('Open forms','Перейти к анкетам')}}<IconArrowUpRight :size="16" /></span></a></div>
  </div>

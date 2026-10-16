@@ -20,12 +20,12 @@ export function eligibleRecipients(relations:Relation[],memberId:string,paused:b
 export function matchesContext(author:string,recipient:string,selected:Relation|null,memberId:string):boolean {
  if(!selected)return true
  const partner=partnerId(selected,memberId)
- return partner!==null&&((author===memberId&&recipient===partner)||(author===partner&&recipient===memberId))
+ return partner!==null&&author===selected.dominant_user_id&&recipient===selected.submissive_user_id
 }
 export function contextRule(row:{recipient_id:string;manager_ids:string[]},selected:Relation|null,memberId:string):boolean {
  if(!selected)return true
  const partner=partnerId(selected,memberId)
- return partner!==null&&((row.recipient_id===memberId&&row.manager_ids.includes(partner))||(row.recipient_id===partner&&row.manager_ids.includes(memberId)))
+ return partner!==null&&row.recipient_id===selected.submissive_user_id&&row.manager_ids.includes(selected.dominant_user_id)
 }
 export function contextAssignment(row:{issuer_id:string;recipient_id:string;reviewer_ids:string[]},selected:Relation|null,memberId:string):boolean {
  return matchesContext(row.issuer_id,row.recipient_id,selected,memberId)||!!selected&&(row.recipient_id===partnerId(selected,memberId)&&row.reviewer_ids.includes(memberId))

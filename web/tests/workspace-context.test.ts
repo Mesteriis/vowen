@@ -22,7 +22,8 @@ it('selected incoming context cannot borrow outgoing authority or transitively a
 })
 it('rule managers are explicit: receiving rules from another relationship is not enough',()=>{
  expect(contextRule({recipient_id:'a',manager_ids:['c']},outgoing,'a')).toBe(false)
- expect(contextRule({recipient_id:'a',manager_ids:['b']},outgoing,'a')).toBe(true)
+ expect(contextRule({recipient_id:'a',manager_ids:['b']},outgoing,'a')).toBe(false)
+ expect(contextRule({recipient_id:'b',manager_ids:['a']},outgoing,'a')).toBe(true)
 })
 it('occurrences require a matching visible assignment; unrelated reviewer data cannot enter a context',()=>{
  const assignments=[{id:'one',issuer_id:'a',recipient_id:'b',reviewer_ids:['a']},{id:'two',issuer_id:'c',recipient_id:'a',reviewer_ids:['c']}]
@@ -34,4 +35,9 @@ it('keeps explicitly delegated review in partner context without inventing assig
  const assignments=[{id:'delegated',issuer_id:'c',recipient_id:'b',reviewer_ids:['a']}]
  expect(contextOccurrence({assignment_id:'delegated',recipient_id:'b',can_review:true},assignments,outgoing,'a')).toBe(true)
  expect(eligibleRecipients([{...outgoing,scopes:['rituals.review']}],'a',false,'rituals.assign',null)).toEqual([])
+})
+
+it('keeps opposite directed relationships separate for switch participants',()=>{
+ expect(matchesContext('b','a',outgoing,'a')).toBe(false)
+ expect(matchesContext('a','b',outgoing,'a')).toBe(true)
 })

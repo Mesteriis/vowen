@@ -65,3 +65,9 @@ label{font-size:13px;margin:10px 0}input:not([type=checkbox]):not([type=radio]),
 
 /* Blend only the brighter embossed details into the page velvet. */
 .entry-art{mix-blend-mode:lighten}
+
+.shop-balance{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0 20px}
+.shop-balance strong{display:block;font-size:24px;font-weight:500}.shop-balance small{font-size:13px;color:var(--muted)}
+.shop-item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center}.shop-item h4{font:500 15px system-ui;margin:0}.shop-item p{font-size:13px;margin:6px 0}.shop-item>div:last-child{display:grid;justify-items:end;gap:8px;font-size:13px}.shop-item button{margin:0}.currency-history article{padding:12px 0}.currency-history p{margin:4px 0;font-size:13px}
+
+.ritual-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 20px}.ritual-tabs button{margin:0;border-color:var(--border);color:var(--muted)}.ritual-tabs button[aria-pressed=true]{border-color:var(--gold);color:var(--gold)}
