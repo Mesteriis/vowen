@@ -894,3 +894,39 @@ The entry emblem uses lighten blending over the velvet, removing its dark rectan
 backdrop without changing the source asset or dimensions. Browser selection and
 44px control height verified. Web lint, build/typecheck and12 unit tests passed.
 CI and other browser engines were not checked for this small slice.
+
+## Relationship economy and contextual rituals (2026-10-16)
+
+Implemented migration0019: append-only encrypted currency history, a wallet per
+directed relationship, priced shop listings, atomic purchases and multiple pinned
+ritual reward versions plus currency. The wallet belongs to the subordinate;
+Dominant manages that participant's coins, never a personal balance. Switch has a
+wallet only in an incoming subordinate relationship. Credits require a positive
+amount and comment. Automatic awards occur after approval (or successful reporting
+when approval is not required); retries cannot duplicate grants or ledger entries.
+Revocation/pause stops new operations while preserving earned assets/history.
+New reward policies apply to future, not already-created occurrences. Legacy single
+reward policies/grants survive migration; rollback refuses to discard new economy.
+
+Mini App now separates assigned rituals, review queue and own executions by directed
+context. Dominant sees subordinates' schedule, with templates/settings collapsed.
+New ritual creation continues directly to schedule/assignment. Shop supports credits,
+listing creation/hiding, purchases and history. Rule versions include discipline
+terms, preserving old-client edits and accepted snapshots. Global personal-pause
+buttons were removed; server pause/consent protections remain. Native Android includes
+the contextual shop, multi-reward assignment and rule discipline fields.
+
+Verified locally:218 backend tests,13 web unit tests,19 API-backed browser scenarios;
+Android16 unit tests, lint, debug APK and instrumentation APK builds. Browser shop
+checks cover purchase/history and390px overflow; local Dominant preview explicitly
+labels Luna's coins. Additional ownership assertions are included in the shop/API
+regressions. Ruff, mypy and heuristic secret scan passed. CI result is recorded below
+after the committed revision completes. Local synthetic preview was backed up before
+0019 migration; production and live Telegram were not touched.
+
+Remaining: diary date-only/current-day flow and stylus input; full native contextual
+home/ritual navigation redesign and device acceptance; tighter today-only home agenda.
+Legacy offer controls remain behind the catalogue for compatibility. Shop price edits
+exist through API, with creation/hiding in UI; wallet history displays latest500 entries.
+Currency-only credits have no dedicated Telegram notification. No refunds, transfers,
+real money or automatic rule-period bonuses are implemented.

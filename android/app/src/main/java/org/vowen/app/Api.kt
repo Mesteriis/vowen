@@ -82,7 +82,7 @@ class Api(private val state: InstanceSession,
  suspend fun saveRule(rule:RuleTemplate?,body:RuleContent):RuleTemplate {
   if(rule==null)return json.decodeFromString(call("/rules","POST",json.encodeToString(body)))
   val path="/rules/${rule.id}"+if(rule.status=="draft")"" else "/versions"
-  return json.decodeFromString(call(path,if(rule.status=="draft")"PATCH" else "POST",json.encodeToString(RuleEdit(title=body.title,description=body.description,expected_version=rule.revision))))
+  return json.decodeFromString(call(path,if(rule.status=="draft")"PATCH" else "POST",json.encodeToString(RuleEdit(title=body.title,description=body.description,discipline=body.discipline,expected_version=rule.revision))))
  }
  suspend fun ruleTemplate(rule:RuleTemplate,action:String):RuleTemplate {
   require(action in listOf("publish","archive"))
@@ -130,6 +130,12 @@ class Api(private val state: InstanceSession,
  suspend fun uploadEvidence(o:RitualOccurrence,body:EvidenceUpload):EvidenceView=json.decodeFromString(call("/ritual-occurrences/${o.id}/evidence","POST",json.encodeToString(body)))
  suspend fun downloadEvidence(e:EvidenceView):EvidenceDownload=json.decodeFromString(call("/ritual-evidence/${e.id}"))
  suspend fun discardEvidence(e:EvidenceView){call("/ritual-evidence/${e.id}","DELETE")}
+ suspend fun wallet(rid:String):RelationWallet=json.decodeFromString(call("/relations/$rid/wallet"))
+ suspend fun shop(rid:String):List<ShopListing> = json.decodeFromString(call("/relations/$rid/shop"))
+ suspend fun creditCoins(rid:String,body:CreditCommand):RelationWallet=json.decodeFromString(call("/relations/$rid/wallet/credits","POST",json.encodeToString(body)))
+ suspend fun createListing(rid:String,body:ListingCommand):ShopListing=json.decodeFromString(call("/relations/$rid/shop","POST",json.encodeToString(body)))
+ suspend fun editListing(s:ShopListing):ShopListing=json.decodeFromString(call("/shop/${s.id}","PATCH",json.encodeToString(ListingEdit(expected_version=s.revision,price=s.price,active=!s.active))))
+ suspend fun purchase(s:ShopListing,key:String):RewardGrant=json.decodeFromString(call("/shop/${s.id}/purchases","POST",json.encodeToString(PurchaseCommand(expected_version=s.revision,idempotency_key=key))))
  suspend fun rewards():List<RewardDefinition> = json.decodeFromString(call("/rewards"))
  suspend fun rewardNotices():List<RewardNotice> = json.decodeFromString(call("/reward-notices"))
  suspend fun rewardGrants():List<RewardGrant> = json.decodeFromString(call("/reward-grants"))

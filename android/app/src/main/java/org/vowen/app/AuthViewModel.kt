@@ -143,6 +143,12 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
   }
  }
  fun discardEvidence(e:EvidenceView,done:()->Unit)=run{api.discardEvidence(e);done()}
+ private suspend fun economyLoaded(rid:String){val wallet=api.wallet(rid);val shop=api.shop(rid);mutable.value=mutable.value.copy(workspace=mutable.value.workspace.copy(economyRelationId=rid,wallet=wallet,shop=shop))}
+ fun loadEconomy(rid:String)=run{economyLoaded(rid)}
+ fun creditCoins(rid:String,body:CreditCommand)=run{api.creditCoins(rid,body);loadWorkspace(true);economyLoaded(rid)}
+ fun createListing(rid:String,body:ListingCommand)=run{api.createListing(rid,body);loadWorkspace(true);economyLoaded(rid)}
+ fun purchase(s:ShopListing,key:String)=run{api.purchase(s,key);loadWorkspace(true);economyLoaded(s.relation_id)}
+ fun editListing(s:ShopListing)=run{api.editListing(s);loadWorkspace(true);economyLoaded(s.relation_id)}
  fun saveReward(r:RewardDefinition?,body:RewardContent)=run{api.saveReward(r,body);loadWorkspace(true)}
  fun grantReward(body:GrantCommand)=run{api.grantReward(body);loadWorkspace(true)}
  fun transitionReward(g:RewardGrant,action:String)=run{api.transitionReward(g,action);loadWorkspace(true)}

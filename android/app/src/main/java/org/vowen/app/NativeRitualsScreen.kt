@@ -151,14 +151,14 @@ data class RitualActions(
 }
 @Composable private fun RitualAssignmentEditor(member:Member,participants:List<Participant>,rewards:List<RewardDefinition>,template:RitualTemplate?,assignment:RitualAssignment?,busy:Boolean,ru:Boolean,assign:(RitualAssign)->Unit,edit:(RitualSchedule)->Unit,cancel:()->Unit){
  fun t(en:String,rus:String)=if(ru)rus else en
- var evidenceRequired by remember{mutableStateOf(false)};var evidenceTypes by remember{mutableStateOf(listOf("link","photo","video"))};var reward by remember{mutableStateOf<String?>(null)};var rewardExpanded by remember{mutableStateOf(false)}
+ var evidenceRequired by remember{mutableStateOf(false)};var evidenceTypes by remember{mutableStateOf(listOf("link","photo","video"))};var rewardIds by remember{mutableStateOf(emptyList<String>())};var coins by remember{mutableStateOf("0")}
  val old=assignment?.schedule
  var recipient by remember{mutableStateOf("")};var reviewers by remember{mutableStateOf(emptyList<String>())};var expanded by remember{mutableStateOf(false)}
  var kind by remember{mutableStateOf(old?.kind?:"daily")};var timezone by remember{mutableStateOf(old?.timezone?:member.timezone)}
  var date by remember{mutableStateOf(if(old==null)LocalDate.now(ZoneId.of(member.timezone)).toString() else LocalDate.now(ZoneId.of(old.timezone)).plusDays(1).toString())}
  var hour by remember{mutableStateOf((old?.hour?:9).toString())};var minute by remember{mutableStateOf((old?.minute?:0).toString())}
  var days by remember{mutableStateOf(old?.weekdays?:emptyList())};var window by remember{mutableStateOf((old?.window_hours?:24).toString())};var approval by remember{mutableStateOf(true)}
- val key=remember(recipient,reviewers,kind,timezone,date,hour,minute,days,window,approval,reward,evidenceRequired,evidenceTypes){UUID.randomUUID().toString()}
+ val key=remember(recipient,reviewers,kind,timezone,date,hour,minute,days,window,approval,rewardIds,coins,evidenceRequired,evidenceTypes){UUID.randomUUID().toString()}
  Text(template?.title?:assignment?.title?:"",style=MaterialTheme.typography.titleLarge)
  if(template!=null){Box {TextButton(onClick={expanded=true},enabled=!busy){Text(participants.find{it.id==recipient}?.display_name?:t("Ritual recipient","Адресат ритуала"))};DropdownMenu(expanded,{expanded=false}){participants.filter{it.id!=member.id}.forEach{p->DropdownMenuItem(text={Text(p.display_name)},onClick={recipient=p.id;reviewers=reviewers-p.id;expanded=false})}}}
  participants.filter{it.id!=recipient}.forEach{p->Row{Checkbox(p.id in reviewers,{reviewers=if(it)reviewers+p.id else reviewers-p.id},enabled=!busy,modifier=Modifier.semantics{contentDescription=t("Reviewer: ","Проверяющий: ")+p.display_name});Text(t("Reviewer: ","Проверяющий: ")+p.display_name)}}
@@ -166,8 +166,10 @@ data class RitualActions(
  if(template!=null){
   Row{Checkbox(evidenceRequired,{evidenceRequired=it},enabled=!busy,modifier=Modifier.semantics{contentDescription=t("Evidence required","Доказательство обязательно")});Text(t("Evidence required","Доказательство обязательно"))}
   listOf("link","photo","video").forEach{kind->Row{Checkbox(kind in evidenceTypes,{evidenceTypes=if(it)evidenceTypes+kind else evidenceTypes-kind},enabled=!busy,modifier=Modifier.semantics{contentDescription=if(kind=="link")t("Link","Ссылка") else if(kind=="photo")t("Photo","Фото") else t("Video","Видео")});Text(if(kind=="link")t("Link","Ссылка") else if(kind=="photo")t("Photo","Фото") else t("Video","Видео"))}}
-  Text(t("Automatic reward","Автоматическая награда"));Box{TextButton(onClick={rewardExpanded=true},enabled=!busy){Text(rewards.find{it.version_id==reward}?.title?:t("No automatic reward","Без автоматической награды"))};DropdownMenu(rewardExpanded,{rewardExpanded=false}){DropdownMenuItem(text={Text(t("No automatic reward","Без автоматической награды"))},onClick={reward=null;rewardExpanded=false});rewards.forEach{r->DropdownMenuItem(text={Text(r.title)},onClick={reward=r.version_id;rewardExpanded=false})}}}
-  Text(t("Reward version is fixed. Current rewards.grant authority is required at approval.","Версия награды фиксируется. При одобрении требуется действующее полномочие rewards.grant."),style=MaterialTheme.typography.bodySmall)
+  Text(t("Completion rewards","Награды за выполнение"),style=MaterialTheme.typography.titleMedium)
+  rewards.forEach{r->Row{Checkbox(r.version_id in rewardIds,{rewardIds=if(it)rewardIds+r.version_id else rewardIds-r.version_id},enabled=!busy,modifier=Modifier.semantics{contentDescription=r.title});Text(r.title)}}
+  OutlinedTextField(coins,{coins=it},label={Text(t("Coins per completion","Монет за выполнение"))},enabled=!busy)
+  Text(t("Awarded automatically after completion or required approval.","Автоматическая выдача после завершения или обязательной проверки."),style=MaterialTheme.typography.bodySmall)
  }
  Row{listOf("once","daily","weekly").forEach{k->TextButton(onClick={kind=k;days=if(k=="weekly")listOf(0) else emptyList()},enabled=!busy){Text(k)}}}
  if(kind=="weekly")listOf("Mon","Tue","Wed","Thu","Fri","Sat","Sun").forEachIndexed{i,d->Row{Checkbox(i in days,{days=if(it)days+i else days-i},enabled=!busy,modifier=Modifier.semantics{contentDescription=d});Text(d)}}
@@ -177,7 +179,7 @@ data class RitualActions(
  OutlinedTextField(window,{window=it},label={Text(t("Report window · hours","Окно отчёта · часы"))},enabled=!busy)
  Text(t("DST: missing time shifts by the gap; repeated time uses the first occurrence. Schedule edits begin tomorrow or later.","DST: отсутствующее время сдвигается на разрыв, повторяющееся — один раз. Изменения — со следующего дня."),style=MaterialTheme.typography.bodySmall)
  val valid=evidenceTypes.isNotEmpty() && hour.toIntOrNull() in 0..23 && minute.toIntOrNull() in 0..59 && window.toIntOrNull() in 1..168 && runCatching{LocalDate.parse(date);ZoneId.of(timezone)}.isSuccess && (kind!="weekly"||days.isNotEmpty())
- VowenActionButton(onClick={val s=RitualSchedule(hour=hour.toInt(),minute=minute.toInt(),kind=kind,timezone=timezone,start_date=date,weekdays=days,window_hours=window.toInt());if(template!=null)assign(RitualAssign(evidence_policy=EvidencePolicy(required=evidenceRequired,allowed_types=evidenceTypes),reward_version_id=reward,approval_required=approval,idempotency_key=key,recipient_id=recipient,reviewer_ids=reviewers,schedule=s)) else edit(s)},enabled=!busy&&valid&&(template==null||(recipient.isNotEmpty()&&(!approval||reviewers.isNotEmpty())))){Text(if(template==null)t("Save schedule","Сохранить расписание") else t("Create ritual assignment","Создать назначение ритуала"))}
+ VowenActionButton(onClick={val s=RitualSchedule(hour=hour.toInt(),minute=minute.toInt(),kind=kind,timezone=timezone,start_date=date,weekdays=days,window_hours=window.toInt());if(template!=null)assign(RitualAssign(evidence_policy=EvidencePolicy(required=evidenceRequired,allowed_types=evidenceTypes),reward_version_ids=rewardIds,currency_amount=coins.toIntOrNull()?:0,approval_required=approval,idempotency_key=key,recipient_id=recipient,reviewer_ids=reviewers,schedule=s)) else edit(s)},enabled=!busy&&valid&&(coins.toIntOrNull()?.let{it in 0..1000000000}==true)&&(template==null||(recipient.isNotEmpty()&&(!approval||reviewers.isNotEmpty())))){Text(if(template==null)t("Save schedule","Сохранить расписание") else t("Create ritual assignment","Создать назначение ритуала"))}
  TextButton(onClick=cancel,enabled=!busy){Text(t("Cancel","Отмена"))}
 }
 

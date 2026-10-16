@@ -1,6 +1,9 @@
 package org.vowen.app
 
 data class WorkspaceState(
+ val economyRelationId:String? = null,
+ val wallet:RelationWallet? = null,
+ val shop:List<ShopListing> = emptyList(),
  val relations:List<Relation> = emptyList(),
  val participants:List<Participant> = emptyList(),
  val sessions:List<DeviceSession> = emptyList(),
@@ -24,4 +27,4 @@ data class WorkspaceState(
  val notificationSettings:NotificationSettings? = null
 )
 
-suspend fun Api.workspace():WorkspaceState = WorkspaceState(relations(),participants(),sessions(),forms(),formInvitations(),formResults(),rules(),ruleAssignments(),rituals=rituals(),ritualAssignments=ritualAssignments(),ritualOccurrences=ritualOccurrences(),ritualNotices=ritualNotices(),rewards=rewards(),rewardGrants=rewardGrants(),rewardNotices=rewardNotices(),discipline=discipline(),journal=journal(),surveys=surveys(),notificationSettings=notificationSettings())
+suspend fun Api.workspace():WorkspaceState = WorkspaceState(relations=relations(),participants=participants(),sessions=sessions(),forms=forms(),formInvitations=formInvitations(),formResults=formResults(),rules=rules(),ruleAssignments=ruleAssignments(),rituals=rituals(),ritualAssignments=ritualAssignments(),ritualOccurrences=ritualOccurrences(),ritualNotices=ritualNotices(),rewards=rewards(),rewardGrants=rewardGrants(),rewardNotices=rewardNotices(),discipline=discipline(),journal=journal(),surveys=surveys(),notificationSettings=notificationSettings())

@@ -11,7 +11,7 @@ import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 import java.util.Locale
 
-data class RewardActions(val refresh:()->Unit,val save:(RewardDefinition?,RewardContent)->Unit,val grant:(GrantCommand)->Unit,val transition:(RewardGrant,String)->Unit)
+data class RewardActions(val refresh:()->Unit,val save:(RewardDefinition?,RewardContent)->Unit,val grant:(GrantCommand)->Unit,val transition:(RewardGrant,String)->Unit,val economy:EconomyActions?=null)
 
 @Composable fun NativeRewardsScreen(member:Member,data:WorkspaceState,busy:Boolean,actions:RewardActions,completed:Int=0){
  val ru=member.language=="ru"
@@ -24,6 +24,7 @@ data class RewardActions(val refresh:()->Unit,val save:(RewardDefinition?,Reward
  var requestKey by remember{mutableStateOf(UUID.randomUUID().toString())}
  Column(verticalArrangement=Arrangement.spacedBy(8.dp)){
   Text(t("Rewards","Награды"),style=MaterialTheme.typography.headlineMedium)
+  actions.economy?.let{NativeShop(member,data,busy,completed,it)}
   Row{TextButton(onClick=actions.refresh,enabled=!busy){Text(t("Refresh rewards","Обновить награды"))};VowenActionButton(onClick={selected=null;editing=true},enabled=!busy&&!member.paused){Text(t("New reward","Новая награда"))}}
   if(editing)key(selected?.id,selected?.revision){
    var title by remember{mutableStateOf(selected?.title?:"")};var description by remember{mutableStateOf(selected?.description?:"")};var conditions by remember{mutableStateOf(selected?.conditions?:"")}
@@ -38,10 +39,10 @@ data class RewardActions(val refresh:()->Unit,val save:(RewardDefinition?,Reward
   data.rewardGrants.forEach{g->Card(Modifier.fillMaxWidth()){Column(Modifier.padding(16.dp),verticalArrangement=Arrangement.spacedBy(8.dp)){
    Text("${name(g.issuer_id)} → ${name(g.recipient_id)}",style=MaterialTheme.typography.bodySmall)
    Text(g.title,style=MaterialTheme.typography.titleLarge);Text(label(g.status),color=MaterialTheme.colorScheme.primary);Text(g.description);Text(g.conditions?:"")
-   Text(if(g.occurrence_id==null)t("Manual offer","Ручное предложение") else t("Approved ritual","Одобренный ритуал"))
+   Text(if(g.source=="purchase")t("Purchased","Куплено") else if(g.occurrence_id==null)t("Manual grant","Ручная выдача") else t("Approved ritual","Одобренный ритуал"))
    if(g.recipient_id==member.id&&g.status=="offered"){TextButton(onClick={actions.transition(g,"accept")},enabled=!busy){Text(t("Accept reward","Принять награду"))};TextButton(onClick={actions.transition(g,"decline")},enabled=!busy){Text(t("Decline reward","Отклонить награду"))}}
    if(g.issuer_id==member.id&&g.status=="accepted")TextButton(onClick={actions.transition(g,"deliver")},enabled=!busy&&!member.paused){Text(t("Mark delivered","Отметить вручение"))}
-   if(g.issuer_id==member.id&&g.status in listOf("offered","accepted"))TextButton(onClick={actions.transition(g,"cancel")},enabled=!busy&&!member.paused){Text(t("Cancel reward","Отменить награду"))}
+   if(g.issuer_id==member.id&&g.source!="purchase"&&g.status in listOf("offered","accepted"))TextButton(onClick={actions.transition(g,"cancel")},enabled=!busy&&!member.paused){Text(t("Cancel reward","Отменить награду"))}
    Text(t("Grant history","История выдачи"),style=MaterialTheme.typography.titleMedium)
    g.history.forEach{h->Text(label(h.status)+" · "+OffsetDateTime.parse(h.created_at).atZoneSameInstant(ZoneId.of(member.timezone)).format(DateTimeFormatter.ofPattern("d MMM uuuu, HH:mm VV",if(ru)Locale.forLanguageTag("ru") else Locale.UK)),style=MaterialTheme.typography.bodySmall)}
   }}}

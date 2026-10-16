@@ -51,7 +51,7 @@ fun NativeRulesScreen(member:Member,data:WorkspaceState,busy:Boolean,completed:I
   Text(t("Assignments and history","Назначения и история"),style=MaterialTheme.typography.titleLarge)
   data.ruleAssignments.forEach {a->
    Text("${a.title} · ${name(a.recipient_id)}",style=MaterialTheme.typography.titleMedium)
-   Text(a.description)
+   Text(a.description);if(!a.discipline.isNullOrBlank())Text(a.discipline)
    Text("${a.status} · ${if(a.effective&&!(member.paused&&a.recipient_id==member.id))t("effective","действует") else t("inactive","не действует")}")
    Text(a.rule_version_id)
    Text(t("Managers: ","Управляющие: ")+a.manager_ids.joinToString {name(it)})
@@ -66,7 +66,7 @@ fun NativeRulesScreen(member:Member,data:WorkspaceState,busy:Boolean,completed:I
  }
  review?.let {a->AlertDialog(onDismissRequest={if(!busy)review=null},title={Text(t("Review exact rule version","Подтверждение точной версии"))},text={Column(Modifier.verticalScroll(rememberScrollState())) {
   Text(a.title)
-  Text(a.description,Modifier.testTag("rule-review"))
+  Text(a.description,Modifier.testTag("rule-review"));if(!a.discipline.isNullOrBlank())Text(a.discipline)
   Text(a.rule_version_id)
   Text(t("Acceptance replaces the previously active version.","Принятие заменит ранее действовавшую версию."),Modifier.testTag("rule-review-end"))
  }},confirmButton={TextButton(onClick={actions.decision(a,"accept")},enabled=!busy&&!member.paused,modifier=Modifier.testTag("confirm-rule-acceptance")){Text(t("Confirm rule acceptance","Подтверждаю принятие"))}},dismissButton={TextButton(onClick={review=null},enabled=!busy){Text(t("Cancel","Отмена"))}})}
@@ -75,11 +75,12 @@ fun NativeRulesScreen(member:Member,data:WorkspaceState,busy:Boolean,completed:I
 @Composable
 private fun RuleEditor(rule:RuleTemplate?,busy:Boolean,ru:Boolean,save:(RuleContent)->Unit,cancel:()->Unit) {
  var title by remember {mutableStateOf(rule?.title?:"")}
- var description by remember {mutableStateOf(rule?.description?:"")}
+ var description by remember {mutableStateOf(rule?.description?:"")};var discipline by remember{mutableStateOf(rule?.discipline?:"")}
  Column {
   OutlinedTextField(title,{if(it.length<=200)title=it},label={Text(if(ru)"Название правила" else "Rule title")},enabled=!busy,modifier=Modifier.testTag("rule-title"))
   OutlinedTextField(description,{if(it.length<=10000)description=it},label={Text(if(ru)"Описание правила" else "Rule description")},enabled=!busy,modifier=Modifier.testTag("rule-description"))
-  VowenActionButton(onClick={save(RuleContent(title=title,description=description))},enabled=!busy&&title.isNotBlank()&&description.isNotBlank(),modifier=Modifier.testTag("save-rule")) {Text(if(ru)"Сохранить правило" else "Save rule")}
+  OutlinedTextField(discipline,{if(it.length<=10000)discipline=it},label={Text(if(ru)"Дисциплина по правилу" else "Rule discipline")},enabled=!busy)
+  VowenActionButton(onClick={save(RuleContent(title=title,description=description,discipline=discipline))},enabled=!busy&&title.isNotBlank()&&description.isNotBlank(),modifier=Modifier.testTag("save-rule")) {Text(if(ru)"Сохранить правило" else "Save rule")}
   TextButton(onClick=cancel,enabled=!busy){Text(if(ru)"Отмена" else "Cancel")}
  }
 }

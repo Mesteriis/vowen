@@ -120,3 +120,21 @@ in `entry-blend-comparison.jpg` at the same desktop state. Owner-requested diffe
 without a dark square. Typography, spacing, copy and source image dimensions remain
 unchanged. Native select selection works; control height44px. No P0/P1/P2 findings
 for this scoped polish. Final result: passed.
+
+## Contextual rituals and relationship shop (2026-10-16)
+
+Scoped continuation of the existing velvet/gold visual direction and owner's role
+feedback. Captures: artifacts/design/ui-context/rituals-dominant-v2.png and
+shop-dominant-v3.png. Actual local app at /, synthetic Alex -> Luna active context.
+Dominant shop labels "Монеты участника: Луна · демо", provides credit/listing management
+and no Buy action. Subordinate purchase/balance/history and390px overflow are covered
+by real-API browser regression. Opposite-directed relationships remain distinct.
+
+Fonts: existing serif headings/system controls. Spacing: compact rows and outline
+controls, collapsed templates/settings/catalogue/history. Colors: existing dark,
+gold and rose tokens. Images: original velvet and emblem retained. Copy: ownership
+is explicit; no personal Dominant wallet, own executions hidden in Dominant context.
+No P0/P1/P2 visual findings in the inspected desktop shop/ritual surfaces. This is
+not acceptance of unfinished diary/stylus or full native navigation redesign.
+Native builds passed; no native device visual acceptance or live Telegram evidence.
+Final result for these scoped Mini App surfaces: passed.
