@@ -872,3 +872,9 @@ server-gated local login remain functional; profile language and member workspac
 are unchanged. Browser inspection confirmed the removed elements are absent.
 Web lint, typecheck/production build, 12 unit tests and diff whitespace check passed.
 No backend, schema, Android or production changes were made for this slice.
+
+Entry follow-up: removed the signed-out slogan. When server-gated DEBUG_AUTH is
+active, only local login is offered; the Telegram button remains in normal mode.
+Removed the now-unused divider above the debug form. Verified local debug rendering;
+web lint, production build/typecheck and 12 unit tests passed. Live Telegram and CI
+for this follow-up were not checked here.
