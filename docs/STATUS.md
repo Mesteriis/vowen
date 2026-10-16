@@ -862,3 +862,13 @@ https://github.com/Mesteriis/vowen/actions/runs/38813788301
 A final time-field layout fix passed the complete18-scenario browser suite locally
 and is submitted with the QA report to the same CI workflow. Native physical-device
 visual acceptance and live Telegram remain pending; production is unchanged.
+
+## Entry screen annotation cleanup (2026-10-16)
+
+Removed the six owner-selected elements only from the signed-out web entry:
+crest/wordmark link, entry card heading, operator-provisioning explanation,
+debug explanation, technical privacy footer and language toggle. Telegram and
+server-gated local login remain functional; profile language and member workspace
+are unchanged. Browser inspection confirmed the removed elements are absent.
+Web lint, typecheck/production build, 12 unit tests and diff whitespace check passed.
+No backend, schema, Android or production changes were made for this slice.
