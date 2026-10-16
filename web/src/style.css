@@ -17,7 +17,9 @@ dialog.ritual-dialog,.ritual-dialog,[aria-modal=true],.navigation-sheet{position
 .debug-auth-heading{grid-column:1/-1;display:flex;align-items:center;gap:12px;font-size:12px;line-height:18px;color:var(--muted)}
 .debug-auth-heading>span:first-child{color:var(--rose);border-right:1px solid var(--border);padding-right:12px}
 .debug-auth>label{margin:0;font-size:13px;line-height:20px;min-width:0}
-.debug-auth select{height:44px;padding:8px 12px;margin-top:4px;font-size:14px}
+.debug-select{display:block;position:relative;margin-top:4px}
+.debug-auth .debug-select select{appearance:none;height:44px;padding:8px 40px 8px 12px;margin:0;font-size:14px}
+.debug-select>svg{position:absolute;right:12px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--muted)}
 .debug-auth>button{height:44px;margin:0;padding:8px 18px;font-size:14px}
 .debug-auth>p{grid-column:1/-1;margin:0}
 .debug-session{color:var(--rose)}.debug-session{padding:8px 14px;border:1px solid var(--rose);border-radius:7px;font-size:12px;background:var(--surface)}
@@ -60,3 +62,6 @@ label{font-size:13px;margin:10px 0}input:not([type=checkbox]):not([type=radio]),
 @media(max-width:760px){.personal-toolbar .toolbar-actions{border:0;padding:0;margin:0;justify-content:flex-start}.personal-toolbar{padding:6px 0 10px}}
 
 .quiet-hours-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.quiet-hours-fields label{min-width:0}
+
+/* Blend only the brighter embossed details into the page velvet. */
+.entry-art{mix-blend-mode:lighten}

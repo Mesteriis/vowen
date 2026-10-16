@@ -113,3 +113,10 @@ Primary interaction verified: selecting a member enables the action and opens
 that member's actual workspace. Temporary viewport override reset afterward.
 Web lint, typecheck/build and12 unit tests passed. Live Telegram not exercised.
 Final result: passed.
+
+Entry annotation follow-up: compared `entry-strip-final.png` with `entry-blended.png`
+in `entry-blend-comparison.jpg` at the same desktop state. Owner-requested differences:
+12px inset library chevron; the brighter embossed pixels blend over page velvet
+without a dark square. Typography, spacing, copy and source image dimensions remain
+unchanged. Native select selection works; control height44px. No P0/P1/P2 findings
+for this scoped polish. Final result: passed.

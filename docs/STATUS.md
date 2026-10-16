@@ -887,3 +887,10 @@ is about131px high, controls retain44px hit areas. Scoped desktop/source compari
 and mobile overflow inspection passed; actual local login opened the selected
 member workspace. Web lint, typecheck/build and12 unit tests passed. Production
 and native Android are unchanged. CI for this slice is not yet checked.
+
+Entry polish: local member select now uses the existing Tabler chevron with a12px
+right inset and reserved text padding; the native select/keyboard behavior remains.
+The entry emblem uses lighten blending over the velvet, removing its dark rectangular
+backdrop without changing the source asset or dimensions. Browser selection and
+44px control height verified. Web lint, build/typecheck and12 unit tests passed.
+CI and other browser engines were not checked for this small slice.
