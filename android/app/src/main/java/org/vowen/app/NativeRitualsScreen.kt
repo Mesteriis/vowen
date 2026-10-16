@@ -43,7 +43,7 @@ data class RitualActions(
  val discard:((EvidenceView,()->Unit)->Unit)?=null,
  val staged:((RitualOccurrence,(List<EvidenceView>)->Unit)->Unit)?=null
 )
-@Composable fun NativeRitualsScreen(member:Member,data:WorkspaceState,busy:Boolean,completed:Int,actions:RitualActions,error:String?=null) {
+@Composable fun NativeRitualsScreen(member:Member,data:WorkspaceState,busy:Boolean,completed:Int,actions:RitualActions,error:String?=null,homeTarget:String?=null) {
  val ru=member.language=="ru"
  val context=LocalContext.current
  var mediaError by remember{mutableStateOf<String?>(null)}
@@ -60,6 +60,7 @@ data class RitualActions(
  var reviewing by remember {mutableStateOf<RitualOccurrence?>(null)}
  var filter by remember {mutableStateOf("all")}
  LaunchedEffect(completed){editing=false;assigning=null;scheduleFor=null;reporting=null;reviewing=null}
+ LaunchedEffect(homeTarget){data.ritualOccurrences.find{it.id==homeTarget}?.let{o->if(!member.paused){if(o.can_review)reviewing=o else if(o.can_report)reporting=o}}}
  Column(verticalArrangement=Arrangement.spacedBy(8.dp)) {
   mediaError?.let{Text(it,color=MaterialTheme.colorScheme.error)}
   Text(t("Rituals","Ритуалы"),style=MaterialTheme.typography.headlineMedium)

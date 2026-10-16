@@ -86,17 +86,17 @@ test('home distinguishes API failure from an empty day and recovers on retry',as
  await page.route('**/api/v1/ritual-occurrences',route=>unavailable?route.fulfill({status:503,contentType:'application/json',body:'{"error":{"code":"UNAVAILABLE"}}'}):route.continue())
  await telegram(page,100000000205)
  await expect(page.getByText('Your day could not be loaded. Try refreshing.',{exact:false})).toBeVisible()
- await expect(page.locator('.home-stats strong')).toHaveText(['—','—','—','—'])
+ await expect(page.locator('.quiet-day-row')).toHaveCount(0)
  await expect(page.getByRole('heading',{name:'Room for your own rhythm',exact:true})).toHaveCount(0)
  unavailable=false
  await page.getByRole('button',{name:'Try again',exact:true}).click()
- await expect(page.getByRole('heading',{name:'Room for your own rhythm',exact:true})).toBeVisible()
- await expect(page.locator('.home-stats strong')).toHaveText(['0','0','0','0'])
+ await expect(page.locator('.quiet-empty')).toBeVisible()
+ await expect(page.getByText('No rituals scheduled for today.',{exact:true})).toBeVisible()
 })
 
 test('every section fits phone and tablet widths with usable outline controls',async({page},testInfo)=>{
  await telegram(page,100000000206)
- for(const viewport of [{width:390,height:844},{width:768,height:1024},{width:1024,height:768}]){
+ for(const viewport of [{width:390,height:844},{width:690,height:828},{width:768,height:1024},{width:1024,height:768}]){
   await page.setViewportSize(viewport)
   for(const section of ['home','rituals','rules','journal','rewards','forms','discipline','relations','notifications','profile','sessions']){
    await openSection(page,section)
@@ -117,6 +117,7 @@ test('compact session rows identify this device and revoke another session',asyn
  // Let initial panel reads finish before revocation; otherwise an in-flight
  // read can already end this session before the explicit refresh below.
  await other.waitForLoadState('networkidle')
+ await openSection(page,'sessions')
  await page.getByRole('button',{name:'Refresh',exact:true}).click()
  await openSection(page,'sessions')
  await expect(page.locator('.session-row[data-current="true"]')).toContainText('This device')
@@ -127,6 +128,7 @@ test('compact session rows identify this device and revoke another session',asyn
  await expect(page.locator('.session-list>.session-row')).toHaveCount(1)
  await page.getByText('Access history · 1',{exact:true}).click()
  await expect(page.locator('.session-history')).toContainText('Revoked')
+ await openSection(other,'sessions')
  await other.getByRole('button',{name:'Refresh',exact:true}).click()
  await expect(other.locator('.member-workspace')).toHaveCount(0)
  await otherContext.close()

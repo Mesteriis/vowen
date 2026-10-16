@@ -20,7 +20,8 @@ class AppScreenshotTest {
   TokenVault(context).save("https://qa.vowen.invalid","synthetic-screen-refresh")
   try {
    ActivityScenario.launch(MainActivity::class.java).use{
-    compose.waitUntil(10000){compose.onAllNodesWithTag("tab-discipline").fetchSemanticsNodes().isNotEmpty()}
+    compose.waitUntil(10000){compose.onAllNodesWithTag("tab-home").fetchSemanticsNodes().isNotEmpty()}
+    if(compose.onAllNodesWithTag("tab-more").fetchSemanticsNodes().isNotEmpty())compose.onNodeWithTag("tab-more").performClick()
     compose.onNodeWithTag("tab-surveys").performScrollTo().performClick()
     compose.onNodeWithTag("new-survey").performScrollTo().assertExists()
     compose.onNodeWithTag("tab-notifications").performScrollTo().performClick()
@@ -50,7 +51,7 @@ class AppScreenshotTest {
   try {
    ActivityScenario.launch(MainActivity::class.java).use{
     compose.waitUntil(10000){compose.onAllNodesWithTag("tab-rituals").fetchSemanticsNodes().isNotEmpty()}
-    compose.onNodeWithTag("tab-rituals").performScrollTo().performClick()
+    compose.onNodeWithTag("tab-rituals").performClick()
     compose.onNodeWithText("Vowen",useUnmergedTree=true).performScrollTo()
     compose.waitForIdle()
     val bitmap=inst.uiAutomation.takeScreenshot()!!

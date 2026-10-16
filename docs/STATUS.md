@@ -941,3 +941,27 @@ after E2E cleanup and restart, the old synthetic records could no longer decrypt
 The old database/dump were preserved, and a fresh synthetic design database was
 seeded through normal APIs. Preview keyring now resides outside test output, and a
 subsequent restart/login/context switch succeeded. No production data was affected.
+
+## Selected home redesign (2026-10-16)
+
+Implemented the first displayed home direction in Mini App and native Android:
+chronological day agenda, review backlog, compact relationship selector, private
+diary shortcut and a supplementary review/upcoming column when width allows.
+Removed the large hero, counter tiles and duplicate relationship banner on Home.
+Subsequent owner refinements remove phone greetings/taglines and use16px task titles,
+12–13px supporting text and compact outlined actions with44px touch targets.
+Empty upcoming sections and the redundant home footer are omitted.
+
+Today is computed from due_at in the viewer's timezone; historical pending reviews
+remain independently accessible. Contexts remain directed and server capabilities
+govern reports/reviews. Home opens the selected occurrence's report/review screen,
+not just a generic ritual list. Native now starts on Home when rituals are available,
+with phone bottom navigation and wider navigation/agenda layouts. Other sections
+retain their existing layouts. No backend schema/API or production change.
+
+Local checks:15 web unit tests,19 real-API browser scenarios (including690px fold
+layout and review deep link),18 native unit tests, Android lint/debug APK and
+instrumentation APK builds. Synthetic Home component instrumentation passed at
+390x844,834x1194 and690x828 emulator sizes; six native navigation/consent/profile
+regressions passed. These are emulator/component checks, not a physical Fold7 or
+live Telegram acceptance. Local preview remains at127.0.0.1:5176/#home.
