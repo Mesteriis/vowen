@@ -1040,3 +1040,19 @@ Verified Mini App build/lint, real-API ritual workflow with both directed roles,
 keyboard selection/Escape, two avatars, absent toolbar, and390/690/834px bounds.
 Android unit/lint/APK builds pass; this avatar follow-up has not been run on an
 emulator or physical device. Final CI is checked against the pushed revision.
+
+### Ritual review cards (2026-10-16)
+
+Review queue now uses bounded charcoal cards with participant initial, title/status,
+latest report preview (four lines), submitted time and evidence count. The complete
+report/evidence still opens in the existing decision dialog; every prior attempt
+remains in expandable history. Review heading/history share a compact row. Phone
+uses a single column, wider views wrap cards into a grid. Native occurrences also
+use outlined cards and expose the latest review text/evidence count. No changes
+to review authority, optimistic revisions, evidence access or notification effects.
+
+Web lint/build/16 unit tests and real-API ritual regression passed, including
+submitted preview/evidence count,390/690/1280 card bounds, request changes, revised
+report, approval, history and attachment download. Android20 unit tests/lint/debug
+and instrumentation APK builds passed. Native card appearance has not been rerun
+on an emulator in this follow-up. Final CI is checked for the pushed revision.

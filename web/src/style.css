@@ -139,3 +139,21 @@ label{font-size:13px;margin:10px 0}input:not([type=checkbox]):not([type=radio]),
 .relationship-avatar-picker .relationship-options .option-avatar{flex:none}
 .relationship-avatar-picker .relationship-options>li>span:not(.option-avatar){flex:1}
 @media(max-width:760px){.rituals-workspace .workspace-header>.relationship-avatar-picker{order:1;flex:none;width:auto}.relationship-avatar-picker>.relationship-trigger{min-height:44px}.relationship-avatar-picker .relationship-options>li{min-height:56px}}
+
+/* Reviews are report cards, not uncontained paragraphs on the texture. */
+#rituals .ritual-review{display:block;max-width:1040px}
+#rituals .ritual-review>.section-heading,#rituals .ritual-review>div>.section-heading{margin:0 0 12px;gap:12px;align-items:center}
+#rituals .ritual-review .section-heading h3{font-size:21px;margin:0}
+#rituals .ritual-review .section-heading .quiet-button{font-size:12px;margin:0;padding:0 8px}
+.ritual-review .occurrence-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;align-items:start}
+#rituals .ritual-review .occurrence-row{border:1px solid var(--border);border-radius:10px;background:var(--surface);padding:16px;margin:0;max-width:620px;min-width:0}
+#rituals .ritual-review .occurrence-heading{align-items:start;gap:10px;flex-wrap:wrap}
+.ritual-review .occurrence-heading>div{flex:1;min-width:140px}.ritual-review .review-avatar{width:32px;height:32px;font-size:19px}
+#rituals .ritual-review .status-tag{font-size:10px;white-space:nowrap;padding:4px 7px}
+.report-preview{margin:14px 0 10px;padding:12px;background:var(--input);border-left:2px solid var(--gold);border-radius:0 6px 6px 0}
+.report-preview-label{font-size:10px;color:var(--gold);letter-spacing:.03em}
+.report-preview>p{font-size:13px;line-height:1.55;margin:6px 0 0;white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.review-metadata{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:11px;color:var(--muted)}.review-metadata>span{display:flex;align-items:center;gap:5px}
+#rituals .ritual-review .occurrence-row>details{border-top:1px solid var(--border);margin-top:12px}#rituals .ritual-review .occurrence-row>details>summary{font-size:12px;padding:10px 0}
+#rituals .ritual-review .occurrence-row>button{margin:4px 6px 0 0;min-height:36px;padding:6px 10px;font-size:12px}
+@media(max-width:760px){#rituals .ritual-review .occurrence-row{padding:14px}#rituals .ritual-review .occurrence-row>button{min-height:44px}.ritual-review .occurrence-list{grid-template-columns:1fr}}

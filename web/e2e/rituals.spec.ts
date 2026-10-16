@@ -135,6 +135,19 @@ test('ritual schedule, report, needs changes, revision and approval',async({page
  await recipient.screenshot({path:'test-results/evidence-mobile.png'})
  await recipient.getByRole('button',{name:'Submit report',exact:true}).click()
  await expect(recipient.locator('.status-tag[data-status=submitted]')).toBeVisible()
+ await openSection(page,'home');await openSection(page,'rituals')
+ await page.getByRole('button',{name:/^Review queue/}).click()
+ await expect(page.locator('.report-preview')).toContainText('Synthetic first attempt')
+ await expect(page.locator('.review-metadata')).toContainText('Evidence · 2')
+ for(const width of [390,690,1280]){
+  await page.setViewportSize({width,height:844})
+  const card=await page.locator('.ritual-review .occurrence-row').boundingBox()
+  expect(card!.width).toBeLessThanOrEqual(620)
+  expect(card!.x+card!.width).toBeLessThanOrEqual(width)
+  await expect(page.getByRole('button',{name:'Review report',exact:true})).toBeVisible()
+  await expect(page.locator('.ritual-review')).toHaveCSS('opacity','1')
+  await page.screenshot({path:`test-results/ritual-review-${width}.png`})
+ }
  await openSection(page,'home')
  await page.getByRole('button',{name:'Review',exact:true}).click()
  await expect(page.getByRole('dialog',{name:'Review ritual report',exact:true})).toContainText('Synthetic first attempt')
@@ -153,7 +166,7 @@ test('ritual schedule, report, needs changes, revision and approval',async({page
  await expect(page.locator('.status-tag[data-status=approved]')).toBeVisible()
  await page.getByText('Report history · 2',{exact:true}).click()
  await expect(page.getByText('Synthetic first attempt',{exact:true})).toBeVisible()
- await expect(page.locator('#rituals').getByText('Synthetic revised attempt',{exact:true})).toBeVisible()
+ await expect(page.locator('.report-attempt').getByText('Synthetic revised attempt',{exact:true})).toBeVisible()
  const downloaded=page.waitForEvent('download')
  await page.getByRole('button',{name:'Download photo evidence',exact:true}).click()
  const proof=await downloaded

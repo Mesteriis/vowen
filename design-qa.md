@@ -256,3 +256,17 @@ rituals. Existing keyboard/listbox/outside-dismiss retained. Web real-API tests
 cover both roles and mobile/editor flows. Native parity compiled/lint/unit-tested,
 without a new emulator visual acceptance claim. No scoped P0/P1/P2.
 Final result: passed.
+
+## Review queue card annotation (2026-10-16 14:33)
+
+Before: owner screenshot of loose text on velvet. After:
+artifacts/deployment/ui-context/ritual-review-current.png and
+web/test-results/ritual-review-{390,690,1280}.png. Actual local review tab inspected
+against the source annotation, preserving its synthetic report/recipient.
+A bounded charcoal card groups identity/status, latest report, submission/evidence
+metadata, history and a compact decision action. Four-line preview does not replace
+the complete report in the decision dialog/history. Cards stay <=620px and inside
+viewport; phone is one column. Card capture waits for entrance opacity1. Existing
+request-change/approval/history/download regression passes. Android visual parity
+compiled/lint/unit checked, without new emulator proof. No scoped P0/P1/P2.
+Final result: passed.
