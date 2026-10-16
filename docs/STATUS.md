@@ -1007,3 +1007,20 @@ including actual MainActivity navigation. Compact inspector interactions also
 pass on emulator viewports 390x844, 690x828 and 834x1194. Visual evidence and owner
 amendments are recorded in design-qa.md. Physical devices and live Telegram remain
 unverified. Final CI outcome is checked against the pushed commit in the handoff.
+
+### Ritual masthead density follow-up (2026-10-16)
+
+Removed the separate creation-button row. Tabs and creation now share one row;
+phone creation is a labelled 44px plus icon. Title/profile share a compact row,
+with context immediately below; redundant mobile brand and date are omitted on
+this page. Feedback appears below navigation so successful operations do not
+push the controls apart. Tabs have short color/underline transitions and content
+enters over 160ms; reduced-motion disables both. Native ritual title/crest/create
+also share one 44dp row. No authorization or API changes.
+
+Verified web lint/build/16 unit tests, real-API ritual scenario (including header
+height and creation alignment at 390/690/834px, reduced-motion and mobile editor
+transitions), Android 20 unit tests/lint/debug and instrumentation builds. Native
+header was compiled, not rerun on an emulator in this follow-up. Normal local
+Mini App inspected on phone and wide viewports; no physical-device or Telegram
+acceptance claim. CI outcome is reported for the final pushed revision.

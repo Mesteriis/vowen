@@ -72,6 +72,18 @@ test('ritual schedule, report, needs changes, revision and approval',async({page
  await settings.click()
  await expect(page.getByRole('dialog',{name:'Ritual editor',exact:true})).toBeVisible()
  await page.getByRole('button',{name:'Close editor',exact:true}).click()
+ for(const width of [390,690,834]){
+  await page.setViewportSize({width,height:844})
+  const titleBox=await page.locator('.workspace-header').boundingBox()
+  const controls=await page.locator('.ritual-controls').boundingBox()
+  expect(controls!.y+controls!.height-titleBox!.y).toBeLessThan(170)
+  const create=await page.getByRole('button',{name:'New ritual',exact:true}).boundingBox()
+  expect(create!.y).toBeGreaterThanOrEqual(controls!.y)
+  expect(create!.y+create!.height).toBeLessThanOrEqual(controls!.y+controls!.height+1)
+ }
+ await page.emulateMedia({reducedMotion:'reduce'})
+ await expect(page.locator('.ritual-browser')).toHaveCSS('animation-name','none')
+ await page.emulateMedia({reducedMotion:'no-preference'})
  await page.setViewportSize({width:390,height:844})
  await page.locator('.ritual-card').first().click()
  await expect(page.getByRole('dialog',{name:'Ritual settings',exact:true})).toBeVisible()

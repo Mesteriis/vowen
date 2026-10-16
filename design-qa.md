@@ -225,3 +225,18 @@ and wait for platform window transitions. No remaining scoped P0/P1/P2.
 P3: Android platform icon shapes differ from Tabler; physical Fold safe areas and
 user font scaling still need real-device acceptance. No live Telegram/deployment.
 Final result: passed.
+
+## Ritual masthead annotation (2026-10-16 14:19)
+
+Source: owner screenshot of excessive vertical gaps, attached in this conversation.
+Scope: compact the existing selected ritual direction without another redesign.
+After: artifacts/deployment/ui-context/ritual-header-phone.png (390x844) and
+ritual-header-desktop.png (1280x1000), inspected against the supplied before-state.
+Title/profile row, close context row and tabs/create row replace the previous
+separate creation row. Mobile repeated brand is removed. No clipped tabs/actions
+or horizontal page overflow observed. Real-API E2E bounds navigation to <170px
+from title row at390/690/834 widths, and checks creation remains in the tab row.
+Status feedback is below navigation. Content fade/3px entrance160ms and tab140ms
+transitions are disabled under prefers-reduced-motion. Native compact heading
+compiled/unit/lint checked; no new native screenshot claim in this follow-up.
+No scoped P0/P1/P2 remaining. Final result: passed.
