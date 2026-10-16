@@ -1074,3 +1074,23 @@ and the previous report/review/evidence workflow. Android20 unit tests/lint/debu
 and instrumentation APK builds pass; updated native instrumentation locator uses
 icon contentDescription, but emulator execution was not repeated in this follow-up.
 Final CI outcome is checked against the pushed revision in the session handoff.
+
+### Review density correction and avatar centering (2026-10-16)
+
+Replaced review cards with compact bounded rows: title/status, single-line preview,
+recipient/submission metadata and one44px icon. Removed the nested preview panel,
+expanded history and large text action from the list. Full reports, decisions,
+comments, links and photo/video downloads are now in the existing bounded dialog.
+Approved/history rows open that dialog read-only; decision controls require the
+server-provided can_review flag and an unpaused viewer. Own execution history is
+unchanged. Native uses the same compact rows/full-history dialog pattern.
+
+Avatar circles use a single centered line box without padding; native ritual
+initials exclude Android font padding. Actual local Cyrillic А/Л glyph raster
+bounds were within1px of their circle centers (antialiasing/pixel rounding).
+
+Verified web build/lint/16 unit tests and real-API ritual regression: review rows
+<=140px high at390/690/1280,44px icon actions, full two-attempt history, no approval
+button in read-only history, exact attachment download and prior review/rewards
+workflow. Android20 unit tests/lint/debug/instrumentation builds passed.
+No new emulator, physical device, deployment or live Telegram verification.

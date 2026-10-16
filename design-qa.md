@@ -284,3 +284,17 @@ down and closes with button/Escape. No new decorative assets; installed Tabler a
 platform Android icons reused. Web actual interactions/card bounds tested; native
 compiled/unit/lint checked, without a new native visual acceptance claim.
 No scoped P0/P1/P2 remaining. Final result: passed.
+
+## Compact review row + centered monograms (2026-10-16 15:32–15:35)
+
+Owner rejected the tall nested report card and offset initials. After:
+artifacts/deployment/ui-context/ritual-review-compact-current.png and latest
+ritual-review-{390,690,1280}.png. Compared with the attached large-card/А–Л source
+annotations. Review is now a roughly80px desktop row, with one-line text preview,
+metadata and44px icon; full history/content live in the bounded dialog. Real-API
+regression enforces <=140px row height across phone/Fold/wide and read-only history
+has no decision controls. No large nested preview panel or list history remains.
+Monograms share centered flex/line-height1 metrics; inspected А/Л raster bounding
+centers deviate less than1px from circle centers. Android ritual initials disable
+font padding; compact row/dialog changes compiled/unit/lint checked, not newly
+visually accepted on an emulator. No scoped P0/P1/P2. Final result: passed.
