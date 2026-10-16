@@ -86,6 +86,10 @@ async def grant(body: GrantCommand, principal: Member, db: DB, request: Request)
             or previous.reward_version_id != body.reward_version_id
         ):
             raise AppError(409, "IDEMPOTENCY_CONFLICT")
+        if not await scoped(
+            db, principal.user_id, body.recipient_id, "rewards.grant", {principal.user_id}
+        ):
+            raise AppError(403, "ACCESS_DENIED")
         return await service.grant_view(db, previous, cipher_for(request))
     await service.owned_version(db, body.reward_version_id, principal.user_id)
     if not await scoped(
@@ -138,6 +142,11 @@ async def transition(
         db, g.issuer_id, g.recipient_id, "rewards.grant", {g.issuer_id}
     ):
         raise AppError(403, "ACCESS_DENIED")
+    if body.action == "cancel":
+        from vowen.modules.rewards.economy_models import CurrencyEntry
+
+        if await db.scalar(select(CurrencyEntry.id).where(CurrencyEntry.grant_id == g.id)):
+            raise AppError(409, "PURCHASE_IS_EARNED")
     if body.expected_version != g.revision:
         raise AppError(409, "VERSION_CONFLICT")
     allowed = {

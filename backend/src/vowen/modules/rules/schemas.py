@@ -6,6 +6,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 
 class RuleContent(BaseModel):
+    discipline: str = Field(default="", max_length=10000)
     model_config = ConfigDict(extra="forbid")
     title: str = Field(min_length=1, max_length=200)
     description: str = Field(min_length=1, max_length=10000)
@@ -51,6 +52,7 @@ class RuleDecision(BaseModel):
 
 
 class RuleAssignmentView(BaseModel):
+    discipline: str = ""
     id: UUID
     rule_id: UUID
     rule_version_id: UUID

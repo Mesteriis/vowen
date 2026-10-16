@@ -13,12 +13,12 @@ from vowen.modules.rewards.models import (
     RewardGrant,
     RewardNotice,
     RewardPolicy,
+    RewardPolicyItem,
     RewardTransition,
     RewardVersion,
 )
 from vowen.modules.rewards.schemas import GrantHistory, GrantView, RewardContent, RewardView
 from vowen.modules.rituals.models import RitualAssignment, RitualOccurrence
-from vowen.modules.rituals.service import scoped
 
 
 def opened(v: RewardVersion, cipher: PayloadCipher) -> dict[str, str]:
@@ -55,16 +55,62 @@ async def owned_version(db: AsyncSession, vid: UUID, uid: UUID) -> RewardVersion
     return v
 
 
-async def configure(db: AsyncSession, a: RitualAssignment, vid: UUID, now: datetime) -> None:
-    await owned_version(db, vid, a.issuer_id)
-    if not await scoped(db, a.issuer_id, a.recipient_id, "rewards.grant", {a.issuer_id}):
+async def configure(
+    db: AsyncSession,
+    a: RitualAssignment,
+    vids: list[UUID],
+    amount: int,
+    now: datetime,
+    *,
+    automatic_accept: bool = True,
+) -> None:
+    from vowen.modules.relations.models import Relation
+    from vowen.modules.rewards.economy import relation
+
+    for vid in vids:
+        await owned_version(db, vid, a.issuer_id)
+    r = await db.scalar(
+        select(Relation).where(
+            Relation.dominant_user_id == a.issuer_id,
+            Relation.submissive_user_id == a.recipient_id,
+            Relation.status == "active",
+        )
+    )
+    if r is None:
         raise AppError(403, "ACCESS_DENIED")
+    await relation(db, r.id, a.issuer_id, write=True)
     p = RewardPolicy(
-        id=uuid4(), assignment_id=a.id, reward_version_id=vid, issuer_id=a.issuer_id, created_at=now
+        id=uuid4(),
+        assignment_id=a.id,
+        reward_version_id=vids[0] if vids else None,
+        issuer_id=a.issuer_id,
+        relation_id=r.id,
+        currency_amount=amount,
+        automatic_accept=automatic_accept,
+        created_at=now,
     )
     db.add(p)
     await db.flush()
+    db.add_all(
+        [RewardPolicyItem(id=uuid4(), policy_id=p.id, reward_version_id=vid) for vid in vids]
+    )
+    await db.flush()
     a.reward_policy_id = p.id
+
+
+async def bundle(db: AsyncSession, pid: UUID | None) -> tuple[list[UUID], int]:
+    if pid is None:
+        return [], 0
+    p = await db.get(RewardPolicy, pid)
+    assert p is not None
+    ids = list(
+        await db.scalars(
+            select(RewardPolicyItem.reward_version_id)
+            .where(RewardPolicyItem.policy_id == pid)
+            .order_by(RewardPolicyItem.id)
+        )
+    )
+    return ids, p.currency_amount
 
 
 async def record(db: AsyncSession, g: RewardGrant, uid: UUID, now: datetime) -> None:
@@ -89,34 +135,78 @@ async def record(db: AsyncSession, g: RewardGrant, uid: UUID, now: datetime) -> 
         await enqueue(db, target, now, reward_notice_id=nid)
 
 
-async def award(db: AsyncSession, a: RitualAssignment, o: RitualOccurrence, now: datetime) -> None:
+async def award(
+    db: AsyncSession,
+    a: RitualAssignment,
+    o: RitualOccurrence,
+    now: datetime,
+    cipher: PayloadCipher,
+) -> None:
     if o.status != "approved" or o.reward_policy_id is None:
         return
     p = await db.get(RewardPolicy, o.reward_policy_id)
     assert p is not None
-    if not await scoped(db, p.issuer_id, a.recipient_id, "rewards.grant", {p.issuer_id}):
+    if p.relation_id is not None:
+        from vowen.modules.rewards import economy
+
+        try:
+            await economy.relation(db, p.relation_id, p.issuer_id, write=True)
+        except AppError:
+            return
+    else:
+        # Unbound legacy policies cannot acquire authority from a later relationship.
         return
-    gid = uuid4()
-    created = await db.scalar(
-        insert(RewardGrant)
-        .values(
-            id=gid,
-            reward_version_id=p.reward_version_id,
-            issuer_id=p.issuer_id,
-            recipient_id=a.recipient_id,
-            occurrence_id=o.id,
-            reward_policy_id=p.id,
-            revision=1,
-            status="offered",
-            created_at=now,
+    items = (
+        await db.scalars(select(RewardPolicyItem).where(RewardPolicyItem.policy_id == p.id))
+    ).all()
+    for item in items:
+        gid = uuid4()
+        created = await db.scalar(
+            insert(RewardGrant)
+            .values(
+                id=gid,
+                reward_version_id=item.reward_version_id,
+                policy_item_id=item.id,
+                issuer_id=p.issuer_id,
+                recipient_id=a.recipient_id,
+                occurrence_id=o.id,
+                reward_policy_id=p.id,
+                revision=1,
+                status="accepted" if p.automatic_accept else "offered",
+                created_at=now,
+            )
+            .on_conflict_do_nothing()
+            .returning(RewardGrant.id)
         )
-        .on_conflict_do_nothing()
-        .returning(RewardGrant.id)
-    )
-    if created:
-        g = await db.get(RewardGrant, gid)
-        assert g is not None
-        await record(db, g, p.issuer_id, now)
+        if created:
+            g = await db.get(RewardGrant, gid)
+            assert g is not None
+            await record(db, g, p.issuer_id, now)
+    if p.currency_amount and p.relation_id is not None:
+        from vowen.modules.rewards import economy
+        from vowen.modules.rewards.economy_models import CurrencyEntry
+
+        await economy.locked_wallet(db, p.relation_id)
+        previous = await db.scalar(
+            select(CurrencyEntry.id).where(
+                CurrencyEntry.relation_id == p.relation_id,
+                CurrencyEntry.occurrence_id == o.id,
+                CurrencyEntry.policy_id == p.id,
+            )
+        )
+        if previous is None:
+            await economy.append(
+                db,
+                p.relation_id,
+                p.issuer_id,
+                p.currency_amount,
+                "ritual",
+                "",
+                now,
+                cipher,
+                occurrence_id=o.id,
+                policy_id=p.id,
+            )
 
 
 async def grant_view(db: AsyncSession, g: RewardGrant, cipher: PayloadCipher) -> GrantView:
@@ -129,7 +219,15 @@ async def grant_view(db: AsyncSession, g: RewardGrant, cipher: PayloadCipher) ->
             .order_by(RewardTransition.revision)
         )
     ).all()
+    from vowen.modules.rewards.economy_models import CurrencyEntry
+
+    purchased = await db.scalar(
+        select(CurrencyEntry.relation_id).where(CurrencyEntry.grant_id == g.id)
+    )
+    policy = await db.get(RewardPolicy, g.reward_policy_id) if g.reward_policy_id else None
     return GrantView(
+        relation_id=policy.relation_id if policy else purchased,
+        source="ritual" if g.occurrence_id else "purchase" if purchased else "manual",
         id=g.id,
         reward_version_id=v.id,
         issuer_id=g.issuer_id,

@@ -77,7 +77,13 @@ async def change(
         await rules.new_version(
             db,
             rule,
-            RuleContent(title=body.title, description=body.description),
+            RuleContent(
+                title=body.title,
+                description=body.description,
+                discipline=body.discipline
+                if "discipline" in body.model_fields_set
+                else rules.content(version, cipher_for(request)).discipline,
+            ),
             cipher_for(request),
         )
     else:
@@ -85,7 +91,13 @@ async def change(
             raise AppError(409, "IMMUTABLE_VERSION")
         rules.seal(
             version,
-            RuleContent(title=body.title, description=body.description),
+            RuleContent(
+                title=body.title,
+                description=body.description,
+                discipline=body.discipline
+                if "discipline" in body.model_fields_set
+                else rules.content(version, cipher_for(request)).discipline,
+            ),
             cipher_for(request),
         )
     rule.revision += 1

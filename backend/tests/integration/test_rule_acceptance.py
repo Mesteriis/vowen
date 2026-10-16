@@ -218,3 +218,50 @@ async def test_recipient_cannot_modify_assigned_rule_or_create_replacement(api):
     ).status_code == 404
     visible = (await client.get("/api/v1/rule-assignments", headers=auth(tokens[1]))).json()
     assert visible[0]["description"] == "sensitive-rule-content"
+
+
+async def test_discipline_terms_belong_to_exact_accepted_rule_version(api):
+    client, app, ids, tokens, original = await setup_rule(api)
+    body = {
+        "expected_version": original["revision"],
+        "title": "Rule with terms",
+        "description": "Description",
+        "discipline": "Discuss and agree a response",
+    }
+    rule = (
+        await client.post(
+            f"/api/v1/rules/{original['id']}/versions", headers=auth(tokens[0]), json=body
+        )
+    ).json()
+    rule = (
+        await client.post(
+            f"/api/v1/rules/{rule['id']}/publish",
+            headers=auth(tokens[0]),
+            json={"expected_version": rule["revision"]},
+        )
+    ).json()
+    a = (await assign(client, tokens[0], rule, ids[1], [ids[0]])).json()
+    assert a["discipline"] == body["discipline"]
+    assert (await action(client, tokens[1], a, "accept")).status_code == 200
+    changed = await client.post(
+        f"/api/v1/rules/{rule['id']}/versions",
+        headers=auth(tokens[0]),
+        json={**body, "expected_version": rule["revision"], "discipline": "Changed terms"},
+    )
+    assert changed.status_code == 200 and changed.json()["discipline"] == "Changed terms"
+    assignments = (await client.get("/api/v1/rule-assignments", headers=auth(tokens[1]))).json()
+    assert assignments[0]["discipline"] == body["discipline"]
+    assert assignments[0]["rule_version_id"] == a["rule_version_id"]
+    assert (await client.get("/api/v1/discipline-records", headers=auth(tokens[1]))).json() == []
+
+    draft = changed.json()
+    patched = await client.patch(
+        f"/api/v1/rules/{draft['id']}",
+        headers=auth(tokens[0]),
+        json={
+            "expected_version": draft["revision"],
+            "title": "Older client edit",
+            "description": "Description",
+        },
+    )
+    assert patched.status_code == 200 and patched.json()["discipline"] == "Changed terms"

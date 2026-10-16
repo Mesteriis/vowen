@@ -98,6 +98,8 @@ class EvidenceDownload(EvidenceView):
 
 class RitualAssign(BaseModel):
     reward_version_id: UUID | None = None
+    reward_version_ids: list[UUID] = Field(default_factory=list, max_length=20)
+    currency_amount: int = Field(default=0, ge=0, le=1000000000, strict=True)
     model_config = ConfigDict(extra="forbid")
     idempotency_key: UUID
     recipient_id: UUID
@@ -108,6 +110,10 @@ class RitualAssign(BaseModel):
 
     @model_validator(mode="after")
     def reviewers(self) -> "RitualAssign":
+        if len(set(self.reward_version_ids)) != len(self.reward_version_ids):
+            raise ValueError("Duplicate reward")
+        if self.reward_version_id is not None and (self.reward_version_ids or self.currency_amount):
+            raise ValueError("Use either legacy reward or reward bundle")
         if len(set(self.reviewer_ids)) != len(self.reviewer_ids):
             raise ValueError("Duplicate reviewer")
         if self.approval_required and not self.reviewer_ids:
@@ -119,6 +125,9 @@ class RitualAssign(BaseModel):
 
 class RitualAssignmentView(BaseModel):
     reward_policy_id: UUID | None = None
+    reward_titles: dict[str, str] = Field(default_factory=dict)
+    reward_version_ids: list[UUID] = Field(default_factory=list)
+    currency_amount: int = 0
     evidence_policy: EvidencePolicy = Field(default_factory=EvidencePolicy)
     id: UUID
     ritual_version_id: UUID
@@ -201,3 +210,17 @@ class RitualNoticeView(BaseModel):
     kind: str
     message: str = "У вас есть обновление в приложении"
     created_at: datetime
+
+
+class RewardBundleEdit(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    expected_version: int = Field(ge=1)
+    reward_version_ids: list[UUID] = Field(default_factory=list, max_length=20)
+    currency_amount: int = Field(default=0, ge=0, le=1000000000, strict=True)
+
+    @field_validator("reward_version_ids")
+    @classmethod
+    def unique_rewards(cls, value: list[UUID]) -> list[UUID]:
+        if len(set(value)) != len(value):
+            raise ValueError("Duplicate reward")
+        return value

@@ -30,7 +30,12 @@ class RewardPolicy(Base):
     __tablename__ = "ritual_reward_policies"
     id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)
     assignment_id: Mapped[UUID] = mapped_column(ForeignKey("ritual_assignments.id"))
-    reward_version_id: Mapped[UUID] = mapped_column(ForeignKey("reward_definition_versions.id"))
+    reward_version_id: Mapped[UUID | None] = mapped_column(
+        ForeignKey("reward_definition_versions.id")
+    )
+    relation_id: Mapped[UUID | None] = mapped_column(ForeignKey("authority_relations.id"))
+    currency_amount: Mapped[int] = mapped_column(default=0)
+    automatic_accept: Mapped[bool] = mapped_column(default=False)
     issuer_id: Mapped[UUID] = mapped_column(ForeignKey("users.id"))
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
 
@@ -39,7 +44,7 @@ class RewardGrant(Base):
     __tablename__ = "reward_grants"
     __table_args__ = (
         UniqueConstraint("issuer_id", "idempotency_key"),
-        UniqueConstraint("occurrence_id", "reward_policy_id", "recipient_id"),
+        UniqueConstraint("occurrence_id", "policy_item_id", "recipient_id"),
     )
     id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)
     reward_version_id: Mapped[UUID] = mapped_column(ForeignKey("reward_definition_versions.id"))
@@ -47,6 +52,7 @@ class RewardGrant(Base):
     issuer_id: Mapped[UUID] = mapped_column(ForeignKey("users.id"))
     occurrence_id: Mapped[UUID | None] = mapped_column(ForeignKey("ritual_occurrences.id"))
     reward_policy_id: Mapped[UUID | None] = mapped_column(ForeignKey("ritual_reward_policies.id"))
+    policy_item_id: Mapped[UUID | None] = mapped_column(ForeignKey("ritual_reward_items.id"))
     idempotency_key: Mapped[UUID | None]
     revision: Mapped[int]
     status: Mapped[str] = mapped_column(String(20))
@@ -72,3 +78,11 @@ class RewardNotice(Base):
     user_id: Mapped[UUID] = mapped_column(ForeignKey("users.id"))
     revision: Mapped[int]
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+
+
+class RewardPolicyItem(Base):
+    __tablename__ = "ritual_reward_items"
+    __table_args__ = (UniqueConstraint("policy_id", "reward_version_id"),)
+    id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)
+    policy_id: Mapped[UUID] = mapped_column(ForeignKey("ritual_reward_policies.id"))
+    reward_version_id: Mapped[UUID] = mapped_column(ForeignKey("reward_definition_versions.id"))

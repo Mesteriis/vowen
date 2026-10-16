@@ -127,7 +127,19 @@ async def assignment_view(
     v = await db.get(RitualVersion, a.ritual_version_id)
     schedule = await db.get(RitualSchedule, a.current_schedule_id)
     assert v is not None and schedule is not None
+    from vowen.modules.rewards.models import RewardVersion
+    from vowen.modules.rewards.service import bundle
+    from vowen.modules.rewards.service import opened as reward_opened
+
+    reward_ids, currency = await bundle(db, a.reward_policy_id)
+    reward_versions = (
+        await db.scalars(select(RewardVersion).where(RewardVersion.id.in_(reward_ids)))
+    ).all()
+    reward_titles = {str(v.id): reward_opened(v, cipher)["title"] for v in reward_versions}
     return RitualAssignmentView(
+        reward_titles=reward_titles,
+        reward_version_ids=reward_ids,
+        currency_amount=currency,
         reward_policy_id=a.reward_policy_id,
         evidence_policy=EvidencePolicy.model_validate(a.evidence_policy),
         id=a.id,

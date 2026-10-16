@@ -29,6 +29,7 @@ from vowen.modules.rituals.schemas import (
     OccurrenceView,
     ReportCommand,
     ReviewCommand,
+    RewardBundleEdit,
     RitualAssign,
     RitualAssignmentView,
     RitualContent,
@@ -120,7 +121,13 @@ async def assign(
     # Lock issuer before checking a cross-template idempotency key.
     await db.get(User, principal.user_id, with_for_update=True)
     r = await rituals.owned(db, rid, principal.user_id)
-    digest = hashlib.sha256((str(rid) + body.model_dump_json()).encode()).digest()
+    # Keep hashes compatible with assignments created by pre-bundle clients.
+    excluded = (
+        {"reward_version_ids", "currency_amount"}
+        if not body.reward_version_ids and not body.currency_amount
+        else set()
+    )
+    digest = hashlib.sha256((str(rid) + body.model_dump_json(exclude=excluded)).encode()).digest()
     previous = await db.scalar(
         select(RitualAssignment).where(
             RitualAssignment.issuer_id == principal.user_id,
@@ -173,10 +180,17 @@ async def assign(
     db.add_all([RitualReviewer(assignment_id=a.id, user_id=uid) for uid in body.reviewer_ids])
     await db.flush()
     await rituals.notice(db, a, [a.recipient_id], "assigned", now)
-    if body.reward_version_id is not None:
+    if body.reward_version_id is not None or body.reward_version_ids or body.currency_amount:
         from vowen.modules.rewards.service import configure
 
-        await configure(db, a, body.reward_version_id, now)
+        await configure(
+            db,
+            a,
+            [body.reward_version_id] if body.reward_version_id else body.reward_version_ids,
+            body.currency_amount,
+            now,
+            automatic_accept=body.reward_version_id is None,
+        )
     await generate_assignment(db, a, now, 31)
     return await rituals.assignment_view(db, a, cipher_for(request))
 
@@ -309,7 +323,7 @@ async def report(
         attachment.report_id, attachment.expires_at = row.id, None
     from vowen.modules.rewards.service import award
 
-    await award(db, a, o, now)
+    await award(db, a, o, now, cipher_for(request))
     targets = await rituals.reviewers(db, a) if a.approval_required else [a.recipient_id]
     await rituals.notice(db, a, targets, o.status, now, o, event=f"report:{row.id}")
     return await rituals.occurrence_view(db, o, a, principal.user_id, now, cipher_for(request))
@@ -350,7 +364,7 @@ async def review(
     o.revision += 1
     from vowen.modules.rewards.service import award
 
-    await award(db, a, o, request.app.state.clock.now())
+    await award(db, a, o, request.app.state.clock.now(), cipher_for(request))
     await rituals.notice(
         db,
         a,
@@ -498,3 +512,28 @@ async def notices(principal: Member, db: DB) -> list[RitualNoticeView]:
                 )
             )
     return result
+
+
+@router.put("/ritual-assignments/{aid}/rewards", response_model=RitualAssignmentView)
+async def change_rewards(
+    aid: UUID, body: RewardBundleEdit, principal: Member, db: DB, request: Request
+) -> RitualAssignmentView:
+    a = await db.get(RitualAssignment, aid, with_for_update=True)
+    if a is None:
+        raise AppError(404, "NOT_FOUND")
+    if not await rituals.can_manage(db, a, principal.user_id):
+        raise AppError(403, "ACCESS_DENIED")
+    if a.revision != body.expected_version or a.status == "revoked":
+        raise AppError(409, "VERSION_CONFLICT")
+    from vowen.modules.rewards.service import configure
+
+    # Existing occurrences retain their policy snapshot; only future slots change.
+    if body.reward_version_ids or body.currency_amount:
+        await configure(
+            db, a, body.reward_version_ids, body.currency_amount, request.app.state.clock.now()
+        )
+    else:
+        a.reward_policy_id = None
+    a.revision += 1
+    await db.flush()
+    return await rituals.assignment_view(db, a, cipher_for(request))

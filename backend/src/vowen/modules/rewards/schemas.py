@@ -50,6 +50,8 @@ class GrantHistory(BaseModel):
 
 
 class GrantView(RewardContent):
+    relation_id: UUID | None = None
+    source: Literal["manual", "ritual", "purchase"] = "manual"
     id: UUID
     reward_version_id: UUID
     issuer_id: UUID
