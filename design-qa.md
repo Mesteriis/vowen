@@ -240,3 +240,19 @@ Status feedback is below navigation. Content fade/3px entrance160ms and tab140ms
 transitions are disabled under prefers-reduced-motion. Native compact heading
 compiled/unit/lint checked; no new native screenshot claim in this follow-up.
 No scoped P0/P1/P2 remaining. Final result: passed.
+
+## Ritual relationship avatar annotation (2026-10-16 14:25)
+
+Owner requested replacing the wide context strip with viewer avatar → relationship
+symbol → partner avatar. Scoped after capture:
+artifacts/deployment/ui-context/ritual-avatar-current.png and
+web/test-results/ritual-avatar-phone.png. Initial-based avatars reflect the current
+profile contract (no photograph field); no invented profile images or asset calls.
+Directed arrow derives from the selected relation, never global profile labels.
+Pause/revocation/proposal and shared-day symbols preserve distinct states; full
+names/roles/status remain in the accessible dark menu and trigger tooltip.
+Compact44px trigger fits beside title; separate context strip is removed only on
+rituals. Existing keyboard/listbox/outside-dismiss retained. Web real-API tests
+cover both roles and mobile/editor flows. Native parity compiled/lint/unit-tested,
+without a new emulator visual acceptance claim. No scoped P0/P1/P2.
+Final result: passed.

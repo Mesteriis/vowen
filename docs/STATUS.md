@@ -1024,3 +1024,19 @@ transitions), Android 20 unit tests/lint/debug and instrumentation builds. Nativ
 header was compiled, not rerun on an emulator in this follow-up. Normal local
 Mini App inspected on phone and wide viewports; no physical-device or Telegram
 acceptance claim. CI outcome is reported for the final pushed revision.
+
+### Relationship avatars in ritual header (2026-10-16)
+
+The ritual header now contains an avatar pair context picker instead of a wide
+relationship toolbar: viewer initial, directed D/s arrow, partner initial.
+Paused/revoked/proposed states have distinct symbols; shared day has a group icon.
+Opening the menu still exposes full participant names, exact contextual role and
+status, with the existing keyboard/listbox behavior. Other pages keep their text
+picker; profile remains available through navigation. Native ritual header uses
+the same avatar-pair/menu arrangement. Profile data has no photo/avatar field, so
+these are initials, not fetched Telegram pictures. No API/permission changes.
+
+Verified Mini App build/lint, real-API ritual workflow with both directed roles,
+keyboard selection/Escape, two avatars, absent toolbar, and390/690/834px bounds.
+Android unit/lint/APK builds pass; this avatar follow-up has not been run on an
+emulator or physical device. Final CI is checked against the pushed revision.

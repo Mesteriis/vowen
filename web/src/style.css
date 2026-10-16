@@ -126,3 +126,16 @@ label{font-size:13px;margin:10px 0}input:not([type=checkbox]):not([type=radio]),
 @keyframes ritual-view-in{from{opacity:.5;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:760px){.rituals-workspace .workspace-header{display:flex;flex-wrap:nowrap;margin:0;min-height:44px}.rituals-workspace .mobile-brand{display:none}.rituals-workspace .page-intro{order:0;flex:1}.rituals-workspace .page-intro h1{font-size:22px}.rituals-workspace .profile-shortcut{position:static;order:1}.rituals-workspace .workspace-toolbar{padding:4px 0 8px}.rituals-workspace .relationship-picker{max-width:none}.ritual-controls{gap:8px}#rituals .ritual-controls .ritual-tabs{gap:14px}#rituals .ritual-create{width:44px;height:44px;min-height:44px;padding:0;margin:0}#rituals .ritual-create>span{display:none}}
 @media(prefers-reduced-motion:reduce){.ritual-view-enter{animation:none}#rituals .ritual-tabs button{transition:none}}
+
+/* Relationship identity lives beside the ritual title, not in a second toolbar. */
+.rituals-workspace .workspace-header{margin-bottom:6px}
+.relationship-avatar-picker{flex:none;width:auto;max-width:none}
+.relationship-avatar-picker>.relationship-trigger{width:auto;min-height:44px;padding:0 4px;border:0;background:transparent;gap:6px}
+.relationship-avatar-picker>.relationship-trigger>span{display:grid;flex:none}
+.relationship-avatar-picker .person-monogram{width:34px;height:34px;font-size:20px}
+.relationship-avatar-picker .partner-monogram{border-color:var(--gold)}
+.relationship-avatar-picker .relationship-options{left:auto;right:0;width:min(340px,calc(100vw - 32px))}
+.relationship-avatar-picker .relationship-options>li{gap:10px}
+.relationship-avatar-picker .relationship-options .option-avatar{flex:none}
+.relationship-avatar-picker .relationship-options>li>span:not(.option-avatar){flex:1}
+@media(max-width:760px){.rituals-workspace .workspace-header>.relationship-avatar-picker{order:1;flex:none;width:auto}.relationship-avatar-picker>.relationship-trigger{min-height:44px}.relationship-avatar-picker .relationship-options>li{min-height:56px}}
