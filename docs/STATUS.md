@@ -965,3 +965,6 @@ instrumentation APK builds. Synthetic Home component instrumentation passed at
 390x844,834x1194 and690x828 emulator sizes; six native navigation/consent/profile
 regressions passed. These are emulator/component checks, not a physical Fold7 or
 live Telegram acceptance. Local preview remains at127.0.0.1:5176/#home.
+The scoped visual comparison with the selected source and subsequent owner refinements
+is recorded in design-qa.md. Implementation CI is running for this committed slice;
+its final outcome is reported in the session handoff rather than assumed here.

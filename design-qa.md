@@ -138,3 +138,52 @@ No P0/P1/P2 visual findings in the inspected desktop shop/ritual surfaces. This 
 not acceptance of unfinished diary/stylus or full native navigation redesign.
 Native builds passed; no native device visual acceptance or live Telegram evidence.
 Final result for these scoped Mini App surfaces: passed.
+
+## Selected Home direction and owner refinements (2026-10-16)
+
+Source truth: /Users/avm/.codex/generated_images/01a13ec4-c67e-7871-84f2-defcce20ba28/exec-4a14e0ec-9e34-43df-a128-d9581b7fcf6d.png
+(first displayed result). Follow-up owner requirements remove phone greeting/tagline
+and reduce task text to16px, supporting text12–13px, section title22px. These take
+precedence over the initial mock. No other page is redesigned.
+
+Evidence: artifacts/design/ui-context/home-phone.png (390x844 CSS/pixels),
+home-tablet.png (834x1194 CSS/pixels), home-phone-comparison.jpg and
+home-tablet-comparison.jpg. CDP explicit CSS clips avoid IAB backing-density crop;
+viewport overrides were cleared after capture. Source board1278x1230 contains frames
+approximately380x1136 and822x1136; comparison crops are scaled uniformly to matching
+width, without stretching. Source frame height differs from requested viewport;
+this is a structural comparison, not a pixel-perfect/density-equivalent claim.
+Synthetic Alex -> Luna active context; live API supplies two current-day tasks,
+one pending report; source has three differently timed mock tasks. Data-count/date
+content differences are intentional; no fake fixture records are inserted into UI.
+
+Earlier P2: phone header retained80px minimum after greeting removal. Fixed to44px
+and8px bottom gap; final capture shows context selector directly beneath compact
+brand/profile. Empty upcoming section/footer removed. Earlier P2: icon-only wide
+navigation lost link names; explicit aria-labels restore accessible names.
+
+Typography: existing Cormorant/system families,16px sans task names,12px metadata;
+smaller than initial mock by owner's explicit request. Spacing:76px task touch rows,
+44px actions, single context selector; phone one column, tablet two columns, square
+690px folded-device simulation uses supplementary column. Colors: existing dark
+velvet/gold/rose tokens retained. Assets: original crest, velvet texture and trust
+image reused; trust image is decorative, not uploaded report evidence. Copy: live
+participant/status/report text, no invented counts or personal Dominant wallet.
+Promotional bottom tile omitted under the owner's request to remove excess UI.
+
+Interactions: actual IAB Review action opened the exact report dialog with current
+text; cancelled and returned Home.19 real-API browser scenarios pass, including
+review deep link, denied auth, error/retry and viewport overflow/touch checks at
+390/690/768/1024 widths. No new console errors observed during interaction.
+
+Native: Home component instrumentation passed at390x844,834x1194,690x828 in a local
+Android emulator, selecting Dominant context and verifying the exact occurrence
+callback. Screens:home-android-phone/tablet/fold.png. Six existing native real-host
+navigation/consent/profile tests also passed. Component screenshots are not full
+MainActivity navigation screenshots or physical Fold7 validation.18 native unit
+tests/lint/debug/instrumentation builds pass. OS bars are emulator-owned.
+
+No remaining actionable P0/P1/P2 in this scoped comparison with owner amendments.
+P3: platform-native icon shapes differ; real Fold7 safe areas/font settings remain
+physical-device acceptance. No deployment or live Telegram evidence.
+Final result: passed.
