@@ -930,3 +930,14 @@ Legacy offer controls remain behind the catalogue for compatibility. Shop price 
 exist through API, with creation/hiding in UI; wallet history displays latest500 entries.
 Currency-only credits have no dedicated Telegram notification. No refunds, transfers,
 real money or automatic rule-period bonuses are implemented.
+
+Integration revision3778ec1 passed both backend-web and Android CI:
+https://github.com/Mesteriis/vowen/actions/runs/38888467656
+Ownership regressions also passed locally:7 economy API tests and the shop E2E
+asserting Dominant cannot buy and subordinate cannot credit themselves.
+
+Local preview recovery: its keyring had incorrectly shared the E2E output directory;
+after E2E cleanup and restart, the old synthetic records could no longer decrypt.
+The old database/dump were preserved, and a fresh synthetic design database was
+seeded through normal APIs. Preview keyring now resides outside test output, and a
+subsequent restart/login/context switch succeeded. No production data was affected.
