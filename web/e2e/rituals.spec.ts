@@ -202,6 +202,32 @@ test('ritual schedule, report, needs changes, revision and approval',async({page
  await expect(page.locator('.ritual-columns article').first().getByRole('heading',{name:'Evening presence'})).toBeInViewport({ratio:1})
  await expect(page.locator('.ritual-columns article').first().getByText('Approved',{exact:true})).toBeInViewport({ratio:1})
  await page.screenshot({path:'test-results/rituals-mobile.png',fullPage:false})
+ await page.getByRole('button',{name:'Templates',exact:true}).click()
+ const templateCard=page.locator('.ritual-template-card').first()
+ for(const action of ['New ritual version','Assign ritual','Ritual version history','Archive ritual']){
+  const button=templateCard.getByRole('button',{name:action,exact:true})
+  expect(await button.evaluate(e=>({w:e.getBoundingClientRect().width,h:e.getBoundingClientRect().height,text:e.textContent}))).toEqual({w:44,h:44,text:''})
+ }
+ await templateCard.getByRole('button',{name:'Ritual version history',exact:true}).click()
+ const versions=page.getByRole('dialog',{name:'Version history',exact:true})
+ await expect(versions).toContainText('Evening presence')
+ await expect(versions.locator('article')).toHaveCount(1)
+ await page.keyboard.press('Escape')
+ await expect(versions).toHaveCount(0)
+ await templateCard.getByRole('button',{name:'New ritual version',exact:true}).click()
+ await expect(page.getByLabel('Ritual title',{exact:true})).toHaveValue('Evening presence')
+ await page.getByRole('button',{name:'Close editor',exact:true}).click()
+ await expect(templateCard).toBeVisible()
+ await templateCard.getByRole('button',{name:'Assign ritual',exact:true}).click()
+ await expect(page.getByRole('combobox',{name:'Ritual recipient',exact:true})).toBeVisible()
+ await page.getByRole('button',{name:'Close editor',exact:true}).click()
+ for(const width of [390,690,1280]){
+  await page.setViewportSize({width,height:844})
+  const bounds=await templateCard.boundingBox()
+  expect(bounds!.x+bounds!.width).toBeLessThanOrEqual(width)
+  await expect(page.locator('.ritual-library')).toHaveCSS('opacity','1')
+  await page.screenshot({path:`test-results/ritual-templates-${width}.png`})
+ }
  await context.close()
 })
 

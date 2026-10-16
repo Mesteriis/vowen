@@ -54,7 +54,7 @@ class RitualScreenTest {
   val data=WorkspaceState(relations=listOf(Relation("Synthetic",listOf("a","b"),"a","relation","v",listOf("rituals.assign"),"active","b",1)),rituals=listOf(template),participants=listOf(Participant(display_name="Demo A",id="a",profile_labels=emptyList()),Participant(display_name="Demo B",id="b",profile_labels=emptyList())))
   compose.setContent{VowenTheme{Column(androidx.compose.ui.Modifier.verticalScroll(androidx.compose.foundation.rememberScrollState())){NativeRitualsScreen(member.copy(id="a"),data,false,0,actions())}}}
   compose.onNodeWithTag("ritual-view-templates").performScrollTo().performClick()
-  compose.onNodeWithText("Assign ritual").performScrollTo().performClick()
+  compose.onNodeWithContentDescription("Assign ritual").performScrollTo().performClick()
   compose.onNodeWithContentDescription("Reviewer: Demo A").performScrollTo().assertIsOff().performClick().assertIsOn()
   compose.onNodeWithContentDescription("Approval required").assertIsOn()
  }

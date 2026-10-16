@@ -1056,3 +1056,21 @@ submitted preview/evidence count,390/690/1280 card bounds, request changes, revi
 report, approval, history and attachment download. Android20 unit tests/lint/debug
 and instrumentation APK builds passed. Native card appearance has not been rerun
 on an emulator in this follow-up. Final CI is checked for the pushed revision.
+
+### Ritual template catalogue cards (2026-10-16)
+
+Templates/drafts now use compact charcoal cards with status, three-line description
+preview and44px icon actions (edit/new version, publish, assign, history, archive).
+The redundant expandable catalogue wrapper is removed. Version history opens in a
+bounded scrollable modal; complete version descriptions remain available there.
+Editing an existing template preserves the Templates tab after cancellation/save.
+The same card/action/history structure is implemented in native Android. No API,
+permission, schedule snapshot or version lifecycle changes.
+
+Web build/lint/16 unit tests and real-API ritual regression passed: four published
+icon actions expose accessible names/44px bounds, history content/Escape, existing
+version editor and assignment editor, tab preservation,390/690/1280 card bounds,
+and the previous report/review/evidence workflow. Android20 unit tests/lint/debug
+and instrumentation APK builds pass; updated native instrumentation locator uses
+icon contentDescription, but emulator execution was not repeated in this follow-up.
+Final CI outcome is checked against the pushed revision in the session handoff.

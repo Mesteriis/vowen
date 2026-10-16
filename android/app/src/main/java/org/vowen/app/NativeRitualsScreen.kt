@@ -76,6 +76,7 @@ data class RitualActions(
  var detailOpen by remember{mutableStateOf(false)}
  var rewardFor by remember{mutableStateOf<RitualAssignment?>(null)}
  var historyOpen by remember{mutableStateOf(false)}
+ var versionHistoryFor by remember{mutableStateOf<RitualTemplate?>(null)}
  LaunchedEffect(completed){editing=false;assigning=null;scheduleFor=null;rewardFor=null;reporting=null;reviewing=null}
  val relation=data.relations.find{it.id==relationId}
  val allowedRecipients=data.relations.filter{it.dominant_user_id==member.id&&it.status=="active"&&"rituals.assign" in it.scopes&&it.consent_user_ids.containsAll(listOf(it.dominant_user_id,it.submissive_user_id))&&(relation==null||it.id==relation.id)&&!member.paused}.map{it.submissive_user_id}
@@ -86,7 +87,7 @@ data class RitualActions(
  val current=if(view=="assignments"&&!canManage&&performer)"mine" else view
  val assigned=contextAssignments.filter{it.issuer_id==member.id}
  val inspected=assigned.find{it.id==detailId}?:assigned.firstOrNull()
- LaunchedEffect(relationId){detailOpen=false;detailId=null;view=if(canManage)"assignments" else if(performer)"mine" else "review"}
+ LaunchedEffect(relationId){versionHistoryFor=null;detailOpen=false;detailId=null;view=if(canManage)"assignments" else if(performer)"mine" else "review"}
  LaunchedEffect(homeTarget){if(homeTarget!=null)view=data.ritualOccurrences.find{it.id==homeTarget}?.let{if(it.recipient_id==member.id)"mine" else "review"}?:view}
  Column(Modifier.fillMaxWidth(),verticalArrangement=Arrangement.spacedBy(12.dp)) {
   Row(Modifier.fillMaxWidth().heightIn(min=44.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(8.dp)){
@@ -133,9 +134,26 @@ data class RitualActions(
     if(o.recipient_id==member.id&&o.status in listOf("scheduled","needs_changes"))TextButton(onClick={actions.skip(o)},enabled=!busy){Text(t("Skip occurrence","Пропустить выполнение"))}
    }}}}
   }
-  if(current=="templates")data.rituals.forEach{r->Column(verticalArrangement=Arrangement.spacedBy(5.dp)){Text(r.title,style=MaterialTheme.typography.bodyLarge);Text(label(r.status),style=MaterialTheme.typography.bodySmall);TextButton(onClick={selected=r;editing=true},enabled=!busy){Text(if(r.status=="draft")t("Edit ritual draft","Изменить черновик") else t("New ritual version","Новая версия"))};if(r.status=="draft")TextButton(onClick={actions.template(r,"publish")},enabled=!busy){Text(t("Publish ritual","Опубликовать ритуал"))};if(r.status=="published")TextButton(onClick={assigning=r;scheduleFor=null},enabled=!busy){Text(t("Assign ritual","Назначить ритуал"))};TextButton(onClick={actions.history(r)}){Text(t("Version history","История версий"))};if(r.status!="archived")TextButton(onClick={actions.template(r,"archive")},enabled=!busy){Text(t("Archive ritual","Архивировать ритуал"))}};HorizontalDivider()}
-  if(current=="templates")data.ritualHistory.forEach{v->Text(v.title);Text(v.description);Text(label(v.status))}
+  if(current=="templates")data.rituals.forEach{r->OutlinedCard(Modifier.fillMaxWidth()){
+   Column(Modifier.padding(14.dp),verticalArrangement=Arrangement.spacedBy(12.dp)){
+    Row(horizontalArrangement=Arrangement.spacedBy(8.dp),verticalAlignment=Alignment.Top){Text(r.title,style=MaterialTheme.typography.bodyLarge,fontSize=16.sp,modifier=Modifier.weight(1f));Text(label(r.status),style=MaterialTheme.typography.labelSmall,color=MaterialTheme.colorScheme.primary)}
+    Text(r.description,style=MaterialTheme.typography.bodyMedium,color=MaterialTheme.colorScheme.onSurfaceVariant,maxLines=3,overflow=androidx.compose.ui.text.style.TextOverflow.Ellipsis)
+    HorizontalDivider(color=MaterialTheme.colorScheme.outline.copy(alpha=.3f))
+    Row(horizontalArrangement=Arrangement.spacedBy(8.dp)){
+     OutlinedIconButton(onClick={selected=r;editing=true},enabled=!busy&&!member.paused,modifier=Modifier.size(44.dp)){Icon(painterResource(android.R.drawable.ic_menu_edit),contentDescription=if(r.status=="draft")t("Edit ritual draft","Изменить черновик") else t("New ritual version","Новая версия"),modifier=Modifier.size(18.dp))}
+     if(r.status=="draft")OutlinedIconButton(onClick={actions.template(r,"publish")},enabled=!busy&&!member.paused,modifier=Modifier.size(44.dp)){Icon(painterResource(android.R.drawable.checkbox_on_background),contentDescription=t("Publish ritual","Опубликовать ритуал"),modifier=Modifier.size(18.dp))}
+     if(r.status=="published")OutlinedIconButton(onClick={assigning=r;scheduleFor=null},enabled=!busy&&!member.paused,modifier=Modifier.size(44.dp)){Icon(painterResource(android.R.drawable.ic_menu_send),contentDescription=t("Assign ritual","Назначить ритуал"),modifier=Modifier.size(18.dp))}
+     OutlinedIconButton(onClick={versionHistoryFor=r;actions.history(r)},enabled=!busy,modifier=Modifier.size(44.dp)){Icon(painterResource(android.R.drawable.ic_menu_recent_history),contentDescription=t("Version history","История версий"),modifier=Modifier.size(18.dp))}
+     if(r.status!="archived")OutlinedIconButton(onClick={actions.template(r,"archive")},enabled=!busy,modifier=Modifier.size(44.dp)){Icon(painterResource(android.R.drawable.ic_menu_save),contentDescription=t("Archive ritual","Архивировать ритуал"),modifier=Modifier.size(18.dp))}
+    }
+   }
+  }}
+
  }
+ versionHistoryFor?.let{r->Dialog(onDismissRequest={versionHistoryFor=null}){Surface(shape=RoundedCornerShape(12.dp)){Column(Modifier.padding(16.dp).heightIn(max=700.dp).verticalScroll(rememberScrollState()),verticalArrangement=Arrangement.spacedBy(12.dp)){
+  Row(verticalAlignment=Alignment.CenterVertically){Column(Modifier.weight(1f)){Text(t("Version history","История версий"),style=MaterialTheme.typography.headlineSmall);Text(r.title,style=MaterialTheme.typography.bodySmall)};TextButton(onClick={versionHistoryFor=null}){Text(t("Close history","Закрыть историю"))}}
+  if(busy)CircularProgressIndicator() else if(error!=null)Text(error,color=MaterialTheme.colorScheme.error) else data.ritualHistory.filter{it.id==r.id}.forEach{v->Text(v.title,style=MaterialTheme.typography.titleMedium);Text(label(v.status),style=MaterialTheme.typography.labelSmall,color=MaterialTheme.colorScheme.primary);Text(v.description,style=MaterialTheme.typography.bodyMedium);HorizontalDivider()}
+ }}}}
  if(editing||assigning!=null||scheduleFor!=null||rewardFor!=null)Dialog(onDismissRequest={if(!busy){editing=false;assigning=null;scheduleFor=null;rewardFor=null}}){Surface(shape=RoundedCornerShape(12.dp)){Column(Modifier.padding(16.dp).heightIn(max=700.dp).verticalScroll(rememberScrollState()),verticalArrangement=Arrangement.spacedBy(12.dp)){
   error?.let{Text(it,color=MaterialTheme.colorScheme.error)}
   if(editing)key(selected?.id,selected?.revision){RitualEditor(selected,busy||member.paused,ru,{body->if(selected==null&&actions.create!=null)actions.create.invoke(body){r->editing=false;assigning=r} else actions.save(selected,body)},{editing=false},selected==null&&actions.create!=null)}

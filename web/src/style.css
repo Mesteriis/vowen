@@ -157,3 +157,14 @@ label{font-size:13px;margin:10px 0}input:not([type=checkbox]):not([type=radio]),
 #rituals .ritual-review .occurrence-row>details{border-top:1px solid var(--border);margin-top:12px}#rituals .ritual-review .occurrence-row>details>summary{font-size:12px;padding:10px 0}
 #rituals .ritual-review .occurrence-row>button{margin:4px 6px 0 0;min-height:36px;padding:6px 10px;font-size:12px}
 @media(max-width:760px){#rituals .ritual-review .occurrence-row{padding:14px}#rituals .ritual-review .occurrence-row>button{min-height:44px}.ritual-review .occurrence-list{grid-template-columns:1fr}}
+
+/* Template catalogue uses bounded cards and a separate version history. */
+.template-library-heading{display:flex;align-items:center;gap:8px;margin:14px 0}.template-library-heading h3{font-size:21px;margin:0}.template-library-heading>span{font-size:12px;color:var(--muted)}
+.ritual-template-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px;max-width:1040px;align-items:start}
+#rituals .ritual-template-card{padding:16px;margin:0;min-width:0;max-width:520px;border:1px solid var(--border);background:var(--surface);border-radius:10px}
+.ritual-template-card>header,.ritual-history-dialog article>header{display:flex;align-items:start;justify-content:space-between;gap:12px}.ritual-template-card h4{font:500 16px/1.35 system-ui;margin:0}.ritual-template-card .status-tag{font-size:10px;white-space:nowrap}
+.template-description{font-size:13px;color:var(--muted);line-height:1.5;margin:12px 0;white-space:pre-wrap;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere}
+.template-actions{display:flex;gap:8px;border-top:1px solid var(--border);padding-top:12px}.template-actions>button{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;min-width:44px;padding:0;margin:0}
+.ritual-history-dialog{width:calc(100% - 32px);max-width:600px;max-height:85dvh;overflow:auto;background:var(--surface);color:var(--text);border:1px solid var(--border);border-radius:12px;padding:20px}
+.ritual-history-dialog>header{display:flex;justify-content:space-between;align-items:start;gap:12px}.ritual-history-dialog h3{font-size:23px;margin:0}.ritual-history-dialog h4{font-size:19px;margin:0}.ritual-history-dialog p{font-size:13px;line-height:1.55;white-space:pre-wrap;margin:8px 0}.ritual-history-dialog>header p{color:var(--muted)}
+@media(max-width:760px){.ritual-template-grid{grid-template-columns:1fr}#rituals .ritual-template-card{padding:14px}.ritual-history-dialog{padding:16px}}

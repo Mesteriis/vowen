@@ -270,3 +270,17 @@ viewport; phone is one column. Card capture waits for entrance opacity1. Existin
 request-change/approval/history/download regression passes. Android visual parity
 compiled/lint/unit checked, without new emulator proof. No scoped P0/P1/P2.
 Final result: passed.
+
+## Template catalogue annotation (2026-10-16 14:33)
+
+Before: owner screenshot with uncontained template text, wide text buttons and
+inline version history. After: artifacts/deployment/ui-context/ritual-templates-current.png,
+ritual-template-history.png and ritual-templates-{390,690,1280}.png. Inspected actual
+local template and opened version history against the supplied before-state.
+Cards group title/status/description and44px icon actions. Three-line descriptions
+are previews; full descriptions remain in history/editors. Phone single column;
+wider catalogue wraps cards. Separate history dialog avoids pushing the catalogue
+down and closes with button/Escape. No new decorative assets; installed Tabler and
+platform Android icons reused. Web actual interactions/card bounds tested; native
+compiled/unit/lint checked, without a new native visual acceptance claim.
+No scoped P0/P1/P2 remaining. Final result: passed.
