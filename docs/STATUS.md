@@ -968,3 +968,17 @@ live Telegram acceptance. Local preview remains at127.0.0.1:5176/#home.
 The scoped visual comparison with the selected source and subsequent owner refinements
 is recorded in design-qa.md. Implementation CI is running for this committed slice;
 its final outcome is reported in the session handoff rather than assumed here.
+
+## Relationship picker follow-up (2026-10-16)
+
+Replaced the browser-native relationship select with an app-owned dark combobox:
+compact trigger, separate participant/role/status lines, selected checkmark, pause
+color and scrollable options. Arrow/Home/End, Enter/Space, Escape/Tab and outside
+pointer closing preserve keyboard/pointer access. Directional context/permissions
+are unchanged. Web-only component; Android retains its native dark menu.
+
+Web lint/build and15 unit tests passed; shop real-API regression verifies keyboard
+selection/Escape and contextual balances; seven responsive/auth/session browser
+scenarios passed at390/690/768/1024 widths. Local opened-menu captures confirm
+readable dark options without OS white/blue surfaces. No backend/schema/deployment
+changes. CI outcome is reported against the final pushed revision.

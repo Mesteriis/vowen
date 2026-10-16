@@ -187,3 +187,17 @@ No remaining actionable P0/P1/P2 in this scoped comparison with owner amendments
 P3: platform-native icon shapes differ; real Fold7 safe areas/font settings remain
 physical-device acceptance. No deployment or live Telegram evidence.
 Final result: passed.
+
+## Annotated relationship picker (2026-10-16)
+
+Owner screenshot of native white popup is the before-state, not a design to clone:
+/var/folders/7z/9z8k42j54vb2zfhzw6nx82g00000gn/T/TemporaryItems/NSIRD_screencaptureui_4CnKwh/Снимок экрана — 2026-10-16 в 13.27.31.png
+After:artifacts/design/ui-context/picker-phone.png at390x844 CSS/pixels and
+picker-desktop.png at the normal IAB viewport. Scoped request is removal of OS
+white/blue popup, poor contrast and one-line repeated context. Names14px, role/status
+12px,60px touch rows, compact48/52px trigger. Existing dark/gold/rose tokens and
+Tabler icons; no new raster assets. Selected check, explicit listbox/option state,
+keyboard navigation and pointer closing verified. Same directional context values;
+no permission behavior changes. Web lint/build/unit and real-API shop/responsive
+checks passed. No P0/P1/P2 in the inspected opened-list states. Native menu not changed.
+Final result: passed.
