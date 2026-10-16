@@ -87,3 +87,29 @@ No unhandled page errors occurred in the browser regression. The development con
 retains one historical Vite HMR error for the intentionally removed appearance
 component, before the final reload; no new errors appeared during the final11-page
 inspection. Live Telegram, native device visuals and deployment remain unverified.
+
+## Selected compact entry variant (2026-10-16)
+
+Source: first displayed ideation result,
+`/Users/avm/.codex/generated_images/01a13ec4-c67e-7871-84f2-defcce20ba28/exec-c9753daf-6c2e-41d1-9553-eb0329a8f27a.png`.
+Implementation: `artifacts/design/ui-context/entry-strip-desktop.png` and
+`entry-strip-mobile.png`. Same selected synthetic member: Алекс · демо.
+Focused comparison: `entry-strip-comparison.jpg` puts source and implementation
+in the same input, normalizing the source component crop1097×257 to516×121.
+Implementation component measures516×131 CSS px at1272px desktop viewport;
+mobile check observed433 CSS px, scrollWidth433, both controls44px high.
+The native browser screenshot has surrounding viewport padding; it is not a
+pixel-exact390px screenshot. No horizontal overflow was observed in DOM metrics.
+
+Fonts: compact system sans, quiet12px metadata,13px label and14px controls.
+Spacing: one row with12px gap,16px padding,10px radius; source composition preserved.
+Colors: existing dark/gold/rose tokens, muted separator and subdued metadata.
+Images: original velvet/emblem unchanged; no new raster assets needed.
+Copy: DEBUG / local development, participant field, short Sign in action;
+removed copy and Telegram button do not return in debug mode.
+No actionable P0/P1/P2 discrepancies in the focused comparison. Source uses a
+slightly brighter gold action border (P3); existing product token retained.
+Primary interaction verified: selecting a member enables the action and opens
+that member's actual workspace. Temporary viewport override reset afterward.
+Web lint, typecheck/build and12 unit tests passed. Live Telegram not exercised.
+Final result: passed.

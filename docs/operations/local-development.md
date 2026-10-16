@@ -26,7 +26,7 @@ VOWEN_API_URL=http://127.0.0.1:8002 pnpm --dir web dev --port 5176 --strictPort
 The environment above must be supplied to the API and migration commands (through
 an isolated local environment file or shell exports). The Mini App login page then
 shows a **DEBUG · Local development** participant selector. Choose an existing
-active synthetic participant and press **Sign in locally**. Telegram is not needed.
+active synthetic participant and press **Sign in**. Telegram is not needed.
 The server settings determine availability; no frontend-only flag grants access.
 
 Only Telegram identity verification is bypassed. The resulting session uses the

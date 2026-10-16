@@ -878,3 +878,12 @@ active, only local login is offered; the Telegram button remains in normal mode.
 Removed the now-unused divider above the debug form. Verified local debug rendering;
 web lint, production build/typecheck and 12 unit tests passed. Live Telegram and CI
 for this follow-up were not checked here.
+
+## Selected compact local-login design (2026-10-16)
+
+Implemented the owner's first displayed visual option: subdued DEBUG metadata,
+a labeled participant selector and adjacent outlined Sign in action. Desktop block
+is about131px high, controls retain44px hit areas. Scoped desktop/source comparison
+and mobile overflow inspection passed; actual local login opened the selected
+member workspace. Web lint, typecheck/build and12 unit tests passed. Production
+and native Android are unchanged. CI for this slice is not yet checked.
