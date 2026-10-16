@@ -34,4 +34,18 @@ class EconomyApiTest {
   assertEquals(2,body["reward_version_ids"]!!.jsonArray.size)
   assertEquals(20,body["currency_amount"]!!.jsonPrimitive.int)
  }
+ @Test fun ritualRewardEditsSendExpectedRevisionAndExplicitEmptyBundle()=runBlocking{
+  val state=InstanceSession().apply{select("https://test.example");accessToken="synthetic"}
+  val a=RitualAssignment(true,description="demo",effective=true,id="assignment",issuer_id="a",recipient_id="b",reviewer_ids=listOf("a"),revision=7,ritual_version_id="v",schedule=RitualSchedule(8,"daily",0,"2026-10-16","UTC"),status="active",title="Morning")
+  val transport=OkHttpClient.Builder().addInterceptor{chain->
+   val r=chain.request();val sink=okio.Buffer();r.body!!.writeTo(sink);val body=Json.parseToJsonElement(sink.readUtf8()).jsonObject
+   assertEquals("PUT",r.method);assertEquals("/api/v1/ritual-assignments/assignment/rewards",r.url.encodedPath)
+   assertEquals(7,body["expected_version"]!!.jsonPrimitive.int)
+   assertEquals(0,body["currency_amount"]!!.jsonPrimitive.int)
+   assertEquals(0,body["reward_version_ids"]!!.jsonArray.size)
+   Response.Builder().request(r).protocol(Protocol.HTTP_1_1).code(200).message("Synthetic").body(Json.encodeToString(a).toResponseBody()).build()
+  }.build()
+  assertEquals("assignment",Api(state,client=transport).ritualRewards(a,RewardBundleEdit(0,7,emptyList())).id)
+ }
+
 }

@@ -120,6 +120,7 @@ class Api(private val state: InstanceSession,
  }
  suspend fun ritualTemplate(r:RitualTemplate,action:String):RitualTemplate {require(action in listOf("publish","archive"));return json.decodeFromString(call("/rituals/${r.id}/$action","POST",json.encodeToString(ExpectedVersion(r.revision))))}
  suspend fun assignRitual(r:RitualTemplate,body:RitualAssign):RitualAssignment = json.decodeFromString(call("/rituals/${r.id}/assignments","POST",json.encodeToString(body)))
+ suspend fun ritualRewards(a:RitualAssignment,body:RewardBundleEdit):RitualAssignment=json.decodeFromString(call("/ritual-assignments/${a.id}/rewards","PUT",json.encodeToString(body)))
  suspend fun scheduleRitual(a:RitualAssignment,s:RitualSchedule):RitualAssignment = json.decodeFromString(call("/ritual-assignments/${a.id}/schedule","PUT",json.encodeToString(RitualScheduleEdit(expected_version=a.revision,schedule=s))))
  suspend fun ritualAssignment(a:RitualAssignment,action:String):RitualAssignment {require(action in listOf("pause","resume","revoke"));return json.decodeFromString(call("/ritual-assignments/${a.id}/$action","POST",json.encodeToString(ExpectedVersion(a.revision))))}
  suspend fun reportRitual(o:RitualOccurrence,text:String,key:String,links:List<String>,evidenceIds:List<String>):RitualOccurrence = json.decodeFromString(call("/ritual-occurrences/${o.id}/report","POST",json.encodeToString(RitualReportCommand(expected_version=o.revision,idempotency_key=key,text=text,links=links,evidence_ids=evidenceIds))))

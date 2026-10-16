@@ -982,3 +982,28 @@ selection/Escape and contextual balances; seven responsive/auth/session browser
 scenarios passed at390/690/768/1024 widths. Local opened-menu captures confirm
 readable dark options without OS white/blue surfaces. No backend/schema/deployment
 changes. CI outcome is reported against the final pushed revision.
+
+## Ritual interface, selected direction 3 (2026-10-16)
+
+Mini App and native Android now separate assigned rituals, pending review and
+reusable templates. Assignments are grouped by daily/weekly/once cadence. Wider
+layouts show the selected ritual beside the list; phones open a separate settings
+screen. Creation, schedule and reward editors no longer expand the entire list.
+Duplicate relationship banners/slogans and manual refresh chrome were removed
+from this page. Existing report/evidence/review/history workflows remain.
+
+Following owner feedback, schedule, reward and pause/resume actions use compact
+44px/dp icon buttons with accessible names (web also has hover titles). Revocation
+remains under More actions. Native now supports editing future reward bundles;
+local schedule presentation preserves the schedule timezone and selected weekdays.
+Permissions continue to come from directed relationships and server capabilities.
+No backend/schema, production or live Telegram change.
+
+Verified locally: web lint/typecheck/build, 16 unit tests; all 19 real-API E2E
+scenarios, followed by the updated ritual regression covering phone settings →
+schedule/reward editor and unchanged bundle save. Android 20 unit tests, lint,
+debug and instrumentation APK builds; eight focused instrumentation tests,
+including actual MainActivity navigation. Compact inspector interactions also
+pass on emulator viewports 390x844, 690x828 and 834x1194. Visual evidence and owner
+amendments are recorded in design-qa.md. Physical devices and live Telegram remain
+unverified. Final CI outcome is checked against the pushed commit in the handoff.

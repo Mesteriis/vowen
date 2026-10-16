@@ -52,7 +52,6 @@ class AppScreenshotTest {
    ActivityScenario.launch(MainActivity::class.java).use{
     compose.waitUntil(10000){compose.onAllNodesWithTag("tab-rituals").fetchSemanticsNodes().isNotEmpty()}
     compose.onNodeWithTag("tab-rituals").performClick()
-    compose.onNodeWithText("Vowen",useUnmergedTree=true).performScrollTo()
     compose.waitForIdle()
     val bitmap=inst.uiAutomation.takeScreenshot()!!
     val width=context.resources.configuration.screenWidthDp
@@ -65,7 +64,7 @@ class AppScreenshotTest {
     compose.onNodeWithTag("ritual-evidence-links").assertExists()
     compose.waitForIdle();capture(if(width>=720)"evidence-app-tablet.png" else "evidence-app-phone.png")
     compose.onNodeWithText("Cancel").performClick()
-    compose.onNodeWithTag("tab-rewards").performScrollTo().performClick()
+    compose.onNodeWithTag("tab-rewards").performClick()
     compose.onNodeWithText("Vowen",useUnmergedTree=true).performScrollTo()
     compose.waitForIdle();capture(if(width>=720)"rewards-app-tablet.png" else "rewards-app-phone.png")
 

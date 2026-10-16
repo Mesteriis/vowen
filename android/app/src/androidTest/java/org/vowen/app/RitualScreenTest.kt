@@ -21,7 +21,7 @@ class RitualScreenTest {
   var sent:Triple<RitualOccurrence,String,String>?=null
   compose.setContent{MaterialTheme{NativeRitualsScreen(member,WorkspaceState(ritualOccurrences=listOf(o)),false,0,actions(report={a,b,c,_,_->sent=Triple(a,b,c)}))}}
   compose.onNodeWithText("Changes requested").assertExists()
-  compose.onNodeWithText("Due: 15 Oct 2026, 09:00 UTC").assertExists()
+  compose.onNodeWithText("b · 15 Oct 2026, 09:00 UTC").assertExists()
   compose.onNodeWithTag("report-o").performClick()
   compose.onNodeWithTag("ritual-report-text").performTextInput("Synthetic revised report")
   compose.onNodeWithTag("submit-ritual-report").performClick()
@@ -33,7 +33,7 @@ class RitualScreenTest {
  }
  @Test fun reviewerDecisionsAreExplicitAndKeepExpectedRevision() {
   var result:String?=null
-  compose.setContent{MaterialTheme{NativeRitualsScreen(member,WorkspaceState(ritualOccurrences=listOf(o.copy(can_report=false,can_review=true,status="submitted"))),false,0,actions(review={a,s,_->assertEquals(7,a.revision);result=s}))}}
+  compose.setContent{MaterialTheme{NativeRitualsScreen(member,WorkspaceState(ritualOccurrences=listOf(o.copy(recipient_id="c",can_report=false,can_review=true,status="submitted"))),false,0,actions(review={a,s,_->assertEquals(7,a.revision);result=s}))}}
   compose.onNodeWithTag("report-o").assertDoesNotExist()
   compose.onNodeWithTag("review-o").performClick()
   assertNull(result)
@@ -51,8 +51,9 @@ class RitualScreenTest {
 
  @Test fun reviewerControlsExposeNamesAndCheckedState() {
   val template=RitualTemplate(description="Synthetic",id="r",revision=2,status="published",title="Presence",version_id="v")
-  val data=WorkspaceState(rituals=listOf(template),participants=listOf(Participant(display_name="Demo A",id="a",profile_labels=emptyList()),Participant(display_name="Demo B",id="b",profile_labels=emptyList())))
+  val data=WorkspaceState(relations=listOf(Relation("Synthetic",listOf("a","b"),"a","relation","v",listOf("rituals.assign"),"active","b",1)),rituals=listOf(template),participants=listOf(Participant(display_name="Demo A",id="a",profile_labels=emptyList()),Participant(display_name="Demo B",id="b",profile_labels=emptyList())))
   compose.setContent{VowenTheme{Column(androidx.compose.ui.Modifier.verticalScroll(androidx.compose.foundation.rememberScrollState())){NativeRitualsScreen(member.copy(id="a"),data,false,0,actions())}}}
+  compose.onNodeWithTag("ritual-view-templates").performScrollTo().performClick()
   compose.onNodeWithText("Assign ritual").performScrollTo().performClick()
   compose.onNodeWithContentDescription("Reviewer: Demo A").performScrollTo().assertIsOff().performClick().assertIsOn()
   compose.onNodeWithContentDescription("Approval required").assertIsOn()

@@ -29,7 +29,7 @@ fun WorkspaceScreen(member:Member,data:WorkspaceState,currentSessionId:String?,b
  val tabs=(if(ritualActions!=null)listOf("home") else emptyList())+listOf("relations","sessions","profile")+(if(formActions!=null)listOf("forms") else emptyList())+(if(ruleActions!=null)listOf("rules") else emptyList())+(if(ritualActions!=null)listOf("rituals") else emptyList())+(if(rewardActions!=null)listOf("rewards") else emptyList())
  val allTabs=tabs+(if(surveyActions!=null)listOf("surveys") else emptyList())+(if(notificationActions!=null)listOf("notifications") else emptyList())+(if(disciplineActions!=null)listOf("discipline") else emptyList())+(if(journalActions!=null)listOf("journal") else emptyList())
  val labels=if(ru)mapOf("home" to "Главная","surveys" to "Повторные анкеты","notifications" to "Уведомления","relations" to "Отношения","sessions" to "Сессии","profile" to "Профиль","forms" to "Анкеты","rules" to "Правила","rituals" to "Ритуалы","rewards" to "Награды","discipline" to "Дисциплина","journal" to "Дневник") else mapOf("home" to "Home","surveys" to "Recurring surveys","notifications" to "Notifications","relations" to "Relations","sessions" to "Sessions","profile" to "Profile","forms" to "Forms","rules" to "Rules","rituals" to "Rituals","rewards" to "Rewards","discipline" to "Discipline","journal" to "Diary")
- LaunchedEffect(tab){onHomeChanged(allTabs.getOrNull(tab)=="home")}
+ LaunchedEffect(tab){onHomeChanged(allTabs.getOrNull(tab) in listOf("home","rituals"))}
  val content:@Composable ()->Unit={
   if(allTabs.getOrNull(tab) !in listOf("home","rituals","rewards"))TextButton(onClick=actions.refresh,enabled=!busy,modifier=Modifier.testTag("workspace-refresh")){Text(if(ru)"Обновить данные" else "Refresh data")}
   when(allTabs.getOrNull(tab)){
@@ -52,14 +52,14 @@ fun WorkspaceScreen(member:Member,data:WorkspaceState,currentSessionId:String?,b
    Column(Modifier.width(112.dp).testTag("expanded-navigation"),verticalArrangement=Arrangement.spacedBy(4.dp)){
     allTabs.forEachIndexed{index,name->NavigationDrawerItem(label={Text(labels.getValue(name))},selected=tab==index,onClick={tab=index},modifier=Modifier.testTag("tab-$name"))}
    }
-   Column(Modifier.weight(1f).then(if(allTabs.getOrNull(tab)=="home")Modifier.verticalScroll(rememberScrollState()) else Modifier)){content()}
+   Column(Modifier.weight(1f).then(if(allTabs.getOrNull(tab) in listOf("home","rituals"))Modifier.verticalScroll(rememberScrollState()) else Modifier)){content()}
   }
- }else if(allTabs.getOrNull(tab)=="home"){
+ }else if(allTabs.getOrNull(tab) in listOf("home","rituals")){
   var more by remember{mutableStateOf(false)}
   Column(Modifier.fillMaxSize()){
    Column(Modifier.weight(1f).verticalScroll(rememberScrollState())){content()}
    NavigationBar(containerColor=MaterialTheme.colorScheme.background){
-    listOf("home","rituals","rules","journal").forEach{name->val index=allTabs.indexOf(name);if(index>=0)NavigationBarItem(selected=name=="home",onClick={homeTarget=null;tab=index},icon={Icon(painterResource(when(name){"home"->android.R.drawable.ic_menu_view;"rituals"->android.R.drawable.ic_menu_agenda;"rules"->android.R.drawable.ic_menu_info_details;else->android.R.drawable.ic_menu_edit}),contentDescription=null,modifier=Modifier.size(20.dp))},label={Text(labels.getValue(name))},modifier=Modifier.testTag("tab-$name"))}
+    listOf("home","rituals","rules","journal").forEach{name->val index=allTabs.indexOf(name);if(index>=0)NavigationBarItem(selected=allTabs.getOrNull(tab)==name,onClick={homeTarget=null;tab=index},icon={Icon(painterResource(when(name){"home"->android.R.drawable.ic_menu_view;"rituals"->android.R.drawable.ic_menu_agenda;"rules"->android.R.drawable.ic_menu_info_details;else->android.R.drawable.ic_menu_edit}),contentDescription=null,modifier=Modifier.size(20.dp))},label={Text(labels.getValue(name))},modifier=Modifier.testTag("tab-$name"))}
     Box(Modifier.testTag("tab-more")){Row{NavigationBarItem(selected=false,onClick={more=true},icon={Icon(painterResource(android.R.drawable.ic_menu_more),contentDescription=null,modifier=Modifier.size(20.dp))},label={Text(if(ru)"Ещё" else "More")})};DropdownMenu(more,{more=false}){allTabs.filter{it !in listOf("home","rituals","rules","journal")}.forEach{name->DropdownMenuItem(text={Text(labels.getValue(name))},onClick={tab=allTabs.indexOf(name);more=false},modifier=Modifier.testTag("tab-$name"))}}}
    }
   }

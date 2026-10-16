@@ -5,6 +5,10 @@ import org.junit.Test
 import java.time.LocalDate
 
 class HomeAgendaTest {
+ @Test fun scheduleKeepsLocalTimeAndSelectedDays(){
+  assertEquals("Пн Ср Пт · 08:05",ritualScheduleSummary(RitualSchedule(8,"weekly",5,"2026-10-16","Europe/Madrid",listOf(0,2,4)),true))
+ }
+
  @Test fun viewerTimezoneAndDst(){
   assertEquals(LocalDate.parse("2026-10-17"),homeDay("2026-10-16T23:30:00Z","Europe/Madrid"))
   assertEquals(LocalDate.parse("2026-10-25"),homeDay("2026-10-25T01:30:00Z","Europe/Madrid"))

@@ -201,3 +201,27 @@ keyboard navigation and pointer closing verified. Same directional context value
 no permission behavior changes. Web lint/build/unit and real-API shop/responsive
 checks passed. No P0/P1/P2 in the inspected opened-list states. Native menu not changed.
 Final result: passed.
+
+## Rituals: selected direction 3 + compact icon amendment (2026-10-16)
+
+Source: /Users/avm/.codex/generated_images/01a13ec4-c67e-7871-84f2-defcce20ba28/exec-6a8f4153-d740-4a3d-a166-655ea7c975e0.png
+Owner amendment: replace oversized schedule/reward/pause text buttons with icons.
+Reused supplied velvet/crest/fonts; Tabler web icons and Android platform icons.
+No new decorative raster assets. Compared source phone/list and wide inspector
+with actual local renders: artifacts/deployment/ui-context/ritual-web-desktop.png,
+ritual-web-phone-list.png, ritual-web-phone-detail.png and ritual-native-{phone,fold,tablet}.png.
+Source is a composite; compare app-owned content at matching phone/wide states,
+not generated device/outer frame. Synthetic API fixture cadence/title/count differ
+from illustration and are preserved rather than faked for the screenshot.
+
+Verified: charcoal/gold palette, compact grouped cards, underline tabs, selected
+inspector, separate phone settings, 44px/dp icon action targets with accessible
+names. Source text actions intentionally replaced per subsequent owner instruction.
+Creation/schedule/reward dialogs, report/review/evidence/history remain functional.
+Web real-API regression covers mobile dialog transitions, editor dismissal,
+reward snapshot editing and report revisions; Android instrumentation covers these
+compact controls and actual host navigation. Native visual captures use a Surface
+and wait for platform window transitions. No remaining scoped P0/P1/P2.
+P3: Android platform icon shapes differ from Tabler; physical Fold safe areas and
+user font scaling still need real-device acceptance. No live Telegram/deployment.
+Final result: passed.
