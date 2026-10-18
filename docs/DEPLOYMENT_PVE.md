@@ -2,8 +2,10 @@
 
 The owner deployment uses an unprivileged Debian 13 LXC with Docker, a private
 HTTP Caddy origin, and a separate nginx-ui HTTPS edge. The application source
-was initially deployed from `b0356dd`; M5 is deployed from `f60013d` with schema
-0018. No development database or users were copied. See dated deployment evidence
+was initially deployed from `b0356dd`; the current application deployment is
+`33e70c9` with schema 0045 (2026-10-19), following M5 `f60013d`/0018. Existing
+participants and data were preserved; reference and shop fixtures were imported,
+without copying development accounts. See dated deployment evidence
 in [STATUS](STATUS.md).
 
 The files in `deploy/pve` are an example for this topology. Before reuse, replace
@@ -93,3 +95,34 @@ See [M6 operator procedures](M6.md) for the PVE systemd timer, encrypted restic
 repository, scoped retention, conditional off-host replication and artifact builds.
 Use the same exclusive backup lock for deployments and key rotation. The automation
 does not replace a restore rehearsal before a schema migration.
+
+
+## 2026-10-19 update: participant profiles and current catalogues
+
+Application revision `33e70c9` is deployed at the existing HTTPS origin with schema
+0045. The two existing server participants were retained. The migration rehearsal
+restored the stopped-writer 0018 database into a separate scratch database, compared
+all original columns and decrypted payload hashes, upgraded to 0045, compared them
+again, and imported the shop fixtures there before modifying the application DB.
+The same comparison passed on the application DB before importing products.
+
+Migration 0035 converts payloads to plaintext as previously requested by the owner.
+Rollback to an old AES-only binary requires restoring the original database and
+keyring, not only Alembic downgrade. The private pre-update dump, configuration,
+source archive and old image tags remain on the server; the previous source tree
+is retained separately. Machine-local edge files and secret/configuration hashes
+were preserved. Hold the PVE backup lock for subsequent deployments too.
+
+All 318 reference fixture UUIDs and thumbnail paths were verified. The 103 shop
+products from `scripts/fixtures/rewards.json` were imported atomically under an
+existing active dominant author, with their cover, category, price and public
+audience attributes. Existing accounts, balances and purchase history were not
+reset. The debug scenario in `scripts/fixtures/debug-space.json` is repository
+fixture data only; it was not applied to this server. Production debug login remains
+disabled.
+
+Public HTTPS checks passed for readiness, authorization boundaries, CSP and body
+limits. All 448 Web static manifest entries matched repository SHA256 values over
+HTTPS, and served JavaScript/CSS matched the exact application build. Evidence:
+`artifacts/deployment/profile-20261019/static-verification.json` and dated STATUS.
+This does not claim physical Android or live Telegram workflow acceptance.
