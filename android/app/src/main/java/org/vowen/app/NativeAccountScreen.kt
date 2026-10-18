@@ -18,7 +18,12 @@ fun NativeAccountScreen(member:Member,data:WorkspaceState,currentId:String?,busy
   Text(if(ru)"Профиль" else "Profile",style=MaterialTheme.typography.headlineSmall)
   ScrollableTabRow(selectedTabIndex=entries.indexOfFirst{it.first==section}.coerceAtLeast(0),edgePadding=0.dp,containerColor=MaterialTheme.colorScheme.background){entries.forEach{(id,title)->Tab(selected=section==id,onClick={section=id},text={Text(title)},modifier=Modifier.testTag("personal-$id"))}}
   when(section){
-   "profile"->ProfileScreen(member,busy,actions.profile)
+   "profile"->Column(verticalArrangement=Arrangement.spacedBy(24.dp)) {
+    actions.participantProfile?.let {NativeParticipantProfileScreen(member,data,it)} ?: ProfileScreen(member,busy,actions.profile)
+    var accountOpen by remember {mutableStateOf(false)}
+    TextButton(onClick={accountOpen=!accountOpen}){Text(if(ru)"Язык и часовой пояс" else "Language & time zone")}
+    if(accountOpen)ProfileScreen(member,busy,actions.profile,general=true)
+   }
    "notifications"->notifications?.let{NativeNotificationScreen(data.notificationSettings,busy,it,ru,onRefresh=actions.refresh)}
    "sessions"->SessionsScreen(member,data.sessions,currentId,busy,completed,actions.revokeSession)
   }

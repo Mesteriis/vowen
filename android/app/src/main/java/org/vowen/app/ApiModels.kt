@@ -2,6 +2,23 @@
 package org.vowen.app
 import kotlinx.serialization.Serializable
 
+@Serializable data class IdentitySection(val bio: String? = null, val biological_sex_uid: String? = null, val display_name: String, val gender_uid: String? = null)
+@Serializable data class PartnerPreference(val mode: String? = null, val uids: List<String>? = null)
+@Serializable data class DynamicsSection(val composition_uids: List<String>? = null, val gender_preference: PartnerPreference? = null, val interaction_format_uids: List<String>? = null, val profile_labels: List<String>? = null, val relationship_type_uids: List<String>? = null, val sex_preference: PartnerPreference? = null)
+@Serializable data class PracticeChoice(val attitude: String? = null, val conditions: String? = null, val experience: String? = null, val participation: String? = null, val practice_uid: String)
+@Serializable data class ReferenceChoice(val attitude: String? = null, val conditions: String? = null, val uid: String)
+@Serializable data class PreferencesSection(val body_parts: List<ReferenceChoice>? = null, val devices: List<ReferenceChoice>? = null, val materials: List<ReferenceChoice>? = null, val practices: List<PracticeChoice>? = null, val role_scenarios: List<ReferenceChoice>? = null, val venues: List<ReferenceChoice>? = null)
+@Serializable data class BoundariesSection(val notes: String? = null)
+@Serializable data class HealthSection(val allergen_uids: List<String>? = null, val care_practice_uids: List<String>? = null, val condition_uids: List<String>? = null, val notes: String? = null)
+@Serializable data class SectionReaders(val reader_ids: List<String>? = null, val section: String)
+@Serializable data class VisibilitySection(val sections: List<SectionReaders>? = null)
+@Serializable data class ProfileDocument(val boundaries: BoundariesSection? = null, val dynamics: DynamicsSection? = null, val health: HealthSection? = null, val identity: IdentitySection, val preferences: PreferencesSection? = null, val visibility: VisibilitySection? = null)
+@Serializable data class ProfileProgress(val completed: Boolean, val deferred: Boolean, val step: Int)
+@Serializable data class ProfileView(val account_version: Int, val document: ProfileDocument, val draft_version: Int?, val progress: ProfileProgress, val version: Int)
+@Serializable data class ProfileDraftView(val base_account_version: Int, val base_profile_version: Int, val deferred: Boolean, val document: ProfileDocument, val step: Int, val version: Int)
+@Serializable data class ProfileDraftPatch(val deferred: Boolean? = null, val expected_version: Int, val section: String? = null, val step: Int, val value: Map<String, kotlinx.serialization.json.JsonElement>? = null)
+@Serializable data class ProfilePublish(val expected_draft_version: Int)
+@Serializable data class SharedProfileView(val owner_id: String, val sections: Map<String, kotlinx.serialization.json.JsonElement>)
 @Serializable data class ReferenceEntry(val body_part_uids: List<String>? = null, val category_uid: String? = null, val description: String, val device_uids: List<String>? = null, val extra: Map<String, kotlinx.serialization.json.JsonElement>? = null, val icon: String? = null, val name: String, val thumbnail: String? = null, val uid: String, val url: String? = null)
 @Serializable data class PracticeCreate(val body_part_uids: List<String>? = null, val category_uid: String? = null, val description: String? = null, val device_uids: List<String>? = null, val extra: Map<String, kotlinx.serialization.json.JsonElement>? = null, val icon: String? = null, val name: String, val thumbnail: String? = null)
 @Serializable data class AdministrationView(val members: List<AdministratorMember>, val revision: Int)

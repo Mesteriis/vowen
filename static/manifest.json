@@ -551,6 +551,10 @@
     "android/res/drawable-nodpi/vowen_velvet_texture.webp": "89c6042b09ab139ef6eb74b8dec7ddc844df9331b255a9921ee246fa8bd26a29",
     "android/res/drawable-nodpi/reward_028.png": "c8f095c770ce15802347816aa13fbd3698616bf0c8a2a5986cb297c56f8948f1",
     "android/res/drawable-nodpi/reward_016.png": "ff9d5598c275763e2e4957daf55290b986694260837f3f9013e4cdb7485d2790",
-    "android/res/drawable-nodpi/reward_017.png": "23ee883b6337329872e94be1a639ddc736c0f55c5f3db2fcb689d02d5aa473f1"
+    "android/res/drawable-nodpi/reward_017.png": "23ee883b6337329872e94be1a639ddc736c0f55c5f3db2fcb689d02d5aa473f1",
+    "web/design/profile/concept-atlas.png": "b57ebeeb497bd707574fe0d58ed8aab1a9ff0835ba3eba2e962c2d6899377a34",
+    "web/design/profile/concept-passport.png": "2e9ff8b68d9d69ee88dc9fa034b38b06b93d5a70860b76df536cb6409542dc1a",
+    "web/design/profile/concept-guided.png": "857cd500fb4f36ffb9e5fdbc41a32b1a8c85302a56e576f5ff4c8c5b408b7df8",
+    "web/design/profile/concept-passport-with-wizard.png": "c00ab1660145bdc99500193a74c22a5ec9ae38df72f8f1e9e79127a575e556e1"
   }
 }

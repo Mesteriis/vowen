@@ -24,6 +24,7 @@ from vowen.modules.forms.router import router as forms_router
 from vowen.modules.identity.administration_router import router as administration_router
 from vowen.modules.journal.router import router as journal_router
 from vowen.modules.notifications.preferences import router as notifications_router
+from vowen.modules.participant_profiles.router import router as participant_profiles_router
 from vowen.modules.references.router import router as references_router
 from vowen.modules.relations.router import router as relations_router
 from vowen.modules.rewards.catalogue import router as catalogue_router
@@ -71,6 +72,7 @@ def create_app(settings: Settings) -> FastAPI:
     app.include_router(discipline_router)
     app.include_router(punishment_catalogue_router)
     app.include_router(journal_router)
+    app.include_router(participant_profiles_router)
     app.include_router(notifications_router)
     app.include_router(surveys_router)
     app.include_router(rules_router)

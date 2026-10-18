@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-18",
+  "status": "implemented-backend-web-native-source",
+  "display_order": [
+    "atlas",
+    "passport",
+    "guided"
+  ],
+  "reference": "artifacts/deployment/ui-context/debug-profile-ready.png",
+  "concepts": {
+    "atlas": {
+      "visible_option": 1,
+      "file": "static/web/design/profile/concept-atlas.png",
+      "source": "/Users/avm/.codex/generated_images/01a13ec4-c67e-7871-84f2-defcce20ba28/exec-ba116879-7ccf-42b4-8cee-12e6bb595750.png",
+      "prompt": "Create realistic production-quality UI design for Vowen, an existing private adult relationship application. Direction name: Атлас предпочтений. ONE concept with matching desktop and mobile adaptation on a 1920 x 1120 canvas: desktop 1440 x 1024 left, mobile app content 390 x 844 right, generous clear margin between; no phone hardware, OS status bars or browser chrome. Current date 2026-10-18; no need to display dates.\nUse attached ACTUAL product screenshot as the visual reference: retain Vowen compact sidebar/crest, top bar, BLACK VELVET texture exposed, warm gold #d9b681 details, ivory type #eee9df, muted #aaa69d, Cormorant Garamond headings + system sans. Open base surface, airy generous spacing, thin rules, no large covering background, no excessive nested cards, underlined transparent tabs.\nMain goal: quickly fill a participant's practice preferences from existing reference catalogues. Russian UI. Top compact profile identity Алекс / Switch then tabs Обзор, Предпочтения active, Границы, Здоровье. On desktop, narrow catalogue category navigation on left inside content: Сенсорика, Фиксация, Массаж, Забота. Center: search Найти практику; a spacious grouped list with 4 rows Массаж / Повязка на глаза / Мягкая фиксация / Восстановление. Each row has a distinct textual preference state and a small gold engraving thumbnail where useful. States Нравится, Хочу попробовать, При условиях, Табу, Не указано, never color alone. Right open detail panel for Массаж with separated controls: Моё отношение Нравится, Моя роль Получать / Делать / Оба, Опыт Есть опыт, and one-line Условия. Status and experience are separate axes. A single clear action Сохранить. Privacy indicator Только я or Выбранные партнёры, no automatic partner access.\nMobile: same searchable practice list, category chips scroll horizontally, selected item opens a bottom sheet with the same preference/role/experience fields and generous 44px touch controls; show one focused selected sheet while context list remains visible. No long full-page forms. Keep account notifications/sessions subordinate, don't advertise all profile capabilities on this frame. No metrics, gamification, compliance checkbox, adult bodies, nudity, sexual imagery or explicit practices. Render neutral catalogue text and fine UI icons only. The mobile and desktop are the same concept, not two alternatives.",
+      "provider": "built-in-imagegen"
+    },
+    "passport": {
+      "visible_option": 2,
+      "file": "static/web/design/profile/concept-passport.png",
+      "source": "/Users/avm/.codex/generated_images/01a13ec4-c67e-7871-84f2-defcce20ba28/exec-b54bf2a1-8b1c-4a62-9289-e16699bd8c1d.png",
+      "prompt": "Create realistic, production-quality UI design for Vowen, an existing private adult relationship application. Direction name: Личный паспорт. This is ONE concept shown as a desktop and its corresponding mobile layout on one presentation canvas. Target canvas 1920 x 1120: desktop primary screen 1440 x 1024 at left and corresponding mobile content 390 x 844 at right, naturally scaled within margins; no phone bezel, browser chrome or OS indicators. Current date 2026-10-18, omit dates if not needed.\nAttach reference screenshot as actual visual grounding. Preserve its Vowen compact left sidebar, crest, black velvet textured base surface, fine warm gold #d9b681 accents, ivory #eee9df, muted #aaa69d, Cormorant Garamond headings and system sans-serif body. Preserve airy layout: velvet visibly remains between content groups, no one large opaque background panel, no cards inside cards, no tab backgrounds. Thin underline active tabs. Body text 14-16px.\nDesign a focused participant profile overview that makes personal identity and boundaries legible. Russian UI. Header Профиль with a circular monogram A, name Алекс, short calm bio, role-interest Switch as self-description and relationship-interest Партнёрство / D/s. Header action Редактировать. A concise section bar Обзор / Предпочтения / Границы / Здоровье, and discreet account access.\nUse generous editorial whitespace and two open columns below identity: left Что мне нравится with a few neutral catalogue choices Массаж, Сенсорные практики, Восстановление и забота; right Мои границы with clear distinct labels Табу, Только при условиях, Не указано. A small visibility row Видно выбранным партнёрам with eye icon. Show scope of health section as Закрыто without health diagnoses in the overview. The overview should feel like an elegant personal passport, not a settings form, no statistics dashboard, percentages or completion scores. One primary action Редактировать профиль. Mobile shows same identity and readable short sections stacked with touch targets >=44px and horizontally scrollable tabs, using existing bottom navigation icons. Keep notification and session management subordinate. No human photography, nudity, body illustrations, sexual imagery or explicit practices. Realistic text, no filler lorem ipsum. Do not add unrelated features. Only one concept with its matching desktop/mobile adaptation.",
+      "provider": "built-in-imagegen"
+    },
+    "guided": {
+      "visible_option": 3,
+      "file": "static/web/design/profile/concept-guided.png",
+      "source": "/Users/avm/.codex/generated_images/01a13ec4-c67e-7871-84f2-defcce20ba28/exec-57a464bd-a51d-41c0-b476-57b6ed9de212.png",
+      "prompt": "Create realistic production-quality UI design for Vowen, an existing private adult relationship application. Direction name: Пошаговое заполнение. ONE design concept with corresponding desktop and mobile adaptation on a 1920 x 1120 presentation canvas: desktop app 1440 x 1024 on left and mobile app content 390 x 844 on right with a quiet gutter. No phone bezel, notch, browser chrome or OS status icons. Today's anchor is 2026-10-18; omit dates.\nACTUAL product screenshot attached: use it as design grounding. Preserve compact Vowen left navigation, crest, top header, dark BLACK VELVET textured page with open whitespace, warm gold #d9b681, ivory #eee9df, muted #aaa69d, Cormorant Garamond headings and system sans-serif 14-16px body. No one large flat panel covering velvet, no nested cards, sparing dividers and restrained gold outlines, no colored tab backgrounds.\nMain goal: let someone construct a comprehensive personal profile in manageable optional steps instead of a giant form. Russian interface. Desktop header Мой профиль / Алекс with a small visible privacy menu Только я. Within the content, a discreet left vertical chapter index: О себе, Динамика, Предпочтения, Границы active, Здоровье и забота, Видимость. Center show a spacious focused step Мои границы with short text Можно заполнить сейчас или вернуться позже. Two clear grouped areas Жёсткие табу and Только при условиях. Each is a catalogue picker with a few neutral example chips Оставлять следы, Фото и видео, Сенсорная нагрузка. Include clear Не указано state as a separate optional answer. Below, a concise text field Что важно учитывать for personal notes. Primary action Сохранить и далее; secondary Назад and discreet Пропустить. No consent-request workflow, no forced disclosure, no score/percentage. On desktop an understated right preview block Как выглядит мой профиль summarizes only visible headings and has hidden-eye indicators for closed sections; do not overwhelm with preview controls.\nMobile shows one chapter at a time, compact Границы heading and chapter chooser, same two catalogue picker groups, long notes field and sticky bottom Сохранить и далее action above existing bottom nav. Large touch targets, lightweight transitions implied, fields fit narrow screen without clipping. Keep account language/notifications/sessions accessible but off-screen. No human photos, bodies, nudity, sexual imagery or explicit practices; only neutral typography, icons and example tags. A single coherent design with its own mobile adaptation.",
+      "provider": "built-in-imagegen"
+    }
+  },
+  "selected_option": 2,
+  "combined": {
+    "file": "static/web/design/profile/concept-passport-with-wizard.png",
+    "source": "/Users/avm/.codex/generated_images/01a13ec4-c67e-7871-84f2-defcce20ba28/exec-0a27fd6e-27c1-42f2-a039-d19c8dd401b9.png",
+    "provider": "built-in-imagegen",
+    "spec": "docs/superpowers/specs/2026-10-18-participant-profile-design.md",
+    "corrections": [
+      "Health defaults to owner only",
+      "Wizard is a separate state, not embedded in overview"
+    ]
+  },
+  "implementation_report": "docs/design/participant-profile-implementation.md",
+  "design_qa": "design-qa.md"
+}

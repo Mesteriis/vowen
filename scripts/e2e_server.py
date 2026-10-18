@@ -9,6 +9,7 @@ from vowen.core.config import Settings
 from vowen.core.crypto import init_keyring
 from vowen.core.database import engine_for, sessions_for
 from vowen.modules.identity.service import create_user, ProvisionUserCommand
+from vowen.modules.references.fixtures import seed_references
 from vowen.main import create_app
 
 root = Path(__file__).resolve().parents[1]
@@ -28,6 +29,7 @@ async def seed():
     try:
         async with sessions_for(engine)() as db, db.begin():
             await db.execute(text('TRUNCATE users CASCADE'))
+            await seed_references(db)
             for i in range(12):
                 await create_user(db, ProvisionUserCommand(telegram_id=100000000201+i,display_name=f'Demo {i+1}'),Clock().now())
     finally:

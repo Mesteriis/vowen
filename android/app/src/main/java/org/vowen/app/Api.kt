@@ -71,6 +71,12 @@ class Api(private val state: InstanceSession,
   require(action in listOf("grant","transfer"))
   call("/administration/administrators/$id/$action","POST",json.encodeToString(AdministrationCommand(expected_revision=revision)))
  }
+ suspend fun participantProfile():ProfileView = json.decodeFromString(call("/me/profile"))
+ suspend fun profileDraft():ProfileDraftView = json.decodeFromString(call("/me/profile/draft"))
+ suspend fun saveProfileDraft(patch:ProfileDraftPatch):ProfileDraftView = json.decodeFromString(call("/me/profile/draft","PUT",json.encodeToString(patch)))
+ suspend fun publishProfileDraft(version:Int):ProfileView = json.decodeFromString(call("/me/profile/publish","POST",json.encodeToString(ProfilePublish(version))))
+ suspend fun discardProfileDraft(version:Int) {call("/me/profile/draft?expected_version=$version","DELETE")}
+ suspend fun sharedParticipantProfile(ownerId:String):SharedProfileView = json.decodeFromString(call("/participants/$ownerId/profile"))
  suspend fun updateProfile(patch:ProfilePatch):Member = json.decodeFromString(call("/me/preferences","PATCH",json.encodeToString(patch)))
  suspend fun revokeSession(id:String) {call("/sessions/$id","DELETE")}
  suspend fun forms():List<FormTemplate> = json.decodeFromString(call("/forms"))

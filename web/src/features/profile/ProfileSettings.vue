@@ -22,7 +22,7 @@ watch([displayName,language,timezone,labels],()=>{saved.value=false},{deep:true,
  <p class="muted">{{mode==='general'?(ru?'Основные параметры вашего аккаунта.':'The basics of your account.'):(ru?'Как вас видят участники пространства.':'How you appear to other members.')}}</p>
  <p v-if="error" role="alert">{{error}}</p>
  <form @submit.prevent="save">
- <label>{{t.name}}<input v-model="displayName" required maxlength="100" :disabled="busy" autocomplete="nickname"></label>
+ <label v-if="mode!=='general'">{{t.name}}<input v-model="displayName" required maxlength="100" :disabled="busy" autocomplete="nickname"></label>
 
  <template v-if="mode!=='profile'">
  <label>{{t.language}}<select v-model="language" :disabled="busy"><option value="en">English</option><option value="ru">Русский</option></select></label>

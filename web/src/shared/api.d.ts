@@ -865,6 +865,59 @@ export interface paths {
         patch: operations["preferences_api_v1_me_preferences_patch"];
         trace?: never;
     };
+    "/api/v1/me/profile": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Own */
+        get: operations["own_api_v1_me_profile_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/me/profile/draft": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Draft */
+        get: operations["draft_api_v1_me_profile_draft_get"];
+        /** Save */
+        put: operations["save_api_v1_me_profile_draft_put"];
+        post?: never;
+        /** Discard */
+        delete: operations["discard_api_v1_me_profile_draft_delete"];
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/me/profile/publish": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Publish */
+        post: operations["publish_api_v1_me_profile_publish_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/me/resume": {
         parameters: {
             query?: never;
@@ -891,6 +944,23 @@ export interface paths {
         };
         /** Participants */
         get: operations["participants_api_v1_participants_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/participants/{owner_id}/profile": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Shared */
+        get: operations["shared_api_v1_participants__owner_id__profile_get"];
         put?: never;
         post?: never;
         delete?: never;
@@ -2012,6 +2082,14 @@ export interface components {
              */
             reward_version_id: string;
         };
+        /** BoundariesSection */
+        BoundariesSection: {
+            /**
+             * Notes
+             * @default
+             */
+            notes: string;
+        };
         /** ChallengeCreated */
         ChallengeCreated: {
             /** Bot Url */
@@ -2462,6 +2540,19 @@ export interface components {
             /** Versions */
             versions: components["schemas"]["DisciplineVersionView"][];
         };
+        /** DynamicsSection */
+        DynamicsSection: {
+            /** Composition Uids */
+            composition_uids?: string[];
+            gender_preference?: components["schemas"]["PartnerPreference"];
+            /** Interaction Format Uids */
+            interaction_format_uids?: string[];
+            /** Profile Labels */
+            profile_labels?: ("dominant" | "submissive" | "switch")[];
+            /** Relationship Type Uids */
+            relationship_type_uids?: string[];
+            sex_preference?: components["schemas"]["PartnerPreference"];
+        };
         /** ErrorDetail */
         ErrorDetail: {
             /** Code */
@@ -2757,6 +2848,34 @@ export interface components {
              * Format: uuid
              */
             public_id: string;
+        };
+        /** HealthSection */
+        HealthSection: {
+            /** Allergen Uids */
+            allergen_uids?: string[];
+            /** Care Practice Uids */
+            care_practice_uids?: string[];
+            /** Condition Uids */
+            condition_uids?: string[];
+            /**
+             * Notes
+             * @default
+             */
+            notes: string;
+        };
+        /** IdentitySection */
+        IdentitySection: {
+            /**
+             * Bio
+             * @default
+             */
+            bio: string;
+            /** Biological Sex Uid */
+            biological_sex_uid?: string | null;
+            /** Display Name */
+            display_name: string;
+            /** Gender Uid */
+            gender_uid?: string | null;
         };
         /** InkDocument */
         InkDocument: {
@@ -3232,6 +3351,48 @@ export interface components {
             /** Profile Labels */
             profile_labels: string[];
         };
+        /** PartnerPreference */
+        PartnerPreference: {
+            /**
+             * Mode
+             * @default not_specified
+             * @enum {string}
+             */
+            mode: "not_specified" | "any" | "selected";
+            /** Uids */
+            uids?: string[];
+        };
+        /** PracticeChoice */
+        PracticeChoice: {
+            /**
+             * Attitude
+             * @default not_specified
+             * @enum {string}
+             */
+            attitude: "not_specified" | "like" | "want_to_try" | "conditional" | "taboo";
+            /**
+             * Conditions
+             * @default
+             */
+            conditions: string;
+            /**
+             * Experience
+             * @default not_specified
+             * @enum {string}
+             */
+            experience: "not_specified" | "none" | "tried" | "experienced";
+            /**
+             * Participation
+             * @default not_specified
+             * @enum {string}
+             */
+            participation: "not_specified" | "give" | "receive" | "both";
+            /**
+             * Practice Uid
+             * Format: uuid
+             */
+            practice_uid: string;
+        };
         /** PracticeCreate */
         PracticeCreate: {
             /** Body Part Uids */
@@ -3256,6 +3417,21 @@ export interface components {
             /** Thumbnail */
             thumbnail?: string | null;
         };
+        /** PreferencesSection */
+        PreferencesSection: {
+            /** Body Parts */
+            body_parts?: components["schemas"]["ReferenceChoice"][];
+            /** Devices */
+            devices?: components["schemas"]["ReferenceChoice"][];
+            /** Materials */
+            materials?: components["schemas"]["ReferenceChoice"][];
+            /** Practices */
+            practices?: components["schemas"]["PracticeChoice"][];
+            /** Role Scenarios */
+            role_scenarios?: components["schemas"]["ReferenceChoice"][];
+            /** Venues */
+            venues?: components["schemas"]["ReferenceChoice"][];
+        };
         /** ProductRevision */
         ProductRevision: {
             /** Expected Version */
@@ -3267,6 +3443,47 @@ export interface components {
             enabled: boolean;
             /** Expected Version */
             expected_version: number;
+        };
+        /** ProfileDocument */
+        ProfileDocument: {
+            boundaries?: components["schemas"]["BoundariesSection"];
+            dynamics?: components["schemas"]["DynamicsSection"];
+            health?: components["schemas"]["HealthSection"];
+            identity: components["schemas"]["IdentitySection"];
+            preferences?: components["schemas"]["PreferencesSection"];
+            visibility?: components["schemas"]["VisibilitySection"];
+        };
+        /** ProfileDraftPatch */
+        ProfileDraftPatch: {
+            /**
+             * Deferred
+             * @default false
+             */
+            deferred: boolean;
+            /** Expected Version */
+            expected_version: number;
+            /** Section */
+            section?: ("identity" | "dynamics" | "preferences" | "boundaries" | "health" | "visibility") | null;
+            /** Step */
+            step: number;
+            /** Value */
+            value?: {
+                [key: string]: components["schemas"]["JsonValue"];
+            } | null;
+        };
+        /** ProfileDraftView */
+        ProfileDraftView: {
+            /** Base Account Version */
+            base_account_version: number;
+            /** Base Profile Version */
+            base_profile_version: number;
+            /** Deferred */
+            deferred: boolean;
+            document: components["schemas"]["ProfileDocument"];
+            /** Step */
+            step: number;
+            /** Version */
+            version: number;
         };
         /** ProfilePatch */
         ProfilePatch: {
@@ -3280,6 +3497,31 @@ export interface components {
             profile_labels?: ("dominant" | "submissive" | "switch")[] | null;
             /** Timezone */
             timezone?: string | null;
+        };
+        /** ProfileProgress */
+        ProfileProgress: {
+            /** Completed */
+            completed: boolean;
+            /** Deferred */
+            deferred: boolean;
+            /** Step */
+            step: number;
+        };
+        /** ProfilePublish */
+        ProfilePublish: {
+            /** Expected Draft Version */
+            expected_draft_version: number;
+        };
+        /** ProfileView */
+        ProfileView: {
+            /** Account Version */
+            account_version: number;
+            document: components["schemas"]["ProfileDocument"];
+            /** Draft Version */
+            draft_version: number | null;
+            progress: components["schemas"]["ProfileProgress"];
+            /** Version */
+            version: number;
         };
         /** ProposeRelationCommand */
         ProposeRelationCommand: {
@@ -3463,6 +3705,25 @@ export interface components {
              * Format: uuid
              */
             id: string;
+        };
+        /** ReferenceChoice */
+        ReferenceChoice: {
+            /**
+             * Attitude
+             * @default not_specified
+             * @enum {string}
+             */
+            attitude: "not_specified" | "like" | "want_to_try" | "conditional" | "taboo";
+            /**
+             * Conditions
+             * @default
+             */
+            conditions: string;
+            /**
+             * Uid
+             * Format: uuid
+             */
+            uid: string;
         };
         /** ReferenceView */
         ReferenceView: {
@@ -4028,6 +4289,16 @@ export interface components {
             expected_version: number;
             schedule: components["schemas"]["Schedule"];
         };
+        /** SectionReaders */
+        SectionReaders: {
+            /** Reader Ids */
+            reader_ids?: string[];
+            /**
+             * Section
+             * @enum {string}
+             */
+            section: "identity" | "dynamics" | "preferences" | "boundaries" | "health";
+        };
         /** SendWave */
         SendWave: {
             /** Expected Version */
@@ -4078,6 +4349,18 @@ export interface components {
             id: string;
             /** Revoked */
             revoked: boolean;
+        };
+        /** SharedProfileView */
+        SharedProfileView: {
+            /**
+             * Owner Id
+             * Format: uuid
+             */
+            owner_id: string;
+            /** Sections */
+            sections: {
+                [key: string]: components["schemas"]["JsonValue"];
+            };
         };
         /** ShopProductContent */
         ShopProductContent: {
@@ -4287,6 +4570,11 @@ export interface components {
             all?: components["schemas"]["Condition"][];
             /** Any */
             any?: components["schemas"]["Condition"][];
+        };
+        /** VisibilitySection */
+        VisibilitySection: {
+            /** Sections */
+            sections?: components["schemas"]["SectionReaders"][];
         };
         /** WalletView */
         WalletView: {
@@ -10126,6 +10414,474 @@ export interface operations {
             };
         };
     };
+    own_api_v1_me_profile_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ProfileView"];
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Conflict */
+            409: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Content Too Large */
+            413: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Too Many Requests */
+            429: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Service Unavailable */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+        };
+    };
+    draft_api_v1_me_profile_draft_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ProfileDraftView"];
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Conflict */
+            409: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Content Too Large */
+            413: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Too Many Requests */
+            429: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Service Unavailable */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+        };
+    };
+    save_api_v1_me_profile_draft_put: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ProfileDraftPatch"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ProfileDraftView"];
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Conflict */
+            409: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Content Too Large */
+            413: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Too Many Requests */
+            429: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Service Unavailable */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+        };
+    };
+    discard_api_v1_me_profile_draft_delete: {
+        parameters: {
+            query: {
+                expected_version: number;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Conflict */
+            409: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Content Too Large */
+            413: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Too Many Requests */
+            429: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Service Unavailable */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+        };
+    };
+    publish_api_v1_me_profile_publish_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ProfilePublish"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ProfileView"];
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Conflict */
+            409: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Content Too Large */
+            413: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Too Many Requests */
+            429: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Service Unavailable */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+        };
+    };
     personal_resume_api_v1_me_resume_post: {
         parameters: {
             query?: never;
@@ -10232,6 +10988,100 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["ParticipantView"][];
+                };
+            };
+            /** @description Unauthorized */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Forbidden */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Not Found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Conflict */
+            409: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Content Too Large */
+            413: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Unprocessable Content */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Too Many Requests */
+            429: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+            /** @description Service Unavailable */
+            503: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ErrorResponse"];
+                };
+            };
+        };
+    };
+    shared_api_v1_participants__owner_id__profile_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                owner_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["SharedProfileView"];
                 };
             };
             /** @description Unauthorized */

@@ -19,7 +19,8 @@ data class WorkspaceActions(
  val change:(Relation,String,List<String>)->Unit,
  val profile:(ProfilePatch)->Unit,
  val revokeSession:(DeviceSession)->Unit,
- val logout:()->Unit={}
+ val logout:()->Unit={},
+ val participantProfile:ParticipantProfileActions?=null
 )
 
 @Composable

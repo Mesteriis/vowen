@@ -1,0 +1,212 @@
+{
+  "version": 1,
+  "participants": [
+    {
+      "key": "alex",
+      "name": "Алекс",
+      "telegram_id": 100000000201,
+      "shop_role": "dominant",
+      "label": "dominant",
+      "sex": "Мужской",
+      "gender": "Мужчина",
+      "bio": "Люблю ясные договорённости, спокойные вечера и внимание к деталям. В этой динамике я верхний Вики.",
+      "participation": "give",
+      "boundary": "Не обсуждать личные практики публично. Все изменения планов проговаривать заранее.",
+      "compositions": [
+        "МЖ"
+      ],
+      "scenario": "Наставник и ученик"
+    },
+    {
+      "key": "vika",
+      "name": "Вика",
+      "telegram_id": 100000000202,
+      "shop_role": "switch",
+      "label": "switch",
+      "sex": "Женский",
+      "gender": "Женщина",
+      "bio": "Свитч: нижняя Алекса и верхняя Луны. Люблю прогулки, музыку и маленькие ежедневные ритуалы.",
+      "participation": "both",
+      "boundary": "Разделяю две динамики: договорённости с Алексом не распространяются автоматически на Луну.",
+      "compositions": [
+        "МЖ",
+        "ЖЖ"
+      ],
+      "scenario": "Обмен ролями"
+    },
+    {
+      "key": "luna",
+      "name": "Луна",
+      "telegram_id": 100000000203,
+      "shop_role": "bottom",
+      "label": "submissive",
+      "sex": "Женский",
+      "gender": "Женщина",
+      "bio": "Нижняя Вики. Люблю заботу, творчество и понятный ритм. Интересно пробовать новое без спешки.",
+      "participation": "receive",
+      "boundary": "Без публичности и неожиданных изменений. Важны возможность сделать перерыв и время для себя.",
+      "compositions": [
+        "ЖЖ"
+      ],
+      "scenario": "Наставник и ученик"
+    }
+  ],
+  "relations": [
+    {
+      "upper": "alex",
+      "lower": "vika",
+      "coins": 1500
+    },
+    {
+      "upper": "vika",
+      "lower": "luna",
+      "coins": 1200
+    }
+  ],
+  "practices": [
+    {
+      "name": "Массаж",
+      "attitude": "like",
+      "experience": "experienced",
+      "conditions": "Спокойный вечер, достаточно времени и комфортная обстановка."
+    },
+    {
+      "name": "Бондаж с манжетами",
+      "attitude": "want_to_try",
+      "experience": "none",
+      "conditions": "Заранее обсудить формат и оставить время на знакомство с девайсами."
+    },
+    {
+      "name": "Бондаж",
+      "attitude": "conditional",
+      "experience": "tried",
+      "conditions": "Только заранее оговорённый формат, без сюрпризов."
+    },
+    {
+      "name": "Поцелуи",
+      "attitude": "like",
+      "experience": "experienced",
+      "conditions": "В комфортной обстановке."
+    },
+    {
+      "name": "Интимная фотосъёмка",
+      "attitude": "taboo",
+      "experience": "none",
+      "conditions": "Не фотографировать и не публиковать личные моменты."
+    }
+  ],
+  "questionnaire": {
+    "title": "Знакомство и договорённости",
+    "description": "Синтетический заполненный пример анкеты участника, не медицинские сведения.",
+    "kind": "questionnaire",
+    "questions": [
+      {
+        "id": "comfort",
+        "kind": "long_text",
+        "label": "Что помогает чувствовать себя комфортно?",
+        "required": true
+      },
+      {
+        "id": "boundaries",
+        "kind": "long_text",
+        "label": "Границы и табу",
+        "required": true
+      },
+      {
+        "id": "care",
+        "kind": "multiple_choice",
+        "label": "Что приятно после практики?",
+        "required": true,
+        "options": [
+          {
+            "id": "tea",
+            "label": "Тёплый чай"
+          },
+          {
+            "id": "quiet",
+            "label": "Тишина"
+          },
+          {
+            "id": "talk",
+            "label": "Разговор"
+          }
+        ]
+      },
+      {
+        "id": "pace",
+        "kind": "scale",
+        "label": "Комфортный темп знакомства с новым",
+        "minimum": 1,
+        "maximum": 10,
+        "required": true
+      }
+    ]
+  },
+  "rituals": [
+    {
+      "title": "Утренний настрой",
+      "description": "Коротко рассказать о настроении и планах на день.",
+      "state": "scheduled"
+    },
+    {
+      "title": "Вечерний разговор",
+      "description": "Поделиться одним приятным моментом дня и тем, что хочется обсудить.",
+      "state": "reported"
+    },
+    {
+      "title": "Время для себя",
+      "description": "Выделить двадцать минут на отдых без телефона.",
+      "state": "completed"
+    },
+    {
+      "title": "Совместная прогулка",
+      "description": "Спокойно прогуляться и обсудить планы на выходные.",
+      "state": "skip_requested"
+    }
+  ],
+  "rules": [
+    {
+      "title": "Сообщать об изменении планов",
+      "description": "Написать партнёру, если договорённое время меняется.",
+      "change_request": true
+    },
+    {
+      "title": "Еженедельный разговор",
+      "description": "Раз в неделю находить время обсудить договорённости и пожелания.",
+      "change_request": false
+    }
+  ],
+  "punishments": [
+    {
+      "title": "День без соцсетей",
+      "description": "На день отложить развлекательные социальные сети.",
+      "conditions": "Рабочая связь и общение с близкими остаются доступны.",
+      "punishment_type": "ban",
+      "ban_days": 1
+    },
+    {
+      "title": "Письменная рефлексия",
+      "description": "Описать ситуацию и предложить, что изменить в следующий раз.",
+      "conditions": "Несколько предложений в удобное время.",
+      "punishment_type": "other"
+    }
+  ],
+  "purchases": [
+    {
+      "title": "Вечер вместе",
+      "state": "pending"
+    },
+    {
+      "title": "Завтрак в постель",
+      "state": "approved"
+    },
+    {
+      "title": "Выбор фильма",
+      "state": "redeemed"
+    },
+    {
+      "title": "Прогулка вдвоём",
+      "state": "rejected"
+    }
+  ]
+}

@@ -14,6 +14,7 @@ import RulesPanel from './features/rules/RulesPanel.vue'
 import FormsPanel from './features/forms/FormsPanel.vue'
 import NotificationSettings from './features/notifications/NotificationSettings.vue'
 import ProfileSettings from './features/profile/ProfileSettings.vue'
+import ParticipantProfile from './features/profile/ParticipantProfile.vue'
 import ProfilePanel from './features/profile/ProfilePanel.vue'
 import SpaceSettingsPanel from './features/profile/SpaceSettingsPanel.vue'
 import {accountDestination,mainNavigation,type ProfileSection} from './features/profile/navigation'
@@ -121,7 +122,7 @@ onUnmounted(()=>{window.removeEventListener('focus',refreshOnReturn);document.re
    <RulesPanel :active="section==='rules'" v-show="section==='rules'" :client="client" :ru="ru" :me="me" :participants="participants" />
    <FormsPanel v-show="section==='forms'" :me="me" :client="client" :ru="ru" :participants="participants" />
    <ProfilePanel v-show="section==='profile'" v-model="personalSection" :name="me.display_name" :ru="ru" :busy="busy" @refresh="run(load)" @logout="logout">
-    <template #profile><ProfileSettings :member="me" :client="client" :ru="ru" mode="all" @saved="member=>{me=member;ru=member.language==='ru'}"/><p class="privacy-note">{{t.note}}</p></template>
+    <template #profile><ParticipantProfile :key="me.id" :member="me" :client="client" :ru="ru" :active="section==='profile'" :participants="participants" :relations="relations" @saved="member=>{me=member;ru=member.language==='ru'}"/><details class="profile-account-options"><summary>{{ru?'Язык и часовой пояс':'Language & time zone'}}</summary><ProfileSettings :member="me" :client="client" :ru="ru" mode="general" @saved="member=>{me=member;ru=member.language==='ru'}"/></details></template>
 
     <template #notifications><NotificationSettings :active="section==='profile'&&personalSection==='notifications'" :key="me.timezone" :client="client" :ru="ru"/></template>
     <template #sessions><h2>{{ru?'Сессии':'Sessions'}}</h2><SessionList :sessions="sessions" :current-session-id="client.sessionId" :ru="ru" :busy="busy" @revoke="revokeSession"/></template>

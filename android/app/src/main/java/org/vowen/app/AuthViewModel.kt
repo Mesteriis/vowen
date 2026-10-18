@@ -91,6 +91,11 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
  fun addPractice(command:PracticeCreate)=run {api.addPractice(command);loadWorkspace(true)}
  suspend fun administration():AdministrationView=api.administration()
  fun changeAdministrator(id:String,action:String,revision:Int)=run {api.changeAdministrator(id,action,revision);loadWorkspace(true)}
+ suspend fun participantProfile():ProfileView = api.participantProfile()
+ suspend fun profileDraft():ProfileDraftView = api.profileDraft()
+ suspend fun saveProfileDraft(patch:ProfileDraftPatch):ProfileDraftView = api.saveProfileDraft(patch)
+ suspend fun publishProfileDraft(version:Int):ProfileView {val result=api.publishProfileDraft(version);loadWorkspace(true);return result}
+ suspend fun discardProfileDraft(version:Int) = api.discardProfileDraft(version)
  fun saveProfile(patch:ProfilePatch)=run {api.updateProfile(patch);loadWorkspace(true)}
  fun revokeSession(session:DeviceSession)=run {
   api.revokeSession(session.id)

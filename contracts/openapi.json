@@ -145,6 +145,19 @@
         "title": "AvailabilityCommand",
         "type": "object"
       },
+      "BoundariesSection": {
+        "additionalProperties": false,
+        "properties": {
+          "notes": {
+            "default": "",
+            "maxLength": 4000,
+            "title": "Notes",
+            "type": "string"
+          }
+        },
+        "title": "BoundariesSection",
+        "type": "object"
+      },
       "ChallengeCreated": {
         "additionalProperties": false,
         "properties": {
@@ -1408,6 +1421,59 @@
         "title": "DisciplineView",
         "type": "object"
       },
+      "DynamicsSection": {
+        "additionalProperties": false,
+        "properties": {
+          "composition_uids": {
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "maxItems": 500,
+            "title": "Composition Uids",
+            "type": "array"
+          },
+          "gender_preference": {
+            "$ref": "#/components/schemas/PartnerPreference"
+          },
+          "interaction_format_uids": {
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "maxItems": 500,
+            "title": "Interaction Format Uids",
+            "type": "array"
+          },
+          "profile_labels": {
+            "items": {
+              "enum": [
+                "dominant",
+                "submissive",
+                "switch"
+              ],
+              "type": "string"
+            },
+            "maxItems": 3,
+            "title": "Profile Labels",
+            "type": "array"
+          },
+          "relationship_type_uids": {
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "maxItems": 500,
+            "title": "Relationship Type Uids",
+            "type": "array"
+          },
+          "sex_preference": {
+            "$ref": "#/components/schemas/PartnerPreference"
+          }
+        },
+        "title": "DynamicsSection",
+        "type": "object"
+      },
       "ErrorDetail": {
         "properties": {
           "code": {
@@ -2080,6 +2146,92 @@
           "csrf_token"
         ],
         "title": "GuestSessionView",
+        "type": "object"
+      },
+      "HealthSection": {
+        "additionalProperties": false,
+        "properties": {
+          "allergen_uids": {
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "maxItems": 500,
+            "title": "Allergen Uids",
+            "type": "array"
+          },
+          "care_practice_uids": {
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "maxItems": 500,
+            "title": "Care Practice Uids",
+            "type": "array"
+          },
+          "condition_uids": {
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "maxItems": 500,
+            "title": "Condition Uids",
+            "type": "array"
+          },
+          "notes": {
+            "default": "",
+            "maxLength": 4000,
+            "title": "Notes",
+            "type": "string"
+          }
+        },
+        "title": "HealthSection",
+        "type": "object"
+      },
+      "IdentitySection": {
+        "additionalProperties": false,
+        "properties": {
+          "bio": {
+            "default": "",
+            "maxLength": 2000,
+            "title": "Bio",
+            "type": "string"
+          },
+          "biological_sex_uid": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Biological Sex Uid"
+          },
+          "display_name": {
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Display Name",
+            "type": "string"
+          },
+          "gender_uid": {
+            "anyOf": [
+              {
+                "format": "uuid",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Gender Uid"
+          }
+        },
+        "required": [
+          "display_name"
+        ],
+        "title": "IdentitySection",
         "type": "object"
       },
       "InkDocument": {
@@ -3175,6 +3327,87 @@
         "title": "ParticipantView",
         "type": "object"
       },
+      "PartnerPreference": {
+        "additionalProperties": false,
+        "properties": {
+          "mode": {
+            "default": "not_specified",
+            "enum": [
+              "not_specified",
+              "any",
+              "selected"
+            ],
+            "title": "Mode",
+            "type": "string"
+          },
+          "uids": {
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "maxItems": 500,
+            "title": "Uids",
+            "type": "array"
+          }
+        },
+        "title": "PartnerPreference",
+        "type": "object"
+      },
+      "PracticeChoice": {
+        "additionalProperties": false,
+        "properties": {
+          "attitude": {
+            "default": "not_specified",
+            "enum": [
+              "not_specified",
+              "like",
+              "want_to_try",
+              "conditional",
+              "taboo"
+            ],
+            "title": "Attitude",
+            "type": "string"
+          },
+          "conditions": {
+            "default": "",
+            "maxLength": 2000,
+            "title": "Conditions",
+            "type": "string"
+          },
+          "experience": {
+            "default": "not_specified",
+            "enum": [
+              "not_specified",
+              "none",
+              "tried",
+              "experienced"
+            ],
+            "title": "Experience",
+            "type": "string"
+          },
+          "participation": {
+            "default": "not_specified",
+            "enum": [
+              "not_specified",
+              "give",
+              "receive",
+              "both"
+            ],
+            "title": "Participation",
+            "type": "string"
+          },
+          "practice_uid": {
+            "format": "uuid",
+            "title": "Practice Uid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "practice_uid"
+        ],
+        "title": "PracticeChoice",
+        "type": "object"
+      },
       "PracticeCreate": {
         "additionalProperties": false,
         "properties": {
@@ -3258,6 +3491,61 @@
         "title": "PracticeCreate",
         "type": "object"
       },
+      "PreferencesSection": {
+        "additionalProperties": false,
+        "properties": {
+          "body_parts": {
+            "items": {
+              "$ref": "#/components/schemas/ReferenceChoice"
+            },
+            "maxItems": 500,
+            "title": "Body Parts",
+            "type": "array"
+          },
+          "devices": {
+            "items": {
+              "$ref": "#/components/schemas/ReferenceChoice"
+            },
+            "maxItems": 500,
+            "title": "Devices",
+            "type": "array"
+          },
+          "materials": {
+            "items": {
+              "$ref": "#/components/schemas/ReferenceChoice"
+            },
+            "maxItems": 500,
+            "title": "Materials",
+            "type": "array"
+          },
+          "practices": {
+            "items": {
+              "$ref": "#/components/schemas/PracticeChoice"
+            },
+            "maxItems": 500,
+            "title": "Practices",
+            "type": "array"
+          },
+          "role_scenarios": {
+            "items": {
+              "$ref": "#/components/schemas/ReferenceChoice"
+            },
+            "maxItems": 500,
+            "title": "Role Scenarios",
+            "type": "array"
+          },
+          "venues": {
+            "items": {
+              "$ref": "#/components/schemas/ReferenceChoice"
+            },
+            "maxItems": 500,
+            "title": "Venues",
+            "type": "array"
+          }
+        },
+        "title": "PreferencesSection",
+        "type": "object"
+      },
       "ProductRevision": {
         "additionalProperties": false,
         "properties": {
@@ -3291,6 +3579,132 @@
           "enabled"
         ],
         "title": "ProductStateCommand",
+        "type": "object"
+      },
+      "ProfileDocument": {
+        "additionalProperties": false,
+        "properties": {
+          "boundaries": {
+            "$ref": "#/components/schemas/BoundariesSection"
+          },
+          "dynamics": {
+            "$ref": "#/components/schemas/DynamicsSection"
+          },
+          "health": {
+            "$ref": "#/components/schemas/HealthSection"
+          },
+          "identity": {
+            "$ref": "#/components/schemas/IdentitySection"
+          },
+          "preferences": {
+            "$ref": "#/components/schemas/PreferencesSection"
+          },
+          "visibility": {
+            "$ref": "#/components/schemas/VisibilitySection"
+          }
+        },
+        "required": [
+          "identity"
+        ],
+        "title": "ProfileDocument",
+        "type": "object"
+      },
+      "ProfileDraftPatch": {
+        "additionalProperties": false,
+        "properties": {
+          "deferred": {
+            "default": false,
+            "title": "Deferred",
+            "type": "boolean"
+          },
+          "expected_version": {
+            "minimum": 0.0,
+            "title": "Expected Version",
+            "type": "integer"
+          },
+          "section": {
+            "anyOf": [
+              {
+                "enum": [
+                  "identity",
+                  "dynamics",
+                  "preferences",
+                  "boundaries",
+                  "health",
+                  "visibility"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Section"
+          },
+          "step": {
+            "maximum": 6.0,
+            "minimum": 1.0,
+            "title": "Step",
+            "type": "integer"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/JsonValue"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value"
+          }
+        },
+        "required": [
+          "expected_version",
+          "step"
+        ],
+        "title": "ProfileDraftPatch",
+        "type": "object"
+      },
+      "ProfileDraftView": {
+        "additionalProperties": false,
+        "properties": {
+          "base_account_version": {
+            "title": "Base Account Version",
+            "type": "integer"
+          },
+          "base_profile_version": {
+            "title": "Base Profile Version",
+            "type": "integer"
+          },
+          "deferred": {
+            "title": "Deferred",
+            "type": "boolean"
+          },
+          "document": {
+            "$ref": "#/components/schemas/ProfileDocument"
+          },
+          "step": {
+            "title": "Step",
+            "type": "integer"
+          },
+          "version": {
+            "title": "Version",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "document",
+          "version",
+          "base_profile_version",
+          "base_account_version",
+          "step",
+          "deferred"
+        ],
+        "title": "ProfileDraftView",
         "type": "object"
       },
       "ProfilePatch": {
@@ -3367,6 +3781,86 @@
           "expected_version"
         ],
         "title": "ProfilePatch",
+        "type": "object"
+      },
+      "ProfileProgress": {
+        "additionalProperties": false,
+        "properties": {
+          "completed": {
+            "title": "Completed",
+            "type": "boolean"
+          },
+          "deferred": {
+            "title": "Deferred",
+            "type": "boolean"
+          },
+          "step": {
+            "maximum": 6.0,
+            "minimum": 1.0,
+            "title": "Step",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "step",
+          "deferred",
+          "completed"
+        ],
+        "title": "ProfileProgress",
+        "type": "object"
+      },
+      "ProfilePublish": {
+        "additionalProperties": false,
+        "properties": {
+          "expected_draft_version": {
+            "minimum": 1.0,
+            "title": "Expected Draft Version",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "expected_draft_version"
+        ],
+        "title": "ProfilePublish",
+        "type": "object"
+      },
+      "ProfileView": {
+        "additionalProperties": false,
+        "properties": {
+          "account_version": {
+            "title": "Account Version",
+            "type": "integer"
+          },
+          "document": {
+            "$ref": "#/components/schemas/ProfileDocument"
+          },
+          "draft_version": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Draft Version"
+          },
+          "progress": {
+            "$ref": "#/components/schemas/ProfileProgress"
+          },
+          "version": {
+            "title": "Version",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "document",
+          "version",
+          "account_version",
+          "progress",
+          "draft_version"
+        ],
+        "title": "ProfileView",
         "type": "object"
       },
       "ProposeRelationCommand": {
@@ -3915,6 +4409,39 @@
           "display_name"
         ],
         "title": "ReaderView",
+        "type": "object"
+      },
+      "ReferenceChoice": {
+        "additionalProperties": false,
+        "properties": {
+          "attitude": {
+            "default": "not_specified",
+            "enum": [
+              "not_specified",
+              "like",
+              "want_to_try",
+              "conditional",
+              "taboo"
+            ],
+            "title": "Attitude",
+            "type": "string"
+          },
+          "conditions": {
+            "default": "",
+            "maxLength": 2000,
+            "title": "Conditions",
+            "type": "string"
+          },
+          "uid": {
+            "format": "uuid",
+            "title": "Uid",
+            "type": "string"
+          }
+        },
+        "required": [
+          "uid"
+        ],
+        "title": "ReferenceChoice",
         "type": "object"
       },
       "ReferenceView": {
@@ -5230,6 +5757,36 @@
         "title": "ScheduleEdit",
         "type": "object"
       },
+      "SectionReaders": {
+        "additionalProperties": false,
+        "properties": {
+          "reader_ids": {
+            "items": {
+              "format": "uuid",
+              "type": "string"
+            },
+            "maxItems": 500,
+            "title": "Reader Ids",
+            "type": "array"
+          },
+          "section": {
+            "enum": [
+              "identity",
+              "dynamics",
+              "preferences",
+              "boundaries",
+              "health"
+            ],
+            "title": "Section",
+            "type": "string"
+          }
+        },
+        "required": [
+          "section"
+        ],
+        "title": "SectionReaders",
+        "type": "object"
+      },
       "SendWave": {
         "additionalProperties": false,
         "properties": {
@@ -5320,6 +5877,29 @@
           "revoked"
         ],
         "title": "SessionView",
+        "type": "object"
+      },
+      "SharedProfileView": {
+        "additionalProperties": false,
+        "properties": {
+          "owner_id": {
+            "format": "uuid",
+            "title": "Owner Id",
+            "type": "string"
+          },
+          "sections": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/JsonValue"
+            },
+            "title": "Sections",
+            "type": "object"
+          }
+        },
+        "required": [
+          "owner_id",
+          "sections"
+        ],
+        "title": "SharedProfileView",
         "type": "object"
       },
       "ShopProductContent": {
@@ -5755,6 +6335,21 @@
           }
         },
         "title": "Visibility",
+        "type": "object"
+      },
+      "VisibilitySection": {
+        "additionalProperties": false,
+        "properties": {
+          "sections": {
+            "items": {
+              "$ref": "#/components/schemas/SectionReaders"
+            },
+            "maxItems": 5,
+            "title": "Sections",
+            "type": "array"
+          }
+        },
+        "title": "VisibilitySection",
         "type": "object"
       },
       "WalletView": {
@@ -12774,6 +13369,542 @@
         "summary": "Preferences"
       }
     },
+    "/api/v1/me/profile": {
+      "get": {
+        "operationId": "own_api_v1_me_profile_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Content Too Large"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Own"
+      }
+    },
+    "/api/v1/me/profile/draft": {
+      "delete": {
+        "operationId": "discard_api_v1_me_profile_draft_delete",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "expected_version",
+            "required": true,
+            "schema": {
+              "minimum": 1,
+              "title": "Expected Version",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Content Too Large"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Discard"
+      },
+      "get": {
+        "operationId": "draft_api_v1_me_profile_draft_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileDraftView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Content Too Large"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Draft"
+      },
+      "put": {
+        "operationId": "save_api_v1_me_profile_draft_put",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileDraftPatch"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileDraftView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Content Too Large"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Save"
+      }
+    },
+    "/api/v1/me/profile/publish": {
+      "post": {
+        "operationId": "publish_api_v1_me_profile_publish_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfilePublish"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Content Too Large"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Publish"
+      }
+    },
     "/api/v1/me/resume": {
       "post": {
         "operationId": "personal_resume_api_v1_me_resume_post",
@@ -12975,6 +14106,121 @@
           }
         ],
         "summary": "Participants"
+      }
+    },
+    "/api/v1/participants/{owner_id}/profile": {
+      "get": {
+        "operationId": "shared_api_v1_participants__owner_id__profile_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "owner_id",
+            "required": true,
+            "schema": {
+              "format": "uuid",
+              "title": "Owner Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SharedProfileView"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unauthorized"
+          },
+          "403": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Forbidden"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "409": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Conflict"
+          },
+          "413": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Content Too Large"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Content"
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Too Many Requests"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "summary": "Shared"
       }
     },
     "/api/v1/punishment-templates": {
