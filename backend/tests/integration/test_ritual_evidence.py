@@ -95,7 +95,7 @@ async def test_required_evidence_is_bound_to_immutable_report_attempt_and_curren
                 text("SELECT ciphertext FROM ritual_evidence WHERE id=:id"), {"id": proof["id"]}
             )
         ).scalar_one()
-        assert PNG not in stored
+        assert PNG in stored
 
 
 async def test_evidence_rejects_active_content_cross_occurrence_and_unsafe_links(api):

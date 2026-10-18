@@ -15,6 +15,7 @@ from vowen.modules.discipline.models import (
 )
 from vowen.modules.discipline.schemas import (
     DisciplineContent,
+    DisciplineCreate,
     DisciplineHistory,
     DisciplineVersionView,
     DisciplineView,
@@ -135,6 +136,25 @@ async def version(
     cipher: PayloadCipher,
     now: datetime,
 ) -> None:
+    relation = await db.scalar(
+        select(Relation).where(
+            Relation.dominant_user_id == r.author_id,
+            Relation.submissive_user_id == r.recipient_id,
+            Relation.status == "active",
+        )
+    )
+    if relation is None:
+        raise AppError(403, "ACCESS_DENIED")
+    if body.punishment_type == "physical":
+        from vowen.modules.discipline.dictionaries import Kind, values
+
+        selections: list[tuple[Kind, str | None]] = [
+            ("device", body.device),
+            ("body_part", body.body_part),
+        ]
+        for kind, value in selections:
+            if value not in await values(db, relation.id, kind, cipher):
+                raise AppError(422, "INVALID_DICTIONARY_VALUE")
     title = await validate_links(db, r, body, cipher)
     v = DisciplineVersion(
         id=uuid4(),
@@ -147,7 +167,7 @@ async def version(
     db.add(v)
     await db.flush()
     r.current_version_id = v.id
-    r.status = "proposed"
+    r.status = "planned"
 
 
 async def event(
@@ -200,7 +220,7 @@ async def view(db: AsyncSession, r: DisciplineRecord, cipher: PayloadCipher) -> 
             version_id=r.current_version_id,
             revision=r.revision,
             status=r.status,
-            effective=r.status in ("accepted", "in_progress", "completed")
+            effective=r.status in ("planned", "proposed", "accepted", "in_progress", "completed")
             and await permitted(db, r.author_id, r.recipient_id, "discipline.propose"),
             versions=[
                 DisciplineVersionView(
@@ -223,3 +243,51 @@ async def view(db: AsyncSession, r: DisciplineRecord, cipher: PayloadCipher) -> 
             ],
         )
     )
+
+
+async def create_record(
+    db: AsyncSession, uid: UUID, body: DisciplineCreate, cipher: PayloadCipher, now: datetime
+) -> DisciplineView:
+    if uid == body.recipient_id or body.recipient_id in body.reviewer_ids:
+        raise AppError(422, "INVALID_INPUT")
+    await lock_authority(db, body.recipient_id, [uid, *body.reviewer_ids])
+    if not await permitted(db, uid, body.recipient_id, "discipline.propose"):
+        raise AppError(403, "ACCESS_DENIED")
+    for reviewer_id in body.reviewer_ids:
+        if not await permitted(db, reviewer_id, body.recipient_id, "discipline.review"):
+            raise AppError(403, "ACCESS_DENIED")
+    previous = await db.scalar(
+        select(DisciplineRecord).where(
+            DisciplineRecord.author_id == uid,
+            DisciplineRecord.idempotency_key == body.idempotency_key,
+        )
+    )
+    content = DisciplineContent.model_validate(
+        body.model_dump(include=set(DisciplineContent.model_fields))
+    )
+    if previous is not None:
+        previous_view = await view(db, previous, cipher)
+        v = previous_view.versions
+        initial = previous_view.history[0].version_id
+        first = next(x for x in v if x.id == initial)
+        if (
+            previous.recipient_id != body.recipient_id
+            or set(await reviewers(db, previous)) != set(body.reviewer_ids)
+            or any(getattr(first, k) != getattr(content, k) for k in DisciplineContent.model_fields)
+        ):
+            raise AppError(409, "IDEMPOTENCY_CONFLICT")
+        return await view(db, previous, cipher)
+    r = DisciplineRecord(
+        id=uuid4(),
+        author_id=uid,
+        recipient_id=body.recipient_id,
+        idempotency_key=body.idempotency_key,
+        revision=1,
+        status="planned",
+    )
+    db.add(r)
+    await db.flush()
+    db.add_all([DisciplineReviewer(record_id=r.id, user_id=uid) for uid in body.reviewer_ids])
+    await version(db, r, content, cipher, now)
+    await event(db, r, uid, "", cipher, now)
+    return await view(db, r, cipher)

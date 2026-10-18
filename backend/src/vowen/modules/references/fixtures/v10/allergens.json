@@ -1,0 +1,221 @@
+[
+  {
+    "uid": "14678fb0-0165-57cb-bd17-ebc9f5c7e3e6",
+    "name": "Белки натурального латекса",
+    "description": "Белковые аллергены натурального каучука.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "natural-latex",
+      "aliases": [
+        "Натуральный латекс",
+        "Latex"
+      ]
+    }
+  },
+  {
+    "uid": "60c0687b-cbc1-50c2-ae21-e6935de201c7",
+    "name": "Никель",
+    "description": "Металл; контактный аллерген.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "nickel",
+      "aliases": [
+        "Nickel"
+      ]
+    }
+  },
+  {
+    "uid": "42540ec9-a2e5-5cd1-aa70-729e3ed005dc",
+    "name": "Кобальт",
+    "description": "Металл; контактный аллерген.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "cobalt",
+      "aliases": [
+        "Cobalt"
+      ]
+    }
+  },
+  {
+    "uid": "21e831b4-4fc5-5927-877a-d0c1b649c10f",
+    "name": "Хроматы",
+    "description": "Соединения хрома; контактные аллергены.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "chromates",
+      "aliases": [
+        "Дихромат калия",
+        "Chromate"
+      ]
+    }
+  },
+  {
+    "uid": "a32632fb-92b5-5722-aca2-5a99de191cf2",
+    "name": "Тиурамы",
+    "description": "Компоненты резины; контактные аллергены.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "thiurams",
+      "aliases": [
+        "Thiuram mix"
+      ]
+    }
+  },
+  {
+    "uid": "4938fb9e-55ea-51eb-9422-d50173ca22fa",
+    "name": "Карбаматы резины",
+    "description": "Компоненты резины; контактные аллергены.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "carbamates",
+      "aliases": [
+        "Carba mix",
+        "Дитиокарбаматы"
+      ]
+    }
+  },
+  {
+    "uid": "3179d43f-b4fc-5c09-bf28-f68ccf316670",
+    "name": "Меркаптобензотиазол",
+    "description": "Компонент резины; контактный аллерген.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "mbt",
+      "aliases": [
+        "MBT",
+        "2-меркаптобензотиазол"
+      ]
+    }
+  },
+  {
+    "uid": "fa7e3d16-7614-5638-a8ba-ef1f5b3746f7",
+    "name": "Парфюмерные отдушки",
+    "description": "Группа ароматических компонентов; контактные аллергены.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "fragrances",
+      "aliases": [
+        "Ароматизаторы",
+        "Fragrance mix"
+      ]
+    }
+  },
+  {
+    "uid": "3dc3b9af-0ba6-5108-9020-c0cdc5eb840d",
+    "name": "Изотиазолиноны MI/MCI",
+    "description": "Консерванты; контактные аллергены.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "isothiazolinones",
+      "aliases": [
+        "Метилизотиазолинон",
+        "Метилхлоризотиазолинон",
+        "MI",
+        "MCI"
+      ]
+    }
+  },
+  {
+    "uid": "539fee66-6bcf-52da-b0f7-0d641cc234d7",
+    "name": "Формальдегид",
+    "description": "Химическое вещество; контактный аллерген.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "formaldehyde",
+      "aliases": [
+        "Formaldehyde"
+      ]
+    }
+  },
+  {
+    "uid": "28c9a18d-3696-5835-8abf-adeabab29670",
+    "name": "Канифоль",
+    "description": "Смоляной материал; контактный аллерген.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "colophony",
+      "aliases": [
+        "Colophonium",
+        "Rosin"
+      ]
+    }
+  },
+  {
+    "uid": "773fd253-11dc-5d7f-b819-f70bd7544ef0",
+    "name": "Акрилаты и метакрилаты",
+    "description": "Группа химических соединений; контактные аллергены.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "acrylates",
+      "aliases": [
+        "HEMA",
+        "2-гидроксиэтилметакрилат"
+      ]
+    }
+  },
+  {
+    "uid": "9117f996-1533-5dd9-828e-0e76060df8fc",
+    "name": "Эпоксидные смолы",
+    "description": "Группа смол; контактные аллергены.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "epoxy-resins",
+      "aliases": [
+        "Epoxy resin"
+      ]
+    }
+  },
+  {
+    "uid": "865e1b88-53c6-5fb9-b132-6332ca4f7d7c",
+    "name": "Ланолин",
+    "description": "Компонент наружных средств; контактный аллерген.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "lanolin",
+      "aliases": [
+        "Lanolin",
+        "Шерстяной воск"
+      ]
+    }
+  },
+  {
+    "uid": "4db9b666-f08c-52ad-ad0f-126b72316643",
+    "name": "Местные анестетики: каин-смесь",
+    "description": "Группа веществ, представленная в контактном аллергологическом тестировании.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "caine-mix",
+      "aliases": [
+        "Caine mix"
+      ]
+    }
+  },
+  {
+    "uid": "5056276f-cf5b-543f-a8f0-582cccaba9f2",
+    "name": "Хлоргексидин",
+    "description": "Антисептическое вещество, способное вызывать аллергию.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "chlorhexidine",
+      "aliases": [
+        "Chlorhexidine"
+      ]
+    }
+  }
+]

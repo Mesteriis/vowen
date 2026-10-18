@@ -1,0 +1,80 @@
+[
+  {
+    "uid": "00526d54-fdc2-5391-96d1-be860fc61593",
+    "name": "Дом",
+    "description": "Домашнее пространство.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "home",
+      "aliases": [
+        "Квартира"
+      ]
+    },
+    "thumbnail": "/references/venues/home-transparent.png"
+  },
+  {
+    "uid": "62931376-afec-5187-97dd-a9a4e2cccc3c",
+    "name": "Студия",
+    "description": "Арендованное или собственное оборудованное помещение.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "studio",
+      "aliases": []
+    },
+    "thumbnail": "/references/venues/studio-transparent.png"
+  },
+  {
+    "uid": "8d2fc02e-a5b8-5ba0-952a-3d21b3f71a3d",
+    "name": "Клуб",
+    "description": "Клубное пространство.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "club",
+      "aliases": []
+    },
+    "thumbnail": "/references/venues/club-transparent.png"
+  },
+  {
+    "uid": "28a4c5c6-c9e5-52bf-a3e6-71bfdc4daa94",
+    "name": "Отель",
+    "description": "Номер или отдельное пространство отеля.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "hotel",
+      "aliases": [
+        "Гостиница"
+      ]
+    },
+    "thumbnail": "/references/venues/hotel-transparent.png"
+  },
+  {
+    "uid": "d89689c8-54fa-5ece-9d14-528369f863f8",
+    "name": "Частное мероприятие",
+    "description": "Пространство закрытого мероприятия.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "private-event",
+      "aliases": [
+        "Закрытая вечеринка"
+      ]
+    },
+    "thumbnail": "/references/venues/private-event-transparent.png"
+  },
+  {
+    "uid": "6a7dbcc1-90ca-5733-9861-ea428fcdcda5",
+    "name": "Другое частное пространство",
+    "description": "Иное выбранное частное пространство.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "other-private",
+      "aliases": []
+    },
+    "thumbnail": "/references/venues/other-private-transparent.png"
+  }
+]

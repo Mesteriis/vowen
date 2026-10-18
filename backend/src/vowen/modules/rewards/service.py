@@ -1,5 +1,6 @@
 import json
 from datetime import datetime
+from typing import TypedDict
 from uuid import UUID, uuid4
 
 from sqlalchemy import select
@@ -17,17 +18,38 @@ from vowen.modules.rewards.models import (
     RewardTransition,
     RewardVersion,
 )
-from vowen.modules.rewards.schemas import GrantHistory, GrantView, RewardContent, RewardView
+from vowen.modules.rewards.schemas import (
+    GrantHistory,
+    GrantView,
+    RewardCategory,
+    RewardContent,
+    RewardCover,
+    RewardView,
+)
 from vowen.modules.rituals.models import RitualAssignment, RitualOccurrence
 
 
-def opened(v: RewardVersion, cipher: PayloadCipher) -> dict[str, str]:
-    result: dict[str, str] = json.loads(
+class RewardPayload(TypedDict):
+    title: str
+    description: str
+    conditions: str
+    cover: RewardCover
+    category: RewardCategory
+
+
+def opened(v: RewardVersion, cipher: PayloadCipher) -> RewardPayload:
+    content = RewardContent.model_validate_json(
         cipher.open_payload(
             "reward_version", v.id, 1, EncryptedEnvelope(v.key_id, v.nonce, v.ciphertext)
         )
     )
-    return result
+    return {
+        "title": content.title,
+        "description": content.description,
+        "conditions": content.conditions,
+        "cover": content.cover,
+        "category": content.category,
+    }
 
 
 async def new_version(
@@ -38,7 +60,9 @@ async def new_version(
         "reward_version",
         v.id,
         1,
-        json.dumps(body.model_dump(include={"title", "description", "conditions"})).encode(),
+        json.dumps(
+            body.model_dump(include={"title", "description", "conditions", "cover", "category"})
+        ).encode(),
     )
     v.key_id, v.nonce, v.ciphertext = e.key_id, e.nonce, e.ciphertext
     db.add(v)
@@ -219,15 +243,17 @@ async def grant_view(db: AsyncSession, g: RewardGrant, cipher: PayloadCipher) ->
             .order_by(RewardTransition.revision)
         )
     ).all()
-    from vowen.modules.rewards.economy_models import CurrencyEntry
+    from vowen.modules.rewards.economy_models import CurrencyEntry, PurchaseOrder
 
+    order = await db.get(PurchaseOrder, g.id)
     purchased = await db.scalar(
         select(CurrencyEntry.relation_id).where(CurrencyEntry.grant_id == g.id)
     )
     policy = await db.get(RewardPolicy, g.reward_policy_id) if g.reward_policy_id else None
     return GrantView(
-        relation_id=policy.relation_id if policy else purchased,
-        source="ritual" if g.occurrence_id else "purchase" if purchased else "manual",
+        relation_id=order.relation_id if order else policy.relation_id if policy else purchased,
+        purchase_amount=order.amount if order else None,
+        source="ritual" if g.occurrence_id else "purchase" if purchased or order else "manual",
         id=g.id,
         reward_version_id=v.id,
         issuer_id=g.issuer_id,

@@ -1,0 +1,35 @@
+[
+  {
+    "uid": "544bd110-55b4-5367-8aa9-56f2ab9bf6ec",
+    "name": "Мужской",
+    "description": "Мужской биологический пол.",
+    "icon": null,
+    "extra": {
+      "code": "male"
+    },
+    "url": null,
+    "thumbnail": null
+  },
+  {
+    "uid": "a411eb1b-df65-5a8a-b9ee-05b5a9419fd8",
+    "name": "Женский",
+    "description": "Женский биологический пол.",
+    "icon": null,
+    "extra": {
+      "code": "female"
+    },
+    "url": null,
+    "thumbnail": null
+  },
+  {
+    "uid": "48f08dbf-fb07-5813-91ff-a0dd0a6218c0",
+    "name": "Интерсекс",
+    "description": "Интерсекс-вариации половых характеристик.",
+    "icon": null,
+    "extra": {
+      "code": "intersex"
+    },
+    "url": null,
+    "thumbnail": null
+  }
+]

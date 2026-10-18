@@ -19,6 +19,7 @@ class RuleScreenTest {
  @Test fun consentRequiresReviewAndCarriesExactVersion() {
   var result:Pair<RuleAssignment,String>?=null
   compose.setContent {MaterialTheme {NativeRulesScreen(member,WorkspaceState(ruleAssignments=listOf(assigned)),false,0,actions(onDecision={a,s->result=a to s}))}}
+  compose.onNodeWithText("Daily check-in").performClick()
   compose.onNodeWithTag("accept-rule-assignment").performClick()
   assertNull(result)
   compose.onNodeWithTag("rule-review").assertTextContains("Exact synthetic rule text")
@@ -30,6 +31,7 @@ class RuleScreenTest {
  @Test fun pausedRecipientCanWithdrawButCannotAccept() {
   var result:String?=null
   compose.setContent {MaterialTheme {NativeRulesScreen(member.copy(paused=true),WorkspaceState(ruleAssignments=listOf(assigned.copy(status="active",effective=true))),false,0,actions(onDecision={_,s->result=s}))}}
+  compose.onNodeWithText("Daily check-in").performClick()
   compose.onNodeWithText("active · inactive").assertExists()
   compose.onNodeWithTag("pause-rule-assignment").performClick()
   assertEquals("pause",result)
@@ -50,6 +52,8 @@ class RuleScreenTest {
   val draft=old.copy(description="Replacement draft text",status="draft",version_id="v2")
   var requested:String?=null
   compose.setContent {MaterialTheme {NativeRulesScreen(member,WorkspaceState(rules=listOf(draft),ruleHistory=listOf(old,draft)),false,0,actions().copy(history={requested=it.id}))}}
+  compose.onNodeWithText("Templates").performClick()
+  compose.onNodeWithText("Rule").performClick()
   compose.onNodeWithTag("rule-history-rule").performClick()
   assertEquals("rule",requested)
   compose.onNodeWithText("Old published text").assertExists()
@@ -57,6 +61,7 @@ class RuleScreenTest {
  @Test fun longConsentTextCanBeScrolledToItsEnd() {
   val long=assigned.copy(description=(1..150).joinToString("\n"){"Synthetic line $it"}+"\nEND OF EXACT RULE")
   compose.setContent {MaterialTheme {Column(Modifier.verticalScroll(rememberScrollState())) {NativeRulesScreen(member,WorkspaceState(ruleAssignments=listOf(long)),false,0,actions())}}}
+  compose.onNodeWithText("Daily check-in").performClick()
   compose.onNodeWithTag("accept-rule-assignment").performScrollTo().performClick()
   compose.onNodeWithTag("rule-review-end").performScrollTo().assertIsDisplayed()
  }

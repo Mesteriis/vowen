@@ -8,14 +8,15 @@ Copy `.env.example` to the ignored `.env`. The example database password is for
 loopback development only; before deploying choose a long random URL-safe password
 and set both POSTGRES_PASSWORD and DATABASE_URL consistently. Changing an environment
 variable does not reset a password in an existing PostgreSQL volume.
-Run migrations before appctl, and `appctl instance init` to generate a mode-0600
-keyring without replacing existing keys. Back up keys independently of the database.
+Run migrations before appctl. Fresh databases need no payload keyring; `appctl instance init`
+reports that payload encryption is disabled. Existing encrypted databases require their
+original keyring for migration 0035; see [plain-payloads.md](plain-payloads.md).
 Put only the dedicated instance bot token in `secrets/bot-token` (0600). Do not reuse
 an unrelated bot or publish real participant IDs. Configure username, HTTPS origin
 and BotFather menu button explicitly. Operator commands do not imply consent.
 
 For containers, set APP_UID and APP_GID in your private `.env` to the owner of
-`secrets/`; the API process must read the 0600 keyring. Containers drop capabilities
+`secrets/`; legacy conversion must read the original mode-0600 keyring. Containers drop capabilities
 and use read-only root filesystems. Never put secrets into image build arguments.
 
 ## Network boundary
@@ -51,6 +52,7 @@ or access logging is configured. Container restarts do not discard persistent DB
 ## Backup and restore limitations
 
 Full M6 backup/restore acceptance is pending. Do not call this production-ready.
-Database and keyring are both required; loss of needed keys loses encrypted content.
+A current plaintext database does not need a data keyring. Restoring an older encrypted
+backup still requires its original keys; see plain-payloads.md.
 Restore must be to an isolated instance with Telegram delivery disabled and deletion
 policies applied before exposing it. No downgrade/restore safety claim is made yet.

@@ -1,0 +1,43 @@
+[
+  {
+    "uid": "5aa174c5-4c7b-50b5-bbe0-d275e1877d53",
+    "name": "Очно",
+    "description": "Участники находятся в одном месте.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "in-person",
+      "aliases": [
+        "Лично",
+        "Офлайн"
+      ]
+    }
+  },
+  {
+    "uid": "2ed3dfc0-fbc3-58ed-93c1-973387c0c903",
+    "name": "Дистанционно",
+    "description": "Участники взаимодействуют на расстоянии.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "remote",
+      "aliases": [
+        "Онлайн",
+        "Удалённо"
+      ]
+    }
+  },
+  {
+    "uid": "c7f5b4e1-c1df-59fb-bb22-4c9fba52cb07",
+    "name": "Смешанный формат",
+    "description": "Сочетание очного и дистанционного взаимодействия.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "hybrid",
+      "aliases": [
+        "Гибридный"
+      ]
+    }
+  }
+]

@@ -1,0 +1,171 @@
+[
+  {
+    "uid": "6ba6dbc1-4beb-5b7b-983b-fdf28f7c7e25",
+    "name": "Соло",
+    "description": "Один участник; пол и гендер не указаны.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "solo",
+      "participant_count": 1,
+      "men": null,
+      "women": null,
+      "aliases": [
+        "Один участник"
+      ]
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "bf8da8fc-be86-5b48-88d9-1f51b941a113",
+    "name": "МЖ",
+    "description": "Участников: 2; мужчин: 1, женщин: 1. Порядок букв не задаёт роли или взаимодействие.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "mf",
+      "participant_count": 2,
+      "men": 1,
+      "women": 1,
+      "aliases": [
+        "ЖМ"
+      ]
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "f85ee33a-6fca-5903-9f7d-3491f759abf8",
+    "name": "ММ",
+    "description": "Участников: 2; мужчин: 2, женщин: 0. Порядок букв не задаёт роли или взаимодействие.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "mm",
+      "participant_count": 2,
+      "men": 2,
+      "women": 0,
+      "aliases": []
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "9e664667-54f4-5d92-af4a-a0564c90c863",
+    "name": "ЖЖ",
+    "description": "Участников: 2; мужчин: 0, женщин: 2. Порядок букв не задаёт роли или взаимодействие.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "ff",
+      "participant_count": 2,
+      "men": 0,
+      "women": 2,
+      "aliases": []
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "ad7fe7c8-6a5a-5d09-ac3f-2497a8dd20a5",
+    "name": "МЖМ",
+    "description": "Участников: 3; мужчин: 2, женщин: 1. Порядок букв не задаёт роли или взаимодействие.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "mfm",
+      "participant_count": 3,
+      "men": 2,
+      "women": 1,
+      "aliases": [
+        "ММЖ",
+        "ЖММ"
+      ]
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "74704304-4c61-5ec4-b707-d8be7d9e7d29",
+    "name": "ЖМЖ",
+    "description": "Участников: 3; мужчин: 1, женщин: 2. Порядок букв не задаёт роли или взаимодействие.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "fmf",
+      "participant_count": 3,
+      "men": 1,
+      "women": 2,
+      "aliases": [
+        "ЖЖМ",
+        "МЖЖ"
+      ]
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "81e71656-2ae9-5998-8d7f-da2ac0439003",
+    "name": "МММ",
+    "description": "Участников: 3; мужчин: 3, женщин: 0. Порядок букв не задаёт роли или взаимодействие.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "mmm",
+      "participant_count": 3,
+      "men": 3,
+      "women": 0,
+      "aliases": []
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "be14611e-0ed5-5c79-b000-3322e377f771",
+    "name": "ЖЖЖ",
+    "description": "Участников: 3; мужчин: 0, женщин: 3. Порядок букв не задаёт роли или взаимодействие.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "fff",
+      "participant_count": 3,
+      "men": 0,
+      "women": 3,
+      "aliases": []
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "2fb5b2e5-8f72-565e-aa7d-e78cf0bf97af",
+    "name": "ММЖЖ",
+    "description": "Участников: 4; мужчин: 2, женщин: 2. Порядок букв не задаёт роли или взаимодействие.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "mmff",
+      "participant_count": 4,
+      "men": 2,
+      "women": 2,
+      "aliases": [
+        "МЖМЖ",
+        "ЖМЖМ",
+        "ЖЖММ",
+        "ЖММЖ",
+        "МЖЖМ"
+      ]
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "fabea1ac-ea1e-5c9e-a9ee-7529bf681f71",
+    "name": "Другой состав",
+    "description": "Число участников, пол и гендер не уточняются.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "other",
+      "participant_count": null,
+      "men": null,
+      "women": null,
+      "aliases": [
+        "Любой состав",
+        "Без указания состава"
+      ]
+    },
+    "thumbnail": null
+  }
+]

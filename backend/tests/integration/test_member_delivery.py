@@ -532,21 +532,44 @@ async def test_assignment_pause_resume_cancels_assigned_and_reviewer_notices(api
             ),
             {"id": UUID(a["id"])},
         )
-    for action in ("pause", "resume"):
-        result = await client.post(
-            f"/api/v1/ritual-assignments/{a['id']}/{action}",
-            headers=auth(tokens[1]),
-            json={"expected_version": a["revision"]},
+    proposal = await client.post(
+        "/api/v1/change-requests",
+        headers=auth(tokens[1]),
+        json={
+            "kind": "ritual_pause",
+            "assignment_id": a["id"],
+            "expected_version": a["revision"],
+            "idempotency_key": str(uuid4()),
+            "reason": "Synthetic planned pause",
+        },
+    )
+    assert proposal.status_code == 200
+    q = proposal.json()
+    assert (
+        await client.post(
+            f"/api/v1/change-requests/{q['id']}/approve",
+            headers=auth(tokens[0]),
+            json={"expected_version": q["revision"]},
         )
-        assert result.status_code == 200
-        a = result.json()
+    ).status_code == 200
+    a = next(
+        item
+        for item in (await client.get("/api/v1/ritual-assignments", headers=auth(tokens[0]))).json()
+        if item["id"] == a["id"]
+    )
+    result = await client.post(
+        f"/api/v1/ritual-assignments/{a['id']}/resume",
+        headers=auth(tokens[0]),
+        json={"expected_version": a["revision"]},
+    )
+    assert result.status_code == 200
     from vowen.modules.notifications.delivery import claim
 
     async with app.state.sessions() as db, db.begin():
         assert await claim(db, NOW) is None
 
 
-async def test_form_keyring_failure_recovers_on_later_tick(api, tmp_path, monkeypatch):
+async def test_form_delivery_requires_no_keyring(api, tmp_path, monkeypatch):
     from aiogram import Bot
     from conftest import BOT_TOKEN
     from test_bot_adapter import TelegramTransport
@@ -568,11 +591,7 @@ async def test_form_keyring_failure_recovers_on_later_tick(api, tmp_path, monkey
     bot = Bot(BOT_TOKEN, session=TelegramTransport())
     path = tmp_path / "temporarily-missing-keyring.json"
     await deliver_updates(app.state.sessions, path, bot, "https://test")
-    async with app.state.sessions() as db:
-        assert await db.scalar(text("SELECT status FROM notification_deliveries")) == "pending"
-    path.write_bytes(app.state.settings.data_keyring_file.read_bytes())
-    path.chmod(0o600)
-    await deliver_updates(app.state.sessions, path, bot, "https://test")
+    assert not path.exists()
     async with app.state.sessions() as db:
         assert await db.scalar(text("SELECT status FROM notification_deliveries")) == "delivered"
     await bot.session.close()

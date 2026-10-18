@@ -22,6 +22,15 @@ async def reward_setup(api):
     ).json()
     relation = (await accept(client, tokens[0], relation)).json()
     assert (await accept(client, tokens[1], relation)).status_code == 200
+    from sqlalchemy import update
+
+    from vowen.modules.identity.models import User
+
+    async with app.state.sessions() as db, db.begin():
+        await db.execute(
+            update(User).where(User.id.in_([ids[0], ids[2]])).values(shop_role="dominant")
+        )
+        await db.execute(update(User).where(User.id == ids[1]).values(shop_role="bottom"))
     created = await client.post(
         "/api/v1/rewards",
         headers=auth(tokens[0]),

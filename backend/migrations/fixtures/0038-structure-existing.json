@@ -1,0 +1,227 @@
+[
+  {
+    "kind": "practice-categories",
+    "before": {
+      "uid": "ffb84262-30b8-54ce-98c0-d42970c03b37",
+      "name": "Забота и восстановление",
+      "description": "Забота и восстановление.",
+      "icon": null,
+      "url": null,
+      "extra": {
+        "code": "care"
+      }
+    },
+    "after": {
+      "uid": "ffb84262-30b8-54ce-98c0-d42970c03b37",
+      "name": "Восстановление и забота",
+      "description": "Восстановление и забота.",
+      "icon": null,
+      "url": null,
+      "extra": {
+        "code": "care"
+      }
+    }
+  },
+  {
+    "kind": "practices",
+    "before": {
+      "uid": "c2383526-eef0-5745-932d-0cdecd763d68",
+      "name": "Эротический массаж",
+      "description": "Эротический массаж.",
+      "icon": null,
+      "url": null,
+      "extra": {
+        "code": "erotic-massage",
+        "aliases": [
+          "Боди-массаж"
+        ]
+      },
+      "category_uid": "ffb84262-30b8-54ce-98c0-d42970c03b37"
+    },
+    "after": {
+      "uid": "c2383526-eef0-5745-932d-0cdecd763d68",
+      "name": "Эротический массаж",
+      "description": "Эротический массаж.",
+      "icon": null,
+      "url": null,
+      "extra": {
+        "code": "erotic-massage",
+        "aliases": [
+          "Боди-массаж"
+        ],
+        "group": "Телесная забота"
+      },
+      "category_uid": "ffb84262-30b8-54ce-98c0-d42970c03b37"
+    }
+  },
+  {
+    "kind": "practices",
+    "before": {
+      "uid": "c742fe75-56cd-5ed1-94b8-56b6cfcaf226",
+      "name": "Массаж",
+      "description": "Массаж как совместная практика.",
+      "icon": null,
+      "extra": {
+        "code": "massage",
+        "aliases": []
+      },
+      "url": null,
+      "category_uid": "ffb84262-30b8-54ce-98c0-d42970c03b37"
+    },
+    "after": {
+      "uid": "c742fe75-56cd-5ed1-94b8-56b6cfcaf226",
+      "name": "Массаж",
+      "description": "Массаж как совместная практика.",
+      "icon": null,
+      "extra": {
+        "code": "massage",
+        "aliases": [],
+        "group": "Телесная забота"
+      },
+      "url": null,
+      "category_uid": "ffb84262-30b8-54ce-98c0-d42970c03b37"
+    }
+  },
+  {
+    "kind": "practices",
+    "before": {
+      "uid": "25b4ae15-a3c3-56da-9cfb-2a0396576630",
+      "name": "Забота после практики",
+      "description": "Время для восстановления и внимания друг к другу.",
+      "icon": null,
+      "extra": {
+        "code": "aftercare",
+        "aliases": [
+          "Афтеркэр",
+          "Aftercare"
+        ]
+      },
+      "url": null,
+      "category_uid": "ffb84262-30b8-54ce-98c0-d42970c03b37"
+    },
+    "after": {
+      "uid": "25b4ae15-a3c3-56da-9cfb-2a0396576630",
+      "name": "Забота после практики",
+      "description": "Время для восстановления и внимания друг к другу.",
+      "icon": null,
+      "extra": {
+        "code": "aftercare",
+        "aliases": [
+          "Афтеркэр",
+          "Aftercare"
+        ],
+        "group": "После практики"
+      },
+      "url": null,
+      "category_uid": "ffb84262-30b8-54ce-98c0-d42970c03b37"
+    }
+  },
+  {
+    "kind": "devices",
+    "before": {
+      "uid": "aa101887-2340-5511-9c2f-43aa3341cef2",
+      "name": "Верёвка",
+      "description": "Верёвка.",
+      "icon": null,
+      "url": null,
+      "extra": {
+        "code": "rope",
+        "group": "Фиксация и аксессуары",
+        "discipline_default": false
+      }
+    },
+    "after": {
+      "uid": "aa101887-2340-5511-9c2f-43aa3341cef2",
+      "name": "Верёвка",
+      "description": "Верёвка.",
+      "icon": null,
+      "url": null,
+      "extra": {
+        "code": "rope",
+        "group": "Средства фиксации",
+        "discipline_default": false
+      }
+    }
+  },
+  {
+    "kind": "devices",
+    "before": {
+      "uid": "4b5be8c6-f0f5-5b9c-b582-455e603ba1e0",
+      "name": "Манжеты",
+      "description": "Манжеты.",
+      "icon": null,
+      "url": null,
+      "extra": {
+        "code": "cuffs",
+        "group": "Фиксация и аксессуары",
+        "discipline_default": false
+      }
+    },
+    "after": {
+      "uid": "4b5be8c6-f0f5-5b9c-b582-455e603ba1e0",
+      "name": "Манжеты",
+      "description": "Манжеты.",
+      "icon": null,
+      "url": null,
+      "extra": {
+        "code": "cuffs",
+        "group": "Средства фиксации",
+        "discipline_default": false
+      }
+    }
+  },
+  {
+    "kind": "devices",
+    "before": {
+      "uid": "0b092f61-3c51-5638-9733-d03f97791969",
+      "name": "Ошейник",
+      "description": "Ошейник.",
+      "icon": null,
+      "url": null,
+      "extra": {
+        "code": "collar",
+        "group": "Фиксация и аксессуары",
+        "discipline_default": false
+      }
+    },
+    "after": {
+      "uid": "0b092f61-3c51-5638-9733-d03f97791969",
+      "name": "Ошейник",
+      "description": "Ошейник.",
+      "icon": null,
+      "url": null,
+      "extra": {
+        "code": "collar",
+        "group": "Аксессуары динамики",
+        "discipline_default": false
+      }
+    }
+  },
+  {
+    "kind": "devices",
+    "before": {
+      "uid": "ea5bf105-f3ff-5195-a117-b74454fad6b1",
+      "name": "Поводок",
+      "description": "Поводок.",
+      "icon": null,
+      "url": null,
+      "extra": {
+        "code": "leash",
+        "group": "Фиксация и аксессуары",
+        "discipline_default": false
+      }
+    },
+    "after": {
+      "uid": "ea5bf105-f3ff-5195-a117-b74454fad6b1",
+      "name": "Поводок",
+      "description": "Поводок.",
+      "icon": null,
+      "url": null,
+      "extra": {
+        "code": "leash",
+        "group": "Аксессуары динамики",
+        "discipline_default": false
+      }
+    }
+  }
+]

@@ -8,7 +8,7 @@ from test_forms_versions import setup_forms
 from vowen.modules.forms.models import Submission
 
 
-async def test_reader_removal_encrypted_storage_and_no_author_inheritance(api):
+async def test_reader_removal_plain_storage_and_no_author_inheritance(api):
     c, app, ids, h, f = await setup_forms(api)
     p = "/api/v1/forms/" + f["id"]
     await c.post(p + "/publish", headers=h[0], json={"expected_version": 1})
@@ -23,7 +23,7 @@ async def test_reader_removal_encrypted_storage_and_no_author_inheritance(api):
     await c.put(ip + "/draft", headers=h[1], json={"answers": {"q": "plaintext must not persist"}})
     async with app.state.sessions() as db:
         row = await db.scalar(select(Submission))
-        assert row.ciphertext and b"plaintext" not in row.ciphertext
+        assert row.ciphertext and b"plaintext" in row.ciphertext
         assert row.idempotency_key is None
     result = await c.post(
         ip + "/submit",

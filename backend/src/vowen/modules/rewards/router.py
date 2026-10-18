@@ -5,7 +5,6 @@ from sqlalchemy import select
 
 from vowen.core.errors import AppError
 from vowen.modules.auth.router import DB, Member
-from vowen.modules.forms.service import active
 from vowen.modules.identity.models import User
 from vowen.modules.relations.router import cipher_for
 from vowen.modules.rewards import service
@@ -26,7 +25,9 @@ router = APIRouter(prefix="/api/v1")
 
 @router.post("/rewards", response_model=RewardView)
 async def create(body: RewardContent, principal: Member, db: DB, request: Request) -> RewardView:
-    await active(db, principal.user_id)
+    from vowen.modules.rewards.permissions import shop_user
+
+    await shop_user(db, principal.user_id, manage=True, write=True, lock=True)
     r = RewardDefinition(id=uuid4(), author_id=principal.user_id, revision=1)
     db.add(r)
     await db.flush()
@@ -61,7 +62,9 @@ async def catalogue(principal: Member, db: DB, request: Request) -> list[RewardV
 async def version(
     rid: UUID, body: RewardEdit, principal: Member, db: DB, request: Request
 ) -> RewardView:
-    await active(db, principal.user_id)
+    from vowen.modules.rewards.permissions import shop_user
+
+    await shop_user(db, principal.user_id, manage=True, write=True, lock=True)
     r = await db.get(RewardDefinition, rid, with_for_update=True)
     if r is None or r.author_id != principal.user_id:
         raise AppError(404, "NOT_FOUND")
@@ -73,6 +76,9 @@ async def version(
 
 @router.post("/reward-grants", response_model=GrantView)
 async def grant(body: GrantCommand, principal: Member, db: DB, request: Request) -> GrantView:
+    from vowen.modules.rewards.permissions import shop_user
+
+    await shop_user(db, principal.user_id, manage=True, write=True, lock=True)
     await db.get(User, principal.user_id, with_for_update=True)
     previous = await db.scalar(
         select(RewardGrant).where(
@@ -132,9 +138,30 @@ async def grants(principal: Member, db: DB, request: Request) -> list[GrantView]
 async def transition(
     gid: UUID, body: GrantTransitionCommand, principal: Member, db: DB, request: Request
 ) -> GrantView:
+    from vowen.modules.rewards import orders
+    from vowen.modules.rewards.economy_models import PurchaseOrder
+
+    if await db.get(PurchaseOrder, gid):
+        return await orders.transition(
+            db, gid, principal.user_id, body, request.app.state.clock.now(), cipher_for(request)
+        )
     g = await db.get(RewardGrant, gid, with_for_update=True)
     if g is None or principal.user_id not in (g.recipient_id, g.issuer_id):
         raise AppError(404, "NOT_FOUND")
+    if body.action == "redeem":
+        from vowen.modules.rewards.economy_models import CurrencyEntry
+
+        purchased = await db.scalar(select(CurrencyEntry.id).where(CurrencyEntry.grant_id == gid))
+        if not purchased or g.status != "accepted":
+            raise AppError(409, "CONFLICT")
+        if body.expected_version != g.revision:
+            raise AppError(409, "VERSION_CONFLICT")
+        g.status = "redeemed"
+        g.revision += 1
+        await service.record(db, g, principal.user_id, request.app.state.clock.now())
+        return await service.grant_view(db, g, cipher_for(request))
+    if body.action in {"approve", "reject"}:
+        raise AppError(409, "CONFLICT")
     recipient = body.action in ("accept", "decline")
     if (g.recipient_id if recipient else g.issuer_id) != principal.user_id:
         raise AppError(403, "ACCESS_DENIED")

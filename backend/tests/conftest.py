@@ -35,7 +35,8 @@ async def api(tmp_path: Path):
                 await conn.execute(
                     text(
                         "SELECT tablename FROM pg_tables WHERE schemaname='public' "
-                        "AND tablename NOT IN ('alembic_version','instance_settings')"
+                        "AND tablename NOT IN ('alembic_version','instance_settings',"
+                        "'administration_state')"
                     )
                 )
             )

@@ -1,10 +1,12 @@
 from uuid import UUID, uuid4
+from zoneinfo import ZoneInfo
 
 from fastapi import APIRouter, Query, Request, Response
 from sqlalchemy import select
 
 from vowen.core.errors import AppError
 from vowen.modules.auth.router import DB, Member
+from vowen.modules.identity.models import UserPreferences
 from vowen.modules.journal import service as s
 from vowen.modules.journal.models import JournalEntry, JournalReader
 from vowen.modules.journal.schemas import JournalContent, JournalEdit, JournalView
@@ -57,6 +59,10 @@ async def listing(
 @router.post("", response_model=JournalView)
 async def create(body: JournalContent, principal: Member, db: DB, request: Request) -> JournalView:
     now = request.app.state.clock.now()
+    prefs = await db.get(UserPreferences, principal.user_id)
+    today = now.astimezone(ZoneInfo(prefs.timezone if prefs else "UTC")).date()
+    if body.date != today:
+        raise AppError(422, "JOURNAL_DATE_MUST_BE_TODAY")
     e = JournalEntry(
         id=uuid4(),
         author_id=principal.user_id,
@@ -88,6 +94,11 @@ async def edit(
         raise AppError(403, "ACCESS_DENIED")
     if e.revision != body.expected_version:
         raise AppError(409, "VERSION_CONFLICT")
+    previous = await s.view(db, e, cipher_for(request))
+    if body.date != previous.date:
+        raise AppError(422, "JOURNAL_DATE_IMMUTABLE")
+    if "handwriting" not in body.model_fields_set:
+        body = body.model_copy(update={"handwriting": previous.handwriting})
     await s.audience(db, e, body, body.refresh_audience)
     s.seal(e, body, cipher_for(request))
     e.revision += 1

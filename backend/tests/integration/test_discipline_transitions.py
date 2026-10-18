@@ -1,4 +1,4 @@
-"""Consent, immutable rule links, actor boundaries and serialized review."""
+"""Execution without acceptance, immutable links and actor boundaries."""
 
 import asyncio
 from uuid import uuid4
@@ -12,6 +12,10 @@ from test_sessions import auth
 async def setup(api):
     client, app = api
     ids, tokens = await members(client, app, 4)
+    from vowen.modules.references.fixtures import seed_references
+
+    async with app.state.sessions() as db, db.begin():
+        await seed_references(db)
     relations = []
     for actor in (0, 2):
         r = (
@@ -54,18 +58,17 @@ async def act(client, token, record, action):
     )
 
 
-async def test_personal_consent_history_and_concurrent_review(api):
+async def test_direct_execution_history_and_concurrent_review(api):
     client, app, ids, tokens, _, r, body = await setup(api)
-    assert (await act(client, tokens[0], r, "accept")).status_code == 403
-    for action in ("accept", "start", "complete"):
+    assert (await act(client, tokens[0], r, "start")).status_code == 403
+    for action in ("start", "complete"):
         r = (await act(client, tokens[1], r, action)).json()
     outcomes = await asyncio.gather(*(act(client, tokens[i], r, "confirm") for i in (0, 2)))
     assert sorted(x.status_code for x in outcomes) == [200, 409]
     r = next(x.json() for x in outcomes if x.status_code == 200)
     assert r["status"] == "confirmed"
     assert [h["status"] for h in r["history"]] == [
-        "proposed",
-        "accepted",
+        "planned",
         "in_progress",
         "completed",
         "confirmed",
@@ -80,20 +83,26 @@ async def test_personal_consent_history_and_concurrent_review(api):
     async with app.state.engine.connect() as conn:
         for table in ("discipline_versions", "discipline_transitions"):
             values = (await conn.execute(text(f"SELECT ciphertext FROM {table}"))).scalars().all()
-            assert all(b"private-" not in bytes(v) for v in values)
+            assert any(b"private-" in bytes(v) for v in values)
+            assert (
+                await conn.scalar(
+                    text(f"SELECT count(*) FROM {table} WHERE key_id != 'plaintext-v1'")
+                )
+                == 0
+            )
 
 
-@pytest.mark.parametrize("action", ["start", "complete", "confirm"])
-async def test_no_transition_skips_acceptance(api, action):
+@pytest.mark.parametrize("action", ["complete", "confirm"])
+async def test_cannot_skip_execution_states(api, action):
     client, _, _, tokens, _, r, _ = await setup(api)
     assert (
         await act(client, tokens[1 if action != "confirm" else 0], r, action)
     ).status_code == 409
 
 
-async def test_versions_require_new_consent_and_keep_original_history(api):
+async def test_versions_reschedule_without_acceptance_and_keep_history(api):
     client, _, ids, tokens, _, r, _ = await setup(api)
-    r = (await act(client, tokens[1], r, "accept")).json()
+    r = (await act(client, tokens[1], r, "start")).json()
     old = r["version_id"]
     body = {
         "expected_version": r["revision"],
@@ -105,9 +114,9 @@ async def test_versions_require_new_consent_and_keep_original_history(api):
     )
     assert newer.status_code == 200
     n = newer.json()
-    assert n["status"] == "proposed" and n["version_id"] != old
+    assert n["status"] == "planned" and n["version_id"] != old
     assert (await act(client, tokens[1], r, "start")).status_code == 409
-    assert (await act(client, tokens[1], n, "start")).status_code == 409
+    assert (await act(client, tokens[1], n, "start")).status_code == 200
     assert n["versions"][0]["conditions"] == "Voluntary reflection"
     assert n["history"][1]["version_id"] == old
     for field, value in [
@@ -124,12 +133,9 @@ async def test_versions_require_new_consent_and_keep_original_history(api):
         ).status_code == 422
 
 
-async def test_pause_revocation_and_dispute_stop_execution(api):
+async def test_revoked_relation_blocks_execution_but_preserves_recipient_history(api):
     client, _, _, tokens, relations, r, _ = await setup(api)
-    r = (await act(client, tokens[1], r, "accept")).json()
-    r = (await act(client, tokens[1], r, "dispute")).json()
-    assert r["status"] == "disputed"
-    assert (await act(client, tokens[1], r, "start")).status_code == 409
+    r = (await act(client, tokens[1], r, "start")).json()
     await client.post(
         f"/api/v1/relations/{relations[0]['id']}/revoke",
         headers=auth(tokens[1]),
@@ -139,9 +145,12 @@ async def test_pause_revocation_and_dispute_stop_execution(api):
     assert (
         await client.get(f"/api/v1/discipline-records/{r['id']}", headers=auth(tokens[0]))
     ).status_code == 404
-    # The recipient retains history and can withdraw even while paused.
+    # Relationship controls remain separate; recipient retains historical read access.
     await client.post("/api/v1/me/pause", headers=auth(tokens[1]))
-    assert (await act(client, tokens[1], r, "cancel")).json()["status"] == "cancelled"
+    assert (await act(client, tokens[1], r, "complete")).status_code == 403
+    assert (
+        await client.get(f"/api/v1/discipline-records/{r['id']}", headers=auth(tokens[1]))
+    ).status_code == 200
 
 
 async def test_rule_link_is_exact_and_never_implies_violation_confirmation(api):
@@ -184,7 +193,7 @@ async def test_rule_link_is_exact_and_never_implies_violation_confirmation(api):
         await client.post("/api/v1/discipline-records", headers=auth(tokens[0]), json=body)
     ).json()
     assert (
-        linked["status"] == "proposed"
+        linked["status"] == "planned"
         and linked["versions"][0]["rule_version_id"] == rule["version_id"]
     )
     assert linked["versions"][0]["rule_title"] == "Rule"
@@ -205,8 +214,8 @@ async def test_explicit_reviewers_and_active_proposer_required(api):
         )
         assert response.status_code in (403, 422)
     await client.post("/api/v1/me/pause", headers=auth(tokens[1]))
-    assert (await act(client, tokens[1], r, "accept")).status_code == 403
-    assert (await act(client, tokens[1], r, "decline")).json()["status"] == "declined"
+    assert (await act(client, tokens[1], r, "start")).status_code == 403
+    assert (await act(client, tokens[1], r, "cancel")).status_code == 403
 
 
 async def test_recipient_and_reviewer_cannot_rewrite_conditions(api):
@@ -222,14 +231,14 @@ async def test_recipient_and_reviewer_cannot_rewrite_conditions(api):
             },
         )
         assert response.status_code == 403
-    for action in ("accept", "start", "complete"):
+    for action in ("start", "complete"):
         assert (await act(client, tokens[2], r, action)).status_code == 403
     assert (await act(client, tokens[1], r, "confirm")).status_code == 403
 
 
 async def test_revoked_reviewer_cannot_confirm_or_read_history(api):
     client, _, _, tokens, relations, r, _ = await setup(api)
-    for action in ("accept", "start", "complete"):
+    for action in ("start", "complete"):
         r = (await act(client, tokens[1], r, action)).json()
     assert (
         await client.post(
@@ -281,11 +290,12 @@ async def test_authority_lock_refreshes_previously_loaded_member_after_pause(api
 @pytest.mark.parametrize(
     ("source", "recipient_actions", "reviewer_actions"),
     [
-        ("proposed", {"accept", "decline", "dispute", "cancel"}, {"cancel"}),
-        ("accepted", {"start", "dispute", "cancel"}, {"cancel"}),
-        ("in_progress", {"complete", "dispute", "cancel"}, {"cancel"}),
-        ("completed", {"dispute", "cancel"}, {"confirm", "cancel"}),
-        ("disputed", {"cancel"}, {"cancel"}),
+        ("planned", {"start"}, {"cancel"}),
+        ("proposed", {"start"}, {"cancel"}),
+        ("accepted", {"start"}, {"cancel"}),
+        ("in_progress", {"complete"}, {"cancel"}),
+        ("completed", set(), {"confirm", "cancel"}),
+        ("disputed", set(), {"cancel"}),
         ("confirmed", set(), set()),
         ("declined", set(), set()),
         ("cancelled", set(), set()),
@@ -295,7 +305,7 @@ async def test_every_status_action_actor_boundary(api, source, recipient_actions
     client, app, _, tokens, _, r, _ = await setup(api)
     path = f"/api/v1/discipline-records/{r['id']}"
     for actor in (0, 1, 2, 3):
-        for action in ("accept", "start", "complete", "confirm", "dispute", "decline", "cancel"):
+        for action in ("start", "complete", "confirm", "cancel"):
             async with app.state.engine.begin() as conn:
                 await conn.execute(
                     text("DELETE FROM discipline_transitions WHERE record_id=:id AND revision>1"),
@@ -306,7 +316,13 @@ async def test_every_status_action_actor_boundary(api, source, recipient_actions
                     {"id": r["id"], "status": source},
                 )
             allowed = (
-                recipient_actions if actor == 1 else reviewer_actions if actor in (0, 2) else set()
+                recipient_actions
+                if actor == 1
+                else reviewer_actions
+                if actor == 0
+                else reviewer_actions - {"cancel"}
+                if actor == 2
+                else set()
             )
             response = await act(client, tokens[actor], r, action)
             if action in allowed:
@@ -320,3 +336,9 @@ async def test_every_status_action_actor_boundary(api, source, recipient_actions
                 )
                 latest = (await client.get(path, headers=auth(tokens[1]))).json()
                 assert latest["status"] == source and latest["revision"] == 1
+
+
+@pytest.mark.parametrize("action", ["accept", "decline", "dispute"])
+async def test_acceptance_actions_are_no_longer_part_of_api(api, action):
+    client, _, _, tokens, _, r, _ = await setup(api)
+    assert (await act(client, tokens[1], r, action)).status_code == 422

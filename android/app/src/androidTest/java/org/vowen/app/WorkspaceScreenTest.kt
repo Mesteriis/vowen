@@ -17,7 +17,7 @@ class WorkspaceScreenTest {
  @Test fun acceptanceShowsExactAgreementAndRequiresExplicitConfirmation() {
   var accepted:Pair<Relation,String>?=null
   compose.setContent {MaterialTheme {WorkspaceScreen(member,WorkspaceState(relations=listOf(relation)),"s",false,0,actions(onRelation={r,a->accepted=r to a}))}}
-  compose.onNodeWithTag("accept-r").performClick()
+  compose.onNodeWithTag("accept-r").performScrollTo().performClick()
   compose.onNodeWithTag("agreement-review").assertTextContains("Synthetic exact agreement")
   assertNull(accepted)
   compose.onNodeWithTag("confirm-relation").performClick()
@@ -29,7 +29,8 @@ class WorkspaceScreenTest {
  @Test fun ownSessionRevocationRequiresTargetConfirmation() {
   var revoked:String?=null
   compose.setContent {MaterialTheme {WorkspaceScreen(member,WorkspaceState(sessions=listOf(session)),"s",false,0,actions(onRevoke={revoked=it.id}))}}
-  compose.onNodeWithTag("tab-sessions").performClick()
+  compose.onNodeWithTag("profile-avatar").performClick()
+  compose.onNodeWithTag("personal-sessions").performClick()
   compose.onNodeWithText("Current session").assertIsDisplayed()
   compose.onNodeWithTag("revoke-session-s").performClick()
   assertNull(revoked)
@@ -40,7 +41,7 @@ class WorkspaceScreenTest {
  @Test fun profileFormSubmitsVersionAndMetadataOnly() {
   var saved:ProfilePatch?=null
   compose.setContent {MaterialTheme {WorkspaceScreen(member,WorkspaceState(),"s",false,0,actions(onProfile={saved=it}))}}
-  compose.onNodeWithTag("tab-profile").performClick()
+  compose.onNodeWithTag("profile-avatar").performClick()
   compose.onNodeWithTag("profile-name").performTextReplacement("Changed demo")
   compose.onNodeWithTag("profile-timezone").performTextReplacement("Europe/Madrid")
   compose.onNodeWithTag("profile-switch").performClick()
@@ -48,6 +49,7 @@ class WorkspaceScreenTest {
   assertEquals(1,saved!!.expected_version)
   assertEquals("Changed demo",saved!!.display_name)
   assertEquals(listOf("switch"),saved!!.profile_labels)
+  assertEquals("Europe/Madrid",saved!!.timezone)
  }
  @Test fun proposalUsesSelectedParticipantAndDoesNotPretendConsent() {
   var proposed:RelationProposal?=null
@@ -68,10 +70,25 @@ class WorkspaceScreenTest {
   var changed:Triple<Relation,String,List<String>>?=null
   val callbacks=WorkspaceActions({}, {}, {_,_->}, {r,t,s->changed=Triple(r,t,s)}, {}, {})
   compose.setContent {MaterialTheme {WorkspaceScreen(member,WorkspaceState(relations=listOf(relation)),"s",false,0,callbacks)}}
+  compose.onNodeWithContentDescription("Relationship actions").performClick()
   compose.onNodeWithText("Propose new version").performClick()
   compose.onNodeWithTag("relation-agreement").performTextReplacement("Changed synthetic agreement")
   compose.onNodeWithTag("submit-relation").performClick()
   assertEquals(3,changed!!.first.version)
   assertEquals("Changed synthetic agreement",changed!!.second)
  }
+ @Test fun selectedPartnerControlsTheExactRelationshipCommand() {
+  var requested:Pair<Relation,String>?=null
+  val second=relation.copy(id="second",submissive_user_id="c",status="active",version=8,relation_version_id="v8",agreement_text="Second synthetic agreement")
+  compose.setContent {MaterialTheme {WorkspaceScreen(member,WorkspaceState(relations=listOf(relation,second)),"s",false,0,actions(onRelation={r,a->requested=r to a}))}}
+  compose.onNodeWithTag("relation-choice-second").performClick()
+  compose.onNodeWithText("Second synthetic agreement").performScrollTo().assertIsDisplayed()
+  compose.onNodeWithContentDescription("Pause relationship").performScrollTo().performClick()
+  assertNull(requested)
+  compose.onNodeWithTag("confirm-relation").performClick()
+  assertEquals("second",requested!!.first.id)
+  assertEquals(8,requested!!.first.version)
+  assertEquals("pause",requested!!.second)
+ }
+
 }

@@ -1,0 +1,110 @@
+[
+  {
+    "uid": "c742fe75-56cd-5ed1-94b8-56b6cfcaf226",
+    "name": "Массаж",
+    "description": "Массаж как совместная практика.",
+    "icon": null,
+    "extra": {
+      "code": "massage"
+    }
+  },
+  {
+    "uid": "61dd8829-5dbf-546a-b265-db97cd4de3f3",
+    "name": "Сенсорные практики",
+    "description": "Практики, связанные с восприятием ощущений.",
+    "icon": null,
+    "extra": {
+      "code": "sensory"
+    }
+  },
+  {
+    "uid": "8e7d4987-b812-5f2c-8968-84962b658265",
+    "name": "Ролевые игры",
+    "description": "Взаимодействие в согласованных ролях.",
+    "icon": null,
+    "extra": {
+      "code": "roleplay"
+    }
+  },
+  {
+    "uid": "2cdd20ed-5466-5b42-89d3-38b1ced9a628",
+    "name": "Ритуалы",
+    "description": "Повторяющиеся действия и общие традиции.",
+    "icon": null,
+    "extra": {
+      "code": "rituals"
+    }
+  },
+  {
+    "uid": "503d271c-5899-5e5a-bd2a-0ea3e4477119",
+    "name": "Ограничение подвижности",
+    "description": "Практики с ограничением подвижности.",
+    "icon": null,
+    "extra": {
+      "code": "restraint"
+    }
+  },
+  {
+    "uid": "58aecb41-3edb-5fb1-9306-c87763f9d11e",
+    "name": "Ограничение восприятия",
+    "description": "Практики с ограничением отдельных каналов восприятия.",
+    "icon": null,
+    "extra": {
+      "code": "sensory-restriction"
+    }
+  },
+  {
+    "uid": "0f520c66-b751-52af-9eed-7041c47312b2",
+    "name": "Телесные практики",
+    "description": "Телесное воздействие в рамках выбранной динамики.",
+    "icon": null,
+    "extra": {
+      "code": "impact"
+    }
+  },
+  {
+    "uid": "cbe31b4c-4db6-5c6b-a620-2b6fab952a9b",
+    "name": "Похвала",
+    "description": "Вербальное положительное подкрепление.",
+    "icon": null,
+    "extra": {
+      "code": "praise"
+    }
+  },
+  {
+    "uid": "f7791c5d-bd98-55eb-8455-a76fdb2fa4fe",
+    "name": "Протоколы",
+    "description": "Согласованные формы обращения и поведения.",
+    "icon": null,
+    "extra": {
+      "code": "protocol"
+    }
+  },
+  {
+    "uid": "ea4b99aa-70d0-5b1d-98c8-1023909d70ad",
+    "name": "Практики служения",
+    "description": "Действия заботы и помощи партнёру.",
+    "icon": null,
+    "extra": {
+      "code": "service"
+    }
+  },
+  {
+    "uid": "5b0ab543-188f-5fc1-9fe9-ca24a19406e0",
+    "name": "Одежда и образы",
+    "description": "Использование одежды и выбранных образов.",
+    "icon": null,
+    "extra": {
+      "code": "clothing"
+    }
+  },
+  {
+    "uid": "25b4ae15-a3c3-56da-9cfb-2a0396576630",
+    "name": "Забота после практики",
+    "description": "Время для восстановления и внимания друг к другу.",
+    "icon": null,
+    "extra": {
+      "code": "aftercare"
+    }
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "uid": "7d0b1145-fc3d-5424-b91b-7fa47b8a8c63",
+    "name": "Романтические",
+    "description": "Романтические отношения.",
+    "icon": null,
+    "extra": {
+      "code": "romantic"
+    },
+    "url": null
+  },
+  {
+    "uid": "88d9d026-2c44-5d05-bb2b-a346ea07dfb3",
+    "name": "Партнёрские",
+    "description": "Партнёрство и совместная жизнь.",
+    "icon": null,
+    "extra": {
+      "code": "partnership"
+    },
+    "url": null
+  },
+  {
+    "uid": "5cb76595-bb2d-5c88-8204-b2f92849c7a1",
+    "name": "Дружеские",
+    "description": "Дружеские отношения.",
+    "icon": null,
+    "extra": {
+      "code": "friendship"
+    },
+    "url": null
+  },
+  {
+    "uid": "2bea76a7-7bee-5019-a918-9f365223093f",
+    "name": "D/s",
+    "description": "Отношения с распределением ролей Dominant / Submissive.",
+    "icon": null,
+    "extra": {
+      "code": "ds"
+    },
+    "url": null
+  },
+  {
+    "uid": "64a315cb-a85f-56a5-9978-a678c7be53a9",
+    "name": "Switch-динамика",
+    "description": "Отношения с изменяемым распределением D/s-ролей.",
+    "icon": null,
+    "extra": {
+      "code": "switch"
+    },
+    "url": null
+  },
+  {
+    "uid": "d5255b14-b89f-5986-bdd2-bf78715d8d5f",
+    "name": "Игровые",
+    "description": "Взаимодействие вокруг отдельных практик и встреч.",
+    "icon": null,
+    "extra": {
+      "code": "play"
+    },
+    "url": null
+  },
+  {
+    "uid": "b716500a-195d-5eed-897b-3d5a4de17443",
+    "name": "Наставничество",
+    "description": "Отношения наставничества.",
+    "icon": null,
+    "extra": {
+      "code": "mentorship"
+    },
+    "url": null
+  },
+  {
+    "uid": "5778b46f-5562-5d38-a127-7de059d06018",
+    "name": "Другое",
+    "description": "Другой выбранный участниками вид отношений.",
+    "icon": null,
+    "extra": {
+      "code": "other"
+    },
+    "url": null
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "uid": "43712f95-6e05-5eaa-a5a2-d27c06482e47",
+    "name": "Секс",
+    "description": "Сексуальные практики.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "sex"
+    }
+  },
+  {
+    "uid": "cd181dfc-90f6-5c16-986c-c33e88eb3916",
+    "name": "BDSM",
+    "description": "Практики BDSM и обмена властью.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "bdsm"
+    }
+  }
+]

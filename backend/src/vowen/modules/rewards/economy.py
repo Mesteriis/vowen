@@ -11,13 +11,17 @@ from vowen.core.crypto import EncryptedEnvelope, PayloadCipher
 from vowen.core.errors import AppError
 from vowen.modules.identity.models import User
 from vowen.modules.relations.models import Relation
-from vowen.modules.rewards.economy_models import CurrencyEntry, ShopListing, Wallet
+from vowen.modules.rewards.economy_models import CurrencyEntry, PurchaseOrder, ShopListing, Wallet
 from vowen.modules.rewards.economy_schemas import CurrencyEntryView, ListingView, WalletView
-from vowen.modules.rewards.models import RewardVersion
+from vowen.modules.rewards.models import RewardGrant, RewardVersion
 from vowen.modules.rituals.service import scoped
 
 
-async def relation(db: AsyncSession, rid: UUID, uid: UUID, *, write: bool = False) -> Relation:
+async def relation(
+    db: AsyncSession, rid: UUID | None, uid: UUID, *, write: bool = False
+) -> Relation:
+    if rid is None:
+        raise AppError(404, "NOT_FOUND")
     r = await db.get(Relation, rid)
     if r is None or uid not in (r.dominant_user_id, r.submissive_user_id):
         raise AppError(404, "NOT_FOUND")
@@ -27,6 +31,7 @@ async def relation(db: AsyncSession, rid: UUID, uid: UUID, *, write: bool = Fals
             select(User)
             .where(User.id.in_([r.dominant_user_id, r.submissive_user_id]))
             .order_by(User.id)
+            .execution_options(populate_existing=True)
             .with_for_update()
         )
         r = await db.get(Relation, rid, with_for_update=True, populate_existing=True)
@@ -54,6 +59,21 @@ async def balance(db: AsyncSession, rid: UUID) -> int:
     )
 
 
+async def reserved_balance(db: AsyncSession, rid: UUID) -> int:
+    return int(
+        await db.scalar(
+            select(func.coalesce(func.sum(PurchaseOrder.amount), 0))
+            .join(RewardGrant, RewardGrant.id == PurchaseOrder.grant_id)
+            .where(PurchaseOrder.relation_id == rid, RewardGrant.status == "pending_approval")
+        )
+        or 0
+    )
+
+
+async def available_balance(db: AsyncSession, rid: UUID) -> int:
+    return await balance(db, rid) - await reserved_balance(db, rid)
+
+
 def comment(e: CurrencyEntry, cipher: PayloadCipher) -> str:
     return cipher.open_payload(
         "currency_entry", e.id, 1, EncryptedEnvelope(e.key_id, e.nonce, e.ciphertext)
@@ -69,9 +89,25 @@ async def wallet_view(db: AsyncSession, rid: UUID, cipher: PayloadCipher) -> Wal
             .limit(500)
         )
     ).all()
+    # One statement gives all counters the same PostgreSQL snapshot.
+    total, reserved = (
+        await db.execute(
+            select(
+                select(func.coalesce(func.sum(CurrencyEntry.amount), 0))
+                .where(CurrencyEntry.relation_id == rid)
+                .scalar_subquery(),
+                select(func.coalesce(func.sum(PurchaseOrder.amount), 0))
+                .join(RewardGrant, RewardGrant.id == PurchaseOrder.grant_id)
+                .where(PurchaseOrder.relation_id == rid, RewardGrant.status == "pending_approval")
+                .scalar_subquery(),
+            )
+        )
+    ).one()
     return WalletView(
         relation_id=rid,
-        balance=await balance(db, rid),
+        balance=total - reserved,
+        total_balance=total,
+        reserved=reserved,
         entries=[
             CurrencyEntryView(
                 id=e.id,
@@ -136,6 +172,7 @@ async def listing_view(
     return ListingView(
         id=listing.id,
         relation_id=listing.relation_id,
+        audience_all=listing.audience_all,
         reward_version_id=v.id,
         price=listing.price,
         active=listing.active,

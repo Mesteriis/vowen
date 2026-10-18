@@ -24,11 +24,13 @@ class AppScreenshotTest {
     if(compose.onAllNodesWithTag("tab-more").fetchSemanticsNodes().isNotEmpty())compose.onNodeWithTag("tab-more").performClick()
     compose.onNodeWithTag("tab-surveys").performScrollTo().performClick()
     compose.onNodeWithTag("new-survey").performScrollTo().assertExists()
-    compose.onNodeWithTag("tab-notifications").performScrollTo().performClick()
+    compose.onNodeWithTag("profile-avatar").performScrollTo().performClick()
+    compose.onNodeWithTag("personal-notifications").performScrollTo().performClick()
     compose.onNodeWithTag("save-notifications").performScrollTo().assertExists()
     java.io.File(context.cacheDir,"m5-app-notifications.png").outputStream().use{out->inst.uiAutomation.takeScreenshot()!!.compress(android.graphics.Bitmap.CompressFormat.PNG,100,out)}
     compose.onNodeWithTag("Appearance").assertDoesNotExist()
     it.onActivity{activity->org.junit.Assert.assertFalse(androidx.core.view.WindowCompat.getInsetsController(activity.window,activity.window.decorView).isAppearanceLightStatusBars)}
+    if(compose.onAllNodesWithTag("tab-more").fetchSemanticsNodes().isNotEmpty())compose.onNodeWithTag("tab-more").performClick()
     compose.onNodeWithTag("tab-discipline").performScrollTo().performClick()
     compose.onNodeWithTag("new-discipline").performScrollTo().assertExists()
     java.io.File(context.cacheDir,"m4-app-discipline.png").outputStream().use{out->inst.uiAutomation.takeScreenshot()!!.compress(android.graphics.Bitmap.CompressFormat.PNG,100,out)}

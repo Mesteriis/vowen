@@ -24,6 +24,8 @@ services:
       PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-https://localhost:8443}
       APP_DISPLAY_NAME: ${APP_DISPLAY_NAME:-Vowen}
       FORWARDED_ALLOW_IPS: ${PROXY_IP:-10.253.240.2}
+    # Original keyring is needed only when converting existing encrypted records.
+    volumes: ['./secrets:/run/vowen:ro']
     command: [alembic, upgrade, head]
     depends_on: {db: {condition: service_healthy}}
     security_opt: [no-new-privileges:true]

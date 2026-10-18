@@ -104,7 +104,7 @@ async def test_per_recipient_exact_version_and_replacement(api):
         payloads = (
             (await conn.execute(text("SELECT ciphertext FROM rule_versions"))).scalars().all()
         )
-        assert len(payloads) == 2 and all(b"sensitive-rule" not in bytes(x) for x in payloads)
+        assert len(payloads) == 2 and all(b"sensitive-rule" in bytes(x) for x in payloads)
 
 
 async def test_explicit_manager_acl_pause_archive_and_history(api):

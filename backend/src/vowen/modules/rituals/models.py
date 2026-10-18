@@ -49,6 +49,7 @@ class RitualAssignment(Base):
     recipient_id: Mapped[UUID] = mapped_column(ForeignKey("users.id"))
     issuer_id: Mapped[UUID] = mapped_column(ForeignKey("users.id"))
     approval_required: Mapped[bool]
+    paused_by_id: Mapped[UUID | None] = mapped_column(ForeignKey("users.id"))
     status: Mapped[str] = mapped_column(String(20), default="active")
     revision: Mapped[int] = mapped_column(default=1)
     current_schedule_id: Mapped[UUID | None] = mapped_column(

@@ -1,0 +1,60 @@
+[
+  {
+    "uid": "3d97bb5b-a853-57fe-8dc4-d5b2fa980b46",
+    "name": "Секс втроём",
+    "description": "Сексуальное взаимодействие трёх участников.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "threesome",
+      "aliases": [
+        "Тройничок",
+        "Threesome"
+      ]
+    },
+    "category_uid": "b6121e04-1d0e-517a-b7ef-cce763010f67"
+  },
+  {
+    "uid": "ec12bef2-907d-511d-91bc-1b1df88dc9e7",
+    "name": "Групповой секс",
+    "description": "Сексуальное взаимодействие нескольких участников.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "group-sex",
+      "aliases": [
+        "Групповая сексуальная практика"
+      ]
+    },
+    "category_uid": "b6121e04-1d0e-517a-b7ef-cce763010f67"
+  },
+  {
+    "uid": "65f9b954-e240-5933-8feb-91e2c7cef09f",
+    "name": "Обмен партнёрами",
+    "description": "Практика обмена партнёрами между парами.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "partner-exchange",
+      "aliases": [
+        "Partner swapping"
+      ]
+    },
+    "category_uid": "b6121e04-1d0e-517a-b7ef-cce763010f67"
+  },
+  {
+    "uid": "2644eb5f-8710-5f68-a7d4-b804700ca526",
+    "name": "Свинг",
+    "description": "Формат совместных сексуальных встреч с другими партнёрами.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "swinging",
+      "aliases": [
+        "Свингинг",
+        "Swinging"
+      ]
+    },
+    "category_uid": "b6121e04-1d0e-517a-b7ef-cce763010f67"
+  }
+]

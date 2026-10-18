@@ -1,0 +1,242 @@
+[
+  {
+    "uid": "fc7b8867-8ac9-5cdd-9082-fdbcafa26518",
+    "name": "UTC",
+    "description": "Часовой пояс IANA: UTC.",
+    "icon": null,
+    "extra": {
+      "code": "UTC",
+      "iana": "UTC"
+    }
+  },
+  {
+    "uid": "1ee479dd-6d59-5557-9a15-1c0407a84577",
+    "name": "Pacific/Honolulu",
+    "description": "Часовой пояс IANA: Pacific/Honolulu.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Honolulu",
+      "iana": "Pacific/Honolulu"
+    }
+  },
+  {
+    "uid": "d5a5077a-a38c-594e-98c0-371f8ba00ad6",
+    "name": "America/Anchorage",
+    "description": "Часовой пояс IANA: America/Anchorage.",
+    "icon": null,
+    "extra": {
+      "code": "America/Anchorage",
+      "iana": "America/Anchorage"
+    }
+  },
+  {
+    "uid": "70a7cbd7-6bcc-531f-a415-67c1a0c9e880",
+    "name": "America/Los_Angeles",
+    "description": "Часовой пояс IANA: America/Los_Angeles.",
+    "icon": null,
+    "extra": {
+      "code": "America/Los_Angeles",
+      "iana": "America/Los_Angeles"
+    }
+  },
+  {
+    "uid": "31aaaf83-5864-5ed9-97be-9d36afd1ecf4",
+    "name": "America/Denver",
+    "description": "Часовой пояс IANA: America/Denver.",
+    "icon": null,
+    "extra": {
+      "code": "America/Denver",
+      "iana": "America/Denver"
+    }
+  },
+  {
+    "uid": "353c7181-0929-5919-b8fa-99c4bedd4b4e",
+    "name": "America/Chicago",
+    "description": "Часовой пояс IANA: America/Chicago.",
+    "icon": null,
+    "extra": {
+      "code": "America/Chicago",
+      "iana": "America/Chicago"
+    }
+  },
+  {
+    "uid": "8ddcc987-a0e7-5fe4-be4a-4d9c56016bc0",
+    "name": "America/New_York",
+    "description": "Часовой пояс IANA: America/New_York.",
+    "icon": null,
+    "extra": {
+      "code": "America/New_York",
+      "iana": "America/New_York"
+    }
+  },
+  {
+    "uid": "fc169817-e590-54df-acfa-f6edd2877392",
+    "name": "America/Sao_Paulo",
+    "description": "Часовой пояс IANA: America/Sao_Paulo.",
+    "icon": null,
+    "extra": {
+      "code": "America/Sao_Paulo",
+      "iana": "America/Sao_Paulo"
+    }
+  },
+  {
+    "uid": "a43f66da-c649-5b6e-9a16-d65681e2414f",
+    "name": "Atlantic/Azores",
+    "description": "Часовой пояс IANA: Atlantic/Azores.",
+    "icon": null,
+    "extra": {
+      "code": "Atlantic/Azores",
+      "iana": "Atlantic/Azores"
+    }
+  },
+  {
+    "uid": "8232a2b1-400b-59c4-9c88-04d7d652be7f",
+    "name": "Europe/London",
+    "description": "Часовой пояс IANA: Europe/London.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/London",
+      "iana": "Europe/London"
+    }
+  },
+  {
+    "uid": "f4a2187d-84d5-589c-a745-3c1953fbb276",
+    "name": "Europe/Madrid",
+    "description": "Часовой пояс IANA: Europe/Madrid.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Madrid",
+      "iana": "Europe/Madrid"
+    }
+  },
+  {
+    "uid": "71682f4d-428d-5f76-a8ce-0d4cda4fc6f9",
+    "name": "Europe/Helsinki",
+    "description": "Часовой пояс IANA: Europe/Helsinki.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Helsinki",
+      "iana": "Europe/Helsinki"
+    }
+  },
+  {
+    "uid": "61e1db2f-5ed8-58d1-9f1e-72d9a97f27aa",
+    "name": "Europe/Moscow",
+    "description": "Часовой пояс IANA: Europe/Moscow.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Moscow",
+      "iana": "Europe/Moscow"
+    }
+  },
+  {
+    "uid": "5a9d4ce1-2f7c-594b-8419-d3889c0719d8",
+    "name": "Asia/Dubai",
+    "description": "Часовой пояс IANA: Asia/Dubai.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Dubai",
+      "iana": "Asia/Dubai"
+    }
+  },
+  {
+    "uid": "0321e74d-e743-581c-b50b-02311a61a907",
+    "name": "Asia/Karachi",
+    "description": "Часовой пояс IANA: Asia/Karachi.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Karachi",
+      "iana": "Asia/Karachi"
+    }
+  },
+  {
+    "uid": "1892b3bb-b5ae-5d77-b651-fa9d2ac5ec73",
+    "name": "Asia/Kolkata",
+    "description": "Часовой пояс IANA: Asia/Kolkata.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Kolkata",
+      "iana": "Asia/Kolkata"
+    }
+  },
+  {
+    "uid": "17e47dfa-14fa-5aa3-9744-8f5fba0f55d0",
+    "name": "Asia/Dhaka",
+    "description": "Часовой пояс IANA: Asia/Dhaka.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Dhaka",
+      "iana": "Asia/Dhaka"
+    }
+  },
+  {
+    "uid": "0c8aa6a7-6433-5e99-80b5-628015c1f209",
+    "name": "Asia/Bangkok",
+    "description": "Часовой пояс IANA: Asia/Bangkok.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Bangkok",
+      "iana": "Asia/Bangkok"
+    }
+  },
+  {
+    "uid": "44140e02-0a71-5581-a99f-308d935026c0",
+    "name": "Asia/Shanghai",
+    "description": "Часовой пояс IANA: Asia/Shanghai.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Shanghai",
+      "iana": "Asia/Shanghai"
+    }
+  },
+  {
+    "uid": "3b273fca-477d-575c-86b4-0f6a2c872e0e",
+    "name": "Asia/Tokyo",
+    "description": "Часовой пояс IANA: Asia/Tokyo.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Tokyo",
+      "iana": "Asia/Tokyo"
+    }
+  },
+  {
+    "uid": "9059546e-cde3-5e86-beca-6467f0609d46",
+    "name": "Australia/Adelaide",
+    "description": "Часовой пояс IANA: Australia/Adelaide.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/Adelaide",
+      "iana": "Australia/Adelaide"
+    }
+  },
+  {
+    "uid": "3ae2b1d2-44ac-5659-9c99-1463594eac4e",
+    "name": "Australia/Sydney",
+    "description": "Часовой пояс IANA: Australia/Sydney.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/Sydney",
+      "iana": "Australia/Sydney"
+    }
+  },
+  {
+    "uid": "77c10ea7-4f3c-58c5-96e2-4f78b6f42d2c",
+    "name": "Pacific/Auckland",
+    "description": "Часовой пояс IANA: Pacific/Auckland.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Auckland",
+      "iana": "Pacific/Auckland"
+    }
+  },
+  {
+    "uid": "78e8971d-f38a-5c07-bc56-43576e8bef25",
+    "name": "Pacific/Kiritimati",
+    "description": "Часовой пояс IANA: Pacific/Kiritimati.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Kiritimati",
+      "iana": "Pacific/Kiritimati"
+    }
+  }
+]

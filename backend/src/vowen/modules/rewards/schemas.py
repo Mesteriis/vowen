@@ -1,8 +1,30 @@
 from datetime import datetime
-from typing import Literal
+from typing import Annotated, Literal
 from uuid import UUID
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StringConstraints, field_validator
+
+RewardCover = Annotated[
+    str,
+    StringConstraints(
+        pattern=r"^(?:dinner|breakfast|cinema|walk|reward-(?:00[5-9]|0[1-9][0-9]|10[0-3]))$"
+    ),
+]
+RewardCategory = Literal[
+    "dates",
+    "food",
+    "drinks",
+    "cinema",
+    "music",
+    "games",
+    "outdoors",
+    "travel",
+    "creativity",
+    "gifts",
+    "care",
+    "touch",
+    "together",
+]
 
 
 class RewardContent(BaseModel):
@@ -10,6 +32,8 @@ class RewardContent(BaseModel):
     title: str = Field(min_length=1, max_length=200)
     description: str = Field(min_length=1, max_length=10000)
     conditions: str = Field(default="", max_length=10000)
+    cover: RewardCover = "dinner"
+    category: RewardCategory = "together"
 
     @field_validator("title", "description")
     @classmethod
@@ -39,7 +63,7 @@ class GrantCommand(BaseModel):
 class GrantTransitionCommand(BaseModel):
     model_config = ConfigDict(extra="forbid")
     expected_version: int = Field(ge=1)
-    action: Literal["accept", "decline", "deliver", "cancel"]
+    action: Literal["accept", "decline", "deliver", "cancel", "approve", "reject", "redeem"]
 
 
 class GrantHistory(BaseModel):
@@ -51,6 +75,7 @@ class GrantHistory(BaseModel):
 
 class GrantView(RewardContent):
     relation_id: UUID | None = None
+    purchase_amount: int | None = None
     source: Literal["manual", "ritual", "purchase"] = "manual"
     id: UUID
     reward_version_id: UUID
@@ -69,3 +94,12 @@ class RewardNoticeView(BaseModel):
     grant_id: UUID
     message: str = "У вас есть обновление в приложении"
     created_at: datetime
+
+
+class ShopProductContent(RewardContent):
+    price: int = Field(ge=1, le=1000000000, strict=True)
+    audience_all: bool = True
+
+
+class ShopProductEdit(ShopProductContent):
+    expected_version: int = Field(ge=1)

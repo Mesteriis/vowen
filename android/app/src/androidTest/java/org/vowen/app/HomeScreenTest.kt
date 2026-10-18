@@ -20,7 +20,7 @@ class HomeScreenTest {
  @get:Rule val compose=createComposeRule()
  @Test fun contextualDayAndReportNavigation(){
   val day=LocalDate.now().toString()
-  val m=Member("Алекс","a","ru",false,listOf("switch"),1,"UTC")
+  val m=Member(display_name="Алекс",id="a",language="ru",paused=false,profile_labels=listOf("switch"),profile_version=1,timezone="UTC")
   val r=Relation("Синтетическое соглашение",listOf("a","b"),"a","r","v",listOf("rituals.assign","rituals.review"),"active","b",1)
   val schedule=RitualSchedule(8,"daily",0,day,"UTC")
   val a=RitualAssignment(true,description="demo",effective=true,id="assignment",issuer_id="a",recipient_id="b",reviewer_ids=listOf("a"),revision=1,ritual_version_id="v",schedule=schedule,status="active",title="Утренний ритуал")

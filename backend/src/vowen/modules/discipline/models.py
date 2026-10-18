@@ -1,7 +1,7 @@
 from datetime import datetime
 from uuid import UUID, uuid4
 
-from sqlalchemy import DateTime, ForeignKey, LargeBinary, String, UniqueConstraint
+from sqlalchemy import Boolean, DateTime, ForeignKey, LargeBinary, String, UniqueConstraint
 from sqlalchemy.orm import Mapped, mapped_column
 
 from vowen.core.database import Base
@@ -18,7 +18,7 @@ class DisciplineRecord(Base):
         ForeignKey("discipline_versions.id", use_alter=True, name="current_discipline_version")
     )
     revision: Mapped[int] = mapped_column(default=1)
-    status: Mapped[str] = mapped_column(String(20), default="proposed")
+    status: Mapped[str] = mapped_column(String(20), default="planned")
 
 
 class DisciplineVersion(Base):
@@ -49,6 +49,29 @@ class DisciplineTransition(Base):
     status: Mapped[str] = mapped_column(String(20))
     actor_id: Mapped[UUID] = mapped_column(ForeignKey("users.id"))
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True))
+    key_id: Mapped[str] = mapped_column(String(100))
+    nonce: Mapped[bytes] = mapped_column(LargeBinary)
+    ciphertext: Mapped[bytes] = mapped_column(LargeBinary)
+
+
+class DisciplineDictionary(Base):
+    __tablename__ = "discipline_dictionary"
+    __table_args__ = (UniqueConstraint("relation_id", "kind", "name_digest"),)
+    id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)
+    relation_id: Mapped[UUID] = mapped_column(ForeignKey("authority_relations.id"))
+    kind: Mapped[str] = mapped_column(String(20))
+    name_digest: Mapped[str] = mapped_column(String(64))
+    key_id: Mapped[str] = mapped_column(String(100))
+    nonce: Mapped[bytes] = mapped_column(LargeBinary)
+    ciphertext: Mapped[bytes] = mapped_column(LargeBinary)
+
+
+class PunishmentTemplate(Base):
+    __tablename__ = "punishment_templates"
+    id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)
+    relation_id: Mapped[UUID] = mapped_column(ForeignKey("authority_relations.id"))
+    revision: Mapped[int] = mapped_column(default=1)
+    archived: Mapped[bool] = mapped_column(Boolean, default=False)
     key_id: Mapped[str] = mapped_column(String(100))
     nonce: Mapped[bytes] = mapped_column(LargeBinary)
     ciphertext: Mapped[bytes] = mapped_column(LargeBinary)

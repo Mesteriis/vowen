@@ -3,18 +3,20 @@ from collections.abc import Coroutine
 from typing import Any
 
 import typer
+from pydantic import TypeAdapter, ValidationError
 from sqlalchemy import select
 
 from vowen.cli.forms import forms_app
+from vowen.cli.references import references
 from vowen.cli.relations import relations
 from vowen.core.clock import Clock
 from vowen.core.config import Settings
-from vowen.core.crypto import init_keyring
 from vowen.core.database import check_schema, engine_for, sessions_for
 from vowen.core.errors import AppError
 from vowen.modules.auth.service import revoke_user_sessions
 from vowen.modules.identity.models import User
 from vowen.modules.identity.service import ProvisionUserCommand, create_user, set_user_active
+from vowen.modules.identity.shop_roles import ShopRole
 
 app = typer.Typer(pretty_exceptions_enable=False)
 app.add_typer(forms_app, name="forms")
@@ -23,9 +25,12 @@ instance = typer.Typer()
 app.add_typer(users, name="users")
 app.add_typer(instance, name="instance")
 app.add_typer(relations, name="relations")
+app.add_typer(references, name="references")
 
 
-async def execute_user(action: str, telegram_id: int = 0, display_name: str = "") -> None:
+async def execute_user(
+    action: str, telegram_id: int = 0, display_name: str = "", shop_role: ShopRole = "viewer"
+) -> None:
     engine = engine_for(Settings().database_url)
     try:
         if not await check_schema(engine):
@@ -34,12 +39,21 @@ async def execute_user(action: str, telegram_id: int = 0, display_name: str = ""
             if action == "create":
                 user = await create_user(
                     db,
-                    ProvisionUserCommand(telegram_id=telegram_id, display_name=display_name),
+                    ProvisionUserCommand(
+                        telegram_id=telegram_id, display_name=display_name, shop_role=shop_role
+                    ),
                     Clock().now(),
                 )
                 typer.echo(str(user.id))
             elif action in ("enable", "disable"):
                 await set_user_active(db, telegram_id, action == "enable", Clock().now())
+            elif action == "shop-role":
+                user = await db.scalar(
+                    select(User).where(User.telegram_id == telegram_id).with_for_update()
+                )
+                if user is None:
+                    raise AppError(404, "NOT_FOUND")
+                user.shop_role = shop_role
             elif action == "revoke-sessions":
                 user = await db.scalar(
                     select(User).where(User.telegram_id == telegram_id).with_for_update()
@@ -66,13 +80,22 @@ def run(coro: Coroutine[Any, Any, None]) -> None:
 
 @instance.command("init")
 def init() -> None:
-    init_keyring(Settings().data_keyring_file)
-    typer.echo("Keyring ready; existing keys preserved")
+    typer.echo("Payload encryption disabled; no data keyring is required for new records")
 
 
 @users.command("create")
 def create(telegram_id: int = typer.Option(...), display_name: str = typer.Option(...)) -> None:
     run(execute_user("create", telegram_id, display_name))
+
+
+@users.command("shop-role")
+def shop_role(telegram_id: int = typer.Option(...), role: str = typer.Option(...)) -> None:
+    adapter: TypeAdapter[ShopRole] = TypeAdapter(ShopRole)
+    try:
+        value = adapter.validate_python(role)
+    except ValidationError:
+        raise typer.BadParameter("Use dominant, switch, bottom or viewer") from None
+    run(execute_user("shop-role", telegram_id, shop_role=value))
 
 
 @users.command("disable")

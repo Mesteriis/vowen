@@ -1,0 +1,290 @@
+[
+  {
+    "uid": "8cbd10d4-b837-54ce-a695-f9658cba1549",
+    "name": "Рука",
+    "description": "Рука.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "hand",
+      "group": "Телесное воздействие",
+      "discipline_default": true
+    }
+  },
+  {
+    "uid": "a2cc6691-f01e-5089-9426-9de4abc935fe",
+    "name": "Стек",
+    "description": "Стек.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "crop",
+      "group": "Телесное воздействие",
+      "discipline_default": true
+    }
+  },
+  {
+    "uid": "5dbd11f3-1aad-5a0c-9ab2-91b211a03fc2",
+    "name": "Падл",
+    "description": "Падл.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "paddle",
+      "group": "Телесное воздействие",
+      "discipline_default": true
+    }
+  },
+  {
+    "uid": "0e82ef84-d568-57f1-805c-5af778c0f6b0",
+    "name": "Плеть",
+    "description": "Плеть.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "whip",
+      "group": "Телесное воздействие",
+      "discipline_default": true
+    }
+  },
+  {
+    "uid": "ab5f93b0-765b-51e7-97b7-1bdca690e114",
+    "name": "Флоггер",
+    "description": "Флоггер.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "flogger",
+      "group": "Телесное воздействие",
+      "discipline_default": true
+    }
+  },
+  {
+    "uid": "ac811f97-86f6-5049-92e5-8b4d066be3d3",
+    "name": "Трость",
+    "description": "Трость.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "cane",
+      "group": "Телесное воздействие",
+      "discipline_default": true
+    }
+  },
+  {
+    "uid": "aa101887-2340-5511-9c2f-43aa3341cef2",
+    "name": "Верёвка",
+    "description": "Верёвка.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "rope",
+      "group": "Средства фиксации",
+      "discipline_default": false
+    }
+  },
+  {
+    "uid": "4b5be8c6-f0f5-5b9c-b582-455e603ba1e0",
+    "name": "Манжеты",
+    "description": "Манжеты.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "cuffs",
+      "group": "Средства фиксации",
+      "discipline_default": false
+    }
+  },
+  {
+    "uid": "0b092f61-3c51-5638-9733-d03f97791969",
+    "name": "Ошейник",
+    "description": "Ошейник.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "collar",
+      "group": "Аксессуары динамики",
+      "discipline_default": false
+    }
+  },
+  {
+    "uid": "ea5bf105-f3ff-5195-a117-b74454fad6b1",
+    "name": "Поводок",
+    "description": "Поводок.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "leash",
+      "group": "Аксессуары динамики",
+      "discipline_default": false
+    }
+  },
+  {
+    "uid": "8c5711d0-d6cd-5f7c-a8d5-ebb316151971",
+    "name": "Повязка на глаза",
+    "description": "Повязка на глаза.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "blindfold",
+      "group": "Сенсорика",
+      "discipline_default": false
+    }
+  },
+  {
+    "uid": "90183409-1be3-5750-b6bc-e2207950dcec",
+    "name": "Перо",
+    "description": "Перо.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "feather",
+      "group": "Сенсорика",
+      "discipline_default": false
+    }
+  },
+  {
+    "uid": "8173644f-9d03-5827-bded-5621722bb3ef",
+    "name": "Мягкая кисть",
+    "description": "Мягкая кисть.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "brush",
+      "group": "Сенсорика",
+      "discipline_default": false
+    }
+  },
+  {
+    "uid": "672e4e78-5e8a-5807-8385-6334186f94e2",
+    "name": "Колесо Вартенберга",
+    "description": "Колесо Вартенберга.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "pinwheel",
+      "group": "Сенсорика",
+      "discipline_default": false
+    }
+  },
+  {
+    "uid": "9f7c58eb-4a2e-51b6-9a2d-fb0dadcf437c",
+    "name": "Зажимы",
+    "description": "Зажимы.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "clamps",
+      "group": "Сенсорика",
+      "discipline_default": false
+    }
+  },
+  {
+    "uid": "250da7c5-0a62-55bc-83b1-5077be1c0025",
+    "name": "Вибратор",
+    "description": "Вибратор.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "vibrator",
+      "group": "Секс-игрушки",
+      "discipline_default": false
+    }
+  },
+  {
+    "uid": "936232f6-5a49-59e3-9f26-a994b7a98ac2",
+    "name": "Фаллоимитатор",
+    "description": "Фаллоимитатор.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "dildo",
+      "group": "Секс-игрушки",
+      "discipline_default": false
+    }
+  },
+  {
+    "uid": "d2181b11-44e2-5fef-a601-f76f752ec730",
+    "name": "Страпон",
+    "description": "Страпон.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "strap-on",
+      "group": "Секс-игрушки",
+      "discipline_default": false
+    }
+  },
+  {
+    "uid": "959ac8bb-620f-5823-b522-474fead546d1",
+    "name": "Анальная пробка",
+    "description": "Анальная пробка.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "anal-plug",
+      "group": "Секс-игрушки",
+      "discipline_default": false
+    }
+  },
+  {
+    "uid": "61e78434-d0a0-537a-bd5b-3f5efd5ad165",
+    "name": "Анальные бусы",
+    "description": "Анальные бусы.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "anal-beads",
+      "group": "Секс-игрушки",
+      "discipline_default": false
+    }
+  },
+  {
+    "uid": "175218fa-2c01-5008-814e-3cffd9504aba",
+    "name": "Дистанционный контроллер",
+    "description": "Дистанционный контроллер.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "remote-controller",
+      "group": "Секс-игрушки",
+      "discipline_default": false
+    }
+  },
+  {
+    "uid": "50ec3b62-058a-5ae4-8d41-b239497b1790",
+    "name": "Массажное масло",
+    "description": "Массажное масло.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "massage-oil",
+      "group": "Массаж",
+      "discipline_default": false
+    }
+  },
+  {
+    "uid": "4ec8f933-2359-5a63-83ad-3dc735304d7c",
+    "name": "Массажный мяч",
+    "description": "Массажный мяч.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "massage-ball",
+      "group": "Массаж",
+      "discipline_default": false
+    }
+  },
+  {
+    "uid": "bb42b6ca-9c69-5b22-b34a-87042b1b0b63",
+    "name": "Массажный ролик",
+    "description": "Массажный ролик.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "massage-roller",
+      "group": "Массаж",
+      "discipline_default": false
+    }
+  }
+]

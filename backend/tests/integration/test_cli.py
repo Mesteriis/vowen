@@ -15,9 +15,9 @@ def test_cli_provision_duplicate_disable_and_init(tmp_path, monkeypatch):
     monkeypatch.setenv("DATA_KEYRING_FILE", str(tmp_path / "keyring.json"))
     runner = CliRunner()
     assert runner.invoke(app, ["instance", "init"]).exit_code == 0
-    original = (tmp_path / "keyring.json").read_bytes()
+    assert not (tmp_path / "keyring.json").exists()
     assert runner.invoke(app, ["instance", "init"]).exit_code == 0
-    assert (tmp_path / "keyring.json").read_bytes() == original
+    assert not (tmp_path / "keyring.json").exists()
     import asyncio
 
     from sqlalchemy import text

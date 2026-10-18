@@ -1,3 +1,4 @@
+from typing import cast
 from uuid import UUID
 
 from sqlalchemy import select
@@ -7,6 +8,7 @@ from vowen.core.errors import AppError
 from vowen.modules.auth.schemas import MemberView
 from vowen.modules.identity.models import User, UserPreferences
 from vowen.modules.identity.schemas import ProfilePatch
+from vowen.modules.identity.shop_roles import ShopRole
 
 
 async def profile_view(db: AsyncSession, user: User) -> MemberView:
@@ -15,6 +17,8 @@ async def profile_view(db: AsyncSession, user: User) -> MemberView:
         raise AppError(503, "UNAVAILABLE")
     return MemberView(
         id=user.id,
+        is_admin=user.is_admin,
+        shop_role=cast(ShopRole, user.shop_role),
         display_name=user.display_name,
         paused=user.paused,
         language=preferences.language,

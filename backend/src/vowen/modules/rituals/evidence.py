@@ -182,7 +182,7 @@ async def upload(
     ):
         raise AppError(413, "EVIDENCE_QUOTA")
     eid = uuid4()
-    encrypted = cipher_for(request).seal_payload("ritual_evidence", eid, 1, data)
+    stored = cipher_for(request).seal_payload("ritual_evidence", eid, 1, data)
     e = RitualEvidence(
         id=eid,
         occurrence_id=oid,
@@ -194,9 +194,9 @@ async def upload(
         size=len(data),
         created_at=now,
         expires_at=now + timedelta(hours=24),
-        key_id=encrypted.key_id,
-        nonce=encrypted.nonce,
-        ciphertext=encrypted.ciphertext,
+        key_id=stored.key_id,
+        nonce=stored.nonce,
+        ciphertext=stored.ciphertext,
     )
     db.add(e)
     return view(e)

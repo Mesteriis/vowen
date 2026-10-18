@@ -18,8 +18,9 @@ python3 scripts/check_deployment.py https://YOUR_DOMAIN
 
 Provision `.env` with a strong independent `POSTGRES_PASSWORD`,
 `PUBLIC_BASE_URL=https://YOUR_DOMAIN`, and the verified `TELEGRAM_BOT_USERNAME`.
-Provision `secrets/bot-token` and an independent `secrets/keyring.json` using
-`vowen.core.crypto.init_keyring`. Files must be 0600 and readable by the Compose
+Provision `secrets/bot-token`. Fresh databases need no data keyring; when upgrading
+an encrypted database, mount its original keyring for migration 0035 (see
+[conversion](operations/plain-payloads.md)). Secret files must be 0600 and readable by the Compose
 application UID (default 1000); the secrets directory must be 0700. Never print
 resolved Compose configuration, credentials or Telegram request URLs. Keep
 only one poller per bot token; the local Telegram profile must remain stopped.

@@ -124,6 +124,7 @@ class RitualAssign(BaseModel):
 
 
 class RitualAssignmentView(BaseModel):
+    paused_by_id: UUID | None = None
     reward_policy_id: UUID | None = None
     reward_titles: dict[str, str] = Field(default_factory=dict)
     reward_version_ids: list[UUID] = Field(default_factory=list)

@@ -1,0 +1,5982 @@
+[
+  {
+    "uid": "91d05d85-6a61-584d-b054-251cc62a3400",
+    "name": "Africa/Abidjan",
+    "description": "Часовой пояс IANA: Africa/Abidjan.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Abidjan",
+      "iana": "Africa/Abidjan"
+    }
+  },
+  {
+    "uid": "ad5c1de4-d3ac-53da-8563-5d9eacd51f66",
+    "name": "Africa/Accra",
+    "description": "Часовой пояс IANA: Africa/Accra.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Accra",
+      "iana": "Africa/Accra"
+    }
+  },
+  {
+    "uid": "4150a819-e598-5c1b-be84-069b96685ec4",
+    "name": "Africa/Addis_Ababa",
+    "description": "Часовой пояс IANA: Africa/Addis_Ababa.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Addis_Ababa",
+      "iana": "Africa/Addis_Ababa"
+    }
+  },
+  {
+    "uid": "292be24f-2241-5786-aaf2-ce447eec7ef2",
+    "name": "Africa/Algiers",
+    "description": "Часовой пояс IANA: Africa/Algiers.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Algiers",
+      "iana": "Africa/Algiers"
+    }
+  },
+  {
+    "uid": "81aba61c-3c62-5c05-b93d-ffcfa2ea0c9a",
+    "name": "Africa/Asmara",
+    "description": "Часовой пояс IANA: Africa/Asmara.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Asmara",
+      "iana": "Africa/Asmara"
+    }
+  },
+  {
+    "uid": "375eac15-2e6c-5876-b16e-3e4347151419",
+    "name": "Africa/Asmera",
+    "description": "Часовой пояс IANA: Africa/Asmera.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Asmera",
+      "iana": "Africa/Asmera"
+    }
+  },
+  {
+    "uid": "6b78cb76-5d37-5198-af5a-63fb79cc525c",
+    "name": "Africa/Bamako",
+    "description": "Часовой пояс IANA: Africa/Bamako.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Bamako",
+      "iana": "Africa/Bamako"
+    }
+  },
+  {
+    "uid": "a941079e-6a63-558d-b0ef-4b6d90228898",
+    "name": "Africa/Bangui",
+    "description": "Часовой пояс IANA: Africa/Bangui.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Bangui",
+      "iana": "Africa/Bangui"
+    }
+  },
+  {
+    "uid": "73f45374-919f-52bb-83f3-6e6905ec84ed",
+    "name": "Africa/Banjul",
+    "description": "Часовой пояс IANA: Africa/Banjul.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Banjul",
+      "iana": "Africa/Banjul"
+    }
+  },
+  {
+    "uid": "c6ad15e2-4e9f-5b47-bed5-6fb6d93438f3",
+    "name": "Africa/Bissau",
+    "description": "Часовой пояс IANA: Africa/Bissau.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Bissau",
+      "iana": "Africa/Bissau"
+    }
+  },
+  {
+    "uid": "97145be9-a951-5d1d-bcf9-658166a58e48",
+    "name": "Africa/Blantyre",
+    "description": "Часовой пояс IANA: Africa/Blantyre.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Blantyre",
+      "iana": "Africa/Blantyre"
+    }
+  },
+  {
+    "uid": "87e79ecf-3ac0-5e59-a73b-4a94269a7cb5",
+    "name": "Africa/Brazzaville",
+    "description": "Часовой пояс IANA: Africa/Brazzaville.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Brazzaville",
+      "iana": "Africa/Brazzaville"
+    }
+  },
+  {
+    "uid": "250f742e-95da-52a0-afab-fc3116b06b31",
+    "name": "Africa/Bujumbura",
+    "description": "Часовой пояс IANA: Africa/Bujumbura.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Bujumbura",
+      "iana": "Africa/Bujumbura"
+    }
+  },
+  {
+    "uid": "a7a993f6-b13d-57f9-8bb9-2531c7d52dc8",
+    "name": "Africa/Cairo",
+    "description": "Часовой пояс IANA: Africa/Cairo.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Cairo",
+      "iana": "Africa/Cairo"
+    }
+  },
+  {
+    "uid": "5aef0dfa-d909-55f2-919a-8a28506b6cdb",
+    "name": "Africa/Casablanca",
+    "description": "Часовой пояс IANA: Africa/Casablanca.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Casablanca",
+      "iana": "Africa/Casablanca"
+    }
+  },
+  {
+    "uid": "5d6c612b-3184-5e06-a0cd-a8ef5ffa3788",
+    "name": "Africa/Ceuta",
+    "description": "Часовой пояс IANA: Africa/Ceuta.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Ceuta",
+      "iana": "Africa/Ceuta"
+    }
+  },
+  {
+    "uid": "cc91653d-7402-5a36-b0e3-f2195c244f38",
+    "name": "Africa/Conakry",
+    "description": "Часовой пояс IANA: Africa/Conakry.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Conakry",
+      "iana": "Africa/Conakry"
+    }
+  },
+  {
+    "uid": "0fd6e463-026c-5e6b-bfe3-6a3ff36ba1f1",
+    "name": "Africa/Dakar",
+    "description": "Часовой пояс IANA: Africa/Dakar.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Dakar",
+      "iana": "Africa/Dakar"
+    }
+  },
+  {
+    "uid": "dcae83e9-9add-5bb4-af3e-89affa298c90",
+    "name": "Africa/Dar_es_Salaam",
+    "description": "Часовой пояс IANA: Africa/Dar_es_Salaam.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Dar_es_Salaam",
+      "iana": "Africa/Dar_es_Salaam"
+    }
+  },
+  {
+    "uid": "1513e6e5-2e93-53da-ad50-445e896719d0",
+    "name": "Africa/Djibouti",
+    "description": "Часовой пояс IANA: Africa/Djibouti.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Djibouti",
+      "iana": "Africa/Djibouti"
+    }
+  },
+  {
+    "uid": "7f2041e2-971e-53d2-a5c4-19ac1b3bf61f",
+    "name": "Africa/Douala",
+    "description": "Часовой пояс IANA: Africa/Douala.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Douala",
+      "iana": "Africa/Douala"
+    }
+  },
+  {
+    "uid": "6ee4083d-d228-567e-bea2-02b9ee296833",
+    "name": "Africa/El_Aaiun",
+    "description": "Часовой пояс IANA: Africa/El_Aaiun.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/El_Aaiun",
+      "iana": "Africa/El_Aaiun"
+    }
+  },
+  {
+    "uid": "408b3e31-b9f1-5cc8-9d78-9d23a475afc7",
+    "name": "Africa/Freetown",
+    "description": "Часовой пояс IANA: Africa/Freetown.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Freetown",
+      "iana": "Africa/Freetown"
+    }
+  },
+  {
+    "uid": "fc060b63-9c72-5611-97c5-63b83a0cfcba",
+    "name": "Africa/Gaborone",
+    "description": "Часовой пояс IANA: Africa/Gaborone.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Gaborone",
+      "iana": "Africa/Gaborone"
+    }
+  },
+  {
+    "uid": "9f78c018-b269-5923-999a-366cfd76d887",
+    "name": "Africa/Harare",
+    "description": "Часовой пояс IANA: Africa/Harare.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Harare",
+      "iana": "Africa/Harare"
+    }
+  },
+  {
+    "uid": "a1959c4b-c79a-574b-b012-fc642fe19551",
+    "name": "Africa/Johannesburg",
+    "description": "Часовой пояс IANA: Africa/Johannesburg.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Johannesburg",
+      "iana": "Africa/Johannesburg"
+    }
+  },
+  {
+    "uid": "8287f73b-3269-52a0-982e-002d3e810607",
+    "name": "Africa/Juba",
+    "description": "Часовой пояс IANA: Africa/Juba.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Juba",
+      "iana": "Africa/Juba"
+    }
+  },
+  {
+    "uid": "b55d27e6-ff00-5f16-8b5f-1f4b2ac3e38a",
+    "name": "Africa/Kampala",
+    "description": "Часовой пояс IANA: Africa/Kampala.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Kampala",
+      "iana": "Africa/Kampala"
+    }
+  },
+  {
+    "uid": "3b95855e-b7c6-50a6-9b73-b4cfbba4f81b",
+    "name": "Africa/Khartoum",
+    "description": "Часовой пояс IANA: Africa/Khartoum.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Khartoum",
+      "iana": "Africa/Khartoum"
+    }
+  },
+  {
+    "uid": "ca6631c8-b787-5ab2-bec2-e0f21d096f47",
+    "name": "Africa/Kigali",
+    "description": "Часовой пояс IANA: Africa/Kigali.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Kigali",
+      "iana": "Africa/Kigali"
+    }
+  },
+  {
+    "uid": "a5037469-69b2-55a8-ad30-a65bc862eaa7",
+    "name": "Africa/Kinshasa",
+    "description": "Часовой пояс IANA: Africa/Kinshasa.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Kinshasa",
+      "iana": "Africa/Kinshasa"
+    }
+  },
+  {
+    "uid": "ecc1a31d-1637-57ef-af3f-0343f39c6ab8",
+    "name": "Africa/Lagos",
+    "description": "Часовой пояс IANA: Africa/Lagos.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Lagos",
+      "iana": "Africa/Lagos"
+    }
+  },
+  {
+    "uid": "70e04f11-c084-5e6f-a918-237169c5696c",
+    "name": "Africa/Libreville",
+    "description": "Часовой пояс IANA: Africa/Libreville.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Libreville",
+      "iana": "Africa/Libreville"
+    }
+  },
+  {
+    "uid": "0edec2b8-2dbc-5dde-af6e-8f3f543eb644",
+    "name": "Africa/Lome",
+    "description": "Часовой пояс IANA: Africa/Lome.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Lome",
+      "iana": "Africa/Lome"
+    }
+  },
+  {
+    "uid": "1c4080e8-98b7-5277-9ab1-1fe4a0a7338d",
+    "name": "Africa/Luanda",
+    "description": "Часовой пояс IANA: Africa/Luanda.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Luanda",
+      "iana": "Africa/Luanda"
+    }
+  },
+  {
+    "uid": "7c4e03a6-34ed-55b5-a2ac-642ad53dd152",
+    "name": "Africa/Lubumbashi",
+    "description": "Часовой пояс IANA: Africa/Lubumbashi.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Lubumbashi",
+      "iana": "Africa/Lubumbashi"
+    }
+  },
+  {
+    "uid": "66b42770-9d15-5a3c-9319-4b167d986d98",
+    "name": "Africa/Lusaka",
+    "description": "Часовой пояс IANA: Africa/Lusaka.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Lusaka",
+      "iana": "Africa/Lusaka"
+    }
+  },
+  {
+    "uid": "6476ab30-2535-5845-bd8e-393fe4400433",
+    "name": "Africa/Malabo",
+    "description": "Часовой пояс IANA: Africa/Malabo.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Malabo",
+      "iana": "Africa/Malabo"
+    }
+  },
+  {
+    "uid": "742caf3d-0d06-58e9-a1db-ec958b0a4373",
+    "name": "Africa/Maputo",
+    "description": "Часовой пояс IANA: Africa/Maputo.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Maputo",
+      "iana": "Africa/Maputo"
+    }
+  },
+  {
+    "uid": "4354df98-be34-595c-8552-1a5c4932bc53",
+    "name": "Africa/Maseru",
+    "description": "Часовой пояс IANA: Africa/Maseru.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Maseru",
+      "iana": "Africa/Maseru"
+    }
+  },
+  {
+    "uid": "00c468f3-cd72-5e9f-88f2-c140a739ea42",
+    "name": "Africa/Mbabane",
+    "description": "Часовой пояс IANA: Africa/Mbabane.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Mbabane",
+      "iana": "Africa/Mbabane"
+    }
+  },
+  {
+    "uid": "76919754-c7a4-5b53-acb7-875930af3ee4",
+    "name": "Africa/Mogadishu",
+    "description": "Часовой пояс IANA: Africa/Mogadishu.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Mogadishu",
+      "iana": "Africa/Mogadishu"
+    }
+  },
+  {
+    "uid": "741eb9a8-2040-59b2-ae48-7ef6b364774a",
+    "name": "Africa/Monrovia",
+    "description": "Часовой пояс IANA: Africa/Monrovia.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Monrovia",
+      "iana": "Africa/Monrovia"
+    }
+  },
+  {
+    "uid": "d994acc3-7594-5c8f-9c24-0c84cbf917a5",
+    "name": "Africa/Nairobi",
+    "description": "Часовой пояс IANA: Africa/Nairobi.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Nairobi",
+      "iana": "Africa/Nairobi"
+    }
+  },
+  {
+    "uid": "6e115c42-6349-53a7-9fa8-83626d937d0d",
+    "name": "Africa/Ndjamena",
+    "description": "Часовой пояс IANA: Africa/Ndjamena.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Ndjamena",
+      "iana": "Africa/Ndjamena"
+    }
+  },
+  {
+    "uid": "325523d1-ba49-5250-a9db-9c40e4aa49be",
+    "name": "Africa/Niamey",
+    "description": "Часовой пояс IANA: Africa/Niamey.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Niamey",
+      "iana": "Africa/Niamey"
+    }
+  },
+  {
+    "uid": "7ee81400-c9f8-5f1b-b6aa-c07d3da6c079",
+    "name": "Africa/Nouakchott",
+    "description": "Часовой пояс IANA: Africa/Nouakchott.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Nouakchott",
+      "iana": "Africa/Nouakchott"
+    }
+  },
+  {
+    "uid": "6f55fa8d-3e44-5f79-a4b2-2519599bd722",
+    "name": "Africa/Ouagadougou",
+    "description": "Часовой пояс IANA: Africa/Ouagadougou.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Ouagadougou",
+      "iana": "Africa/Ouagadougou"
+    }
+  },
+  {
+    "uid": "21fe32dc-651d-503b-8c90-b55cd6a6c133",
+    "name": "Africa/Porto-Novo",
+    "description": "Часовой пояс IANA: Africa/Porto-Novo.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Porto-Novo",
+      "iana": "Africa/Porto-Novo"
+    }
+  },
+  {
+    "uid": "a3b1cf54-9247-5004-bcd7-48827fad5f94",
+    "name": "Africa/Sao_Tome",
+    "description": "Часовой пояс IANA: Africa/Sao_Tome.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Sao_Tome",
+      "iana": "Africa/Sao_Tome"
+    }
+  },
+  {
+    "uid": "4fee075d-32aa-5d47-a0c0-192d6f02a20e",
+    "name": "Africa/Timbuktu",
+    "description": "Часовой пояс IANA: Africa/Timbuktu.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Timbuktu",
+      "iana": "Africa/Timbuktu"
+    }
+  },
+  {
+    "uid": "ec99fe85-ddfd-5655-ba96-a910f88dbfdf",
+    "name": "Africa/Tripoli",
+    "description": "Часовой пояс IANA: Africa/Tripoli.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Tripoli",
+      "iana": "Africa/Tripoli"
+    }
+  },
+  {
+    "uid": "dee587b9-336b-5539-a323-cd1dbb1f8cd3",
+    "name": "Africa/Tunis",
+    "description": "Часовой пояс IANA: Africa/Tunis.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Tunis",
+      "iana": "Africa/Tunis"
+    }
+  },
+  {
+    "uid": "9d3bee43-6b9f-52b9-89a6-de4a8b41cdea",
+    "name": "Africa/Windhoek",
+    "description": "Часовой пояс IANA: Africa/Windhoek.",
+    "icon": null,
+    "extra": {
+      "code": "Africa/Windhoek",
+      "iana": "Africa/Windhoek"
+    }
+  },
+  {
+    "uid": "30077343-5610-542b-85ee-54782745b335",
+    "name": "America/Adak",
+    "description": "Часовой пояс IANA: America/Adak.",
+    "icon": null,
+    "extra": {
+      "code": "America/Adak",
+      "iana": "America/Adak"
+    }
+  },
+  {
+    "uid": "d5a5077a-a38c-594e-98c0-371f8ba00ad6",
+    "name": "America/Anchorage",
+    "description": "Часовой пояс IANA: America/Anchorage.",
+    "icon": null,
+    "extra": {
+      "code": "America/Anchorage",
+      "iana": "America/Anchorage"
+    }
+  },
+  {
+    "uid": "1346bbb4-837f-596a-a616-5425b79ee441",
+    "name": "America/Anguilla",
+    "description": "Часовой пояс IANA: America/Anguilla.",
+    "icon": null,
+    "extra": {
+      "code": "America/Anguilla",
+      "iana": "America/Anguilla"
+    }
+  },
+  {
+    "uid": "0031858d-3a38-562e-bf5a-8fe84f1e9c7a",
+    "name": "America/Antigua",
+    "description": "Часовой пояс IANA: America/Antigua.",
+    "icon": null,
+    "extra": {
+      "code": "America/Antigua",
+      "iana": "America/Antigua"
+    }
+  },
+  {
+    "uid": "58bd1b02-b82c-5b53-989b-a8094dd99099",
+    "name": "America/Araguaina",
+    "description": "Часовой пояс IANA: America/Araguaina.",
+    "icon": null,
+    "extra": {
+      "code": "America/Araguaina",
+      "iana": "America/Araguaina"
+    }
+  },
+  {
+    "uid": "82bd724f-b8e3-5d07-a30a-0bdb91ef341d",
+    "name": "America/Argentina/Buenos_Aires",
+    "description": "Часовой пояс IANA: America/Argentina/Buenos_Aires.",
+    "icon": null,
+    "extra": {
+      "code": "America/Argentina/Buenos_Aires",
+      "iana": "America/Argentina/Buenos_Aires"
+    }
+  },
+  {
+    "uid": "5e2f9bd0-bdd8-50aa-99c3-a99e3c6ffa1f",
+    "name": "America/Argentina/Catamarca",
+    "description": "Часовой пояс IANA: America/Argentina/Catamarca.",
+    "icon": null,
+    "extra": {
+      "code": "America/Argentina/Catamarca",
+      "iana": "America/Argentina/Catamarca"
+    }
+  },
+  {
+    "uid": "3aed7d12-777f-58ac-982a-309cffa5ede3",
+    "name": "America/Argentina/ComodRivadavia",
+    "description": "Часовой пояс IANA: America/Argentina/ComodRivadavia.",
+    "icon": null,
+    "extra": {
+      "code": "America/Argentina/ComodRivadavia",
+      "iana": "America/Argentina/ComodRivadavia"
+    }
+  },
+  {
+    "uid": "7650d213-2930-50ca-9c0a-6696ce1c3f46",
+    "name": "America/Argentina/Cordoba",
+    "description": "Часовой пояс IANA: America/Argentina/Cordoba.",
+    "icon": null,
+    "extra": {
+      "code": "America/Argentina/Cordoba",
+      "iana": "America/Argentina/Cordoba"
+    }
+  },
+  {
+    "uid": "e58adcdc-3c73-5f6e-990d-3b049c78fd23",
+    "name": "America/Argentina/Jujuy",
+    "description": "Часовой пояс IANA: America/Argentina/Jujuy.",
+    "icon": null,
+    "extra": {
+      "code": "America/Argentina/Jujuy",
+      "iana": "America/Argentina/Jujuy"
+    }
+  },
+  {
+    "uid": "ccf2d674-6626-539f-ad0f-f61ab14bff85",
+    "name": "America/Argentina/La_Rioja",
+    "description": "Часовой пояс IANA: America/Argentina/La_Rioja.",
+    "icon": null,
+    "extra": {
+      "code": "America/Argentina/La_Rioja",
+      "iana": "America/Argentina/La_Rioja"
+    }
+  },
+  {
+    "uid": "2d3093c2-7e10-5b33-ab0e-014689fbb31a",
+    "name": "America/Argentina/Mendoza",
+    "description": "Часовой пояс IANA: America/Argentina/Mendoza.",
+    "icon": null,
+    "extra": {
+      "code": "America/Argentina/Mendoza",
+      "iana": "America/Argentina/Mendoza"
+    }
+  },
+  {
+    "uid": "62c54021-27b5-58c0-8935-e5840af92b12",
+    "name": "America/Argentina/Rio_Gallegos",
+    "description": "Часовой пояс IANA: America/Argentina/Rio_Gallegos.",
+    "icon": null,
+    "extra": {
+      "code": "America/Argentina/Rio_Gallegos",
+      "iana": "America/Argentina/Rio_Gallegos"
+    }
+  },
+  {
+    "uid": "ecabc496-0426-5fc8-8829-cf9f6e970177",
+    "name": "America/Argentina/Salta",
+    "description": "Часовой пояс IANA: America/Argentina/Salta.",
+    "icon": null,
+    "extra": {
+      "code": "America/Argentina/Salta",
+      "iana": "America/Argentina/Salta"
+    }
+  },
+  {
+    "uid": "c9652e18-81df-586f-bfa7-27e7affa7ea0",
+    "name": "America/Argentina/San_Juan",
+    "description": "Часовой пояс IANA: America/Argentina/San_Juan.",
+    "icon": null,
+    "extra": {
+      "code": "America/Argentina/San_Juan",
+      "iana": "America/Argentina/San_Juan"
+    }
+  },
+  {
+    "uid": "1dba321b-3c74-5f19-969d-c950afcec58d",
+    "name": "America/Argentina/San_Luis",
+    "description": "Часовой пояс IANA: America/Argentina/San_Luis.",
+    "icon": null,
+    "extra": {
+      "code": "America/Argentina/San_Luis",
+      "iana": "America/Argentina/San_Luis"
+    }
+  },
+  {
+    "uid": "ad1e1eaf-48a3-569a-8795-bf3fecc825cd",
+    "name": "America/Argentina/Tucuman",
+    "description": "Часовой пояс IANA: America/Argentina/Tucuman.",
+    "icon": null,
+    "extra": {
+      "code": "America/Argentina/Tucuman",
+      "iana": "America/Argentina/Tucuman"
+    }
+  },
+  {
+    "uid": "d225bf33-a68d-5802-9c40-4d3ac25fc3db",
+    "name": "America/Argentina/Ushuaia",
+    "description": "Часовой пояс IANA: America/Argentina/Ushuaia.",
+    "icon": null,
+    "extra": {
+      "code": "America/Argentina/Ushuaia",
+      "iana": "America/Argentina/Ushuaia"
+    }
+  },
+  {
+    "uid": "ca69d603-c929-52e9-8b69-f281c7936d2d",
+    "name": "America/Aruba",
+    "description": "Часовой пояс IANA: America/Aruba.",
+    "icon": null,
+    "extra": {
+      "code": "America/Aruba",
+      "iana": "America/Aruba"
+    }
+  },
+  {
+    "uid": "f317cec4-4add-5742-93c3-8b2632ab7df2",
+    "name": "America/Asuncion",
+    "description": "Часовой пояс IANA: America/Asuncion.",
+    "icon": null,
+    "extra": {
+      "code": "America/Asuncion",
+      "iana": "America/Asuncion"
+    }
+  },
+  {
+    "uid": "9c029f15-9f69-57de-a2ff-d30d89804be2",
+    "name": "America/Atikokan",
+    "description": "Часовой пояс IANA: America/Atikokan.",
+    "icon": null,
+    "extra": {
+      "code": "America/Atikokan",
+      "iana": "America/Atikokan"
+    }
+  },
+  {
+    "uid": "08dfc737-b81c-536f-aceb-734017c6e74f",
+    "name": "America/Atka",
+    "description": "Часовой пояс IANA: America/Atka.",
+    "icon": null,
+    "extra": {
+      "code": "America/Atka",
+      "iana": "America/Atka"
+    }
+  },
+  {
+    "uid": "b7ddf16d-b89f-57d8-bd92-a2fa16c01c55",
+    "name": "America/Bahia",
+    "description": "Часовой пояс IANA: America/Bahia.",
+    "icon": null,
+    "extra": {
+      "code": "America/Bahia",
+      "iana": "America/Bahia"
+    }
+  },
+  {
+    "uid": "9d23a23d-4763-511e-ad59-f9574d64e0e3",
+    "name": "America/Bahia_Banderas",
+    "description": "Часовой пояс IANA: America/Bahia_Banderas.",
+    "icon": null,
+    "extra": {
+      "code": "America/Bahia_Banderas",
+      "iana": "America/Bahia_Banderas"
+    }
+  },
+  {
+    "uid": "ac43b1aa-8e90-5672-a1b9-7db0ac5ebaa0",
+    "name": "America/Barbados",
+    "description": "Часовой пояс IANA: America/Barbados.",
+    "icon": null,
+    "extra": {
+      "code": "America/Barbados",
+      "iana": "America/Barbados"
+    }
+  },
+  {
+    "uid": "98b83c31-a199-5c2b-8090-d7c03ce25a06",
+    "name": "America/Belem",
+    "description": "Часовой пояс IANA: America/Belem.",
+    "icon": null,
+    "extra": {
+      "code": "America/Belem",
+      "iana": "America/Belem"
+    }
+  },
+  {
+    "uid": "177a4e8f-98ed-5997-9225-e151bfcef13c",
+    "name": "America/Belize",
+    "description": "Часовой пояс IANA: America/Belize.",
+    "icon": null,
+    "extra": {
+      "code": "America/Belize",
+      "iana": "America/Belize"
+    }
+  },
+  {
+    "uid": "a7d2bec0-5bb6-58b8-8d9e-8de9d280fb0c",
+    "name": "America/Blanc-Sablon",
+    "description": "Часовой пояс IANA: America/Blanc-Sablon.",
+    "icon": null,
+    "extra": {
+      "code": "America/Blanc-Sablon",
+      "iana": "America/Blanc-Sablon"
+    }
+  },
+  {
+    "uid": "c752c33f-f4b4-588e-a026-a1bdd7444dff",
+    "name": "America/Boa_Vista",
+    "description": "Часовой пояс IANA: America/Boa_Vista.",
+    "icon": null,
+    "extra": {
+      "code": "America/Boa_Vista",
+      "iana": "America/Boa_Vista"
+    }
+  },
+  {
+    "uid": "89ce1519-6525-5f0e-ae4d-3e950c3ef047",
+    "name": "America/Bogota",
+    "description": "Часовой пояс IANA: America/Bogota.",
+    "icon": null,
+    "extra": {
+      "code": "America/Bogota",
+      "iana": "America/Bogota"
+    }
+  },
+  {
+    "uid": "524743ec-7931-5491-8ca6-501ced52064f",
+    "name": "America/Boise",
+    "description": "Часовой пояс IANA: America/Boise.",
+    "icon": null,
+    "extra": {
+      "code": "America/Boise",
+      "iana": "America/Boise"
+    }
+  },
+  {
+    "uid": "d25610ec-885f-56fb-866d-dd1ab6309015",
+    "name": "America/Buenos_Aires",
+    "description": "Часовой пояс IANA: America/Buenos_Aires.",
+    "icon": null,
+    "extra": {
+      "code": "America/Buenos_Aires",
+      "iana": "America/Buenos_Aires"
+    }
+  },
+  {
+    "uid": "a4c25965-adf4-5e60-8b0b-9f151fd190d9",
+    "name": "America/Cambridge_Bay",
+    "description": "Часовой пояс IANA: America/Cambridge_Bay.",
+    "icon": null,
+    "extra": {
+      "code": "America/Cambridge_Bay",
+      "iana": "America/Cambridge_Bay"
+    }
+  },
+  {
+    "uid": "dc0492b8-0bd8-549f-abc9-0ed5fc6e2f7d",
+    "name": "America/Campo_Grande",
+    "description": "Часовой пояс IANA: America/Campo_Grande.",
+    "icon": null,
+    "extra": {
+      "code": "America/Campo_Grande",
+      "iana": "America/Campo_Grande"
+    }
+  },
+  {
+    "uid": "76e96c43-096a-5203-9c9b-e11824e0708a",
+    "name": "America/Cancun",
+    "description": "Часовой пояс IANA: America/Cancun.",
+    "icon": null,
+    "extra": {
+      "code": "America/Cancun",
+      "iana": "America/Cancun"
+    }
+  },
+  {
+    "uid": "df1db31d-43f8-526d-8de5-d9bcd1967e59",
+    "name": "America/Caracas",
+    "description": "Часовой пояс IANA: America/Caracas.",
+    "icon": null,
+    "extra": {
+      "code": "America/Caracas",
+      "iana": "America/Caracas"
+    }
+  },
+  {
+    "uid": "3a600cde-6f9d-5978-a2b1-2e2b6f2e286c",
+    "name": "America/Catamarca",
+    "description": "Часовой пояс IANA: America/Catamarca.",
+    "icon": null,
+    "extra": {
+      "code": "America/Catamarca",
+      "iana": "America/Catamarca"
+    }
+  },
+  {
+    "uid": "e6f7f5a1-4734-50dc-8eb1-34dae025a411",
+    "name": "America/Cayenne",
+    "description": "Часовой пояс IANA: America/Cayenne.",
+    "icon": null,
+    "extra": {
+      "code": "America/Cayenne",
+      "iana": "America/Cayenne"
+    }
+  },
+  {
+    "uid": "9bfd485b-4091-538a-988c-47e27ac21eb2",
+    "name": "America/Cayman",
+    "description": "Часовой пояс IANA: America/Cayman.",
+    "icon": null,
+    "extra": {
+      "code": "America/Cayman",
+      "iana": "America/Cayman"
+    }
+  },
+  {
+    "uid": "353c7181-0929-5919-b8fa-99c4bedd4b4e",
+    "name": "America/Chicago",
+    "description": "Часовой пояс IANA: America/Chicago.",
+    "icon": null,
+    "extra": {
+      "code": "America/Chicago",
+      "iana": "America/Chicago"
+    }
+  },
+  {
+    "uid": "ab89f27b-6b52-58b1-9bca-79675c6e0f01",
+    "name": "America/Chihuahua",
+    "description": "Часовой пояс IANA: America/Chihuahua.",
+    "icon": null,
+    "extra": {
+      "code": "America/Chihuahua",
+      "iana": "America/Chihuahua"
+    }
+  },
+  {
+    "uid": "b35733c3-bfb9-53a9-87b5-cc9bb3a5c791",
+    "name": "America/Ciudad_Juarez",
+    "description": "Часовой пояс IANA: America/Ciudad_Juarez.",
+    "icon": null,
+    "extra": {
+      "code": "America/Ciudad_Juarez",
+      "iana": "America/Ciudad_Juarez"
+    }
+  },
+  {
+    "uid": "94eb3e94-2e89-5044-bb8c-2194ad855118",
+    "name": "America/Coral_Harbour",
+    "description": "Часовой пояс IANA: America/Coral_Harbour.",
+    "icon": null,
+    "extra": {
+      "code": "America/Coral_Harbour",
+      "iana": "America/Coral_Harbour"
+    }
+  },
+  {
+    "uid": "ede63766-1876-59ab-bf02-b3b8e2ff9353",
+    "name": "America/Cordoba",
+    "description": "Часовой пояс IANA: America/Cordoba.",
+    "icon": null,
+    "extra": {
+      "code": "America/Cordoba",
+      "iana": "America/Cordoba"
+    }
+  },
+  {
+    "uid": "b7a69a60-5d14-5548-8c1b-a37e68a41add",
+    "name": "America/Costa_Rica",
+    "description": "Часовой пояс IANA: America/Costa_Rica.",
+    "icon": null,
+    "extra": {
+      "code": "America/Costa_Rica",
+      "iana": "America/Costa_Rica"
+    }
+  },
+  {
+    "uid": "df07a14d-e582-5dc5-ac48-5db3dfa90863",
+    "name": "America/Coyhaique",
+    "description": "Часовой пояс IANA: America/Coyhaique.",
+    "icon": null,
+    "extra": {
+      "code": "America/Coyhaique",
+      "iana": "America/Coyhaique"
+    }
+  },
+  {
+    "uid": "a7197450-ad2c-56b3-a634-1846c229d766",
+    "name": "America/Creston",
+    "description": "Часовой пояс IANA: America/Creston.",
+    "icon": null,
+    "extra": {
+      "code": "America/Creston",
+      "iana": "America/Creston"
+    }
+  },
+  {
+    "uid": "c34167cb-240b-56c5-b9d8-bd3450172c51",
+    "name": "America/Cuiaba",
+    "description": "Часовой пояс IANA: America/Cuiaba.",
+    "icon": null,
+    "extra": {
+      "code": "America/Cuiaba",
+      "iana": "America/Cuiaba"
+    }
+  },
+  {
+    "uid": "7a37759c-9ef7-50fa-a5d4-ea63503d5805",
+    "name": "America/Curacao",
+    "description": "Часовой пояс IANA: America/Curacao.",
+    "icon": null,
+    "extra": {
+      "code": "America/Curacao",
+      "iana": "America/Curacao"
+    }
+  },
+  {
+    "uid": "5890e1d7-2507-5f2c-92ed-89cc2204ace7",
+    "name": "America/Danmarkshavn",
+    "description": "Часовой пояс IANA: America/Danmarkshavn.",
+    "icon": null,
+    "extra": {
+      "code": "America/Danmarkshavn",
+      "iana": "America/Danmarkshavn"
+    }
+  },
+  {
+    "uid": "165d6878-96ba-52f9-8dfe-007aa4348229",
+    "name": "America/Dawson",
+    "description": "Часовой пояс IANA: America/Dawson.",
+    "icon": null,
+    "extra": {
+      "code": "America/Dawson",
+      "iana": "America/Dawson"
+    }
+  },
+  {
+    "uid": "e8e98068-8850-5351-b007-b5ffc12754c3",
+    "name": "America/Dawson_Creek",
+    "description": "Часовой пояс IANA: America/Dawson_Creek.",
+    "icon": null,
+    "extra": {
+      "code": "America/Dawson_Creek",
+      "iana": "America/Dawson_Creek"
+    }
+  },
+  {
+    "uid": "31aaaf83-5864-5ed9-97be-9d36afd1ecf4",
+    "name": "America/Denver",
+    "description": "Часовой пояс IANA: America/Denver.",
+    "icon": null,
+    "extra": {
+      "code": "America/Denver",
+      "iana": "America/Denver"
+    }
+  },
+  {
+    "uid": "6aac2aa9-60da-5ff9-84a6-01fb0ad5adb1",
+    "name": "America/Detroit",
+    "description": "Часовой пояс IANA: America/Detroit.",
+    "icon": null,
+    "extra": {
+      "code": "America/Detroit",
+      "iana": "America/Detroit"
+    }
+  },
+  {
+    "uid": "68abdb7d-83ed-5f5b-9d45-2512f116fc38",
+    "name": "America/Dominica",
+    "description": "Часовой пояс IANA: America/Dominica.",
+    "icon": null,
+    "extra": {
+      "code": "America/Dominica",
+      "iana": "America/Dominica"
+    }
+  },
+  {
+    "uid": "974b0d96-3a59-5258-97ad-1ae1a9682b07",
+    "name": "America/Edmonton",
+    "description": "Часовой пояс IANA: America/Edmonton.",
+    "icon": null,
+    "extra": {
+      "code": "America/Edmonton",
+      "iana": "America/Edmonton"
+    }
+  },
+  {
+    "uid": "eb1e1002-62c2-5149-ab7e-8ccc3634d00e",
+    "name": "America/Eirunepe",
+    "description": "Часовой пояс IANA: America/Eirunepe.",
+    "icon": null,
+    "extra": {
+      "code": "America/Eirunepe",
+      "iana": "America/Eirunepe"
+    }
+  },
+  {
+    "uid": "6852cafb-863a-5605-9af7-2e9ca4a39d81",
+    "name": "America/El_Salvador",
+    "description": "Часовой пояс IANA: America/El_Salvador.",
+    "icon": null,
+    "extra": {
+      "code": "America/El_Salvador",
+      "iana": "America/El_Salvador"
+    }
+  },
+  {
+    "uid": "cb86acc7-470b-590a-925c-507d744aa977",
+    "name": "America/Ensenada",
+    "description": "Часовой пояс IANA: America/Ensenada.",
+    "icon": null,
+    "extra": {
+      "code": "America/Ensenada",
+      "iana": "America/Ensenada"
+    }
+  },
+  {
+    "uid": "e2f69e82-b56c-56b2-b994-179ddf229e66",
+    "name": "America/Fort_Nelson",
+    "description": "Часовой пояс IANA: America/Fort_Nelson.",
+    "icon": null,
+    "extra": {
+      "code": "America/Fort_Nelson",
+      "iana": "America/Fort_Nelson"
+    }
+  },
+  {
+    "uid": "4ce92c19-a8d1-578d-8d72-448ebb525888",
+    "name": "America/Fort_Wayne",
+    "description": "Часовой пояс IANA: America/Fort_Wayne.",
+    "icon": null,
+    "extra": {
+      "code": "America/Fort_Wayne",
+      "iana": "America/Fort_Wayne"
+    }
+  },
+  {
+    "uid": "10052997-c860-5407-a073-484d86ed0751",
+    "name": "America/Fortaleza",
+    "description": "Часовой пояс IANA: America/Fortaleza.",
+    "icon": null,
+    "extra": {
+      "code": "America/Fortaleza",
+      "iana": "America/Fortaleza"
+    }
+  },
+  {
+    "uid": "a994b9be-a546-5a54-8937-f5ea6aaf46fa",
+    "name": "America/Glace_Bay",
+    "description": "Часовой пояс IANA: America/Glace_Bay.",
+    "icon": null,
+    "extra": {
+      "code": "America/Glace_Bay",
+      "iana": "America/Glace_Bay"
+    }
+  },
+  {
+    "uid": "be06ea46-1e4c-541f-b39a-140f737ac642",
+    "name": "America/Godthab",
+    "description": "Часовой пояс IANA: America/Godthab.",
+    "icon": null,
+    "extra": {
+      "code": "America/Godthab",
+      "iana": "America/Godthab"
+    }
+  },
+  {
+    "uid": "38fb0c9b-bdcb-5027-bd92-7e06af972e64",
+    "name": "America/Goose_Bay",
+    "description": "Часовой пояс IANA: America/Goose_Bay.",
+    "icon": null,
+    "extra": {
+      "code": "America/Goose_Bay",
+      "iana": "America/Goose_Bay"
+    }
+  },
+  {
+    "uid": "f68f3cb9-24f3-509a-80ad-b6a31fa34682",
+    "name": "America/Grand_Turk",
+    "description": "Часовой пояс IANA: America/Grand_Turk.",
+    "icon": null,
+    "extra": {
+      "code": "America/Grand_Turk",
+      "iana": "America/Grand_Turk"
+    }
+  },
+  {
+    "uid": "56dba947-7449-5475-ae12-87fc4cd56b8d",
+    "name": "America/Grenada",
+    "description": "Часовой пояс IANA: America/Grenada.",
+    "icon": null,
+    "extra": {
+      "code": "America/Grenada",
+      "iana": "America/Grenada"
+    }
+  },
+  {
+    "uid": "8ee324b6-e906-5e7f-ad03-8a46c178a7b9",
+    "name": "America/Guadeloupe",
+    "description": "Часовой пояс IANA: America/Guadeloupe.",
+    "icon": null,
+    "extra": {
+      "code": "America/Guadeloupe",
+      "iana": "America/Guadeloupe"
+    }
+  },
+  {
+    "uid": "ad02c7e1-d318-5450-ba17-c49065ee74c5",
+    "name": "America/Guatemala",
+    "description": "Часовой пояс IANA: America/Guatemala.",
+    "icon": null,
+    "extra": {
+      "code": "America/Guatemala",
+      "iana": "America/Guatemala"
+    }
+  },
+  {
+    "uid": "73f18ee7-dbef-55ea-8169-8f79bca4570e",
+    "name": "America/Guayaquil",
+    "description": "Часовой пояс IANA: America/Guayaquil.",
+    "icon": null,
+    "extra": {
+      "code": "America/Guayaquil",
+      "iana": "America/Guayaquil"
+    }
+  },
+  {
+    "uid": "9ac71384-e169-56bc-98b4-e750fdf05016",
+    "name": "America/Guyana",
+    "description": "Часовой пояс IANA: America/Guyana.",
+    "icon": null,
+    "extra": {
+      "code": "America/Guyana",
+      "iana": "America/Guyana"
+    }
+  },
+  {
+    "uid": "d9ba3646-8a12-521a-a586-ff1c746eb179",
+    "name": "America/Halifax",
+    "description": "Часовой пояс IANA: America/Halifax.",
+    "icon": null,
+    "extra": {
+      "code": "America/Halifax",
+      "iana": "America/Halifax"
+    }
+  },
+  {
+    "uid": "5fb342e0-e46c-5355-8944-500903e127d9",
+    "name": "America/Havana",
+    "description": "Часовой пояс IANA: America/Havana.",
+    "icon": null,
+    "extra": {
+      "code": "America/Havana",
+      "iana": "America/Havana"
+    }
+  },
+  {
+    "uid": "7ec7a142-a3c2-5d31-816b-5922f1c513d2",
+    "name": "America/Hermosillo",
+    "description": "Часовой пояс IANA: America/Hermosillo.",
+    "icon": null,
+    "extra": {
+      "code": "America/Hermosillo",
+      "iana": "America/Hermosillo"
+    }
+  },
+  {
+    "uid": "bdc2234e-5f2b-5347-aa38-3edf4bc9da58",
+    "name": "America/Indiana/Indianapolis",
+    "description": "Часовой пояс IANA: America/Indiana/Indianapolis.",
+    "icon": null,
+    "extra": {
+      "code": "America/Indiana/Indianapolis",
+      "iana": "America/Indiana/Indianapolis"
+    }
+  },
+  {
+    "uid": "85780f39-f5e2-5a9f-b48d-90ae7cf20909",
+    "name": "America/Indiana/Knox",
+    "description": "Часовой пояс IANA: America/Indiana/Knox.",
+    "icon": null,
+    "extra": {
+      "code": "America/Indiana/Knox",
+      "iana": "America/Indiana/Knox"
+    }
+  },
+  {
+    "uid": "bc6517bc-b8b4-5693-a679-9fa6029c76ee",
+    "name": "America/Indiana/Marengo",
+    "description": "Часовой пояс IANA: America/Indiana/Marengo.",
+    "icon": null,
+    "extra": {
+      "code": "America/Indiana/Marengo",
+      "iana": "America/Indiana/Marengo"
+    }
+  },
+  {
+    "uid": "9f7fe6cc-a690-5b08-ac2f-09c13785f72c",
+    "name": "America/Indiana/Petersburg",
+    "description": "Часовой пояс IANA: America/Indiana/Petersburg.",
+    "icon": null,
+    "extra": {
+      "code": "America/Indiana/Petersburg",
+      "iana": "America/Indiana/Petersburg"
+    }
+  },
+  {
+    "uid": "723fbfe9-5552-5305-acd1-149f0ddb49d3",
+    "name": "America/Indiana/Tell_City",
+    "description": "Часовой пояс IANA: America/Indiana/Tell_City.",
+    "icon": null,
+    "extra": {
+      "code": "America/Indiana/Tell_City",
+      "iana": "America/Indiana/Tell_City"
+    }
+  },
+  {
+    "uid": "d2b7ef74-7fbf-5179-a452-2435b90496c5",
+    "name": "America/Indiana/Vevay",
+    "description": "Часовой пояс IANA: America/Indiana/Vevay.",
+    "icon": null,
+    "extra": {
+      "code": "America/Indiana/Vevay",
+      "iana": "America/Indiana/Vevay"
+    }
+  },
+  {
+    "uid": "e06aadbc-fbe3-5e14-9937-7816a9132970",
+    "name": "America/Indiana/Vincennes",
+    "description": "Часовой пояс IANA: America/Indiana/Vincennes.",
+    "icon": null,
+    "extra": {
+      "code": "America/Indiana/Vincennes",
+      "iana": "America/Indiana/Vincennes"
+    }
+  },
+  {
+    "uid": "f8bc6fec-2e6c-51a0-8bec-a1c65e3c0ba8",
+    "name": "America/Indiana/Winamac",
+    "description": "Часовой пояс IANA: America/Indiana/Winamac.",
+    "icon": null,
+    "extra": {
+      "code": "America/Indiana/Winamac",
+      "iana": "America/Indiana/Winamac"
+    }
+  },
+  {
+    "uid": "3bc1e36a-45b1-56aa-b5f3-6be58be16ad1",
+    "name": "America/Indianapolis",
+    "description": "Часовой пояс IANA: America/Indianapolis.",
+    "icon": null,
+    "extra": {
+      "code": "America/Indianapolis",
+      "iana": "America/Indianapolis"
+    }
+  },
+  {
+    "uid": "dec92c28-c33b-50fd-9033-b2ef40e9855b",
+    "name": "America/Inuvik",
+    "description": "Часовой пояс IANA: America/Inuvik.",
+    "icon": null,
+    "extra": {
+      "code": "America/Inuvik",
+      "iana": "America/Inuvik"
+    }
+  },
+  {
+    "uid": "77a8be11-c3ac-5541-9d78-d1488ec6ac58",
+    "name": "America/Iqaluit",
+    "description": "Часовой пояс IANA: America/Iqaluit.",
+    "icon": null,
+    "extra": {
+      "code": "America/Iqaluit",
+      "iana": "America/Iqaluit"
+    }
+  },
+  {
+    "uid": "d2592452-7adb-5957-a627-f45ff58c5b7e",
+    "name": "America/Jamaica",
+    "description": "Часовой пояс IANA: America/Jamaica.",
+    "icon": null,
+    "extra": {
+      "code": "America/Jamaica",
+      "iana": "America/Jamaica"
+    }
+  },
+  {
+    "uid": "211e3a47-65fd-5bd0-9f89-49e217b61510",
+    "name": "America/Jujuy",
+    "description": "Часовой пояс IANA: America/Jujuy.",
+    "icon": null,
+    "extra": {
+      "code": "America/Jujuy",
+      "iana": "America/Jujuy"
+    }
+  },
+  {
+    "uid": "d8e8b4d5-c194-5433-a550-b4b56647e2b1",
+    "name": "America/Juneau",
+    "description": "Часовой пояс IANA: America/Juneau.",
+    "icon": null,
+    "extra": {
+      "code": "America/Juneau",
+      "iana": "America/Juneau"
+    }
+  },
+  {
+    "uid": "f8ee5615-ba7d-57bd-be9c-3af60cf74a87",
+    "name": "America/Kentucky/Louisville",
+    "description": "Часовой пояс IANA: America/Kentucky/Louisville.",
+    "icon": null,
+    "extra": {
+      "code": "America/Kentucky/Louisville",
+      "iana": "America/Kentucky/Louisville"
+    }
+  },
+  {
+    "uid": "251c653e-0092-5dd0-8aed-3b7021de2dff",
+    "name": "America/Kentucky/Monticello",
+    "description": "Часовой пояс IANA: America/Kentucky/Monticello.",
+    "icon": null,
+    "extra": {
+      "code": "America/Kentucky/Monticello",
+      "iana": "America/Kentucky/Monticello"
+    }
+  },
+  {
+    "uid": "b06f33a7-f467-5aca-bf80-ff274a2e577f",
+    "name": "America/Knox_IN",
+    "description": "Часовой пояс IANA: America/Knox_IN.",
+    "icon": null,
+    "extra": {
+      "code": "America/Knox_IN",
+      "iana": "America/Knox_IN"
+    }
+  },
+  {
+    "uid": "5308244c-a135-5ce9-9552-4719b4d46cb9",
+    "name": "America/Kralendijk",
+    "description": "Часовой пояс IANA: America/Kralendijk.",
+    "icon": null,
+    "extra": {
+      "code": "America/Kralendijk",
+      "iana": "America/Kralendijk"
+    }
+  },
+  {
+    "uid": "a8f0bfbb-eaa5-539f-b3d5-6d9f81be4356",
+    "name": "America/La_Paz",
+    "description": "Часовой пояс IANA: America/La_Paz.",
+    "icon": null,
+    "extra": {
+      "code": "America/La_Paz",
+      "iana": "America/La_Paz"
+    }
+  },
+  {
+    "uid": "849cc349-0ee5-530d-b81b-9caeca3ea381",
+    "name": "America/Lima",
+    "description": "Часовой пояс IANA: America/Lima.",
+    "icon": null,
+    "extra": {
+      "code": "America/Lima",
+      "iana": "America/Lima"
+    }
+  },
+  {
+    "uid": "70a7cbd7-6bcc-531f-a415-67c1a0c9e880",
+    "name": "America/Los_Angeles",
+    "description": "Часовой пояс IANA: America/Los_Angeles.",
+    "icon": null,
+    "extra": {
+      "code": "America/Los_Angeles",
+      "iana": "America/Los_Angeles"
+    }
+  },
+  {
+    "uid": "71b0786d-5087-5412-9e4b-39da788f3271",
+    "name": "America/Louisville",
+    "description": "Часовой пояс IANA: America/Louisville.",
+    "icon": null,
+    "extra": {
+      "code": "America/Louisville",
+      "iana": "America/Louisville"
+    }
+  },
+  {
+    "uid": "918449a1-0b35-547a-b25d-a50de042e050",
+    "name": "America/Lower_Princes",
+    "description": "Часовой пояс IANA: America/Lower_Princes.",
+    "icon": null,
+    "extra": {
+      "code": "America/Lower_Princes",
+      "iana": "America/Lower_Princes"
+    }
+  },
+  {
+    "uid": "e31c20e3-cd5f-5f7b-b893-9c7de6828064",
+    "name": "America/Maceio",
+    "description": "Часовой пояс IANA: America/Maceio.",
+    "icon": null,
+    "extra": {
+      "code": "America/Maceio",
+      "iana": "America/Maceio"
+    }
+  },
+  {
+    "uid": "c1559b57-1a58-598a-bdb1-918347714f92",
+    "name": "America/Managua",
+    "description": "Часовой пояс IANA: America/Managua.",
+    "icon": null,
+    "extra": {
+      "code": "America/Managua",
+      "iana": "America/Managua"
+    }
+  },
+  {
+    "uid": "5d76701e-84f7-5574-a419-7d1476931dc9",
+    "name": "America/Manaus",
+    "description": "Часовой пояс IANA: America/Manaus.",
+    "icon": null,
+    "extra": {
+      "code": "America/Manaus",
+      "iana": "America/Manaus"
+    }
+  },
+  {
+    "uid": "9353ed86-cda0-5c89-ae81-d19cde83f398",
+    "name": "America/Marigot",
+    "description": "Часовой пояс IANA: America/Marigot.",
+    "icon": null,
+    "extra": {
+      "code": "America/Marigot",
+      "iana": "America/Marigot"
+    }
+  },
+  {
+    "uid": "704b0e10-7266-5eb3-9698-d826b2b067f3",
+    "name": "America/Martinique",
+    "description": "Часовой пояс IANA: America/Martinique.",
+    "icon": null,
+    "extra": {
+      "code": "America/Martinique",
+      "iana": "America/Martinique"
+    }
+  },
+  {
+    "uid": "e6f39dc2-4aba-51b6-9fbc-f0a7d68e9e1b",
+    "name": "America/Matamoros",
+    "description": "Часовой пояс IANA: America/Matamoros.",
+    "icon": null,
+    "extra": {
+      "code": "America/Matamoros",
+      "iana": "America/Matamoros"
+    }
+  },
+  {
+    "uid": "9ecfb1d4-ed7d-578f-87bc-dbf291fbe50b",
+    "name": "America/Mazatlan",
+    "description": "Часовой пояс IANA: America/Mazatlan.",
+    "icon": null,
+    "extra": {
+      "code": "America/Mazatlan",
+      "iana": "America/Mazatlan"
+    }
+  },
+  {
+    "uid": "44851273-781d-5f41-9336-bcb75bdfb620",
+    "name": "America/Mendoza",
+    "description": "Часовой пояс IANA: America/Mendoza.",
+    "icon": null,
+    "extra": {
+      "code": "America/Mendoza",
+      "iana": "America/Mendoza"
+    }
+  },
+  {
+    "uid": "eb11875e-0388-5ab8-b941-bd55e6f6db23",
+    "name": "America/Menominee",
+    "description": "Часовой пояс IANA: America/Menominee.",
+    "icon": null,
+    "extra": {
+      "code": "America/Menominee",
+      "iana": "America/Menominee"
+    }
+  },
+  {
+    "uid": "2216fcee-3c4d-52ee-96f4-07864ff55131",
+    "name": "America/Merida",
+    "description": "Часовой пояс IANA: America/Merida.",
+    "icon": null,
+    "extra": {
+      "code": "America/Merida",
+      "iana": "America/Merida"
+    }
+  },
+  {
+    "uid": "d8ea3176-717a-52a4-8723-fe13bb3b62e0",
+    "name": "America/Metlakatla",
+    "description": "Часовой пояс IANA: America/Metlakatla.",
+    "icon": null,
+    "extra": {
+      "code": "America/Metlakatla",
+      "iana": "America/Metlakatla"
+    }
+  },
+  {
+    "uid": "fb52cf22-9578-5b4b-8e6b-146513c8b8d8",
+    "name": "America/Mexico_City",
+    "description": "Часовой пояс IANA: America/Mexico_City.",
+    "icon": null,
+    "extra": {
+      "code": "America/Mexico_City",
+      "iana": "America/Mexico_City"
+    }
+  },
+  {
+    "uid": "f203d1e0-5f0b-55c2-b0fc-017e12edc9e1",
+    "name": "America/Miquelon",
+    "description": "Часовой пояс IANA: America/Miquelon.",
+    "icon": null,
+    "extra": {
+      "code": "America/Miquelon",
+      "iana": "America/Miquelon"
+    }
+  },
+  {
+    "uid": "edcda7dc-cb6e-5596-af0f-792a36978b6a",
+    "name": "America/Moncton",
+    "description": "Часовой пояс IANA: America/Moncton.",
+    "icon": null,
+    "extra": {
+      "code": "America/Moncton",
+      "iana": "America/Moncton"
+    }
+  },
+  {
+    "uid": "d981c13c-c074-5e91-be82-c4ab37377b3f",
+    "name": "America/Monterrey",
+    "description": "Часовой пояс IANA: America/Monterrey.",
+    "icon": null,
+    "extra": {
+      "code": "America/Monterrey",
+      "iana": "America/Monterrey"
+    }
+  },
+  {
+    "uid": "c8f2ffe6-15d8-573d-94c4-062ebf93e0b6",
+    "name": "America/Montevideo",
+    "description": "Часовой пояс IANA: America/Montevideo.",
+    "icon": null,
+    "extra": {
+      "code": "America/Montevideo",
+      "iana": "America/Montevideo"
+    }
+  },
+  {
+    "uid": "1935e675-20fd-58aa-b9a8-81f9118de40e",
+    "name": "America/Montreal",
+    "description": "Часовой пояс IANA: America/Montreal.",
+    "icon": null,
+    "extra": {
+      "code": "America/Montreal",
+      "iana": "America/Montreal"
+    }
+  },
+  {
+    "uid": "b9c638af-1e86-5495-96be-e7f55c1fca20",
+    "name": "America/Montserrat",
+    "description": "Часовой пояс IANA: America/Montserrat.",
+    "icon": null,
+    "extra": {
+      "code": "America/Montserrat",
+      "iana": "America/Montserrat"
+    }
+  },
+  {
+    "uid": "f4c2d524-2d98-5e87-8880-04d101c5d732",
+    "name": "America/Nassau",
+    "description": "Часовой пояс IANA: America/Nassau.",
+    "icon": null,
+    "extra": {
+      "code": "America/Nassau",
+      "iana": "America/Nassau"
+    }
+  },
+  {
+    "uid": "8ddcc987-a0e7-5fe4-be4a-4d9c56016bc0",
+    "name": "America/New_York",
+    "description": "Часовой пояс IANA: America/New_York.",
+    "icon": null,
+    "extra": {
+      "code": "America/New_York",
+      "iana": "America/New_York"
+    }
+  },
+  {
+    "uid": "d51803ac-0049-5eba-9991-58495008a29a",
+    "name": "America/Nipigon",
+    "description": "Часовой пояс IANA: America/Nipigon.",
+    "icon": null,
+    "extra": {
+      "code": "America/Nipigon",
+      "iana": "America/Nipigon"
+    }
+  },
+  {
+    "uid": "e9ee6f44-0a16-584f-9c80-97e0727560b7",
+    "name": "America/Nome",
+    "description": "Часовой пояс IANA: America/Nome.",
+    "icon": null,
+    "extra": {
+      "code": "America/Nome",
+      "iana": "America/Nome"
+    }
+  },
+  {
+    "uid": "78ee64cb-147a-5637-a3ea-3186cdd5ca9b",
+    "name": "America/Noronha",
+    "description": "Часовой пояс IANA: America/Noronha.",
+    "icon": null,
+    "extra": {
+      "code": "America/Noronha",
+      "iana": "America/Noronha"
+    }
+  },
+  {
+    "uid": "be7bfc62-132d-53ab-ad83-fb25880e42b0",
+    "name": "America/North_Dakota/Beulah",
+    "description": "Часовой пояс IANA: America/North_Dakota/Beulah.",
+    "icon": null,
+    "extra": {
+      "code": "America/North_Dakota/Beulah",
+      "iana": "America/North_Dakota/Beulah"
+    }
+  },
+  {
+    "uid": "cf98735a-963b-58ed-9935-43ae9eb0d1bc",
+    "name": "America/North_Dakota/Center",
+    "description": "Часовой пояс IANA: America/North_Dakota/Center.",
+    "icon": null,
+    "extra": {
+      "code": "America/North_Dakota/Center",
+      "iana": "America/North_Dakota/Center"
+    }
+  },
+  {
+    "uid": "18a80baf-a021-54e5-bce4-54bc25dcccbf",
+    "name": "America/North_Dakota/New_Salem",
+    "description": "Часовой пояс IANA: America/North_Dakota/New_Salem.",
+    "icon": null,
+    "extra": {
+      "code": "America/North_Dakota/New_Salem",
+      "iana": "America/North_Dakota/New_Salem"
+    }
+  },
+  {
+    "uid": "1dccfbef-919d-5f5e-95dc-87add61d1ddd",
+    "name": "America/Nuuk",
+    "description": "Часовой пояс IANA: America/Nuuk.",
+    "icon": null,
+    "extra": {
+      "code": "America/Nuuk",
+      "iana": "America/Nuuk"
+    }
+  },
+  {
+    "uid": "3898a545-bb04-5d87-886f-e1d882cb1cb6",
+    "name": "America/Ojinaga",
+    "description": "Часовой пояс IANA: America/Ojinaga.",
+    "icon": null,
+    "extra": {
+      "code": "America/Ojinaga",
+      "iana": "America/Ojinaga"
+    }
+  },
+  {
+    "uid": "9e4b14b3-e4ef-5083-ac26-4c2a566cb107",
+    "name": "America/Panama",
+    "description": "Часовой пояс IANA: America/Panama.",
+    "icon": null,
+    "extra": {
+      "code": "America/Panama",
+      "iana": "America/Panama"
+    }
+  },
+  {
+    "uid": "ae15c3a0-8a95-5bcc-b8f2-27fae5b867b4",
+    "name": "America/Pangnirtung",
+    "description": "Часовой пояс IANA: America/Pangnirtung.",
+    "icon": null,
+    "extra": {
+      "code": "America/Pangnirtung",
+      "iana": "America/Pangnirtung"
+    }
+  },
+  {
+    "uid": "0d0323fb-d76b-5d06-b404-dcb73fdae527",
+    "name": "America/Paramaribo",
+    "description": "Часовой пояс IANA: America/Paramaribo.",
+    "icon": null,
+    "extra": {
+      "code": "America/Paramaribo",
+      "iana": "America/Paramaribo"
+    }
+  },
+  {
+    "uid": "11b6936f-7095-512f-882e-188430c96d15",
+    "name": "America/Phoenix",
+    "description": "Часовой пояс IANA: America/Phoenix.",
+    "icon": null,
+    "extra": {
+      "code": "America/Phoenix",
+      "iana": "America/Phoenix"
+    }
+  },
+  {
+    "uid": "33af94c5-9cbb-56fa-9b55-1764cd8e0c59",
+    "name": "America/Port-au-Prince",
+    "description": "Часовой пояс IANA: America/Port-au-Prince.",
+    "icon": null,
+    "extra": {
+      "code": "America/Port-au-Prince",
+      "iana": "America/Port-au-Prince"
+    }
+  },
+  {
+    "uid": "232ce991-da81-52fe-b654-5c7f30bd9897",
+    "name": "America/Port_of_Spain",
+    "description": "Часовой пояс IANA: America/Port_of_Spain.",
+    "icon": null,
+    "extra": {
+      "code": "America/Port_of_Spain",
+      "iana": "America/Port_of_Spain"
+    }
+  },
+  {
+    "uid": "48284e82-f341-540f-8f00-ee272e720cae",
+    "name": "America/Porto_Acre",
+    "description": "Часовой пояс IANA: America/Porto_Acre.",
+    "icon": null,
+    "extra": {
+      "code": "America/Porto_Acre",
+      "iana": "America/Porto_Acre"
+    }
+  },
+  {
+    "uid": "7685967c-d568-553f-b437-b2a87ae66c17",
+    "name": "America/Porto_Velho",
+    "description": "Часовой пояс IANA: America/Porto_Velho.",
+    "icon": null,
+    "extra": {
+      "code": "America/Porto_Velho",
+      "iana": "America/Porto_Velho"
+    }
+  },
+  {
+    "uid": "f44224ed-512b-55e8-aaad-646035329565",
+    "name": "America/Puerto_Rico",
+    "description": "Часовой пояс IANA: America/Puerto_Rico.",
+    "icon": null,
+    "extra": {
+      "code": "America/Puerto_Rico",
+      "iana": "America/Puerto_Rico"
+    }
+  },
+  {
+    "uid": "813ee3cb-5a9e-56b6-abfb-57e3b72735ac",
+    "name": "America/Punta_Arenas",
+    "description": "Часовой пояс IANA: America/Punta_Arenas.",
+    "icon": null,
+    "extra": {
+      "code": "America/Punta_Arenas",
+      "iana": "America/Punta_Arenas"
+    }
+  },
+  {
+    "uid": "f84503b3-7769-531d-9cc7-51fcb948c892",
+    "name": "America/Rainy_River",
+    "description": "Часовой пояс IANA: America/Rainy_River.",
+    "icon": null,
+    "extra": {
+      "code": "America/Rainy_River",
+      "iana": "America/Rainy_River"
+    }
+  },
+  {
+    "uid": "ffbcf7a3-21bd-585f-9b17-21410f5bf368",
+    "name": "America/Rankin_Inlet",
+    "description": "Часовой пояс IANA: America/Rankin_Inlet.",
+    "icon": null,
+    "extra": {
+      "code": "America/Rankin_Inlet",
+      "iana": "America/Rankin_Inlet"
+    }
+  },
+  {
+    "uid": "153d9cdb-98b0-5ffd-a450-7810e139d2fe",
+    "name": "America/Recife",
+    "description": "Часовой пояс IANA: America/Recife.",
+    "icon": null,
+    "extra": {
+      "code": "America/Recife",
+      "iana": "America/Recife"
+    }
+  },
+  {
+    "uid": "c395c202-2d6f-5419-8e50-753dd43565fb",
+    "name": "America/Regina",
+    "description": "Часовой пояс IANA: America/Regina.",
+    "icon": null,
+    "extra": {
+      "code": "America/Regina",
+      "iana": "America/Regina"
+    }
+  },
+  {
+    "uid": "294f8f4d-71ac-5148-9122-54a7c5580523",
+    "name": "America/Resolute",
+    "description": "Часовой пояс IANA: America/Resolute.",
+    "icon": null,
+    "extra": {
+      "code": "America/Resolute",
+      "iana": "America/Resolute"
+    }
+  },
+  {
+    "uid": "f9f8da2a-cf29-5830-b04f-212ed3b0a93e",
+    "name": "America/Rio_Branco",
+    "description": "Часовой пояс IANA: America/Rio_Branco.",
+    "icon": null,
+    "extra": {
+      "code": "America/Rio_Branco",
+      "iana": "America/Rio_Branco"
+    }
+  },
+  {
+    "uid": "f558fb5f-b86b-52e3-ab0f-4a1c556d291b",
+    "name": "America/Rosario",
+    "description": "Часовой пояс IANA: America/Rosario.",
+    "icon": null,
+    "extra": {
+      "code": "America/Rosario",
+      "iana": "America/Rosario"
+    }
+  },
+  {
+    "uid": "72207312-6c93-5c99-87c0-4221f6cc607f",
+    "name": "America/Santa_Isabel",
+    "description": "Часовой пояс IANA: America/Santa_Isabel.",
+    "icon": null,
+    "extra": {
+      "code": "America/Santa_Isabel",
+      "iana": "America/Santa_Isabel"
+    }
+  },
+  {
+    "uid": "4096ef6a-acdc-53e8-b376-39ad0695dc56",
+    "name": "America/Santarem",
+    "description": "Часовой пояс IANA: America/Santarem.",
+    "icon": null,
+    "extra": {
+      "code": "America/Santarem",
+      "iana": "America/Santarem"
+    }
+  },
+  {
+    "uid": "34b51599-477e-5890-a0ef-7f9b88e0fb28",
+    "name": "America/Santiago",
+    "description": "Часовой пояс IANA: America/Santiago.",
+    "icon": null,
+    "extra": {
+      "code": "America/Santiago",
+      "iana": "America/Santiago"
+    }
+  },
+  {
+    "uid": "2469e5f6-030b-51e6-a6e8-cb93ab6e2a09",
+    "name": "America/Santo_Domingo",
+    "description": "Часовой пояс IANA: America/Santo_Domingo.",
+    "icon": null,
+    "extra": {
+      "code": "America/Santo_Domingo",
+      "iana": "America/Santo_Domingo"
+    }
+  },
+  {
+    "uid": "fc169817-e590-54df-acfa-f6edd2877392",
+    "name": "America/Sao_Paulo",
+    "description": "Часовой пояс IANA: America/Sao_Paulo.",
+    "icon": null,
+    "extra": {
+      "code": "America/Sao_Paulo",
+      "iana": "America/Sao_Paulo"
+    }
+  },
+  {
+    "uid": "85605139-d969-5f69-97ca-214d875b9f5c",
+    "name": "America/Scoresbysund",
+    "description": "Часовой пояс IANA: America/Scoresbysund.",
+    "icon": null,
+    "extra": {
+      "code": "America/Scoresbysund",
+      "iana": "America/Scoresbysund"
+    }
+  },
+  {
+    "uid": "9fca329b-756d-593d-a0c2-91db536398c1",
+    "name": "America/Shiprock",
+    "description": "Часовой пояс IANA: America/Shiprock.",
+    "icon": null,
+    "extra": {
+      "code": "America/Shiprock",
+      "iana": "America/Shiprock"
+    }
+  },
+  {
+    "uid": "07a06eaa-75fb-50d6-8bda-c7854459a252",
+    "name": "America/Sitka",
+    "description": "Часовой пояс IANA: America/Sitka.",
+    "icon": null,
+    "extra": {
+      "code": "America/Sitka",
+      "iana": "America/Sitka"
+    }
+  },
+  {
+    "uid": "9f341da2-50ee-5fef-9bc7-7f797b82ca52",
+    "name": "America/St_Barthelemy",
+    "description": "Часовой пояс IANA: America/St_Barthelemy.",
+    "icon": null,
+    "extra": {
+      "code": "America/St_Barthelemy",
+      "iana": "America/St_Barthelemy"
+    }
+  },
+  {
+    "uid": "4ce87558-56d0-5f9c-b0de-ef1bc0ad6dfb",
+    "name": "America/St_Johns",
+    "description": "Часовой пояс IANA: America/St_Johns.",
+    "icon": null,
+    "extra": {
+      "code": "America/St_Johns",
+      "iana": "America/St_Johns"
+    }
+  },
+  {
+    "uid": "f1f1e7e1-5af7-54c9-bcff-3c13b2e02813",
+    "name": "America/St_Kitts",
+    "description": "Часовой пояс IANA: America/St_Kitts.",
+    "icon": null,
+    "extra": {
+      "code": "America/St_Kitts",
+      "iana": "America/St_Kitts"
+    }
+  },
+  {
+    "uid": "76ea9205-f2ba-521d-ba63-7def2fb808ff",
+    "name": "America/St_Lucia",
+    "description": "Часовой пояс IANA: America/St_Lucia.",
+    "icon": null,
+    "extra": {
+      "code": "America/St_Lucia",
+      "iana": "America/St_Lucia"
+    }
+  },
+  {
+    "uid": "f5a2261b-7726-5e82-9dbd-388c653f9498",
+    "name": "America/St_Thomas",
+    "description": "Часовой пояс IANA: America/St_Thomas.",
+    "icon": null,
+    "extra": {
+      "code": "America/St_Thomas",
+      "iana": "America/St_Thomas"
+    }
+  },
+  {
+    "uid": "8452e984-7fad-5cd1-a734-03a12b33082c",
+    "name": "America/St_Vincent",
+    "description": "Часовой пояс IANA: America/St_Vincent.",
+    "icon": null,
+    "extra": {
+      "code": "America/St_Vincent",
+      "iana": "America/St_Vincent"
+    }
+  },
+  {
+    "uid": "faa7d972-a769-508b-8574-22c29fac71fe",
+    "name": "America/Swift_Current",
+    "description": "Часовой пояс IANA: America/Swift_Current.",
+    "icon": null,
+    "extra": {
+      "code": "America/Swift_Current",
+      "iana": "America/Swift_Current"
+    }
+  },
+  {
+    "uid": "aedd2fe2-5d84-5690-becc-f348c70ee5e8",
+    "name": "America/Tegucigalpa",
+    "description": "Часовой пояс IANA: America/Tegucigalpa.",
+    "icon": null,
+    "extra": {
+      "code": "America/Tegucigalpa",
+      "iana": "America/Tegucigalpa"
+    }
+  },
+  {
+    "uid": "79343a4b-3e8b-5888-a849-90b101efd68a",
+    "name": "America/Thule",
+    "description": "Часовой пояс IANA: America/Thule.",
+    "icon": null,
+    "extra": {
+      "code": "America/Thule",
+      "iana": "America/Thule"
+    }
+  },
+  {
+    "uid": "6df61109-8b6d-5f8d-a894-ff0b8068ec23",
+    "name": "America/Thunder_Bay",
+    "description": "Часовой пояс IANA: America/Thunder_Bay.",
+    "icon": null,
+    "extra": {
+      "code": "America/Thunder_Bay",
+      "iana": "America/Thunder_Bay"
+    }
+  },
+  {
+    "uid": "e7e8c75c-f30b-54ec-81f5-22a2239cad0a",
+    "name": "America/Tijuana",
+    "description": "Часовой пояс IANA: America/Tijuana.",
+    "icon": null,
+    "extra": {
+      "code": "America/Tijuana",
+      "iana": "America/Tijuana"
+    }
+  },
+  {
+    "uid": "1085150f-2013-55c5-a7c3-4f560c605440",
+    "name": "America/Toronto",
+    "description": "Часовой пояс IANA: America/Toronto.",
+    "icon": null,
+    "extra": {
+      "code": "America/Toronto",
+      "iana": "America/Toronto"
+    }
+  },
+  {
+    "uid": "e7f78093-f74c-5be3-a7fc-34b3c4942084",
+    "name": "America/Tortola",
+    "description": "Часовой пояс IANA: America/Tortola.",
+    "icon": null,
+    "extra": {
+      "code": "America/Tortola",
+      "iana": "America/Tortola"
+    }
+  },
+  {
+    "uid": "00c4e380-e7ef-5885-b0be-37fb854a6c39",
+    "name": "America/Vancouver",
+    "description": "Часовой пояс IANA: America/Vancouver.",
+    "icon": null,
+    "extra": {
+      "code": "America/Vancouver",
+      "iana": "America/Vancouver"
+    }
+  },
+  {
+    "uid": "5d0a0fca-023a-56a9-85de-a7eaaf517ec8",
+    "name": "America/Virgin",
+    "description": "Часовой пояс IANA: America/Virgin.",
+    "icon": null,
+    "extra": {
+      "code": "America/Virgin",
+      "iana": "America/Virgin"
+    }
+  },
+  {
+    "uid": "c12294f7-0ad4-59ca-8b80-d8538acabc20",
+    "name": "America/Whitehorse",
+    "description": "Часовой пояс IANA: America/Whitehorse.",
+    "icon": null,
+    "extra": {
+      "code": "America/Whitehorse",
+      "iana": "America/Whitehorse"
+    }
+  },
+  {
+    "uid": "08e3fdc7-ae6b-586a-8cc7-d2d6613b5429",
+    "name": "America/Winnipeg",
+    "description": "Часовой пояс IANA: America/Winnipeg.",
+    "icon": null,
+    "extra": {
+      "code": "America/Winnipeg",
+      "iana": "America/Winnipeg"
+    }
+  },
+  {
+    "uid": "9c0ed210-3593-564f-a40e-913f6b81ad1a",
+    "name": "America/Yakutat",
+    "description": "Часовой пояс IANA: America/Yakutat.",
+    "icon": null,
+    "extra": {
+      "code": "America/Yakutat",
+      "iana": "America/Yakutat"
+    }
+  },
+  {
+    "uid": "b3324444-8de1-5147-a4d1-0922b92d2863",
+    "name": "America/Yellowknife",
+    "description": "Часовой пояс IANA: America/Yellowknife.",
+    "icon": null,
+    "extra": {
+      "code": "America/Yellowknife",
+      "iana": "America/Yellowknife"
+    }
+  },
+  {
+    "uid": "f3ac0624-9160-5e75-8fb7-2c4913faf60a",
+    "name": "Antarctica/Casey",
+    "description": "Часовой пояс IANA: Antarctica/Casey.",
+    "icon": null,
+    "extra": {
+      "code": "Antarctica/Casey",
+      "iana": "Antarctica/Casey"
+    }
+  },
+  {
+    "uid": "2d0a27ed-c41c-5ea2-87a6-9db620a816b1",
+    "name": "Antarctica/Davis",
+    "description": "Часовой пояс IANA: Antarctica/Davis.",
+    "icon": null,
+    "extra": {
+      "code": "Antarctica/Davis",
+      "iana": "Antarctica/Davis"
+    }
+  },
+  {
+    "uid": "bcfb8251-18b9-5ec1-90c6-b297ae24854b",
+    "name": "Antarctica/DumontDUrville",
+    "description": "Часовой пояс IANA: Antarctica/DumontDUrville.",
+    "icon": null,
+    "extra": {
+      "code": "Antarctica/DumontDUrville",
+      "iana": "Antarctica/DumontDUrville"
+    }
+  },
+  {
+    "uid": "476853e5-1694-5b7e-a707-d0e140ef77dd",
+    "name": "Antarctica/Macquarie",
+    "description": "Часовой пояс IANA: Antarctica/Macquarie.",
+    "icon": null,
+    "extra": {
+      "code": "Antarctica/Macquarie",
+      "iana": "Antarctica/Macquarie"
+    }
+  },
+  {
+    "uid": "62201788-f4fe-5ec5-b3f4-0a51c363fafd",
+    "name": "Antarctica/Mawson",
+    "description": "Часовой пояс IANA: Antarctica/Mawson.",
+    "icon": null,
+    "extra": {
+      "code": "Antarctica/Mawson",
+      "iana": "Antarctica/Mawson"
+    }
+  },
+  {
+    "uid": "51dd1cc5-cf4a-504e-b853-0f3e14173625",
+    "name": "Antarctica/McMurdo",
+    "description": "Часовой пояс IANA: Antarctica/McMurdo.",
+    "icon": null,
+    "extra": {
+      "code": "Antarctica/McMurdo",
+      "iana": "Antarctica/McMurdo"
+    }
+  },
+  {
+    "uid": "ac90146b-4f17-5e69-b94e-7a5d035857b1",
+    "name": "Antarctica/Palmer",
+    "description": "Часовой пояс IANA: Antarctica/Palmer.",
+    "icon": null,
+    "extra": {
+      "code": "Antarctica/Palmer",
+      "iana": "Antarctica/Palmer"
+    }
+  },
+  {
+    "uid": "3b060921-695f-56af-bf43-b4db7696f94d",
+    "name": "Antarctica/Rothera",
+    "description": "Часовой пояс IANA: Antarctica/Rothera.",
+    "icon": null,
+    "extra": {
+      "code": "Antarctica/Rothera",
+      "iana": "Antarctica/Rothera"
+    }
+  },
+  {
+    "uid": "4867590b-8512-549e-84f6-7a1383241b01",
+    "name": "Antarctica/South_Pole",
+    "description": "Часовой пояс IANA: Antarctica/South_Pole.",
+    "icon": null,
+    "extra": {
+      "code": "Antarctica/South_Pole",
+      "iana": "Antarctica/South_Pole"
+    }
+  },
+  {
+    "uid": "11ed8373-6c42-518f-8e5c-7a11da8247a9",
+    "name": "Antarctica/Syowa",
+    "description": "Часовой пояс IANA: Antarctica/Syowa.",
+    "icon": null,
+    "extra": {
+      "code": "Antarctica/Syowa",
+      "iana": "Antarctica/Syowa"
+    }
+  },
+  {
+    "uid": "95153dfd-f852-500f-8fc7-0118478c9985",
+    "name": "Antarctica/Troll",
+    "description": "Часовой пояс IANA: Antarctica/Troll.",
+    "icon": null,
+    "extra": {
+      "code": "Antarctica/Troll",
+      "iana": "Antarctica/Troll"
+    }
+  },
+  {
+    "uid": "8062ad2a-3d72-5b3f-b692-5e691bf3eb48",
+    "name": "Antarctica/Vostok",
+    "description": "Часовой пояс IANA: Antarctica/Vostok.",
+    "icon": null,
+    "extra": {
+      "code": "Antarctica/Vostok",
+      "iana": "Antarctica/Vostok"
+    }
+  },
+  {
+    "uid": "2ca83eb7-a983-5275-a823-68052be74549",
+    "name": "Arctic/Longyearbyen",
+    "description": "Часовой пояс IANA: Arctic/Longyearbyen.",
+    "icon": null,
+    "extra": {
+      "code": "Arctic/Longyearbyen",
+      "iana": "Arctic/Longyearbyen"
+    }
+  },
+  {
+    "uid": "d57edd79-1553-5b85-8421-f1a5baf6904f",
+    "name": "Asia/Aden",
+    "description": "Часовой пояс IANA: Asia/Aden.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Aden",
+      "iana": "Asia/Aden"
+    }
+  },
+  {
+    "uid": "65c85be6-37c0-5dff-bbbe-c0282d20b147",
+    "name": "Asia/Almaty",
+    "description": "Часовой пояс IANA: Asia/Almaty.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Almaty",
+      "iana": "Asia/Almaty"
+    }
+  },
+  {
+    "uid": "c16bdce1-ecd5-5549-b845-93239911f11d",
+    "name": "Asia/Amman",
+    "description": "Часовой пояс IANA: Asia/Amman.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Amman",
+      "iana": "Asia/Amman"
+    }
+  },
+  {
+    "uid": "be6f0099-314f-5dac-89be-0b48c77dd2d9",
+    "name": "Asia/Anadyr",
+    "description": "Часовой пояс IANA: Asia/Anadyr.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Anadyr",
+      "iana": "Asia/Anadyr"
+    }
+  },
+  {
+    "uid": "c4c92845-110e-5573-b1a3-0cb499abcb7a",
+    "name": "Asia/Aqtau",
+    "description": "Часовой пояс IANA: Asia/Aqtau.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Aqtau",
+      "iana": "Asia/Aqtau"
+    }
+  },
+  {
+    "uid": "3ae69129-da06-5e83-ac64-8dba01ce2e5b",
+    "name": "Asia/Aqtobe",
+    "description": "Часовой пояс IANA: Asia/Aqtobe.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Aqtobe",
+      "iana": "Asia/Aqtobe"
+    }
+  },
+  {
+    "uid": "db1f11e7-6195-5809-a255-f31ccb5b7944",
+    "name": "Asia/Ashgabat",
+    "description": "Часовой пояс IANA: Asia/Ashgabat.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Ashgabat",
+      "iana": "Asia/Ashgabat"
+    }
+  },
+  {
+    "uid": "ba32f4ea-6529-557a-b3cc-6f5ae6c418e2",
+    "name": "Asia/Ashkhabad",
+    "description": "Часовой пояс IANA: Asia/Ashkhabad.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Ashkhabad",
+      "iana": "Asia/Ashkhabad"
+    }
+  },
+  {
+    "uid": "c867a1d0-8dde-5a35-b6dc-19c23373ff27",
+    "name": "Asia/Atyrau",
+    "description": "Часовой пояс IANA: Asia/Atyrau.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Atyrau",
+      "iana": "Asia/Atyrau"
+    }
+  },
+  {
+    "uid": "e082d02c-538a-5f16-bc9e-6a2fe944650f",
+    "name": "Asia/Baghdad",
+    "description": "Часовой пояс IANA: Asia/Baghdad.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Baghdad",
+      "iana": "Asia/Baghdad"
+    }
+  },
+  {
+    "uid": "09c2ee06-fe15-560a-818d-2469c2ed8501",
+    "name": "Asia/Bahrain",
+    "description": "Часовой пояс IANA: Asia/Bahrain.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Bahrain",
+      "iana": "Asia/Bahrain"
+    }
+  },
+  {
+    "uid": "3fc1fee7-810b-5d12-8b92-90132128a985",
+    "name": "Asia/Baku",
+    "description": "Часовой пояс IANA: Asia/Baku.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Baku",
+      "iana": "Asia/Baku"
+    }
+  },
+  {
+    "uid": "0c8aa6a7-6433-5e99-80b5-628015c1f209",
+    "name": "Asia/Bangkok",
+    "description": "Часовой пояс IANA: Asia/Bangkok.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Bangkok",
+      "iana": "Asia/Bangkok"
+    }
+  },
+  {
+    "uid": "4ec53ace-cefc-53de-9579-259a98e971d1",
+    "name": "Asia/Barnaul",
+    "description": "Часовой пояс IANA: Asia/Barnaul.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Barnaul",
+      "iana": "Asia/Barnaul"
+    }
+  },
+  {
+    "uid": "212f2c52-f327-5415-91e2-ff3377abb213",
+    "name": "Asia/Beirut",
+    "description": "Часовой пояс IANA: Asia/Beirut.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Beirut",
+      "iana": "Asia/Beirut"
+    }
+  },
+  {
+    "uid": "a4f09796-023b-57af-b4d4-b931156597c2",
+    "name": "Asia/Bishkek",
+    "description": "Часовой пояс IANA: Asia/Bishkek.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Bishkek",
+      "iana": "Asia/Bishkek"
+    }
+  },
+  {
+    "uid": "6a96c3bf-e2d5-5464-9a09-e65c907a15d1",
+    "name": "Asia/Brunei",
+    "description": "Часовой пояс IANA: Asia/Brunei.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Brunei",
+      "iana": "Asia/Brunei"
+    }
+  },
+  {
+    "uid": "e985bc87-ac6a-5d2c-8069-3ea701ee9769",
+    "name": "Asia/Calcutta",
+    "description": "Часовой пояс IANA: Asia/Calcutta.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Calcutta",
+      "iana": "Asia/Calcutta"
+    }
+  },
+  {
+    "uid": "0f6797c9-9030-54ba-b34a-871895a2ba83",
+    "name": "Asia/Chita",
+    "description": "Часовой пояс IANA: Asia/Chita.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Chita",
+      "iana": "Asia/Chita"
+    }
+  },
+  {
+    "uid": "50a902d6-f1e4-571d-8329-3ce5abad9ae6",
+    "name": "Asia/Choibalsan",
+    "description": "Часовой пояс IANA: Asia/Choibalsan.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Choibalsan",
+      "iana": "Asia/Choibalsan"
+    }
+  },
+  {
+    "uid": "d18c94c9-5512-5b72-84d0-bb31dcdc01cb",
+    "name": "Asia/Chongqing",
+    "description": "Часовой пояс IANA: Asia/Chongqing.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Chongqing",
+      "iana": "Asia/Chongqing"
+    }
+  },
+  {
+    "uid": "c8b78a32-a331-5084-8197-e797109c23f0",
+    "name": "Asia/Chungking",
+    "description": "Часовой пояс IANA: Asia/Chungking.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Chungking",
+      "iana": "Asia/Chungking"
+    }
+  },
+  {
+    "uid": "b2d6539a-ae0f-5b81-aae7-b0540f35c6e3",
+    "name": "Asia/Colombo",
+    "description": "Часовой пояс IANA: Asia/Colombo.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Colombo",
+      "iana": "Asia/Colombo"
+    }
+  },
+  {
+    "uid": "40539dac-0435-566a-9202-dceee08746b4",
+    "name": "Asia/Dacca",
+    "description": "Часовой пояс IANA: Asia/Dacca.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Dacca",
+      "iana": "Asia/Dacca"
+    }
+  },
+  {
+    "uid": "61378330-6248-54cf-b1d6-ab5f918164ce",
+    "name": "Asia/Damascus",
+    "description": "Часовой пояс IANA: Asia/Damascus.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Damascus",
+      "iana": "Asia/Damascus"
+    }
+  },
+  {
+    "uid": "17e47dfa-14fa-5aa3-9744-8f5fba0f55d0",
+    "name": "Asia/Dhaka",
+    "description": "Часовой пояс IANA: Asia/Dhaka.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Dhaka",
+      "iana": "Asia/Dhaka"
+    }
+  },
+  {
+    "uid": "364a440b-4dc7-5039-8913-5aafbe2e9f44",
+    "name": "Asia/Dili",
+    "description": "Часовой пояс IANA: Asia/Dili.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Dili",
+      "iana": "Asia/Dili"
+    }
+  },
+  {
+    "uid": "5a9d4ce1-2f7c-594b-8419-d3889c0719d8",
+    "name": "Asia/Dubai",
+    "description": "Часовой пояс IANA: Asia/Dubai.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Dubai",
+      "iana": "Asia/Dubai"
+    }
+  },
+  {
+    "uid": "44b05ba6-e8d0-53e1-99c4-28f85432e7d3",
+    "name": "Asia/Dushanbe",
+    "description": "Часовой пояс IANA: Asia/Dushanbe.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Dushanbe",
+      "iana": "Asia/Dushanbe"
+    }
+  },
+  {
+    "uid": "a3b97fac-cd6f-5b40-999e-729792f7074b",
+    "name": "Asia/Famagusta",
+    "description": "Часовой пояс IANA: Asia/Famagusta.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Famagusta",
+      "iana": "Asia/Famagusta"
+    }
+  },
+  {
+    "uid": "5c754ee6-7c5f-5b68-8fc1-dc410af0fc42",
+    "name": "Asia/Gaza",
+    "description": "Часовой пояс IANA: Asia/Gaza.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Gaza",
+      "iana": "Asia/Gaza"
+    }
+  },
+  {
+    "uid": "f1d2a343-bf9f-5cba-8992-458c93ca90c3",
+    "name": "Asia/Harbin",
+    "description": "Часовой пояс IANA: Asia/Harbin.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Harbin",
+      "iana": "Asia/Harbin"
+    }
+  },
+  {
+    "uid": "b357a077-385b-50af-8e7e-21a3f7659411",
+    "name": "Asia/Hebron",
+    "description": "Часовой пояс IANA: Asia/Hebron.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Hebron",
+      "iana": "Asia/Hebron"
+    }
+  },
+  {
+    "uid": "a62cc5ef-3659-5704-b36c-66533d109ca3",
+    "name": "Asia/Ho_Chi_Minh",
+    "description": "Часовой пояс IANA: Asia/Ho_Chi_Minh.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Ho_Chi_Minh",
+      "iana": "Asia/Ho_Chi_Minh"
+    }
+  },
+  {
+    "uid": "09d0fb3d-faf5-53dc-a702-cee07c5aa5b4",
+    "name": "Asia/Hong_Kong",
+    "description": "Часовой пояс IANA: Asia/Hong_Kong.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Hong_Kong",
+      "iana": "Asia/Hong_Kong"
+    }
+  },
+  {
+    "uid": "7d8f5b1f-3a8d-5203-8217-b62f35940170",
+    "name": "Asia/Hovd",
+    "description": "Часовой пояс IANA: Asia/Hovd.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Hovd",
+      "iana": "Asia/Hovd"
+    }
+  },
+  {
+    "uid": "91029f74-0aa3-52da-835b-4053b3d39267",
+    "name": "Asia/Irkutsk",
+    "description": "Часовой пояс IANA: Asia/Irkutsk.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Irkutsk",
+      "iana": "Asia/Irkutsk"
+    }
+  },
+  {
+    "uid": "d30c8274-63e7-5674-a899-667bc86a58bd",
+    "name": "Asia/Istanbul",
+    "description": "Часовой пояс IANA: Asia/Istanbul.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Istanbul",
+      "iana": "Asia/Istanbul"
+    }
+  },
+  {
+    "uid": "8d1d162d-b483-5efb-bb4f-fdfd5d8f6fec",
+    "name": "Asia/Jakarta",
+    "description": "Часовой пояс IANA: Asia/Jakarta.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Jakarta",
+      "iana": "Asia/Jakarta"
+    }
+  },
+  {
+    "uid": "897d24ef-f050-5311-9233-3384340d98ce",
+    "name": "Asia/Jayapura",
+    "description": "Часовой пояс IANA: Asia/Jayapura.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Jayapura",
+      "iana": "Asia/Jayapura"
+    }
+  },
+  {
+    "uid": "399d76da-6975-5626-951d-3ddec2720196",
+    "name": "Asia/Jerusalem",
+    "description": "Часовой пояс IANA: Asia/Jerusalem.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Jerusalem",
+      "iana": "Asia/Jerusalem"
+    }
+  },
+  {
+    "uid": "c7b9b77a-c6cf-502c-91f0-2fc9536a9678",
+    "name": "Asia/Kabul",
+    "description": "Часовой пояс IANA: Asia/Kabul.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Kabul",
+      "iana": "Asia/Kabul"
+    }
+  },
+  {
+    "uid": "f7bd4f2e-036c-56a8-a381-ebdd79ab2fcf",
+    "name": "Asia/Kamchatka",
+    "description": "Часовой пояс IANA: Asia/Kamchatka.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Kamchatka",
+      "iana": "Asia/Kamchatka"
+    }
+  },
+  {
+    "uid": "0321e74d-e743-581c-b50b-02311a61a907",
+    "name": "Asia/Karachi",
+    "description": "Часовой пояс IANA: Asia/Karachi.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Karachi",
+      "iana": "Asia/Karachi"
+    }
+  },
+  {
+    "uid": "1bf022b8-ccf4-5fcd-bea7-6bf3131a1626",
+    "name": "Asia/Kashgar",
+    "description": "Часовой пояс IANA: Asia/Kashgar.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Kashgar",
+      "iana": "Asia/Kashgar"
+    }
+  },
+  {
+    "uid": "b238a262-39b8-5e8e-9465-8b6e56141d14",
+    "name": "Asia/Kathmandu",
+    "description": "Часовой пояс IANA: Asia/Kathmandu.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Kathmandu",
+      "iana": "Asia/Kathmandu"
+    }
+  },
+  {
+    "uid": "37bd6067-bd53-56aa-8d55-ea34dd53fc49",
+    "name": "Asia/Katmandu",
+    "description": "Часовой пояс IANA: Asia/Katmandu.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Katmandu",
+      "iana": "Asia/Katmandu"
+    }
+  },
+  {
+    "uid": "6d653ea0-a440-5b49-a958-0290c82bafb8",
+    "name": "Asia/Khandyga",
+    "description": "Часовой пояс IANA: Asia/Khandyga.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Khandyga",
+      "iana": "Asia/Khandyga"
+    }
+  },
+  {
+    "uid": "1892b3bb-b5ae-5d77-b651-fa9d2ac5ec73",
+    "name": "Asia/Kolkata",
+    "description": "Часовой пояс IANA: Asia/Kolkata.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Kolkata",
+      "iana": "Asia/Kolkata"
+    }
+  },
+  {
+    "uid": "5134bf6d-ecd5-5a2d-941b-51d8a2a21f93",
+    "name": "Asia/Krasnoyarsk",
+    "description": "Часовой пояс IANA: Asia/Krasnoyarsk.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Krasnoyarsk",
+      "iana": "Asia/Krasnoyarsk"
+    }
+  },
+  {
+    "uid": "227d42c0-7afb-5eda-a54d-df824a922532",
+    "name": "Asia/Kuala_Lumpur",
+    "description": "Часовой пояс IANA: Asia/Kuala_Lumpur.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Kuala_Lumpur",
+      "iana": "Asia/Kuala_Lumpur"
+    }
+  },
+  {
+    "uid": "46e0ece0-f18a-5484-b8c1-8bafb0c16916",
+    "name": "Asia/Kuching",
+    "description": "Часовой пояс IANA: Asia/Kuching.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Kuching",
+      "iana": "Asia/Kuching"
+    }
+  },
+  {
+    "uid": "7382150f-15b0-5689-a292-4c5b427dbf88",
+    "name": "Asia/Kuwait",
+    "description": "Часовой пояс IANA: Asia/Kuwait.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Kuwait",
+      "iana": "Asia/Kuwait"
+    }
+  },
+  {
+    "uid": "c16a281e-59d0-52b0-aeb3-c27e9e9c08fa",
+    "name": "Asia/Macao",
+    "description": "Часовой пояс IANA: Asia/Macao.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Macao",
+      "iana": "Asia/Macao"
+    }
+  },
+  {
+    "uid": "852cd626-7688-57ab-b10d-24f660f4ebd8",
+    "name": "Asia/Macau",
+    "description": "Часовой пояс IANA: Asia/Macau.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Macau",
+      "iana": "Asia/Macau"
+    }
+  },
+  {
+    "uid": "4d0f88b3-f5ab-5b62-8861-39acb3f3d111",
+    "name": "Asia/Magadan",
+    "description": "Часовой пояс IANA: Asia/Magadan.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Magadan",
+      "iana": "Asia/Magadan"
+    }
+  },
+  {
+    "uid": "cf7909d8-ee23-5e7e-8a46-5aa22ea67263",
+    "name": "Asia/Makassar",
+    "description": "Часовой пояс IANA: Asia/Makassar.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Makassar",
+      "iana": "Asia/Makassar"
+    }
+  },
+  {
+    "uid": "e10d2c83-3068-59ab-9ffe-5064200d49c0",
+    "name": "Asia/Manila",
+    "description": "Часовой пояс IANA: Asia/Manila.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Manila",
+      "iana": "Asia/Manila"
+    }
+  },
+  {
+    "uid": "c81cd348-4dcf-59bc-9985-6c21afc52194",
+    "name": "Asia/Muscat",
+    "description": "Часовой пояс IANA: Asia/Muscat.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Muscat",
+      "iana": "Asia/Muscat"
+    }
+  },
+  {
+    "uid": "2f269d38-1104-5b60-a00b-c28eae97e0e1",
+    "name": "Asia/Nicosia",
+    "description": "Часовой пояс IANA: Asia/Nicosia.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Nicosia",
+      "iana": "Asia/Nicosia"
+    }
+  },
+  {
+    "uid": "66ffd81f-d347-5624-b4e8-0ee8b9a2002d",
+    "name": "Asia/Novokuznetsk",
+    "description": "Часовой пояс IANA: Asia/Novokuznetsk.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Novokuznetsk",
+      "iana": "Asia/Novokuznetsk"
+    }
+  },
+  {
+    "uid": "0f4f273d-5820-50e2-aa88-e05fe24da17c",
+    "name": "Asia/Novosibirsk",
+    "description": "Часовой пояс IANA: Asia/Novosibirsk.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Novosibirsk",
+      "iana": "Asia/Novosibirsk"
+    }
+  },
+  {
+    "uid": "da164aea-e267-56e1-a6f1-9e2cfebced84",
+    "name": "Asia/Omsk",
+    "description": "Часовой пояс IANA: Asia/Omsk.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Omsk",
+      "iana": "Asia/Omsk"
+    }
+  },
+  {
+    "uid": "5c230c7a-e8fc-5a2d-8e6e-c652dd71d451",
+    "name": "Asia/Oral",
+    "description": "Часовой пояс IANA: Asia/Oral.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Oral",
+      "iana": "Asia/Oral"
+    }
+  },
+  {
+    "uid": "8431a393-3c62-5a57-b311-e0e10ca747e4",
+    "name": "Asia/Phnom_Penh",
+    "description": "Часовой пояс IANA: Asia/Phnom_Penh.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Phnom_Penh",
+      "iana": "Asia/Phnom_Penh"
+    }
+  },
+  {
+    "uid": "784f8653-d943-522f-8c22-49b8661c5e00",
+    "name": "Asia/Pontianak",
+    "description": "Часовой пояс IANA: Asia/Pontianak.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Pontianak",
+      "iana": "Asia/Pontianak"
+    }
+  },
+  {
+    "uid": "8e4909bb-6831-50d6-8312-d570508f23fd",
+    "name": "Asia/Pyongyang",
+    "description": "Часовой пояс IANA: Asia/Pyongyang.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Pyongyang",
+      "iana": "Asia/Pyongyang"
+    }
+  },
+  {
+    "uid": "5aba1c90-1b65-57f6-8f30-d42ce5dce239",
+    "name": "Asia/Qatar",
+    "description": "Часовой пояс IANA: Asia/Qatar.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Qatar",
+      "iana": "Asia/Qatar"
+    }
+  },
+  {
+    "uid": "e40add8b-d53a-570d-9a41-ac2ef29f5c61",
+    "name": "Asia/Qostanay",
+    "description": "Часовой пояс IANA: Asia/Qostanay.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Qostanay",
+      "iana": "Asia/Qostanay"
+    }
+  },
+  {
+    "uid": "27912e5f-18a9-5da1-a487-dd9f6bc236ac",
+    "name": "Asia/Qyzylorda",
+    "description": "Часовой пояс IANA: Asia/Qyzylorda.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Qyzylorda",
+      "iana": "Asia/Qyzylorda"
+    }
+  },
+  {
+    "uid": "904de209-ba98-57d1-81a9-05ad479ce85d",
+    "name": "Asia/Rangoon",
+    "description": "Часовой пояс IANA: Asia/Rangoon.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Rangoon",
+      "iana": "Asia/Rangoon"
+    }
+  },
+  {
+    "uid": "f4d375cd-422b-532d-8bcf-fb6b735fe61f",
+    "name": "Asia/Riyadh",
+    "description": "Часовой пояс IANA: Asia/Riyadh.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Riyadh",
+      "iana": "Asia/Riyadh"
+    }
+  },
+  {
+    "uid": "43d7c90b-8844-58ae-9c4f-8a062f87bec7",
+    "name": "Asia/Saigon",
+    "description": "Часовой пояс IANA: Asia/Saigon.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Saigon",
+      "iana": "Asia/Saigon"
+    }
+  },
+  {
+    "uid": "73ae39bc-42e9-54de-8383-e4ff87245bd4",
+    "name": "Asia/Sakhalin",
+    "description": "Часовой пояс IANA: Asia/Sakhalin.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Sakhalin",
+      "iana": "Asia/Sakhalin"
+    }
+  },
+  {
+    "uid": "73520d65-37a6-55b5-908c-f1ec50e1688c",
+    "name": "Asia/Samarkand",
+    "description": "Часовой пояс IANA: Asia/Samarkand.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Samarkand",
+      "iana": "Asia/Samarkand"
+    }
+  },
+  {
+    "uid": "8a7a6adf-3c6c-5552-be6d-2e7997655a63",
+    "name": "Asia/Seoul",
+    "description": "Часовой пояс IANA: Asia/Seoul.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Seoul",
+      "iana": "Asia/Seoul"
+    }
+  },
+  {
+    "uid": "44140e02-0a71-5581-a99f-308d935026c0",
+    "name": "Asia/Shanghai",
+    "description": "Часовой пояс IANA: Asia/Shanghai.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Shanghai",
+      "iana": "Asia/Shanghai"
+    }
+  },
+  {
+    "uid": "46e9c1c8-758d-5d93-84a7-d19955199add",
+    "name": "Asia/Singapore",
+    "description": "Часовой пояс IANA: Asia/Singapore.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Singapore",
+      "iana": "Asia/Singapore"
+    }
+  },
+  {
+    "uid": "964395fa-745f-500c-a2a1-754ff545504b",
+    "name": "Asia/Srednekolymsk",
+    "description": "Часовой пояс IANA: Asia/Srednekolymsk.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Srednekolymsk",
+      "iana": "Asia/Srednekolymsk"
+    }
+  },
+  {
+    "uid": "392921e9-4446-5681-ab6d-8e23bf963e13",
+    "name": "Asia/Taipei",
+    "description": "Часовой пояс IANA: Asia/Taipei.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Taipei",
+      "iana": "Asia/Taipei"
+    }
+  },
+  {
+    "uid": "696ee6b5-8ff1-5c9c-9901-1651fbf8a7f5",
+    "name": "Asia/Tashkent",
+    "description": "Часовой пояс IANA: Asia/Tashkent.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Tashkent",
+      "iana": "Asia/Tashkent"
+    }
+  },
+  {
+    "uid": "e8431383-2ebc-5ef9-96b0-8cad451da64f",
+    "name": "Asia/Tbilisi",
+    "description": "Часовой пояс IANA: Asia/Tbilisi.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Tbilisi",
+      "iana": "Asia/Tbilisi"
+    }
+  },
+  {
+    "uid": "be975ca8-c37d-59ca-98e5-6e9671c50546",
+    "name": "Asia/Tehran",
+    "description": "Часовой пояс IANA: Asia/Tehran.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Tehran",
+      "iana": "Asia/Tehran"
+    }
+  },
+  {
+    "uid": "6ae26dfa-1ba2-510a-8980-40baee4d5cf9",
+    "name": "Asia/Tel_Aviv",
+    "description": "Часовой пояс IANA: Asia/Tel_Aviv.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Tel_Aviv",
+      "iana": "Asia/Tel_Aviv"
+    }
+  },
+  {
+    "uid": "2c9632b4-5d36-5f5f-9e58-f2c68947bc39",
+    "name": "Asia/Thimbu",
+    "description": "Часовой пояс IANA: Asia/Thimbu.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Thimbu",
+      "iana": "Asia/Thimbu"
+    }
+  },
+  {
+    "uid": "4c5f9402-29f4-5e96-a269-50b1a522438b",
+    "name": "Asia/Thimphu",
+    "description": "Часовой пояс IANA: Asia/Thimphu.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Thimphu",
+      "iana": "Asia/Thimphu"
+    }
+  },
+  {
+    "uid": "3b273fca-477d-575c-86b4-0f6a2c872e0e",
+    "name": "Asia/Tokyo",
+    "description": "Часовой пояс IANA: Asia/Tokyo.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Tokyo",
+      "iana": "Asia/Tokyo"
+    }
+  },
+  {
+    "uid": "4ed7e2a1-9988-5c96-b67f-c39dd2005c72",
+    "name": "Asia/Tomsk",
+    "description": "Часовой пояс IANA: Asia/Tomsk.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Tomsk",
+      "iana": "Asia/Tomsk"
+    }
+  },
+  {
+    "uid": "be393375-f44a-5e7e-8d01-8cb8db767e2e",
+    "name": "Asia/Ujung_Pandang",
+    "description": "Часовой пояс IANA: Asia/Ujung_Pandang.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Ujung_Pandang",
+      "iana": "Asia/Ujung_Pandang"
+    }
+  },
+  {
+    "uid": "78fe9570-067f-506e-b49b-53413be75504",
+    "name": "Asia/Ulaanbaatar",
+    "description": "Часовой пояс IANA: Asia/Ulaanbaatar.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Ulaanbaatar",
+      "iana": "Asia/Ulaanbaatar"
+    }
+  },
+  {
+    "uid": "6ad981ae-eb9a-5da3-bb20-3bd74849401f",
+    "name": "Asia/Ulan_Bator",
+    "description": "Часовой пояс IANA: Asia/Ulan_Bator.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Ulan_Bator",
+      "iana": "Asia/Ulan_Bator"
+    }
+  },
+  {
+    "uid": "6c1f63af-b7b6-5daf-b8ea-d8a65dbbd5c5",
+    "name": "Asia/Urumqi",
+    "description": "Часовой пояс IANA: Asia/Urumqi.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Urumqi",
+      "iana": "Asia/Urumqi"
+    }
+  },
+  {
+    "uid": "9d03e025-f7fa-54eb-a77a-ef64c9b436e4",
+    "name": "Asia/Ust-Nera",
+    "description": "Часовой пояс IANA: Asia/Ust-Nera.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Ust-Nera",
+      "iana": "Asia/Ust-Nera"
+    }
+  },
+  {
+    "uid": "f184ad80-6acb-54be-8034-2482f31fedc2",
+    "name": "Asia/Vientiane",
+    "description": "Часовой пояс IANA: Asia/Vientiane.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Vientiane",
+      "iana": "Asia/Vientiane"
+    }
+  },
+  {
+    "uid": "6cb7bfcb-e01f-5a56-8fa9-a1ae8215a538",
+    "name": "Asia/Vladivostok",
+    "description": "Часовой пояс IANA: Asia/Vladivostok.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Vladivostok",
+      "iana": "Asia/Vladivostok"
+    }
+  },
+  {
+    "uid": "d4f3361f-4952-57b4-9227-87cdf65f7f5c",
+    "name": "Asia/Yakutsk",
+    "description": "Часовой пояс IANA: Asia/Yakutsk.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Yakutsk",
+      "iana": "Asia/Yakutsk"
+    }
+  },
+  {
+    "uid": "1d24ce45-9ee5-5c87-bd96-a10d7015d929",
+    "name": "Asia/Yangon",
+    "description": "Часовой пояс IANA: Asia/Yangon.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Yangon",
+      "iana": "Asia/Yangon"
+    }
+  },
+  {
+    "uid": "4fa7b5c9-6154-50fa-bec9-0974c59432d5",
+    "name": "Asia/Yekaterinburg",
+    "description": "Часовой пояс IANA: Asia/Yekaterinburg.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Yekaterinburg",
+      "iana": "Asia/Yekaterinburg"
+    }
+  },
+  {
+    "uid": "008a8d40-ad24-56ba-8e90-216a50838444",
+    "name": "Asia/Yerevan",
+    "description": "Часовой пояс IANA: Asia/Yerevan.",
+    "icon": null,
+    "extra": {
+      "code": "Asia/Yerevan",
+      "iana": "Asia/Yerevan"
+    }
+  },
+  {
+    "uid": "a43f66da-c649-5b6e-9a16-d65681e2414f",
+    "name": "Atlantic/Azores",
+    "description": "Часовой пояс IANA: Atlantic/Azores.",
+    "icon": null,
+    "extra": {
+      "code": "Atlantic/Azores",
+      "iana": "Atlantic/Azores"
+    }
+  },
+  {
+    "uid": "2c5ef2f0-38c7-5393-b316-a5e3b549220e",
+    "name": "Atlantic/Bermuda",
+    "description": "Часовой пояс IANA: Atlantic/Bermuda.",
+    "icon": null,
+    "extra": {
+      "code": "Atlantic/Bermuda",
+      "iana": "Atlantic/Bermuda"
+    }
+  },
+  {
+    "uid": "05b41e9e-564c-5d2d-b8f5-eee84933167f",
+    "name": "Atlantic/Canary",
+    "description": "Часовой пояс IANA: Atlantic/Canary.",
+    "icon": null,
+    "extra": {
+      "code": "Atlantic/Canary",
+      "iana": "Atlantic/Canary"
+    }
+  },
+  {
+    "uid": "2e2d7a1a-45c7-5bf0-ad61-2fc6f85b6263",
+    "name": "Atlantic/Cape_Verde",
+    "description": "Часовой пояс IANA: Atlantic/Cape_Verde.",
+    "icon": null,
+    "extra": {
+      "code": "Atlantic/Cape_Verde",
+      "iana": "Atlantic/Cape_Verde"
+    }
+  },
+  {
+    "uid": "64175273-b7c6-5a2f-9f18-0a382dc37496",
+    "name": "Atlantic/Faeroe",
+    "description": "Часовой пояс IANA: Atlantic/Faeroe.",
+    "icon": null,
+    "extra": {
+      "code": "Atlantic/Faeroe",
+      "iana": "Atlantic/Faeroe"
+    }
+  },
+  {
+    "uid": "f8b9fe3c-e522-5ebf-853f-ac28e0a2026d",
+    "name": "Atlantic/Faroe",
+    "description": "Часовой пояс IANA: Atlantic/Faroe.",
+    "icon": null,
+    "extra": {
+      "code": "Atlantic/Faroe",
+      "iana": "Atlantic/Faroe"
+    }
+  },
+  {
+    "uid": "59638bc3-52ac-56f5-9bad-3dd54fc9cf5f",
+    "name": "Atlantic/Jan_Mayen",
+    "description": "Часовой пояс IANA: Atlantic/Jan_Mayen.",
+    "icon": null,
+    "extra": {
+      "code": "Atlantic/Jan_Mayen",
+      "iana": "Atlantic/Jan_Mayen"
+    }
+  },
+  {
+    "uid": "f4be49c5-a67c-5d73-b85a-da8a1b7d4d55",
+    "name": "Atlantic/Madeira",
+    "description": "Часовой пояс IANA: Atlantic/Madeira.",
+    "icon": null,
+    "extra": {
+      "code": "Atlantic/Madeira",
+      "iana": "Atlantic/Madeira"
+    }
+  },
+  {
+    "uid": "5f31a1b7-0b80-5acb-8b0f-c38120a9c389",
+    "name": "Atlantic/Reykjavik",
+    "description": "Часовой пояс IANA: Atlantic/Reykjavik.",
+    "icon": null,
+    "extra": {
+      "code": "Atlantic/Reykjavik",
+      "iana": "Atlantic/Reykjavik"
+    }
+  },
+  {
+    "uid": "199cfec6-b66a-5fcb-91ae-e2883e79613b",
+    "name": "Atlantic/South_Georgia",
+    "description": "Часовой пояс IANA: Atlantic/South_Georgia.",
+    "icon": null,
+    "extra": {
+      "code": "Atlantic/South_Georgia",
+      "iana": "Atlantic/South_Georgia"
+    }
+  },
+  {
+    "uid": "9bbdbcdd-338c-544e-9fc0-8695f45960fd",
+    "name": "Atlantic/St_Helena",
+    "description": "Часовой пояс IANA: Atlantic/St_Helena.",
+    "icon": null,
+    "extra": {
+      "code": "Atlantic/St_Helena",
+      "iana": "Atlantic/St_Helena"
+    }
+  },
+  {
+    "uid": "d3cf0240-9f81-5e5f-a2e9-9f4915657b56",
+    "name": "Atlantic/Stanley",
+    "description": "Часовой пояс IANA: Atlantic/Stanley.",
+    "icon": null,
+    "extra": {
+      "code": "Atlantic/Stanley",
+      "iana": "Atlantic/Stanley"
+    }
+  },
+  {
+    "uid": "6831c2b8-d10f-50a9-8a68-293e5c507b0d",
+    "name": "Australia/ACT",
+    "description": "Часовой пояс IANA: Australia/ACT.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/ACT",
+      "iana": "Australia/ACT"
+    }
+  },
+  {
+    "uid": "9059546e-cde3-5e86-beca-6467f0609d46",
+    "name": "Australia/Adelaide",
+    "description": "Часовой пояс IANA: Australia/Adelaide.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/Adelaide",
+      "iana": "Australia/Adelaide"
+    }
+  },
+  {
+    "uid": "78f122c2-cd94-5e5b-869f-ffaae52ac666",
+    "name": "Australia/Brisbane",
+    "description": "Часовой пояс IANA: Australia/Brisbane.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/Brisbane",
+      "iana": "Australia/Brisbane"
+    }
+  },
+  {
+    "uid": "9f54f4e0-31c8-51ae-96ce-c97c0766e436",
+    "name": "Australia/Broken_Hill",
+    "description": "Часовой пояс IANA: Australia/Broken_Hill.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/Broken_Hill",
+      "iana": "Australia/Broken_Hill"
+    }
+  },
+  {
+    "uid": "b097669c-9d6c-5e86-901d-6b7ad1794fb5",
+    "name": "Australia/Canberra",
+    "description": "Часовой пояс IANA: Australia/Canberra.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/Canberra",
+      "iana": "Australia/Canberra"
+    }
+  },
+  {
+    "uid": "03b8f05f-bcdf-5b32-b16a-96e74d7c9fe1",
+    "name": "Australia/Currie",
+    "description": "Часовой пояс IANA: Australia/Currie.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/Currie",
+      "iana": "Australia/Currie"
+    }
+  },
+  {
+    "uid": "ce5f0fb4-fb86-5ef2-b4ff-ededd843f5e6",
+    "name": "Australia/Darwin",
+    "description": "Часовой пояс IANA: Australia/Darwin.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/Darwin",
+      "iana": "Australia/Darwin"
+    }
+  },
+  {
+    "uid": "4e3afd49-3980-5233-aefb-479e5d9183da",
+    "name": "Australia/Eucla",
+    "description": "Часовой пояс IANA: Australia/Eucla.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/Eucla",
+      "iana": "Australia/Eucla"
+    }
+  },
+  {
+    "uid": "b1bbdc47-5d95-59fe-8895-a9731df0c6a2",
+    "name": "Australia/Hobart",
+    "description": "Часовой пояс IANA: Australia/Hobart.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/Hobart",
+      "iana": "Australia/Hobart"
+    }
+  },
+  {
+    "uid": "b3f8ff95-722c-5ad5-9e07-dab6ea0e7447",
+    "name": "Australia/LHI",
+    "description": "Часовой пояс IANA: Australia/LHI.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/LHI",
+      "iana": "Australia/LHI"
+    }
+  },
+  {
+    "uid": "cae36833-84c2-584f-a533-d4f9aebc2d34",
+    "name": "Australia/Lindeman",
+    "description": "Часовой пояс IANA: Australia/Lindeman.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/Lindeman",
+      "iana": "Australia/Lindeman"
+    }
+  },
+  {
+    "uid": "572db653-47f3-5cfe-b4b8-4b2777291ece",
+    "name": "Australia/Lord_Howe",
+    "description": "Часовой пояс IANA: Australia/Lord_Howe.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/Lord_Howe",
+      "iana": "Australia/Lord_Howe"
+    }
+  },
+  {
+    "uid": "11da87e2-0ca1-504a-af4f-6c3ed46c57a5",
+    "name": "Australia/Melbourne",
+    "description": "Часовой пояс IANA: Australia/Melbourne.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/Melbourne",
+      "iana": "Australia/Melbourne"
+    }
+  },
+  {
+    "uid": "94152182-369c-5936-8e6f-2ddf0e3c983c",
+    "name": "Australia/NSW",
+    "description": "Часовой пояс IANA: Australia/NSW.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/NSW",
+      "iana": "Australia/NSW"
+    }
+  },
+  {
+    "uid": "4057aaab-67aa-537b-9fed-43678ee2ee50",
+    "name": "Australia/North",
+    "description": "Часовой пояс IANA: Australia/North.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/North",
+      "iana": "Australia/North"
+    }
+  },
+  {
+    "uid": "c6070a61-69cd-550d-a425-9fc796c676c9",
+    "name": "Australia/Perth",
+    "description": "Часовой пояс IANA: Australia/Perth.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/Perth",
+      "iana": "Australia/Perth"
+    }
+  },
+  {
+    "uid": "14bb2086-e53c-5343-9d9f-295dc18d6bd8",
+    "name": "Australia/Queensland",
+    "description": "Часовой пояс IANA: Australia/Queensland.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/Queensland",
+      "iana": "Australia/Queensland"
+    }
+  },
+  {
+    "uid": "4369a3ed-cbd3-581e-89d9-c7f91b49b8d3",
+    "name": "Australia/South",
+    "description": "Часовой пояс IANA: Australia/South.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/South",
+      "iana": "Australia/South"
+    }
+  },
+  {
+    "uid": "3ae2b1d2-44ac-5659-9c99-1463594eac4e",
+    "name": "Australia/Sydney",
+    "description": "Часовой пояс IANA: Australia/Sydney.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/Sydney",
+      "iana": "Australia/Sydney"
+    }
+  },
+  {
+    "uid": "b63e50b0-5f40-59c6-b708-d57186c78455",
+    "name": "Australia/Tasmania",
+    "description": "Часовой пояс IANA: Australia/Tasmania.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/Tasmania",
+      "iana": "Australia/Tasmania"
+    }
+  },
+  {
+    "uid": "dcf3cd00-5f61-54b7-9d82-796263d24219",
+    "name": "Australia/Victoria",
+    "description": "Часовой пояс IANA: Australia/Victoria.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/Victoria",
+      "iana": "Australia/Victoria"
+    }
+  },
+  {
+    "uid": "074ce5db-e052-5bf6-a7fc-5b039fa30402",
+    "name": "Australia/West",
+    "description": "Часовой пояс IANA: Australia/West.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/West",
+      "iana": "Australia/West"
+    }
+  },
+  {
+    "uid": "2e6e14f8-4402-5d77-8898-f675842d6da0",
+    "name": "Australia/Yancowinna",
+    "description": "Часовой пояс IANA: Australia/Yancowinna.",
+    "icon": null,
+    "extra": {
+      "code": "Australia/Yancowinna",
+      "iana": "Australia/Yancowinna"
+    }
+  },
+  {
+    "uid": "e5728dec-cf7c-57bf-83ef-379612c97a22",
+    "name": "Brazil/Acre",
+    "description": "Часовой пояс IANA: Brazil/Acre.",
+    "icon": null,
+    "extra": {
+      "code": "Brazil/Acre",
+      "iana": "Brazil/Acre"
+    }
+  },
+  {
+    "uid": "cf4513b2-7dd8-5bb3-b7dd-d8065a1d5d1b",
+    "name": "Brazil/DeNoronha",
+    "description": "Часовой пояс IANA: Brazil/DeNoronha.",
+    "icon": null,
+    "extra": {
+      "code": "Brazil/DeNoronha",
+      "iana": "Brazil/DeNoronha"
+    }
+  },
+  {
+    "uid": "f0eed18a-519b-5c5a-9f39-52497e5b3c7c",
+    "name": "Brazil/East",
+    "description": "Часовой пояс IANA: Brazil/East.",
+    "icon": null,
+    "extra": {
+      "code": "Brazil/East",
+      "iana": "Brazil/East"
+    }
+  },
+  {
+    "uid": "d295e5b3-51f0-5f77-97e6-1d63f0dad5b2",
+    "name": "Brazil/West",
+    "description": "Часовой пояс IANA: Brazil/West.",
+    "icon": null,
+    "extra": {
+      "code": "Brazil/West",
+      "iana": "Brazil/West"
+    }
+  },
+  {
+    "uid": "6c96bb99-8d01-5a8e-826a-265c500d1c55",
+    "name": "CET",
+    "description": "Часовой пояс IANA: CET.",
+    "icon": null,
+    "extra": {
+      "code": "CET",
+      "iana": "CET"
+    }
+  },
+  {
+    "uid": "757e0d4f-7245-576d-bd81-e640b049d27f",
+    "name": "CST6CDT",
+    "description": "Часовой пояс IANA: CST6CDT.",
+    "icon": null,
+    "extra": {
+      "code": "CST6CDT",
+      "iana": "CST6CDT"
+    }
+  },
+  {
+    "uid": "f69a0ed3-4a0d-5093-b66c-076d42ac34dd",
+    "name": "Canada/Atlantic",
+    "description": "Часовой пояс IANA: Canada/Atlantic.",
+    "icon": null,
+    "extra": {
+      "code": "Canada/Atlantic",
+      "iana": "Canada/Atlantic"
+    }
+  },
+  {
+    "uid": "887a0042-a4be-559e-b0dd-be9b965bebf3",
+    "name": "Canada/Central",
+    "description": "Часовой пояс IANA: Canada/Central.",
+    "icon": null,
+    "extra": {
+      "code": "Canada/Central",
+      "iana": "Canada/Central"
+    }
+  },
+  {
+    "uid": "78f26391-acef-553d-9e6a-f249fffb1851",
+    "name": "Canada/Eastern",
+    "description": "Часовой пояс IANA: Canada/Eastern.",
+    "icon": null,
+    "extra": {
+      "code": "Canada/Eastern",
+      "iana": "Canada/Eastern"
+    }
+  },
+  {
+    "uid": "8cf9cabd-c921-5841-80c4-5bdd73ad3c7a",
+    "name": "Canada/Mountain",
+    "description": "Часовой пояс IANA: Canada/Mountain.",
+    "icon": null,
+    "extra": {
+      "code": "Canada/Mountain",
+      "iana": "Canada/Mountain"
+    }
+  },
+  {
+    "uid": "5318639f-99c9-5a99-a171-8cb85346c55d",
+    "name": "Canada/Newfoundland",
+    "description": "Часовой пояс IANA: Canada/Newfoundland.",
+    "icon": null,
+    "extra": {
+      "code": "Canada/Newfoundland",
+      "iana": "Canada/Newfoundland"
+    }
+  },
+  {
+    "uid": "f43409ee-f624-5e8f-88a7-a99a1b03c166",
+    "name": "Canada/Pacific",
+    "description": "Часовой пояс IANA: Canada/Pacific.",
+    "icon": null,
+    "extra": {
+      "code": "Canada/Pacific",
+      "iana": "Canada/Pacific"
+    }
+  },
+  {
+    "uid": "7497a2d9-fe73-5f47-b39b-f56ca6065fb6",
+    "name": "Canada/Saskatchewan",
+    "description": "Часовой пояс IANA: Canada/Saskatchewan.",
+    "icon": null,
+    "extra": {
+      "code": "Canada/Saskatchewan",
+      "iana": "Canada/Saskatchewan"
+    }
+  },
+  {
+    "uid": "6daeff20-862e-5c5b-8cef-23b88aca6315",
+    "name": "Canada/Yukon",
+    "description": "Часовой пояс IANA: Canada/Yukon.",
+    "icon": null,
+    "extra": {
+      "code": "Canada/Yukon",
+      "iana": "Canada/Yukon"
+    }
+  },
+  {
+    "uid": "5944f4ba-1211-5ab4-b960-cd3894eae2c3",
+    "name": "Chile/Continental",
+    "description": "Часовой пояс IANA: Chile/Continental.",
+    "icon": null,
+    "extra": {
+      "code": "Chile/Continental",
+      "iana": "Chile/Continental"
+    }
+  },
+  {
+    "uid": "30ce3cc2-9b82-5e35-8bb5-949364c2f291",
+    "name": "Chile/EasterIsland",
+    "description": "Часовой пояс IANA: Chile/EasterIsland.",
+    "icon": null,
+    "extra": {
+      "code": "Chile/EasterIsland",
+      "iana": "Chile/EasterIsland"
+    }
+  },
+  {
+    "uid": "8ac047e3-1037-55ce-b8ea-2b932e10605c",
+    "name": "Cuba",
+    "description": "Часовой пояс IANA: Cuba.",
+    "icon": null,
+    "extra": {
+      "code": "Cuba",
+      "iana": "Cuba"
+    }
+  },
+  {
+    "uid": "29229043-986b-5fb4-b61a-7b4f361106c0",
+    "name": "EET",
+    "description": "Часовой пояс IANA: EET.",
+    "icon": null,
+    "extra": {
+      "code": "EET",
+      "iana": "EET"
+    }
+  },
+  {
+    "uid": "c2f0432c-7f5d-5aeb-86aa-c1fe72128884",
+    "name": "EST",
+    "description": "Часовой пояс IANA: EST.",
+    "icon": null,
+    "extra": {
+      "code": "EST",
+      "iana": "EST"
+    }
+  },
+  {
+    "uid": "443984e6-4166-5f86-b43e-9f4cecd72eb5",
+    "name": "EST5EDT",
+    "description": "Часовой пояс IANA: EST5EDT.",
+    "icon": null,
+    "extra": {
+      "code": "EST5EDT",
+      "iana": "EST5EDT"
+    }
+  },
+  {
+    "uid": "9e0c7307-74f4-5854-9377-4b3b621a4a0e",
+    "name": "Egypt",
+    "description": "Часовой пояс IANA: Egypt.",
+    "icon": null,
+    "extra": {
+      "code": "Egypt",
+      "iana": "Egypt"
+    }
+  },
+  {
+    "uid": "1abeec43-f9dc-505f-b952-7700cbb08108",
+    "name": "Eire",
+    "description": "Часовой пояс IANA: Eire.",
+    "icon": null,
+    "extra": {
+      "code": "Eire",
+      "iana": "Eire"
+    }
+  },
+  {
+    "uid": "d439fa0c-a0c9-5457-a9cb-0412611c191e",
+    "name": "Etc/GMT",
+    "description": "Часовой пояс IANA: Etc/GMT.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT",
+      "iana": "Etc/GMT"
+    }
+  },
+  {
+    "uid": "d8d3792c-2f86-5fa3-ba32-4dbdafcbeb27",
+    "name": "Etc/GMT+0",
+    "description": "Часовой пояс IANA: Etc/GMT+0.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT+0",
+      "iana": "Etc/GMT+0"
+    }
+  },
+  {
+    "uid": "41a934c5-1e0b-5dff-ae81-cfb2ab55d23d",
+    "name": "Etc/GMT+1",
+    "description": "Часовой пояс IANA: Etc/GMT+1.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT+1",
+      "iana": "Etc/GMT+1"
+    }
+  },
+  {
+    "uid": "d36ff9d3-63c4-52df-9180-1995d0195c47",
+    "name": "Etc/GMT+10",
+    "description": "Часовой пояс IANA: Etc/GMT+10.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT+10",
+      "iana": "Etc/GMT+10"
+    }
+  },
+  {
+    "uid": "25e01af0-fc46-5da9-9c5d-471c9bde954d",
+    "name": "Etc/GMT+11",
+    "description": "Часовой пояс IANA: Etc/GMT+11.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT+11",
+      "iana": "Etc/GMT+11"
+    }
+  },
+  {
+    "uid": "2fc5b7bc-a3c3-51eb-96f2-5199e0b70e6b",
+    "name": "Etc/GMT+12",
+    "description": "Часовой пояс IANA: Etc/GMT+12.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT+12",
+      "iana": "Etc/GMT+12"
+    }
+  },
+  {
+    "uid": "17b96080-5035-5774-aab2-dc1078934c59",
+    "name": "Etc/GMT+2",
+    "description": "Часовой пояс IANA: Etc/GMT+2.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT+2",
+      "iana": "Etc/GMT+2"
+    }
+  },
+  {
+    "uid": "96dc9a3c-b48c-59d2-a78b-c7689600a4a3",
+    "name": "Etc/GMT+3",
+    "description": "Часовой пояс IANA: Etc/GMT+3.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT+3",
+      "iana": "Etc/GMT+3"
+    }
+  },
+  {
+    "uid": "85f53f98-b020-5a56-bd24-3b95845107f3",
+    "name": "Etc/GMT+4",
+    "description": "Часовой пояс IANA: Etc/GMT+4.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT+4",
+      "iana": "Etc/GMT+4"
+    }
+  },
+  {
+    "uid": "b4896230-946c-578c-ba24-3f75857d3d1f",
+    "name": "Etc/GMT+5",
+    "description": "Часовой пояс IANA: Etc/GMT+5.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT+5",
+      "iana": "Etc/GMT+5"
+    }
+  },
+  {
+    "uid": "4e3fa333-0c21-53f9-b7e4-da222b32db0b",
+    "name": "Etc/GMT+6",
+    "description": "Часовой пояс IANA: Etc/GMT+6.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT+6",
+      "iana": "Etc/GMT+6"
+    }
+  },
+  {
+    "uid": "e610edfe-1d23-5853-9859-0cacde7d0349",
+    "name": "Etc/GMT+7",
+    "description": "Часовой пояс IANA: Etc/GMT+7.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT+7",
+      "iana": "Etc/GMT+7"
+    }
+  },
+  {
+    "uid": "c139e4e3-81a1-5dfd-8ea2-9ecd3383a7c3",
+    "name": "Etc/GMT+8",
+    "description": "Часовой пояс IANA: Etc/GMT+8.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT+8",
+      "iana": "Etc/GMT+8"
+    }
+  },
+  {
+    "uid": "8e74c7dc-df67-5c97-9464-f8f96585006c",
+    "name": "Etc/GMT+9",
+    "description": "Часовой пояс IANA: Etc/GMT+9.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT+9",
+      "iana": "Etc/GMT+9"
+    }
+  },
+  {
+    "uid": "55c3b94c-3053-5829-b3de-dbb5d603a05b",
+    "name": "Etc/GMT-0",
+    "description": "Часовой пояс IANA: Etc/GMT-0.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT-0",
+      "iana": "Etc/GMT-0"
+    }
+  },
+  {
+    "uid": "98e7fba7-ebf9-5263-9bce-f2d9068cb390",
+    "name": "Etc/GMT-1",
+    "description": "Часовой пояс IANA: Etc/GMT-1.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT-1",
+      "iana": "Etc/GMT-1"
+    }
+  },
+  {
+    "uid": "a5b311cf-d214-5a79-896a-e07a83de2c75",
+    "name": "Etc/GMT-10",
+    "description": "Часовой пояс IANA: Etc/GMT-10.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT-10",
+      "iana": "Etc/GMT-10"
+    }
+  },
+  {
+    "uid": "8af005c9-c39d-5bbe-ba01-414721ecd108",
+    "name": "Etc/GMT-11",
+    "description": "Часовой пояс IANA: Etc/GMT-11.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT-11",
+      "iana": "Etc/GMT-11"
+    }
+  },
+  {
+    "uid": "6f3ce967-0a04-516c-8af0-e725bcfda93f",
+    "name": "Etc/GMT-12",
+    "description": "Часовой пояс IANA: Etc/GMT-12.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT-12",
+      "iana": "Etc/GMT-12"
+    }
+  },
+  {
+    "uid": "6985317f-63f7-5f6e-b899-e4d282703572",
+    "name": "Etc/GMT-13",
+    "description": "Часовой пояс IANA: Etc/GMT-13.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT-13",
+      "iana": "Etc/GMT-13"
+    }
+  },
+  {
+    "uid": "01ccb28d-4d62-5762-a62c-19cb58977074",
+    "name": "Etc/GMT-14",
+    "description": "Часовой пояс IANA: Etc/GMT-14.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT-14",
+      "iana": "Etc/GMT-14"
+    }
+  },
+  {
+    "uid": "982da83b-91f5-5eaf-9257-527aad595479",
+    "name": "Etc/GMT-2",
+    "description": "Часовой пояс IANA: Etc/GMT-2.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT-2",
+      "iana": "Etc/GMT-2"
+    }
+  },
+  {
+    "uid": "5922eb6d-731e-5f8d-920b-34c5c1d55c54",
+    "name": "Etc/GMT-3",
+    "description": "Часовой пояс IANA: Etc/GMT-3.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT-3",
+      "iana": "Etc/GMT-3"
+    }
+  },
+  {
+    "uid": "c8a14243-d4e7-5893-acb7-afd09d41f30d",
+    "name": "Etc/GMT-4",
+    "description": "Часовой пояс IANA: Etc/GMT-4.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT-4",
+      "iana": "Etc/GMT-4"
+    }
+  },
+  {
+    "uid": "3324f4f0-384c-5ccd-9165-122c04c95c0e",
+    "name": "Etc/GMT-5",
+    "description": "Часовой пояс IANA: Etc/GMT-5.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT-5",
+      "iana": "Etc/GMT-5"
+    }
+  },
+  {
+    "uid": "bbf41447-66b8-51b1-b73b-e29af9fa88a4",
+    "name": "Etc/GMT-6",
+    "description": "Часовой пояс IANA: Etc/GMT-6.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT-6",
+      "iana": "Etc/GMT-6"
+    }
+  },
+  {
+    "uid": "b2bff1b6-3b25-5382-8131-24f6fc034c9a",
+    "name": "Etc/GMT-7",
+    "description": "Часовой пояс IANA: Etc/GMT-7.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT-7",
+      "iana": "Etc/GMT-7"
+    }
+  },
+  {
+    "uid": "ea65b000-d75a-5440-944c-60c210bc9342",
+    "name": "Etc/GMT-8",
+    "description": "Часовой пояс IANA: Etc/GMT-8.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT-8",
+      "iana": "Etc/GMT-8"
+    }
+  },
+  {
+    "uid": "9b802d1a-5428-57a5-b89f-537524c9bd1b",
+    "name": "Etc/GMT-9",
+    "description": "Часовой пояс IANA: Etc/GMT-9.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT-9",
+      "iana": "Etc/GMT-9"
+    }
+  },
+  {
+    "uid": "a941b81f-6e0e-59f0-8420-bbf1add6a8dc",
+    "name": "Etc/GMT0",
+    "description": "Часовой пояс IANA: Etc/GMT0.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/GMT0",
+      "iana": "Etc/GMT0"
+    }
+  },
+  {
+    "uid": "d1666291-12ae-51b7-a1d6-a5d18b4187da",
+    "name": "Etc/Greenwich",
+    "description": "Часовой пояс IANA: Etc/Greenwich.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/Greenwich",
+      "iana": "Etc/Greenwich"
+    }
+  },
+  {
+    "uid": "aa396185-88d8-58e9-b874-d65e76eb573a",
+    "name": "Etc/UCT",
+    "description": "Часовой пояс IANA: Etc/UCT.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/UCT",
+      "iana": "Etc/UCT"
+    }
+  },
+  {
+    "uid": "20b25ecf-1b06-53d7-8fcc-8dc50c673737",
+    "name": "Etc/UTC",
+    "description": "Часовой пояс IANA: Etc/UTC.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/UTC",
+      "iana": "Etc/UTC"
+    }
+  },
+  {
+    "uid": "3422ad21-77e4-5720-b6c5-97777abfed5c",
+    "name": "Etc/Universal",
+    "description": "Часовой пояс IANA: Etc/Universal.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/Universal",
+      "iana": "Etc/Universal"
+    }
+  },
+  {
+    "uid": "5c3ae73a-dfa8-5aac-8c9b-2206c7bb4da0",
+    "name": "Etc/Zulu",
+    "description": "Часовой пояс IANA: Etc/Zulu.",
+    "icon": null,
+    "extra": {
+      "code": "Etc/Zulu",
+      "iana": "Etc/Zulu"
+    }
+  },
+  {
+    "uid": "de4aba31-7047-5739-9607-300b7c988f3c",
+    "name": "Europe/Amsterdam",
+    "description": "Часовой пояс IANA: Europe/Amsterdam.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Amsterdam",
+      "iana": "Europe/Amsterdam"
+    }
+  },
+  {
+    "uid": "3e4253dc-c31a-5820-aebc-f0f77601403d",
+    "name": "Europe/Andorra",
+    "description": "Часовой пояс IANA: Europe/Andorra.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Andorra",
+      "iana": "Europe/Andorra"
+    }
+  },
+  {
+    "uid": "cac272ab-c814-5781-8846-c902dc79053a",
+    "name": "Europe/Astrakhan",
+    "description": "Часовой пояс IANA: Europe/Astrakhan.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Astrakhan",
+      "iana": "Europe/Astrakhan"
+    }
+  },
+  {
+    "uid": "99fcae41-9588-5a07-96c4-91f65704c73d",
+    "name": "Europe/Athens",
+    "description": "Часовой пояс IANA: Europe/Athens.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Athens",
+      "iana": "Europe/Athens"
+    }
+  },
+  {
+    "uid": "5dd6f878-70dd-5328-ba1e-aa0e16d830c6",
+    "name": "Europe/Belfast",
+    "description": "Часовой пояс IANA: Europe/Belfast.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Belfast",
+      "iana": "Europe/Belfast"
+    }
+  },
+  {
+    "uid": "7dc5bfdf-7663-505c-b5bb-9547f33f31c2",
+    "name": "Europe/Belgrade",
+    "description": "Часовой пояс IANA: Europe/Belgrade.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Belgrade",
+      "iana": "Europe/Belgrade"
+    }
+  },
+  {
+    "uid": "35b71fce-7c2f-59a3-895f-15e33f2f6848",
+    "name": "Europe/Berlin",
+    "description": "Часовой пояс IANA: Europe/Berlin.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Berlin",
+      "iana": "Europe/Berlin"
+    }
+  },
+  {
+    "uid": "cc631923-c1ef-5765-83f4-85a0dc326901",
+    "name": "Europe/Bratislava",
+    "description": "Часовой пояс IANA: Europe/Bratislava.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Bratislava",
+      "iana": "Europe/Bratislava"
+    }
+  },
+  {
+    "uid": "a6643708-b260-5e04-bcfa-9dd86bd405f0",
+    "name": "Europe/Brussels",
+    "description": "Часовой пояс IANA: Europe/Brussels.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Brussels",
+      "iana": "Europe/Brussels"
+    }
+  },
+  {
+    "uid": "40c047df-4f1b-5b60-bfbc-d6fd7d230c9c",
+    "name": "Europe/Bucharest",
+    "description": "Часовой пояс IANA: Europe/Bucharest.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Bucharest",
+      "iana": "Europe/Bucharest"
+    }
+  },
+  {
+    "uid": "0570d7ac-f419-5fdc-b62d-f072505bee73",
+    "name": "Europe/Budapest",
+    "description": "Часовой пояс IANA: Europe/Budapest.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Budapest",
+      "iana": "Europe/Budapest"
+    }
+  },
+  {
+    "uid": "647055e2-c167-50e3-b5dc-548579dbbb13",
+    "name": "Europe/Busingen",
+    "description": "Часовой пояс IANA: Europe/Busingen.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Busingen",
+      "iana": "Europe/Busingen"
+    }
+  },
+  {
+    "uid": "18a9d9ab-1168-516c-bc00-20cafb6d658b",
+    "name": "Europe/Chisinau",
+    "description": "Часовой пояс IANA: Europe/Chisinau.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Chisinau",
+      "iana": "Europe/Chisinau"
+    }
+  },
+  {
+    "uid": "083b1d55-4002-5acf-ad7d-701db2a495e8",
+    "name": "Europe/Copenhagen",
+    "description": "Часовой пояс IANA: Europe/Copenhagen.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Copenhagen",
+      "iana": "Europe/Copenhagen"
+    }
+  },
+  {
+    "uid": "fd2f637f-741a-58fd-81d2-b96c4ae0097d",
+    "name": "Europe/Dublin",
+    "description": "Часовой пояс IANA: Europe/Dublin.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Dublin",
+      "iana": "Europe/Dublin"
+    }
+  },
+  {
+    "uid": "252df3f8-38c2-5c39-ac42-c2e453891fc5",
+    "name": "Europe/Gibraltar",
+    "description": "Часовой пояс IANA: Europe/Gibraltar.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Gibraltar",
+      "iana": "Europe/Gibraltar"
+    }
+  },
+  {
+    "uid": "956ee671-cc18-5123-9275-a1a410c2413e",
+    "name": "Europe/Guernsey",
+    "description": "Часовой пояс IANA: Europe/Guernsey.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Guernsey",
+      "iana": "Europe/Guernsey"
+    }
+  },
+  {
+    "uid": "71682f4d-428d-5f76-a8ce-0d4cda4fc6f9",
+    "name": "Europe/Helsinki",
+    "description": "Часовой пояс IANA: Europe/Helsinki.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Helsinki",
+      "iana": "Europe/Helsinki"
+    }
+  },
+  {
+    "uid": "c60f9cae-7c5c-5952-a9a2-dae178182063",
+    "name": "Europe/Isle_of_Man",
+    "description": "Часовой пояс IANA: Europe/Isle_of_Man.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Isle_of_Man",
+      "iana": "Europe/Isle_of_Man"
+    }
+  },
+  {
+    "uid": "ab6d90b6-6548-5b9f-b123-9b9d4acc9022",
+    "name": "Europe/Istanbul",
+    "description": "Часовой пояс IANA: Europe/Istanbul.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Istanbul",
+      "iana": "Europe/Istanbul"
+    }
+  },
+  {
+    "uid": "808dda27-97f4-56df-9de0-92a213422194",
+    "name": "Europe/Jersey",
+    "description": "Часовой пояс IANA: Europe/Jersey.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Jersey",
+      "iana": "Europe/Jersey"
+    }
+  },
+  {
+    "uid": "d1f7192d-0d14-5ec2-86b8-879cf0057758",
+    "name": "Europe/Kaliningrad",
+    "description": "Часовой пояс IANA: Europe/Kaliningrad.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Kaliningrad",
+      "iana": "Europe/Kaliningrad"
+    }
+  },
+  {
+    "uid": "634b23a5-496e-5cb5-bbae-df58292eda23",
+    "name": "Europe/Kiev",
+    "description": "Часовой пояс IANA: Europe/Kiev.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Kiev",
+      "iana": "Europe/Kiev"
+    }
+  },
+  {
+    "uid": "4296f326-37c5-5da5-b120-ac239f99495a",
+    "name": "Europe/Kirov",
+    "description": "Часовой пояс IANA: Europe/Kirov.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Kirov",
+      "iana": "Europe/Kirov"
+    }
+  },
+  {
+    "uid": "0997276f-3625-51b1-b1c8-0cd83121b495",
+    "name": "Europe/Kyiv",
+    "description": "Часовой пояс IANA: Europe/Kyiv.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Kyiv",
+      "iana": "Europe/Kyiv"
+    }
+  },
+  {
+    "uid": "68544d0e-93cb-5032-be32-0d262bbc5c08",
+    "name": "Europe/Lisbon",
+    "description": "Часовой пояс IANA: Europe/Lisbon.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Lisbon",
+      "iana": "Europe/Lisbon"
+    }
+  },
+  {
+    "uid": "efd846e6-c1c2-5608-bb2d-8b7f07d83cc5",
+    "name": "Europe/Ljubljana",
+    "description": "Часовой пояс IANA: Europe/Ljubljana.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Ljubljana",
+      "iana": "Europe/Ljubljana"
+    }
+  },
+  {
+    "uid": "8232a2b1-400b-59c4-9c88-04d7d652be7f",
+    "name": "Europe/London",
+    "description": "Часовой пояс IANA: Europe/London.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/London",
+      "iana": "Europe/London"
+    }
+  },
+  {
+    "uid": "4dd3ceff-f2f8-5fbc-af00-bfe7100ec02c",
+    "name": "Europe/Luxembourg",
+    "description": "Часовой пояс IANA: Europe/Luxembourg.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Luxembourg",
+      "iana": "Europe/Luxembourg"
+    }
+  },
+  {
+    "uid": "f4a2187d-84d5-589c-a745-3c1953fbb276",
+    "name": "Europe/Madrid",
+    "description": "Часовой пояс IANA: Europe/Madrid.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Madrid",
+      "iana": "Europe/Madrid"
+    }
+  },
+  {
+    "uid": "ac1051e2-3e6a-513e-b21a-c4d216cbd449",
+    "name": "Europe/Malta",
+    "description": "Часовой пояс IANA: Europe/Malta.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Malta",
+      "iana": "Europe/Malta"
+    }
+  },
+  {
+    "uid": "2f4b5a96-b3e7-5cdf-bb5a-7921ca068808",
+    "name": "Europe/Mariehamn",
+    "description": "Часовой пояс IANA: Europe/Mariehamn.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Mariehamn",
+      "iana": "Europe/Mariehamn"
+    }
+  },
+  {
+    "uid": "cf6992c6-a01a-543b-ba72-d66a5f1eeb1d",
+    "name": "Europe/Minsk",
+    "description": "Часовой пояс IANA: Europe/Minsk.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Minsk",
+      "iana": "Europe/Minsk"
+    }
+  },
+  {
+    "uid": "807d56f6-ad97-558a-86b2-34cb402007c2",
+    "name": "Europe/Monaco",
+    "description": "Часовой пояс IANA: Europe/Monaco.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Monaco",
+      "iana": "Europe/Monaco"
+    }
+  },
+  {
+    "uid": "61e1db2f-5ed8-58d1-9f1e-72d9a97f27aa",
+    "name": "Europe/Moscow",
+    "description": "Часовой пояс IANA: Europe/Moscow.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Moscow",
+      "iana": "Europe/Moscow"
+    }
+  },
+  {
+    "uid": "413546f2-09b8-5515-a5e1-cd40ad6f8fff",
+    "name": "Europe/Nicosia",
+    "description": "Часовой пояс IANA: Europe/Nicosia.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Nicosia",
+      "iana": "Europe/Nicosia"
+    }
+  },
+  {
+    "uid": "09aadc98-0e4a-5a16-90b1-366a4e9f4d3c",
+    "name": "Europe/Oslo",
+    "description": "Часовой пояс IANA: Europe/Oslo.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Oslo",
+      "iana": "Europe/Oslo"
+    }
+  },
+  {
+    "uid": "895c8a8c-5ac3-519c-a4a7-52d96f8a5258",
+    "name": "Europe/Paris",
+    "description": "Часовой пояс IANA: Europe/Paris.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Paris",
+      "iana": "Europe/Paris"
+    }
+  },
+  {
+    "uid": "2b8f2a72-4545-555d-8291-215f06ad4ea5",
+    "name": "Europe/Podgorica",
+    "description": "Часовой пояс IANA: Europe/Podgorica.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Podgorica",
+      "iana": "Europe/Podgorica"
+    }
+  },
+  {
+    "uid": "5b245613-6ffd-5fd2-a14e-b30eeb51a2d6",
+    "name": "Europe/Prague",
+    "description": "Часовой пояс IANA: Europe/Prague.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Prague",
+      "iana": "Europe/Prague"
+    }
+  },
+  {
+    "uid": "bfc44cf8-0f70-5e31-ac57-b2fc9f7004b9",
+    "name": "Europe/Riga",
+    "description": "Часовой пояс IANA: Europe/Riga.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Riga",
+      "iana": "Europe/Riga"
+    }
+  },
+  {
+    "uid": "a4bd1171-efd0-5fbc-9662-c0c9fe5c0d99",
+    "name": "Europe/Rome",
+    "description": "Часовой пояс IANA: Europe/Rome.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Rome",
+      "iana": "Europe/Rome"
+    }
+  },
+  {
+    "uid": "6b8ffcdd-0350-58d5-af3b-188b11970c8d",
+    "name": "Europe/Samara",
+    "description": "Часовой пояс IANA: Europe/Samara.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Samara",
+      "iana": "Europe/Samara"
+    }
+  },
+  {
+    "uid": "7384b4cd-a660-5d15-8f71-f07b98937c91",
+    "name": "Europe/San_Marino",
+    "description": "Часовой пояс IANA: Europe/San_Marino.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/San_Marino",
+      "iana": "Europe/San_Marino"
+    }
+  },
+  {
+    "uid": "579dd438-b02a-55bb-9901-25427491649d",
+    "name": "Europe/Sarajevo",
+    "description": "Часовой пояс IANA: Europe/Sarajevo.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Sarajevo",
+      "iana": "Europe/Sarajevo"
+    }
+  },
+  {
+    "uid": "c579f6df-4c49-5759-9643-34729c763666",
+    "name": "Europe/Saratov",
+    "description": "Часовой пояс IANA: Europe/Saratov.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Saratov",
+      "iana": "Europe/Saratov"
+    }
+  },
+  {
+    "uid": "a74d321c-79d2-58f8-bf6d-45f0792c8424",
+    "name": "Europe/Simferopol",
+    "description": "Часовой пояс IANA: Europe/Simferopol.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Simferopol",
+      "iana": "Europe/Simferopol"
+    }
+  },
+  {
+    "uid": "a473a688-f51b-5ebb-84fd-ad0c0592b9e4",
+    "name": "Europe/Skopje",
+    "description": "Часовой пояс IANA: Europe/Skopje.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Skopje",
+      "iana": "Europe/Skopje"
+    }
+  },
+  {
+    "uid": "15f82afb-06c7-562c-b0dc-876b5bcf99db",
+    "name": "Europe/Sofia",
+    "description": "Часовой пояс IANA: Europe/Sofia.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Sofia",
+      "iana": "Europe/Sofia"
+    }
+  },
+  {
+    "uid": "7b2f16c7-0f1a-5b99-a67b-5e8a990bef1a",
+    "name": "Europe/Stockholm",
+    "description": "Часовой пояс IANA: Europe/Stockholm.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Stockholm",
+      "iana": "Europe/Stockholm"
+    }
+  },
+  {
+    "uid": "86879ca1-5db1-5ff7-bea7-fe3b80c6c1e4",
+    "name": "Europe/Tallinn",
+    "description": "Часовой пояс IANA: Europe/Tallinn.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Tallinn",
+      "iana": "Europe/Tallinn"
+    }
+  },
+  {
+    "uid": "6bb46a53-e163-5efb-bcd3-ed7109efc292",
+    "name": "Europe/Tirane",
+    "description": "Часовой пояс IANA: Europe/Tirane.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Tirane",
+      "iana": "Europe/Tirane"
+    }
+  },
+  {
+    "uid": "e66672d8-efaa-5262-90ff-3a5cda87ea00",
+    "name": "Europe/Tiraspol",
+    "description": "Часовой пояс IANA: Europe/Tiraspol.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Tiraspol",
+      "iana": "Europe/Tiraspol"
+    }
+  },
+  {
+    "uid": "9b7d6541-12fd-5cef-bf16-1bb7663ba9a3",
+    "name": "Europe/Ulyanovsk",
+    "description": "Часовой пояс IANA: Europe/Ulyanovsk.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Ulyanovsk",
+      "iana": "Europe/Ulyanovsk"
+    }
+  },
+  {
+    "uid": "71b7133d-1258-5d8a-adde-673a6f38f298",
+    "name": "Europe/Uzhgorod",
+    "description": "Часовой пояс IANA: Europe/Uzhgorod.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Uzhgorod",
+      "iana": "Europe/Uzhgorod"
+    }
+  },
+  {
+    "uid": "20e46c1f-1117-5120-a3da-5e42a6532dea",
+    "name": "Europe/Vaduz",
+    "description": "Часовой пояс IANA: Europe/Vaduz.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Vaduz",
+      "iana": "Europe/Vaduz"
+    }
+  },
+  {
+    "uid": "b4a55164-7a79-5d0c-a30e-0fb06e9126da",
+    "name": "Europe/Vatican",
+    "description": "Часовой пояс IANA: Europe/Vatican.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Vatican",
+      "iana": "Europe/Vatican"
+    }
+  },
+  {
+    "uid": "60108253-6727-5699-b3b8-61241f6bdf84",
+    "name": "Europe/Vienna",
+    "description": "Часовой пояс IANA: Europe/Vienna.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Vienna",
+      "iana": "Europe/Vienna"
+    }
+  },
+  {
+    "uid": "37eb0e77-c0b1-5b02-8114-99fc08c14a09",
+    "name": "Europe/Vilnius",
+    "description": "Часовой пояс IANA: Europe/Vilnius.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Vilnius",
+      "iana": "Europe/Vilnius"
+    }
+  },
+  {
+    "uid": "c5d671aa-034b-5d14-a373-e5617369795b",
+    "name": "Europe/Volgograd",
+    "description": "Часовой пояс IANA: Europe/Volgograd.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Volgograd",
+      "iana": "Europe/Volgograd"
+    }
+  },
+  {
+    "uid": "2e84284a-6cf1-5a04-a8e1-03b56dd3edd5",
+    "name": "Europe/Warsaw",
+    "description": "Часовой пояс IANA: Europe/Warsaw.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Warsaw",
+      "iana": "Europe/Warsaw"
+    }
+  },
+  {
+    "uid": "9defbdd3-67c0-5999-8964-ea29f24b8ed7",
+    "name": "Europe/Zagreb",
+    "description": "Часовой пояс IANA: Europe/Zagreb.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Zagreb",
+      "iana": "Europe/Zagreb"
+    }
+  },
+  {
+    "uid": "876d0bd4-06d6-5a05-9063-4d63e6a5e86f",
+    "name": "Europe/Zaporozhye",
+    "description": "Часовой пояс IANA: Europe/Zaporozhye.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Zaporozhye",
+      "iana": "Europe/Zaporozhye"
+    }
+  },
+  {
+    "uid": "905678f4-a61f-5f60-8311-c51016290380",
+    "name": "Europe/Zurich",
+    "description": "Часовой пояс IANA: Europe/Zurich.",
+    "icon": null,
+    "extra": {
+      "code": "Europe/Zurich",
+      "iana": "Europe/Zurich"
+    }
+  },
+  {
+    "uid": "910e84e0-f733-52a6-b8d2-b7b7d64597bd",
+    "name": "Factory",
+    "description": "Часовой пояс IANA: Factory.",
+    "icon": null,
+    "extra": {
+      "code": "Factory",
+      "iana": "Factory"
+    }
+  },
+  {
+    "uid": "227bf5e7-27c5-53b7-a5e7-dee7b445c26b",
+    "name": "GB",
+    "description": "Часовой пояс IANA: GB.",
+    "icon": null,
+    "extra": {
+      "code": "GB",
+      "iana": "GB"
+    }
+  },
+  {
+    "uid": "2ff6df04-99a5-5c9f-bd2b-6ad4f0a1b3de",
+    "name": "GB-Eire",
+    "description": "Часовой пояс IANA: GB-Eire.",
+    "icon": null,
+    "extra": {
+      "code": "GB-Eire",
+      "iana": "GB-Eire"
+    }
+  },
+  {
+    "uid": "c1f5c810-1e48-54ac-8102-a5af9900fa7f",
+    "name": "GMT",
+    "description": "Часовой пояс IANA: GMT.",
+    "icon": null,
+    "extra": {
+      "code": "GMT",
+      "iana": "GMT"
+    }
+  },
+  {
+    "uid": "fb20814c-d7c7-5aec-8b76-b24dc4412dad",
+    "name": "GMT+0",
+    "description": "Часовой пояс IANA: GMT+0.",
+    "icon": null,
+    "extra": {
+      "code": "GMT+0",
+      "iana": "GMT+0"
+    }
+  },
+  {
+    "uid": "2282a145-1ef4-5eb8-ab55-08d487547421",
+    "name": "GMT-0",
+    "description": "Часовой пояс IANA: GMT-0.",
+    "icon": null,
+    "extra": {
+      "code": "GMT-0",
+      "iana": "GMT-0"
+    }
+  },
+  {
+    "uid": "109dfbb6-96a9-5c23-8681-da06cf161622",
+    "name": "GMT0",
+    "description": "Часовой пояс IANA: GMT0.",
+    "icon": null,
+    "extra": {
+      "code": "GMT0",
+      "iana": "GMT0"
+    }
+  },
+  {
+    "uid": "55ca32d0-ff2d-517f-b132-756948350688",
+    "name": "Greenwich",
+    "description": "Часовой пояс IANA: Greenwich.",
+    "icon": null,
+    "extra": {
+      "code": "Greenwich",
+      "iana": "Greenwich"
+    }
+  },
+  {
+    "uid": "a7ff7486-85a8-5a11-9729-a28b59636ba6",
+    "name": "HST",
+    "description": "Часовой пояс IANA: HST.",
+    "icon": null,
+    "extra": {
+      "code": "HST",
+      "iana": "HST"
+    }
+  },
+  {
+    "uid": "f6a25dcd-2ced-5eb9-9733-18ad3376c719",
+    "name": "Hongkong",
+    "description": "Часовой пояс IANA: Hongkong.",
+    "icon": null,
+    "extra": {
+      "code": "Hongkong",
+      "iana": "Hongkong"
+    }
+  },
+  {
+    "uid": "6a5871f3-628d-5882-9c85-bf5351fa15aa",
+    "name": "Iceland",
+    "description": "Часовой пояс IANA: Iceland.",
+    "icon": null,
+    "extra": {
+      "code": "Iceland",
+      "iana": "Iceland"
+    }
+  },
+  {
+    "uid": "9d0f1b0c-a581-536e-9a18-ef06388991f3",
+    "name": "Indian/Antananarivo",
+    "description": "Часовой пояс IANA: Indian/Antananarivo.",
+    "icon": null,
+    "extra": {
+      "code": "Indian/Antananarivo",
+      "iana": "Indian/Antananarivo"
+    }
+  },
+  {
+    "uid": "8905cf6f-8be8-5bf9-aafc-13c593d03ee8",
+    "name": "Indian/Chagos",
+    "description": "Часовой пояс IANA: Indian/Chagos.",
+    "icon": null,
+    "extra": {
+      "code": "Indian/Chagos",
+      "iana": "Indian/Chagos"
+    }
+  },
+  {
+    "uid": "0bd91cf6-75db-58a2-bb1c-987070183a5f",
+    "name": "Indian/Christmas",
+    "description": "Часовой пояс IANA: Indian/Christmas.",
+    "icon": null,
+    "extra": {
+      "code": "Indian/Christmas",
+      "iana": "Indian/Christmas"
+    }
+  },
+  {
+    "uid": "98640221-8429-5cec-bc06-086cab172225",
+    "name": "Indian/Cocos",
+    "description": "Часовой пояс IANA: Indian/Cocos.",
+    "icon": null,
+    "extra": {
+      "code": "Indian/Cocos",
+      "iana": "Indian/Cocos"
+    }
+  },
+  {
+    "uid": "23664377-8989-5580-a0ec-d6e2b9b38181",
+    "name": "Indian/Comoro",
+    "description": "Часовой пояс IANA: Indian/Comoro.",
+    "icon": null,
+    "extra": {
+      "code": "Indian/Comoro",
+      "iana": "Indian/Comoro"
+    }
+  },
+  {
+    "uid": "d1a987af-6c0a-5485-81bc-c3d70dee7cbc",
+    "name": "Indian/Kerguelen",
+    "description": "Часовой пояс IANA: Indian/Kerguelen.",
+    "icon": null,
+    "extra": {
+      "code": "Indian/Kerguelen",
+      "iana": "Indian/Kerguelen"
+    }
+  },
+  {
+    "uid": "6f622445-7b79-545d-b4bc-72e0c2b7b171",
+    "name": "Indian/Mahe",
+    "description": "Часовой пояс IANA: Indian/Mahe.",
+    "icon": null,
+    "extra": {
+      "code": "Indian/Mahe",
+      "iana": "Indian/Mahe"
+    }
+  },
+  {
+    "uid": "02418787-16ac-502d-a51d-0dd67ffdd7cd",
+    "name": "Indian/Maldives",
+    "description": "Часовой пояс IANA: Indian/Maldives.",
+    "icon": null,
+    "extra": {
+      "code": "Indian/Maldives",
+      "iana": "Indian/Maldives"
+    }
+  },
+  {
+    "uid": "297224ad-2fb2-50b2-8860-93ad67e11fc8",
+    "name": "Indian/Mauritius",
+    "description": "Часовой пояс IANA: Indian/Mauritius.",
+    "icon": null,
+    "extra": {
+      "code": "Indian/Mauritius",
+      "iana": "Indian/Mauritius"
+    }
+  },
+  {
+    "uid": "6f8397a3-12e2-5497-b285-89cf69f0f953",
+    "name": "Indian/Mayotte",
+    "description": "Часовой пояс IANA: Indian/Mayotte.",
+    "icon": null,
+    "extra": {
+      "code": "Indian/Mayotte",
+      "iana": "Indian/Mayotte"
+    }
+  },
+  {
+    "uid": "e91a9b8e-fd30-5420-96cb-733dc948a4c3",
+    "name": "Indian/Reunion",
+    "description": "Часовой пояс IANA: Indian/Reunion.",
+    "icon": null,
+    "extra": {
+      "code": "Indian/Reunion",
+      "iana": "Indian/Reunion"
+    }
+  },
+  {
+    "uid": "d9c74cce-ec93-5527-a99d-b4db829b6aad",
+    "name": "Iran",
+    "description": "Часовой пояс IANA: Iran.",
+    "icon": null,
+    "extra": {
+      "code": "Iran",
+      "iana": "Iran"
+    }
+  },
+  {
+    "uid": "3e06e076-0adb-5514-956c-8c9ec2e1b798",
+    "name": "Israel",
+    "description": "Часовой пояс IANA: Israel.",
+    "icon": null,
+    "extra": {
+      "code": "Israel",
+      "iana": "Israel"
+    }
+  },
+  {
+    "uid": "7b50c1cd-0fbb-553f-b422-5fe5c7dbeaba",
+    "name": "Jamaica",
+    "description": "Часовой пояс IANA: Jamaica.",
+    "icon": null,
+    "extra": {
+      "code": "Jamaica",
+      "iana": "Jamaica"
+    }
+  },
+  {
+    "uid": "8b8a01d9-f240-56fa-8e26-97d8494e7c59",
+    "name": "Japan",
+    "description": "Часовой пояс IANA: Japan.",
+    "icon": null,
+    "extra": {
+      "code": "Japan",
+      "iana": "Japan"
+    }
+  },
+  {
+    "uid": "ee575d87-5a29-544d-8234-e85d852d36f8",
+    "name": "Kwajalein",
+    "description": "Часовой пояс IANA: Kwajalein.",
+    "icon": null,
+    "extra": {
+      "code": "Kwajalein",
+      "iana": "Kwajalein"
+    }
+  },
+  {
+    "uid": "91ae9f3e-ae65-524b-8717-1e8e402800e8",
+    "name": "Libya",
+    "description": "Часовой пояс IANA: Libya.",
+    "icon": null,
+    "extra": {
+      "code": "Libya",
+      "iana": "Libya"
+    }
+  },
+  {
+    "uid": "59a6854d-1188-5dd9-a633-5a094015a144",
+    "name": "MET",
+    "description": "Часовой пояс IANA: MET.",
+    "icon": null,
+    "extra": {
+      "code": "MET",
+      "iana": "MET"
+    }
+  },
+  {
+    "uid": "1c3333b5-f201-5e72-8514-a0963003b5f2",
+    "name": "MST",
+    "description": "Часовой пояс IANA: MST.",
+    "icon": null,
+    "extra": {
+      "code": "MST",
+      "iana": "MST"
+    }
+  },
+  {
+    "uid": "2241ba57-3d0e-56f7-b8e5-006b937947db",
+    "name": "MST7MDT",
+    "description": "Часовой пояс IANA: MST7MDT.",
+    "icon": null,
+    "extra": {
+      "code": "MST7MDT",
+      "iana": "MST7MDT"
+    }
+  },
+  {
+    "uid": "83a59742-2ebc-5517-8668-55439349d885",
+    "name": "Mexico/BajaNorte",
+    "description": "Часовой пояс IANA: Mexico/BajaNorte.",
+    "icon": null,
+    "extra": {
+      "code": "Mexico/BajaNorte",
+      "iana": "Mexico/BajaNorte"
+    }
+  },
+  {
+    "uid": "8ce2f684-d55c-57b2-9dc2-42c689d4ba0c",
+    "name": "Mexico/BajaSur",
+    "description": "Часовой пояс IANA: Mexico/BajaSur.",
+    "icon": null,
+    "extra": {
+      "code": "Mexico/BajaSur",
+      "iana": "Mexico/BajaSur"
+    }
+  },
+  {
+    "uid": "86099cce-ee74-5417-ae3a-369f9f49dfe6",
+    "name": "Mexico/General",
+    "description": "Часовой пояс IANA: Mexico/General.",
+    "icon": null,
+    "extra": {
+      "code": "Mexico/General",
+      "iana": "Mexico/General"
+    }
+  },
+  {
+    "uid": "3148fb36-b64e-5a0a-b474-c9b61d24835c",
+    "name": "NZ",
+    "description": "Часовой пояс IANA: NZ.",
+    "icon": null,
+    "extra": {
+      "code": "NZ",
+      "iana": "NZ"
+    }
+  },
+  {
+    "uid": "0763c37a-1c42-5f86-b242-51b3051b4074",
+    "name": "NZ-CHAT",
+    "description": "Часовой пояс IANA: NZ-CHAT.",
+    "icon": null,
+    "extra": {
+      "code": "NZ-CHAT",
+      "iana": "NZ-CHAT"
+    }
+  },
+  {
+    "uid": "2d6a7337-f8bd-52e4-9fcf-dda95a6e747e",
+    "name": "Navajo",
+    "description": "Часовой пояс IANA: Navajo.",
+    "icon": null,
+    "extra": {
+      "code": "Navajo",
+      "iana": "Navajo"
+    }
+  },
+  {
+    "uid": "c55ac4e9-3d29-5894-a8a2-2b4f169c2952",
+    "name": "PRC",
+    "description": "Часовой пояс IANA: PRC.",
+    "icon": null,
+    "extra": {
+      "code": "PRC",
+      "iana": "PRC"
+    }
+  },
+  {
+    "uid": "62971e6c-f4bb-5dac-a878-fa339fa44071",
+    "name": "PST8PDT",
+    "description": "Часовой пояс IANA: PST8PDT.",
+    "icon": null,
+    "extra": {
+      "code": "PST8PDT",
+      "iana": "PST8PDT"
+    }
+  },
+  {
+    "uid": "7a6e7dc3-d25b-5028-9696-99e58369e868",
+    "name": "Pacific/Apia",
+    "description": "Часовой пояс IANA: Pacific/Apia.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Apia",
+      "iana": "Pacific/Apia"
+    }
+  },
+  {
+    "uid": "77c10ea7-4f3c-58c5-96e2-4f78b6f42d2c",
+    "name": "Pacific/Auckland",
+    "description": "Часовой пояс IANA: Pacific/Auckland.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Auckland",
+      "iana": "Pacific/Auckland"
+    }
+  },
+  {
+    "uid": "81fb6cbe-7613-5ffd-be1b-e36b1bcd5cc2",
+    "name": "Pacific/Bougainville",
+    "description": "Часовой пояс IANA: Pacific/Bougainville.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Bougainville",
+      "iana": "Pacific/Bougainville"
+    }
+  },
+  {
+    "uid": "c6d0ecf7-008e-536a-b9f8-35c0c28eb0f0",
+    "name": "Pacific/Chatham",
+    "description": "Часовой пояс IANA: Pacific/Chatham.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Chatham",
+      "iana": "Pacific/Chatham"
+    }
+  },
+  {
+    "uid": "bdea3306-57de-5ead-a4a9-901164ee761f",
+    "name": "Pacific/Chuuk",
+    "description": "Часовой пояс IANA: Pacific/Chuuk.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Chuuk",
+      "iana": "Pacific/Chuuk"
+    }
+  },
+  {
+    "uid": "b2ef61cc-2af1-5955-a2bb-5a39a47ef42d",
+    "name": "Pacific/Easter",
+    "description": "Часовой пояс IANA: Pacific/Easter.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Easter",
+      "iana": "Pacific/Easter"
+    }
+  },
+  {
+    "uid": "7e8ab617-c0ce-5e39-8503-1edb23313376",
+    "name": "Pacific/Efate",
+    "description": "Часовой пояс IANA: Pacific/Efate.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Efate",
+      "iana": "Pacific/Efate"
+    }
+  },
+  {
+    "uid": "0aedec9e-b4ae-5788-83ef-c1848a567671",
+    "name": "Pacific/Enderbury",
+    "description": "Часовой пояс IANA: Pacific/Enderbury.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Enderbury",
+      "iana": "Pacific/Enderbury"
+    }
+  },
+  {
+    "uid": "4402cc97-d3e4-574d-83d5-73ac0e8223c9",
+    "name": "Pacific/Fakaofo",
+    "description": "Часовой пояс IANA: Pacific/Fakaofo.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Fakaofo",
+      "iana": "Pacific/Fakaofo"
+    }
+  },
+  {
+    "uid": "b0358308-6097-5a2a-b9c2-70267d4fea74",
+    "name": "Pacific/Fiji",
+    "description": "Часовой пояс IANA: Pacific/Fiji.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Fiji",
+      "iana": "Pacific/Fiji"
+    }
+  },
+  {
+    "uid": "d6fd1703-62c6-553d-9551-8272aa3d6646",
+    "name": "Pacific/Funafuti",
+    "description": "Часовой пояс IANA: Pacific/Funafuti.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Funafuti",
+      "iana": "Pacific/Funafuti"
+    }
+  },
+  {
+    "uid": "7e42117f-33a6-5d1c-9b5b-ef7f3d5e7c72",
+    "name": "Pacific/Galapagos",
+    "description": "Часовой пояс IANA: Pacific/Galapagos.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Galapagos",
+      "iana": "Pacific/Galapagos"
+    }
+  },
+  {
+    "uid": "c32e12af-c379-58ba-a729-2d37853325b9",
+    "name": "Pacific/Gambier",
+    "description": "Часовой пояс IANA: Pacific/Gambier.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Gambier",
+      "iana": "Pacific/Gambier"
+    }
+  },
+  {
+    "uid": "18d79c31-9ad5-5dfb-9e23-cbf0df2554ee",
+    "name": "Pacific/Guadalcanal",
+    "description": "Часовой пояс IANA: Pacific/Guadalcanal.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Guadalcanal",
+      "iana": "Pacific/Guadalcanal"
+    }
+  },
+  {
+    "uid": "ce67123d-95b3-56a9-b519-0b9b6842b74c",
+    "name": "Pacific/Guam",
+    "description": "Часовой пояс IANA: Pacific/Guam.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Guam",
+      "iana": "Pacific/Guam"
+    }
+  },
+  {
+    "uid": "1ee479dd-6d59-5557-9a15-1c0407a84577",
+    "name": "Pacific/Honolulu",
+    "description": "Часовой пояс IANA: Pacific/Honolulu.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Honolulu",
+      "iana": "Pacific/Honolulu"
+    }
+  },
+  {
+    "uid": "bf23da65-277e-59cd-a1a8-f28b715c7fa0",
+    "name": "Pacific/Johnston",
+    "description": "Часовой пояс IANA: Pacific/Johnston.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Johnston",
+      "iana": "Pacific/Johnston"
+    }
+  },
+  {
+    "uid": "f9ebffc7-b5d1-54be-af9a-65cd81af91ed",
+    "name": "Pacific/Kanton",
+    "description": "Часовой пояс IANA: Pacific/Kanton.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Kanton",
+      "iana": "Pacific/Kanton"
+    }
+  },
+  {
+    "uid": "78e8971d-f38a-5c07-bc56-43576e8bef25",
+    "name": "Pacific/Kiritimati",
+    "description": "Часовой пояс IANA: Pacific/Kiritimati.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Kiritimati",
+      "iana": "Pacific/Kiritimati"
+    }
+  },
+  {
+    "uid": "7e45cfab-035a-58f6-86e9-fa3a3a8b4c06",
+    "name": "Pacific/Kosrae",
+    "description": "Часовой пояс IANA: Pacific/Kosrae.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Kosrae",
+      "iana": "Pacific/Kosrae"
+    }
+  },
+  {
+    "uid": "0e7c1802-fd8a-55ee-9009-b7b3d7800cc1",
+    "name": "Pacific/Kwajalein",
+    "description": "Часовой пояс IANA: Pacific/Kwajalein.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Kwajalein",
+      "iana": "Pacific/Kwajalein"
+    }
+  },
+  {
+    "uid": "ed767a7c-4681-5926-8fcb-a567eab91a6f",
+    "name": "Pacific/Majuro",
+    "description": "Часовой пояс IANA: Pacific/Majuro.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Majuro",
+      "iana": "Pacific/Majuro"
+    }
+  },
+  {
+    "uid": "59069d19-08eb-54d8-ac49-e471194f259e",
+    "name": "Pacific/Marquesas",
+    "description": "Часовой пояс IANA: Pacific/Marquesas.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Marquesas",
+      "iana": "Pacific/Marquesas"
+    }
+  },
+  {
+    "uid": "72690486-69d4-58ca-ada2-f900c4cb4c19",
+    "name": "Pacific/Midway",
+    "description": "Часовой пояс IANA: Pacific/Midway.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Midway",
+      "iana": "Pacific/Midway"
+    }
+  },
+  {
+    "uid": "257d545b-0272-521d-931a-13797f0b4016",
+    "name": "Pacific/Nauru",
+    "description": "Часовой пояс IANA: Pacific/Nauru.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Nauru",
+      "iana": "Pacific/Nauru"
+    }
+  },
+  {
+    "uid": "5b3e7780-d5e1-52b2-bf16-2f71ff3ce1d3",
+    "name": "Pacific/Niue",
+    "description": "Часовой пояс IANA: Pacific/Niue.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Niue",
+      "iana": "Pacific/Niue"
+    }
+  },
+  {
+    "uid": "23e37d79-8bed-5beb-a9f5-1956970c6303",
+    "name": "Pacific/Norfolk",
+    "description": "Часовой пояс IANA: Pacific/Norfolk.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Norfolk",
+      "iana": "Pacific/Norfolk"
+    }
+  },
+  {
+    "uid": "bd46a9d8-a536-55e8-aec5-6ec88e2ed51b",
+    "name": "Pacific/Noumea",
+    "description": "Часовой пояс IANA: Pacific/Noumea.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Noumea",
+      "iana": "Pacific/Noumea"
+    }
+  },
+  {
+    "uid": "0417259b-0c42-5c8f-9776-dc6666af1fe3",
+    "name": "Pacific/Pago_Pago",
+    "description": "Часовой пояс IANA: Pacific/Pago_Pago.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Pago_Pago",
+      "iana": "Pacific/Pago_Pago"
+    }
+  },
+  {
+    "uid": "cf275e82-61f3-5812-b6b7-7728c1789ae5",
+    "name": "Pacific/Palau",
+    "description": "Часовой пояс IANA: Pacific/Palau.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Palau",
+      "iana": "Pacific/Palau"
+    }
+  },
+  {
+    "uid": "393ded02-983c-5d52-9822-92182390f727",
+    "name": "Pacific/Pitcairn",
+    "description": "Часовой пояс IANA: Pacific/Pitcairn.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Pitcairn",
+      "iana": "Pacific/Pitcairn"
+    }
+  },
+  {
+    "uid": "83822cab-8dbf-578e-aa63-1fcc9bab34d6",
+    "name": "Pacific/Pohnpei",
+    "description": "Часовой пояс IANA: Pacific/Pohnpei.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Pohnpei",
+      "iana": "Pacific/Pohnpei"
+    }
+  },
+  {
+    "uid": "dea72d2a-0640-52cb-bddd-a1ca5f13f1a1",
+    "name": "Pacific/Ponape",
+    "description": "Часовой пояс IANA: Pacific/Ponape.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Ponape",
+      "iana": "Pacific/Ponape"
+    }
+  },
+  {
+    "uid": "c9b18470-2170-53e2-9485-e875df572edc",
+    "name": "Pacific/Port_Moresby",
+    "description": "Часовой пояс IANA: Pacific/Port_Moresby.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Port_Moresby",
+      "iana": "Pacific/Port_Moresby"
+    }
+  },
+  {
+    "uid": "f5478892-399b-5ddc-8153-e4170937bef0",
+    "name": "Pacific/Rarotonga",
+    "description": "Часовой пояс IANA: Pacific/Rarotonga.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Rarotonga",
+      "iana": "Pacific/Rarotonga"
+    }
+  },
+  {
+    "uid": "4eb027f2-7567-5222-a7a3-70f36c2ff3ea",
+    "name": "Pacific/Saipan",
+    "description": "Часовой пояс IANA: Pacific/Saipan.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Saipan",
+      "iana": "Pacific/Saipan"
+    }
+  },
+  {
+    "uid": "bdb1da55-3e61-5efe-aed7-a89377b15316",
+    "name": "Pacific/Samoa",
+    "description": "Часовой пояс IANA: Pacific/Samoa.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Samoa",
+      "iana": "Pacific/Samoa"
+    }
+  },
+  {
+    "uid": "f9c70c61-5f0f-541b-86a1-3bc465be6e27",
+    "name": "Pacific/Tahiti",
+    "description": "Часовой пояс IANA: Pacific/Tahiti.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Tahiti",
+      "iana": "Pacific/Tahiti"
+    }
+  },
+  {
+    "uid": "4df5ac84-4409-5ac0-a6ce-3c17d2a6e782",
+    "name": "Pacific/Tarawa",
+    "description": "Часовой пояс IANA: Pacific/Tarawa.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Tarawa",
+      "iana": "Pacific/Tarawa"
+    }
+  },
+  {
+    "uid": "cbd148e0-e3ce-5157-80d3-62ef3960b372",
+    "name": "Pacific/Tongatapu",
+    "description": "Часовой пояс IANA: Pacific/Tongatapu.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Tongatapu",
+      "iana": "Pacific/Tongatapu"
+    }
+  },
+  {
+    "uid": "4c3cb32e-549b-5cb5-bf42-12fa66d9fe4a",
+    "name": "Pacific/Truk",
+    "description": "Часовой пояс IANA: Pacific/Truk.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Truk",
+      "iana": "Pacific/Truk"
+    }
+  },
+  {
+    "uid": "4075f69a-80b0-5d50-9a3d-eb01c9d77bf9",
+    "name": "Pacific/Wake",
+    "description": "Часовой пояс IANA: Pacific/Wake.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Wake",
+      "iana": "Pacific/Wake"
+    }
+  },
+  {
+    "uid": "9fae6f30-caa3-555c-a7be-2c888ef6978c",
+    "name": "Pacific/Wallis",
+    "description": "Часовой пояс IANA: Pacific/Wallis.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Wallis",
+      "iana": "Pacific/Wallis"
+    }
+  },
+  {
+    "uid": "c7856cb6-f934-5df9-bf62-c100043e74aa",
+    "name": "Pacific/Yap",
+    "description": "Часовой пояс IANA: Pacific/Yap.",
+    "icon": null,
+    "extra": {
+      "code": "Pacific/Yap",
+      "iana": "Pacific/Yap"
+    }
+  },
+  {
+    "uid": "df09d180-a890-5670-a948-6426d708c572",
+    "name": "Poland",
+    "description": "Часовой пояс IANA: Poland.",
+    "icon": null,
+    "extra": {
+      "code": "Poland",
+      "iana": "Poland"
+    }
+  },
+  {
+    "uid": "c7526b4e-9b27-5496-9216-52f3aceee7f2",
+    "name": "Portugal",
+    "description": "Часовой пояс IANA: Portugal.",
+    "icon": null,
+    "extra": {
+      "code": "Portugal",
+      "iana": "Portugal"
+    }
+  },
+  {
+    "uid": "eeafa880-0faf-550b-8e41-d620c5201af0",
+    "name": "ROC",
+    "description": "Часовой пояс IANA: ROC.",
+    "icon": null,
+    "extra": {
+      "code": "ROC",
+      "iana": "ROC"
+    }
+  },
+  {
+    "uid": "81f98ad4-2508-5938-b449-cf12b322f970",
+    "name": "ROK",
+    "description": "Часовой пояс IANA: ROK.",
+    "icon": null,
+    "extra": {
+      "code": "ROK",
+      "iana": "ROK"
+    }
+  },
+  {
+    "uid": "9c8973f9-e09f-5a40-ad2b-82ee61b453cc",
+    "name": "Singapore",
+    "description": "Часовой пояс IANA: Singapore.",
+    "icon": null,
+    "extra": {
+      "code": "Singapore",
+      "iana": "Singapore"
+    }
+  },
+  {
+    "uid": "7931d630-cf54-5821-ba8b-1eaa85e288f6",
+    "name": "Turkey",
+    "description": "Часовой пояс IANA: Turkey.",
+    "icon": null,
+    "extra": {
+      "code": "Turkey",
+      "iana": "Turkey"
+    }
+  },
+  {
+    "uid": "86e55acc-16d3-5399-bdd3-d6a2384f5ee8",
+    "name": "UCT",
+    "description": "Часовой пояс IANA: UCT.",
+    "icon": null,
+    "extra": {
+      "code": "UCT",
+      "iana": "UCT"
+    }
+  },
+  {
+    "uid": "ec0fcd14-ada8-5ccf-a311-0c5654ca333a",
+    "name": "US/Alaska",
+    "description": "Часовой пояс IANA: US/Alaska.",
+    "icon": null,
+    "extra": {
+      "code": "US/Alaska",
+      "iana": "US/Alaska"
+    }
+  },
+  {
+    "uid": "0dab6afe-72fd-55e9-8da7-2b05414391f6",
+    "name": "US/Aleutian",
+    "description": "Часовой пояс IANA: US/Aleutian.",
+    "icon": null,
+    "extra": {
+      "code": "US/Aleutian",
+      "iana": "US/Aleutian"
+    }
+  },
+  {
+    "uid": "9754893c-13d6-5a5d-a1a7-56e305691a48",
+    "name": "US/Arizona",
+    "description": "Часовой пояс IANA: US/Arizona.",
+    "icon": null,
+    "extra": {
+      "code": "US/Arizona",
+      "iana": "US/Arizona"
+    }
+  },
+  {
+    "uid": "47d9336c-6c52-5f15-8d0d-b57ccb9dc22a",
+    "name": "US/Central",
+    "description": "Часовой пояс IANA: US/Central.",
+    "icon": null,
+    "extra": {
+      "code": "US/Central",
+      "iana": "US/Central"
+    }
+  },
+  {
+    "uid": "8991a994-f84c-5a97-a20c-0d848aaf4f86",
+    "name": "US/East-Indiana",
+    "description": "Часовой пояс IANA: US/East-Indiana.",
+    "icon": null,
+    "extra": {
+      "code": "US/East-Indiana",
+      "iana": "US/East-Indiana"
+    }
+  },
+  {
+    "uid": "87c499f3-12a6-5431-bc72-57cf13fb2b8c",
+    "name": "US/Eastern",
+    "description": "Часовой пояс IANA: US/Eastern.",
+    "icon": null,
+    "extra": {
+      "code": "US/Eastern",
+      "iana": "US/Eastern"
+    }
+  },
+  {
+    "uid": "e4c099ed-8ca1-58d3-8fb8-1fcdf8037de3",
+    "name": "US/Hawaii",
+    "description": "Часовой пояс IANA: US/Hawaii.",
+    "icon": null,
+    "extra": {
+      "code": "US/Hawaii",
+      "iana": "US/Hawaii"
+    }
+  },
+  {
+    "uid": "00b6ca52-a9f4-57c3-9fc3-2a510785079c",
+    "name": "US/Indiana-Starke",
+    "description": "Часовой пояс IANA: US/Indiana-Starke.",
+    "icon": null,
+    "extra": {
+      "code": "US/Indiana-Starke",
+      "iana": "US/Indiana-Starke"
+    }
+  },
+  {
+    "uid": "36216995-9706-5071-b6ff-f6b4fbb5811f",
+    "name": "US/Michigan",
+    "description": "Часовой пояс IANA: US/Michigan.",
+    "icon": null,
+    "extra": {
+      "code": "US/Michigan",
+      "iana": "US/Michigan"
+    }
+  },
+  {
+    "uid": "5e5586ea-31ba-583f-88e1-231bfe1356c9",
+    "name": "US/Mountain",
+    "description": "Часовой пояс IANA: US/Mountain.",
+    "icon": null,
+    "extra": {
+      "code": "US/Mountain",
+      "iana": "US/Mountain"
+    }
+  },
+  {
+    "uid": "048a063e-6e40-5a50-880b-2f649ac2e4dd",
+    "name": "US/Pacific",
+    "description": "Часовой пояс IANA: US/Pacific.",
+    "icon": null,
+    "extra": {
+      "code": "US/Pacific",
+      "iana": "US/Pacific"
+    }
+  },
+  {
+    "uid": "7d0056c9-361e-50ea-9598-8116ca0d1a92",
+    "name": "US/Samoa",
+    "description": "Часовой пояс IANA: US/Samoa.",
+    "icon": null,
+    "extra": {
+      "code": "US/Samoa",
+      "iana": "US/Samoa"
+    }
+  },
+  {
+    "uid": "fc7b8867-8ac9-5cdd-9082-fdbcafa26518",
+    "name": "UTC",
+    "description": "Часовой пояс IANA: UTC.",
+    "icon": null,
+    "extra": {
+      "code": "UTC",
+      "iana": "UTC"
+    }
+  },
+  {
+    "uid": "a046a0e9-6f7c-510e-a336-7772bf497e5d",
+    "name": "Universal",
+    "description": "Часовой пояс IANA: Universal.",
+    "icon": null,
+    "extra": {
+      "code": "Universal",
+      "iana": "Universal"
+    }
+  },
+  {
+    "uid": "f411970e-9bb0-53f0-9197-1e51a07b64c1",
+    "name": "W-SU",
+    "description": "Часовой пояс IANA: W-SU.",
+    "icon": null,
+    "extra": {
+      "code": "W-SU",
+      "iana": "W-SU"
+    }
+  },
+  {
+    "uid": "f50d102c-997d-533a-a8fa-664521b0121d",
+    "name": "WET",
+    "description": "Часовой пояс IANA: WET.",
+    "icon": null,
+    "extra": {
+      "code": "WET",
+      "iana": "WET"
+    }
+  },
+  {
+    "uid": "c960f8b1-fb38-546f-a739-022400fe7b94",
+    "name": "Zulu",
+    "description": "Часовой пояс IANA: Zulu.",
+    "icon": null,
+    "extra": {
+      "code": "Zulu",
+      "iana": "Zulu"
+    }
+  }
+]

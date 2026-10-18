@@ -17,11 +17,16 @@ from vowen.core.http_safety import HttpSafety
 from vowen.core.maintenance import maintenance_loop
 from vowen.modules.auth.router import router
 from vowen.modules.auth.schemas import ErrorResponse
+from vowen.modules.change_requests.router import router as change_requests_router
+from vowen.modules.discipline.catalogue import router as punishment_catalogue_router
 from vowen.modules.discipline.router import router as discipline_router
 from vowen.modules.forms.router import router as forms_router
+from vowen.modules.identity.administration_router import router as administration_router
 from vowen.modules.journal.router import router as journal_router
 from vowen.modules.notifications.preferences import router as notifications_router
+from vowen.modules.references.router import router as references_router
 from vowen.modules.relations.router import router as relations_router
+from vowen.modules.rewards.catalogue import router as catalogue_router
 from vowen.modules.rewards.economy_router import router as economy_router
 from vowen.modules.rewards.router import router as rewards_router
 from vowen.modules.rituals.evidence import router as evidence_router
@@ -58,9 +63,13 @@ def create_app(settings: Settings) -> FastAPI:
     app.add_middleware(HttpSafety)
     app.state.clock = Clock()
     app.include_router(router)
+    app.include_router(administration_router)
+    app.include_router(references_router)
+    app.include_router(change_requests_router)
     app.include_router(relations_router)
     app.include_router(forms_router)
     app.include_router(discipline_router)
+    app.include_router(punishment_catalogue_router)
     app.include_router(journal_router)
     app.include_router(notifications_router)
     app.include_router(surveys_router)
@@ -69,6 +78,7 @@ def create_app(settings: Settings) -> FastAPI:
     app.include_router(evidence_router)
     app.include_router(rewards_router)
     app.include_router(economy_router)
+    app.include_router(catalogue_router)
 
     @app.exception_handler(AppError)
     async def app_error(request: Request, error: AppError) -> JSONResponse:

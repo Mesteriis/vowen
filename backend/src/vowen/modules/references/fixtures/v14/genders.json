@@ -1,0 +1,79 @@
+[
+  {
+    "uid": "34838003-cbf4-50ca-8ce6-495e9644af75",
+    "name": "Мужчина",
+    "description": "Самоопределение: мужчина.",
+    "icon": null,
+    "extra": {
+      "code": "man"
+    },
+    "url": null,
+    "thumbnail": "/references/genders/man-transparent.png"
+  },
+  {
+    "uid": "820b04fa-20e5-5e6b-8394-d57389c2d8f5",
+    "name": "Женщина",
+    "description": "Самоопределение: женщина.",
+    "icon": null,
+    "extra": {
+      "code": "woman"
+    },
+    "url": null,
+    "thumbnail": "/references/genders/woman-transparent.png"
+  },
+  {
+    "uid": "fc1f8f67-89f0-5dbe-a70c-dee814672fbe",
+    "name": "Небинарный",
+    "description": "Самоопределение вне бинарных категорий.",
+    "icon": null,
+    "extra": {
+      "code": "nonbinary"
+    },
+    "url": null,
+    "thumbnail": "/references/genders/nonbinary-transparent.png"
+  },
+  {
+    "uid": "285d6682-da2f-5ce6-9b17-c64ced49db5b",
+    "name": "Агендер",
+    "description": "Самоопределение без гендерной принадлежности.",
+    "icon": null,
+    "extra": {
+      "code": "agender"
+    },
+    "url": null,
+    "thumbnail": "/references/genders/agender-transparent.png"
+  },
+  {
+    "uid": "c8d89ef0-0cab-5bd5-b8c1-0e3db270c79f",
+    "name": "Гендерфлюидный",
+    "description": "Гендерное самоопределение может меняться.",
+    "icon": null,
+    "extra": {
+      "code": "genderfluid"
+    },
+    "url": null,
+    "thumbnail": "/references/genders/genderfluid-transparent.png"
+  },
+  {
+    "uid": "4f486b7d-ba65-5d36-9281-e903fee94234",
+    "name": "Бигендер",
+    "description": "Самоопределение, включающее два гендера.",
+    "icon": null,
+    "extra": {
+      "code": "bigender"
+    },
+    "url": null,
+    "thumbnail": "/references/genders/bigender-transparent.png"
+  },
+  {
+    "uid": "9763079b-2603-52c4-b58b-328f863528ca",
+    "name": "Другое",
+    "description": "Самоопределение, не представленное отдельным пунктом.",
+    "icon": null,
+    "extra": {
+      "code": "other"
+    },
+    "url": null,
+    "thumbnail": "/references/genders/other-transparent.png"
+  }
+]

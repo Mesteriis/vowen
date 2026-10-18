@@ -18,7 +18,9 @@ See [actual evidence and gaps](docs/STATUS.md), [M4 behavior](docs/M4.md), [M5 b
 
 Python 3.13, PostgreSQL 17, Vue/TypeScript and native Kotlin/Compose. MIT and the
 working name are starting defaults; branding/domain availability has not been checked.
-The server operator can access data; encryption is not E2EE.
+Application payloads are stored without encryption as of schema 0035. API access checks
+still apply; the server operator can read the database. Existing encrypted databases
+are converted with their original keyring: see [plaintext migration](docs/operations/plain-payloads.md).
 
 ## Local development
 

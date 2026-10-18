@@ -1,0 +1,134 @@
+[
+  {
+    "uid": "abe43b92-ac86-5ca4-9b9c-03fde26bb3e4",
+    "name": "Стеклянный стимулятор",
+    "description": "Стимулятор из боросиликатного стекла с плавно изогнутой формой.",
+    "icon": null,
+    "thumbnail": "/references/devices/glass-stimulator-transparent.png",
+    "url": null,
+    "extra": {
+      "code": "glass-stimulator",
+      "group": "Секс-игрушки",
+      "discipline_default": false,
+      "aliases": [
+        "стеклянный массажёр"
+      ]
+    }
+  },
+  {
+    "uid": "f194798c-ead9-570d-a694-f42c8f911643",
+    "name": "Металлический стимулятор",
+    "description": "Гладкий изогнутый стимулятор из нержавеющей стали.",
+    "icon": null,
+    "thumbnail": "/references/devices/steel-stimulator-transparent.png",
+    "url": null,
+    "extra": {
+      "code": "steel-stimulator",
+      "group": "Секс-игрушки",
+      "discipline_default": false,
+      "aliases": [
+        "стальной массажёр"
+      ]
+    }
+  },
+  {
+    "uid": "1475b31a-c3eb-50d6-9c8c-4e53e871c123",
+    "name": "Набор расширителей",
+    "description": "Набор гладких расширителей разных размеров с широкими основаниями.",
+    "icon": null,
+    "thumbnail": "/references/devices/dilator-set-transparent.png",
+    "url": null,
+    "extra": {
+      "code": "dilator-set",
+      "group": "Секс-игрушки",
+      "discipline_default": false,
+      "aliases": [
+        "дилататоры",
+        "расширители"
+      ]
+    }
+  },
+  {
+    "uid": "2db2c594-7cfa-5665-a892-da5964d5544f",
+    "name": "Невибрирующее кольцо",
+    "description": "Эластичное кольцо без вибромодуля и электронного управления.",
+    "icon": null,
+    "thumbnail": "/references/devices/non-vibrating-ring-transparent.png",
+    "url": null,
+    "extra": {
+      "code": "non-vibrating-ring",
+      "group": "Секс-игрушки",
+      "discipline_default": false,
+      "aliases": [
+        "эрекционное кольцо",
+        "кольцо без вибрации"
+      ]
+    }
+  },
+  {
+    "uid": "59cdb7cc-bde7-582b-983a-76606556d437",
+    "name": "Пояс верности",
+    "description": "Регулируемый пояс с защитным элементом, застёжками и замком.",
+    "icon": null,
+    "thumbnail": "/references/devices/chastity-belt-transparent.png",
+    "url": null,
+    "extra": {
+      "code": "chastity-belt",
+      "group": "Секс-игрушки",
+      "discipline_default": false,
+      "aliases": [
+        "пояс целомудрия"
+      ]
+    }
+  },
+  {
+    "uid": "a7306bb3-11ec-5534-bda4-d0b8f3110135",
+    "name": "Позиционная подушка",
+    "description": "Фигурная подушка с мягкими опорами и углублением для позиционирования.",
+    "icon": null,
+    "thumbnail": "/references/devices/positioning-cushion-transparent.png",
+    "url": null,
+    "extra": {
+      "code": "positioning-cushion",
+      "group": "Мебель и опоры",
+      "discipline_default": false,
+      "aliases": [
+        "подушка для позиционирования"
+      ]
+    }
+  },
+  {
+    "uid": "3c48272f-553a-5b83-ab6a-47ae5c463919",
+    "name": "Клиновидная подушка",
+    "description": "Плотная подушка клиновидной формы с наклонной опорной поверхностью.",
+    "icon": null,
+    "thumbnail": "/references/devices/wedge-cushion-transparent.png",
+    "url": null,
+    "extra": {
+      "code": "wedge-cushion",
+      "group": "Мебель и опоры",
+      "discipline_default": false,
+      "aliases": [
+        "подушка-клин",
+        "клин"
+      ]
+    }
+  },
+  {
+    "uid": "50e23fa0-b1f7-5dce-bca7-02132f1b4b3a",
+    "name": "Мягкий валик",
+    "description": "Цилиндрический мягкий валик с текстильным чехлом.",
+    "icon": null,
+    "thumbnail": "/references/devices/bolster-cushion-transparent.png",
+    "url": null,
+    "extra": {
+      "code": "bolster-cushion",
+      "group": "Мебель и опоры",
+      "discipline_default": false,
+      "aliases": [
+        "позиционный валик",
+        "подушка-валик"
+      ]
+    }
+  }
+]

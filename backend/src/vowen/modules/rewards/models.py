@@ -12,6 +12,8 @@ class RewardDefinition(Base):
     id: Mapped[UUID] = mapped_column(primary_key=True, default=uuid4)
     author_id: Mapped[UUID] = mapped_column(ForeignKey("users.id"))
     revision: Mapped[int]
+    shop_enabled: Mapped[bool] = mapped_column(default=True)
+    shop_deleted: Mapped[bool] = mapped_column(default=False)
     current_version_id: Mapped[UUID | None] = mapped_column(
         ForeignKey("reward_definition_versions.id", use_alter=True, name="current_reward_version")
     )

@@ -1,76 +1,55 @@
 <script setup lang="ts">
-import {onMounted,ref,watch,computed} from 'vue'
+import {ref,computed,watch,nextTick,onBeforeUnmount} from 'vue'
+import {IconPlus,IconX,IconPencil,IconHandStop,IconBan,IconDots,IconChevronRight,IconChevronLeft,IconTrash,IconCheck,IconPlayerPlay,IconHistory} from '@tabler/icons-vue'
 import type {components} from '../../shared/api'
 import type {SessionClient} from '../auth/session'
 import {useWorkspaceView} from '../workspace/context'
-type RecordView=components['schemas']['DisciplineView']
-type Assignment=components['schemas']['RuleAssignmentView']
-type Occurrence=components['schemas']['OccurrenceView']
-const props=defineProps<{client:SessionClient;ru:boolean;me:components['schemas']['MemberView'];participants:components['schemas']['ParticipantView'][]}>()
-const view=useWorkspaceView()
-const rows=ref<RecordView[]>([]),rules=ref<Assignment[]>([]),occurrences=ref<Occurrence[]>([])
-const recipients=computed(()=>props.participants.filter(p=>view.recipients('discipline.propose').includes(p.id)))
-const visibleRows=computed(()=>rows.value.filter(r=>view.pair(r.author_id,r.recipient_id)||!!view.selected.value&&r.recipient_id===(view.selected.value.dominant_user_id===props.me.id?view.selected.value.submissive_user_id:view.selected.value.dominant_user_id)&&r.reviewer_ids.includes(props.me.id)))
-const busy=ref(false),error=ref(''),editing=ref(false),selected=ref<RecordView|null>(null),review=ref<RecordView|null>(null),history=ref('')
-const recipient=ref(''),reviewers=ref<string[]>([]),description=ref(''),conditions=ref(''),deadline=ref(''),rule=ref(''),occurrence=ref(''),comment=ref(''),key=ref('')
-watch(rule,id=>{if(!selected.value){const assigned=rules.value.find(r=>r.rule_version_id===id);if(assigned?.discipline)conditions.value=assigned.discipline}})
+import PunishmentFields from './PunishmentFields.vue'
+import AssignPunishment from './AssignPunishment.vue'
+import {parameters,punishmentSummary} from './parameters'
+type S=components['schemas'];type Template=S['PunishmentTemplateView'];type RecordView=S['DisciplineView']
+const props=defineProps<{client:SessionClient;ru:boolean;me:S['MemberView'];participants:S['ParticipantView'][]}>()
+const view=useWorkspaceView(),tab=ref<'catalogue'|'assigned'>('catalogue'),category=ref<'physical'|'ban'|'other'|null>(null)
+const templates=ref<Template[]>([]),rows=ref<RecordView[]>([]),selectedId=ref(''),assigning=ref<Template|null>(null),busy=ref(false),error=ref(''),notice=ref(''),history=ref('')
+const editing=ref(false),editItem=ref<Template|null>(null),editor=ref<HTMLDialogElement|null>(null),title=ref(''),description=ref(''),conditions=ref(''),fields=ref(parameters()),archiveConfirm=ref(false)
 const t=(en:string,ru:string)=>props.ru?ru:en
-const name=(id:string)=>props.participants.find(p=>p.id===id)?.display_name??id
+const categories=computed(()=>[{id:'physical' as const,title:t('Physical punishments','Телесные наказания'),icon:IconHandStop},{id:'ban' as const,title:t('Bans','Запреты'),icon:IconBan},{id:'other' as const,title:t('Other','Другое'),icon:IconDots}])
+const relation=computed(()=>view.selected.value),relationId=computed(()=>relation.value?.id??'')
+const canManage=computed(()=>!!relation.value&&relation.value.dominant_user_id===props.me.id&&view.recipients('discipline.propose').includes(relation.value.submissive_user_id)&&!props.me.paused)
+const recipientName=computed(()=>props.participants.find(p=>p.id===relation.value?.submissive_user_id)?.display_name??t('Participant','Участник'))
+const filtered=computed(()=>templates.value.filter(item=>item.punishment_type===(category.value??'physical')))
+const selected=computed(()=>filtered.value.find(item=>item.id===selectedId.value)??filtered.value[0])
+const visibleRows=computed(()=>rows.value.filter(r=>view.pair(r.author_id,r.recipient_id)||!!relation.value&&r.recipient_id===relation.value.submissive_user_id&&r.reviewer_ids.includes(props.me.id)))
 const current=(r:RecordView)=>r.versions.find(v=>v.id===r.version_id)!
-async function load(){rows.value=await props.client.get<RecordView[]>('/discipline-records');rules.value=await props.client.get<Assignment[]>('/rule-assignments');occurrences.value=await props.client.get<Occurrence[]>('/ritual-occurrences')}
-async function run(fn:()=>Promise<void>){busy.value=true;error.value='';try{await fn()}catch(e){error.value=e instanceof Error?e.message:'NETWORK_ERROR';rows.value=[]}finally{busy.value=false}}
-onMounted(()=>run(load))
-watch(view.revision,()=>{recipient.value='';void run(load)})
-watch(()=>props.me.paused,()=>{rows.value=rows.value.filter(r=>r.recipient_id===props.me.id);review.value=null;void run(load)})
-function edit(r:RecordView|null){const v=r?current(r):null;selected.value=r;recipient.value=r?.recipient_id??'';reviewers.value=r?.reviewer_ids??[];description.value=v?.description??'';conditions.value=v?.conditions??'';deadline.value=v?.deadline??'';rule.value=v?.rule_version_id??'';occurrence.value=v?.occurrence_id??'';key.value=crypto.randomUUID();editing.value=true}
-async function save(){await run(async()=>{
- const r=selected.value,body={description:description.value,conditions:conditions.value,deadline:deadline.value||null,rule_version_id:rule.value||null,occurrence_id:occurrence.value||null}
- if(r)await props.client.post(`/discipline-records/${r.id}/versions`,{...body,expected_version:r.revision})
- else await props.client.post('/discipline-records',{...body,recipient_id:recipient.value,reviewer_ids:reviewers.value,idempotency_key:key.value})
- editing.value=false;await load()
-})}
-async function act(r:RecordView,action:string){await run(async()=>{await props.client.post(`/discipline-records/${r.id}/transitions`,{expected_version:r.revision,version_id:r.version_id,action,comment:comment.value});review.value=null;comment.value='';await load()})}
+const status=(v:string)=>({planned:t('Planned','Запланировано'),proposed:t('Planned','Запланировано'),accepted:t('Planned','Запланировано'),in_progress:t('In progress','Выполняется'),completed:t('Completed','Выполнено'),confirmed:t('Checked','Проверено'),cancelled:t('Cancelled','Отменено'),declined:t('Previously declined','Ранее отклонено'),disputed:t('Previously disputed','Ранее оспорено')})[v]??v
+let generation=0
+async function load(){const id=++generation,rid=relationId.value;busy.value=true;error.value='';try{const[r,items]=await Promise.all([props.client.get<RecordView[]>('/discipline-records'),rid?props.client.get<Template[]>(`/punishment-templates?relation_id=${rid}`):Promise.resolve([])]);if(id===generation){rows.value=r;templates.value=items}}catch{if(id===generation)error.value=t('Could not load punishments.','Не удалось загрузить наказания.')}finally{if(id===generation)busy.value=false}}
+watch(view.revision,()=>{assigning.value=null;editing.value=false;templates.value=[];rows.value=[];selectedId.value='';category.value=null;history.value='';notice.value='';void load()},{immediate:true})
+watch(()=>props.me.paused,()=>{assigning.value=null;editing.value=false;void load()})
+watch(editing,async value=>{await nextTick();if(value&&!editor.value?.open)editor.value?.showModal();else if(!value)editor.value?.close()})
+onBeforeUnmount(()=>{generation++;editor.value?.close()})
+function edit(item:Template|null){editItem.value=item;title.value=item?.title??'';description.value=item?.description??'';conditions.value=item?.conditions??'';fields.value=parameters(item??undefined);fields.value.punishment_type=item?.punishment_type??category.value??'physical';archiveConfirm.value=false;editing.value=true}
+async function save(){if(!canManage.value)return;busy.value=true;error.value='';try{const item=editItem.value,{intensity:_,...typed}=fields.value;const body={...typed,title:title.value,description:description.value,conditions:conditions.value};if(item)await props.client.patch(`/punishment-templates/${item.id}`,{...body,expected_version:item.revision});else await props.client.post('/punishment-templates',{...body,relation_id:relationId.value});category.value=fields.value.punishment_type??'other';editing.value=false;await load()}catch{error.value=t('Could not save. Check fields and retry.','Не удалось сохранить. Проверьте поля и повторите.')}finally{busy.value=false}}
+async function archive(){const item=editItem.value;if(!item||!canManage.value)return;busy.value=true;try{await props.client.post(`/punishment-templates/${item.id}/archive`,{expected_version:item.revision});editing.value=false;await load()}catch{error.value=t('Could not archive this variant.','Не удалось убрать вариант из каталога.')}finally{busy.value=false}}
+async function transition(r:RecordView,action:string){busy.value=true;error.value='';try{await props.client.post(`/discipline-records/${r.id}/transitions`,{expected_version:r.revision,version_id:r.version_id,action,comment:''});await load()}catch{error.value=t('This record changed or the action is unavailable. Refresh and retry.','Запись изменилась или действие недоступно. Обновите страницу и повторите.')}finally{busy.value=false}}
+function templateSummary(item:Template){if(item.punishment_type==='physical')return `${item.device} · ${item.body_part} · ${item.strike_count} ${t('strikes','ударов')}`;if(item.punishment_type==='ban')return `${item.ban_days} ${t('days','дн.')}`;return item.description}
+async function assigned(){notice.value=t('Punishment assigned.','Наказание назначено.');await load()}
 </script>
 <template>
-<section id="discipline" aria-labelledby="discipline-heading">
- <h2 id="discipline-heading">{{t('Discipline','Дисциплина')}}</h2>
- <p>{{t('A proposal describes an alleged event, not an agreed fact. Acceptance is personal and can be withdrawn.','Предложение описывает предполагаемое событие, а не установленный факт. Согласие личное и может быть отозвано.')}}</p>
- <button :disabled="busy" @click="run(load)">{{t('Refresh discipline','Обновить дисциплину')}}</button>
- <button :disabled="busy||me.paused" v-if="recipients.length" @click="edit(null)">{{t('New discipline proposal','Новое дисциплинарное предложение')}}</button>
- <p v-if="error" role="alert">{{error}}</p>
- <form v-if="editing" @submit.prevent="save">
-  <label>{{t('Discipline recipient','Адресат записи')}}<select :aria-label="t('Discipline recipient','Адресат записи')" v-model="recipient" required :disabled="!!selected||busy" @change="rule='';occurrence='';reviewers=reviewers.filter(id=>id!==recipient)"><option value="" disabled>—</option><option v-for="p in recipients" :key="p.id" :value="p.id">{{p.display_name}}</option></select></label>
-  <label>{{t('Description of alleged event','Описание предполагаемого события')}}<textarea v-model="description" required maxlength="10000" /></label>
-  <label>{{t('Proposed conditions','Предлагаемые условия')}}<textarea v-model="conditions" required maxlength="10000" /></label>
-  <label>{{t('Deadline (ISO 8601 with timezone, optional)','Срок (ISO 8601 с часовым поясом, необязательно)')}}<input v-model="deadline" placeholder="2026-11-01T18:00:00+01:00"></label>
-  <label>{{t('Exact rule version (optional)','Точная версия правила (необязательно)')}}<select v-model="rule"><option value="">—</option><option v-if="selected&&current(selected).rule_version_id" :value="current(selected).rule_version_id!">{{current(selected).rule_title}} · {{current(selected).rule_version_id}}</option><option v-for="a in rules.filter(a=>a.recipient_id===recipient&&a.accepted_at)" :key="a.id" :value="a.rule_version_id">{{a.title}} · {{a.rule_version_id}}</option></select></label>
-  <label>{{t('Related ritual occurrence (optional)','Связанное выполнение ритуала (необязательно)')}}<select v-model="occurrence"><option value="">—</option><option v-if="selected&&current(selected).occurrence_id" :value="current(selected).occurrence_id!">{{current(selected).occurrence_id}}</option><option v-for="o in occurrences.filter(o=>o.recipient_id===recipient)" :key="o.id" :value="o.id">{{o.title}} · {{o.local_day}}</option></select></label>
-  <fieldset :disabled="!!selected||busy"><legend>{{t('Explicit reviewers','Назначенные проверяющие')}}</legend><label v-for="p in participants.filter(p=>p.id!==recipient)" :key="p.id"><input v-model="reviewers" type="checkbox" :value="p.id">{{t('Reviewer: ','Проверяющий: ')}}{{p.display_name}}</label></fieldset>
-  <p>{{t('Each revision needs fresh recipient acceptance. Participants and reviewers cannot be replaced.','Каждая новая версия требует согласия адресата. Автор, адресат и проверяющие не заменяются.')}}</p>
-  <button :disabled="busy||me.paused||!reviewers.length">{{t('Send discipline proposal','Отправить дисциплинарное предложение')}}</button><button type="button" :disabled="busy" @click="editing=false">{{t('Cancel','Отмена')}}</button>
- </form>
- <p v-if="!rows.length">{{t('No visible discipline records','Нет доступных дисциплинарных записей')}}</p>
- <label>{{t('Transition comment (optional)','Комментарий к действию (необязательно)')}}<textarea v-model="comment" maxlength="5000" /></label>
- <article v-for="r in visibleRows" :key="r.id">
-  <h3>{{name(r.author_id)}} → {{name(r.recipient_id)}}</h3><p>{{current(r).description}}</p><p>{{current(r).conditions}}</p><p>{{r.status}}</p>
-  <p>{{t('Reviewers','Проверяющие')}}: {{r.reviewer_ids.map(name).join(', ')}}</p>
-  <p>{{t('Exact version','Точная версия')}}: {{r.version_id}}</p>
-  <p v-if="current(r).rule_version_id">{{current(r).rule_title}} · {{current(r).rule_version_id}}</p>
-  <p v-if="current(r).deadline">{{current(r).deadline}}</p>
-  <p v-if="!r.effective&&['accepted','in_progress','completed'].includes(r.status)">{{t('Execution suspended: current authority is required.','Выполнение приостановлено: нужны актуальные полномочия.')}}</p>
-  <template v-if="r.recipient_id===me.id">
-   <button v-if="r.status==='proposed'" :disabled="busy||me.paused" @click="review=r">{{t('Accept proposal','Принять предложение')}}</button>
-   <button v-if="r.status==='proposed'" :disabled="busy" @click="act(r,'decline')">{{t('Decline proposal','Отклонить предложение')}}</button>
-   <button v-if="r.status==='accepted'" :disabled="busy||me.paused||!r.effective" @click="act(r,'start')">{{t('Start action','Начать выполнение')}}</button>
-   <button v-if="r.status==='in_progress'" :disabled="busy||me.paused||!r.effective" @click="act(r,'complete')">{{t('Mark completed','Отметить выполнение')}}</button>
-   <button v-if="['proposed','accepted','in_progress','completed'].includes(r.status)" :disabled="busy" @click="act(r,'dispute')">{{t('Dispute proposal','Оспорить предложение')}}</button>
-  </template>
-  <button v-if="r.status==='completed'&&r.reviewer_ids.includes(me.id)" :disabled="busy||me.paused||!r.effective" @click="act(r,'confirm')">{{t('Confirm completion','Подтвердить выполнение')}}</button>
-  <button v-if="r.author_id===me.id&&!['confirmed','declined','cancelled'].includes(r.status)" :disabled="busy||me.paused" @click="edit(r)">{{t('Revise conditions','Изменить условия')}}</button>
-  <button v-if="!['confirmed','declined','cancelled'].includes(r.status)" :disabled="busy" @click="act(r,'cancel')">{{t('Withdraw / cancel','Отозвать / отменить')}}</button>
-  <button :disabled="busy" @click="history=history===r.id?'':r.id">{{t('Show discipline history','Показать историю дисциплины')}}</button>
-  <section v-if="history===r.id" role="region" :aria-label="t('Discipline history','История дисциплины')"><h4>{{t('Immutable versions and history','Неизменяемые версии и история')}}</h4><article v-for="v in r.versions" :key="v.id"><p>{{v.id}} · {{v.created_at}}</p><p>{{v.description}}</p><p>{{v.conditions}}</p><p>{{v.rule_title}} {{v.rule_version_id}}</p></article><p v-for="h in r.history" :key="h.revision">{{h.revision}} · {{h.status}} · {{name(h.actor_id)}} · {{h.created_at}} · {{h.version_id}} · {{h.comment}}</p></section>
- </article>
- <div v-if="review" role="dialog" aria-modal="true" :aria-label="t('Review discipline version','Подтверждение версии дисциплины')"><h3>{{t('Review exact conditions','Проверьте точные условия')}}</h3><p>{{current(review).description}}</p><p>{{current(review).conditions}}</p><p>{{review.version_id}}</p><p>{{current(review).rule_title}} {{current(review).rule_version_id}}</p><p>{{current(review).deadline}}</p><p>{{t('You may decline, dispute or withdraw consent.','Вы можете отклонить, оспорить или отозвать согласие.')}}</p><button :disabled="busy||me.paused" @click="act(review,'accept')">{{t('Confirm exact version','Подтверждаю точную версию')}}</button><button :disabled="busy" @click="review=null">{{t('Cancel','Отмена')}}</button></div>
+<section id="discipline" class="punishment-workbench" aria-label="Наказания">
+ <div class="punishment-controls"><div class="punishment-tabs" :aria-label="t('Punishment views','Разделы наказаний')"><button :aria-pressed="tab==='catalogue'" @click="tab='catalogue'">{{t('Catalogues','Каталоги')}}</button><button :aria-pressed="tab==='assigned'" @click="tab='assigned'">{{t('Assigned','Назначено')}}</button></div><button v-if="tab==='catalogue'&&canManage" class="punishment-create" :disabled="busy" @click="edit(null)"><IconPlus :size="18"/><span>{{t('New variant','Новый вариант')}}</span></button></div>
+ <p v-if="error&&!editing" role="alert">{{error}}</p><p v-if="notice" role="status" class="punishment-notice">{{notice}}</p>
+ <p v-if="!relationId" class="punishment-empty">{{t('Choose a relationship using the avatars above.','Выберите отношения через аватары сверху.')}}</p>
+ <div v-else-if="tab==='catalogue'" class="punishment-layout" :class="{'has-category':category!==null}">
+  <nav class="punishment-categories" :aria-label="t('Catalogues','Каталоги')"><h3>{{t('Catalogues','Каталоги')}}</h3><button v-for="c in categories" :key="c.id" :aria-pressed="(category??'physical')===c.id" @click="category=c.id;selectedId=''"><component :is="c.icon" :size="23"/><span>{{c.title}}</span><IconChevronRight :size="16"/></button></nav>
+  <div class="punishment-template-list"><header><button class="punishment-back quiet-button" @click="category=null"><IconChevronLeft :size="17"/>{{t('Catalogues','Каталоги')}}</button><h3>{{categories.find(c=>c.id===(category??'physical'))?.title}}</h3><button v-if="canManage" class="icon-button" :disabled="busy" :aria-label="t('New variant','Новый вариант')" @click="edit(null)"><IconPlus :size="19"/></button></header>
+   <p v-if="busy&&!templates.length" class="muted">{{t('Loading…','Загрузка…')}}</p><p v-else-if="!filtered.length" class="punishment-empty">{{t('No saved variants in this catalogue yet.','В этом каталоге пока нет сохранённых вариантов.')}}</p>
+   <article v-for="item in filtered" :key="item.id" class="punishment-template-row" :class="{'is-selected':selected?.id===item.id}"><button class="punishment-template-main" :aria-label="t('Assign: ','Назначить: ')+item.title" @click="selectedId=item.id;if(canManage)assigning=item"><IconHandStop v-if="item.punishment_type==='physical'" :size="23"/><IconBan v-else-if="item.punishment_type==='ban'" :size="23"/><IconDots v-else :size="23"/><span><strong>{{item.title}}</strong><small>{{templateSummary(item)}}</small></span><IconChevronRight :size="17"/></button><button v-if="canManage&&item.can_edit" class="icon-button" :disabled="busy" :aria-label="t('Edit: ','Редактировать: ')+item.title" @click="edit(item)"><IconPencil :size="18"/></button></article>
+  </div>
+  <aside v-if="selected" class="punishment-detail"><header><h3>{{selected.title}}</h3><button v-if="canManage&&selected.can_edit" class="icon-button" :aria-label="t('Edit variant','Редактировать вариант')" :disabled="busy" @click="edit(selected)"><IconPencil :size="19"/></button></header><p>{{selected.description}}</p><dl v-if="selected.punishment_type==='physical'"><div><dt>{{t('Device','Девайс')}}</dt><dd>{{selected.device}}</dd></div><div><dt>{{t('Body part','Часть тела')}}</dt><dd>{{selected.body_part}}</dd></div><div><dt>{{t('Strike count','Количество ударов')}}</dt><dd>{{selected.strike_count}}</dd></div><div><dt>{{t('Intensity','Сила')}}</dt><dd>{{t('Set on assignment','При назначении')}}</dd></div></dl><p v-if="selected.punishment_type==='ban'">{{selected.ban_days}} {{t('days','дн.')}}</p><p v-if="selected.conditions" class="muted">{{selected.conditions}}</p><button v-if="canManage" :disabled="busy" @click="assigning=selected">{{t('Assign','Назначить')}}</button></aside>
+ </div>
+ <div v-else class="punishment-assigned"><p v-if="!visibleRows.length" class="punishment-empty">{{t('No assignments yet.','Пока нет назначений.')}}</p><article v-for="r in visibleRows" :key="r.id"><header><h3>{{current(r).assignment_title||current(r).description.split('\n')[0]}}</h3><span class="status-tag">{{status(r.status)}}</span></header><p class="punishment-summary">{{punishmentSummary(current(r),ru)}}</p><p v-if="current(r).assignment_comment" class="punishment-comment">{{current(r).assignment_comment}}</p><div class="punishment-record-actions"><button v-if="r.recipient_id===me.id&&['planned','proposed','accepted'].includes(r.status)" :disabled="busy||me.paused||!r.effective" @click="transition(r,'start')"><IconPlayerPlay :size="17"/>{{t('Start','Начать')}}</button><button v-if="r.recipient_id===me.id&&r.status==='in_progress'" :disabled="busy||me.paused||!r.effective" @click="transition(r,'complete')"><IconCheck :size="17"/>{{t('Completed','Выполнено')}}</button><button v-if="r.status==='completed'&&r.reviewer_ids.includes(me.id)" :disabled="busy||me.paused||!r.effective" @click="transition(r,'confirm')"><IconCheck :size="17"/>{{t('Check','Проверить')}}</button><button v-if="r.author_id===me.id&&!['confirmed','declined','cancelled'].includes(r.status)" :disabled="busy" @click="transition(r,'cancel')">{{t('Cancel punishment','Отменить наказание')}}</button><button class="icon-button" :aria-label="t('History and details','История и детали')" @click="history=history===r.id?'':r.id"><IconHistory :size="19"/></button></div><section v-if="history===r.id" class="punishment-history"><p>{{current(r).description}}</p><p>{{current(r).conditions}}</p><article v-for="v in r.versions" :key="v.id"><small>{{v.created_at}}</small><p>{{punishmentSummary(v,ru)}}</p><p>{{v.description}}</p><p>{{v.conditions}}</p><p v-if="v.assignment_comment">{{v.assignment_comment}}</p></article><p v-for="h in r.history" :key="h.revision">{{status(h.status)}} · {{h.created_at}}<span v-if="h.comment"> · {{h.comment}}</span></p></section></article></div>
+ <AssignPunishment v-if="assigning&&canManage" :key="assigning.id+relationId" :client="client" :ru="ru" :relation-id="relationId" :recipient-name="recipientName" :template="assigning" @close="assigning=null" @assigned="assigned"/>
+ <dialog ref="editor" class="punishment-dialog punishment-editor-dialog" :aria-label="editItem?t('Edit variant','Редактировать вариант'):t('New variant','Новый вариант')" @cancel.prevent="!busy&&(editing=false)"><header><h3>{{editItem?t('Edit variant','Редактировать вариант'):t('New variant','Новый вариант')}}</h3><button class="icon-button" :disabled="busy" :aria-label="t('Close','Закрыть')" @click="editing=false"><IconX :size="20"/></button></header><form v-if="editing" @submit.prevent="save"><label>{{t('Title','Название')}}<input v-model="title" required maxlength="200"></label><label>{{t('Description','Описание')}}<textarea v-model="description" required maxlength="10000" rows="2"/></label><PunishmentFields v-model="fields" :client="client" :relation-id="relationId" :ru="ru" :busy="busy" template-mode/><label>{{t('Conditions (optional)','Условия (необязательно)')}}<textarea v-model="conditions" maxlength="10000" rows="2"/></label><p v-if="error" role="alert">{{error}}</p><footer><button :disabled="busy||!canManage">{{t('Save variant','Сохранить вариант')}}</button><button v-if="editItem" type="button" class="icon-button" :disabled="busy" :aria-label="t('Archive variant','Убрать вариант из каталога')" @click="archiveConfirm=true"><IconTrash :size="18"/></button></footer><div v-if="archiveConfirm"><p>{{t('Remove from catalogue? Existing assignments remain.','Убрать из каталога? Существующие назначения сохранятся.')}}</p><button type="button" :disabled="busy" @click="archive">{{t('Remove','Убрать')}}</button><button type="button" @click="archiveConfirm=false">{{t('Cancel','Отмена')}}</button></div></form></dialog>
 </section>
 </template>

@@ -386,13 +386,7 @@ async def skip(
     a, o = await rituals.locked(db, oid)
     if a.recipient_id != principal.user_id:
         raise AppError(403, "ACCESS_DENIED")
-    if o.revision != body.expected_version or o.status not in ("scheduled", "needs_changes"):
-        raise AppError(409, "CONFLICT")
-    o.status = "skipped"
-    o.revision += 1
-    return await rituals.occurrence_view(
-        db, o, a, principal.user_id, request.app.state.clock.now(), cipher_for(request)
-    )
+    raise AppError(403, "REQUEST_APPROVAL_REQUIRED")
 
 
 @router.post("/ritual-assignments/{aid}/{action}", response_model=RitualAssignmentView)
@@ -404,43 +398,9 @@ async def assignment_action(
     db: DB,
     request: Request,
 ) -> RitualAssignmentView:
-    a = await db.get(RitualAssignment, aid, with_for_update=True)
-    if a is None:
-        raise AppError(404, "NOT_FOUND")
-    recipient = a.recipient_id == principal.user_id
-    if not recipient and (not await rituals.can_manage(db, a, principal.user_id)):
-        raise AppError(403, "ACCESS_DENIED")
-    if a.revision != body.expected_version:
-        raise AppError(409, "VERSION_CONFLICT")
-    if a.status == "revoked" or (action == "resume" and (a.status != "paused" or not recipient)):
-        raise AppError(409, "CONFLICT")
-    if action == "resume":
-        if not await rituals.scoped(
-            db, a.issuer_id, a.recipient_id, "rituals.assign", {a.issuer_id}
-        ):
-            raise AppError(403, "ACCESS_DENIED")
-        await generate_assignment(db, a, request.app.state.clock.now(), 31)
-        a.status = "active"
-    else:
-        from vowen.modules.notifications.delivery import suppress_assignment
-
-        await suppress_assignment(db, a.id)
-        a.status = "paused" if action == "pause" else "revoked"
-        rows = (
-            await db.scalars(
-                select(RitualOccurrence)
-                .where(
-                    RitualOccurrence.assignment_id == aid,
-                    RitualOccurrence.status.in_(["scheduled", "needs_changes"]),
-                )
-                .with_for_update()
-            )
-        ).all()
-        for o in rows:
-            o.status = "cancelled"
-            o.revision += 1
-    a.revision += 1
-    await generate_assignment(db, a, request.app.state.clock.now(), 31)
+    a = await rituals.transition_assignment(
+        db, aid, action, principal.user_id, body.expected_version, request.app.state.clock.now()
+    )
     return await rituals.assignment_view(db, a, cipher_for(request))
 
 

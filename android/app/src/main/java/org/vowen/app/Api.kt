@@ -61,6 +61,16 @@ class Api(private val state: InstanceSession,
   return json.decodeFromString(call("/relations/${relation.id}/$action","POST",body))
  }
  suspend fun change(relation:Relation,change:RelationChange):Relation = json.decodeFromString(call("/relations/${relation.id}/versions","POST",json.encodeToString(change)))
+ suspend fun referenceEntries(kind:String):List<ReferenceEntry> {
+  require(kind in listOf("biological-sex","genders","practices","practice-categories","participant-compositions","devices","body-parts","materials","role-scenarios","interaction-formats","venues","health-conditions","allergens","timezones","relationship-types"))
+  return json.decodeFromString(call("/references/$kind"))
+ }
+ suspend fun addPractice(command:PracticeCreate):ReferenceEntry = json.decodeFromString(call("/administration/practices","POST",json.encodeToString(command)))
+ suspend fun administration():AdministrationView = json.decodeFromString(call("/administration"))
+ suspend fun changeAdministrator(id:String,action:String,revision:Int) {
+  require(action in listOf("grant","transfer"))
+  call("/administration/administrators/$id/$action","POST",json.encodeToString(AdministrationCommand(expected_revision=revision)))
+ }
  suspend fun updateProfile(patch:ProfilePatch):Member = json.decodeFromString(call("/me/preferences","PATCH",json.encodeToString(patch)))
  suspend fun revokeSession(id:String) {call("/sessions/$id","DELETE")}
  suspend fun forms():List<FormTemplate> = json.decodeFromString(call("/forms"))
@@ -78,6 +88,9 @@ class Api(private val state: InstanceSession,
  suspend fun deleteFormResult(id:String) {call("/form-submissions/$id","DELETE")}
  suspend fun rules():List<RuleTemplate> = json.decodeFromString(call("/rules"))
  suspend fun ruleHistory(rule:RuleTemplate):List<RuleTemplate> = json.decodeFromString(call("/rules/${rule.id}/versions"))
+ suspend fun changeRequests():List<ChangeRequestView> = json.decodeFromString(call("/change-requests"))
+ suspend fun createChangeRequest(body:ChangeRequestCreate):ChangeRequestView = json.decodeFromString(call("/change-requests","POST",json.encodeToString(body)))
+ suspend fun decideChangeRequest(row:ChangeRequestView,action:String,comment:String):ChangeRequestView = json.decodeFromString(call("/change-requests/${row.id}/$action","POST",json.encodeToString(ChangeRequestDecision(expected_version=row.revision,comment=comment))))
  suspend fun ruleAssignments():List<RuleAssignment> = json.decodeFromString(call("/rule-assignments"))
  suspend fun saveRule(rule:RuleTemplate?,body:RuleContent):RuleTemplate {
   if(rule==null)return json.decodeFromString(call("/rules","POST",json.encodeToString(body)))
@@ -94,6 +107,14 @@ class Api(private val state: InstanceSession,
   return json.decodeFromString(call("/rule-assignments/${assignment.id}/$action","POST",json.encodeToString(RuleDecision(assignment.revision,assignment.rule_version_id))))
  }
 
+ suspend fun punishmentTemplates(rid:String):List<PunishmentTemplateView> = json.decodeFromString(call("/punishment-templates?relation_id=$rid"))
+ suspend fun savePunishmentTemplate(item:PunishmentTemplateView?,body:PunishmentTemplateCreate):PunishmentTemplateView {
+  val payload=if(item==null)json.encodeToString(body) else json.encodeToString(PunishmentTemplateEdit(title=body.title,description=body.description,conditions=body.conditions,punishment_type=body.punishment_type,device=body.device,body_part=body.body_part,strike_count=body.strike_count,ban_days=body.ban_days,expected_version=item.revision))
+  return json.decodeFromString(call(if(item==null)"/punishment-templates" else "/punishment-templates/${item.id}",if(item==null)"POST" else "PATCH",payload))
+ }
+ suspend fun archivePunishmentTemplate(item:PunishmentTemplateView){call("/punishment-templates/${item.id}/archive","POST",json.encodeToString(ExpectedVersion(expected_version=item.revision)))}
+ suspend fun assignPunishment(item:PunishmentTemplateView,body:PunishmentAssign):DisciplineRecord = json.decodeFromString(call("/punishment-templates/${item.id}/assign","POST",json.encodeToString(body)))
+ suspend fun disciplineDictionary(rid:String,kind:String,name:String?):List<String> = json.decodeFromString(call("/discipline-records/dictionaries/$rid/$kind",if(name==null)"GET" else "POST",name?.let{json.encodeToString(DisciplineDictionaryEntry(name=it))}))
  suspend fun discipline():List<DisciplineRecord> = json.decodeFromString(call("/discipline-records"))
  suspend fun createDiscipline(body:DisciplineCreate):DisciplineRecord = json.decodeFromString(call("/discipline-records","POST",json.encodeToString(body)))
  suspend fun reviseDiscipline(r:DisciplineRecord,body:DisciplineEdit):DisciplineRecord = json.decodeFromString(call("/discipline-records/${r.id}/versions","POST",json.encodeToString(body)))
@@ -132,15 +153,17 @@ class Api(private val state: InstanceSession,
  suspend fun downloadEvidence(e:EvidenceView):EvidenceDownload=json.decodeFromString(call("/ritual-evidence/${e.id}"))
  suspend fun discardEvidence(e:EvidenceView){call("/ritual-evidence/${e.id}","DELETE")}
  suspend fun wallet(rid:String):RelationWallet=json.decodeFromString(call("/relations/$rid/wallet"))
- suspend fun shop(rid:String):List<ShopListing> = json.decodeFromString(call("/relations/$rid/shop"))
+ suspend fun listingAudience(version:String):List<ShopListing> = json.decodeFromString(call("/shop/availability/$version"))
+ suspend fun setListingAudience(body:AvailabilityCommand):List<ShopListing> = json.decodeFromString(call("/shop/availability","POST",json.encodeToString(body)))
+ suspend fun shop(rid:String):List<ShopListing> = json.decodeFromString(call("/shop/catalogue"+if(rid.isEmpty())"" else "?relation_id=$rid"))
  suspend fun creditCoins(rid:String,body:CreditCommand):RelationWallet=json.decodeFromString(call("/relations/$rid/wallet/credits","POST",json.encodeToString(body)))
  suspend fun createListing(rid:String,body:ListingCommand):ShopListing=json.decodeFromString(call("/relations/$rid/shop","POST",json.encodeToString(body)))
- suspend fun editListing(s:ShopListing):ShopListing=json.decodeFromString(call("/shop/${s.id}","PATCH",json.encodeToString(ListingEdit(expected_version=s.revision,price=s.price,active=!s.active))))
- suspend fun purchase(s:ShopListing,key:String):RewardGrant=json.decodeFromString(call("/shop/${s.id}/purchases","POST",json.encodeToString(PurchaseCommand(expected_version=s.revision,idempotency_key=key))))
+ suspend fun editListing(s:ShopListing):ProductStateCommand=json.decodeFromString(call("/shop/products/${s.product_id}/state","POST",json.encodeToString(ProductStateCommand(expected_version=s.product_revision?:1,enabled=s.global_enabled==false))))
+ suspend fun purchase(s:ShopListing,key:String):RewardGrant=json.decodeFromString(call("/shop/${s.id}/purchases","POST",json.encodeToString(PurchaseCommand(relation_id=s.purchase_relation_id,expected_version=s.revision,idempotency_key=key))))
  suspend fun rewards():List<RewardDefinition> = json.decodeFromString(call("/rewards"))
  suspend fun rewardNotices():List<RewardNotice> = json.decodeFromString(call("/reward-notices"))
  suspend fun rewardGrants():List<RewardGrant> = json.decodeFromString(call("/reward-grants"))
- suspend fun saveReward(r:RewardDefinition?,body:RewardContent):RewardDefinition = json.decodeFromString(call(if(r==null)"/rewards" else "/rewards/${r.id}/versions","POST",if(r==null)json.encodeToString(body) else json.encodeToString(RewardEdit(title=body.title,description=body.description,conditions=body.conditions,expected_version=r.revision))))
+ suspend fun saveReward(r:RewardDefinition?,body:RewardContent):RewardDefinition = json.decodeFromString(call(if(r==null)"/rewards" else "/rewards/${r.id}/versions","POST",if(r==null)json.encodeToString(body) else json.encodeToString(RewardEdit(title=body.title,description=body.description,conditions=body.conditions,cover=body.cover,category=body.category,expected_version=r.revision))))
  suspend fun grantReward(body:GrantCommand):RewardGrant=json.decodeFromString(call("/reward-grants","POST",json.encodeToString(body)))
  suspend fun transitionReward(g:RewardGrant,action:String):RewardGrant=json.decodeFromString(call("/reward-grants/${g.id}/transitions","POST",json.encodeToString(GrantTransitionCommand(expected_version=g.revision,action=action))))
 
@@ -156,5 +179,11 @@ class Api(private val state: InstanceSession,
  suspend fun archiveForm(f:FormTemplate){call("/forms/${f.id}/archive","POST",json.encodeToString(ExpectedVersion(f.revision)))}
  suspend fun revokeFormInvitation(i:FormInvitation){call("/forms/invitations/${i.id}","DELETE")}
  suspend fun removeFormReader(i:FormInvitation,uid:String){call("/forms/invitations/${i.id}/readers/$uid","DELETE")}
+
+
+ suspend fun createShopProduct(body:ShopProductContent):ShopListing=json.decodeFromString(call("/shop/products","POST",json.encodeToString(body)))
+ suspend fun editShopProduct(item:ShopListing,body:ShopProductEdit):ShopListing=json.decodeFromString(call("/shop/products/${item.product_id}","PATCH",json.encodeToString(body)))
+ suspend fun removeShopProduct(item:ShopListing){call("/shop/products/${item.product_id}/archive","POST",json.encodeToString(ProductRevision(expected_version=item.product_revision?:1)))}
+ suspend fun toggleShopRelation(item:ShopListing):RelationProductCommand=json.decodeFromString(call("/relations/${item.toggle_relation_id}/shop/products/${item.product_id}/state","POST",json.encodeToString(RelationProductCommand(expected_version=item.toggle_revision?:0,enabled=item.relation_enabled==false))))
 
 }

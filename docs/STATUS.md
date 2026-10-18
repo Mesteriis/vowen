@@ -1094,3 +1094,503 @@ Verified web build/lint/16 unit tests and real-API ritual regression: review row
 button in read-only history, exact attachment download and prior review/rewards
 workflow. Android20 unit tests/lint/debug/instrumentation builds passed.
 No new emulator, physical device, deployment or live Telegram verification.
+
+### Uncommitted dev UI iteration: glass button and velvet parallax (2026-10-16)
+
+Mini App action buttons share a dark translucent/backdrop-blurred surface,
+including icon actions and modal actions; selected/danger/disabled action states
+retain distinct tints. Tabs, navigation, avatar/context selectors, quiet controls
+and selectable ritual rows retain their original surfaces without blur.
+A shared clipped texture layer provides scroll parallax on all web pages via a
+passive listener/requestAnimationFrame, with reduced-motion disabling movement.
+Checked in a separate local browser tab:178px page scroll moves texture32px;
+reduced-motion yields no transform, no horizontal overflow or console errors.
+Per owner request: no build, automated suite, commit, push or CI for this iteration.
+Native Android effect parity is not implemented/verified in this web-only slice.
+
+### Uncommitted dev UI iteration: own ritual executions (2026-10-16)
+
+Own executions now use compact bounded cards (about98px in inspected desktop and
+390px phone views), short local dates/deadlines and44px info/report/skip icons.
+Full instructions and existing report history are available in a read-only details
+view; the report editor also shows instructions/deadline. Backend capabilities,
+request keys, report submission, skip and evidence handling are unchanged.
+Manually inspected local synthetic own-execution context: no horizontal overflow,
+details opens with full description, no console errors. No build, commit or CI;
+Android parity and automated regression checks deferred to the agreed batch.
+
+### Ritual workspace padding annotation (2026-10-16)
+
+Removed the redundant 24px inner workspace padding in the existing 761–1100px
+ritual layout breakpoint. Outer page spacing and phone safe margins remain.
+Verified rendered padding is 0px at 1007px with no horizontal overflow.
+No build, commit or CI run for this visual adjustment. Approval workflows remain
+pending implementation; this spacing adjustment does not implement them.
+
+### Recipient change requests and dominant decisions (2026-10-16)
+
+Implemented persisted requests for ritual skip/planned pause and rule add/edit/
+removal. Requests bind the direct issuer/recipient relation, exact agreement and
+resource revisions; only that issuer can approve/reject. Recipient can withdraw.
+Reasons, proposed content, target title and decision comments use encrypted
+payloads. Creation keys, pending uniqueness and serialized decisions prevent
+repeated effects. Revoked scopes hide issuer access; stale versions/agreements,
+personal pause and expired occurrences prevent approval. Personal pause and
+consent withdrawal remain immediate. Rule removal revokes only that assignment;
+add/edit creates a published version pending the recipient's separate acceptance.
+Existing explicit managers are preserved and checked again. Planned ritual
+pauses record their author so the issuer can resume their own pause; legacy pauses
+retain recipient resume. Paused intervals are not replayed, notices are suppressed.
+
+Added compact web request editor/queue/history and Android DTO/API/state/actions/
+request screens. Web queues refresh on section activation and returning focus.
+Updated OpenAPI and generated web/native contracts. Behavior and endpoints are
+recorded in docs/features/change-requests.md. No Telegram request-delivery adapter
+was added; requests are presented within the relevant application sections.
+
+Verification: 226 backend tests passed (including PostgreSQL concurrency, rights,
+version/expiry conflicts, encryption, notifications and contract equality); Ruff
+passed and mypy passed on 72 source files. Web typecheck and 16 existing unit tests
+passed. In separate real local browser sessions verified recipient submission,
+issuer-only decision controls, target unchanged while pending, persistence after
+API restart and withdrawal. Test request was withdrawn; prior demo rituals were
+not altered. Dialog measured 358x303 at390px and480x303 at690px; no horizontal
+page overflow. No Android build/emulator/device or live Telegram verification.
+
+Alembic0020 applied to disposable test and local vowen_design_test databases.
+Before the design migration saved artifacts/deployment/ui-context/backups/
+before-0020.dump. Preserved counts across migration:12 users,3 relations,
+4 ritual assignments,0 rule assignments,0 journal entries. Local API restarted
+without seeding and continues on8002, Vite on5176. Production was not changed.
+Per owner request: no build, commit, push or CI run.
+
+### Journal timeline and persistent digital ink (2026-10-16)
+
+Owner selected journal main concept1 and focused handwriting concept3, then
+explicitly reiterated phone support. Implemented date timeline, compact expanded
+entry/preview, overflow actions, private reader settings and separate fullscreen
+writing sheet. Phone is one column with tools below the paper; tablet and wide
+Fold views use side tools. Back/keyboard returns to the text editor with focus.
+Removed search/tag/date inputs; old tags/mood are preserved. Existing public query
+parameters remain compatible. New entries must use today's date in the author's
+profile timezone; an existing date cannot be moved.
+
+Handwriting is a bounded versioned normalized stroke document inside the existing
+encrypted journal payload. Supports handwriting-only entries, stylus pressure,
+whole-stroke eraser, undo/redo, nib widths, opt-in finger drawing and consistent
+page geometry on resize. Explicit save and unsaved-change warning; no OCR or
+crash-proof autosave claim. Legacy clients omitting handwriting on text edits do
+not erase existing ink. Sharing/reader snapshots and diary authorization stay
+unchanged. No schema migration required. OpenAPI/web/native DTOs regenerated.
+Native journal source now has the same API and ink view; a session-bound in-memory
+ViewModel draft preserves editing state through configuration/fold changes without
+serializing diary contents to disk. Native source has not been built or run.
+
+Verified full backend229 tests passed, then final targeted journal4 tests passed
+including profile-timezone boundary. Web typecheck,18 unit tests, backend Ruff and
+mypy72 source files passed. Real local browser: separate synthetic Demo10 entry
+saved with text+stroke, reopened in a fresh session, erase/undo/redo checked. Demo
+entry remains clearly labelled Local handwriting check; no owner's diary content
+created or changed. Phone390x844, tablet834x1194 and Fold-sized690x780 inspected;
+no horizontal overflow, correct bottom/side tools. Physical S Pen/palm handling,
+Android compilation/device execution and real mobile keyboard remain unverified.
+Design comparison and resolved findings appended to design-qa.md. Screenshots and
+selected references saved in artifacts/design/ui-context/journal-*.png.
+
+Local API restarted without seeding; normal user diary remains open on5176/#journal.
+No production deployment, build, commit, push or CI run, per owner instruction.
+
+### 2026-10-16 — Rules accordion and punishment selection (local UI iteration)
+
+- Implemented selected Rules design option 1 in web: compact relationship avatar header, underline tabs, one expanded charcoal rule card, icon actions, version/consent disclosure, bounded editors/history/assignment/review dialogs; narrow-phone create/edit uses full screen, tablet/Fold uses up to 540 CSS px.
+- User clarified punishment selection comes from existing authorized discipline records, not a new library. New `PunishmentPicker` copies the selected current version's conditions into the encrypted rule content / change-request content. It does not start a punishment or grant access to a source record; later source revisions do not change a saved rule. Legacy conditions are preserved unless explicitly replaced/cleared. API/schema unchanged in this slice.
+- Renamed the visible navigation/page to «Наказания» / Punishments while retaining compatible internal discipline routes and API identifiers.
+- Native Android source mirrors accordion, compact icon actions, adaptive editors, existing-record picker and navigation label. Existing Compose tests were adapted for collapsed cards. Android compilation/device tests intentionally not run, per owner instruction against builds.
+- Browser QA on synthetic local data: created a QA-labelled punishment record and rule, selected/saved conditions, published template, sent assignment which remains pending recipient consent; preserved the user's other draft. Checked web at 390×844, 834×1194 and 690×780 CSS px with no horizontal overflow; phone editor fills viewport, tablet/Fold dialog width 540 px. Site zoom 130% was accounted for in CDP viewport dimensions. Screenshots: `artifacts/design/ui-context/rules-*.png`.
+- Checks: web typecheck passed; 18 web unit tests passed; git diff whitespace check passed. No production build, commit, push, deployment or real Telegram/device validation.
+
+### 2026-10-16 — Rewards marketplace and explicit item audience (local)
+
+- Implemented selected marketplace option 1: photo product shelves/carousels, compact avatar context/header, shopper balance and confirmed purchase sheet; owner add/edit/credit controls; separate received/grants tab and author library. Phone, tablet and Fold responsive layouts use the existing dark theme and supplied brand assets. Four generated selectable covers are bundled locally in web and Android.
+- Reward version cover/category is persisted in existing encrypted payload with backwards-compatible defaults. OpenAPI, web types and native DTO generator updated. No schema migration required.
+- User added «Кому доступен товар»: explicit multi-recipient availability per exact reward version, implemented via atomic GET/POST shop availability endpoints. Current direct authority checked for every changed relationship, globally ordered party locks and version/listing locks, full revision snapshot, stale/conflicting writes rejected; hidden items cannot be bought. Separate balances retained. New concurrency/rollback/ACL/versioned-cover integration tests added.
+- Verified local browser flow with synthetic participants: created breakfast/walk demo definitions/listings, hid breakfast through recipient checkbox and confirmed absence for buyer, restored it, credited 120 with demo comment, bought breakfast for 80; balance 40→160→80, reward visible as accepted in Received. No real payments, Telegram delivery, production data or physical device actions.
+- Browser sizes: 390×844, 834×1194 and 690×780 CSS px, no horizontal page overflow; horizontal shelf navigation works with keyboard and reduced motion; purchaser sees no management fields; dominant sees no own coin balance. Images loaded. Phone purchase sheet and Fold audience dialog checked visually. Captures under `artifacts/design/ui-context/rewards-*.png`.
+- Verification: all 232 backend tests passed, Ruff passed, Mypy passed (72 sources), web typecheck and 18 web tests passed, diff whitespace check passed. One initial full run found inconsistent POST/GET row ordering in the new endpoint; deterministic response ordering corrected and full suite rerun successfully.
+- Native Android sources mirror marketplace, photo shelves, editor, audience, coin and purchase dialogs; not compiled or device-tested per owner ban on builds. No build, commit, push or deploy was performed. Synthetic preview DB was preserved across API restarts; disposable test DB remains separate.
+- Existing Android reward UI tests were adapted for Received disclosure, explicit relationship selection and library/editor navigation. They remain unrun under the no-build instruction.
+# 2026-10-16 — фикстуры магазина для локального интерфейса
+
+- Четыре примера товаров вынесены в `scripts/fixtures/rewards.json`.
+- `scripts/import_reward_fixtures.py` читает файл и импортирует недостающие товары
+  через API локального DEBUG-сервера. Существующие лоты и финансовая история
+  сохраняются; production-запуск не подключён к фикстурам.
+- В текущем синтетическом магазине добавлен один недостающий товар, три сохранены.
+  Повторный импорт: 0 новых определений, 0 новых лотов, 4 сохранённых.
+- Проверка импортера: 1 unit-тест прошёл, ruff прошёл. Сборки и коммиты не выполнялись.
+
+## 2026-10-16 — общий каталог наград
+
+- Реализован режим «Доступен всем» для всего пространства. Доминант с активным
+  согласованным контекстом видит чужие активные лоты независимо от их аудитории;
+  управление остаётся автору. Общий каталог показывается без выбора партнёра.
+- Общая видимость не создаёт общий баланс: покупка требует активных согласованных
+  отношений с автором и `rewards.grant`, списание идёт из соответствующего кошелька.
+  ID чужих отношений, кошельки и история покупок через каталог не раскрываются.
+- Alembic0021 применена к локальным vowen_test и vowen_design_test без сброса данных.
+  Существующие лоты сохраняют закрытую аудиторию по умолчанию. Для синтетического
+  «Вечер вместе · демо» общий доступ включён через интерфейс; фикстура обновлена.
+- Проверено: 234 backend-теста прошли; 18 web-тестов прошли, web typecheck,
+  Ruff и Mypy (72 исходника) прошли. Добавлен сценарий общего/закрытого каталога,
+  запрета чужого редактирования, сокрытия чужих relationship IDs и повторной покупки
+  общего лота через отдельные отношения без смешивания балансов.
+- В браузере проверены общий каталог и сохранение флага из общего контекста;
+  геометрия при ширине390 и690 CSS px не имеет горизонтального переполнения.
+  Снимок настройки: artifacts/design/ui-context/rewards-public-access.png.
+- Android DTO, запросы, каталог, покупка и выбор аудитории обновлены в исходниках;
+  сборка и проверка на устройстве не выполнялись. Сборок, коммитов и деплоя нет.
+
+## 2026-10-16 — обычные названия товаров из фикстур
+
+- У четырёх товаров убраны «· демо» и фраза «Демонстрационный лот» из названий
+  и описаний в JSON-фикстуре и локальной витрине. Участники не переименовывались.
+- Локальные товары обновлены через обычные API версий и доступности. Цены,
+  аудитории, кошельки, покупки и выданные награды сохранены. Старые версии скрыты,
+  не удалены; история сохраняет исходный снимок товара.
+- Каталог не показывает скрытые устаревшие версии рядом с новой версией товара.
+  Импортер распознаёт прежние названия при повторном запуске и не создаёт дублей.
+- Проверка: 12 тестов экономики и импортера прошли; Ruff прошёл; повторный импорт
+  сохранил четыре лота без добавлений. Обычные названия проверены в открытой вкладке.
+  Сборки и коммиты не выполнялись.
+
+## 2026-10-16 — 100 товаров в фикстурах магазина
+
+- `scripts/fixtures/rewards.json` содержит ровно100 уникальных товаров: название,
+  описание, условия, обложка, категория, цена и доступность. Полки:63 совместных
+  занятия и37 позиций заботы/подарков. Названия и описания без пометок «демо».
+- Сгенерированы96 индивидуальных PNG-обложек через встроенный ImageGen; четыре
+  прежние обложки сохранены. Точные промпты и manifest исходных имён сохранены
+  рядом с фикстурами. Все100 изображений различны по SHA-256, PNG-размеры не менее
+  512px; Android-копии совпадают побайтно. Изображения хранятся внутри проекта.
+- Импорт в синтетический dev-магазин:96 новых определений и лотов,4 сохранённых.
+  Повтор:0 новых определений/лотов,100 сохранённых. Балансы, покупки, цены и
+  аудитории существующих лотов сохранены. Исправлена старая обложка «Выбор фильма»
+  через новую версию и замену лота; прежняя версия и история не удалялись.
+- Сервер принимает только локальные известные идентификаторы обложек, отклоняет
+  URL, пути и идентификаторы вне диапазона. Контракт и клиентские DTO обновлены.
+  Импортер проверяет наличие и PNG-заголовки всех картинок до изменения данных.
+- Web показывает счётчики63/37, сохраняет новую обложку при редактировании.
+  Android исходники используют LazyRow и декодирование обложек с ограниченным
+  размером вместо загрузки всех полноразмерных картинок в карусели.
+- Проверено:242 backend-теста,18 web-тестов, Ruff, Mypy72 исходника и web typecheck
+  прошли. В отдельной локальной галерее100/100 изображений загружены; все обложки
+  просмотрены в двух обзорах. Основная страница магазина показывает100 товаров
+  через карусели и счётчики. Снимок:artifacts/design/ui-context/rewards-100-products.png.
+- Android не собирался и не проверялся на устройстве. Сборок, коммитов, пушей,
+  production-изменений и live Telegram не было.
+
+## 2026-10-16 — все 100 товаров доступны всем
+
+- По прямому указанию владельца все 100 JSON-фикстур имеют `audience_all=true`.
+- В локальном магазине обычным API обновлены три оставшихся закрытых товара;
+  цены и балансы не менялись. Под непривязанным синтетическим пользователем
+  подтверждены все100 товаров с общим доступом. Правила оплаты остаются прежними.
+- В тесте фикстур закреплено требование общего доступа для каждой позиции.
+  Восемь unit-тестов фикстур прошли. Сборок и коммитов нет.
+
+## 2026-10-16 — роли магазина и покупки с разрешением
+
+- Реализована каноническая роль магазина, контролируемая оператором; метки
+  профиля не повышают полномочия. Alembic 0022 применён к тестовой и локальной
+  design-базе; перед изменением design-базы сохранён pg_dump. Сброса данных нет.
+- Dominant управляет любыми товарами, включая чужие фикстуры; выключенные видны
+  чёрно-белыми. Switch только просматривает и переключает доступ своего низа,
+  никогда не покупает. Bottom запрашивает покупку. Личные права и согласия
+  отношений проверяются дополнительно; чужие кошельки/дневники не открываются.
+- Запрос резервирует цену, уведомляет верх отношений и ожидает разрешения.
+  Одобрение списывает монеты, отказ/отзыв освобождает резерв. Погасить после
+  выполнения может любой участник покупки. Цена/условия старых заявок неизменны.
+  Старые оплаченные покупки совместимы; конкурентные повторы защищены.
+- Web и Android исходники/DTO обновлены. Импортер переведён на канонического
+  доминанта и общий каталог: повтор сохранил 100 товаров, ничего не добавил.
+- Проверено: 246 backend-тестов и 18 web-тестов прошли; Ruff, Mypy (76 файлов),
+  web typecheck и diff-check прошли. Дополнительные проверки приватных товаров
+  и актуализации ролей под блокировкой: 15 тестов магазина/экономики прошли.
+  Один первоначальный запуск pytest из корня захватил архивные копии тестов в
+  artifacts и завершился ошибкой collection; правильный запуск backend/tests
+  прошёл. Проверки не удалялись.
+- В браузере: Alex-switch имеет только доступ для Luna; Sasha-dominant видит
+  чужую фикстуру и её редактор; глобальное выключение даёт чёрно-белую обложку.
+  Все переключатели после проверки возвращены во включённое состояние.
+  Luna-bottom запросила товар за45: доступно35, резерв45; Alex увидел заявку с
+  разрешением/отказом. Заявка отозвана, резерв снят, исходные80 монет сохранены.
+  История тестового запроса сохранена. Снимки shop-*.png в artifacts/design/ui-context.
+- Сборки, коммиты, пуши, production и live Telegram не выполнялись. Android
+  на физическом устройстве не проверялся. Подробности: docs/features/rewards-marketplace.md.
+
+## 2026-10-16 — уточнение покупок для switch
+
+- Последнее уточнение владельца заменяет предыдущий запрет: switch может покупать
+  в собственных отношениях с верхним. В отношениях со своим низом переключает
+  доступность товаров; глобальное управление товарами по-прежнему недоступно.
+- Сервер разрешает запрос и одобрение покупки для получателя switch. Контекст
+  кошелька строго выбранный; общий каталог использует единственные подходящие
+  отношения с верхним и не смешивает их с переключателем доступа своего низа.
+- Web и Android исходники показывают баланс и покупку для switch в нижнем
+  контексте. При смене отношений web сбрасывает прежний баланс до загрузки нового.
+- Проверено:16 тестов магазина/экономики, Ruff, Mypy76 файлов, web typecheck и
+  diff-check прошли. В браузере Alex→Sasha показывает «Купить», Alex→Luna — «Доступ».
+  Баланс Alex→Sasha равен0, тестовые начисления в design-базу не делались.
+- Новая регрессия проверяет резерв, одобрение, списание и погашение switch,
+  запрет покупки в собственном верхнем контексте и раздельность кошельков.
+  Снимок:artifacts/design/ui-context/shop-switch-buy.png. Без сборок и коммитов;
+  Android на устройстве не запускался.
+
+## 2026-10-16 — компактный фото-список наград, автолента и три товара
+
+- Реализован выбранный третий вариант последней тройки: лента миниатюр и строки
+  товаров без тяжёлых карточек. Цена и44px иконка покупки/доступа/редактирования
+  соответствуют серверным правам. Категории показывают4/3 товара, раскрываются
+  порциями по8 и сворачиваются. На широком экране — две колонки.
+- Верхние миниатюры увеличены вдвое по последнему указанию владельца. Добавлена
+  спокойная круговая прокрутка12px/сек с явной паузой, остановкой при контакте,
+  фокусе, просмотре товара, скрытой странице и reduced-motion. Проверен переход
+  через конец ленты:10605→1355 при длине цикла10608, без пустого края.
+- Добавлены3 общедоступные фикстуры: Чухи-чухи30, Массаж60, Выбор свидания100.
+  Сгенерированы3 обложки встроенным ImageGen; web/Android копии совпадают.
+  Всего103 уникальных PNG и103 полные фикстуры. Импорт3/100; повтор0/103.
+  Промпты/manifest сохранены. OpenAPI/web/Android DTO обновлены для cover101..103.
+- Web проверен в браузере: телефон примерно390×844, Fold730×844,
+  планшет1024×1194, обычное окно. Нет горизонтального переполнения, действия44px.
+  Проверены вкладки, окно товара, недостаточный баланс, раскрытие7→15→7 строк,
+  пауза/возобновление, reduced-motion и отсутствие ошибок консоли. На телефоне
+  товар открывается снизу; на широком экране — в ограниченном центральном окне.
+- 18 web-тестов, web typecheck,14 тестов магазина/фикстур/контракта и Ruff прошли;
+  git diff --check прошёл. Полный backend-набор заново не запускался: бизнес-логика
+  покупок не менялась. Android исходники обновлены без сборки/запуска на устройстве.
+- Design QA: сравнение выбранного макета и реализации сохранено, шумный фон
+  приглушён в магазине, кнопки получили золотой акцент; финальная проверка passed.
+  Evidence:artifacts/design/ui-context/rewards-list-*.png, design-qa.md.
+  Сборок, коммитов, пушей, production и живого Telegram не было.
+
+### 2026-10-16 — категории и поиск магазина
+
+- 103 публичных товара распределены по 12 категориям; редакторы Web/Android используют те же категории. Старый `together` поддерживается для существующих пользовательских товаров.
+- Явный `scripts/import_reward_fixtures.py --sync-categories` обновляет только категории, копируя текущие описания, условия, обложки, цены и аудиторию через версионированный API. На локальной design-базе: 92 обновления, повторный запуск — 0; новые товары не создавались. Перед обновлением сделан локальный dump.
+- Поиск по названию и описанию в уже разрешённом сервером каталоге: все слова запроса, без учёта регистра, `ё`/`е`; очистка, счётчик и пустой результат. Карусель скрыта во время поиска. Web и Android source.
+- Проверено: Web typecheck, 21 Vitest; 10 backend fixture/contract tests, 5 PostgreSQL shop tests; scoped Ruff. Браузер: 12 полок, поиск «массаж» — 2 товара, пустой запрос/очистка, телефон 389 CSS px без горизонтального overflow. Планшет 1024 CSS px — 2 колонки, без overflow (категории). Android не собирался и не запускался.
+- Без сборок, коммитов и деплоя. Снимки: `artifacts/design/ui-context/rewards-categories.png`, `rewards-categories-phone.png`, `rewards-search-phone.png`.
+
+### 2026-10-17 — типы наказаний и справочники отношений
+
+Реализованы `physical` (девайс, часть тела, количество, сила 1–10), `ban` (описание + дни), `other` (описание). Добавлены зашифрованные справочники девайсов и частей тела, API чтения/добавления и миграция 0023. Права проверяются по прямым отношениям и текущим scopes, запись редактирует верхний автор; нижний сохраняет личное согласие/отказ/отзыв. Старая история читается, новая версия требует нового согласия.
+
+Web: поля по типу, добавление в справочники, параметры при подтверждении и в истории, дополнительные настройки свёрнуты, форма адаптируется к телефону/планшету. Android: исходники API, DTO, редактора и истории обновлены; сборка/устройство не проверялись.
+
+Проверено: 34 backend теста (discipline, параметры, контракт), Ruff, scoped mypy; Web typecheck и 22 Vitest. В браузере — формы physical/ban/other, добавление «Флоггер» в Алекс → Луна; телефон 389 CSS px и планшет 1024 CSS px без горизонтального overflow. Снимки `artifacts/design/ui-context/punishment-types-desktop.png`, `punishment-types-phone.png`.
+
+Локальная design-БД сохранена перед миграцией (`before-punishment-types.dump`), миграция применена; API `/health/ready` отвечает ready. Начальные неудачные запуски интеграционных тестов были вызваны несовпадением ревизии schema guard после миграции; после обновления до 0023 указанные 34 теста проходят. Без сборок, коммитов и деплоя. Подробности: `docs/features/punishment-types.md`.
+
+### 2026-10-17 — наказания без отдельного согласия
+
+По уточнению владельца отдельное согласование наказания удалено: создание/правка → `planned`, затем исполнитель начинает, отмечает выполнение, проверяющий подтверждает результат. `accept`/`decline`/`dispute` удалены из команд API и интерфейсов Web/Android. Отмена записи — только автором. Ранее сохранённые статусы/события не переписываются; старые `proposed` и `accepted` допускают прямое начало. Общие полномочия и настройки отношений не изменены.
+
+Миграция 0024 расширяет ограничение статусов БД; schema guard 0024, OpenAPI и клиентские DTO обновлены. Локальная design-БД сохранена в `before-punishment-planning.dump`, миграция применена. API перезапущен. Проверено: 37 backend-тестов discipline/параметры/контракт, Ruff, scoped mypy; Web typecheck, 22 Vitest. В браузере проверены обновлённая запись и форма с кнопкой «Запланировать наказание», без подтверждения согласия. Android-тесты обновлены в исходниках, не запускались. Без сборок и коммитов.
+
+### 2026-10-17 — отступы стрелок выпадающих списков
+
+В Web все обычные native single-select получили единый Tabler chevron с отступом 14 px справа и резервом 44 px под стрелку. Debug-переключатель сохраняет свой Vue-значок без дублирования, компактный выбор толщины пера сохраняет узкую ширину, native listbox/multiple не изменены; forced-colors возвращает системную стрелку. Проверено в живом локальном интерфейсе редактора наказаний: три селектора на большом экране и телефоне 389 CSS px, выбор значения работает, горизонтального overflow нет. Снимки: `artifacts/design/ui-context/dropdown-inset-desktop.png`, `dropdown-inset-phone.png`. Сборки и коммиты не выполнялись.
+
+### 2026-10-17 — нижняя граница карточек каталога наказаний
+
+Уточнён селектор рамки `.punishment-template-list > .punishment-template-row`: общий `article:last-child { border-bottom: 0 }` больше не убирает нижнюю сторону у последней/единственной карточки. Толщина и цвет берутся из той же рамки, что сверху, включая выделенное состояние; правило действует на всех ширинах. Проверена специфичность CSS; в текущем каталоге нет сохранённых вариантов для повторного визуального снимка. Сборки и коммиты не выполнялись.
+
+### 2026-10-17 — «Отношения», выбранный вариант 2
+
+Web: полоса партнёров, компактный верх с аватарами, открытый профиль на бархате, соглашение и полномочия в двух колонках либо вертикально на телефоне. Отдельный редактор предложения и окна действий работают с существующим API и точной версией отношений. Существующие данные и серверные полномочия не менялись. Анимации учитывают reduced motion, сенсорные цели от 44 px.
+
+Проверены переключение контекста, статус паузы и отмена возобновления, сворачивание прав, заполнение/закрытие формы без отправки; 1440, 1024, 854 и 389 CSS px без горизонтального overflow, ошибок браузера нет. Web typecheck и 22 Vitest проходят; scoped diff whitespace check проходит. Визуальные сравнения и исправления двух замечаний по адаптации — в `design-qa.md`. Android и его instrumentation-тесты обновлены в исходниках, сборка/устройство не проверялись. Без сборок, коммитов и деплоя. Подробности: `docs/features/relationships-interface.md`.
+
+### 2026-10-17 — «Уведомления», выбранный вариант 2
+
+Web: две открытые зоны настроек, компактный верх с одним личным аватаром, переключатели каналов и тихих часов, независимый статус Telegram, раскрываемые пояснения. На телефоне зоны вертикальны, обновление находится рядом с аватаром; сохранение не перекрывается нижним меню на 389×844. Сохранены существующие API, optimistic revision и бизнес-логика доставки.
+
+Проверено сохранение неизменённых настроек с ответом «Сохранено», валидация одинаковых границ и интервала через полночь, недоступность времени при выключенном режиме, подсказки и перезагрузка. Исходные значения каналов/тихих часов сохранены; реальных сообщений и подключений бота не выполнялось. Четыре CSS-размера без overflow; консоль без ошибок, typecheck и 22 Vitest проходят. Визуальный отчёт — `design-qa.md`. Android и его regression-test source обновлены без сборки/запуска. Без сборок, коммитов и деплоя. Подробности: `docs/features/notifications-interface.md`.
+
+### 2026-10-17 — «Профиль», выбранный вариант 1
+
+Web: табы «Профиль» / «Настройки», боковой индекс Общие/Уведомления/Сессии на большом экране и горизонтальный на телефоне. Имя и самоописание отделены от языка и часового пояса. Уведомления и сессии перенесены из основного меню в настройки; старые ссылки совместимы. Существующие API и серверные проверки сохранены. Перед отзывом сессии есть подтверждение, выход и обновление доступны на телефоне.
+
+Проверены обе формы сохранения на неизменённых значениях, сохранность локального черновика при переключении, уведомления, отмена отзыва текущей сессии, клавиатурные табы и мобильное меню. Четыре размера без горизонтального overflow. Web typecheck и 26 Vitest проходят. Android и инструментальные тесты изменены только в исходниках, сборка и устройство не проверялись. Без сборок, коммитов и деплоя. Подробности: `docs/features/profile-interface.md`.
+
+### 2026-10-17 — отдельные профиль и настройки, независимые администраторы
+
+Предыдущая структура «Профиль / Настройки» заменена по уточнению пользователя. Профиль открывается личной аватаркой (включая шапки с контекстом отношений), содержит личные данные/язык/часовой пояс, уведомления и сессии. Настройки — отдельная ссылка внизу бокового меню и в конце мобильного «Ещё», только для администраторов. Пока там только назначение дополнительного администратора или передача своих прав.
+
+Сервер: независимый `users.is_admin`, первый provisioned user получает права автоматически, новые участники — по назначению. Миграция 0026 для существующей базы назначает самого раннего участника. Проверки текущих полномочий, optimistic revision, DB-блокировка, атомарные изменения/аудит. D/s и метки не назначают администратора; административная роль не открывает чужие личные данные. Обновлены OpenAPI и Web/Android DTO.
+
+30 PostgreSQL/contract-проверок и 28 Vitest проходят; scoped mypy/ruff и typecheck проходят. В браузере проверены обе роли, отмена обоих окон, профиль/меню/прямая ссылка и 4 размера без overflow. Существующим участникам при UI-QA права не передавались. Android — исходники, без сборки/устройства. Подробности: `docs/features/profile-interface.md`.
+
+Локальная design-база обновлена до 0026 без сброса данных и с резервной копией. Ошибочная первая миграция 0026 в локальную базу vowen отменена до 0025; резервная копия сохранена в игнорируемом runtime-каталоге. Прод/удалённые серверы не затронуты. Без сборок, коммитов и деплоя.
+
+### 2026-10-17 — справочники и стандартные часовые пояса
+
+Реализованы пять отдельных PostgreSQL-таблиц с uid/name/description/icon/extra, стабильные JSON-фикстуры и повторный импорт без перезаписи. Биологический пол 3, гендер 7, практики 12, часовые пояса 24, виды отношений 8 — 54 записи. Предпочтения по полу/гендеру исключены по уточнению пользователя; таблицы отношений/личные значения не менялись.
+
+Настройки → Справочники: просмотр и раскрытие всех атрибутов; добавление практики с дополнительным JSON. GET — участникам, POST практики — администратору с серверной проверкой; конкурентные дубли и недопустимые поля отклоняются. Обновлены OpenAPI/Web/Android DTO. Android UI/API — исходники без сборки и устройства.
+
+Миграции 0027/0028 применены к design-базе после резервных копий без сброса. По просьбе пользователя 598 зон заменены на 24 основных IANA; UTC/Madrid сохранены, технические алиасы убраны. Обратимость сокращения 24→598→24 проверена в vowen_test, практики сохранены. Основная локальная база vowen и удалённые серверы этой задачей не менялись.
+
+33 PostgreSQL/API/contract-проверки, 28 Vitest, typecheck и scoped mypy/ruff проходят. Браузер: атрибуты, валидность JSON, отмена формы, 24 зоны и 3 размера без overflow. Без сборок, коммитов и деплоя. Документ: `docs/features/reference-catalogues.md`; фикстуры: `backend/src/vowen/modules/references/fixtures/`.
+
+### 2026-10-18 — 100 практик и URL справочников
+
+- Добавлены активные JSON-фикстуры v2: 100 практик, всего 142 записи в пяти справочниках. Исходные 12 практик и их UID сохранены.
+- Alembic 0029 добавляет nullable TEXT url каждой таблице и дополняет практики без перезаписи записей. Все URL пока null. Исторические фикстуры/миграции сохранены. API, Web и Android DTO/отображение обновлены.
+- 5 unit/PostgreSQL/API/contract тестов прошли; Web typecheck, scoped ruff и mypy прошли. Живой браузер показывает 100 практик и url «Нет», снимок artifacts/design/ui-context/reference-100-practices.png.
+- vowen_test и vowen_design_test обновлены до 0029; перед design-миграцией сделана закрытая резервная копия. Основная vowen и удалённые базы не менялись. Без сборок и коммитов; Android только исходники.
+
+### 2026-10-18 — Исправлен предмет справочника практик
+
+- Активный v3: 100 сексуальных/BDSM-практик с нейтральными описаниями и пустыми url. Общие занятия заменены по уточнению пользователя.
+- Alembic 0030 меняет только неизменённые старые фикстуры; пользовательские записи/правки сохраняет, пересекающимся понятиям оставляет UID. Исторические v1/v2 сохранены.
+- 6 unit/PostgreSQL/API/contract тестов прошли, включая сохранность пользовательских правок и повторный запуск замены; scoped ruff прошёл. vowen_test/design_test обновлены после резервной копии design. Основная vowen и удалённые базы не менялись. Без сборок и коммитов.
+
+### 2026-10-18 — Отдельный справочник категорий практик
+
+- v4: 6 справочников, 144 фикстуры. Категории «Секс»/«BDSM» — отдельная таблица; 100 практик связаны category_uid через PostgreSQL FK, категория убрана из description/extra.
+- Alembic 0031 сохраняет пользовательские правки; API проверяет категорию при создании практики, Web/Android исходники отображают/выбирают категорию.
+- 8 unit/PostgreSQL/API/contract тестов, typecheck Web и scoped ruff/mypy прошли. В браузере проверены новый справочник и отдельная категория практики; артефакты artifacts/design/ui-context/practice-categories.png и practice-category-links.png. В design-БД 50+50 связанных практик, строк с категорией в description/extra нет.
+- Локальные vowen_test/design_test обновлены до 0031 после закрытой копии design. Основная vowen/удалённые базы не менялись. Без сборок/коммитов; Android source-only.
+
+### 2026-10-18 — Подробные категории и альтернативные названия практик
+
+- v5: 89 практик, 12 категорий (143 фикстуры во всех справочниках); 8 вариантов объединены через aliases, 3 общих заголовка заменены категориями. UID оставшихся записей сохранены.
+- Alembic 0032 работает только с неизменёнными старыми фикстурами, сохраняет пользовательские правки и используемые категории. Поиск Web/Android исходники учитывает синонимы и категорию, добавлен совместимый фильтр. Личные предпочтения не менялись.
+- 10 backend unit/PostgreSQL/API/contract тестов; 3 Vitest поиска; typecheck Web и scoped ruff прошли. Браузер: синоним «минет» → «Фелляция», фильтр категории 4/89, телефон без горизонтального overflow. Снимки artifacts/design/ui-context/practice-alias-search.png, practice-search-phone.png, practice-refined-categories.png.
+- vowen_test/design_test до 0032; перед design сделана закрытая копия. Основная vowen/удалённые базы не менялись. Без сборок и коммитов, Android source-only.
+
+### 2026-10-18 — Состав участников и групповые практики
+
+- Новый справочник reference_participant_compositions: 10 записей, МЖМ/ММЖ — каноническое имя/синоним. Состав независим от практики и не назначает участникам роли, пол, гендер или предпочтения.
+- v6: 93 практики, 13 категорий, 158 фикстур в семи справочниках. Добавлены секс втроём, групповой секс, обмен партнёрами и свинг; category_uid — FK. Alembic 0033, OpenAPI/Web-типы и Web/Android исходники обновлены. URL/icon null.
+- 12 backend unit/PostgreSQL/API/contract тестов и 4 Vitest поиска прошли; typecheck Web, scoped ruff/mypy прошли. Проверен 0033→0032→0033 на тестовой БД с сохранением пользовательского описания практики. Браузер: 10 составов, поиск по синонимам, телефон без горизонтального overflow; снимки artifacts/design/ui-context/participant-compositions.png и participant-compositions-phone.png.
+- vowen_test/design_test до 0033 после закрытой копии design. Основная vowen и удалённые базы не менялись. Без сборок/коммитов, Android source-only.
+
+### 2026-10-18 — Общие справочники и отключение шифрования payload
+
+- v7: 24 девайса, 23 части тела, всего 205 справочных записей; 21+11 M:N связей практик с FK. Web/Android DTO и исходники отображают/выбирают связи, сервер проверяет UUID и атомарность. Общие значения наказаний читаются из таблиц, личные дополнения отношений сохраняют область доступа. Alembic 0034.
+- По явному запросу владельца новые прикладные payload открытые; 0035 расшифровывает все 15 типов старых записей атомарно. Для новых/переведённых записей keyring не нужен. Legacy-имена колонок/интерфейс сохранены; AES — только декодер старых данных. Политика REQ-27, README и эксплуатационные инструкции обновлены. Auth/hash/HTTPS/Keystore и резервное копирование не ослаблялись.
+- Полный backend: 287 passed; затем 16 целевых тестов после правки проверки дневника без keyring. Web: 32 Vitest passed, typecheck passed; scoped mypy/ruff passed. Тестируется конвертация 15 типов, повтор без ключа, полный rollback при повреждении и восстановление ledger-trigger.
+- Локальная design-БД после закрытой копии переведена 0033→0035, зашифрованных payload осталось 0; API перезапущен. Основная vowen и удалённые серверы не менялись. Снимок справочника artifacts/design/ui-context/shared-devices.png. Без сборок и коммитов; Android source-only, живой Telegram не проверялся.
+
+### 2026-10-18 — Материалы, сценарии, форматы и места
+
+- v8: добавлены материалы (15), ролевые сценарии (12), форматы взаимодействия (3), места проведения (6). Итого 13 справочников, 241 фикстура. Стандартные поля, icon/url null, aliases для поиска. Существующие данные/связи не менялись, профили и анкеты вне этой задачи.
+- Alembic 0036, API whitelist, OpenAPI и Web/Android исходники обновлены. 15 backend unit/PostgreSQL/API/contract тестов и 5 Vitest прошли; Web typecheck и scoped mypy/ruff прошли. Проверен 0036→0035→0036 на тестовой базе и повторный импорт с сохранением пользовательских правок.
+- Браузер: все четыре набора, «экокожа» → «Искусственная кожа», телефон 389 CSS px без overflow. Артефакты artifacts/design/ui-context/materials-alias-search.png и reference-venues-phone.png.
+- vowen_test/design_test до 0036; перед design сделана закрытая копия. Основная vowen и удалённые базы не менялись. Без сборок/коммитов, Android source-only.
+
+### 2026-10-18 — Заболевания/состояния и аллергены
+
+- v9: 23 заболевания/состояния и 16 аллергенов, всего 15 справочников/280 записей. Термины сверены с NHS/клиническими источниками; provenance в docs/features/health-reference-catalogues.md. URL/icon null; персональные диагнозы, допуски к практикам, тяжесть и авто-противопоказания не добавлялись.
+- Alembic 0037, API whitelist/OpenAPI и Web/Android исходники обновлены. 16 backend unit/PostgreSQL/API/contract тестов и 6 Vitest прошли; Web typecheck и scoped ruff/mypy прошли. 0037→0036→0037 проверен на тестовой базе.
+- Живой UI: 23/16 записей, поиск «ПТСР» и «латекс», телефон без overflow; снимки artifacts/design/ui-context/health-conditions-search.png, allergen-catalogue.png, allergens-phone.png.
+- vowen_test/design_test до 0037 после закрытой копии design. Основная vowen и удалённые базы не менялись. Без сборок/коммитов, Android source-only.
+
+### 2026-10-18 — Структура фиксации и заботы внутри существующих справочников
+
+- v10 без новых таблиц/записей: верёвка+манжеты → «Средства фиксации», ошейник+поводок → «Аксессуары динамики». Прежняя категория care/UID → «Восстановление и забота»; массаж и aftercare распределены по группам. По-прежнему 15 справочников, 280 записей, 21+11 M:N связей.
+- Web/Android исходники показывают и фильтруют extra.group совместно с поиском/категорией. Миграция 0038 меняет восемь точных старых фикстур, сохраняет личные правки/UID/связи; проверен откат/повтор.
+- 18 backend unit/PostgreSQL/API/contract тестов, 8 Vitest, Web typecheck и scoped ruff прошли. Живой UI: фиксация 2/24, забота 3/93; телефон 390 CSS px без overflow. Артефакты artifacts/design/ui-context/fixation-existing-group.png, care-existing-category.png, care-existing-phone.png.
+- vowen_test/design_test до 0038 после закрытой копии design. Основная vowen и удалённые базы не менялись. Без сборок/коммитов, Android source-only.
+
+### 2026-10-18 — Пробы стиля миниатюр справочников
+
+- Built-in image_gen: четыре финальные миниатюры существующего элемента «Верёвка» — фото, скульптурное 3D, золотая гравюра, живописная иллюстрация. Ориентиры: reward-072.png и breakfast.png. 3D/гравюра уточнены после первого прохода для явного различия стилей.
+- Финальные PNG 1254×1254 сохранены в artifacts/design/reference-thumbnails/; README содержит референсы и полный набор промптов. Визуально проверены. Поля icon, фикстуры и интерфейс не менялись: это только варианты для выбора. Без сборок/коммитов.
+
+### 2026-10-18 — thumbnail отдельно от icon
+
+- Добавлено nullable thumbnail во все 15 справочников (Alembic 0039), API, Web/Android типы и формы. icon не переименован и в фикстурах остаётся null. v11: 280 записей с thumbnail null, прежние UID и связи сохранены. Массовая генерация изображений ещё не выполнена.
+- 17 reference unit/PostgreSQL/API тестов и 1 OpenAPI contract тест прошли; Web typecheck и scoped ruff прошли. Проверен откат/повтор 0039 на vowen_test; дизайн-БД обновлена после резервного копирования. Android сборка, все остальные сборки и коммиты не выполнялись.
+
+### 2026-10-18 — генерация миниатюр справочников, в работе
+
+- Пользователь изменил формат на прозрачный PNG. Гравировка золотыми штрихами, без фоновой подложки; `icon` по-прежнему null. Промпты всех 280 записей и сохранённый прогресс: `artifacts/design/reference-thumbnails/catalogue/manifest.json`; built-in imagegen, без CLI/API runner.
+- Первые 24 девайса готовы в прозрачном варианте; материалы продолжают генерироваться. До смены формата создана отдельная партия непрозрачных черновиков, она не является финальным результатом.
+- Альфа проверяется read-only аудитом (`audit.py`, bundled Pillow); выбранный образец осмотрен на трёх фонах. Готовые пути подставлены только в пустые thumbnail локальной `vowen_design_test` после резервной копии, реальные миниатюры видны в Settings → Справочники → Девайсы. Полные v12 фикстуры/миграция ещё не активированы: генерация не завершена. Сборок и коммитов нет.
+
+### 2026-10-18 — пользователь остановил текущую партию частей тела
+
+- Последняя правка направления: стройные взрослые женские силуэты, более эротичный кружевной комплект вместо утилитарного белья. Массовый генератор остановлен по слову «Стоп»; в фоне генерация не продолжается.
+- Создан один v3 образец `artifacts/design/reference-thumbnails/catalogue/body-slim-lace-v3-transparent.png`, точный промпт рядом; реальный альфа-канал проверен. Образец пока не опубликован в фикстурах/БД. Состояние остановки и исходный файл отмечены в `catalogue/run-state.json`.
+- 49 прозрачных изображений вне раздела частей тела сохраняются. V1/V2 изображения частей тела являются промежуточными/заменяемыми; полные v12 фикстуры и миграция 0040 всё ещё не активированы. Для продолжения надо применить новое направление ко всем 23 body-parts, не запускать старые V2 промпты. Без сборок и коммитов.
+
+### 2026-10-18 — возобновление, нейтральные боди и разнообразие поз
+
+- Пользователь подтвердил продолжение. Генератор отклонил пакет кружевного белья по safety/sexual; повторов этой серии и обхода через CLI не делали. Пользователь выбрал другой вариант: стройные взрослые женские силуэты в нейтральном облегающем боди.
+- Создан нейтральный спортивный образец v4 с непрозрачным цельным боди. По следующему уточнению пользователя v5 добавляет разные естественные позы: шаг, профиль, три четверти, открытые ладони. Уже готовы голова, спина, кисти, ноги; остальные body-parts ещё генерируются. Золотая гравировка и реальная прозрачность сохранены.
+- Активное направление и прогресс лежат в catalogue/run-state.json и manifest.json. Исторические отклонённые v1-v3 и промежуточные v4 не считать итоговыми. Полная фиксация v12 и миграция ещё ожидают завершения всех 280 записей.
+
+### 2026-10-18 — индивидуальное кадрирование частей тела
+
+- Пользователь добавил кадрирование. V6: отдельные рамки для всех 23 body-parts, выбранные естественные позы и непрозрачное спортивное боди сохранены. Готовые крупные фрагменты кистей, спины, ног, головы, лица, волос и шеи опубликованы в локальном preview; остальные в работе.
+- Для close-up углы могут занимать сами плечи/ткань, поэтому corner alpha теперь диагностическое поле, а не требование пустых четырёх углов. Подлинная прозрачность проверяется по RGBA, наличию полностью прозрачных пикселей (>5%), видимым штрихам и уникальным хешам. Аудит/preview публикуются атомарно, sync использует только проверенные пути. При смене этапа два checkpoint остановились на прежнем требовании прозрачных углов у крупного кадра шеи; после уточнения корректного критерия повторный аудит пройден.
+
+### 2026-10-18 — кадрирование всех частей тела завершено
+
+- Все 23 body-parts готовы в варианте v6: индивидуальное крупное кадрирование, разные естественные позы, нейтральное непрозрачное боди, золотая гравировка и реальный alpha-канал. Проверены галереи на светлом и тёмном фоне; локальный preview использует новые миниатюры.
+- Остальные справочники продолжают генерироваться: на момент записи 150 из 280 изображений сохранены в manifest.json. Полная фиксация v12 и миграция 0040 ещё не выполнены; это не завершение всей генерации. Сборок и коммитов нет.
+
+### 2026-10-18 — миниатюры всех справочников завершены (v12 / 0040)
+
+- Сохранены 280 отдельных прозрачных PNG для 15 справочников; thumbnail заполнен в неизменяемых v12 и снимке миграции 0040, icon/url null. UID, содержимое записей и связи сохранены. Товары магазина явно исключены, их изображения не менялись.
+- Body-parts: все 23 кадра v6, разные позы и индивидуальное кадрирование в нейтральном непрозрачном боди. У падла, плети и колеса Вартенберга исправлена форма. 26 неиспользуемых прежних вариантов перенесены в локальный runtime-архив после проверки отсутствия ссылок в design-БД; исходники генератора сохранены.
+- Большие очереди частично зависали без результата: незавершённые запросы остановлены, оставшиеся 18 успешно выполнены партиями по три. В manifest нет незавершённых записей; run-state complete.
+- Проверки: 20 reference unit/PostgreSQL/API/contract тестов прошли; 0040→0039→0040 на vowen_test и повтор миграционного теста (1 passed); scoped ruff и Web typecheck прошли. 280/280 PNG прошли decode/RGBA/alpha/hash аудит, 280/280 HTTP HEAD — image/png с правильной длиной. Web desktop и 390 CSS px проверены; снимки completed-gallery.png, settings-mobile.png, health-gallery.png.
+- Design-БД обновлена после закрытой копии before-reference-thumbnails-0040.dump; preview API перезапущен без повторного seed участников. Основная vowen и удалённые БД не менялись. Android source-only; сборок, коммитов и push не выполнялось.
+
+### 2026-10-18 — расширение девайсов завершено (v13 / 0041)
+
+- Добавлены 24 девайса: всего 48, включая группу «Секс-машины» из четырёх записей. Все справочники: 304 записи и 304 прозрачные миниатюры. Старые 280 записей, UUID и связи сохранены; icon/url null. Магазин не менялся.
+- Исправлена форма виброседла. По подтверждённому выбору пользователя три машины изображены только корпусом и пультом, фаллоимитатор на присоске — только креплением. Четыре неверных прежних изображения перенесены в runtime-архив после проверки отсутствия ссылок; исходники генератора сохранены.
+- Фикстуры v13 и замороженный снимок миграции 0041 активированы. Откат сохраняет изменённые и связанные записи, повторное применение не перезаписывает пользовательские правки и совпадающие имена.
+- 27 backend unit/PostgreSQL/API/contract тестов прошли, scoped ruff прошёл. Реальный 0041→0040→0041 и повтор двух миграционных тестов прошли. 304 PNG и 304 HTTP HEAD проверены. В живом Web 48 девайсов, фильтр «Секс-машины» показывает 4/48. Галерея: artifacts/design/reference-thumbnails/catalogue/devices-v13-gallery.png.
+- Design-БД до 0041 после закрытой копии before-extra-devices-0041.dump; preview API перезапущен без seed участников. Основная vowen и удалённые БД не менялись. Мобильный интерфейс заново не проверялся, Android не собирался. Сборок, коммитов и push нет.
+
+### 2026-10-18 — одна секс-машина и восемь игрушек (v14 / 0042)
+
+- Три машинных варианта объединены в одну «Секс-машину» с сохранением канонического UUID и синонимов. Виброседло отдельно. Добавлены восемь игрушек с отдельными прозрачными золотыми миниатюрами: теперь 54 девайса, 310 справочных записей. Магазин не менялся.
+- Миграция 0042 сохраняет пользовательские правки, переносит связи неизменённых вариантов на общий UUID без дублей. Изменённые варианты не удаляются. При откате связи остаются на каноническом UUID; прежняя детализация не восстанавливается. Исторические фикстуры сохранены.
+- Проверено: 30 backend тестов, scoped ruff, реальный откат/повтор 0042→0041→0042, 310 PNG и HTTP HEAD. В приложении видны 54 девайса и новые записи; галерея catalogue/toys-v14-gallery.png. Design-БД обновлена после before-toys-0042.dump, API перезапущен без seed участников. Без сборок, коммитов и push; мобильный/Android повторно не проверялись.
+- Исправлена ошибка подключения при первом запуске Alembic: VOWEN_DATABASE_URL игнорировалась, поэтому пустая основная локальная vowen обновилась до 0042. После проверки 0 users и 0 строк всех чувствительных payload-таблиц сохранена закрытая accidental-main-upgrade-0042.dump, база возвращена до прежней 0025. Далее использована явная DATABASE_URL; vowen_test/design_test на 0042. Удалённые базы не затрагивались.
+
+### 2026-10-18 — игрушки и опоры добавлены (v15 / 0043)
+
+- Добавлены 5 игрушек и 3 позиционные опоры в существующий справочник девайсов, с группой «Мебель и опоры». Всего 62 девайса и 318 записей. Каждому дополнению назначена отдельная прозрачная золотая миниатюра; icon/url null. Старые записи, UUID, изображения и связи сохранены; магазин не менялся.
+- 0043 не перезаписывает пользовательские правки/совпадающие имена; откат сохраняет изменённые и связанные записи. Исторические миграционные тесты используют фиксированные версии данных.
+- 33 backend теста и scoped ruff прошли; реальный 0043→0042→0043 на vowen_test прошёл. 318 PNG и HTTP HEAD проверены. Живой Web: «Мебель и опоры» 3/62. Галерея: artifacts/design/reference-thumbnails/catalogue/toys-supports-v15-gallery.png; промпты/источники: generated-toys-v15.json в том же каталоге.
+- Design-БД обновлена до 0043 после закрытой before-toys-supports-0043.dump; preview API перезапущен без seed участников. Основная vowen проверена на 0025 и не менялась в этом обновлении, удалённые базы не затрагивались. Мобильный/Android повторно не проверялись. Без сборок, коммитов и push.
+
+### 2026-10-18 — все справочники загружены в основную локальную БД
+
+- По явному запросу пользователя основная локальная vowen обновлена Alembic с 0025 до 0043. Перед миграцией подтверждены 0 users и создана закрытая runtime-копия before-full-reference-load-0043.dump. Удалённые базы не затрагивались.
+- Seed v15 выполнен в vowen и vowen_design_test: в каждой 318 записей в 15 справочниках, 62 девайса, 21 связь practice-device и 11 practice-body-part. Проверено наличие каждого fixture UUID. Повторный seed не меняет количества и не создаёт дублей; штатная appctl references seed на основной базе тоже прошла.
+- Подготовлен artifacts/fixtures/reference-catalogues-v15.tar.gz: 17 JSON наборов (15 таблиц и 2 набора связей), manifest.json с SHA256 данных/миниатюр и README. Все 19 элементов архива прочитаны обратно и сверены с исходниками. PNG остаются в web/public/references, в архив данных не включены; пользовательских данных и DB-backup в нём нет. SHA256 архива лежит рядом.
+- Отчёт загрузки: artifacts/design/reference-thumbnails/catalogue/database-load-v15.json. Preview продолжает работать с vowen_design_test. Контейнеры не пересобирались и не обновлялись; совместимость их прежнего образа с новой схемой не подтверждалась. Сборок, коммитов и push нет.
+
+### 2026-10-18 — изображения приложения перенесены в static и включены в Git
+
+- Общий корень static/: 430 Web-изображений в static/web и 107 Android-изображений в static/android/res/drawable-nodpi. Все 537 изображений добавлены в индекс Git, не игнорируются и не ссылаются наружу. Всего перенесён 551 статический ресурс, байты проверены по SHA256; ничего из каталога генератора для работы приложения не требуется.
+- Vite publicDir, Docker Web, Gradle Android source set и импортёр товаров используют новые каталоги. URL в БД и фикстурах сохранены. Аудит 318 миниатюр перенесён в scripts/fixtures/reference-thumbnails-v15.json, чтобы тесты работали без игнорируемых QA-артефактов. JSON-архив фикстур и SHA256 обновлены с новой инструкцией размещения PNG.
+- Проверено: 12 unit-тестов ресурсов/фикстур, scoped ruff, Web typecheck; 444 локальных HTTP-ответа сверены с файлами по SHA256. Итоговая проверка Git подтверждает наличие всех изображений в индексе. Android и Docker не собирались; сборок, коммитов и push нет. Скриншоты QA и дизайн-макеты остаются служебными артефактами.
+
+### 2026-10-18 — проверка и сборка накопленных изменений перед публикацией
+
+- Объём: согласования правил/ритуалов, дневник с рукописью, магазин и ролевые покупки, наказания, профиль/администраторы, 15 справочников, фикстуры v15 и общая static/. Подготовлено к публикации в существующей ветке feat/ui-context; удалённые сервисы не развёртывались.
+- Прошли: make lint/typecheck (ruff, ESLint, mypy 87 файлов, Web vue-tsc), 304 backend-теста, 17 ops-тестов, 36 Vitest, 20 Android unit-тестов. Контракты повторно сгенерированы без дрейфа, make check-contracts прошёл. Git diff --check и эвристический secret scan прошли. На отдельной временной чистой PostgreSQL-базе проверены 0001→0043 и seed 318 строк; проверочная база удалена.
+- Собраны Web production dist, Python wheel/sdist, Android debug APK и инструментальный APK, пять Docker Compose образов api/worker/bot/migrate/proxy. В backend-образе подтверждены схема 0043 и все 318 фикстур (62 девайса); в proxy присутствуют бренд, магазин и миниатюры. Android lintDebug прошёл с предупреждениями; APK на устройстве не запускались. Подписанного release APK/AAB и push Docker-образов не было.
+- Во время сборки исправлены реальные ошибки Android: nullable context магазина и nullable текст дневника, вывод типа списка читателей, получение ширины до вложенного Compose DSL, позиционный конструктор Member в HomeScreenTest и неоднозначные отступы else в редакторе заявок. Проверки не отключались.
+- Ограничение: make test-e2e завершился ошибкой в первом closed-access.spec.ts (3 passed, 4 failed). Сценарии используют старые селекторы Propose a relationship и прежнюю навигацию профиля/уведомлений/сессий; последующие шесть spec-файлов make не запускал. E2E не объявляются зелёными и не удалены; обновление сценариев остаётся отдельной незавершённой работой.
+- Локальные результаты, APK, контрольные суммы и полные логи: artifacts/release/local-2026-10-18/report.json и подкаталоги android/backend/logs (игнорируются Git). Web dist — web/dist. Секреты, runtime и QA-скриншоты в коммит не включаются.

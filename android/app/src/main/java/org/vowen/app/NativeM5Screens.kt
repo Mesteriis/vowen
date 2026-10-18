@@ -17,31 +17,6 @@ data class SurveyActions(val create:(SurveyCreate)->Unit,val transition:(SurveyP
 data class NotificationActions(val save:(NotificationPatch)->Unit)
 
 @Composable
-fun NativeNotificationScreen(settings:NotificationSettings?,busy:Boolean,actions:NotificationActions,ru:Boolean){
- fun t(en:String,r:String)=if(ru)r else en
- if(settings==null){Text(t("Refresh to load notification settings","Обновите настройки уведомлений"));return}
- var channels by remember(settings.revision){mutableStateOf(settings.channels)}
- var quiet by remember(settings.revision){mutableStateOf(settings.quiet_enabled)}
- fun clock(m:Int)="%02d:%02d".format(java.util.Locale.ROOT,m/60,m%60)
- var start by remember(settings.revision){mutableStateOf(clock(settings.quiet_start))}
- var end by remember(settings.revision){mutableStateOf(clock(settings.quiet_end))}
- fun minutes(s:String)=runCatching{LocalTime.parse(s).let{it.hour*60+it.minute}}.getOrNull()
- Column(verticalArrangement=Arrangement.spacedBy(8.dp)){
-  Text(t("Notifications","Уведомления"),style=MaterialTheme.typography.headlineSmall)
-  listOf("in_app" to t("In-app notices","Уведомления в приложении"),"telegram" to "Telegram").forEach{(id,label)->Row{Checkbox(id in channels,{channels=if(it)channels+id else channels-id},enabled=!busy,modifier=Modifier.testTag("channel-$id").semantics{contentDescription=label});Text(label)}}
-  Text(if(settings.telegram_connected)t("Bot connected","Бот подключён") else t("Bot not connected","Бот не подключён"))
-  Text(t("Enable delivery personally with /notifications_on in the bot. Channel selection does not grant consent.","Включите доставку лично командой /notifications_on в боте. Выбор канала не заменяет согласие."))
-  Row{Checkbox(quiet,{quiet=it},enabled=!busy,modifier=Modifier.testTag("quiet-enabled").semantics{contentDescription=t("Quiet hours","Тихие часы")});Text(t("Quiet hours","Тихие часы"))}
-  OutlinedTextField(start,{start=it},label={Text(t("Quiet from · HH:mm","Тишина с · ЧЧ:мм"))},enabled=!busy,modifier=Modifier.testTag("quiet-start"))
-  OutlinedTextField(end,{end=it},label={Text(t("Quiet until · HH:mm","Тишина до · ЧЧ:мм"))},enabled=!busy,modifier=Modifier.testTag("quiet-end"))
-  Text(t("Profile timezone: ","Часовой пояс профиля: ")+settings.timezone)
-  Text(t("Telegram waits until quiet hours end. Tasks stay available. Re-enabling a channel does not resend cancelled messages.","Telegram ждёт окончания тишины. Задания доступны. Повторное включение канала не возвращает отменённые сообщения."))
-  val a=minutes(start);val b=minutes(end)
-  VowenActionButton(onClick={actions.save(NotificationPatch(channels=channels,expected_version=settings.revision,quiet_enabled=quiet,quiet_start=a!!,quiet_end=b!!))},enabled=!busy&&a!=null&&b!=null&&(!quiet||a!=b),modifier=Modifier.testTag("save-notifications")){Text(t("Save notifications","Сохранить уведомления"))}
- }
-}
-
-@Composable
 fun NativeSurveysScreen(member:Member,data:WorkspaceState,busy:Boolean,completed:Int,actions:SurveyActions){
  val ru=member.language=="ru"
  fun t(en:String,r:String)=if(ru)r else en

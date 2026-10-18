@@ -6,6 +6,7 @@ android {
  defaultConfig { applicationId = "org.vowen.app"; minSdk = 26; targetSdk = 36; versionCode = providers.gradleProperty("vowenVersionCode").orNull?.toInt() ?: 1; versionName = providers.gradleProperty("vowenVersionName").orNull ?: "0.1.0-alpha"; testInstrumentationRunner = "org.vowen.app.VowenTestRunner" }
  compileOptions { sourceCompatibility = JavaVersion.VERSION_17; targetCompatibility = JavaVersion.VERSION_17 }
  kotlinOptions { jvmTarget = "17" }
+ sourceSets.getByName("main").res.srcDir(rootProject.file("../static/android/res"))
  buildFeatures { compose = true }
 }
 dependencies {

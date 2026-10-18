@@ -23,6 +23,8 @@ class M5ScreenTest {
  @Test fun notificationChannelsQuietBoundariesAndRevision(){
   var saved:NotificationPatch?=null
   compose.setContent{MaterialTheme{Column(Modifier.verticalScroll(rememberScrollState())){NativeNotificationScreen(settings,false,NotificationActions{saved=it},false)}}}
+  compose.onNodeWithTag("quiet-start").performScrollTo().assertIsNotEnabled()
+  compose.onNodeWithTag("quiet-end").performScrollTo().assertIsNotEnabled()
   compose.onNodeWithTag("channel-telegram").performScrollTo().performClick()
   compose.onNodeWithTag("quiet-enabled").performScrollTo().performClick()
   compose.onNodeWithTag("quiet-start").performScrollTo().performTextReplacement("22:15")

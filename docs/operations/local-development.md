@@ -11,9 +11,9 @@ DATABASE_URL=postgresql+psycopg://vowen:vowen@127.0.0.1:55432/vowen_dev
 ```
 
 Create the separate `vowen_dev` database first using your local PostgreSQL operator
-account, run `make migrate` with that DATABASE_URL, initialize its own keyring and
+account, run `make migrate` with that DATABASE_URL and
 provision synthetic participants with the existing CLI described in
-[bootstrap.md](bootstrap.md). Use a separate keyring path; never copy production data
+[bootstrap.md](bootstrap.md). A fresh database requires no payload keyring; never copy production data
 or credentials. No participant or agreement is created automatically.
 
 Run the API bound to loopback and the Vite dev proxy:

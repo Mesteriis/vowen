@@ -1,0 +1,709 @@
+[
+  {
+    "uid": "8cbd10d4-b837-54ce-a695-f9658cba1549",
+    "name": "Рука",
+    "description": "Рука.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "hand",
+      "group": "Телесное воздействие",
+      "discipline_default": true
+    },
+    "thumbnail": "/references/devices/hand-transparent.png"
+  },
+  {
+    "uid": "a2cc6691-f01e-5089-9426-9de4abc935fe",
+    "name": "Стек",
+    "description": "Стек.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "crop",
+      "group": "Телесное воздействие",
+      "discipline_default": true
+    },
+    "thumbnail": "/references/devices/crop-transparent.png"
+  },
+  {
+    "uid": "5dbd11f3-1aad-5a0c-9ab2-91b211a03fc2",
+    "name": "Падл",
+    "description": "Падл.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "paddle",
+      "group": "Телесное воздействие",
+      "discipline_default": true
+    },
+    "thumbnail": "/references/devices/paddle-refined-v2-transparent.png"
+  },
+  {
+    "uid": "0e82ef84-d568-57f1-805c-5af778c0f6b0",
+    "name": "Плеть",
+    "description": "Плеть.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "whip",
+      "group": "Телесное воздействие",
+      "discipline_default": true
+    },
+    "thumbnail": "/references/devices/whip-refined-v2-transparent.png"
+  },
+  {
+    "uid": "ab5f93b0-765b-51e7-97b7-1bdca690e114",
+    "name": "Флоггер",
+    "description": "Флоггер.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "flogger",
+      "group": "Телесное воздействие",
+      "discipline_default": true
+    },
+    "thumbnail": "/references/devices/flogger-transparent.png"
+  },
+  {
+    "uid": "ac811f97-86f6-5049-92e5-8b4d066be3d3",
+    "name": "Трость",
+    "description": "Трость.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "cane",
+      "group": "Телесное воздействие",
+      "discipline_default": true
+    },
+    "thumbnail": "/references/devices/cane-transparent.png"
+  },
+  {
+    "uid": "aa101887-2340-5511-9c2f-43aa3341cef2",
+    "name": "Верёвка",
+    "description": "Верёвка.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "rope",
+      "group": "Средства фиксации",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/devices/rope-transparent.png"
+  },
+  {
+    "uid": "4b5be8c6-f0f5-5b9c-b582-455e603ba1e0",
+    "name": "Манжеты",
+    "description": "Манжеты.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "cuffs",
+      "group": "Средства фиксации",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/devices/cuffs-transparent.png"
+  },
+  {
+    "uid": "0b092f61-3c51-5638-9733-d03f97791969",
+    "name": "Ошейник",
+    "description": "Ошейник.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "collar",
+      "group": "Аксессуары динамики",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/devices/collar-transparent.png"
+  },
+  {
+    "uid": "ea5bf105-f3ff-5195-a117-b74454fad6b1",
+    "name": "Поводок",
+    "description": "Поводок.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "leash",
+      "group": "Аксессуары динамики",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/devices/leash-transparent.png"
+  },
+  {
+    "uid": "8c5711d0-d6cd-5f7c-a8d5-ebb316151971",
+    "name": "Повязка на глаза",
+    "description": "Повязка на глаза.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "blindfold",
+      "group": "Сенсорика",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/devices/blindfold-transparent.png"
+  },
+  {
+    "uid": "90183409-1be3-5750-b6bc-e2207950dcec",
+    "name": "Перо",
+    "description": "Перо.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "feather",
+      "group": "Сенсорика",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/devices/feather-transparent.png"
+  },
+  {
+    "uid": "8173644f-9d03-5827-bded-5621722bb3ef",
+    "name": "Мягкая кисть",
+    "description": "Мягкая кисть.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "brush",
+      "group": "Сенсорика",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/devices/brush-transparent.png"
+  },
+  {
+    "uid": "672e4e78-5e8a-5807-8385-6334186f94e2",
+    "name": "Колесо Вартенберга",
+    "description": "Колесо Вартенберга.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "pinwheel",
+      "group": "Сенсорика",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/devices/pinwheel-refined-v2-transparent.png"
+  },
+  {
+    "uid": "9f7c58eb-4a2e-51b6-9a2d-fb0dadcf437c",
+    "name": "Зажимы",
+    "description": "Зажимы.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "clamps",
+      "group": "Сенсорика",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/devices/clamps-transparent.png"
+  },
+  {
+    "uid": "250da7c5-0a62-55bc-83b1-5077be1c0025",
+    "name": "Вибратор",
+    "description": "Вибратор.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "vibrator",
+      "group": "Секс-игрушки",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/devices/vibrator-transparent.png"
+  },
+  {
+    "uid": "936232f6-5a49-59e3-9f26-a994b7a98ac2",
+    "name": "Фаллоимитатор",
+    "description": "Фаллоимитатор.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "dildo",
+      "group": "Секс-игрушки",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/devices/dildo-transparent.png"
+  },
+  {
+    "uid": "d2181b11-44e2-5fef-a601-f76f752ec730",
+    "name": "Страпон",
+    "description": "Страпон.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "strap-on",
+      "group": "Секс-игрушки",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/devices/strap-on-transparent.png"
+  },
+  {
+    "uid": "959ac8bb-620f-5823-b522-474fead546d1",
+    "name": "Анальная пробка",
+    "description": "Анальная пробка.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "anal-plug",
+      "group": "Секс-игрушки",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/devices/anal-plug-transparent.png"
+  },
+  {
+    "uid": "61e78434-d0a0-537a-bd5b-3f5efd5ad165",
+    "name": "Анальные бусы",
+    "description": "Анальные бусы.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "anal-beads",
+      "group": "Секс-игрушки",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/devices/anal-beads-transparent.png"
+  },
+  {
+    "uid": "175218fa-2c01-5008-814e-3cffd9504aba",
+    "name": "Дистанционный контроллер",
+    "description": "Дистанционный контроллер.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "remote-controller",
+      "group": "Секс-игрушки",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/devices/remote-controller-transparent.png"
+  },
+  {
+    "uid": "50ec3b62-058a-5ae4-8d41-b239497b1790",
+    "name": "Массажное масло",
+    "description": "Массажное масло.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "massage-oil",
+      "group": "Массаж",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/devices/massage-oil-transparent.png"
+  },
+  {
+    "uid": "4ec8f933-2359-5a63-83ad-3dc735304d7c",
+    "name": "Массажный мяч",
+    "description": "Массажный мяч.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "massage-ball",
+      "group": "Массаж",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/devices/massage-ball-transparent.png"
+  },
+  {
+    "uid": "bb42b6ca-9c69-5b22-b34a-87042b1b0b63",
+    "name": "Массажный ролик",
+    "description": "Массажный ролик.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "massage-roller",
+      "group": "Массаж",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/devices/massage-roller-transparent.png"
+  },
+  {
+    "uid": "81caf531-9668-5eb5-879f-dc9ffb8fc707",
+    "name": "Линейная секс-машина",
+    "description": "Устройство с моторным приводом и возвратно-поступательным механизмом.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "linear-sex-machine",
+      "group": "Секс-машины",
+      "discipline_default": false,
+      "aliases": [
+        "фак-машина",
+        "fucking machine"
+      ]
+    },
+    "thumbnail": "/references/devices/linear-sex-machine-housing-v2-transparent.png"
+  },
+  {
+    "uid": "e922d0b5-11a8-5cf5-b329-c608666143ef",
+    "name": "Роторная секс-машина",
+    "description": "Устройство с вращательным приводом и сменной насадкой.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "rotary-sex-machine",
+      "group": "Секс-машины",
+      "discipline_default": false,
+      "aliases": [
+        "ротационная секс-машина"
+      ]
+    },
+    "thumbnail": "/references/devices/rotary-sex-machine-housing-v2-transparent.png"
+  },
+  {
+    "uid": "3828c4c3-2edc-5ddc-96fd-ae826fd96b53",
+    "name": "Компактная секс-машина",
+    "description": "Настольное устройство с приводом, выдвижным механизмом и пультом управления.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "compact-sex-machine",
+      "group": "Секс-машины",
+      "discipline_default": false,
+      "aliases": [
+        "настольная секс-машина"
+      ]
+    },
+    "thumbnail": "/references/devices/compact-sex-machine-housing-v2-transparent.png"
+  },
+  {
+    "uid": "7cabb6ef-3c32-533c-b5e0-e136ad5992e1",
+    "name": "Виброседло",
+    "description": "Низкое устройство с округлым корпусом, сменной верхней площадкой и отдельным пультом управления.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "vibrating-saddle",
+      "group": "Секс-машины",
+      "discipline_default": false,
+      "aliases": [
+        "секс-седло",
+        "вибрационное седло"
+      ]
+    },
+    "thumbnail": "/references/devices/vibrating-saddle-refined-v2-transparent.png"
+  },
+  {
+    "uid": "1fc021b7-f3ec-5b81-b5f5-741660ade49d",
+    "name": "Пульсатор",
+    "description": "Стимулятор с возвратно-поступательным механизмом и встроенным приводом.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "thrusting-vibrator",
+      "group": "Секс-игрушки",
+      "discipline_default": false,
+      "aliases": [
+        "трастер",
+        "вибратор с поступательным движением"
+      ]
+    },
+    "thumbnail": "/references/devices/thrusting-vibrator-transparent.png"
+  },
+  {
+    "uid": "6165026a-5211-542e-a094-ae5bd78dbbc7",
+    "name": "Ванд-массажёр",
+    "description": "Ручной массажёр с округлой вибрирующей головкой на гибкой шейке.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "wand-massager",
+      "group": "Секс-игрушки",
+      "discipline_default": false,
+      "aliases": [
+        "массажная палочка",
+        "wand"
+      ]
+    },
+    "thumbnail": "/references/devices/wand-massager-transparent.png"
+  },
+  {
+    "uid": "e74cd957-00d9-5d2a-9095-5d3ef04e1716",
+    "name": "Волновой стимулятор",
+    "description": "Стимулятор с округлым контактным отверстием и воздушно-импульсным механизмом.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "air-pulse-stimulator",
+      "group": "Секс-игрушки",
+      "discipline_default": false,
+      "aliases": [
+        "вакуумный стимулятор",
+        "бесконтактный стимулятор"
+      ]
+    },
+    "thumbnail": "/references/devices/air-pulse-stimulator-transparent.png"
+  },
+  {
+    "uid": "caaba6dd-960c-5e7c-bed7-4ec3654c64e9",
+    "name": "Виброкольцо",
+    "description": "Эластичное кольцо со встроенным компактным вибромодулем.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "vibrating-ring",
+      "group": "Секс-игрушки",
+      "discipline_default": false,
+      "aliases": [
+        "вибрирующее кольцо"
+      ]
+    },
+    "thumbnail": "/references/devices/vibrating-ring-transparent.png"
+  },
+  {
+    "uid": "5903bf91-113c-5cea-adb0-d17190eb01b1",
+    "name": "Мастурбатор",
+    "description": "Ручное устройство со сменной внутренней втулкой и внешним корпусом.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "masturbator",
+      "group": "Секс-игрушки",
+      "discipline_default": false,
+      "aliases": [
+        "стимулятор со втулкой"
+      ]
+    },
+    "thumbnail": "/references/devices/masturbator-transparent.png"
+  },
+  {
+    "uid": "8f834a7d-6f83-5dbd-8756-961ef4decb81",
+    "name": "Массажёр простаты",
+    "description": "Изогнутый массажёр с расширенным основанием и внешним упором.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "prostate-massager",
+      "group": "Секс-игрушки",
+      "discipline_default": false,
+      "aliases": [
+        "простатический массажёр"
+      ]
+    },
+    "thumbnail": "/references/devices/prostate-massager-transparent.png"
+  },
+  {
+    "uid": "d4315792-484e-57c4-97ce-4f1d4cad49f8",
+    "name": "Двусторонний фаллоимитатор",
+    "description": "Двусторонний стимулятор с гибкой центральной частью.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "double-dildo",
+      "group": "Секс-игрушки",
+      "discipline_default": false,
+      "aliases": [
+        "двойной фаллоимитатор"
+      ]
+    },
+    "thumbnail": "/references/devices/double-dildo-transparent.png"
+  },
+  {
+    "uid": "65eb3898-e678-583e-ae2f-ca6551de5451",
+    "name": "Фаллоимитатор на присоске",
+    "description": "Стимулятор с широким основанием-присоской для крепления к поверхности.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "suction-cup-dildo",
+      "group": "Секс-игрушки",
+      "discipline_default": false,
+      "aliases": [
+        "дилдо на присоске"
+      ]
+    },
+    "thumbnail": "/references/devices/suction-cup-dildo-mount-only-transparent.png"
+  },
+  {
+    "uid": "a6a3db1a-66a0-5979-b63e-d9699058f6dc",
+    "name": "Распорка",
+    "description": "Жёсткая перекладина с креплениями для манжет по краям.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "spreader-bar",
+      "group": "Средства фиксации",
+      "discipline_default": false,
+      "aliases": [
+        "спредер",
+        "spreader bar"
+      ]
+    },
+    "thumbnail": "/references/devices/spreader-bar-transparent.png"
+  },
+  {
+    "uid": "f8e66776-dc53-5849-8419-a3597ee1da0a",
+    "name": "Фиксирующие ремни",
+    "description": "Набор регулируемых ремней с пряжками и соединительными кольцами.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "bondage-straps",
+      "group": "Средства фиксации",
+      "discipline_default": false,
+      "aliases": [
+        "ремни для фиксации"
+      ]
+    },
+    "thumbnail": "/references/devices/bondage-straps-transparent.png"
+  },
+  {
+    "uid": "192b4665-19aa-54ab-be66-afb6f7cb8745",
+    "name": "Бондажная лента",
+    "description": "Рулон самофиксирующейся ленты без клеевой подложки.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "bondage-tape",
+      "group": "Средства фиксации",
+      "discipline_default": false,
+      "aliases": [
+        "лента для бондажа"
+      ]
+    },
+    "thumbnail": "/references/devices/bondage-tape-transparent.png"
+  },
+  {
+    "uid": "64e4b951-21c2-5352-bcc8-504315753764",
+    "name": "Подкроватная система фиксации",
+    "description": "Комплект соединённых ремней с четырьмя манжетами для крепления под основанием кровати.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "under-bed-restraints",
+      "group": "Средства фиксации",
+      "discipline_default": false,
+      "aliases": [
+        "ремни под кровать"
+      ]
+    },
+    "thumbnail": "/references/devices/under-bed-restraints-transparent.png"
+  },
+  {
+    "uid": "47659341-ab29-5c20-a36f-eb1b75a7e01e",
+    "name": "Бондажная портупея",
+    "description": "Система кожаных ремней с пряжками и кольцами для фиксации.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "bondage-harness",
+      "group": "Средства фиксации",
+      "discipline_default": false,
+      "aliases": [
+        "портупея",
+        "ременная сбруя"
+      ]
+    },
+    "thumbnail": "/references/devices/bondage-harness-transparent.png"
+  },
+  {
+    "uid": "6bfd7cbf-3a15-56aa-99e7-87430a4fa948",
+    "name": "Манжеты для лодыжек",
+    "description": "Парные мягкие манжеты для лодыжек с соединительными кольцами.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "ankle-cuffs",
+      "group": "Средства фиксации",
+      "discipline_default": false,
+      "aliases": [
+        "манжеты для ног",
+        "манжеты на лодыжки",
+        "поножи"
+      ]
+    },
+    "thumbnail": "/references/devices/ankle-cuffs-transparent.png"
+  },
+  {
+    "uid": "178734c2-24d2-5eec-85cd-f8ae1d02a4f4",
+    "name": "Крест для фиксации",
+    "description": "Х-образная стойка с мягкими опорами и крепёжными кольцами.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "bondage-cross",
+      "group": "Средства фиксации",
+      "discipline_default": false,
+      "aliases": [
+        "андреевский крест",
+        "Х-крест"
+      ]
+    },
+    "thumbnail": "/references/devices/bondage-cross-transparent.png"
+  },
+  {
+    "uid": "1854dd2d-7d12-50e6-a183-20414c069749",
+    "name": "Бондажная скамья",
+    "description": "Скамья с мягкими опорами и кольцами для крепления ремней.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "bondage-bench",
+      "group": "Средства фиксации",
+      "discipline_default": false,
+      "aliases": [
+        "скамья для фиксации"
+      ]
+    },
+    "thumbnail": "/references/devices/bondage-bench-transparent.png"
+  },
+  {
+    "uid": "4a84172c-525c-5818-9d0e-aaf6d8d82ce0",
+    "name": "Рама для подвеса",
+    "description": "Отдельно стоящая рама с верхней перекладиной и точками крепления.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "suspension-frame",
+      "group": "Средства фиксации",
+      "discipline_default": false,
+      "aliases": [
+        "стойка для подвеса"
+      ]
+    },
+    "thumbnail": "/references/devices/suspension-frame-transparent.png"
+  },
+  {
+    "uid": "bb7a6dff-5000-5e70-9c86-9f8c849e9be9",
+    "name": "Шариковый кляп",
+    "description": "Регулируемый ремешок с шариковым элементом и застёжкой.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "ball-gag",
+      "group": "Аксессуары динамики",
+      "discipline_default": false,
+      "aliases": [
+        "кляп-шар"
+      ]
+    },
+    "thumbnail": "/references/devices/ball-gag-transparent.png"
+  },
+  {
+    "uid": "8073f07a-ee68-56de-acd8-8cb5b2045fe0",
+    "name": "Кожаный ремень",
+    "description": "Широкий кожаный ремень с пряжкой.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "leather-belt",
+      "group": "Телесное воздействие",
+      "discipline_default": true,
+      "aliases": [
+        "ремень"
+      ]
+    },
+    "thumbnail": "/references/devices/leather-belt-transparent.png"
+  },
+  {
+    "uid": "21b509f1-28f1-556e-8ab2-e359f83d34fd",
+    "name": "Слэппер",
+    "description": "Двухслойный кожаный инструмент с короткой ручкой и раздвоенной плоской лопастью.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "slapper",
+      "group": "Телесное воздействие",
+      "discipline_default": true,
+      "aliases": [
+        "хлопушка",
+        "двойной падл"
+      ]
+    },
+    "thumbnail": "/references/devices/slapper-transparent.png"
+  }
+]

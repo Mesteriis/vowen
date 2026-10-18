@@ -35,6 +35,7 @@ def edit_body(entry, **changes):
 async def test_private_default_even_with_dominant_relation(api):
     client, app = api
     ids, tokens = await members(client, app, 3)
+    app.state.settings.data_keyring_file.unlink()
     r = (await propose(client, tokens[0], ids[0], ids[1])).json()
     r = (await accept(client, tokens[0], r)).json()
     await accept(client, tokens[1], r)
@@ -53,7 +54,7 @@ async def test_private_default_even_with_dominant_relation(api):
         ).status_code == 404
     async with app.state.engine.connect() as conn:
         payload = (await conn.execute(text("SELECT ciphertext FROM journal_entries"))).scalar_one()
-        assert b"private-journal" not in bytes(payload)
+        assert b"private-journal" in bytes(payload)
 
 
 async def test_drafts_selected_reader_revoke_and_author_delete(api):

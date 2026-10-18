@@ -3,7 +3,7 @@ import {computed,inject,type ComputedRef,type InjectionKey} from 'vue'
 import type {components} from '../../shared/api'
 export type Relation=components['schemas']['RelationView']
 export type Member=components['schemas']['MemberView']
-export type Section='home'|'rituals'|'rewards'|'discipline'|'journal'|'rules'|'forms'|'relations'|'notifications'|'profile'|'sessions'
+export type Section='home'|'rituals'|'rewards'|'discipline'|'journal'|'rules'|'forms'|'relations'|'notifications'|'profile'|'sessions'|'settings'
 export function relationRole(relation:Relation,memberId:string):'dominant'|'submissive'|null {
  if(relation.dominant_user_id===memberId)return 'dominant'
  if(relation.submissive_user_id===memberId)return 'submissive'
@@ -53,6 +53,6 @@ export function statusLabel(status:string,ru:boolean):string {
  return labels[status]?.[ru?1:0]??(ru?'Недоступно':'Unavailable')
 }
 export function scopeLabel(scope:string,ru:boolean):string {
- const labels:Record<string,[string,string]>={'rules.assign':['Propose rules','Предлагать правила'],'rituals.assign':['Assign rituals','Назначать ритуалы'],'rituals.review':['Review reports','Проверять отчёты'],'discipline.propose':['Propose discipline','Предлагать дисциплину'],'discipline.review':['Review discipline','Подтверждать выполнение'],'rewards.grant':['Offer rewards','Предлагать награды']}
+ const labels:Record<string,[string,string]>={'rules.assign':['Propose rules','Предлагать правила'],'rituals.assign':['Assign rituals','Назначать ритуалы'],'rituals.review':['Review reports','Проверять отчёты'],'discipline.propose':['Propose punishments','Предлагать наказания'],'discipline.review':['Review punishments','Подтверждать выполнение наказания'],'rewards.grant':['Offer rewards','Предлагать награды']}
  return labels[scope]?.[ru?1:0]??(ru?'Полномочие':'Permission')
 }

@@ -132,4 +132,4 @@ async def test_scope_expansion_new_version_and_ciphertext(api):
         payloads = (
             (await conn.execute(text("SELECT ciphertext FROM relation_versions"))).scalars().all()
         )
-        assert all(b"synthetic" not in bytes(p) for p in payloads)
+        assert all(b"synthetic" in bytes(p) for p in payloads)

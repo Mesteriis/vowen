@@ -51,10 +51,15 @@ data class RitualActions(
  val discard:((EvidenceView,()->Unit)->Unit)?=null,
  val staged:((RitualOccurrence,(List<EvidenceView>)->Unit)->Unit)?=null,
  val create:((RitualContent,(RitualTemplate)->Unit)->Unit)?=null,
- val rewards:((RitualAssignment,RewardBundleEdit)->Unit)?=null
+ val rewards:((RitualAssignment,RewardBundleEdit)->Unit)?=null,
+ val requestChange:((ChangeRequestCreate)->Unit)?=null,
+ val decideChange:((ChangeRequestView,String,String)->Unit)?=null
 )
 @Composable fun NativeRitualsScreen(member:Member,data:WorkspaceState,busy:Boolean,completed:Int,actions:RitualActions,error:String?=null,homeTarget:String?=null) {
  val ru=member.language=="ru"
+ var changeDraft by remember {mutableStateOf<ChangeRequestCreate?>(null)}
+ LaunchedEffect(completed){changeDraft=null}
+ changeDraft?.let{draft->NativeChangeRequestEditor(draft,busy||member.paused,ru,{actions.requestChange?.invoke(it)},{changeDraft=null})}
  val context=LocalContext.current
  var mediaError by remember{mutableStateOf<String?>(null)}
 
@@ -90,6 +95,7 @@ data class RitualActions(
  LaunchedEffect(relationId){versionHistoryFor=null;detailOpen=false;detailId=null;view=if(canManage)"assignments" else if(performer)"mine" else "review"}
  LaunchedEffect(homeTarget){if(homeTarget!=null)view=data.ritualOccurrences.find{it.id==homeTarget}?.let{if(it.recipient_id==member.id)"mine" else "review"}?:view}
  Column(Modifier.fillMaxWidth(),verticalArrangement=Arrangement.spacedBy(12.dp)) {
+  NativeChangeRequests(member,data,"ritual",busy,completed,actions.decideChange,relationId)
   Row(Modifier.fillMaxWidth().heightIn(min=44.dp),verticalAlignment=Alignment.CenterVertically,horizontalArrangement=Arrangement.spacedBy(8.dp)){
    Image(painterResource(R.drawable.vowen_crest),null,modifier=Modifier.size(28.dp))
    Text(t("Rituals","Ритуалы"),style=MaterialTheme.typography.headlineSmall,fontSize=22.sp,modifier=Modifier.weight(1f))
@@ -110,7 +116,7 @@ data class RitualActions(
   ScrollableTabRow(selectedTabIndex=(listOfNotNull(if(canManage)"assignments" else null,"review",if(performer)"mine" else null,if(allowedRecipients.isNotEmpty())"templates" else null)).indexOf(current).coerceAtLeast(0),edgePadding=0.dp,containerColor=MaterialTheme.colorScheme.background){listOfNotNull(if(canManage)"assignments" else null,"review",if(performer)"mine" else null,if(allowedRecipients.isNotEmpty())"templates" else null).forEach{tab->Tab(selected=current==tab,onClick={view=tab},text={Text(when(tab){"assignments"->t("Rituals","Ритуалы");"review"->t("Review","Проверка")+" · "+contextOccurrences.count{it.can_review};"mine"->t("My executions","Мои выполнения");else->t("Templates","Шаблоны")},fontSize=12.sp)},modifier=Modifier.testTag("ritual-view-$tab"))}}
   if(current=="assignments")BoxWithConstraints{
    val wide=maxWidth>=560.dp
-   val details:@Composable ()->Unit={inspected?.let{a->NativeRitualDetails(a,member,name(a.recipient_id),busy,{scheduleFor=a;assigning=null;detailOpen=false},actions.rewards?.let{{rewardFor=a;detailOpen=false}},{actions.assignment(a,it)})}}
+   val details:@Composable ()->Unit={inspected?.let{a->NativeRitualDetails(a,member,name(a.recipient_id),busy,{scheduleFor=a;assigning=null;detailOpen=false},actions.rewards?.let{{rewardFor=a;detailOpen=false}},{action->if(action=="pause"&&a.recipient_id==member.id){changeDraft=ChangeRequestCreate(kind="ritual_pause",assignment_id=a.id,expected_version=a.revision,idempotency_key=java.util.UUID.randomUUID().toString(),reason="")}else actions.assignment(a,action)})}}
    val list:@Composable ()->Unit={Column(verticalArrangement=Arrangement.spacedBy(8.dp)){
     if(assigned.isEmpty())Text(t("No assigned rituals in this context.","В этих отношениях пока нет ритуалов."),style=MaterialTheme.typography.bodySmall)
     listOf("daily","weekly","once").forEach{kind->val rows=assigned.filter{it.schedule.kind==kind};if(rows.isNotEmpty()){Text(if(kind=="daily")t("Daily","Ежедневно") else if(kind=="weekly")t("Weekly","По дням недели") else t("Once","Однократно"),style=MaterialTheme.typography.bodySmall,color=MaterialTheme.colorScheme.onSurfaceVariant);rows.forEach{a->OutlinedCard(onClick={detailId=a.id;detailOpen=true},modifier=Modifier.fillMaxWidth().testTag("ritual-assignment-${a.id}")){Column(Modifier.padding(12.dp),verticalArrangement=Arrangement.spacedBy(5.dp)){Text(a.title,style=MaterialTheme.typography.bodyLarge,fontSize=16.sp);Text(ritualScheduleSummary(a.schedule,ru)+" · "+name(a.recipient_id),style=MaterialTheme.typography.bodySmall);Text((if(a.approval_required)t("Review required","Проверка обязательна") else t("Without review","Без проверки"))+" · "+label(a.status),style=MaterialTheme.typography.bodySmall,color=MaterialTheme.colorScheme.onSurfaceVariant)}}}}}
@@ -138,7 +144,8 @@ data class RitualActions(
     if(expanded)o.reports.forEach{r->Text(r.text,style=MaterialTheme.typography.bodyMedium);r.comment?.let{if(it.isNotEmpty())Text(it)};r.links.orEmpty().forEach{link->TextButton(onClick={runCatching{context.startActivity(Intent(Intent.ACTION_VIEW,Uri.parse(link)))}.onFailure{mediaError="Cannot open external link"}}){Text(t("Open evidence link · external site","Открыть доказательство · внешний сайт"))}};r.attachments.orEmpty().forEach{e->actions.saveEvidence?.let{save->TextButton(onClick={save(e)},enabled=!busy){Text(if(e.kind=="photo")t("Save photo evidence","Сохранить фото-доказательство") else t("Save video evidence","Сохранить видео-доказательство"))}}}}
     if(o.can_report&&!member.paused)OutlinedButton(onClick={reporting=o},enabled=!busy,modifier=Modifier.testTag("report-${o.id}")){Text(t("Write report","Написать отчёт"))}
     if(o.can_review&&!member.paused)OutlinedButton(onClick={reviewing=o},enabled=!busy,modifier=Modifier.testTag("review-${o.id}")){Text(t("Review report","Проверить отчёт"))}
-    if(o.recipient_id==member.id&&o.status in listOf("scheduled","needs_changes"))TextButton(onClick={actions.skip(o)},enabled=!busy){Text(t("Skip occurrence","Пропустить выполнение"))}
+    data.ritualAssignments.find{it.id==o.assignment_id&&it.recipient_id==member.id&&it.status=="active"}?.let{a->TextButton(onClick={changeDraft=ChangeRequestCreate(kind="ritual_pause",assignment_id=a.id,expected_version=a.revision,idempotency_key=java.util.UUID.randomUUID().toString(),reason="")},enabled=!busy&&!member.paused){Text(t("Request pause","Запросить паузу"))}}
+    if(o.recipient_id==member.id&&o.status in listOf("scheduled","needs_changes"))TextButton(onClick={changeDraft=ChangeRequestCreate(kind="ritual_skip",assignment_id=o.assignment_id,occurrence_id=o.id,expected_version=o.revision,idempotency_key=java.util.UUID.randomUUID().toString(),reason="")},enabled=!busy){Text(t("Request skip","Запросить пропуск"))}
    }}}}
   }
   if(current=="templates")data.rituals.forEach{r->OutlinedCard(Modifier.fillMaxWidth()){

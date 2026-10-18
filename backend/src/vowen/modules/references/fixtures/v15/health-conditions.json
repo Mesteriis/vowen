@@ -1,0 +1,335 @@
+[
+  {
+    "uid": "572fdc4c-05df-5420-81a7-2008a96945f1",
+    "name": "Гемофилия",
+    "description": "Нарушение свёртывания крови.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "haemophilia",
+      "aliases": [
+        "Гемофилия A",
+        "Гемофилия B"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/haemophilia-transparent.png"
+  },
+  {
+    "uid": "80650151-ae80-5a7f-9901-6d9e6ad676c2",
+    "name": "Болезнь Виллебранда",
+    "description": "Заболевание, связанное с нарушением свёртывания крови.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "von-willebrand",
+      "aliases": [
+        "Болезнь фон Виллебранда",
+        "vWD"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/von-willebrand-transparent.png"
+  },
+  {
+    "uid": "a64de32b-2bdc-5564-8ff8-8c4b260f96a5",
+    "name": "Бронхиальная астма",
+    "description": "Заболевание дыхательных путей.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "asthma",
+      "aliases": [
+        "Астма"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/asthma-transparent.png"
+  },
+  {
+    "uid": "4183ab0a-1a38-5214-a4cc-e6367e5a20fa",
+    "name": "Эпилепсия",
+    "description": "Неврологическое заболевание с эпилептическими приступами.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "epilepsy",
+      "aliases": [
+        "Epilepsy"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/epilepsy-transparent.png"
+  },
+  {
+    "uid": "1ea361f5-fa68-51b1-a87b-79bae25bf662",
+    "name": "Сахарный диабет",
+    "description": "Заболевание, связанное с повышенным уровнем глюкозы крови.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "diabetes",
+      "aliases": [
+        "Диабет"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/diabetes-transparent.png"
+  },
+  {
+    "uid": "2cc4b287-b3c6-5724-adf8-313354a4ac45",
+    "name": "Периферическая нейропатия",
+    "description": "Поражение периферических нервов.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "peripheral-neuropathy",
+      "aliases": [
+        "Нейропатия"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/peripheral-neuropathy-transparent.png"
+  },
+  {
+    "uid": "97e512e2-299b-54a5-8a3c-644799c658f2",
+    "name": "Остеопороз",
+    "description": "Заболевание с повышенной хрупкостью костей.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "osteoporosis",
+      "aliases": [
+        "Osteoporosis"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/osteoporosis-transparent.png"
+  },
+  {
+    "uid": "28cd8d21-7eb1-5c1b-ace4-ee3c51fcec3f",
+    "name": "Синдромы Элерса — Данлоса",
+    "description": "Группа заболеваний соединительной ткани.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "ehlers-danlos",
+      "aliases": [
+        "СЭД",
+        "EDS"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/ehlers-danlos-transparent.png"
+  },
+  {
+    "uid": "2cee4d03-dd98-5e9c-98ec-e30b54424301",
+    "name": "Артериальная гипертензия",
+    "description": "Состояние стойко повышенного артериального давления.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "hypertension",
+      "aliases": [
+        "Гипертония",
+        "Повышенное давление"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/hypertension-transparent.png"
+  },
+  {
+    "uid": "519263bb-330b-5710-881a-9587102c9577",
+    "name": "Нарушения сердечного ритма",
+    "description": "Нарушения частоты или регулярности сердцебиения.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "arrhythmia",
+      "aliases": [
+        "Аритмия"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/arrhythmia-transparent.png"
+  },
+  {
+    "uid": "a7ffd44d-ff13-50f0-9173-36b0a3a477a5",
+    "name": "Атопический дерматит",
+    "description": "Воспалительное заболевание кожи.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "atopic-dermatitis",
+      "aliases": [
+        "Атопическая экзема"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/atopic-dermatitis-transparent.png"
+  },
+  {
+    "uid": "ef2a87aa-5449-5406-959d-7b8c2ffd6ad5",
+    "name": "Псориаз",
+    "description": "Хроническое заболевание кожи.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "psoriasis",
+      "aliases": [
+        "Psoriasis"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/psoriasis-transparent.png"
+  },
+  {
+    "uid": "ead4ab8b-9461-5144-ba83-22361f9c1446",
+    "name": "Аллергический контактный дерматит",
+    "description": "Аллергическое воспаление кожи после контакта с аллергеном.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "allergic-contact-dermatitis",
+      "aliases": [
+        "Контактная аллергия кожи"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/allergic-contact-dermatitis-transparent.png"
+  },
+  {
+    "uid": "bcae4c38-6f85-50ce-9052-936a2ba2d51d",
+    "name": "Посттравматическое стрессовое расстройство",
+    "description": "Расстройство, связанное с пережитым травматическим событием.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "ptsd",
+      "aliases": [
+        "ПТСР",
+        "PTSD"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/ptsd-transparent.png"
+  },
+  {
+    "uid": "292b034f-9461-505e-9f81-73e95c11f1cf",
+    "name": "Паническое расстройство",
+    "description": "Расстройство с повторяющимися паническими атаками.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "panic-disorder",
+      "aliases": [
+        "Panic disorder"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/panic-disorder-transparent.png"
+  },
+  {
+    "uid": "247502f8-9974-5e7d-8f99-3de938ffc09e",
+    "name": "ВИЧ-инфекция",
+    "description": "Инфекция, вызванная вирусом иммунодефицита человека.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "hiv",
+      "aliases": [
+        "ВИЧ",
+        "HIV"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/hiv-transparent.png"
+  },
+  {
+    "uid": "c263d5e1-c088-50a0-8b51-1f4ac360d188",
+    "name": "Гепатит B",
+    "description": "Вирусная инфекция, поражающая печень.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "hepatitis-b",
+      "aliases": [
+        "HBV",
+        "Гепатит Б"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/hepatitis-b-transparent.png"
+  },
+  {
+    "uid": "9ace8c30-4856-5743-bfc1-82f68e78a21b",
+    "name": "Гепатит C",
+    "description": "Вирусная инфекция, поражающая печень.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "hepatitis-c",
+      "aliases": [
+        "HCV",
+        "Гепатит С"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/hepatitis-c-transparent.png"
+  },
+  {
+    "uid": "f2d26b5c-855b-56a1-8e7b-88e2f5da6aae",
+    "name": "Генитальный герпес",
+    "description": "Инфекция, вызванная вирусом простого герпеса, с проявлениями в генитальной области.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "genital-herpes",
+      "aliases": [
+        "HSV",
+        "Герпес половых органов"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/genital-herpes-transparent.png"
+  },
+  {
+    "uid": "88875330-cb2c-5cce-a103-ba5fd783aa7d",
+    "name": "Папилломавирусная инфекция",
+    "description": "Инфекция, вызванная вирусом папилломы человека.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "hpv",
+      "aliases": [
+        "ВПЧ",
+        "HPV"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/hpv-transparent.png"
+  },
+  {
+    "uid": "299c9483-9678-53d2-ab39-963b53341059",
+    "name": "Сифилис",
+    "description": "Бактериальная инфекция.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "syphilis",
+      "aliases": [
+        "Syphilis"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/syphilis-transparent.png"
+  },
+  {
+    "uid": "7d11a04d-c8dc-5e4b-bbfc-ba560b0ca40a",
+    "name": "Гонорея",
+    "description": "Бактериальная инфекция.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "gonorrhoea",
+      "aliases": [
+        "Gonorrhea"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/gonorrhoea-transparent.png"
+  },
+  {
+    "uid": "9d4e9693-ef5c-5a7c-934c-4cadc8a9266e",
+    "name": "Хламидийная инфекция",
+    "description": "Бактериальная инфекция.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "chlamydia",
+      "aliases": [
+        "Хламидиоз",
+        "Chlamydia"
+      ]
+    },
+    "thumbnail": "/references/health-conditions/chlamydia-transparent.png"
+  }
+]

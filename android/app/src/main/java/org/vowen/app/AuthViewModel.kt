@@ -87,6 +87,10 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
  fun changeRelation(relation:Relation,agreement:String,scopes:List<String>)=run {
   api.change(relation,RelationChange(agreement_text=agreement,expected_version=relation.version,scopes=scopes));loadWorkspace(true)
  }
+ suspend fun referenceEntries(kind:String):List<ReferenceEntry> = api.referenceEntries(kind)
+ fun addPractice(command:PracticeCreate)=run {api.addPractice(command);loadWorkspace(true)}
+ suspend fun administration():AdministrationView=api.administration()
+ fun changeAdministrator(id:String,action:String,revision:Int)=run {api.changeAdministrator(id,action,revision);loadWorkspace(true)}
  fun saveProfile(patch:ProfilePatch)=run {api.updateProfile(patch);loadWorkspace(true)}
  fun revokeSession(session:DeviceSession)=run {
   api.revokeSession(session.id)
@@ -107,6 +111,11 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
  fun ruleTemplate(rule:RuleTemplate,action:String)=run {api.ruleTemplate(rule,action);loadWorkspace(true)}
  fun assignRule(rule:RuleTemplate,body:RuleAssign)=run {api.assignRule(rule,body);loadWorkspace(true)}
  fun decideRule(assignment:RuleAssignment,action:String)=run {api.decideRule(assignment,action);loadWorkspace(true)}
+ fun punishmentTemplates(rid:String,done:(List<PunishmentTemplateView>)->Unit)=run{done(api.punishmentTemplates(rid))}
+ fun savePunishmentTemplate(item:PunishmentTemplateView?,body:PunishmentTemplateCreate,done:()->Unit)=run{api.savePunishmentTemplate(item,body);done()}
+ fun archivePunishmentTemplate(item:PunishmentTemplateView,done:()->Unit)=run{api.archivePunishmentTemplate(item);done()}
+ fun assignPunishment(item:PunishmentTemplateView,body:PunishmentAssign,done:()->Unit)=run{api.assignPunishment(item,body);loadWorkspace(true);done()}
+ fun disciplineDictionary(rid:String,kind:String,name:String?,done:(List<String>)->Unit)=run{done(api.disciplineDictionary(rid,kind,name))}
  fun createDiscipline(body:DisciplineCreate)=run{api.createDiscipline(body);loadWorkspace(true)}
  fun reviseDiscipline(r:DisciplineRecord,body:DisciplineEdit)=run{api.reviseDiscipline(r,body);loadWorkspace(true)}
  fun decideDiscipline(r:DisciplineRecord,action:String,comment:String)=run{api.decideDiscipline(r,action,comment);loadWorkspace(true)}
@@ -122,6 +131,8 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
  fun ritualAssignment(a:RitualAssignment,action:String)=run{api.ritualAssignment(a,action);loadWorkspace(true)}
  fun reportRitual(o:RitualOccurrence,text:String,key:String,links:List<String>,evidenceIds:List<String>)=run{api.reportRitual(o,text,key,links,evidenceIds);loadWorkspace(true)}
  fun reviewRitual(o:RitualOccurrence,decision:String,comment:String)=run{api.reviewRitual(o,decision,comment);loadWorkspace(true)}
+ fun createChangeRequest(body:ChangeRequestCreate)=run{api.createChangeRequest(body);loadWorkspace(true)}
+ fun decideChangeRequest(row:ChangeRequestView,action:String,comment:String)=run{api.decideChangeRequest(row,action,comment);loadWorkspace(true)}
  fun skipRitual(o:RitualOccurrence)=run{api.skipRitual(o);loadWorkspace(true)}
 
  fun stagedEvidence(o:RitualOccurrence,done:(List<EvidenceView>)->Unit)=run{done(api.stagedEvidence(o))}
@@ -145,15 +156,17 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
   }
  }
  fun discardEvidence(e:EvidenceView,done:()->Unit)=run{api.discardEvidence(e);done()}
- private suspend fun economyLoaded(rid:String){val wallet=api.wallet(rid);val shop=api.shop(rid);mutable.value=mutable.value.copy(workspace=mutable.value.workspace.copy(economyRelationId=rid,wallet=wallet,shop=shop))}
+ private suspend fun economyLoaded(rid:String?){val relationId=rid.orEmpty();val wallet=if(relationId.isEmpty())null else api.wallet(relationId);val shop=api.shop(relationId);mutable.value=mutable.value.copy(workspace=mutable.value.workspace.copy(economyRelationId=rid,wallet=wallet,shop=shop))}
  fun loadEconomy(rid:String)=run{economyLoaded(rid)}
  fun creditCoins(rid:String,body:CreditCommand)=run{api.creditCoins(rid,body);loadWorkspace(true);economyLoaded(rid)}
+ fun listingAudience(version:String,done:(List<ShopListing>)->Unit)=run{done(api.listingAudience(version))}
+ fun setListingAudience(rid:String,body:AvailabilityCommand)=run{api.setListingAudience(body);loadWorkspace(true);economyLoaded(rid)}
  fun createListing(rid:String,body:ListingCommand)=run{api.createListing(rid,body);loadWorkspace(true);economyLoaded(rid)}
- fun purchase(s:ShopListing,key:String)=run{api.purchase(s,key);loadWorkspace(true);economyLoaded(s.relation_id)}
- fun editListing(s:ShopListing)=run{api.editListing(s);loadWorkspace(true);economyLoaded(s.relation_id)}
+ fun purchase(s:ShopListing,key:String)=run{api.purchase(s,key);loadWorkspace(true);economyLoaded(s.purchase_relation_id?:s.relation_id.orEmpty())}
+ fun editListing(s:ShopListing)=run{api.editListing(s);loadWorkspace(true);economyLoaded(s.purchase_relation_id?:s.relation_id.orEmpty())}
  fun saveReward(r:RewardDefinition?,body:RewardContent)=run{api.saveReward(r,body);loadWorkspace(true)}
  fun grantReward(body:GrantCommand)=run{api.grantReward(body);loadWorkspace(true)}
- fun transitionReward(g:RewardGrant,action:String)=run{api.transitionReward(g,action);loadWorkspace(true)}
+ fun transitionReward(g:RewardGrant,action:String)=run{val rid=mutable.value.workspace.economyRelationId;api.transitionReward(g,action);loadWorkspace(true);economyLoaded(rid)}
  fun formManagement(f:FormTemplate,done:(List<FormInvitation>)->Unit)=run{done(api.formManagement(f))}
  fun archiveForm(f:FormTemplate)=run{api.archiveForm(f);loadWorkspace(true)}
  fun revokeFormInvitation(i:FormInvitation)=run{api.revokeFormInvitation(i);loadWorkspace(true)}
@@ -165,4 +178,9 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
  fun updateNotifications(body:NotificationPatch)=run{api.updateNotifications(body);loadWorkspace(true)}
  fun logout()=run { try { api.call("/auth/logout","POST") } finally { clear() } }
  private fun clear() { pendingEvidenceSave=null;instance.clear();vault.clear();nonce=null;mutable.value=Screen(origin=instance.origin,booting=false) }
+
+ fun createShopProduct(body:ShopProductContent)=run{val rid=mutable.value.workspace.economyRelationId;api.createShopProduct(body);loadWorkspace(true);economyLoaded(rid)}
+ fun editShopProduct(item:ShopListing,body:ShopProductEdit)=run{val rid=mutable.value.workspace.economyRelationId;api.editShopProduct(item,body);loadWorkspace(true);economyLoaded(rid)}
+ fun removeShopProduct(item:ShopListing)=run{val rid=mutable.value.workspace.economyRelationId;api.removeShopProduct(item);loadWorkspace(true);economyLoaded(rid)}
+ fun toggleShopRelation(item:ShopListing)=run{val rid=mutable.value.workspace.economyRelationId;api.toggleShopRelation(item);loadWorkspace(true);economyLoaded(rid)}
 }

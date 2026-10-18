@@ -79,7 +79,7 @@ async def audience(
 
 
 def seal(e: JournalEntry, body: JournalContent, cipher: PayloadCipher) -> None:
-    payload = body.model_dump_json(include={"date", "title", "text", "mood", "tags"})
+    payload = body.model_dump_json(include={"date", "title", "text", "mood", "tags", "handwriting"})
     envelope = cipher.seal_payload("journal_entry", e.id, 1, payload.encode())
     e.key_id, e.nonce, e.ciphertext = envelope.key_id, envelope.nonce, envelope.ciphertext
     e.visibility, e.published = body.visibility, body.published

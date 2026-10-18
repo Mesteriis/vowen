@@ -1,0 +1,301 @@
+[
+  {
+    "uid": "362b72eb-c26b-5a86-957f-ea52bfa8b898",
+    "name": "Голова",
+    "description": "Голова.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "head",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "0c2c7247-ddfc-526a-95f2-48564f8ef596",
+    "name": "Лицо",
+    "description": "Лицо.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "face",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "0c824dc0-3e1f-5bda-a0e6-3ec5b5e43c0e",
+    "name": "Волосы",
+    "description": "Волосы.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "hair",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "6bc790ed-b239-5bde-9abc-c0e81c94d070",
+    "name": "Шея",
+    "description": "Шея.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "neck",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "5ea10366-48a9-59f2-a7e9-d74c2ebf5d05",
+    "name": "Плечи",
+    "description": "Плечи.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "shoulders",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "1b2eb9d5-2273-5940-83db-2d194f2f197e",
+    "name": "Спина",
+    "description": "Спина.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "back",
+      "group": "Анатомия",
+      "discipline_default": true
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "b6f11c0f-7a80-5e14-9fd0-0c4a842b6a8d",
+    "name": "Грудь",
+    "description": "Грудь.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "chest",
+      "group": "Анатомия",
+      "discipline_default": true
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "9e3bf9d6-24ff-5928-abd7-1604569166a1",
+    "name": "Живот",
+    "description": "Живот.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "abdomen",
+      "group": "Анатомия",
+      "discipline_default": true
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "23076ad2-b0fd-519e-874a-472c1de5f11a",
+    "name": "Руки",
+    "description": "Руки.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "arms",
+      "group": "Анатомия",
+      "discipline_default": true
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "5aff07fd-f593-53a3-a339-2baac0399a65",
+    "name": "Запястья",
+    "description": "Запястья.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "wrists",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "54e59072-b66f-5ae5-a8cb-c4260edb3b63",
+    "name": "Кисти",
+    "description": "Кисти.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "hands",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "82fca007-ff42-5548-8b42-764bbb038244",
+    "name": "Пальцы рук",
+    "description": "Пальцы рук.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "fingers",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "be88de68-e56c-5300-967d-70f6e870b3bd",
+    "name": "Ягодицы",
+    "description": "Ягодицы.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "buttocks",
+      "group": "Анатомия",
+      "discipline_default": true
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "f3778747-f333-5af8-86b8-9bb9e552cb98",
+    "name": "Бёдра",
+    "description": "Бёдра.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "thighs",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "325bdcce-42c0-52e4-a12b-ec142f924f96",
+    "name": "Ноги",
+    "description": "Ноги.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "legs",
+      "group": "Анатомия",
+      "discipline_default": true
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "f7ce1915-3321-5ffb-bfda-ebdb754440aa",
+    "name": "Колени",
+    "description": "Колени.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "knees",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "e8547c40-9019-5eb6-a5f6-c8fccf3a38c5",
+    "name": "Стопы",
+    "description": "Стопы.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "feet",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "32a9b42b-2f6b-5ae5-b42d-967de8f04fde",
+    "name": "Гениталии",
+    "description": "Гениталии.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "genitals",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "e3ac74a6-b7a3-5548-ab42-3ee434c4ddf8",
+    "name": "Вульва",
+    "description": "Вульва.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "vulva",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "f3cfb42b-aada-5916-a583-01f2e23f5d41",
+    "name": "Пенис",
+    "description": "Пенис.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "penis",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "05d13db2-da8b-5996-ba29-675d69f70182",
+    "name": "Анальная область",
+    "description": "Анальная область.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "anal-area",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "bc643921-6a5e-5ebb-8c91-929d1c2b7c14",
+    "name": "Соски",
+    "description": "Соски.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "nipples",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "8be620ef-222f-5dae-8f8e-e2177ad902cb",
+    "name": "Промежность",
+    "description": "Промежность.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "perineum",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": null
+  }
+]

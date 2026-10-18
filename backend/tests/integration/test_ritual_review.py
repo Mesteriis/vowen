@@ -115,7 +115,7 @@ async def test_report_attempts_idempotency_and_conflicting_reviewers(api):
         payloads = (
             (await conn.execute(text("SELECT ciphertext FROM ritual_reports"))).scalars().all()
         )
-        assert payloads and all(b"Private" not in bytes(p) for p in payloads)
+        assert payloads and all(b"Private" in bytes(p) for p in payloads)
 
 
 async def test_needs_changes_history_autoapproval_and_pause(api):
@@ -175,7 +175,7 @@ async def test_needs_changes_history_autoapproval_and_pause(api):
             headers=auth(tokens[1]),
             json={"expected_version": a["revision"]},
         )
-    ).status_code == 200
+    ).status_code == 403  # Planned pause now requires a dominant's decision.
 
 
 async def test_worker_bounded_catchup_unique_slots_and_schedule_revision(api):
@@ -424,22 +424,22 @@ async def test_assignment_resume_never_recovers_its_paused_interval(api):
     a = (
         await client.post(
             f"/api/v1/ritual-assignments/{a['id']}/pause",
-            headers=auth(tokens[1]),
+            headers=auth(tokens[0]),
             json={"expected_version": a["revision"]},
         )
     ).json()
     later = NOW + timedelta(days=5)
     app.state.clock = type("LaterClock", (), {"now": lambda self: later})()
-    tokens[1] = (
-        await login(client, signed(100000000002, offset=5 * 86400, query_id=str(uuid4())))
+    tokens[0] = (
+        await login(client, signed(100000000001, offset=5 * 86400, query_id=str(uuid4())))
     ).json()
     response = await client.post(
         f"/api/v1/ritual-assignments/{a['id']}/resume",
-        headers=auth(tokens[1]),
+        headers=auth(tokens[0]),
         json={"expected_version": a["revision"]},
     )
     assert response.status_code == 200
-    rows = (await client.get("/api/v1/ritual-occurrences", headers=auth(tokens[1]))).json()
+    rows = (await client.get("/api/v1/ritual-occurrences", headers=auth(tokens[0]))).json()
     assert len(rows) == 1 and rows[0]["status"] == "cancelled"
 
 

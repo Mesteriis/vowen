@@ -1,5 +1,6 @@
 import json
 from datetime import datetime
+from typing import Literal
 from uuid import UUID, uuid4
 
 from sqlalchemy import select
@@ -137,6 +138,7 @@ async def assignment_view(
     ).all()
     reward_titles = {str(v.id): reward_opened(v, cipher)["title"] for v in reward_versions}
     return RitualAssignmentView(
+        paused_by_id=a.paused_by_id,
         reward_titles=reward_titles,
         reward_version_ids=reward_ids,
         currency_amount=currency,
@@ -309,3 +311,57 @@ async def suspend(
         for o in occurrences:
             o.status = "cancelled"
             o.revision += 1
+
+
+async def transition_assignment(
+    db: AsyncSession,
+    aid: UUID,
+    action: Literal["pause", "resume", "revoke"],
+    uid: UUID,
+    expected: int,
+    now: datetime,
+) -> RitualAssignment:
+    from vowen.modules.rituals.worker import generate_assignment
+
+    a = await db.get(RitualAssignment, aid, with_for_update=True)
+    if a is None:
+        raise AppError(404, "NOT_FOUND")
+    recipient = a.recipient_id == uid
+    if not recipient and (not await can_manage(db, a, uid)):
+        raise AppError(403, "ACCESS_DENIED")
+    if recipient and action == "pause":
+        raise AppError(403, "REQUEST_APPROVAL_REQUIRED")
+    if a.revision != expected:
+        raise AppError(409, "VERSION_CONFLICT")
+    if a.status == "revoked" or (
+        action == "resume" and (a.status != "paused" or uid != (a.paused_by_id or a.recipient_id))
+    ):
+        raise AppError(409, "CONFLICT")
+    if action == "resume":
+        if not await scoped(db, a.issuer_id, a.recipient_id, "rituals.assign", {a.issuer_id}):
+            raise AppError(403, "ACCESS_DENIED")
+        await generate_assignment(db, a, now, 31)
+        a.status = "active"
+        a.paused_by_id = None
+    else:
+        from vowen.modules.notifications.delivery import suppress_assignment
+
+        await suppress_assignment(db, a.id)
+        a.status = "paused" if action == "pause" else "revoked"
+        a.paused_by_id = uid if action == "pause" else None
+        rows = (
+            await db.scalars(
+                select(RitualOccurrence)
+                .where(
+                    RitualOccurrence.assignment_id == aid,
+                    RitualOccurrence.status.in_(["scheduled", "needs_changes"]),
+                )
+                .with_for_update()
+            )
+        ).all()
+        for o in rows:
+            o.status = "cancelled"
+            o.revision += 1
+    a.revision += 1
+    await generate_assignment(db, a, now, 31)
+    return a

@@ -1,0 +1,154 @@
+[
+  {
+    "uid": "2f3ddda2-68c3-5937-865f-d514168a7e2a",
+    "name": "Наставник и ученик",
+    "description": "Ролевой сценарий обучения между совершеннолетними участниками.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "mentor-student",
+      "aliases": []
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "11ea1162-3595-5c1b-b47a-b2a6f2ede669",
+    "name": "Хозяин и гость",
+    "description": "Ролевой сценарий приёма гостя. Все участники совершеннолетние.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "host-guest",
+      "aliases": []
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "8e0ae2fd-ab8c-5767-a40f-485b8e91e03a",
+    "name": "Господин и дворецкий",
+    "description": "Ролевой сценарий обслуживания между совершеннолетними участниками.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "butler",
+      "aliases": [
+        "Дворецкий"
+      ]
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "c4f3b3bf-40e8-5432-8985-98d64ba55eb9",
+    "name": "Руководитель и ассистент",
+    "description": "Ролевой сценарий поручений между совершеннолетними участниками.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "manager-assistant",
+      "aliases": []
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "837bed5a-bec3-5899-96a8-dd9f3d3ec0b2",
+    "name": "Инструктор и стажёр",
+    "description": "Ролевой сценарий тренировки между совершеннолетними участниками.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "instructor-trainee",
+      "aliases": []
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "23cded76-4604-5eb3-9083-e45e15cbb1b6",
+    "name": "Королевский двор",
+    "description": "Церемониальный сценарий с придворными ролями. Все участники совершеннолетние.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "royal-court",
+      "aliases": []
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "badf0156-0dfe-517c-9968-6dfd27f28fe1",
+    "name": "Фантазийные персонажи",
+    "description": "Сценарий в вымышленном мире с совершеннолетними персонажами.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "fantasy-characters",
+      "aliases": []
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "1a8975e7-ebcd-5496-b3ed-df2512602fdb",
+    "name": "Питомец и хозяин",
+    "description": "Ролевой сценарий пет-плея между совершеннолетними людьми.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "pet-play",
+      "aliases": [
+        "Пет-плей",
+        "Pet play"
+      ]
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "6e7d35f1-d74a-52ce-aa16-48dbad674d67",
+    "name": "Пони и тренер",
+    "description": "Ролевой сценарий пони-плея между совершеннолетними людьми.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "pony-play",
+      "aliases": [
+        "Пони-плей",
+        "Pony play"
+      ]
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "12c3abbb-bc57-5ef4-8580-4b065b09371e",
+    "name": "Церемония",
+    "description": "Формальный сценарий с выбранными обращениями и ритуалами. Все участники совершеннолетние.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "ceremony",
+      "aliases": []
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "f7e66508-da02-56cc-b3fb-35f2736a8f04",
+    "name": "Служение",
+    "description": "Сценарий служения и поручений между совершеннолетними участниками.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "service",
+      "aliases": []
+    },
+    "thumbnail": null
+  },
+  {
+    "uid": "8b882734-713f-5544-9369-90524a8fb7dc",
+    "name": "Обмен ролями",
+    "description": "Сценарий смены ролей между совершеннолетними участниками.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "role-reversal",
+      "aliases": []
+    },
+    "thumbnail": null
+  }
+]

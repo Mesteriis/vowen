@@ -1,0 +1,206 @@
+{
+  "old_canonical": {
+    "uid": "81caf531-9668-5eb5-879f-dc9ffb8fc707",
+    "name": "Линейная секс-машина",
+    "description": "Устройство с моторным приводом и возвратно-поступательным механизмом.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "linear-sex-machine",
+      "group": "Секс-машины",
+      "discipline_default": false,
+      "aliases": [
+        "фак-машина",
+        "fucking machine"
+      ]
+    },
+    "thumbnail": "/references/devices/linear-sex-machine-housing-v2-transparent.png"
+  },
+  "canonical": {
+    "uid": "81caf531-9668-5eb5-879f-dc9ffb8fc707",
+    "name": "Секс-машина",
+    "description": "Механизированное устройство со сменными принадлежностями и контроллером; линейное, роторное или компактное исполнение.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "sex-machine",
+      "group": "Секс-машины",
+      "discipline_default": false,
+      "aliases": [
+        "фак-машина",
+        "fucking machine",
+        "линейная секс-машина",
+        "роторная секс-машина",
+        "компактная секс-машина",
+        "настольная секс-машина"
+      ]
+    },
+    "thumbnail": "/references/devices/linear-sex-machine-housing-v2-transparent.png"
+  },
+  "removed": [
+    {
+      "uid": "e922d0b5-11a8-5cf5-b329-c608666143ef",
+      "name": "Роторная секс-машина",
+      "description": "Устройство с вращательным приводом и сменной насадкой.",
+      "icon": null,
+      "url": null,
+      "extra": {
+        "code": "rotary-sex-machine",
+        "group": "Секс-машины",
+        "discipline_default": false,
+        "aliases": [
+          "ротационная секс-машина"
+        ]
+      },
+      "thumbnail": "/references/devices/rotary-sex-machine-housing-v2-transparent.png"
+    },
+    {
+      "uid": "3828c4c3-2edc-5ddc-96fd-ae826fd96b53",
+      "name": "Компактная секс-машина",
+      "description": "Настольное устройство с приводом, выдвижным механизмом и пультом управления.",
+      "icon": null,
+      "url": null,
+      "extra": {
+        "code": "compact-sex-machine",
+        "group": "Секс-машины",
+        "discipline_default": false,
+        "aliases": [
+          "настольная секс-машина"
+        ]
+      },
+      "thumbnail": "/references/devices/compact-sex-machine-housing-v2-transparent.png"
+    }
+  ],
+  "added": [
+    {
+      "uid": "7bf15d28-4c51-5730-aba6-ece6a70adb15",
+      "name": "Вибропуля",
+      "description": "Компактный капсульный вибратор с кнопочным управлением.",
+      "icon": null,
+      "thumbnail": "/references/devices/bullet-vibrator-transparent.png",
+      "url": null,
+      "extra": {
+        "code": "bullet-vibrator",
+        "group": "Секс-игрушки",
+        "discipline_default": false,
+        "aliases": [
+          "мини-вибратор",
+          "bullet"
+        ]
+      }
+    },
+    {
+      "uid": "43fdc421-d31b-58d4-99ce-9ed4c66ad15a",
+      "name": "Виброяйцо",
+      "description": "Овальный вибратор с петлёй для извлечения и дистанционным управлением.",
+      "icon": null,
+      "thumbnail": "/references/devices/vibrating-egg-transparent.png",
+      "url": null,
+      "extra": {
+        "code": "vibrating-egg",
+        "group": "Секс-игрушки",
+        "discipline_default": false,
+        "aliases": [
+          "вибрирующее яйцо"
+        ]
+      }
+    },
+    {
+      "uid": "5ad599e1-a427-5592-8c7b-8cf91fbd1844",
+      "name": "Пальчиковый вибратор",
+      "description": "Компактный вибромассажёр с кольцом для крепления на пальце.",
+      "icon": null,
+      "thumbnail": "/references/devices/finger-vibrator-transparent.png",
+      "url": null,
+      "extra": {
+        "code": "finger-vibrator",
+        "group": "Секс-игрушки",
+        "discipline_default": false,
+        "aliases": [
+          "вибронасадка на палец"
+        ]
+      }
+    },
+    {
+      "uid": "c6e288ef-9895-5b5f-9b51-9ca979b4e751",
+      "name": "Парный вибратор",
+      "description": "Изогнутая игрушка с двумя вибрирующими элементами и гибкой перемычкой.",
+      "icon": null,
+      "thumbnail": "/references/devices/couples-vibrator-transparent.png",
+      "url": null,
+      "extra": {
+        "code": "couples-vibrator",
+        "group": "Секс-игрушки",
+        "discipline_default": false,
+        "aliases": [
+          "вибратор для пары"
+        ]
+      }
+    },
+    {
+      "uid": "90b5e279-6cf5-5086-a9a2-08bffe31053d",
+      "name": "Вибратор-кролик",
+      "description": "Вибратор с основным корпусом и отдельным коротким внешним ответвлением.",
+      "icon": null,
+      "thumbnail": "/references/devices/rabbit-vibrator-transparent.png",
+      "url": null,
+      "extra": {
+        "code": "rabbit-vibrator",
+        "group": "Секс-игрушки",
+        "discipline_default": false,
+        "aliases": [
+          "кролик",
+          "rabbit"
+        ]
+      }
+    },
+    {
+      "uid": "216021b8-fe52-51ba-8557-3606bd6f4a3d",
+      "name": "Гибкий вибратор",
+      "description": "Вибратор с гибким сегментированным корпусом и отдельной рукояткой управления.",
+      "icon": null,
+      "thumbnail": "/references/devices/flexible-vibrator-transparent.png",
+      "url": null,
+      "extra": {
+        "code": "flexible-vibrator",
+        "group": "Секс-игрушки",
+        "discipline_default": false,
+        "aliases": [
+          "сгибаемый вибратор"
+        ]
+      }
+    },
+    {
+      "uid": "d84fd566-4d97-543e-9d20-101aac870270",
+      "name": "Вибропробка",
+      "description": "Пробка с вибрацией, расширенным основанием и дистанционным контроллером.",
+      "icon": null,
+      "thumbnail": "/references/devices/vibrating-plug-transparent.png",
+      "url": null,
+      "extra": {
+        "code": "vibrating-plug",
+        "group": "Секс-игрушки",
+        "discipline_default": false,
+        "aliases": [
+          "вибрирующая пробка"
+        ]
+      }
+    },
+    {
+      "uid": "86426ff3-2edc-5762-941a-2c9476fb61ed",
+      "name": "Массажная свеча",
+      "description": "Специальная массажная свеча в сосуде с носиком для наливания.",
+      "icon": null,
+      "thumbnail": "/references/devices/massage-candle-transparent.png",
+      "url": null,
+      "extra": {
+        "code": "massage-candle",
+        "group": "Массаж",
+        "discipline_default": false,
+        "aliases": [
+          "свеча для массажа"
+        ]
+      }
+    }
+  ]
+}

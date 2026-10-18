@@ -3,6 +3,8 @@ from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, Field
 
+from vowen.modules.identity.shop_roles import ShopRole
+
 
 class Input(BaseModel):
     model_config = ConfigDict(extra="forbid")
@@ -39,6 +41,8 @@ class ParticipantView(BaseModel):
 
 
 class MemberView(ParticipantView):
+    is_admin: bool = False
+    shop_role: ShopRole = "viewer"
     paused: bool
     language: str
     timezone: str

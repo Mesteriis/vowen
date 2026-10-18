@@ -34,7 +34,7 @@ async def test_delivery_contact_gating_claim_lease_and_secret_cleanup(api):
     assert task.telegram_id == 100000000002 and "token=" not in task.link
     async with app.state.sessions() as db:
         d = await db.scalar(select(Delivery))
-        assert d.ciphertext and b"https://" not in d.ciphertext
+        assert d.ciphertext and b"https://" in d.ciphertext
     async with app.state.sessions() as db, db.begin():
         assert await claim_delivery(db, NOW + timedelta(minutes=2), crypto) is not None
         # A late worker may not complete another worker's reclaimed lease.

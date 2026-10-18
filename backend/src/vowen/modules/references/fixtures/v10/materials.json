@@ -1,0 +1,188 @@
+[
+  {
+    "uid": "16297193-e5e1-504b-8383-6d67a4022907",
+    "name": "Латекс",
+    "description": "Латексный материал.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "latex",
+      "aliases": [
+        "Latex"
+      ]
+    }
+  },
+  {
+    "uid": "2fced2fc-1101-5401-8296-dfd102f3949e",
+    "name": "Натуральная кожа",
+    "description": "Кожаный материал.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "leather",
+      "aliases": [
+        "Кожа"
+      ]
+    }
+  },
+  {
+    "uid": "a0c0e983-f138-5c06-bf01-d358c9234b4f",
+    "name": "Искусственная кожа",
+    "description": "Материал, имитирующий натуральную кожу.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "faux-leather",
+      "aliases": [
+        "Экокожа",
+        "Кожзам"
+      ]
+    }
+  },
+  {
+    "uid": "c2fd3271-ba29-5330-944b-b6470ba19088",
+    "name": "Силикон",
+    "description": "Силиконовый материал.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "silicone",
+      "aliases": [
+        "Silicone"
+      ]
+    }
+  },
+  {
+    "uid": "65bc1f5a-a54d-5f9b-9d06-33313e5cdb13",
+    "name": "Стекло",
+    "description": "Стеклянный материал.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "glass",
+      "aliases": []
+    }
+  },
+  {
+    "uid": "40ab35a1-fd8a-5c9e-9835-4e5d42215506",
+    "name": "Нержавеющая сталь",
+    "description": "Стальной материал.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "stainless-steel",
+      "aliases": [
+        "Нержавейка"
+      ]
+    }
+  },
+  {
+    "uid": "df3b3735-afd1-578d-b87d-0366b96c716f",
+    "name": "Алюминий",
+    "description": "Алюминиевый материал.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "aluminium",
+      "aliases": []
+    }
+  },
+  {
+    "uid": "1cd9dbc8-3ddc-5435-a2cb-8f01ea7a0756",
+    "name": "Дерево",
+    "description": "Древесный материал.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "wood",
+      "aliases": [
+        "Древесина"
+      ]
+    }
+  },
+  {
+    "uid": "f23c978d-9ea8-5fdc-bda9-4cfd24a0f42e",
+    "name": "Бамбук",
+    "description": "Бамбуковый материал.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "bamboo",
+      "aliases": []
+    }
+  },
+  {
+    "uid": "fb3aaf08-afd0-5b66-91dd-feb534638f21",
+    "name": "Хлопок",
+    "description": "Хлопковый текстиль.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "cotton",
+      "aliases": []
+    }
+  },
+  {
+    "uid": "d8963399-9416-5934-991e-fdc87fc0068a",
+    "name": "Лён",
+    "description": "Льняной текстиль.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "linen",
+      "aliases": [
+        "Лен"
+      ]
+    }
+  },
+  {
+    "uid": "6eb493a1-81ee-5c9b-a1db-a5cca67ff60f",
+    "name": "Шёлк",
+    "description": "Шёлковый текстиль.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "silk",
+      "aliases": [
+        "Шелк"
+      ]
+    }
+  },
+  {
+    "uid": "b6166cad-3afa-5e12-b621-990a560e4794",
+    "name": "Атлас",
+    "description": "Текстильный материал с атласной поверхностью.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "satin",
+      "aliases": []
+    }
+  },
+  {
+    "uid": "7a0330e6-9909-5679-a296-ca9bbafb60ab",
+    "name": "Нейлон",
+    "description": "Синтетический материал.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "nylon",
+      "aliases": [
+        "Nylon"
+      ]
+    }
+  },
+  {
+    "uid": "2125ab20-1a1b-59fb-baaa-07eae69767be",
+    "name": "Неопрен",
+    "description": "Неопреновый материал.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "neoprene",
+      "aliases": [
+        "Neoprene"
+      ]
+    }
+  }
+]
