@@ -3,7 +3,7 @@
 The owner deployment uses an unprivileged Debian 13 LXC with Docker, a private
 HTTP Caddy origin, and a separate nginx-ui HTTPS edge. The application source
 was initially deployed from `b0356dd`; the current application deployment is
-`33e70c9` with schema 0045 (2026-10-19), following M5 `f60013d`/0018. Existing
+`a3b0b6c` with schema 0051 (2026-10-22), following profile release `33e70c9`/0045. Existing
 participants and data were preserved; reference and shop fixtures were imported,
 without copying development accounts. See dated deployment evidence
 in [STATUS](STATUS.md).
@@ -126,3 +126,34 @@ limits. All 448 Web static manifest entries matched repository SHA256 values ove
 HTTPS, and served JavaScript/CSS matched the exact application build. Evidence:
 `artifacts/deployment/profile-20261019/static-verification.json` and dated STATUS.
 This does not claim physical Android or live Telegram workflow acceptance.
+
+
+## 2026-10-22 update: Wiki and complete reference fixtures
+
+Revision `a3b0b6c58fcb7304392009c4a429379f38daf5f6` is deployed from
+`origin/feature/participant-profile`. Schema0045→0051 was first rehearsed on a
+restored stopped-writer dump, including downgrade to0045 and re-upgrade before
+import. All original columns matched before fixture changes. After import, all
+prior non-reference tables still matched; both participants, accounts, balances,
+purchase history, diaries and profiles were preserved. No debug user seed ran.
+The same exclusive backup lock was held through migration and restart.
+
+The server now has all438 reference fixture rows,487 published Wiki pages
+(438 reference materials +49 editorial articles),1598 verified internal links
+and318 retained Wiki thumbnails. The138 unchanged old fixture descriptions
+were explicitly refreshed; subsequent imports made zero updates/creations.
+All103 existing shop fixtures were verified with all attributes, without writes.
+The extra local QA Wiki page is not a server fixture and was not copied.
+
+Backend images now include `static/web` at `/app/static/web`, configured with
+`VOWEN_STATIC_ROOT`, so installed-wheel thumbnail validation uses a real asset
+root. Installed438 article fixtures and318 thumbnail paths were checked inside
+the built image before stopping the old application. Public HTTPS verification
+confirmed all448 static manifest files bySHA256, plus exact new JS/CSS bytes.
+API/db/worker healthy, bot/proxy running; debug disabled and unauthenticated
+Wiki endpoints return401. Public deployment smoke passed.
+
+Private dump, old source/config/secrets and previous image tags remain retained
+for rollback. No volume deletion, keyring replacement or account recreation was
+performed. These retained local backups are not new off-host recovery proof.
+Detailed non-secret acceptance is in dated STATUS and ignored deployment evidence.

@@ -2131,3 +2131,31 @@ Web: табы «Профиль» / «Настройки», боковой инд
 - Подготовлена репетиция upgrade0045→0051 и явного импорта на восстановленной
   scratch-БД; перед переключением будут закрытые consistent backups и сравнение
   хэшей прежних таблиц. На момент записи серверная БД ещё не изменена.
+
+
+## 2026-10-22 — Wiki опубликована в Git и на сервере
+
+- Коммит a3b0b6c отправлен в origin/feature/participant-profile и развёрнут на
+  https://vowen.sh-inc.ru из git archive. Main не изменялся. Контейнерная проверка
+  подтвердила438 упакованных материалов и318 действительных thumbnail paths.
+- Под эксклюзивным backup-lock остановлены API/worker/bot; сохранены приватные
+  DB/source/config/secrets копии и старые image tags. Restore в отдельную БД,
+  upgrade0045→0051, downgrade0045, повторныйupgrade и полный импорт/повтор прошли
+  до production. Хэши всех исходных колонок совпали после миграций; после fixture
+  refresh совпали все прежние non-reference таблицы. Оба участника сохранены.
+- Сервер:438 reference rows,487 Wiki pages,1009 редакций;138 описаний обновлены,
+  438 справочных статей и49обзоров опубликованы,1598links/445public targets,
+  318миниатюр. Повтор всех10стадий импорта:0created/0updated. Дополнительная QA
+  страница локального preview не переносилась. Debug seed не запускался.
+- Все103 прежних shop fixtures проверены по каждому атрибуту,0записей изменено.
+  Все448staticmanifest файлов совпалиSHA256 через публичныйHTTPS; JS/CSS точно
+  совпали с новой локальнойproductionсборкой. Smoke TLS/readiness/CSP/body cap/
+  secretdenial/auth прошёл; Wiki без сессии401,debug/users404. API/db/worker healthy,
+  bot/proxy running. Старые source и backup сохранены, scratch после проверки удалена.
+- CI exact head: https://github.com/Mesteriis/vowen/actions/runs/39770680669 —
+  Android success; backend-web на момент записи ещё выполняется. Не объявлять
+  этот CI полностью зелёным. Локальные439backend/59Web/17ops и Android проверки
+  приведены выше; полный browser E2E в этом локальном срезе не запускался.
+- Acceptance: artifacts/deployment/wiki-release-20261022/fixture-acceptance.json,
+  static-verification.json и серверные закрытые журналы/хэши. Никаких реальных
+  Telegram входов/сообщений от имени участников оператором не выполнялось.
