@@ -1,0 +1,430 @@
+{
+  "pose-categories": [
+    {
+      "uid": "b318a5cf-6497-56fc-9ea3-bda1be2c71f2",
+      "name": "С дополнительными опорами",
+      "description": "Варианты с подушкой, клиновидной опорой или валиком. Группировка описывает опору, а не медицинское назначение.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "supports",
+        "aliases": []
+      }
+    },
+    {
+      "uid": "d3ea34c1-6593-5855-bf4a-9aa42f0fed2e",
+      "name": "С оборудованием",
+      "description": "Положения у специализированного оборудования. Девайсы связаны отдельными записями справочника.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "equipment",
+        "aliases": []
+      }
+    },
+    {
+      "uid": "a1366e19-a915-5f5d-9bf5-c45a25bc70ae",
+      "name": "Для трёх и более участников",
+      "description": "Общие пространственные положения нескольких взрослых участников. Связи с составами участников приведены как примеры, а не ограничения доступа.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "group",
+        "aliases": []
+      }
+    }
+  ],
+  "poses": [
+    {
+      "uid": "9fddfd20-e252-5725-9ed6-742919ffa3ff",
+      "name": "Полусидя на клиновидной подушке",
+      "description": "Один участник находится полусидя с опорой спины на клиновидную подушку, второй — перед ним лицом к лицу. Это описательный вариант с отдельной опорой спины.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "supported-reclining-wedge",
+        "aliases": [],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название варианта; источник относится к семейству, а не универсальному протоколу."
+        }
+      },
+      "category_uid": "b318a5cf-6497-56fc-9ea3-bda1be2c71f2"
+    },
+    {
+      "uid": "44a57913-bc65-5b7f-ac54-5d453ff86e87",
+      "name": "На боку с опорой под спиной",
+      "description": "Один участник лежит на боку с позиционной подушкой позади спины; второй располагается рядом. Опора находится за корпусом, а не под верхней ногой.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "supported-side-back",
+        "aliases": [],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название варианта; источник относится к семейству, а не универсальному протоколу."
+        }
+      },
+      "category_uid": "b318a5cf-6497-56fc-9ea3-bda1be2c71f2"
+    },
+    {
+      "uid": "c9ad6e91-ad3d-5184-90f3-da7199d52bc4",
+      "name": "На коленях с валиком под предплечьями",
+      "description": "Один участник находится на коленях с опорой предплечий на мягкий валик; второй располагается позади. Валик отделён от опор под тазом или коленями.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "supported-kneeling-forearms",
+        "aliases": [],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название варианта; источник относится к семейству, а не универсальному протоколу."
+        }
+      },
+      "category_uid": "b318a5cf-6497-56fc-9ea3-bda1be2c71f2"
+    },
+    {
+      "uid": "78142a00-f7e2-5424-9d01-53b127ff87e4",
+      "name": "Стоя у креста для фиксации",
+      "description": "Один участник находится вертикально перед крестом для фиксации, руки разведены по его направляющим. Второй расположен перед ним или позади. Запись описывает положение у оборудования, без схемы креплений.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "equipment-cross-standing",
+        "aliases": [],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название варианта; источник относится к семейству, а не универсальному протоколу."
+        }
+      },
+      "category_uid": "d3ea34c1-6593-5855-bf4a-9aa42f0fed2e"
+    },
+    {
+      "uid": "3ae5c900-3486-5e66-b2bd-e392fa1e6bce",
+      "name": "На бондажной скамье",
+      "description": "Один участник расположен лицом вниз с опорой корпуса на бондажную скамью; второй — рядом со скамьёй. Конкретная форма опор зависит от модели оборудования.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "equipment-bench-prone",
+        "aliases": [],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название варианта; источник относится к семейству, а не универсальному протоколу."
+        }
+      },
+      "category_uid": "d3ea34c1-6593-5855-bf4a-9aa42f0fed2e"
+    },
+    {
+      "uid": "a2aa6faf-30df-540b-a8d6-d6a3cc779c42",
+      "name": "Стоя у рамы",
+      "description": "Один участник стоит внутри или перед рамой, сохраняя опору стопами на поверхность; второй находится рядом. Эта запись описывает наземное положение, а не подвес.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "equipment-frame-standing",
+        "aliases": [],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название варианта; источник относится к семейству, а не универсальному протоколу."
+        }
+      },
+      "category_uid": "d3ea34c1-6593-5855-bf4a-9aa42f0fed2e"
+    },
+    {
+      "uid": "1fe8b219-c0ce-5bc3-9dac-43de6e46803b",
+      "name": "Лёжа с подкроватной системой",
+      "description": "Один участник лежит на спине, руки и ноги расположены в направлениях точек крепления подкроватной системы; второй находится рядом. Схема натяжения и креплений здесь не задаётся.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "equipment-bed-restraints",
+        "aliases": [],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название варианта; источник относится к семейству, а не универсальному протоколу."
+        }
+      },
+      "category_uid": "d3ea34c1-6593-5855-bf4a-9aa42f0fed2e"
+    },
+    {
+      "uid": "fa7a1916-aafa-5238-85b0-6c317782b468",
+      "name": "Втроём — параллельно лёжа",
+      "description": "Три участника лежат рядом вдоль параллельных осей; средний находится между двумя другими. Описание задаёт пространственную схему без назначения действий каждому участнику.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "group-three-parallel",
+        "aliases": [],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название варианта; источник относится к семейству, а не универсальному протоколу."
+        },
+        "participant_count": 3,
+        "composition_scope": "examples"
+      },
+      "category_uid": "a1366e19-a915-5f5d-9bf5-c45a25bc70ae"
+    },
+    {
+      "uid": "85870020-561b-5a85-be60-b6cbb645ddb1",
+      "name": "Втроём — по кругу",
+      "description": "Три участника расположены по круговой схеме с направлением каждого корпуса к соседнему. Название описательное; роли и взаимодействия не закреплены за полом или позицией в круге.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "group-three-circle",
+        "aliases": [],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название варианта; источник относится к семейству, а не универсальному протоколу."
+        },
+        "participant_count": 3,
+        "composition_scope": "examples"
+      },
+      "category_uid": "a1366e19-a915-5f5d-9bf5-c45a25bc70ae"
+    },
+    {
+      "uid": "5de10f55-6aed-5d38-8f70-825edbabc5bc",
+      "name": "Вчетвером — две пары рядом",
+      "description": "Четыре участника образуют две пары, расположенные рядом на общей поверхности. Положение внутри каждой пары выбирается отдельно; запись описывает именно групповой состав.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "group-four-pairs",
+        "aliases": [],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название варианта; источник относится к семейству, а не универсальному протоколу."
+        },
+        "participant_count": 4,
+        "composition_scope": "examples"
+      },
+      "category_uid": "a1366e19-a915-5f5d-9bf5-c45a25bc70ae"
+    },
+    {
+      "uid": "379a57ef-552c-5d55-be1c-aaaaf53cd851",
+      "name": "Внимание — стоя",
+      "description": "Вертикальное положение с близко расположенными стопами, выпрямленным корпусом и руками вдоль тела. Протокольное значение определяется договорённостью участников, а не самой позой.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "protocol-standing-attention",
+        "aliases": [],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://getkneel.com/blog/submissive-positions-guide"
+          ],
+          "note": "Описательное название варианта; источник относится к семейству, а не универсальному протоколу."
+        }
+      },
+      "category_uid": "76088f6f-5f8b-5617-9099-2116dc079e8f"
+    },
+    {
+      "uid": "79fb5be0-1a46-52f0-a6d9-43c8caf09111",
+      "name": "Ожидание — сидя",
+      "description": "Положение сидя на стуле с опорой стопами на поверхность и кистями на бёдрах. Это описательный сидячий вариант ожидания, отдельный от положений на коленях.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "protocol-seated-waiting",
+        "aliases": [],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://getkneel.com/blog/submissive-positions-guide"
+          ],
+          "note": "Описательное название варианта; источник относится к семейству, а не универсальному протоколу."
+        }
+      },
+      "category_uid": "76088f6f-5f8b-5617-9099-2116dc079e8f"
+    },
+    {
+      "uid": "61eea956-e4e7-5b97-824f-674190df9672",
+      "name": "Представление — на коленях",
+      "description": "Положение на разведённых коленях с вертикальным корпусом, кистями за головой и локтями в стороны. Описательный вариант семейства Present; название не задаёт автоматически права другого участника.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "protocol-kneeling-presentation",
+        "aliases": [],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://getkneel.com/blog/submissive-positions-guide"
+          ],
+          "note": "Описательное название варианта; источник относится к семейству, а не универсальному протоколу."
+        }
+      },
+      "category_uid": "76088f6f-5f8b-5617-9099-2116dc079e8f"
+    },
+    {
+      "uid": "7a201e63-459a-5ed1-b526-30ffb4cab69f",
+      "name": "Поклон — на коленях",
+      "description": "Положение на коленях с наклонённым вперёд корпусом, опущенной к поверхности головой и руками впереди. Соответствует общему семейству Prostrate / Bow; значение жеста зависит от частного протокола.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "protocol-kneeling-bow",
+        "aliases": [],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://getkneel.com/blog/submissive-positions-guide"
+          ],
+          "note": "Описательное название варианта; источник относится к семейству, а не универсальному протоколу."
+        }
+      },
+      "category_uid": "76088f6f-5f8b-5617-9099-2116dc079e8f"
+    }
+  ],
+  "pose-devices": [
+    {
+      "pose_uid": "9fddfd20-e252-5725-9ed6-742919ffa3ff",
+      "device_uid": "3c48272f-553a-5b83-ab6a-47ae5c463919"
+    },
+    {
+      "pose_uid": "44a57913-bc65-5b7f-ac54-5d453ff86e87",
+      "device_uid": "a7306bb3-11ec-5534-bda4-d0b8f3110135"
+    },
+    {
+      "pose_uid": "c9ad6e91-ad3d-5184-90f3-da7199d52bc4",
+      "device_uid": "50e23fa0-b1f7-5dce-bca7-02132f1b4b3a"
+    },
+    {
+      "pose_uid": "78142a00-f7e2-5424-9d01-53b127ff87e4",
+      "device_uid": "178734c2-24d2-5eec-85cd-f8ae1d02a4f4"
+    },
+    {
+      "pose_uid": "3ae5c900-3486-5e66-b2bd-e392fa1e6bce",
+      "device_uid": "1854dd2d-7d12-50e6-a183-20414c069749"
+    },
+    {
+      "pose_uid": "a2aa6faf-30df-540b-a8d6-d6a3cc779c42",
+      "device_uid": "4a84172c-525c-5818-9d0e-aaf6d8d82ce0"
+    },
+    {
+      "pose_uid": "1fe8b219-c0ce-5bc3-9dac-43de6e46803b",
+      "device_uid": "64e4b951-21c2-5352-bcc8-504315753764"
+    },
+    {
+      "pose_uid": "c10de705-c76a-5510-921f-76c072316451",
+      "device_uid": "a7306bb3-11ec-5534-bda4-d0b8f3110135"
+    },
+    {
+      "pose_uid": "d4ac9a34-8606-5885-8f03-a93e492a1770",
+      "device_uid": "a7306bb3-11ec-5534-bda4-d0b8f3110135"
+    },
+    {
+      "pose_uid": "462ecf44-3705-5333-9516-e49324a930a3",
+      "device_uid": "50e23fa0-b1f7-5dce-bca7-02132f1b4b3a"
+    },
+    {
+      "pose_uid": "7fa4bbc5-820c-57a7-abba-78c8e8884645",
+      "device_uid": "3c48272f-553a-5b83-ab6a-47ae5c463919"
+    },
+    {
+      "pose_uid": "e8e7f217-af8f-5e84-80f0-2b5615287e9b",
+      "device_uid": "50e23fa0-b1f7-5dce-bca7-02132f1b4b3a"
+    }
+  ],
+  "pose-compositions": [
+    {
+      "pose_uid": "fa7a1916-aafa-5238-85b0-6c317782b468",
+      "composition_uid": "ad7fe7c8-6a5a-5d09-ac3f-2497a8dd20a5"
+    },
+    {
+      "pose_uid": "fa7a1916-aafa-5238-85b0-6c317782b468",
+      "composition_uid": "74704304-4c61-5ec4-b707-d8be7d9e7d29"
+    },
+    {
+      "pose_uid": "fa7a1916-aafa-5238-85b0-6c317782b468",
+      "composition_uid": "81e71656-2ae9-5998-8d7f-da2ac0439003"
+    },
+    {
+      "pose_uid": "fa7a1916-aafa-5238-85b0-6c317782b468",
+      "composition_uid": "be14611e-0ed5-5c79-b000-3322e377f771"
+    },
+    {
+      "pose_uid": "85870020-561b-5a85-be60-b6cbb645ddb1",
+      "composition_uid": "ad7fe7c8-6a5a-5d09-ac3f-2497a8dd20a5"
+    },
+    {
+      "pose_uid": "85870020-561b-5a85-be60-b6cbb645ddb1",
+      "composition_uid": "74704304-4c61-5ec4-b707-d8be7d9e7d29"
+    },
+    {
+      "pose_uid": "85870020-561b-5a85-be60-b6cbb645ddb1",
+      "composition_uid": "81e71656-2ae9-5998-8d7f-da2ac0439003"
+    },
+    {
+      "pose_uid": "85870020-561b-5a85-be60-b6cbb645ddb1",
+      "composition_uid": "be14611e-0ed5-5c79-b000-3322e377f771"
+    },
+    {
+      "pose_uid": "5de10f55-6aed-5d38-8f70-825edbabc5bc",
+      "composition_uid": "2fb5b2e5-8f72-565e-aa7d-e78cf0bf97af"
+    }
+  ]
+}

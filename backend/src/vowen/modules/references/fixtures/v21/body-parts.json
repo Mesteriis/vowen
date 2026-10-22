@@ -1,0 +1,301 @@
+[
+  {
+    "uid": "362b72eb-c26b-5a86-957f-ea52bfa8b898",
+    "name": "Голова",
+    "description": "Голова — верхняя область тела. Не тождественна лицу или волосам: это разные по охвату записи.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "head",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/body-parts/head-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "0c2c7247-ddfc-526a-95f2-48564f8ef596",
+    "name": "Лицо",
+    "description": "Лицо — передняя область головы. Взгляд, мимика и положение лица не описывают голову целиком.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "face",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/body-parts/face-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "0c824dc0-3e1f-5bda-a0e6-3ec5b5e43c0e",
+    "name": "Волосы",
+    "description": "Волосы — кератиновые структуры, связанные с кожными фолликулами. Видимая часть волоса и фолликул — разные структуры.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "hair",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/body-parts/hair-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "6bc790ed-b239-5bde-9abc-c0e81c94d070",
+    "name": "Шея",
+    "description": "Шея — область между головой и туловищем. Название не уточняет переднюю, боковую или заднюю поверхность.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "neck",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/body-parts/neck-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "5ea10366-48a9-59f2-a7e9-d74c2ebf5d05",
+    "name": "Плечи",
+    "description": "Плечевая область соединяет верхнюю конечность с туловищем. В бытовой речи «плечо» может означать и область сустава, и участок руки.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "shoulders",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/body-parts/shoulders-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "1b2eb9d5-2273-5940-83db-2d194f2f197e",
+    "name": "Спина",
+    "description": "Спина — задняя область туловища. Это широкая область, а не одно место с одинаковыми свойствами.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "back",
+      "group": "Анатомия",
+      "discipline_default": true
+    },
+    "thumbnail": "/references/body-parts/back-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "b6f11c0f-7a80-5e14-9fd0-0c4a842b6a8d",
+    "name": "Грудь",
+    "description": "Грудь — передняя область верхней части туловища. Грудная клетка, молочные железы и соски — не взаимозаменяемые названия.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "chest",
+      "group": "Анатомия",
+      "discipline_default": true
+    },
+    "thumbnail": "/references/body-parts/chest-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "9e3bf9d6-24ff-5928-abd7-1604569166a1",
+    "name": "Живот",
+    "description": "Живот — передняя брюшная область туловища. Обозначение области не является названием отдельного внутреннего органа.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "abdomen",
+      "group": "Анатомия",
+      "discipline_default": true
+    },
+    "thumbnail": "/references/body-parts/abdomen-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "23076ad2-b0fd-519e-874a-472c1de5f11a",
+    "name": "Руки",
+    "description": "Руки — бытовое обозначение верхних конечностей. Плечо, предплечье, запястье и кисть — более узкие области.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "arms",
+      "group": "Анатомия",
+      "discipline_default": true
+    },
+    "thumbnail": "/references/body-parts/arms-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "5aff07fd-f593-53a3-a339-2baac0399a65",
+    "name": "Запястья",
+    "description": "Запястье — область перехода предплечья к кисти. Не тождественно всей руке или ладони.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "wrists",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/body-parts/wrists-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "54e59072-b66f-5ae5-a8cb-c4260edb3b63",
+    "name": "Кисти",
+    "description": "Кисть — концевая часть верхней конечности. Ладонь и тыльная поверхность кисти — разные ориентиры.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "hands",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/body-parts/hands-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "82fca007-ff42-5548-8b42-764bbb038244",
+    "name": "Пальцы рук",
+    "description": "Пальцы рук — части кисти. Запись относится к пальцам рук, а не стоп.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "fingers",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/body-parts/fingers-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "be88de68-e56c-5300-967d-70f6e870b3bd",
+    "name": "Ягодицы",
+    "description": "Ягодицы — задняя область таза. Отличаются от бёдер и анальной области.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "buttocks",
+      "group": "Анатомия",
+      "discipline_default": true
+    },
+    "thumbnail": "/references/body-parts/buttocks-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "f3778747-f333-5af8-86b8-9bb9e552cb98",
+    "name": "Бёдра",
+    "description": "Бедро — участок нижней конечности выше колена. В бытовой речи «бёдра» иногда обозначают также контур таза.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "thighs",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/body-parts/thighs-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "325bdcce-42c0-52e4-a12b-ec142f924f96",
+    "name": "Ноги",
+    "description": "Ноги — бытовое обозначение нижних конечностей. Бёдра, колени, голени и стопы — отдельные ориентиры.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "legs",
+      "group": "Анатомия",
+      "discipline_default": true
+    },
+    "thumbnail": "/references/body-parts/legs-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "f7ce1915-3321-5ffb-bfda-ebdb754440aa",
+    "name": "Колени",
+    "description": "Коленная область находится между бедром и голенью. Передняя поверхность колена и подколенная область различаются.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "knees",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/body-parts/knees-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "e8547c40-9019-5eb6-a5f6-c8fccf3a38c5",
+    "name": "Стопы",
+    "description": "Стопа — концевая часть нижней конечности. Подошва, тыл стопы и пальцы — разные ориентиры.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "feet",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/body-parts/feet-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "32a9b42b-2f6b-5ae5-b42d-967de8f04fde",
+    "name": "Гениталии",
+    "description": "Гениталии — общее обозначение половых органов. В справочнике это широкая группа, а вульва и пенис представлены отдельно.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "genitals",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/body-parts/genitals-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "e3ac74a6-b7a3-5548-ab42-3ee434c4ddf8",
+    "name": "Вульва",
+    "description": "Вульва — совокупность наружных половых структур. Вульва и влагалище — разные анатомические термины.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "vulva",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/body-parts/vulva-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "f3cfb42b-aada-5916-a583-01f2e23f5d41",
+    "name": "Пенис",
+    "description": "Пенис — наружный половой орган. Название органа не определяет гендер человека.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "penis",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/body-parts/penis-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "05d13db2-da8b-5996-ba29-675d69f70182",
+    "name": "Анальная область",
+    "description": "Анальная область — область анального отверстия и прилежащей поверхности. Наружная область, анальный канал и прямая кишка — разные понятия.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "anal-area",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/body-parts/anal-area-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "bc643921-6a5e-5ebb-8c91-929d1c2b7c14",
+    "name": "Соски",
+    "description": "Сосок — отдельная структура молочной железы. Сосок, ареола и грудь в целом не являются одним названием.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "nipples",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/body-parts/nipples-cropped-v6-transparent.png"
+  },
+  {
+    "uid": "8be620ef-222f-5dae-8f8e-e2177ad902cb",
+    "name": "Промежность",
+    "description": "Промежность — анатомическая область нижней части таза. Внешний ориентир между наружными половыми органами и анусом — только часть описания этой области.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "perineum",
+      "group": "Анатомия",
+      "discipline_default": false
+    },
+    "thumbnail": "/references/body-parts/perineum-cropped-v6-transparent.png"
+  }
+]

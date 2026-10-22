@@ -17,6 +17,7 @@ class ReferenceView(BaseModel):
     category_uid: UUID | None = None
     device_uids: list[UUID] = Field(default_factory=list, max_length=100)
     body_part_uids: list[UUID] = Field(default_factory=list, max_length=100)
+    composition_uids: list[UUID] = Field(default_factory=list, max_length=100)
     extra: dict[str, JsonValue] = Field(default_factory=dict)
 
 

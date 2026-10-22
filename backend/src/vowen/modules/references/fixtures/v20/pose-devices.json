@@ -1,0 +1,50 @@
+[
+  {
+    "pose_uid": "9fddfd20-e252-5725-9ed6-742919ffa3ff",
+    "device_uid": "3c48272f-553a-5b83-ab6a-47ae5c463919"
+  },
+  {
+    "pose_uid": "44a57913-bc65-5b7f-ac54-5d453ff86e87",
+    "device_uid": "a7306bb3-11ec-5534-bda4-d0b8f3110135"
+  },
+  {
+    "pose_uid": "c9ad6e91-ad3d-5184-90f3-da7199d52bc4",
+    "device_uid": "50e23fa0-b1f7-5dce-bca7-02132f1b4b3a"
+  },
+  {
+    "pose_uid": "78142a00-f7e2-5424-9d01-53b127ff87e4",
+    "device_uid": "178734c2-24d2-5eec-85cd-f8ae1d02a4f4"
+  },
+  {
+    "pose_uid": "3ae5c900-3486-5e66-b2bd-e392fa1e6bce",
+    "device_uid": "1854dd2d-7d12-50e6-a183-20414c069749"
+  },
+  {
+    "pose_uid": "a2aa6faf-30df-540b-a8d6-d6a3cc779c42",
+    "device_uid": "4a84172c-525c-5818-9d0e-aaf6d8d82ce0"
+  },
+  {
+    "pose_uid": "1fe8b219-c0ce-5bc3-9dac-43de6e46803b",
+    "device_uid": "64e4b951-21c2-5352-bcc8-504315753764"
+  },
+  {
+    "pose_uid": "c10de705-c76a-5510-921f-76c072316451",
+    "device_uid": "a7306bb3-11ec-5534-bda4-d0b8f3110135"
+  },
+  {
+    "pose_uid": "d4ac9a34-8606-5885-8f03-a93e492a1770",
+    "device_uid": "a7306bb3-11ec-5534-bda4-d0b8f3110135"
+  },
+  {
+    "pose_uid": "462ecf44-3705-5333-9516-e49324a930a3",
+    "device_uid": "50e23fa0-b1f7-5dce-bca7-02132f1b4b3a"
+  },
+  {
+    "pose_uid": "7fa4bbc5-820c-57a7-abba-78c8e8884645",
+    "device_uid": "3c48272f-553a-5b83-ab6a-47ae5c463919"
+  },
+  {
+    "pose_uid": "e8e7f217-af8f-5e84-80f0-2b5615287e9b",
+    "device_uid": "50e23fa0-b1f7-5dce-bca7-02132f1b4b3a"
+  }
+]

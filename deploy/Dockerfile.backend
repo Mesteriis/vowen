@@ -11,6 +11,8 @@ RUN find . -exec touch -h -d "@$SOURCE_DATE_EPOCH" {} + \
     && rm /tmp/normalize_install.py
 COPY backend/alembic.ini ./
 COPY backend/migrations ./migrations
+COPY static/web/ /app/static/web/
+ENV VOWEN_STATIC_ROOT="/app/static/web"
 ENV PATH="/app/backend/.venv/bin:$PATH"
 USER 1000:1000
 CMD ["uvicorn", "vowen.main:app", "--host", "0.0.0.0", "--port", "8000", "--no-access-log"]

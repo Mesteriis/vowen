@@ -1,0 +1,634 @@
+{
+  "version": 1,
+  "articles": [
+    {
+      "article": {
+        "key": "bdsm",
+        "section": "dynamics",
+        "title": "БДСМ: практики, сцены и динамика",
+        "summary": "Как различать отдельную практику, ролевую сцену и продолжительные отношения.",
+        "practice_codes": [
+          "power-exchange",
+          "roleplay"
+        ],
+        "device_codes": [],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "1970b952edda0445d753b48a636420a8dcd83351f05839823b37bb3ff56a6978"
+    },
+    {
+      "article": {
+        "key": "roles",
+        "section": "dynamics",
+        "title": "Доминант, сабмиссив и свитч",
+        "summary": "Роли в конкретных отношениях, обмен ролями и различие между ролью и действием.",
+        "practice_codes": [
+          "power-exchange",
+          "role-reversal"
+        ],
+        "device_codes": [],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "79c0ab9a96a524781dd83fd1a83150aa718841fb9cc2ffa842b6d4e6fcc1b9e3"
+    },
+    {
+      "article": {
+        "key": "negotiation",
+        "section": "dynamics",
+        "title": "Предварительный разговор о практике",
+        "summary": "Ожидания, условия встречи и конкретные формулировки договорённостей.",
+        "practice_codes": [
+          "power-exchange"
+        ],
+        "device_codes": [],
+        "pose_codes": [],
+        "sources": [
+          {
+            "name": "NCSF — Consent Counts: материалы по согласованию практик",
+            "url": "https://ncsfreedom.org/key-programs-2/consent-counts/"
+          }
+        ]
+      },
+      "body_sha256": "715d4ccd00037344ea5a4456a06b80c9e661425a8f4e1c513409ecf8691cba6b"
+    },
+    {
+      "article": {
+        "key": "boundaries",
+        "section": "dynamics",
+        "title": "Предпочтения, границы и табу",
+        "summary": "Чем интерес отличается от готовности участвовать и как поддерживать актуальность предпочтений.",
+        "practice_codes": [
+          "power-exchange",
+          "orgasm-control"
+        ],
+        "device_codes": [],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "d780ff4e31b3d49369c374565fc50747b86d96c96280aed2504dcc652a0aa78d"
+    },
+    {
+      "article": {
+        "key": "signals",
+        "section": "dynamics",
+        "title": "Стоп-слова и сигналы обратной связи",
+        "summary": "Обычная речь, система светофора и доступные невербальные сигналы.",
+        "practice_codes": [
+          "sensory-restriction",
+          "bondage"
+        ],
+        "device_codes": [
+          "blindfold",
+          "cuffs"
+        ],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "9ee3b701a4562cff59bfeb086cc3c2c9352eaf59a5d974157dbf437de425f68e"
+    },
+    {
+      "article": {
+        "key": "protocols",
+        "section": "dynamics",
+        "title": "Протоколы в D/s-отношениях",
+        "summary": "Символические действия, область их применения и понятные исключения.",
+        "practice_codes": [
+          "protocol",
+          "command-play"
+        ],
+        "device_codes": [
+          "collar"
+        ],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "da36cfc3e29d63532132db22986900fe8b75460cffd219af48c75294ab40c6af"
+    },
+    {
+      "article": {
+        "key": "service",
+        "section": "dynamics",
+        "title": "Практики служения",
+        "summary": "Задачи, ожидания, ресурсы и обратная связь без невысказанных требований.",
+        "practice_codes": [
+          "service",
+          "praise"
+        ],
+        "device_codes": [],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "4f972c3d373c1884cb3012995492a16b19a9f6a7dafc6a3f9881ecbfb160be5c"
+    },
+    {
+      "article": {
+        "key": "rituals",
+        "section": "dynamics",
+        "title": "Ритуалы близости",
+        "summary": "Как выбрать повторяемое действие, которое сохраняет смысл в обычной жизни.",
+        "practice_codes": [
+          "protocol",
+          "service",
+          "praise"
+        ],
+        "device_codes": [],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "55884f8f074c84d44839a114822fd6a354bd16abd7cd8a0c529cf70d20dfd477"
+    },
+    {
+      "article": {
+        "key": "rules",
+        "section": "dynamics",
+        "title": "Правила и дисциплина в отношениях",
+        "summary": "Конкретные формулировки, пересмотр договорённостей и разбор нарушений.",
+        "practice_codes": [
+          "protocol",
+          "command-play"
+        ],
+        "device_codes": [],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "0bab4f730a2a1e8ed0b077ddb66d46a8789b503d696d662c2e20ec5de60a3454"
+    },
+    {
+      "article": {
+        "key": "aftercare",
+        "section": "health",
+        "title": "Забота после практики: aftercare",
+        "summary": "Завершение интенсивного эпизода и разные потребности всех участников.",
+        "practice_codes": [
+          "aftercare",
+          "massage"
+        ],
+        "device_codes": [
+          "massage-ball",
+          "massage-roller"
+        ],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "acbf3032f78f220aa02e419eff3cda6e6b5de9b13041b47f97732896683ecf24"
+    },
+    {
+      "article": {
+        "key": "bondage",
+        "section": "practices",
+        "title": "Бондаж: формы и назначение",
+        "summary": "Чем отличаются декоративные формы, ограничение подвижности и подвес.",
+        "practice_codes": [
+          "bondage",
+          "cuffs"
+        ],
+        "device_codes": [
+          "cuffs",
+          "bondage-straps",
+          "bondage-tape",
+          "under-bed-restraints",
+          "spreader-bar"
+        ],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "d2408262d4b2f2614548c9bdc1ba4e7a89ce48a925c50662c1dffd5de5ede668"
+    },
+    {
+      "article": {
+        "key": "shibari",
+        "section": "practices",
+        "title": "Сибари и кинбаку",
+        "summary": "Верёвочное взаимодействие, эстетика, технические различия и выбор обучения.",
+        "practice_codes": [
+          "shibari",
+          "rope-bondage"
+        ],
+        "device_codes": [
+          "rope",
+          "suspension-frame"
+        ],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "a481b3256fed360dcecff5a7cec993d3e2b9506751eaf9ce589d1c03974b4423"
+    },
+    {
+      "article": {
+        "key": "sensory",
+        "section": "practices",
+        "title": "Сенсорные практики",
+        "summary": "Восприятие, предсказуемость и различие между мягкими и температурными элементами.",
+        "practice_codes": [
+          "sensory-restriction",
+          "blindfold",
+          "feather-play",
+          "wax-play",
+          "ice-play",
+          "tickling"
+        ],
+        "device_codes": [
+          "blindfold",
+          "feather",
+          "brush"
+        ],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "cf64ecdc926856df169cb3ebcdea303b2416eecc6b4b3e561377fbda92edf566"
+    },
+    {
+      "article": {
+        "key": "impact",
+        "section": "practices",
+        "title": "Телесное воздействие: язык и инструменты",
+        "summary": "Спанкинг, падл, флоггер и другие классы предметов; почему шкала силы условна.",
+        "practice_codes": [
+          "spanking",
+          "paddle",
+          "flogger",
+          "crop",
+          "caning"
+        ],
+        "device_codes": [
+          "hand",
+          "paddle",
+          "flogger",
+          "crop",
+          "cane",
+          "whip",
+          "slapper"
+        ],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "cf2c8e84bf1488540a345e48025bc44aa594eb83345f527b1c27e802cc36bcda"
+    },
+    {
+      "article": {
+        "key": "roleplay",
+        "section": "practices",
+        "title": "Ролевые игры и выход из образа",
+        "summary": "Общий сценарий, смысл персонажа и граница между игрой и повседневным общением.",
+        "practice_codes": [
+          "roleplay",
+          "pet-play",
+          "pony-play",
+          "uniform-play"
+        ],
+        "device_codes": [
+          "collar",
+          "leash"
+        ],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "ab2264f911a0b71eb3ebd501201db19d993b3da3e7c01f225c52b367cd1ba3c6"
+    },
+    {
+      "article": {
+        "key": "fetishes",
+        "section": "practices",
+        "title": "Фетиши материалов и образов",
+        "summary": "Кожа, латекс, бельё и обувь: свойства интереса без предположений о готовом сценарии.",
+        "practice_codes": [
+          "latex",
+          "leather",
+          "lingerie",
+          "stockings",
+          "heels",
+          "boot-worship"
+        ],
+        "device_codes": [],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "109cf77be77ece4c3d34b3acd8061a5121c9bcfd6cbc9999b92b83a288674708"
+    },
+    {
+      "article": {
+        "key": "intimacy",
+        "section": "practices",
+        "title": "Словарь сексуальной близости",
+        "summary": "Нейтральные определения и различие между видом контакта, идентичностью и предпочтением.",
+        "practice_codes": [
+          "vaginal-sex",
+          "anal-sex",
+          "oral-sex",
+          "masturbation",
+          "nonpenetrative-sex",
+          "manual-stimulation"
+        ],
+        "device_codes": [],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "8f71c526d1b0a0aae1359884c07ac0e06e179527f0df03505cbe31d65c34220e"
+    },
+    {
+      "article": {
+        "key": "sexual-health",
+        "section": "health",
+        "title": "Сексуальное здоровье: разговор и обследования",
+        "summary": "Общие ориентиры по инфекциям, барьерной защите и обращению за консультацией.",
+        "practice_codes": [],
+        "device_codes": [],
+        "pose_codes": [],
+        "sources": [
+          {
+            "name": "ВОЗ — инфекции, передающиеся половым путём",
+            "url": "https://www.who.int/news-room/fact-sheets/detail/sexually-transmitted-infections-(stis)"
+          },
+          {
+            "name": "NHS — Sexually transmitted infections",
+            "url": "https://www.nhs.uk/conditions/sexually-transmitted-infections-stis/"
+          }
+        ]
+      },
+      "body_sha256": "39acb12bded2843654567cea5ea6ac1be2d44ac2509625294426598eee2afd69"
+    },
+    {
+      "article": {
+        "key": "group",
+        "section": "practices",
+        "title": "Групповые форматы и несколько партнёров",
+        "summary": "Состав участников, самостоятельные договорённости и приватность каждого человека.",
+        "practice_codes": [
+          "group-sex",
+          "threesome",
+          "partner-exchange",
+          "swinging"
+        ],
+        "device_codes": [],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "3fe4aea53ddfad66b02ce6a1f840d5b038a52eba4654eaadf755d89c3a07aedb"
+    },
+    {
+      "article": {
+        "key": "positions",
+        "section": "equipment",
+        "title": "Как читать описание позы",
+        "summary": "Названия, опоры, адаптация и отличие современной подборки от исторического источника.",
+        "practice_codes": [],
+        "device_codes": [
+          "positioning-cushion",
+          "wedge-cushion",
+          "bolster-cushion"
+        ],
+        "pose_codes": [
+          "missionary",
+          "supine-supported",
+          "bed-edge-supine"
+        ],
+        "sources": []
+      },
+      "body_sha256": "587ecaf12231005d5e68ee5f3c71ec623b3748869d8ce98bfc7a445dbb317c33"
+    },
+    {
+      "article": {
+        "key": "protocol-positions",
+        "section": "equipment",
+        "title": "Протокольные положения и позы рабыни",
+        "summary": "Различие между формой положения, договорённым смыслом и литературным названием.",
+        "practice_codes": [
+          "protocol"
+        ],
+        "device_codes": [],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "a2d8a99964fc68aab45bf283a430593566c3e78e2a8907f64e905e4288d9e7c4"
+    },
+    {
+      "article": {
+        "key": "devices",
+        "section": "equipment",
+        "title": "Как выбирать и понимать девайсы",
+        "summary": "Назначение предмета, свойства конкретной модели и сведения, которых не видно на фотографии.",
+        "practice_codes": [
+          "sex-toys",
+          "remote-toys"
+        ],
+        "device_codes": [
+          "vibrator",
+          "dildo",
+          "sex-machine",
+          "remote-controller",
+          "vibrating-saddle"
+        ],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "d06f55e00f24af4648e385d2b344c7ebd883444edc3ad96b7a3aacff40aff6aa"
+    },
+    {
+      "article": {
+        "key": "materials",
+        "section": "equipment",
+        "title": "Материалы и контактные поверхности",
+        "summary": "Состав, покрытия, совместимость средств и индивидуальная чувствительность.",
+        "practice_codes": [],
+        "device_codes": [
+          "rope",
+          "cuffs",
+          "glass-stimulator",
+          "steel-stimulator",
+          "massage-oil"
+        ],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "4a6b68154ea257b0a56220714631aca06b2b90202d97264db9e115c2baac02c3"
+    },
+    {
+      "article": {
+        "key": "device-care",
+        "section": "equipment",
+        "title": "Очистка, осмотр и хранение девайсов",
+        "summary": "Различие между очисткой и стерилизацией, ограничения обработки и организация коллекции.",
+        "practice_codes": [
+          "sex-toys"
+        ],
+        "device_codes": [
+          "vibrator",
+          "dildo",
+          "anal-plug",
+          "cuffs",
+          "rope"
+        ],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "949b7f92699d2ca9ad2fbe67cc4346f732c34b6f9162e4516b25972dec39c18b"
+    },
+    {
+      "article": {
+        "key": "privacy",
+        "section": "health",
+        "title": "Приватность, фотографии и личные сведения",
+        "summary": "Создание, хранение и публикация записей — отдельные решения.",
+        "practice_codes": [
+          "intimate-photography",
+          "intimate-video",
+          "sexting",
+          "video-sex"
+        ],
+        "device_codes": [],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "e23c6895652ab0096b100035b3a4cac099ccc75a2e9079aaf8852ead4a547acf"
+    },
+    {
+      "article": {
+        "key": "relationship-context",
+        "section": "dynamics",
+        "title": "Несколько отношений: отдельные договорённости",
+        "summary": "Как сохранять самостоятельность каждой связи, когда человек участвует в нескольких динамиках.",
+        "practice_codes": [
+          "power-exchange",
+          "role-reversal"
+        ],
+        "device_codes": [],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "cf3d3b8c03a24e63859db4e5782ae9644025519c31761ec5bbe065a9ac2d4e55"
+    },
+    {
+      "article": {
+        "key": "distance-dynamics",
+        "section": "dynamics",
+        "title": "Дистанционная динамика и повседневная связь",
+        "summary": "Ритм общения, асинхронные задания и переход между перепиской и личной встречей.",
+        "practice_codes": [
+          "power-exchange",
+          "protocol",
+          "service"
+        ],
+        "device_codes": [
+          "remote-controller"
+        ],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "c793ed29bba6023bddb8e1efc4af1eef7b10b17906d12d17b64c352847088645"
+    },
+    {
+      "article": {
+        "key": "collar-symbolism",
+        "section": "equipment",
+        "title": "Ошейник: предмет, символ и договорённость",
+        "summary": "Чем значение ошейника в конкретных отношениях отличается от свойств самого изделия.",
+        "practice_codes": [
+          "collar",
+          "protocol",
+          "power-exchange"
+        ],
+        "device_codes": [
+          "collar",
+          "leash"
+        ],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "8546718f9b8650bb8cb33d32439ff17bcb6bc62a2d4e7abd6298b52ae42cd59e"
+    },
+    {
+      "article": {
+        "key": "praise-feedback",
+        "section": "dynamics",
+        "title": "Похвала, признание и награды",
+        "summary": "Как различать тёплую обратную связь, ролевую похвалу и заранее оговорённое поощрение.",
+        "practice_codes": [
+          "praise",
+          "service",
+          "protocol"
+        ],
+        "device_codes": [],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "909c9cca671bb35900b741a9367664f8c1afc30e0733763d0304f72a415f78f1"
+    },
+    {
+      "article": {
+        "key": "scene-debrief",
+        "section": "dynamics",
+        "title": "Разговор после сцены: что сохранить и что изменить",
+        "summary": "Как отделять впечатления от оценок и превращать обратную связь в конкретные договорённости.",
+        "practice_codes": [
+          "aftercare",
+          "roleplay"
+        ],
+        "device_codes": [],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "fa17b552c7fc764bef8732b0c0504972c551205ea9c9c1bc5ad8d004f3baea1d"
+    },
+    {
+      "article": {
+        "key": "learning-resources",
+        "section": "practices",
+        "title": "Как выбирать обучение и справочные материалы",
+        "summary": "Различие между обзором, демонстрацией и обучением конкретному навыку.",
+        "practice_codes": [
+          "bondage",
+          "shibari",
+          "roleplay"
+        ],
+        "device_codes": [
+          "rope"
+        ],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "d5c1b4f7e3f354f5c246606556117ec24e6aea02c6e40d0a9d84ca660e05ac5c"
+    },
+    {
+      "article": {
+        "key": "posing-language",
+        "section": "equipment",
+        "title": "Позирование: положение, ракурс и образ",
+        "summary": "Как описывать постановку кадра, не смешивая геометрию тела и символику роли.",
+        "practice_codes": [
+          "intimate-photography",
+          "nude-posing"
+        ],
+        "device_codes": [
+          "positioning-cushion"
+        ],
+        "pose_codes": [
+          "protocol-standing-attention",
+          "protocol-seated-waiting"
+        ],
+        "sources": []
+      },
+      "body_sha256": "f02b79958a59c3d613ab3d90e53bf3ab00fd928696cb11add6c5e1f7a7859bf6"
+    },
+    {
+      "article": {
+        "key": "equipment-collection",
+        "section": "equipment",
+        "title": "Коллекция девайсов: карточки, комплекты и история",
+        "summary": "Как организовать сведения о предметах и не путать общий справочник с конкретным изделием.",
+        "practice_codes": [
+          "sex-toys"
+        ],
+        "device_codes": [
+          "cuffs",
+          "remote-controller",
+          "massage-roller"
+        ],
+        "pose_codes": [],
+        "sources": []
+      },
+      "body_sha256": "40b15d0be9284846879b22c3cb26804fbed4d8620277b41c2495f7e8935a9f90"
+    }
+  ]
+}

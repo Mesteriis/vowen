@@ -3,7 +3,7 @@ import {computed,inject,type ComputedRef,type InjectionKey} from 'vue'
 import type {components} from '../../shared/api'
 export type Relation=components['schemas']['RelationView']
 export type Member=components['schemas']['MemberView']
-export type Section='home'|'rituals'|'rewards'|'discipline'|'journal'|'rules'|'forms'|'relations'|'notifications'|'profile'|'sessions'|'settings'
+export type Section='home'|'rituals'|'rewards'|'discipline'|'journal'|'rules'|'forms'|'relations'|'notifications'|'profile'|'sessions'|'settings'|'wiki'
 export function relationRole(relation:Relation,memberId:string):'dominant'|'submissive'|null {
  if(relation.dominant_user_id===memberId)return 'dominant'
  if(relation.submissive_user_id===memberId)return 'submissive'

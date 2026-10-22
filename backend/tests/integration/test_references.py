@@ -22,6 +22,8 @@ async def seed_frozen_references(db, version):
         ("practice-devices", PracticeDevice),
         ("practice-body-parts", PracticeBodyPart),
     ]:
+        if kind in {"poses", "pose-categories"}:
+            continue  # Historical snapshots predate the v16 catalogues.
         rows = json.loads(
             files("vowen.modules.references")
             .joinpath("fixtures", version, kind + ".json")
@@ -48,7 +50,7 @@ async def seeded(api, reference_version=None):
     return client, app, a, b
 
 
-async def test_fifteen_concrete_tables_and_authenticated_catalogues(api):
+async def test_concrete_tables_and_authenticated_catalogues(api):
     client, app, _, member = await seeded(api)
     for kind, model in CATALOGUES.items():
         assert (await client.get("/api/v1/references/" + kind)).status_code == 401
@@ -69,6 +71,7 @@ async def test_fifteen_concrete_tables_and_authenticated_catalogues(api):
                 "category_uid",
                 "device_uids",
                 "body_part_uids",
+                "composition_uids",
             }
             for r in rows
         )
@@ -92,7 +95,7 @@ async def test_fifteen_concrete_tables_and_authenticated_catalogues(api):
                 "thumbnail": "text",
                 "url": "text",
                 "extra": "jsonb",
-                **({"category_uid": "uuid"} if kind == "practices" else {}),
+                **({"category_uid": "uuid"} if kind in {"practices", "poses"} else {}),
             }
     assert (await client.get("/api/v1/references/users", headers=member)).status_code == 422
     assert (
@@ -126,7 +129,8 @@ async def test_only_admin_can_extend_practices_and_seed_is_non_destructive(api):
     assert {
         k: v
         for k, v in created.items()
-        if k not in {"uid", "url", "category_uid", "device_uids", "body_part_uids"}
+        if k
+        not in {"uid", "url", "category_uid", "device_uids", "body_part_uids", "composition_uids"}
     } == payload
     async with app.state.sessions() as db, db.begin():
         await seed_references(db)
@@ -721,7 +725,8 @@ async def test_toy_support_expansion_preserves_edits_links_and_reseeding(api):
 
     from vowen.modules.references.models import Device, PracticeDevice
 
-    _, app, _, _ = await seeded(api)
+    # This historical data migration runs before pose links exist in the real chain.
+    _, app, _, _ = await seeded(api, reference_version="v15")
     migration = runpy.run_path(
         str(Path(__file__).parents[2] / "migrations/versions/0043_toys_supports.py")
     )

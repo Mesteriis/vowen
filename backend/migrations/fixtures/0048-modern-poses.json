@@ -1,0 +1,1078 @@
+{
+  "poses": [
+    {
+      "uid": "0eda63ad-2427-5dac-9800-505e21dbf9cc",
+      "name": "Бабочка у края кровати",
+      "description": "Один участник лежит на спине у края поверхности с поднятыми ногами, другой располагается перед ним стоя.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-butterfly-edge",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.webmd.com/sex/what-is-missionary-position",
+            "https://www.mindbodygreen.com/articles/butterfly-sex-position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+    },
+    {
+      "uid": "dcd9fafe-cfab-511c-bca7-d77128a00297",
+      "name": "На спине с согнутыми коленями",
+      "description": "Положение лицом к лицу: участник на спине сохраняет согнутые колени и стопы на поверхности.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-supine-knees-bent",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.webmd.com/sex/what-is-missionary-position",
+            "https://www.mindbodygreen.com/articles/butterfly-sex-position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+    },
+    {
+      "uid": "9551bb72-ed7d-5ea2-acd2-d09ca34ab289",
+      "name": "На спине с ногами на плечах партнёра",
+      "description": "Положение лицом к лицу с опорой голеней участника на спине на плечи второго партнёра.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-supine-legs-on-shoulders",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.webmd.com/sex/what-is-missionary-position",
+            "https://www.mindbodygreen.com/articles/butterfly-sex-position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+    },
+    {
+      "uid": "60579f23-eb6c-5f7f-aa99-ccf0cf03e319",
+      "name": "На спине с одной поднятой ногой",
+      "description": "Асимметричный вариант: одна нога участника на спине поднята, другая остаётся на поверхности.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-supine-one-leg-raised",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.webmd.com/sex/what-is-missionary-position",
+            "https://www.mindbodygreen.com/articles/butterfly-sex-position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+    },
+    {
+      "uid": "c20ec854-b9ba-51f4-93a7-819b76f99c60",
+      "name": "На спине с обхватом талии ногами",
+      "description": "Положение лицом к лицу, при котором ноги участника на спине располагаются вокруг талии партнёра.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-supine-legs-around-waist",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.webmd.com/sex/what-is-missionary-position",
+            "https://www.mindbodygreen.com/articles/butterfly-sex-position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+    },
+    {
+      "uid": "bdd844be-831d-527d-9569-0314ac6161ad",
+      "name": "На спине с ногами вместе",
+      "description": "Вариант положения на спине со сближенными ногами и расположением второго партнёра сверху.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-supine-legs-together",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.webmd.com/sex/what-is-missionary-position",
+            "https://www.mindbodygreen.com/articles/butterfly-sex-position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+    },
+    {
+      "uid": "d82c7935-025b-58d4-bf6e-9ac3a7fc66c7",
+      "name": "На спине перед сидящим на пятках партнёром",
+      "description": "Один участник лежит на спине, второй остаётся перед ним в вертикальном положении на коленях.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-supine-partner-upright",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.webmd.com/sex/what-is-missionary-position",
+            "https://www.mindbodygreen.com/articles/butterfly-sex-position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+    },
+    {
+      "uid": "ac1ce94a-112f-5d5a-a115-9f2142bc1dc6",
+      "name": "Поперёк кровати лицом к лицу",
+      "description": "Положение на спине поперёк поверхности; второй партнёр находится у её края перед лежащим участником.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-supine-across-bed",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.webmd.com/sex/what-is-missionary-position",
+            "https://www.mindbodygreen.com/articles/butterfly-sex-position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+    },
+    {
+      "uid": "462ecf44-3705-5333-9516-e49324a930a3",
+      "name": "На спине с опорой под коленями",
+      "description": "Положение лицом к лицу с дополнительной опорой именно под коленями, а не под спиной или тазом.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-supine-pillow-under-knees",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.webmd.com/sex/what-is-missionary-position",
+            "https://www.mindbodygreen.com/articles/butterfly-sex-position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+    },
+    {
+      "uid": "b919abe4-2239-50c1-95d0-c2eaeebf3469",
+      "name": "На животе с опорой на предплечья",
+      "description": "Один участник лежит на животе с приподнятой верхней частью корпуса и опорой на предплечья; второй находится позади.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-prone-forearms",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc"
+    },
+    {
+      "uid": "cb724fbb-49b5-50db-9a17-89a4a48973df",
+      "name": "На животе с разведёнными ногами",
+      "description": "Положение на животе с прямыми разведёнными ногами; второй партнёр расположен со стороны спины.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-prone-legs-apart",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc"
+    },
+    {
+      "uid": "d544ee21-9449-544d-9850-900f3165be87",
+      "name": "На животе с коленом в сторону",
+      "description": "Асимметричное положение на животе: одна нога согнута и отведена в сторону, другая остаётся прямой.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-prone-one-knee-out",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc"
+    },
+    {
+      "uid": "7fa4bbc5-820c-57a7-abba-78c8e8884645",
+      "name": "На животе с опорой под тазом",
+      "description": "Вариант на животе, отличающийся расположением мягкой опоры непосредственно под тазом, при опоре корпуса на поверхность.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-prone-hips-supported",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc"
+    },
+    {
+      "uid": "321ffe35-7dac-5286-9d64-ff5a98b77f7f",
+      "name": "Полулёжа на животе у края кровати",
+      "description": "Передняя часть корпуса находится на поверхности, ноги располагаются за её краем; второй партнёр находится позади.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-prone-upper-body-raised",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc"
+    },
+    {
+      "uid": "550995c5-b420-51c4-ba83-d3bdfefdfc01",
+      "name": "Ложки с согнутыми коленями",
+      "description": "Оба партнёра лежат на боку в одном направлении; их согнутые ноги образуют вложенные друг в друга контуры.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-side-spoons-knees-bent",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Spooning",
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f"
+    },
+    {
+      "uid": "d47291c7-9d40-5fa2-a671-fbab0d9e2b80",
+      "name": "Ложки с прямыми ногами",
+      "description": "Положение на боку в одном направлении с преимущественно выпрямленными ногами обоих участников.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-side-spoons-legs-straight",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Spooning",
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f"
+    },
+    {
+      "uid": "e8e7f217-af8f-5e84-80f0-2b5615287e9b",
+      "name": "На боку с опорой под верхней ногой",
+      "description": "Один участник находится на боку, верхняя нога лежит на отдельной мягкой опоре; партнёр располагается позади.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-side-upper-leg-supported",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Spooning",
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f"
+    },
+    {
+      "uid": "b5c223e2-4b31-5e5d-86d9-4e7c7a549b24",
+      "name": "На боку лицом к лицу, ноги переплетены",
+      "description": "Партнёры лежат на боку навстречу друг другу; ноги располагаются попеременно между ногами второго участника.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-side-face-to-face-interlaced",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Spooning",
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f"
+    },
+    {
+      "uid": "f8ff0993-05dd-5a48-842b-3d438de7590b",
+      "name": "Т-образное положение на боку",
+      "description": "Один участник лежит на боку, корпус второго расположен поперёк относительно его продольной оси.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-side-t-shape",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Spooning",
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f"
+    },
+    {
+      "uid": "563f98e0-d43e-5d39-bc79-1fea22beb7d0",
+      "name": "Лотос с отклонением назад",
+      "description": "Сидячее положение лицом к лицу: один из партнёров отклоняет корпус назад с опорой на руки.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-seated-lotus-reclined",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.mindbodygreen.com/articles/how-to-do-the-lotus-sex-position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+    },
+    {
+      "uid": "46e44314-3f87-5248-b115-f1611165e44a",
+      "name": "Лотос с выпрямленными ногами",
+      "description": "Положение сидя лицом к лицу, в котором нижний партнёр располагает ноги вперёд вместо скрещённого положения.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-seated-lotus-straight-legs",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.mindbodygreen.com/articles/how-to-do-the-lotus-sex-position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+    },
+    {
+      "uid": "da423ca9-b77b-51d2-b730-e10eb38501b8",
+      "name": "На стуле спиной к сидящему партнёру",
+      "description": "Оба участника находятся на одном стуле; верхний партнёр обращён спиной к сидящему нижнему участнику.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-seated-chair-backward",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.mindbodygreen.com/articles/how-to-do-the-lotus-sex-position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+    },
+    {
+      "uid": "73ebbcf8-17ce-53b9-8b38-169db0a97557",
+      "name": "На диване лицом к лицу",
+      "description": "Сидячее положение лицом к лицу на более широкой поверхности дивана с опорой спины нижнего партнёра.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-seated-sofa-face-to-face",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.mindbodygreen.com/articles/how-to-do-the-lotus-sex-position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+    },
+    {
+      "uid": "c2155cb0-606d-56a1-acc0-5f96d1ff5b79",
+      "name": "Сидя на краю кровати лицом к лицу",
+      "description": "Нижний партнёр сидит у края кровати со стопами на полу; второй располагается у него на коленях лицом к лицу.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-seated-bed-edge-face-to-face",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.mindbodygreen.com/articles/how-to-do-the-lotus-sex-position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+    },
+    {
+      "uid": "dd0fcefd-cfc0-58f9-b19b-f2176cf531cc",
+      "name": "Боком на коленях сидящего партнёра",
+      "description": "Один участник сидит, второй располагается поперёк его коленей; корпуса обращены в разные стороны.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-seated-sideways-lap",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.mindbodygreen.com/articles/how-to-do-the-lotus-sex-position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+    },
+    {
+      "uid": "91fbb919-1c71-5cf1-a6cb-a969615d6aad",
+      "name": "Полусидя у изголовья",
+      "description": "Нижний партнёр находится полусидя с опорой на изголовье, второй располагается перед ним лицом к лицу.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-seated-reclined-against-headboard",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.mindbodygreen.com/articles/how-to-do-the-lotus-sex-position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+    },
+    {
+      "uid": "d75b1e18-fc70-5441-b25c-23fda49f43ea",
+      "name": "На стуле спиной к партнёру с опорой для рук",
+      "description": "Верхний участник сидит спиной к нижнему партнёру, сохраняя дополнительную опору кистями на сиденье.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-seated-chair-facing-away-supported",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.mindbodygreen.com/articles/how-to-do-the-lotus-sex-position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+    },
+    {
+      "uid": "c08574af-2f24-5ccd-91e3-173ca62f169f",
+      "name": "Сидя на полу навстречу друг другу",
+      "description": "Оба участника сидят непосредственно на поверхности пола лицом друг к другу, с согнутыми и переплетёнными ногами.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-seated-floor-face-to-face",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.mindbodygreen.com/articles/how-to-do-the-lotus-sex-position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+    },
+    {
+      "uid": "5eb7831e-30f5-5352-b3df-4d4060124d88",
+      "name": "Наклон стоя с опорой на стол",
+      "description": "Один участник стоит в наклоне с опорой передней части корпуса на стол; второй расположен позади.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-standing-bent-table",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "50db3b5b-1c02-5560-a940-afc89bee4272"
+    },
+    {
+      "uid": "2b0d15de-f37d-509e-8e5d-e3307d3e4a66",
+      "name": "Стоя с опорой ладонями о стену",
+      "description": "Один участник обращён лицом к стене с опорой на ладони; второй стоит позади него.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-standing-hands-wall",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "50db3b5b-1c02-5560-a940-afc89bee4272"
+    },
+    {
+      "uid": "75df1644-0bb8-56a8-81b1-7ebe5f1cc073",
+      "name": "Стоя с одной ногой на опоре",
+      "description": "Асимметричное положение стоя лицом к лицу: одна стопа участника находится на отдельной возвышенной опоре.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-standing-chair-one-foot",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "50db3b5b-1c02-5560-a940-afc89bee4272"
+    },
+    {
+      "uid": "48d6fac1-af35-5ddd-bc8f-6cb9a016dcd3",
+      "name": "Стоя перед партнёром на краю кровати",
+      "description": "Один участник стоит у края кровати, второй располагается перед ним на коленях на поверхности кровати.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-standing-bed-edge-partner-kneels",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "50db3b5b-1c02-5560-a940-afc89bee4272"
+    },
+    {
+      "uid": "19cd50d5-1c4f-5925-b670-71d8a6012c41",
+      "name": "Стоя бок о бок",
+      "description": "Партнёры стоят рядом, соприкасаясь боковыми сторонами корпуса и сохраняя собственную опору на ноги.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-standing-side-by-side",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "50db3b5b-1c02-5560-a940-afc89bee4272"
+    },
+    {
+      "uid": "6311573f-13ee-59c5-b1c6-f5b8a2cf7d27",
+      "name": "На коленях и предплечьях",
+      "description": "Один участник опирается на колени и предплечья вместо ладоней; второй находится позади.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-kneeling-forearms",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed"
+    },
+    {
+      "uid": "77f1ef3d-064c-578b-8dae-8e8c52575f01",
+      "name": "На коленях с опорой грудью на подушку",
+      "description": "Положение на коленях с отдельной мягкой опорой под верхней частью корпуса; второй партнёр расположен позади.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-kneeling-chest-supported",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed"
+    },
+    {
+      "uid": "696e2e2f-9b8a-5896-8e12-d16a087fd0cc",
+      "name": "На коленях у изголовья",
+      "description": "Один участник стоит на коленях лицом к изголовью с опорой руками на него; второй находится позади.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-kneeling-bed-headboard",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed"
+    },
+    {
+      "uid": "2f156245-dee3-5dc2-873e-6b1bd67ff417",
+      "name": "На коленях бок о бок",
+      "description": "Оба участника находятся на коленях рядом друг с другом; их корпуса обращены в одном направлении.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-kneeling-side-by-side",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed"
+    },
+    {
+      "uid": "b221106b-7c4e-55dc-9ac6-162fe117eb1e",
+      "name": "На колене с вынесенной вперёд стопой",
+      "description": "Один участник опирается на колено и противоположную стопу; второй располагается перед ним лицом к лицу.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-kneeling-one-foot-forward",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed"
+    },
+    {
+      "uid": "123d875c-1844-5a4c-ae0e-10a1816de394",
+      "name": "Наездница с наклоном вперёд",
+      "description": "Верхний участник обращён к лицу нижнего партнёра и наклоняет корпус вперёд с опорой на руки.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-on-top-forward-lean",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.healthline.com/health/healthy-sex/cowgirl-position",
+            "https://www.healthline.com/health/healthy-sex/fit-sex"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "fe4cb364-14f4-59cc-bd48-e0f934606243"
+    },
+    {
+      "uid": "d7ef7869-ad0e-536d-8ddf-eeca7d7de88d",
+      "name": "Наездница с отклонением назад",
+      "description": "Верхний участник обращён к лицу нижнего партнёра, но отклоняет корпус назад, сохраняя опору на руки.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-on-top-reclined",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.healthline.com/health/healthy-sex/cowgirl-position",
+            "https://www.healthline.com/health/healthy-sex/fit-sex"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "fe4cb364-14f4-59cc-bd48-e0f934606243"
+    },
+    {
+      "uid": "f42ce07b-7f3b-5556-b661-43d081def8d2",
+      "name": "Обратная наездница с наклоном вперёд",
+      "description": "Верхний участник обращён спиной к нижнему партнёру и наклоняется в сторону его ног.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-on-top-reverse-forward",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.healthline.com/health/healthy-sex/cowgirl-position",
+            "https://www.healthline.com/health/healthy-sex/fit-sex"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "fe4cb364-14f4-59cc-bd48-e0f934606243"
+    },
+    {
+      "uid": "63b7c621-d279-5a7b-9be2-e1eba40724e7",
+      "name": "Сверху с опорой на стопы",
+      "description": "Верхний партнёр находится в приседе со стопами на поверхности вместо опоры на колени, лицом к нижнему участнику.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-on-top-squat",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.healthline.com/health/healthy-sex/cowgirl-position",
+            "https://www.healthline.com/health/healthy-sex/fit-sex"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "fe4cb364-14f4-59cc-bd48-e0f934606243"
+    },
+    {
+      "uid": "edb85dee-1251-5aec-9289-a982a2942cfa",
+      "name": "Сверху с асимметричной опорой",
+      "description": "Верхний участник обращён лицом к нижнему; одна нога опирается на колено, другая — на стопу.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "modern-on-top-asymmetric-lunge",
+        "aliases": [],
+        "collections": [
+          "modern-64"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://www.healthline.com/health/healthy-sex/cowgirl-position",
+            "https://www.healthline.com/health/healthy-sex/fit-sex"
+          ],
+          "note": "Описательное название и аннотация варианта составлены для Vowen. Источники подтверждают семейство поз, а не отдельный общепринятый термин."
+        }
+      },
+      "category_uid": "fe4cb364-14f4-59cc-bd48-e0f934606243"
+    }
+  ],
+  "existing_pose_uids": [
+    "1cd572ee-0f65-52b5-a4d0-70d881b71889",
+    "c10de705-c76a-5510-921f-76c072316451",
+    "900e817b-2280-54f0-b50b-b9ea1e2e894a",
+    "57e5a667-13b2-5818-a37c-a42a1c43caa3",
+    "d4ac9a34-8606-5885-8f03-a93e492a1770",
+    "0a836a19-0b4e-518d-8f6b-61d257b54ad0",
+    "1ee5d2e7-b9e4-5c56-bf10-24c61fe6f78e",
+    "7794fbd1-1f47-5a6f-9127-7c216d5fb8a2",
+    "76a6b416-a3c8-548f-b732-45cbe2eb2b4a",
+    "02af237e-d32b-5695-beb9-e125e09f674c",
+    "dd115af3-ab45-58ea-b6a7-b82be4746afd",
+    "e25d5832-b43c-5162-96e0-5860d3a15e3e",
+    "7df2c3ec-0528-58c0-a68e-32f0df227e8b",
+    "c979147c-462d-5b90-abd9-56cc34fccdc3",
+    "f6d7b859-7393-5f2f-95b2-fef9f9554317",
+    "ea660aa1-a4b5-5107-89c6-dec04274e3fe",
+    "4842d601-ec04-5683-91bc-18627d32b62e",
+    "a1f1281d-3309-54c3-9d59-40c171df8175",
+    "a18c08d3-98e7-52ee-9904-9dba21bde834",
+    "bb93077e-52c7-5e73-bafb-afc7069c98a8",
+    "83778cd8-64c5-5611-bf62-1ede506f5793"
+  ]
+}

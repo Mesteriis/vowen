@@ -1,0 +1,727 @@
+[
+  {
+    "uid": "1cd572ee-0f65-52b5-a4d0-70d881b71889",
+    "name": "Миссионерская",
+    "description": "Парная поза лицом к лицу с положением одного участника на спине.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "missionary",
+      "aliases": [
+        "Классическая"
+      ]
+    },
+    "category_uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+  },
+  {
+    "uid": "c10de705-c76a-5510-921f-76c072316451",
+    "name": "Лёжа на спине с опорой",
+    "description": "Вариант положения на спине с дополнительной опорой.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "supine-supported",
+      "aliases": []
+    },
+    "category_uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+  },
+  {
+    "uid": "900e817b-2280-54f0-b50b-b9ea1e2e894a",
+    "name": "На краю кровати",
+    "description": "Положение на спине у края кровати.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "bed-edge-supine",
+      "aliases": [
+        "На краю постели"
+      ]
+    },
+    "category_uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+  },
+  {
+    "uid": "57e5a667-13b2-5818-a37c-a42a1c43caa3",
+    "name": "Плашмя",
+    "description": "Парное положение лёжа на животе.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "flat-prone",
+      "aliases": [
+        "Лёжа на животе"
+      ]
+    },
+    "category_uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc"
+  },
+  {
+    "uid": "d4ac9a34-8606-5885-8f03-a93e492a1770",
+    "name": "Лёжа на животе с опорой",
+    "description": "Вариант положения на животе с дополнительной опорой.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "prone-supported",
+      "aliases": []
+    },
+    "category_uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc"
+  },
+  {
+    "uid": "0a836a19-0b4e-518d-8f6b-61d257b54ad0",
+    "name": "На животе у края кровати",
+    "description": "Положение на животе у края кровати.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "bed-edge-prone",
+      "aliases": []
+    },
+    "category_uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc"
+  },
+  {
+    "uid": "1ee5d2e7-b9e4-5c56-bf10-24c61fe6f78e",
+    "name": "Ложки",
+    "description": "Парное положение на боку в одном направлении.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "spooning",
+      "aliases": [
+        "Ложечки"
+      ]
+    },
+    "category_uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f"
+  },
+  {
+    "uid": "7794fbd1-1f47-5a6f-9127-7c216d5fb8a2",
+    "name": "На боку лицом к лицу",
+    "description": "Парное боковое положение лицом друг к другу.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "side-face-to-face",
+      "aliases": []
+    },
+    "category_uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f"
+  },
+  {
+    "uid": "76a6b416-a3c8-548f-b732-45cbe2eb2b4a",
+    "name": "Перекрёстная на боку",
+    "description": "Боковое положение с перекрёстным расположением участников.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "side-crossed",
+      "aliases": []
+    },
+    "category_uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f"
+  },
+  {
+    "uid": "02af237e-d32b-5695-beb9-e125e09f674c",
+    "name": "Лотос",
+    "description": "Парная сидячая поза лицом к лицу.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "lotus",
+      "aliases": []
+    },
+    "category_uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+  },
+  {
+    "uid": "dd115af3-ab45-58ea-b6a7-b82be4746afd",
+    "name": "На стуле лицом к лицу",
+    "description": "Сидячий вариант с использованием стула.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "chair-face-to-face",
+      "aliases": []
+    },
+    "category_uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+  },
+  {
+    "uid": "e25d5832-b43c-5162-96e0-5860d3a15e3e",
+    "name": "Сидя спиной к партнёру",
+    "description": "Парное сидячее положение в одном направлении.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "seated-facing-away",
+      "aliases": []
+    },
+    "category_uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+  },
+  {
+    "uid": "7df2c3ec-0528-58c0-a68e-32f0df227e8b",
+    "name": "Стоя лицом к лицу",
+    "description": "Парное положение стоя лицом друг к другу.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "standing-face-to-face",
+      "aliases": []
+    },
+    "category_uid": "50db3b5b-1c02-5560-a940-afc89bee4272"
+  },
+  {
+    "uid": "c979147c-462d-5b90-abd9-56cc34fccdc3",
+    "name": "Стоя сзади",
+    "description": "Парное положение стоя в одном направлении.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "standing-rear",
+      "aliases": []
+    },
+    "category_uid": "50db3b5b-1c02-5560-a940-afc89bee4272"
+  },
+  {
+    "uid": "f6d7b859-7393-5f2f-95b2-fef9f9554317",
+    "name": "Стоя у стены",
+    "description": "Положение стоя с опорой у стены.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "standing-wall",
+      "aliases": []
+    },
+    "category_uid": "50db3b5b-1c02-5560-a940-afc89bee4272"
+  },
+  {
+    "uid": "ea660aa1-a4b5-5107-89c6-dec04274e3fe",
+    "name": "На четвереньках",
+    "description": "Парная поза с положением одного участника на четвереньках.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "all-fours",
+      "aliases": [
+        "Догги-стайл",
+        "Doggy style"
+      ]
+    },
+    "category_uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed"
+  },
+  {
+    "uid": "4842d601-ec04-5683-91bc-18627d32b62e",
+    "name": "На коленях лицом к лицу",
+    "description": "Парное положение на коленях лицом друг к другу.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "kneeling-face-to-face",
+      "aliases": []
+    },
+    "category_uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed"
+  },
+  {
+    "uid": "a1f1281d-3309-54c3-9d59-40c171df8175",
+    "name": "На коленях с опорой",
+    "description": "Вариант положения на коленях с дополнительной опорой.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "kneeling-supported",
+      "aliases": []
+    },
+    "category_uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed"
+  },
+  {
+    "uid": "a18c08d3-98e7-52ee-9904-9dba21bde834",
+    "name": "Наездница",
+    "description": "Парная поза с расположением верхнего участника лицом к партнёру.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "cowgirl",
+      "aliases": [
+        "Партнёр сверху лицом к лицу"
+      ]
+    },
+    "category_uid": "fe4cb364-14f4-59cc-bd48-e0f934606243"
+  },
+  {
+    "uid": "bb93077e-52c7-5e73-bafb-afc7069c98a8",
+    "name": "Обратная наездница",
+    "description": "Вариант верхнего расположения спиной к партнёру.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "reverse-cowgirl",
+      "aliases": []
+    },
+    "category_uid": "fe4cb364-14f4-59cc-bd48-e0f934606243"
+  },
+  {
+    "uid": "83778cd8-64c5-5611-bf62-1ede506f5793",
+    "name": "Сверху с опорой",
+    "description": "Вариант верхнего расположения с дополнительной опорой.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "on-top-supported",
+      "aliases": []
+    },
+    "category_uid": "fe4cb364-14f4-59cc-bd48-e0f934606243"
+  },
+  {
+    "uid": "e8056ca0-a622-5b3e-b570-dc051b6cb12e",
+    "name": "Наду",
+    "description": "Протокольное положение на коленях.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "nadu",
+      "aliases": [
+        "Nadu"
+      ]
+    },
+    "category_uid": "76088f6f-5f8b-5617-9099-2116dc079e8f"
+  },
+  {
+    "uid": "cd6ba6d9-f48a-51f0-b6ff-0c20a5b464f4",
+    "name": "Тауэр",
+    "description": "Вариант протокольного положения на коленях.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "tower",
+      "aliases": [
+        "Tower",
+        "Башня"
+      ]
+    },
+    "category_uid": "76088f6f-5f8b-5617-9099-2116dc079e8f"
+  },
+  {
+    "uid": "5d0cf79b-31a7-5b89-9649-20850fcec6a2",
+    "name": "Инспекция",
+    "description": "Именованное положение для протокола осмотра.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "inspection",
+      "aliases": [
+        "Inspection"
+      ]
+    },
+    "category_uid": "76088f6f-5f8b-5617-9099-2116dc079e8f"
+  },
+  {
+    "uid": "46cf6475-f5c8-5077-beb8-be58fdc81b9e",
+    "name": "Клубок на боку",
+    "description": "Положение на боку с согнутыми ногами, подтянутыми к туловищу. Голова лежит на поверхности, спина округлена. Руки находятся перед корпусом, кисти удерживают стопы. Колени и локти сближены, поэтому силуэт выглядит компактным и замкнутым. На референсе нет видимых средств фиксации.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "slave-side-ball",
+      "aliases": [],
+      "source_file": "IMG_0012.PNG",
+      "group": "На боку",
+      "purpose": null,
+      "terminology": {
+        "name": null,
+        "match": "descriptive",
+        "sources": [],
+        "note": "Традиционное название и специальное назначение этого варианта не подтверждены."
+      }
+    },
+    "category_uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+  },
+  {
+    "uid": "79a493aa-7773-550a-9ea5-eabe31899a89",
+    "name": "На коленях, руки за спиной",
+    "description": "Вертикальное положение на коленях с выпрямленным корпусом. Колени расположены близко друг к другу; нижняя часть голеней частично выходит за границу кадра. Плечи отведены назад, руки заведены за спину, кисти находятся позади таза. Голова слегка повёрнута и опущена. Точное положение стоп по кадру не определяется.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "slave-kneeling-hands-behind",
+      "aliases": [],
+      "source_file": "IMG_0013.PNG",
+      "group": "На коленях",
+      "purpose": null,
+      "terminology": {
+        "name": null,
+        "match": "descriptive",
+        "sources": [],
+        "note": "Традиционное название и специальное назначение этого варианта не подтверждены."
+      }
+    },
+    "category_uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+  },
+  {
+    "uid": "18df2208-448a-5c38-b32b-0df042ea8461",
+    "name": "На животе с захватом щиколоток",
+    "description": "Положение лёжа на животе с согнутыми коленями. Голени подняты за спиной, руки направлены назад, кисти удерживают щиколотки. Колени разведены, голова повёрнута в сторону и расположена низко над поверхностью. Связь между руками и ногами создаётся захватом кистей; верёвки, ремни и другие крепления на референсе не видны.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "slave-prone-ankle-hold",
+      "aliases": [],
+      "source_file": "IMG_0014.PNG",
+      "group": "На животе",
+      "purpose": null,
+      "terminology": {
+        "name": null,
+        "match": "descriptive",
+        "sources": [],
+        "note": "Традиционное название и специальное назначение этого варианта не подтверждены."
+      }
+    },
+    "category_uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+  },
+  {
+    "uid": "12c6913e-6c3a-5eec-bf8c-744819977b90",
+    "name": "На коленях с опорой на руки сзади",
+    "description": "Положение на коленях с разведёнными бёдрами и согнутыми голенями. Таз расположен близко к пяткам, корпус отклонён назад. Ладони находятся на поверхности позади тела и служат дополнительными точками опоры; руки почти выпрямлены. Голова слегка опущена и повёрнута в сторону. Верхняя часть спины остаётся над поверхностью.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "slave-kneeling-rear-hand-support",
+      "aliases": [],
+      "source_file": "IMG_0015.PNG",
+      "group": "На коленях",
+      "purpose": null,
+      "terminology": {
+        "name": null,
+        "match": "descriptive",
+        "sources": [],
+        "note": "Традиционное название и специальное назначение этого варианта не подтверждены."
+      }
+    },
+    "category_uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+  },
+  {
+    "uid": "0622cdc3-2a66-5e73-8ecd-537a9113e8bd",
+    "name": "Инспекция на носках — вариант",
+    "description": "Положение стоя с разведёнными ногами и поднятыми пятками. Корпус выпрямлен, голова обращена вперёд. Руки согнуты, кисти находятся за головой, локти направлены в стороны. По расположению рук и ног кадр близок к Inspection / Display. Поднятые пятки — отдельная особенность этого референса, а не обязательный признак названия.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "slave-inspection-raised-heels",
+      "aliases": [
+        "Inspection / Display"
+      ],
+      "source_file": "IMG_0016.PNG",
+      "group": "Стоя",
+      "purpose": "Представление для осмотра в положении стоя.",
+      "terminology": {
+        "name": "Inspection / Display",
+        "match": "variant",
+        "sources": [
+          "https://getkneel.com/blog/submissive-positions-guide",
+          "https://dominant-guide.com/articles/submissive-positions-guide/"
+        ],
+        "note": "Назначение относится к семейству поз, а не устанавливается по фотографии."
+      }
+    },
+    "category_uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+  },
+  {
+    "uid": "94a0a1f7-d9dd-59c8-a3c4-19c5c0639b5a",
+    "name": "На спине с поднятыми разведёнными ногами",
+    "description": "Положение лёжа на спине: голова и плечи остаются на поверхности, ноги подняты и разведены в стороны. Колени немного согнуты. Руки направлены к ногам, кисти удерживают голени ближе к щиколоткам. Локти также отведены в стороны. Положение отличается от обычной «Звезды» поднятыми ногами и захватом голеней руками.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "slave-supine-raised-legs",
+      "aliases": [],
+      "source_file": "IMG_0017.PNG",
+      "group": "На спине",
+      "purpose": null,
+      "terminology": {
+        "name": null,
+        "match": "descriptive",
+        "sources": [],
+        "note": "Традиционное название и специальное назначение этого варианта не подтверждены."
+      }
+    },
+    "category_uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+  },
+  {
+    "uid": "84e7e3a8-7444-5c09-aae7-1d867c87820f",
+    "name": "Наклон вперёд, руки за спиной",
+    "description": "Положение стоя с близко расположенными стопами и почти прямыми ногами. Корпус глубоко наклонён вперёд, голова опущена. Кисти соединены за спиной; выпрямленные руки подняты относительно спины. На фотографии не видны крепления или подвес, поэтому называть её связанной позой Strappado было бы неточно. Описывается только видимое положение тела.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "slave-forward-fold-hands-behind",
+      "aliases": [],
+      "source_file": "IMG_0018.PNG",
+      "group": "Стоя",
+      "purpose": null,
+      "terminology": {
+        "name": null,
+        "match": "descriptive",
+        "sources": [],
+        "note": "Традиционное название и специальное назначение этого варианта не подтверждены."
+      }
+    },
+    "category_uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+  },
+  {
+    "uid": "58e45d59-d5c7-54f3-9e41-8b84120ac07e",
+    "name": "На коленях с прогибом назад",
+    "description": "Положение на коленях с разведёнными бёдрами и согнутыми голенями. Корпус образует дугу назад, голова запрокинута. Ладони находятся на поверхности позади тела и по сторонам от него. Верхняя часть корпуса остаётся приподнятой. От варианта с глубоким отклонением эта поза отличается отсутствием видимой опоры головой на поверхность.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "slave-kneeling-back-arch",
+      "aliases": [],
+      "source_file": "IMG_0019.PNG",
+      "group": "На коленях",
+      "purpose": null,
+      "terminology": {
+        "name": null,
+        "match": "descriptive",
+        "sources": [],
+        "note": "Традиционное название и специальное назначение этого варианта не подтверждены."
+      }
+    },
+    "category_uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+  },
+  {
+    "uid": "6098a200-74bd-5f12-9454-a59b426391b9",
+    "name": "На коленях с удержанием щиколоток",
+    "description": "Положение на коленях с разведёнными бёдрами, снятое преимущественно со спины. Голени согнуты, стопы подняты по направлению к тазу. Руки заведены назад, кисти удерживают щиколотки возле бёдер. Корпус сохраняет преимущественно вертикальное положение. Видимые точки опоры — колени; внешние средства фиксации на изображении отсутствуют.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "slave-kneeling-ankle-hold",
+      "aliases": [],
+      "source_file": "IMG_0020.PNG",
+      "group": "На коленях",
+      "purpose": null,
+      "terminology": {
+        "name": null,
+        "match": "descriptive",
+        "sources": [],
+        "note": "Традиционное название и специальное назначение этого варианта не подтверждены."
+      }
+    },
+    "category_uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+  },
+  {
+    "uid": "7cd43384-4407-517d-84bf-555044e6ec46",
+    "name": "На коленях с вытянутыми руками",
+    "description": "Положение на коленях с близко расположенными бёдрами. Корпус немного наклонён вперёд, голова поднята. Руки выпрямлены перед телом, кисти соединены, пальцы сцеплены. Локти направлены вперёд и находятся выше коленей. Это описание фиксирует видимую форму жеста: предмет в руках и конкретное церемониальное назначение по фотографии не определяются.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "slave-kneeling-hands-forward",
+      "aliases": [],
+      "source_file": "IMG_0021.PNG",
+      "group": "На коленях",
+      "purpose": null,
+      "terminology": {
+        "name": null,
+        "match": "descriptive",
+        "sources": [],
+        "note": "Традиционное название и специальное назначение этого варианта не подтверждены."
+      }
+    },
+    "category_uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+  },
+  {
+    "uid": "c4b0e6b9-793b-538d-9d21-325b4a2b17a7",
+    "name": "Наклон с опорой на стул — Bent Over",
+    "description": "Положение стоя перед стулом с наклонённым вперёд корпусом. Обе ладони лежат на сиденье, руки выпрямлены и образуют дополнительную опору. Ноги немного разведены, колени почти прямые, пятки приподняты. Голова повёрнута в сторону камеры. По форме это вариант Bent Over с мебельной опорой; высота стула определяет глубину наклона.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "slave-bent-over-chair",
+      "aliases": [
+        "Bent Over"
+      ],
+      "source_file": "IMG_0022.PNG",
+      "group": "Стоя",
+      "purpose": "Положение с наклоном и опорой; в протоколах используется для осмотра и телесных практик.",
+      "terminology": {
+        "name": "Bent Over",
+        "match": "variant",
+        "sources": [
+          "https://dominant-guide.com/articles/submissive-positions-guide/"
+        ],
+        "note": "Назначение относится к семейству поз, а не устанавливается по фотографии."
+      }
+    },
+    "category_uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+  },
+  {
+    "uid": "f9837e4d-d5fd-501e-9ab3-58614c70c51e",
+    "name": "На коленях у стула, руки за спиной",
+    "description": "Положение на коленях перед стулом. Передняя часть корпуса опирается на сиденье, верхняя часть тела наклонена к спинке стула. Руки выпрямлены назад, кисти соединены за спиной. Голени согнуты, стопы подняты позади тела. В отличие от стоячего наклона с опорой, здесь основными нижними точками опоры являются колени.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "slave-kneeling-over-chair",
+      "aliases": [],
+      "source_file": "IMG_0023.PNG",
+      "group": "На коленях",
+      "purpose": null,
+      "terminology": {
+        "name": null,
+        "match": "descriptive",
+        "sources": [],
+        "note": "Традиционное название и специальное назначение этого варианта не подтверждены."
+      }
+    },
+    "category_uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+  },
+  {
+    "uid": "cfd11dd2-a0af-51d4-a142-373a38a9f43b",
+    "name": "На животе, ноги вместе",
+    "description": "Положение лёжа на животе с выпрямленными сближенными ногами. Голова повёрнута набок и лежит на поверхности. Руки согнуты и находятся возле головы, локти отведены в стороны. Это не точное соответствие горианской Bara: для неё обычно описывают скрещённые за спиной запястья и скрещённые щиколотки, чего на данном референсе нет.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "slave-prone-legs-together",
+      "aliases": [],
+      "source_file": "IMG_0025.PNG",
+      "group": "На животе",
+      "purpose": null,
+      "terminology": {
+        "name": null,
+        "match": "descriptive",
+        "sources": [],
+        "note": "Традиционное название и специальное назначение этого варианта не подтверждены."
+      }
+    },
+    "category_uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+  },
+  {
+    "uid": "8efc2ec6-5232-52a6-bc32-6402ee5077a5",
+    "name": "На животе с поднятыми голенями",
+    "description": "Положение лёжа на животе с приподнятой верхней частью корпуса. Предплечья лежат перед телом, кисти сближены, голова поднята и повёрнута к камере. Колени согнуты, голени подняты позади тела, стопы находятся выше поверхности. Ноги немного разведены. От захвата щиколоток этот вариант отличается тем, что руки остаются впереди.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "slave-prone-raised-shins",
+      "aliases": [],
+      "source_file": "IMG_0026.PNG",
+      "group": "На животе",
+      "purpose": null,
+      "terminology": {
+        "name": null,
+        "match": "descriptive",
+        "sources": [],
+        "note": "Традиционное название и специальное назначение этого варианта не подтверждены."
+      }
+    },
+    "category_uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+  },
+  {
+    "uid": "d08bad71-a2f8-5f2d-9671-81e251b83905",
+    "name": "Звезда на животе — Spread Eagle, вариант",
+    "description": "Положение лёжа на животе с выпрямленными и широко разведёнными ногами. Руки также разведены по сторонам от корпуса, формируя раскрытый силуэт, близкий к букве X. Голова повёрнута в сторону и расположена низко над поверхностью. Это вариант формы Spread Eagle лицом вниз. Видимых креплений запястий и щиколоток на референсе нет.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "slave-prone-spread",
+      "aliases": [
+        "Spread Eagle, prone"
+      ],
+      "source_file": "IMG_0027.PNG",
+      "group": "На животе",
+      "purpose": "Раскрытое положение для осмотра и сенсорных практик; здесь вариант без видимой фиксации.",
+      "terminology": {
+        "name": "Spread Eagle, prone",
+        "match": "variant",
+        "sources": [
+          "https://dominant-guide.com/articles/submissive-positions-guide/",
+          "https://en.wikipedia.org/wiki/Bondage_positions_and_methods"
+        ],
+        "note": "Назначение относится к семейству поз, а не устанавливается по фотографии."
+      }
+    },
+    "category_uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+  },
+  {
+    "uid": "ab10d915-8e55-5eb9-9b0c-002084177be0",
+    "name": "На коленях с глубоким отклонением назад",
+    "description": "Положение на разведённых коленях с сильно отклонённым назад корпусом. Голова касается поверхности, верхняя часть спины находится близко к ней. Руки разведены по сторонам от головы, кисти расположены на поверхности. Голени согнуты, таз остаётся выше плеч. Это описание конкретного референса, а не стандартной позы ожидания или отдыха.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "slave-kneeling-deep-backbend",
+      "aliases": [],
+      "source_file": "IMG_0028.PNG",
+      "group": "На коленях",
+      "purpose": null,
+      "terminology": {
+        "name": null,
+        "match": "descriptive",
+        "sources": [],
+        "note": "Традиционное название и специальное назначение этого варианта не подтверждены."
+      }
+    },
+    "category_uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+  },
+  {
+    "uid": "65b4f699-258a-58a9-9465-ba4e39c395d6",
+    "name": "Звезда на спине — Spread, вариант",
+    "description": "Положение лёжа на спине с выпрямленными и разведёнными ногами. Руки вытянуты за голову и немного раздвинуты, голова лежит на поверхности. Корпус расположен вдоль центральной оси, конечности образуют раскрытый силуэт. В источниках Spread допускает руки над головой или по сторонам; здесь показан первый вариант без видимых средств фиксации.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "slave-supine-spread",
+      "aliases": [
+        "Spread"
+      ],
+      "source_file": "IMG_0030.PNG",
+      "group": "На спине",
+      "purpose": "Раскрытое положение для осмотра и сенсорных практик.",
+      "terminology": {
+        "name": "Spread",
+        "match": "variant",
+        "sources": [
+          "https://dominant-guide.com/articles/submissive-positions-guide/",
+          "https://en.wikipedia.org/wiki/Bondage_positions_and_methods"
+        ],
+        "note": "Назначение относится к семейству поз, а не устанавливается по фотографии."
+      }
+    },
+    "category_uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+  }
+]

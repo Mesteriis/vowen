@@ -1,0 +1,3249 @@
+{
+  "language": "ru",
+  "version": 1,
+  "reviews": [
+    {
+      "code": "missionary",
+      "baseline": {
+        "code": "missionary",
+        "title": "Миссионерская",
+        "summary": "Парная поза лицом к лицу с положением одного участника на спине.",
+        "sources": []
+      },
+      "body_sha256": "1bc3d2bfb90a8ecef76cbd1d5557386275153f01d2b1d651527d00c873859d40",
+      "sources": [
+        {
+          "name": "mbg: Missionary",
+          "url": "https://www.mindbodygreen.com/articles/missionary-position"
+        }
+      ],
+      "scope": "Источник подтверждает семейство лицом к лицу; историческое объяснение названия не используется.",
+      "related_pose_codes": [
+        "modern-supine-knees-bent",
+        "modern-supine-legs-together"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+        }
+      ]
+    },
+    {
+      "code": "supine-supported",
+      "baseline": {
+        "code": "supine-supported",
+        "title": "Лёжа на спине с опорой",
+        "summary": "Вариант положения на спине с дополнительной опорой.",
+        "sources": []
+      },
+      "body_sha256": "41a39301a2a14f66c4974c7e9aa318ee8d915978b7500bfaa9863a64aac6b3cd",
+      "sources": [
+        {
+          "name": "CUH: Intimacy",
+          "url": "https://www.cuh.nhs.uk/patient-information/chronic-pain-and-intimacy/"
+        }
+      ],
+      "scope": "CUH подтверждает обсуждение подушек; вариант на спине описан редакцией.",
+      "related_pose_codes": [
+        "modern-supine-pillow-under-knees",
+        "supported-reclining-wedge"
+      ],
+      "related_pages": [
+        "6f4c8e6f-2fe5-5616-8657-88ee787e2648"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+        },
+        {
+          "kind": "devices",
+          "uid": "a7306bb3-11ec-5534-bda4-d0b8f3110135"
+        }
+      ]
+    },
+    {
+      "code": "bed-edge-supine",
+      "baseline": {
+        "code": "bed-edge-supine",
+        "title": "На краю кровати",
+        "summary": "Положение на спине у края кровати.",
+        "sources": []
+      },
+      "body_sha256": "ad80e4a7f2626a90f6bb9aeb26a641156bebda32b0859e0d83c3941096509e53",
+      "sources": [
+        {
+          "name": "mbg: Butterfly",
+          "url": "https://www.mindbodygreen.com/articles/butterfly-sex-position"
+        }
+      ],
+      "scope": "Источник описывает семейство на спине у края; эта геометрическая модификация редакционная.",
+      "related_pose_codes": [
+        "modern-butterfly-edge",
+        "modern-supine-legs-on-shoulders"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+        }
+      ]
+    },
+    {
+      "code": "flat-prone",
+      "baseline": {
+        "code": "flat-prone",
+        "title": "Плашмя",
+        "summary": "Парное положение лёжа на животе.",
+        "sources": []
+      },
+      "body_sha256": "11aded685611a6ed49a4cb550bbb14cf45104a0299d36d0c014b4a3f676f81e4",
+      "sources": [
+        {
+          "name": "Merriam-Webster: prone",
+          "url": "https://www.merriam-webster.com/dictionary/prone"
+        }
+      ],
+      "scope": "Prone обозначает положение лицом вниз; детали варианта редакционные.",
+      "related_pose_codes": [
+        "modern-prone-legs-apart",
+        "modern-prone-one-knee-out"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc"
+        }
+      ]
+    },
+    {
+      "code": "prone-supported",
+      "baseline": {
+        "code": "prone-supported",
+        "title": "Лёжа на животе с опорой",
+        "summary": "Вариант положения на животе с дополнительной опорой.",
+        "sources": []
+      },
+      "body_sha256": "bffa30ddee809e6d81871418a8955030228cc1558118ca3faf5126a3013a80e7",
+      "sources": [
+        {
+          "name": "CUH: Intimacy",
+          "url": "https://www.cuh.nhs.uk/patient-information/chronic-pain-and-intimacy/"
+        }
+      ],
+      "scope": "CUH: обсуждение опор; конкретное положение на животе редакционное.",
+      "related_pose_codes": [
+        "modern-prone-hips-supported",
+        "modern-prone-forearms"
+      ],
+      "related_pages": [
+        "6f4c8e6f-2fe5-5616-8657-88ee787e2648"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc"
+        },
+        {
+          "kind": "devices",
+          "uid": "a7306bb3-11ec-5534-bda4-d0b8f3110135"
+        }
+      ]
+    },
+    {
+      "code": "bed-edge-prone",
+      "baseline": {
+        "code": "bed-edge-prone",
+        "title": "На животе у края кровати",
+        "summary": "Положение на животе у края кровати.",
+        "sources": []
+      },
+      "body_sha256": "2510b7debe7faa7021de0411138086e9aaaf27b1def6cfaf5d5b32b15a386360",
+      "sources": [
+        {
+          "name": "Merriam-Webster: prone",
+          "url": "https://www.merriam-webster.com/dictionary/prone"
+        }
+      ],
+      "scope": "Prone обозначает положение лицом вниз; детали варианта редакционные.",
+      "related_pose_codes": [
+        "modern-prone-upper-body-raised",
+        "modern-standing-bent-table"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc"
+        }
+      ]
+    },
+    {
+      "code": "spooning",
+      "baseline": {
+        "code": "spooning",
+        "title": "Ложки",
+        "summary": "Парное положение на боку в одном направлении.",
+        "sources": []
+      },
+      "body_sha256": "fbdae9b9f556be120eaa1c67b014e2d6a51b24c36c24988f4d3942038fc0f418",
+      "sources": [
+        {
+          "name": "mbg: Spooning",
+          "url": "https://www.mindbodygreen.com/articles/spooning"
+        }
+      ],
+      "scope": "Источник определяет боковое расположение в одном направлении, отличая объятие от сексуальной практики.",
+      "related_pose_codes": [
+        "modern-side-spoons-knees-bent",
+        "modern-side-spoons-legs-straight"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f"
+        }
+      ]
+    },
+    {
+      "code": "side-face-to-face",
+      "baseline": {
+        "code": "side-face-to-face",
+        "title": "На боку лицом к лицу",
+        "summary": "Парное боковое положение лицом друг к другу.",
+        "sources": []
+      },
+      "body_sha256": "1c065b7488d8603b6b63c2310c5fa00c321b7b398fef2246d1607f803b5cbd0c",
+      "sources": [
+        {
+          "name": "mbg: Missionary",
+          "url": "https://www.mindbodygreen.com/articles/missionary-position"
+        }
+      ],
+      "scope": "В источнике есть боковой вариант лицом к лицу; индивидуальная геометрия уточняется отдельно.",
+      "related_pose_codes": [
+        "modern-side-face-to-face-interlaced",
+        "modern-side-upper-leg-supported"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f"
+        }
+      ]
+    },
+    {
+      "code": "side-crossed",
+      "baseline": {
+        "code": "side-crossed",
+        "title": "Перекрёстная на боку",
+        "summary": "Боковое положение с перекрёстным расположением участников.",
+        "sources": []
+      },
+      "body_sha256": "3d4fd8bc6d29aac94bce7084db0a46cfa93928358ae99f41d24a9c03643410a2",
+      "sources": [
+        {
+          "name": "Merriam-Webster: crosswise",
+          "url": "https://www.merriam-webster.com/dictionary/crosswise"
+        }
+      ],
+      "scope": "Источник подтверждает поперечное расположение; название позы редакционное.",
+      "related_pose_codes": [
+        "modern-side-t-shape",
+        "side-face-to-face"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f"
+        }
+      ]
+    },
+    {
+      "code": "lotus",
+      "baseline": {
+        "code": "lotus",
+        "title": "Лотос",
+        "summary": "Парная сидячая поза лицом к лицу.",
+        "sources": []
+      },
+      "body_sha256": "528fd33d1de9aa6fcb280e8b3d790eabfc620c30eedcc71f9d673bfa549c64c5",
+      "sources": [
+        {
+          "name": "mbg: Lotus",
+          "url": "https://www.mindbodygreen.com/articles/how-to-do-the-lotus-sex-position"
+        }
+      ],
+      "scope": "Источник описывает сидячее семейство лицом к лицу; историческое происхождение не устанавливается.",
+      "related_pose_codes": [
+        "modern-seated-lotus-reclined",
+        "modern-seated-lotus-straight-legs"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+        }
+      ]
+    },
+    {
+      "code": "chair-face-to-face",
+      "baseline": {
+        "code": "chair-face-to-face",
+        "title": "На стуле лицом к лицу",
+        "summary": "Сидячий вариант с использованием стула.",
+        "sources": []
+      },
+      "body_sha256": "c0210591647185c5a1116977628430d3fce1fbb3ed1e1f044443a6fe30b4a35d",
+      "sources": [
+        {
+          "name": "Merriam-Webster: sit",
+          "url": "https://www.merriam-webster.com/dictionary/sit"
+        }
+      ],
+      "scope": "Словарь подтверждает сидячее положение; конкретная схема редакционная.",
+      "related_pose_codes": [
+        "modern-seated-sofa-face-to-face",
+        "modern-seated-floor-face-to-face"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+        }
+      ]
+    },
+    {
+      "code": "seated-facing-away",
+      "baseline": {
+        "code": "seated-facing-away",
+        "title": "Сидя спиной к партнёру",
+        "summary": "Парное сидячее положение в одном направлении.",
+        "sources": []
+      },
+      "body_sha256": "0265fd7c335a6e8e3a571e38ef48ede82e4beaa65a5b8fa9b94181b735aa3015",
+      "sources": [
+        {
+          "name": "Merriam-Webster: sit",
+          "url": "https://www.merriam-webster.com/dictionary/sit"
+        }
+      ],
+      "scope": "Словарь подтверждает сидячее положение; конкретная схема редакционная.",
+      "related_pose_codes": [
+        "modern-seated-chair-backward",
+        "modern-seated-chair-facing-away-supported"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+        }
+      ]
+    },
+    {
+      "code": "standing-face-to-face",
+      "baseline": {
+        "code": "standing-face-to-face",
+        "title": "Стоя лицом к лицу",
+        "summary": "Парное положение стоя лицом друг к другу.",
+        "sources": []
+      },
+      "body_sha256": "476ae22568f0facf07053c775410451a103633d8bb61cd7d079593613be816c2",
+      "sources": [
+        {
+          "name": "Merriam-Webster: stand",
+          "url": "https://www.merriam-webster.com/dictionary/stand"
+        }
+      ],
+      "scope": "Словарь подтверждает вертикальную опору на стопы; схема редакционная.",
+      "related_pose_codes": [
+        "standing-rear",
+        "modern-standing-side-by-side"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "50db3b5b-1c02-5560-a940-afc89bee4272"
+        }
+      ]
+    },
+    {
+      "code": "standing-rear",
+      "baseline": {
+        "code": "standing-rear",
+        "title": "Стоя сзади",
+        "summary": "Парное положение стоя в одном направлении.",
+        "sources": []
+      },
+      "body_sha256": "876289e8d6fe8d7f901197c49e44d684d65cdfa5c1c5c6a0bfed5090d411113a",
+      "sources": [
+        {
+          "name": "Merriam-Webster: stand",
+          "url": "https://www.merriam-webster.com/dictionary/stand"
+        }
+      ],
+      "scope": "Словарь подтверждает вертикальную опору на стопы; схема редакционная.",
+      "related_pose_codes": [
+        "standing-face-to-face",
+        "modern-standing-side-by-side"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "50db3b5b-1c02-5560-a940-afc89bee4272"
+        }
+      ]
+    },
+    {
+      "code": "standing-wall",
+      "baseline": {
+        "code": "standing-wall",
+        "title": "Стоя у стены",
+        "summary": "Положение стоя с опорой у стены.",
+        "sources": []
+      },
+      "body_sha256": "40104d3593dad871806ff0c72ae3d2cc1c8537c1631bb54eb3c57388d7483ae3",
+      "sources": [
+        {
+          "name": "Merriam-Webster: stand",
+          "url": "https://www.merriam-webster.com/dictionary/stand"
+        }
+      ],
+      "scope": "Словарь подтверждает вертикальную опору на стопы; схема редакционная.",
+      "related_pose_codes": [
+        "modern-standing-hands-wall",
+        "modern-standing-chair-one-foot"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "50db3b5b-1c02-5560-a940-afc89bee4272"
+        }
+      ]
+    },
+    {
+      "code": "all-fours",
+      "baseline": {
+        "code": "all-fours",
+        "title": "На четвереньках",
+        "summary": "Парная поза с положением одного участника на четвереньках.",
+        "sources": []
+      },
+      "body_sha256": "f282bfa6c194735bd1e24f9f75f5ff07771d95d7dcaadd50bc519eef9f1dc661",
+      "sources": [
+        {
+          "name": "Merriam-Webster: all-fours",
+          "url": "https://www.merriam-webster.com/dictionary/on%20all%20fours"
+        }
+      ],
+      "scope": "Словарь подтверждает опору на четыре конечности; поза не задаёт конкретного действия.",
+      "related_pose_codes": [
+        "modern-kneeling-forearms",
+        "supported-kneeling-forearms"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed"
+        }
+      ]
+    },
+    {
+      "code": "kneeling-face-to-face",
+      "baseline": {
+        "code": "kneeling-face-to-face",
+        "title": "На коленях лицом к лицу",
+        "summary": "Парное положение на коленях лицом друг к другу.",
+        "sources": []
+      },
+      "body_sha256": "0752591a370e958190222310fadc8d99516389e7dc803ae096b1f82ba3c8e0dc",
+      "sources": [
+        {
+          "name": "Merriam-Webster: kneel",
+          "url": "https://www.merriam-webster.com/dictionary/kneel"
+        }
+      ],
+      "scope": "Kneel обозначает коленную опору; детали схемы редакционные.",
+      "related_pose_codes": [
+        "modern-kneeling-side-by-side",
+        "modern-kneeling-one-foot-forward"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed"
+        }
+      ]
+    },
+    {
+      "code": "kneeling-supported",
+      "baseline": {
+        "code": "kneeling-supported",
+        "title": "На коленях с опорой",
+        "summary": "Вариант положения на коленях с дополнительной опорой.",
+        "sources": []
+      },
+      "body_sha256": "62470d929256fb5a88ef9f8ffcd9f334a224f81eb4c760561a4fe2a84cf1a874",
+      "sources": [
+        {
+          "name": "Merriam-Webster: kneel",
+          "url": "https://www.merriam-webster.com/dictionary/kneel"
+        }
+      ],
+      "scope": "Kneel обозначает коленную опору; детали схемы редакционные.",
+      "related_pose_codes": [
+        "modern-kneeling-chest-supported",
+        "modern-kneeling-bed-headboard"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed"
+        }
+      ]
+    },
+    {
+      "code": "cowgirl",
+      "baseline": {
+        "code": "cowgirl",
+        "title": "Наездница",
+        "summary": "Парная поза с расположением верхнего участника лицом к партнёру.",
+        "sources": []
+      },
+      "body_sha256": "771d9c31063b361d2d1d7046dbce67b2e68441b718d26b495b0701083fb5bdd5",
+      "sources": [
+        {
+          "name": "Healthline: Rider on top",
+          "url": "https://www.healthline.com/health/healthy-sex/cowgirl-position"
+        }
+      ],
+      "scope": "Источник подтверждает семейство rider-on-top; конкретная модификация редакционная.",
+      "related_pose_codes": [
+        "modern-on-top-forward-lean",
+        "modern-on-top-reclined"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "fe4cb364-14f4-59cc-bd48-e0f934606243"
+        }
+      ]
+    },
+    {
+      "code": "reverse-cowgirl",
+      "baseline": {
+        "code": "reverse-cowgirl",
+        "title": "Обратная наездница",
+        "summary": "Вариант верхнего расположения спиной к партнёру.",
+        "sources": []
+      },
+      "body_sha256": "58a8f2971553d4ce6586e50242a540287ae26c5304a44c25fa961e4c554f2902",
+      "sources": [
+        {
+          "name": "Healthline: Rider on top",
+          "url": "https://www.healthline.com/health/healthy-sex/cowgirl-position"
+        }
+      ],
+      "scope": "Источник подтверждает семейство rider-on-top; конкретная модификация редакционная.",
+      "related_pose_codes": [
+        "modern-on-top-reverse-forward",
+        "on-top-supported"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "fe4cb364-14f4-59cc-bd48-e0f934606243"
+        }
+      ]
+    },
+    {
+      "code": "on-top-supported",
+      "baseline": {
+        "code": "on-top-supported",
+        "title": "Сверху с опорой",
+        "summary": "Вариант верхнего расположения с дополнительной опорой.",
+        "sources": []
+      },
+      "body_sha256": "080276c2e7cbf0c0feb5172c99c9284368580e28bfa68c7d2b3a47a04de70775",
+      "sources": [
+        {
+          "name": "Healthline: Rider on top",
+          "url": "https://www.healthline.com/health/healthy-sex/cowgirl-position"
+        }
+      ],
+      "scope": "Источник подтверждает семейство rider-on-top; конкретная модификация редакционная.",
+      "related_pose_codes": [
+        "reverse-cowgirl",
+        "modern-on-top-reverse-forward"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "fe4cb364-14f4-59cc-bd48-e0f934606243"
+        }
+      ]
+    },
+    {
+      "code": "nadu",
+      "baseline": {
+        "code": "nadu",
+        "title": "Наду",
+        "summary": "Протокольное положение на коленях.",
+        "sources": [
+          {
+            "name": "Gorean Codex — фанатское описание литературных положений, не общий стандарт",
+            "url": "https://goreancodex.wordpress.com/positions/"
+          }
+        ]
+      },
+      "body_sha256": "7ac986ed540e4fdae16e956df6419bf46a9efa3a340da39c4a915d0e6c297998",
+      "sources": [
+        {
+          "name": "Gorean Codex: Positions",
+          "url": "https://goreancodex.wordpress.com/positions/"
+        }
+      ],
+      "scope": "В Codex Наду описана на разведённых коленях. Это литературная/фанатская трактовка, а не всеобщий протокол.",
+      "related_pose_codes": [
+        "tower",
+        "kneeling-face-to-face"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "76088f6f-5f8b-5617-9099-2116dc079e8f"
+        }
+      ]
+    },
+    {
+      "code": "tower",
+      "baseline": {
+        "code": "tower",
+        "title": "Тауэр",
+        "summary": "Вариант протокольного положения на коленях.",
+        "sources": [
+          {
+            "name": "My Take On What Is Gor — интерпретации литературного словаря",
+            "url": "https://kamiras-gor.blogspot.com/p/positions.html"
+          }
+        ]
+      },
+      "body_sha256": "617a69590ec56d552550353b405585a011da555c572f2494c29160fbba6c06b7",
+      "sources": [
+        {
+          "name": "Gorean Codex: Positions",
+          "url": "https://goreancodex.wordpress.com/positions/"
+        }
+      ],
+      "scope": "В Codex Tower — коленное положение. Иные сетевые трактовки расходятся; единый обязательный стандарт не установлен.",
+      "related_pose_codes": [
+        "nadu",
+        "protocol-seated-waiting"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "76088f6f-5f8b-5617-9099-2116dc079e8f"
+        }
+      ]
+    },
+    {
+      "code": "inspection",
+      "baseline": {
+        "code": "inspection",
+        "title": "Инспекция",
+        "summary": "Именованное положение для протокола осмотра.",
+        "sources": [
+          {
+            "name": "Gorean Codex — фанатское описание литературных положений, не общий стандарт",
+            "url": "https://goreancodex.wordpress.com/positions/"
+          }
+        ]
+      },
+      "body_sha256": "472f76ed521d691e6d1d686b8c897ce1688676b3c362bba0b58ba31b137b9140",
+      "sources": [
+        {
+          "name": "Gorean Codex: Positions",
+          "url": "https://goreancodex.wordpress.com/positions/"
+        }
+      ],
+      "scope": "Codex связывает Inspection и Examination. Литературное назначение не создаёт полномочий в реальных отношениях.",
+      "related_pose_codes": [
+        "slave-inspection-raised-heels",
+        "protocol-standing-attention"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "76088f6f-5f8b-5617-9099-2116dc079e8f"
+        }
+      ]
+    },
+    {
+      "code": "slave-side-ball",
+      "baseline": {
+        "code": "slave-side-ball",
+        "title": "Клубок на боку",
+        "summary": "Положение на боку с согнутыми ногами, подтянутыми к туловищу. Голова лежит на поверхности, спина округлена. Руки находятся перед корпусом, кисти удерживают стопы. Колени и локти сближены, поэтому силуэт выглядит компактным и замкнутым. На референсе нет видимых средств фиксации.",
+        "sources": []
+      },
+      "body_sha256": "ea8268ad70ff7a4801b29c40887e44aa711f6cf7d20b6c97acd580d2e89baa30",
+      "sources": [
+        {
+          "name": "Merriam-Webster: fetal",
+          "url": "https://www.merriam-webster.com/dictionary/fetal%20position"
+        }
+      ],
+      "scope": "Словарь описывает свёрнутое боковое положение; тематическое имя редакционное.",
+      "related_pose_codes": [
+        "spooning",
+        "modern-side-spoons-knees-bent"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+        }
+      ]
+    },
+    {
+      "code": "slave-kneeling-hands-behind",
+      "baseline": {
+        "code": "slave-kneeling-hands-behind",
+        "title": "На коленях, руки за спиной",
+        "summary": "Вертикальное положение на коленях с выпрямленным корпусом. Колени расположены близко друг к другу; нижняя часть голеней частично выходит за границу кадра. Плечи отведены назад, руки заведены за спину, кисти находятся позади таза. Голова слегка повёрнута и опущена. Точное положение стоп по кадру не определяется.",
+        "sources": []
+      },
+      "body_sha256": "72cde4d6d61ed158952bbef4ae992c89d57274aa60ec6055c76ccbdbbb8e1831",
+      "sources": [
+        {
+          "name": "Merriam-Webster: kneel",
+          "url": "https://www.merriam-webster.com/dictionary/kneel"
+        }
+      ],
+      "scope": "Источник подтверждает коленную опору; расположение рук описано редакцией.",
+      "related_pose_codes": [
+        "slave-kneeling-hands-forward",
+        "protocol-kneeling-presentation"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+        }
+      ]
+    },
+    {
+      "code": "slave-prone-ankle-hold",
+      "baseline": {
+        "code": "slave-prone-ankle-hold",
+        "title": "На животе с захватом щиколоток",
+        "summary": "Положение лёжа на животе с согнутыми коленями. Голени подняты за спиной, руки направлены назад, кисти удерживают щиколотки. Колени разведены, голова повёрнута в сторону и расположена низко над поверхностью. Связь между руками и ногами создаётся захватом кистей; верёвки, ремни и другие крепления на референсе не видны.",
+        "sources": []
+      },
+      "body_sha256": "b5942ae05fcf35eeb58b79b77a07322b0c49fa5dac7231acbb2ddf63b749b105",
+      "sources": [
+        {
+          "name": "Merriam-Webster: prone",
+          "url": "https://www.merriam-webster.com/dictionary/prone"
+        }
+      ],
+      "scope": "Источник подтверждает положение лицом вниз; расположение конечностей редакционное.",
+      "related_pose_codes": [
+        "slave-prone-raised-shins",
+        "slave-kneeling-ankle-hold"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+        }
+      ]
+    },
+    {
+      "code": "slave-kneeling-rear-hand-support",
+      "baseline": {
+        "code": "slave-kneeling-rear-hand-support",
+        "title": "На коленях с опорой на руки сзади",
+        "summary": "Положение на коленях с разведёнными бёдрами и согнутыми голенями. Таз расположен близко к пяткам, корпус отклонён назад. Ладони находятся на поверхности позади тела и служат дополнительными точками опоры; руки почти выпрямлены. Голова слегка опущена и повёрнута в сторону. Верхняя часть спины остаётся над поверхностью.",
+        "sources": []
+      },
+      "body_sha256": "66ad2a7d7cdbaa833a26c2c735d4fe2272bec0ed8f6a5fd5257e46ae3f5ad1ed",
+      "sources": [
+        {
+          "name": "Merriam-Webster: kneel",
+          "url": "https://www.merriam-webster.com/dictionary/kneel"
+        }
+      ],
+      "scope": "Источник подтверждает коленную опору; задняя ручная опора редакционная.",
+      "related_pose_codes": [
+        "slave-kneeling-back-arch",
+        "kneeling-supported"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+        }
+      ]
+    },
+    {
+      "code": "slave-inspection-raised-heels",
+      "baseline": {
+        "code": "slave-inspection-raised-heels",
+        "title": "Инспекция на носках — вариант",
+        "summary": "Положение стоя с разведёнными ногами и поднятыми пятками. Корпус выпрямлен, голова обращена вперёд. Руки согнуты, кисти находятся за головой, локти направлены в стороны. По расположению рук и ног кадр близок к Inspection / Display. Поднятые пятки — отдельная особенность этого референса, а не обязательный признак названия.",
+        "sources": []
+      },
+      "body_sha256": "c1dce8cf2caba81d10f74eabef6da03fe9958aa50344564f81537717357eb405",
+      "sources": [
+        {
+          "name": "Gorean Codex: Positions",
+          "url": "https://goreancodex.wordpress.com/positions/"
+        }
+      ],
+      "scope": "Источник подтверждает семейство Inspection, но не вариант на носках; он описательный.",
+      "related_pose_codes": [
+        "inspection",
+        "protocol-standing-attention"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+        }
+      ]
+    },
+    {
+      "code": "slave-supine-raised-legs",
+      "baseline": {
+        "code": "slave-supine-raised-legs",
+        "title": "На спине с поднятыми разведёнными ногами",
+        "summary": "Положение лёжа на спине: голова и плечи остаются на поверхности, ноги подняты и разведены в стороны. Колени немного согнуты. Руки направлены к ногам, кисти удерживают голени ближе к щиколоткам. Локти также отведены в стороны. Положение отличается от обычной «Звезды» поднятыми ногами и захватом голеней руками.",
+        "sources": []
+      },
+      "body_sha256": "3342f06fef84659df9ca11a31ad88d527035fafed96b651ac1d959ad89119459",
+      "sources": [
+        {
+          "name": "Merriam-Webster: supine",
+          "url": "https://www.merriam-webster.com/dictionary/supine"
+        }
+      ],
+      "scope": "Источник подтверждает положение на спине; конфигурация ног редакционная.",
+      "related_pose_codes": [
+        "modern-supine-one-leg-raised",
+        "slave-supine-spread"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+        }
+      ]
+    },
+    {
+      "code": "slave-forward-fold-hands-behind",
+      "baseline": {
+        "code": "slave-forward-fold-hands-behind",
+        "title": "Наклон вперёд, руки за спиной",
+        "summary": "Положение стоя с близко расположенными стопами и почти прямыми ногами. Корпус глубоко наклонён вперёд, голова опущена. Кисти соединены за спиной; выпрямленные руки подняты относительно спины. На фотографии не видны крепления или подвес, поэтому называть её связанной позой Strappado было бы неточно. Описывается только видимое положение тела.",
+        "sources": []
+      },
+      "body_sha256": "760485ff6d34979a5e43992c3ff643929fba3d672c5e215fa55cca4ff3350393",
+      "sources": [
+        {
+          "name": "Merriam-Webster: stoop",
+          "url": "https://www.merriam-webster.com/dictionary/stoop"
+        }
+      ],
+      "scope": "Источник подтверждает наклон корпуса; положение рук описано редакцией.",
+      "related_pose_codes": [
+        "slave-bent-over-chair",
+        "modern-standing-bent-table"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+        }
+      ]
+    },
+    {
+      "code": "slave-kneeling-back-arch",
+      "baseline": {
+        "code": "slave-kneeling-back-arch",
+        "title": "На коленях с прогибом назад",
+        "summary": "Положение на коленях с разведёнными бёдрами и согнутыми голенями. Корпус образует дугу назад, голова запрокинута. Ладони находятся на поверхности позади тела и по сторонам от него. Верхняя часть корпуса остаётся приподнятой. От варианта с глубоким отклонением эта поза отличается отсутствием видимой опоры головой на поверхность.",
+        "sources": []
+      },
+      "body_sha256": "1ac740acd70e8811b12593b381c14c4ab4d116d9f11db81bb37d4593ea276417",
+      "sources": [
+        {
+          "name": "Merriam-Webster: backbend",
+          "url": "https://www.merriam-webster.com/dictionary/backbend"
+        }
+      ],
+      "scope": "Словарь определяет прогиб назад; конкретный референс не является нормативом гибкости.",
+      "related_pose_codes": [
+        "slave-kneeling-deep-backbend",
+        "slave-kneeling-ankle-hold"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+        }
+      ]
+    },
+    {
+      "code": "slave-kneeling-ankle-hold",
+      "baseline": {
+        "code": "slave-kneeling-ankle-hold",
+        "title": "На коленях с удержанием щиколоток",
+        "summary": "Положение на коленях с разведёнными бёдрами, снятое преимущественно со спины. Голени согнуты, стопы подняты по направлению к тазу. Руки заведены назад, кисти удерживают щиколотки возле бёдер. Корпус сохраняет преимущественно вертикальное положение. Видимые точки опоры — колени; внешние средства фиксации на изображении отсутствуют.",
+        "sources": []
+      },
+      "body_sha256": "bd0f6982f53e23e5bd92e1e59156ac3b69109d94ac49db4d81e49a6e6522b1ac",
+      "sources": [
+        {
+          "name": "Merriam-Webster: kneel",
+          "url": "https://www.merriam-webster.com/dictionary/kneel"
+        }
+      ],
+      "scope": "Источник подтверждает коленную опору; положение кистей редакционное.",
+      "related_pose_codes": [
+        "slave-kneeling-back-arch",
+        "slave-prone-ankle-hold"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+        }
+      ]
+    },
+    {
+      "code": "slave-kneeling-hands-forward",
+      "baseline": {
+        "code": "slave-kneeling-hands-forward",
+        "title": "На коленях с вытянутыми руками",
+        "summary": "Положение на коленях с близко расположенными бёдрами. Корпус немного наклонён вперёд, голова поднята. Руки выпрямлены перед телом, кисти соединены, пальцы сцеплены. Локти направлены вперёд и находятся выше коленей. Это описание фиксирует видимую форму жеста: предмет в руках и конкретное церемониальное назначение по фотографии не определяются.",
+        "sources": []
+      },
+      "body_sha256": "98b886018f159f5bc7bf89f63cc016e5987688ea257590d92bc3bd9ff3a8a9b4",
+      "sources": [
+        {
+          "name": "Merriam-Webster: kneel",
+          "url": "https://www.merriam-webster.com/dictionary/kneel"
+        }
+      ],
+      "scope": "Источник подтверждает коленную опору; положение рук описательное.",
+      "related_pose_codes": [
+        "slave-kneeling-hands-behind",
+        "protocol-kneeling-bow"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+        }
+      ]
+    },
+    {
+      "code": "slave-bent-over-chair",
+      "baseline": {
+        "code": "slave-bent-over-chair",
+        "title": "Наклон с опорой на стул — Bent Over",
+        "summary": "Положение стоя перед стулом с наклонённым вперёд корпусом. Обе ладони лежат на сиденье, руки выпрямлены и образуют дополнительную опору. Ноги немного разведены, колени почти прямые, пятки приподняты. Голова повёрнута в сторону камеры. По форме это вариант Bent Over с мебельной опорой; высота стула определяет глубину наклона.",
+        "sources": []
+      },
+      "body_sha256": "867e3376a3470ce0003f9fb7bf764aae6fe185485bc8c3e7d25d712bef557090",
+      "sources": [
+        {
+          "name": "Merriam-Webster: stoop",
+          "url": "https://www.merriam-webster.com/dictionary/stoop"
+        }
+      ],
+      "scope": "Словарь определяет наклон; привязка к стулу редакционная, традиционное имя не установлено.",
+      "related_pose_codes": [
+        "slave-forward-fold-hands-behind",
+        "modern-standing-bent-table"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+        }
+      ]
+    },
+    {
+      "code": "slave-kneeling-over-chair",
+      "baseline": {
+        "code": "slave-kneeling-over-chair",
+        "title": "На коленях у стула, руки за спиной",
+        "summary": "Положение на коленях перед стулом. Передняя часть корпуса опирается на сиденье, верхняя часть тела наклонена к спинке стула. Руки выпрямлены назад, кисти соединены за спиной. Голени согнуты, стопы подняты позади тела. В отличие от стоячего наклона с опорой, здесь основными нижними точками опоры являются колени.",
+        "sources": []
+      },
+      "body_sha256": "3e64bed5dfe64abe5379e495f092fa3f7158277599b7436d8bb9d9c92f0709d1",
+      "sources": [
+        {
+          "name": "Merriam-Webster: kneel",
+          "url": "https://www.merriam-webster.com/dictionary/kneel"
+        }
+      ],
+      "scope": "Источник подтверждает коленную опору; вариант у стула редакционный.",
+      "related_pose_codes": [
+        "kneeling-supported",
+        "slave-kneeling-hands-behind"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+        }
+      ]
+    },
+    {
+      "code": "slave-prone-legs-together",
+      "baseline": {
+        "code": "slave-prone-legs-together",
+        "title": "На животе, ноги вместе",
+        "summary": "Положение лёжа на животе с выпрямленными сближенными ногами. Голова повёрнута набок и лежит на поверхности. Руки согнуты и находятся возле головы, локти отведены в стороны. Это не точное соответствие горианской Bara: для неё обычно описывают скрещённые за спиной запястья и скрещённые щиколотки, чего на данном референсе нет.",
+        "sources": []
+      },
+      "body_sha256": "28e086b8c2090107e58d5c769d851015eb5fd0b7cd07703b26b533ef20944068",
+      "sources": [
+        {
+          "name": "Merriam-Webster: prone",
+          "url": "https://www.merriam-webster.com/dictionary/prone"
+        }
+      ],
+      "scope": "Источник подтверждает положение лицом вниз; детали ног редакционные.",
+      "related_pose_codes": [
+        "flat-prone",
+        "modern-prone-legs-apart"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+        }
+      ]
+    },
+    {
+      "code": "slave-prone-raised-shins",
+      "baseline": {
+        "code": "slave-prone-raised-shins",
+        "title": "На животе с поднятыми голенями",
+        "summary": "Положение лёжа на животе с приподнятой верхней частью корпуса. Предплечья лежат перед телом, кисти сближены, голова поднята и повёрнута к камере. Колени согнуты, голени подняты позади тела, стопы находятся выше поверхности. Ноги немного разведены. От захвата щиколоток этот вариант отличается тем, что руки остаются впереди.",
+        "sources": []
+      },
+      "body_sha256": "0127b7b181130b1f7e27934e33eb6a4bcbcd4646e2f1f5f4cb7af5bebf07957c",
+      "sources": [
+        {
+          "name": "Merriam-Webster: prone",
+          "url": "https://www.merriam-webster.com/dictionary/prone"
+        }
+      ],
+      "scope": "Источник подтверждает положение лицом вниз; детали голеней редакционные.",
+      "related_pose_codes": [
+        "slave-prone-ankle-hold",
+        "flat-prone"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+        }
+      ]
+    },
+    {
+      "code": "slave-prone-spread",
+      "baseline": {
+        "code": "slave-prone-spread",
+        "title": "Звезда на животе — Spread Eagle, вариант",
+        "summary": "Положение лёжа на животе с выпрямленными и широко разведёнными ногами. Руки также разведены по сторонам от корпуса, формируя раскрытый силуэт, близкий к букве X. Голова повёрнута в сторону и расположена низко над поверхностью. Это вариант формы Spread Eagle лицом вниз. Видимых креплений запястий и щиколоток на референсе нет.",
+        "sources": []
+      },
+      "body_sha256": "f20ae3b1c611c449ffdecfac96704aa65d667fc34a58c999172881d545ab8632",
+      "sources": [
+        {
+          "name": "Merriam-Webster: spread",
+          "url": "https://www.merriam-webster.com/dictionary/spread-eagle"
+        }
+      ],
+      "scope": "Источник определяет разведённые конечности; положение на животе — описательный вариант.",
+      "related_pose_codes": [
+        "slave-supine-spread",
+        "modern-prone-legs-apart"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+        }
+      ]
+    },
+    {
+      "code": "slave-kneeling-deep-backbend",
+      "baseline": {
+        "code": "slave-kneeling-deep-backbend",
+        "title": "На коленях с глубоким отклонением назад",
+        "summary": "Положение на разведённых коленях с сильно отклонённым назад корпусом. Голова касается поверхности, верхняя часть спины находится близко к ней. Руки разведены по сторонам от головы, кисти расположены на поверхности. Голени согнуты, таз остаётся выше плеч. Это описание конкретного референса, а не стандартной позы ожидания или отдыха.",
+        "sources": []
+      },
+      "body_sha256": "cc176b586df4f096ebf0665993fb0b81f5b04e682ac684332ca4b33edecf19ea",
+      "sources": [
+        {
+          "name": "Merriam-Webster: backbend",
+          "url": "https://www.merriam-webster.com/dictionary/backbend"
+        }
+      ],
+      "scope": "Словарь описывает прогиб, не допустимую глубину; этот референс не норматив гибкости.",
+      "related_pose_codes": [
+        "slave-kneeling-back-arch",
+        "slave-kneeling-ankle-hold"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+        }
+      ]
+    },
+    {
+      "code": "slave-supine-spread",
+      "baseline": {
+        "code": "slave-supine-spread",
+        "title": "Звезда на спине — Spread, вариант",
+        "summary": "Положение лёжа на спине с выпрямленными и разведёнными ногами. Руки вытянуты за голову и немного раздвинуты, голова лежит на поверхности. Корпус расположен вдоль центральной оси, конечности образуют раскрытый силуэт. В источниках Spread допускает руки над головой или по сторонам; здесь показан первый вариант без видимых средств фиксации.",
+        "sources": []
+      },
+      "body_sha256": "404b2045ccdaeade6e342f6bb03209cb80ae48fcf76d9a97ee6c518f411e7e58",
+      "sources": [
+        {
+          "name": "Merriam-Webster: spread",
+          "url": "https://www.merriam-webster.com/dictionary/spread-eagle"
+        }
+      ],
+      "scope": "Источник определяет разведённые конечности; положение на спине — описательный вариант.",
+      "related_pose_codes": [
+        "slave-prone-spread",
+        "slave-supine-raised-legs"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+        }
+      ]
+    },
+    {
+      "code": "modern-butterfly-edge",
+      "baseline": {
+        "code": "modern-butterfly-edge",
+        "title": "Бабочка у края кровати",
+        "summary": "Один участник лежит на спине у края поверхности с поднятыми ногами, другой располагается перед ним стоя.",
+        "sources": []
+      },
+      "body_sha256": "d65eebf92286740a2369bbf82bb0747d65a8ce32ecb2ae50ab8999d2cefe21d2",
+      "sources": [
+        {
+          "name": "mbg: Butterfly",
+          "url": "https://www.mindbodygreen.com/articles/butterfly-sex-position"
+        }
+      ],
+      "scope": "Источник подтверждает семейство Butterfly; название и детали варианта редакционные.",
+      "related_pose_codes": [
+        "bed-edge-supine",
+        "modern-supine-legs-on-shoulders"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+        }
+      ]
+    },
+    {
+      "code": "modern-supine-knees-bent",
+      "baseline": {
+        "code": "modern-supine-knees-bent",
+        "title": "На спине с согнутыми коленями",
+        "summary": "Положение лицом к лицу: участник на спине сохраняет согнутые колени и стопы на поверхности.",
+        "sources": []
+      },
+      "body_sha256": "ab4b5c9e45f7038e346bfd6e5b799ddcdffeb16390575eac4eebb266391cae7f",
+      "sources": [
+        {
+          "name": "Merriam-Webster: supine",
+          "url": "https://www.merriam-webster.com/dictionary/supine"
+        }
+      ],
+      "scope": "На спине — словарный термин; детали варианта редакционные.",
+      "related_pose_codes": [
+        "missionary",
+        "modern-supine-legs-together"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+        }
+      ]
+    },
+    {
+      "code": "modern-supine-legs-on-shoulders",
+      "baseline": {
+        "code": "modern-supine-legs-on-shoulders",
+        "title": "На спине с ногами на плечах партнёра",
+        "summary": "Положение лицом к лицу с опорой голеней участника на спине на плечи второго партнёра.",
+        "sources": []
+      },
+      "body_sha256": "c91919a450838a860f352127709408375f042e248c79c595af12b0b16d8666ae",
+      "sources": [
+        {
+          "name": "mbg: Butterfly",
+          "url": "https://www.mindbodygreen.com/articles/butterfly-sex-position"
+        }
+      ],
+      "scope": "Источник подтверждает базовую геометрию Butterfly; этот вариант не отдельный традиционный термин.",
+      "related_pose_codes": [
+        "bed-edge-supine",
+        "modern-butterfly-edge"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+        }
+      ]
+    },
+    {
+      "code": "modern-supine-one-leg-raised",
+      "baseline": {
+        "code": "modern-supine-one-leg-raised",
+        "title": "На спине с одной поднятой ногой",
+        "summary": "Асимметричный вариант: одна нога участника на спине поднята, другая остаётся на поверхности.",
+        "sources": []
+      },
+      "body_sha256": "a6ef561d3dbb4c4d3db40434bb1d4b7cafa3f6f8bddd65ad2e2409c3a60207bb",
+      "sources": [
+        {
+          "name": "Merriam-Webster: supine",
+          "url": "https://www.merriam-webster.com/dictionary/supine"
+        }
+      ],
+      "scope": "На спине — словарный термин; детали варианта редакционные.",
+      "related_pose_codes": [
+        "modern-supine-legs-around-waist",
+        "modern-supine-partner-upright"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+        }
+      ]
+    },
+    {
+      "code": "modern-supine-legs-around-waist",
+      "baseline": {
+        "code": "modern-supine-legs-around-waist",
+        "title": "На спине с обхватом талии ногами",
+        "summary": "Положение лицом к лицу, при котором ноги участника на спине располагаются вокруг талии партнёра.",
+        "sources": []
+      },
+      "body_sha256": "40b9bde562043380272368a4d57b89efc7f3ca4e4ce2e6592300bdbf1ce6a479",
+      "sources": [
+        {
+          "name": "Merriam-Webster: supine",
+          "url": "https://www.merriam-webster.com/dictionary/supine"
+        }
+      ],
+      "scope": "На спине — словарный термин; детали варианта редакционные.",
+      "related_pose_codes": [
+        "modern-supine-one-leg-raised",
+        "modern-supine-partner-upright"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+        }
+      ]
+    },
+    {
+      "code": "modern-supine-legs-together",
+      "baseline": {
+        "code": "modern-supine-legs-together",
+        "title": "На спине с ногами вместе",
+        "summary": "Вариант положения на спине со сближенными ногами и расположением второго партнёра сверху.",
+        "sources": []
+      },
+      "body_sha256": "2fa71e7f8d5f0ae64e304312cd3a2e2b4f6dc3e5d3cb55ad0df1043f569f2851",
+      "sources": [
+        {
+          "name": "Merriam-Webster: supine",
+          "url": "https://www.merriam-webster.com/dictionary/supine"
+        }
+      ],
+      "scope": "На спине — словарный термин; детали варианта редакционные.",
+      "related_pose_codes": [
+        "missionary",
+        "modern-supine-knees-bent"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+        }
+      ]
+    },
+    {
+      "code": "modern-supine-partner-upright",
+      "baseline": {
+        "code": "modern-supine-partner-upright",
+        "title": "На спине перед сидящим на пятках партнёром",
+        "summary": "Один участник лежит на спине, второй остаётся перед ним в вертикальном положении на коленях.",
+        "sources": []
+      },
+      "body_sha256": "5c7ea2045b56aa0c1db6695dc194da325692e37a8e1206aa3a12b3906d1937a8",
+      "sources": [
+        {
+          "name": "Merriam-Webster: supine",
+          "url": "https://www.merriam-webster.com/dictionary/supine"
+        }
+      ],
+      "scope": "На спине — словарный термин; детали варианта редакционные.",
+      "related_pose_codes": [
+        "modern-supine-one-leg-raised",
+        "modern-supine-legs-around-waist"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+        }
+      ]
+    },
+    {
+      "code": "modern-supine-across-bed",
+      "baseline": {
+        "code": "modern-supine-across-bed",
+        "title": "Поперёк кровати лицом к лицу",
+        "summary": "Положение на спине поперёк поверхности; второй партнёр находится у её края перед лежащим участником.",
+        "sources": []
+      },
+      "body_sha256": "b566dc3e6da67eee9c6bf1bb864ef0d3e2459ba9217158ad68edf5f3238f392f",
+      "sources": [
+        {
+          "name": "Merriam-Webster: crosswise",
+          "url": "https://www.merriam-webster.com/dictionary/crosswise"
+        }
+      ],
+      "scope": "Crosswise обозначает поперечность; схема на кровати редакционная.",
+      "related_pose_codes": [
+        "modern-seated-bed-edge-face-to-face",
+        "modern-standing-bed-edge-partner-kneels"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+        }
+      ]
+    },
+    {
+      "code": "modern-supine-pillow-under-knees",
+      "baseline": {
+        "code": "modern-supine-pillow-under-knees",
+        "title": "На спине с опорой под коленями",
+        "summary": "Положение лицом к лицу с дополнительной опорой именно под коленями, а не под спиной или тазом.",
+        "sources": []
+      },
+      "body_sha256": "fc7dd206e84ed0239897d466ca516932d6330cee82be4af633d170169edf4722",
+      "sources": [
+        {
+          "name": "Merriam-Webster: supine",
+          "url": "https://www.merriam-webster.com/dictionary/supine"
+        }
+      ],
+      "scope": "На спине — словарный термин; детали варианта редакционные.",
+      "related_pose_codes": [
+        "supine-supported",
+        "supported-reclining-wedge"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+        },
+        {
+          "kind": "devices",
+          "uid": "50e23fa0-b1f7-5dce-bca7-02132f1b4b3a"
+        }
+      ]
+    },
+    {
+      "code": "modern-prone-forearms",
+      "baseline": {
+        "code": "modern-prone-forearms",
+        "title": "На животе с опорой на предплечья",
+        "summary": "Один участник лежит на животе с приподнятой верхней частью корпуса и опорой на предплечья; второй находится позади.",
+        "sources": []
+      },
+      "body_sha256": "f667125bc3782bbe326809fb974e8dc0e26b6579224a9dcd7b98fca17fc93890",
+      "sources": [
+        {
+          "name": "Merriam-Webster: prone",
+          "url": "https://www.merriam-webster.com/dictionary/prone"
+        }
+      ],
+      "scope": "Prone обозначает положение лицом вниз; детали варианта редакционные.",
+      "related_pose_codes": [
+        "prone-supported",
+        "modern-prone-hips-supported"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc"
+        }
+      ]
+    },
+    {
+      "code": "modern-prone-legs-apart",
+      "baseline": {
+        "code": "modern-prone-legs-apart",
+        "title": "На животе с разведёнными ногами",
+        "summary": "Положение на животе с прямыми разведёнными ногами; второй партнёр расположен со стороны спины.",
+        "sources": []
+      },
+      "body_sha256": "6b2845a703adc4708b3381808feaf4f05dc0e246b98498e9f6038b2448ce1a49",
+      "sources": [
+        {
+          "name": "Merriam-Webster: prone",
+          "url": "https://www.merriam-webster.com/dictionary/prone"
+        }
+      ],
+      "scope": "Prone обозначает положение лицом вниз; детали варианта редакционные.",
+      "related_pose_codes": [
+        "flat-prone",
+        "modern-prone-one-knee-out"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc"
+        }
+      ]
+    },
+    {
+      "code": "modern-prone-one-knee-out",
+      "baseline": {
+        "code": "modern-prone-one-knee-out",
+        "title": "На животе с коленом в сторону",
+        "summary": "Асимметричное положение на животе: одна нога согнута и отведена в сторону, другая остаётся прямой.",
+        "sources": []
+      },
+      "body_sha256": "4fbb196f7c9cb625d0138a7f3734715dce3250763c1862ff9575566b0e5982a5",
+      "sources": [
+        {
+          "name": "Merriam-Webster: prone",
+          "url": "https://www.merriam-webster.com/dictionary/prone"
+        }
+      ],
+      "scope": "Prone обозначает положение лицом вниз; детали варианта редакционные.",
+      "related_pose_codes": [
+        "flat-prone",
+        "modern-prone-legs-apart"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc"
+        }
+      ]
+    },
+    {
+      "code": "modern-prone-hips-supported",
+      "baseline": {
+        "code": "modern-prone-hips-supported",
+        "title": "На животе с опорой под тазом",
+        "summary": "Вариант на животе, отличающийся расположением мягкой опоры непосредственно под тазом, при опоре корпуса на поверхность.",
+        "sources": []
+      },
+      "body_sha256": "cc3a434dc9e8a87682fbc390b0580a6b3b45356842944de4b3878776f363eb60",
+      "sources": [
+        {
+          "name": "Merriam-Webster: prone",
+          "url": "https://www.merriam-webster.com/dictionary/prone"
+        }
+      ],
+      "scope": "Prone обозначает положение лицом вниз; детали варианта редакционные.",
+      "related_pose_codes": [
+        "prone-supported",
+        "modern-prone-forearms"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc"
+        },
+        {
+          "kind": "devices",
+          "uid": "a7306bb3-11ec-5534-bda4-d0b8f3110135"
+        }
+      ]
+    },
+    {
+      "code": "modern-prone-upper-body-raised",
+      "baseline": {
+        "code": "modern-prone-upper-body-raised",
+        "title": "Полулёжа на животе у края кровати",
+        "summary": "Передняя часть корпуса находится на поверхности, ноги располагаются за её краем; второй партнёр находится позади.",
+        "sources": []
+      },
+      "body_sha256": "9b59e93d255bb0b9a7398f72cb7da016a2c073c888180611b6d5859a320737f7",
+      "sources": [
+        {
+          "name": "Merriam-Webster: prone",
+          "url": "https://www.merriam-webster.com/dictionary/prone"
+        }
+      ],
+      "scope": "Prone обозначает положение лицом вниз; детали варианта редакционные.",
+      "related_pose_codes": [
+        "bed-edge-prone",
+        "modern-standing-bent-table"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc"
+        }
+      ]
+    },
+    {
+      "code": "modern-side-spoons-knees-bent",
+      "baseline": {
+        "code": "modern-side-spoons-knees-bent",
+        "title": "Ложки с согнутыми коленями",
+        "summary": "Оба партнёра лежат на боку в одном направлении; их согнутые ноги образуют вложенные друг в друга контуры.",
+        "sources": []
+      },
+      "body_sha256": "7411cf2a079c5cdb59e93ac6f7495233a5ef0be071cfbf4665a43b166d7b72d4",
+      "sources": [
+        {
+          "name": "mbg: Spooning",
+          "url": "https://www.mindbodygreen.com/articles/spooning"
+        }
+      ],
+      "scope": "Источник описывает боковое семейство; название модификации редакционное.",
+      "related_pose_codes": [
+        "spooning",
+        "modern-side-spoons-legs-straight"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f"
+        }
+      ]
+    },
+    {
+      "code": "modern-side-spoons-legs-straight",
+      "baseline": {
+        "code": "modern-side-spoons-legs-straight",
+        "title": "Ложки с прямыми ногами",
+        "summary": "Положение на боку в одном направлении с преимущественно выпрямленными ногами обоих участников.",
+        "sources": []
+      },
+      "body_sha256": "d920d0dc105d14393640c96018a2ab779bb89f18f2f75b1c0d79c1fe576226e7",
+      "sources": [
+        {
+          "name": "mbg: Spooning",
+          "url": "https://www.mindbodygreen.com/articles/spooning"
+        }
+      ],
+      "scope": "Источник описывает боковое семейство; название модификации редакционное.",
+      "related_pose_codes": [
+        "spooning",
+        "modern-side-spoons-knees-bent"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f"
+        }
+      ]
+    },
+    {
+      "code": "modern-side-upper-leg-supported",
+      "baseline": {
+        "code": "modern-side-upper-leg-supported",
+        "title": "На боку с опорой под верхней ногой",
+        "summary": "Один участник находится на боку, верхняя нога лежит на отдельной мягкой опоре; партнёр располагается позади.",
+        "sources": []
+      },
+      "body_sha256": "dddc0b1540b038c7fcd0a7fa5c21cc7beade38a21bbab1582ab6aec668a40298",
+      "sources": [
+        {
+          "name": "CUH: Intimacy",
+          "url": "https://www.cuh.nhs.uk/patient-information/chronic-pain-and-intimacy/"
+        }
+      ],
+      "scope": "CUH: опоры и адаптация; вариант верхней ноги редакционный.",
+      "related_pose_codes": [
+        "side-face-to-face",
+        "modern-side-face-to-face-interlaced"
+      ],
+      "related_pages": [
+        "6f4c8e6f-2fe5-5616-8657-88ee787e2648"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f"
+        },
+        {
+          "kind": "devices",
+          "uid": "50e23fa0-b1f7-5dce-bca7-02132f1b4b3a"
+        }
+      ]
+    },
+    {
+      "code": "modern-side-face-to-face-interlaced",
+      "baseline": {
+        "code": "modern-side-face-to-face-interlaced",
+        "title": "На боку лицом к лицу, ноги переплетены",
+        "summary": "Партнёры лежат на боку навстречу друг другу; ноги располагаются попеременно между ногами второго участника.",
+        "sources": []
+      },
+      "body_sha256": "f7a6ccd613cb16d7778fad1c720a23327716c35a5b27f6726c0314aa07b7a68f",
+      "sources": [
+        {
+          "name": "mbg: Missionary",
+          "url": "https://www.mindbodygreen.com/articles/missionary-position"
+        }
+      ],
+      "scope": "Источник упоминает боковое расположение лицом к лицу; детали конечностей редакционные.",
+      "related_pose_codes": [
+        "side-face-to-face",
+        "modern-side-upper-leg-supported"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f"
+        }
+      ]
+    },
+    {
+      "code": "modern-side-t-shape",
+      "baseline": {
+        "code": "modern-side-t-shape",
+        "title": "Т-образное положение на боку",
+        "summary": "Один участник лежит на боку, корпус второго расположен поперёк относительно его продольной оси.",
+        "sources": []
+      },
+      "body_sha256": "cc6c3f6b8647cde37dcf04c3220b9776e30d9616df8f0b54c0b100983820d741",
+      "sources": [
+        {
+          "name": "Merriam-Webster: crosswise",
+          "url": "https://www.merriam-webster.com/dictionary/crosswise"
+        }
+      ],
+      "scope": "Словарь подтверждает поперечное направление; Т-образная схема редакционная.",
+      "related_pose_codes": [
+        "side-crossed",
+        "side-face-to-face"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f"
+        }
+      ]
+    },
+    {
+      "code": "modern-seated-lotus-reclined",
+      "baseline": {
+        "code": "modern-seated-lotus-reclined",
+        "title": "Лотос с отклонением назад",
+        "summary": "Сидячее положение лицом к лицу: один из партнёров отклоняет корпус назад с опорой на руки.",
+        "sources": []
+      },
+      "body_sha256": "e75a72b8d8b4803f884f413d59a8d63f3a85a02791aa609662175aa7b9a38007",
+      "sources": [
+        {
+          "name": "mbg: Lotus",
+          "url": "https://www.mindbodygreen.com/articles/how-to-do-the-lotus-sex-position"
+        }
+      ],
+      "scope": "Источник подтверждает семейство Lotus; отклонение корпуса — редакционный вариант.",
+      "related_pose_codes": [
+        "lotus",
+        "modern-seated-lotus-straight-legs"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+        }
+      ]
+    },
+    {
+      "code": "modern-seated-lotus-straight-legs",
+      "baseline": {
+        "code": "modern-seated-lotus-straight-legs",
+        "title": "Лотос с выпрямленными ногами",
+        "summary": "Положение сидя лицом к лицу, в котором нижний партнёр располагает ноги вперёд вместо скрещённого положения.",
+        "sources": []
+      },
+      "body_sha256": "1f04fab2cc28e50c6c17a4185a933f8eadf8ac0b880c7192a8a8bcd3be61e4eb",
+      "sources": [
+        {
+          "name": "mbg: Lotus",
+          "url": "https://www.mindbodygreen.com/articles/how-to-do-the-lotus-sex-position"
+        }
+      ],
+      "scope": "Источник подтверждает сидячее семейство; изменение ног — редакционный вариант.",
+      "related_pose_codes": [
+        "lotus",
+        "modern-seated-lotus-reclined"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+        }
+      ]
+    },
+    {
+      "code": "modern-seated-chair-backward",
+      "baseline": {
+        "code": "modern-seated-chair-backward",
+        "title": "На стуле спиной к сидящему партнёру",
+        "summary": "Оба участника находятся на одном стуле; верхний партнёр обращён спиной к сидящему нижнему участнику.",
+        "sources": []
+      },
+      "body_sha256": "b3b7310264d5d68ceab1efc8ce7eb9c85f8ec5d31e25c6918b9771cc540a02df",
+      "sources": [
+        {
+          "name": "Merriam-Webster: sit",
+          "url": "https://www.merriam-webster.com/dictionary/sit"
+        }
+      ],
+      "scope": "Словарь подтверждает сидячее положение; конкретная схема редакционная.",
+      "related_pose_codes": [
+        "seated-facing-away",
+        "modern-seated-chair-facing-away-supported"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+        }
+      ]
+    },
+    {
+      "code": "modern-seated-sofa-face-to-face",
+      "baseline": {
+        "code": "modern-seated-sofa-face-to-face",
+        "title": "На диване лицом к лицу",
+        "summary": "Сидячее положение лицом к лицу на более широкой поверхности дивана с опорой спины нижнего партнёра.",
+        "sources": []
+      },
+      "body_sha256": "8f77f00ac450b4a35d7162a0d396a414f7393483c7cbe2f0874ea891a1febe5c",
+      "sources": [
+        {
+          "name": "Merriam-Webster: sit",
+          "url": "https://www.merriam-webster.com/dictionary/sit"
+        }
+      ],
+      "scope": "Словарь подтверждает сидячее положение; конкретная схема редакционная.",
+      "related_pose_codes": [
+        "chair-face-to-face",
+        "modern-seated-floor-face-to-face"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+        }
+      ]
+    },
+    {
+      "code": "modern-seated-bed-edge-face-to-face",
+      "baseline": {
+        "code": "modern-seated-bed-edge-face-to-face",
+        "title": "Сидя на краю кровати лицом к лицу",
+        "summary": "Нижний партнёр сидит у края кровати со стопами на полу; второй располагается у него на коленях лицом к лицу.",
+        "sources": []
+      },
+      "body_sha256": "64e7067a30bec2303a30a74734ec1935f2460b9639fc6e2a6a8d3049cb62d615",
+      "sources": [
+        {
+          "name": "Merriam-Webster: sit",
+          "url": "https://www.merriam-webster.com/dictionary/sit"
+        }
+      ],
+      "scope": "Словарь подтверждает сидячее положение; конкретная схема редакционная.",
+      "related_pose_codes": [
+        "modern-supine-across-bed",
+        "modern-standing-bed-edge-partner-kneels"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+        }
+      ]
+    },
+    {
+      "code": "modern-seated-sideways-lap",
+      "baseline": {
+        "code": "modern-seated-sideways-lap",
+        "title": "Боком на коленях сидящего партнёра",
+        "summary": "Один участник сидит, второй располагается поперёк его коленей; корпуса обращены в разные стороны.",
+        "sources": []
+      },
+      "body_sha256": "f6b37d1e8d9cbf5c8c797e1028f12fd9b9323b70be4d1ee83c502705303641da",
+      "sources": [
+        {
+          "name": "Merriam-Webster: sit",
+          "url": "https://www.merriam-webster.com/dictionary/sit"
+        }
+      ],
+      "scope": "Словарь подтверждает сидячее положение; конкретная схема редакционная.",
+      "related_pose_codes": [
+        "modern-seated-reclined-against-headboard",
+        "modern-seated-sofa-face-to-face"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+        }
+      ]
+    },
+    {
+      "code": "modern-seated-reclined-against-headboard",
+      "baseline": {
+        "code": "modern-seated-reclined-against-headboard",
+        "title": "Полусидя у изголовья",
+        "summary": "Нижний партнёр находится полусидя с опорой на изголовье, второй располагается перед ним лицом к лицу.",
+        "sources": []
+      },
+      "body_sha256": "f9b1db88e9387aa6864f1a70973524e5949a70db5de04e9e898998129f3639c4",
+      "sources": [
+        {
+          "name": "Merriam-Webster: sit",
+          "url": "https://www.merriam-webster.com/dictionary/sit"
+        }
+      ],
+      "scope": "Словарь подтверждает сидячее положение; конкретная схема редакционная.",
+      "related_pose_codes": [
+        "modern-seated-sideways-lap",
+        "modern-seated-sofa-face-to-face"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+        }
+      ]
+    },
+    {
+      "code": "modern-seated-chair-facing-away-supported",
+      "baseline": {
+        "code": "modern-seated-chair-facing-away-supported",
+        "title": "На стуле спиной к партнёру с опорой для рук",
+        "summary": "Верхний участник сидит спиной к нижнему партнёру, сохраняя дополнительную опору кистями на сиденье.",
+        "sources": []
+      },
+      "body_sha256": "87c0229b881a909c07f31adf49d9c79a3aa3e90395c1e9f407d646919af3fead",
+      "sources": [
+        {
+          "name": "Merriam-Webster: sit",
+          "url": "https://www.merriam-webster.com/dictionary/sit"
+        }
+      ],
+      "scope": "Словарь подтверждает сидячее положение; конкретная схема редакционная.",
+      "related_pose_codes": [
+        "seated-facing-away",
+        "modern-seated-chair-backward"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+        }
+      ]
+    },
+    {
+      "code": "modern-seated-floor-face-to-face",
+      "baseline": {
+        "code": "modern-seated-floor-face-to-face",
+        "title": "Сидя на полу навстречу друг другу",
+        "summary": "Оба участника сидят непосредственно на поверхности пола лицом друг к другу, с согнутыми и переплетёнными ногами.",
+        "sources": []
+      },
+      "body_sha256": "bd343012006a7c73530a0df892a3a8598ba14954274e010e872ad436530ca1c7",
+      "sources": [
+        {
+          "name": "Merriam-Webster: sit",
+          "url": "https://www.merriam-webster.com/dictionary/sit"
+        }
+      ],
+      "scope": "Словарь подтверждает сидячее положение; конкретная схема редакционная.",
+      "related_pose_codes": [
+        "chair-face-to-face",
+        "modern-seated-sofa-face-to-face"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+        }
+      ]
+    },
+    {
+      "code": "modern-standing-bent-table",
+      "baseline": {
+        "code": "modern-standing-bent-table",
+        "title": "Наклон стоя с опорой на стол",
+        "summary": "Один участник стоит в наклоне с опорой передней части корпуса на стол; второй расположен позади.",
+        "sources": []
+      },
+      "body_sha256": "30a8de355665e72b22c3b05ed4c72850ec2650b85f8201cd657361aa71d3d3aa",
+      "sources": [
+        {
+          "name": "Merriam-Webster: stoop",
+          "url": "https://www.merriam-webster.com/dictionary/stoop"
+        }
+      ],
+      "scope": "Словарь описывает наклон корпуса; расположение у стола редакционное.",
+      "related_pose_codes": [
+        "bed-edge-prone",
+        "modern-prone-upper-body-raised"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "50db3b5b-1c02-5560-a940-afc89bee4272"
+        }
+      ]
+    },
+    {
+      "code": "modern-standing-hands-wall",
+      "baseline": {
+        "code": "modern-standing-hands-wall",
+        "title": "Стоя с опорой ладонями о стену",
+        "summary": "Один участник обращён лицом к стене с опорой на ладони; второй стоит позади него.",
+        "sources": []
+      },
+      "body_sha256": "db2bff0fd9e84db55dbdd02d867b5afea728784aab6cd5b5f289ae46b8d1690b",
+      "sources": [
+        {
+          "name": "Merriam-Webster: stand",
+          "url": "https://www.merriam-webster.com/dictionary/stand"
+        }
+      ],
+      "scope": "Словарь подтверждает вертикальную опору на стопы; схема редакционная.",
+      "related_pose_codes": [
+        "standing-wall",
+        "modern-standing-chair-one-foot"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "50db3b5b-1c02-5560-a940-afc89bee4272"
+        }
+      ]
+    },
+    {
+      "code": "modern-standing-chair-one-foot",
+      "baseline": {
+        "code": "modern-standing-chair-one-foot",
+        "title": "Стоя с одной ногой на опоре",
+        "summary": "Асимметричное положение стоя лицом к лицу: одна стопа участника находится на отдельной возвышенной опоре.",
+        "sources": []
+      },
+      "body_sha256": "d06430082f5421ebe5e7bc16924e99c56a2a6503cb589db72125246c28ae6d66",
+      "sources": [
+        {
+          "name": "Merriam-Webster: stand",
+          "url": "https://www.merriam-webster.com/dictionary/stand"
+        }
+      ],
+      "scope": "Словарь подтверждает вертикальную опору на стопы; схема редакционная.",
+      "related_pose_codes": [
+        "standing-wall",
+        "modern-standing-hands-wall"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "50db3b5b-1c02-5560-a940-afc89bee4272"
+        }
+      ]
+    },
+    {
+      "code": "modern-standing-bed-edge-partner-kneels",
+      "baseline": {
+        "code": "modern-standing-bed-edge-partner-kneels",
+        "title": "Стоя перед партнёром на краю кровати",
+        "summary": "Один участник стоит у края кровати, второй располагается перед ним на коленях на поверхности кровати.",
+        "sources": []
+      },
+      "body_sha256": "e5c87644f2773ea47daff09e33a2772d8fad7dbe4fff412b8677d62d1e1931e6",
+      "sources": [
+        {
+          "name": "Merriam-Webster: stand",
+          "url": "https://www.merriam-webster.com/dictionary/stand"
+        }
+      ],
+      "scope": "Словарь подтверждает вертикальную опору на стопы; схема редакционная.",
+      "related_pose_codes": [
+        "modern-supine-across-bed",
+        "modern-seated-bed-edge-face-to-face"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "50db3b5b-1c02-5560-a940-afc89bee4272"
+        }
+      ]
+    },
+    {
+      "code": "modern-standing-side-by-side",
+      "baseline": {
+        "code": "modern-standing-side-by-side",
+        "title": "Стоя бок о бок",
+        "summary": "Партнёры стоят рядом, соприкасаясь боковыми сторонами корпуса и сохраняя собственную опору на ноги.",
+        "sources": []
+      },
+      "body_sha256": "bbfe5c157a0a85ca0eb513420967166536fbb6a6bb84d7ec4b1bef4a4935084f",
+      "sources": [
+        {
+          "name": "Merriam-Webster: stand",
+          "url": "https://www.merriam-webster.com/dictionary/stand"
+        }
+      ],
+      "scope": "Словарь подтверждает вертикальную опору на стопы; схема редакционная.",
+      "related_pose_codes": [
+        "standing-face-to-face",
+        "standing-rear"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "50db3b5b-1c02-5560-a940-afc89bee4272"
+        }
+      ]
+    },
+    {
+      "code": "modern-kneeling-forearms",
+      "baseline": {
+        "code": "modern-kneeling-forearms",
+        "title": "На коленях и предплечьях",
+        "summary": "Один участник опирается на колени и предплечья вместо ладоней; второй находится позади.",
+        "sources": []
+      },
+      "body_sha256": "a475bfdc93c42efcd541525bdfbd38e23a8d0fb25d593622ce90f913d1b24028",
+      "sources": [
+        {
+          "name": "Merriam-Webster: kneel",
+          "url": "https://www.merriam-webster.com/dictionary/kneel"
+        }
+      ],
+      "scope": "Kneel обозначает коленную опору; детали схемы редакционные.",
+      "related_pose_codes": [
+        "all-fours",
+        "supported-kneeling-forearms"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed"
+        }
+      ]
+    },
+    {
+      "code": "modern-kneeling-chest-supported",
+      "baseline": {
+        "code": "modern-kneeling-chest-supported",
+        "title": "На коленях с опорой грудью на подушку",
+        "summary": "Положение на коленях с отдельной мягкой опорой под верхней частью корпуса; второй партнёр расположен позади.",
+        "sources": []
+      },
+      "body_sha256": "bb7157af08b308117b77051593875b012447b191d5a22e65cf9b436442b174cd",
+      "sources": [
+        {
+          "name": "Merriam-Webster: kneel",
+          "url": "https://www.merriam-webster.com/dictionary/kneel"
+        }
+      ],
+      "scope": "Kneel обозначает коленную опору; детали схемы редакционные.",
+      "related_pose_codes": [
+        "kneeling-supported",
+        "modern-kneeling-bed-headboard"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed"
+        }
+      ]
+    },
+    {
+      "code": "modern-kneeling-bed-headboard",
+      "baseline": {
+        "code": "modern-kneeling-bed-headboard",
+        "title": "На коленях у изголовья",
+        "summary": "Один участник стоит на коленях лицом к изголовью с опорой руками на него; второй находится позади.",
+        "sources": []
+      },
+      "body_sha256": "b996a9054b540cd673eb1f56e7b51dd7a0c96a9f825a27c6d565623c27b1d461",
+      "sources": [
+        {
+          "name": "Merriam-Webster: kneel",
+          "url": "https://www.merriam-webster.com/dictionary/kneel"
+        }
+      ],
+      "scope": "Kneel обозначает коленную опору; детали схемы редакционные.",
+      "related_pose_codes": [
+        "kneeling-supported",
+        "modern-kneeling-chest-supported"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed"
+        }
+      ]
+    },
+    {
+      "code": "modern-kneeling-side-by-side",
+      "baseline": {
+        "code": "modern-kneeling-side-by-side",
+        "title": "На коленях бок о бок",
+        "summary": "Оба участника находятся на коленях рядом друг с другом; их корпуса обращены в одном направлении.",
+        "sources": []
+      },
+      "body_sha256": "94fd68d31dcb9fdb97d4cae9a93eee52a29a44b5040e8d97f4139f055892f1e5",
+      "sources": [
+        {
+          "name": "Merriam-Webster: kneel",
+          "url": "https://www.merriam-webster.com/dictionary/kneel"
+        }
+      ],
+      "scope": "Kneel обозначает коленную опору; детали схемы редакционные.",
+      "related_pose_codes": [
+        "kneeling-face-to-face",
+        "modern-kneeling-one-foot-forward"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed"
+        }
+      ]
+    },
+    {
+      "code": "modern-kneeling-one-foot-forward",
+      "baseline": {
+        "code": "modern-kneeling-one-foot-forward",
+        "title": "На колене с вынесенной вперёд стопой",
+        "summary": "Один участник опирается на колено и противоположную стопу; второй располагается перед ним лицом к лицу.",
+        "sources": []
+      },
+      "body_sha256": "d3a4cac9f519f3b4adbb61de6910e9d275723f06199bfd3e8b77d9e90176e6c8",
+      "sources": [
+        {
+          "name": "Merriam-Webster: kneel",
+          "url": "https://www.merriam-webster.com/dictionary/kneel"
+        }
+      ],
+      "scope": "Kneel обозначает коленную опору; детали схемы редакционные.",
+      "related_pose_codes": [
+        "kneeling-face-to-face",
+        "modern-kneeling-side-by-side"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed"
+        }
+      ]
+    },
+    {
+      "code": "modern-on-top-forward-lean",
+      "baseline": {
+        "code": "modern-on-top-forward-lean",
+        "title": "Наездница с наклоном вперёд",
+        "summary": "Верхний участник обращён к лицу нижнего партнёра и наклоняет корпус вперёд с опорой на руки.",
+        "sources": []
+      },
+      "body_sha256": "9dc23292f8a8d3fdda8c2c5f0b3ee041c0205af6a6d30908a5dee782975b1c84",
+      "sources": [
+        {
+          "name": "Healthline: Rider on top",
+          "url": "https://www.healthline.com/health/healthy-sex/cowgirl-position"
+        }
+      ],
+      "scope": "Источник подтверждает семейство rider-on-top; конкретная модификация редакционная.",
+      "related_pose_codes": [
+        "cowgirl",
+        "modern-on-top-reclined"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "fe4cb364-14f4-59cc-bd48-e0f934606243"
+        }
+      ]
+    },
+    {
+      "code": "modern-on-top-reclined",
+      "baseline": {
+        "code": "modern-on-top-reclined",
+        "title": "Наездница с отклонением назад",
+        "summary": "Верхний участник обращён к лицу нижнего партнёра, но отклоняет корпус назад, сохраняя опору на руки.",
+        "sources": []
+      },
+      "body_sha256": "0b962ab38bfba50d342b4ea23d8a9f8270e5edb476d95677055fca5671a2a788",
+      "sources": [
+        {
+          "name": "Healthline: Rider on top",
+          "url": "https://www.healthline.com/health/healthy-sex/cowgirl-position"
+        }
+      ],
+      "scope": "Источник подтверждает семейство rider-on-top; конкретная модификация редакционная.",
+      "related_pose_codes": [
+        "cowgirl",
+        "modern-on-top-forward-lean"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "fe4cb364-14f4-59cc-bd48-e0f934606243"
+        }
+      ]
+    },
+    {
+      "code": "modern-on-top-reverse-forward",
+      "baseline": {
+        "code": "modern-on-top-reverse-forward",
+        "title": "Обратная наездница с наклоном вперёд",
+        "summary": "Верхний участник обращён спиной к нижнему партнёру и наклоняется в сторону его ног.",
+        "sources": []
+      },
+      "body_sha256": "6e9b5273616e79330823a104905f5d5e9d9223f8e83127288d1ed115458c4848",
+      "sources": [
+        {
+          "name": "Healthline: Rider on top",
+          "url": "https://www.healthline.com/health/healthy-sex/cowgirl-position"
+        }
+      ],
+      "scope": "Источник подтверждает семейство rider-on-top; конкретная модификация редакционная.",
+      "related_pose_codes": [
+        "reverse-cowgirl",
+        "on-top-supported"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "fe4cb364-14f4-59cc-bd48-e0f934606243"
+        }
+      ]
+    },
+    {
+      "code": "modern-on-top-squat",
+      "baseline": {
+        "code": "modern-on-top-squat",
+        "title": "Сверху с опорой на стопы",
+        "summary": "Верхний партнёр находится в приседе со стопами на поверхности вместо опоры на колени, лицом к нижнему участнику.",
+        "sources": []
+      },
+      "body_sha256": "00ba389f13542a0a6979acdc16fff2bc5e52aa32a72f16e1629f812571c54516",
+      "sources": [
+        {
+          "name": "Merriam-Webster: crouch",
+          "url": "https://www.merriam-webster.com/dictionary/crouch"
+        }
+      ],
+      "scope": "Словарь описывает низкое положение с согнутыми ногами; парная схема редакционная.",
+      "related_pose_codes": [
+        "modern-on-top-asymmetric-lunge",
+        "on-top-supported"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "fe4cb364-14f4-59cc-bd48-e0f934606243"
+        }
+      ]
+    },
+    {
+      "code": "modern-on-top-asymmetric-lunge",
+      "baseline": {
+        "code": "modern-on-top-asymmetric-lunge",
+        "title": "Сверху с асимметричной опорой",
+        "summary": "Верхний участник обращён лицом к нижнему; одна нога опирается на колено, другая — на стопу.",
+        "sources": []
+      },
+      "body_sha256": "94f32e350564912f382db87bec8e7fbc642ba676723382065047206ec990fcee",
+      "sources": [
+        {
+          "name": "Healthline: Rider on top",
+          "url": "https://www.healthline.com/health/healthy-sex/cowgirl-position"
+        }
+      ],
+      "scope": "Источник подтверждает семейство rider-on-top; конкретная модификация редакционная.",
+      "related_pose_codes": [
+        "modern-on-top-squat",
+        "on-top-supported"
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "fe4cb364-14f4-59cc-bd48-e0f934606243"
+        }
+      ]
+    },
+    {
+      "code": "oral-supine-front",
+      "baseline": {
+        "code": "oral-supine-front",
+        "title": "Оральная — лёжа на спине",
+        "summary": "Один участник лежит на спине, второй располагается перед ним на коленях. Односторонний вариант с опорой спины на поверхность.",
+        "sources": []
+      },
+      "body_sha256": "82479d5ca19626d8c0ff0a7d1aa4435c7fdb113cb2dbe0c23c4576a3faa3ec2e",
+      "sources": [
+        {
+          "name": "Scarleteen: What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Scarleteen: вид контакта; пространственное расположение составлено редакцией.",
+      "related_pose_codes": [
+        "oral-supine-side",
+        "oral-above-supine-partner"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "d290e170-cb85-57c1-b021-6319deb5e13b"
+        }
+      ]
+    },
+    {
+      "code": "oral-supine-side",
+      "baseline": {
+        "code": "oral-supine-side",
+        "title": "Оральная — лёжа рядом сбоку",
+        "summary": "Один участник лежит на спине, второй находится рядом со стороны его ног. Оба корпуса имеют опору на общую поверхность.",
+        "sources": []
+      },
+      "body_sha256": "60f5f9363cef754f00e7f8c4f62c2ba48f529791fb3cde91054135bf0cfbc76c",
+      "sources": [
+        {
+          "name": "Scarleteen: What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Scarleteen: вид контакта; пространственное расположение составлено редакцией.",
+      "related_pose_codes": [
+        "oral-supine-front",
+        "oral-above-supine-partner"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "d290e170-cb85-57c1-b021-6319deb5e13b"
+        }
+      ]
+    },
+    {
+      "code": "oral-chair-front",
+      "baseline": {
+        "code": "oral-chair-front",
+        "title": "Оральная — сидя на стуле",
+        "summary": "Один участник сидит на стуле, второй находится перед ним на коленях. Расположение отличается от лежачих вариантов вертикальным корпусом сидящего партнёра.",
+        "sources": []
+      },
+      "body_sha256": "93acf68bd3b406b867580858340950e666c8f4adfbc284861f42cfcff7ecfd90",
+      "sources": [
+        {
+          "name": "Scarleteen: What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Scarleteen: вид контакта; пространственное расположение составлено редакцией.",
+      "related_pose_codes": [
+        "oral-bed-edge",
+        "oral-standing-front"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "d290e170-cb85-57c1-b021-6319deb5e13b"
+        }
+      ]
+    },
+    {
+      "code": "oral-bed-edge",
+      "baseline": {
+        "code": "oral-bed-edge",
+        "title": "Оральная — сидя на краю кровати",
+        "summary": "Один участник сидит на краю кровати, второй располагается перед ним на коленях. Верхняя часть тела сидящего участника остаётся вертикальной.",
+        "sources": []
+      },
+      "body_sha256": "b3d316bc463438c058d6a891a7d3283dd9841f3ec56cbb8a50dd51dc39414ee4",
+      "sources": [
+        {
+          "name": "Scarleteen: What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Scarleteen: вид контакта; пространственное расположение составлено редакцией.",
+      "related_pose_codes": [
+        "oral-chair-front",
+        "oral-standing-front"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "d290e170-cb85-57c1-b021-6319deb5e13b"
+        }
+      ]
+    },
+    {
+      "code": "oral-standing-front",
+      "baseline": {
+        "code": "oral-standing-front",
+        "title": "Оральная — стоя перед партнёром",
+        "summary": "Один участник стоит, второй находится перед ним на коленях. В справочнике описывается только взаимное расположение тел.",
+        "sources": []
+      },
+      "body_sha256": "f95f3d61f05b1807e4b852ee1a5f92203fb41645b7db2d9db6780e7ed1dc3ce6",
+      "sources": [
+        {
+          "name": "Scarleteen: What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Scarleteen: вид контакта; пространственное расположение составлено редакцией.",
+      "related_pose_codes": [
+        "oral-chair-front",
+        "oral-bed-edge"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "d290e170-cb85-57c1-b021-6319deb5e13b"
+        }
+      ]
+    },
+    {
+      "code": "oral-above-supine-partner",
+      "baseline": {
+        "code": "oral-above-supine-partner",
+        "title": "Оральная — над лежащим партнёром",
+        "summary": "Один участник лежит на спине, второй располагается над верхней частью его корпуса с опорой на колени. Односторонний вариант, отличный от взаимной «69».",
+        "sources": []
+      },
+      "body_sha256": "6f076f8d763f15c91647d167a28ef6f12d6e23aa07395f7561f37ff4718dd393",
+      "sources": [
+        {
+          "name": "Scarleteen: What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Scarleteen: вид контакта; пространственное расположение составлено редакцией.",
+      "related_pose_codes": [
+        "oral-supine-front",
+        "oral-supine-side"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "d290e170-cb85-57c1-b021-6319deb5e13b"
+        }
+      ]
+    },
+    {
+      "code": "mutual-69-lying",
+      "baseline": {
+        "code": "mutual-69-lying",
+        "title": "69 — лёжа",
+        "summary": "Партнёры расположены один над другим в противоположных направлениях. Нижний участник лежит на спине, верхний имеет отдельную опору на руки и колени.",
+        "sources": []
+      },
+      "body_sha256": "174123d14d7cf76efaa3228f363c23cbdfb7d3cf0ecb9d667c4639e69fa54011",
+      "sources": [
+        {
+          "name": "Healthline: 69",
+          "url": "https://www.healthline.com/health/healthy-sex/69-position"
+        }
+      ],
+      "scope": "Источник подтверждает семейство взаимной ориентации; подробные техники не заимствуются.",
+      "related_pose_codes": [
+        "mutual-69-side",
+        "oral-above-supine-partner"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "5d81948e-b7d2-5511-97da-57281cc00e14"
+        }
+      ]
+    },
+    {
+      "code": "mutual-69-side",
+      "baseline": {
+        "code": "mutual-69-side",
+        "title": "69 — на боку",
+        "summary": "Оба партнёра лежат на боку в противоположных направлениях. В отличие от варианта один над другим, оба корпуса опираются непосредственно на поверхность.",
+        "sources": []
+      },
+      "body_sha256": "9ac69139a10e631273d8d1d4d6cbc825adffdf8b4fc0c30cc9550ac6e9fec515",
+      "sources": [
+        {
+          "name": "Healthline: 69",
+          "url": "https://www.healthline.com/health/healthy-sex/69-position"
+        }
+      ],
+      "scope": "Источник подтверждает семейство взаимной ориентации; подробные техники не заимствуются.",
+      "related_pose_codes": [
+        "mutual-69-lying",
+        "oral-supine-side"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "5d81948e-b7d2-5511-97da-57281cc00e14"
+        }
+      ]
+    },
+    {
+      "code": "supported-reclining-wedge",
+      "baseline": {
+        "code": "supported-reclining-wedge",
+        "title": "Полусидя на клиновидной подушке",
+        "summary": "Один участник находится полусидя с опорой спины на клиновидную подушку, второй — перед ним лицом к лицу. Это описательный вариант с отдельной опорой спины.",
+        "sources": []
+      },
+      "body_sha256": "bb15e1a2fe5158a4ba3ba490770d54821e6840197bf6ad4961441df24ccffdc6",
+      "sources": [
+        {
+          "name": "CUH: Intimacy",
+          "url": "https://www.cuh.nhs.uk/patient-information/chronic-pain-and-intimacy/"
+        }
+      ],
+      "scope": "CUH: обсуждение подушек и адаптации; конкретная схема редакционная.",
+      "related_pose_codes": [
+        "supine-supported",
+        "modern-supine-pillow-under-knees"
+      ],
+      "related_pages": [
+        "6f4c8e6f-2fe5-5616-8657-88ee787e2648"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "b318a5cf-6497-56fc-9ea3-bda1be2c71f2"
+        },
+        {
+          "kind": "devices",
+          "uid": "3c48272f-553a-5b83-ab6a-47ae5c463919"
+        }
+      ]
+    },
+    {
+      "code": "supported-side-back",
+      "baseline": {
+        "code": "supported-side-back",
+        "title": "На боку с опорой под спиной",
+        "summary": "Один участник лежит на боку с позиционной подушкой позади спины; второй располагается рядом. Опора находится за корпусом, а не под верхней ногой.",
+        "sources": []
+      },
+      "body_sha256": "1ce56ececcd56fd22e66a8df9ad3a701feb394815f802e639b14e863da4dc71f",
+      "sources": [
+        {
+          "name": "CUH: Intimacy",
+          "url": "https://www.cuh.nhs.uk/patient-information/chronic-pain-and-intimacy/"
+        }
+      ],
+      "scope": "CUH: обсуждение подушек и адаптации; конкретная схема редакционная.",
+      "related_pose_codes": [
+        "supported-reclining-wedge",
+        "modern-side-upper-leg-supported"
+      ],
+      "related_pages": [
+        "6f4c8e6f-2fe5-5616-8657-88ee787e2648"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "b318a5cf-6497-56fc-9ea3-bda1be2c71f2"
+        },
+        {
+          "kind": "devices",
+          "uid": "a7306bb3-11ec-5534-bda4-d0b8f3110135"
+        }
+      ]
+    },
+    {
+      "code": "supported-kneeling-forearms",
+      "baseline": {
+        "code": "supported-kneeling-forearms",
+        "title": "На коленях с валиком под предплечьями",
+        "summary": "Один участник находится на коленях с опорой предплечий на мягкий валик; второй располагается позади. Валик отделён от опор под тазом или коленями.",
+        "sources": []
+      },
+      "body_sha256": "354a86798a1f8b8bd95a80074ab723c88b2c7d9b15bd9f66efb46db66c2ea5b8",
+      "sources": [
+        {
+          "name": "CUH: Intimacy",
+          "url": "https://www.cuh.nhs.uk/patient-information/chronic-pain-and-intimacy/"
+        }
+      ],
+      "scope": "CUH: обсуждение подушек и адаптации; конкретная схема редакционная.",
+      "related_pose_codes": [
+        "all-fours",
+        "modern-kneeling-forearms"
+      ],
+      "related_pages": [
+        "6f4c8e6f-2fe5-5616-8657-88ee787e2648"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "b318a5cf-6497-56fc-9ea3-bda1be2c71f2"
+        },
+        {
+          "kind": "devices",
+          "uid": "50e23fa0-b1f7-5dce-bca7-02132f1b4b3a"
+        }
+      ]
+    },
+    {
+      "code": "equipment-cross-standing",
+      "baseline": {
+        "code": "equipment-cross-standing",
+        "title": "Стоя у креста для фиксации",
+        "summary": "Один участник находится вертикально перед крестом для фиксации, руки разведены по его направляющим. Второй расположен перед ним или позади. Запись описывает положение у оборудования, без схемы креплений.",
+        "sources": []
+      },
+      "body_sha256": "0da8d1058598492dfaffc3a517828efb5faaa876288f2b086c830ca76ebd4211",
+      "sources": [
+        {
+          "name": "Stockroom: Furniture",
+          "url": "https://stockroom.com/collections/dungeon-furniture"
+        }
+      ],
+      "scope": "Каталог подтверждает вид опоры; положение у креста редакционное, монтаж не описывается.",
+      "related_pose_codes": [
+        "equipment-frame-standing",
+        "protocol-standing-attention"
+      ],
+      "related_pages": [
+        "6c23aac7-225d-5b98-aa36-9fe3254eb1e5"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "d3ea34c1-6593-5855-bf4a-9aa42f0fed2e"
+        },
+        {
+          "kind": "devices",
+          "uid": "178734c2-24d2-5eec-85cd-f8ae1d02a4f4"
+        }
+      ]
+    },
+    {
+      "code": "equipment-bench-prone",
+      "baseline": {
+        "code": "equipment-bench-prone",
+        "title": "На бондажной скамье",
+        "summary": "Один участник расположен лицом вниз с опорой корпуса на бондажную скамью; второй — рядом со скамьёй. Конкретная форма опор зависит от модели оборудования.",
+        "sources": []
+      },
+      "body_sha256": "27bd482bfa1c7be2ca57736d0d375712164b29f6f62163d874f10a3a6d0dffd6",
+      "sources": [
+        {
+          "name": "Stockroom: Furniture",
+          "url": "https://stockroom.com/collections/dungeon-furniture"
+        }
+      ],
+      "scope": "Каталог подтверждает класс скамьи; положение тела редакционное, допустимость нагрузки не устанавливается.",
+      "related_pose_codes": [
+        "equipment-bed-restraints",
+        "prone-supported"
+      ],
+      "related_pages": [
+        "6c23aac7-225d-5b98-aa36-9fe3254eb1e5"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "d3ea34c1-6593-5855-bf4a-9aa42f0fed2e"
+        },
+        {
+          "kind": "devices",
+          "uid": "1854dd2d-7d12-50e6-a183-20414c069749"
+        }
+      ]
+    },
+    {
+      "code": "equipment-frame-standing",
+      "baseline": {
+        "code": "equipment-frame-standing",
+        "title": "Стоя у рамы",
+        "summary": "Один участник стоит внутри или перед рамой, сохраняя опору стопами на поверхность; второй находится рядом. Эта запись описывает наземное положение, а не подвес.",
+        "sources": []
+      },
+      "body_sha256": "486454b876e1c5bc65ee22833ca4a38fe729ebb91fb21e87baceafae5a7334bc",
+      "sources": [
+        {
+          "name": "Stockroom: Frames",
+          "url": "https://stockroom.com/collections/suspension-equipment"
+        }
+      ],
+      "scope": "Каталог описывает оборудование; положение стоя не означает подвес или подтверждённую нагрузку.",
+      "related_pose_codes": [
+        "equipment-cross-standing",
+        "protocol-standing-attention"
+      ],
+      "related_pages": [
+        "6c23aac7-225d-5b98-aa36-9fe3254eb1e5"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "d3ea34c1-6593-5855-bf4a-9aa42f0fed2e"
+        },
+        {
+          "kind": "devices",
+          "uid": "4a84172c-525c-5818-9d0e-aaf6d8d82ce0"
+        }
+      ]
+    },
+    {
+      "code": "equipment-bed-restraints",
+      "baseline": {
+        "code": "equipment-bed-restraints",
+        "title": "Лёжа с подкроватной системой",
+        "summary": "Один участник лежит на спине, руки и ноги расположены в направлениях точек крепления подкроватной системы; второй находится рядом. Схема натяжения и креплений здесь не задаётся.",
+        "sources": []
+      },
+      "body_sha256": "328895c523471e1e15203c896f432f18bc2ee706c74fda993a81a8912a2b6668",
+      "sources": [
+        {
+          "name": "Sportsheets: Under the Bed",
+          "url": "https://www.sportsheets.com/collections/restraints/products/under-the-bed-restraint-system%C2%AE"
+        }
+      ],
+      "scope": "Изготовитель описывает ремни под матрасом; конкретная поза редакционная, монтаж не описывается.",
+      "related_pose_codes": [
+        "equipment-bench-prone",
+        "prone-supported"
+      ],
+      "related_pages": [
+        "6c23aac7-225d-5b98-aa36-9fe3254eb1e5"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "d3ea34c1-6593-5855-bf4a-9aa42f0fed2e"
+        },
+        {
+          "kind": "devices",
+          "uid": "64e4b951-21c2-5352-bcc8-504315753764"
+        }
+      ]
+    },
+    {
+      "code": "group-three-parallel",
+      "baseline": {
+        "code": "group-three-parallel",
+        "title": "Втроём — параллельно лёжа",
+        "summary": "Три участника лежат рядом вдоль параллельных осей; средний находится между двумя другими. Описание задаёт пространственную схему без назначения действий каждому участнику.",
+        "sources": []
+      },
+      "body_sha256": "8f2e31176d90d8006eb7436642fcab76e2374608848ee8c8306070e70a63b720",
+      "sources": [
+        {
+          "name": "NCSF: Negotiation",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "scope": "NCSF: состав и участие каждого; геометрическая схема редакционная.",
+      "related_pose_codes": [
+        "group-three-circle",
+        "group-four-pairs"
+      ],
+      "related_pages": [
+        "e3e856d9-844f-57b2-9f15-0dea48a7c3d5"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "a1366e19-a915-5f5d-9bf5-c45a25bc70ae"
+        }
+      ]
+    },
+    {
+      "code": "group-three-circle",
+      "baseline": {
+        "code": "group-three-circle",
+        "title": "Втроём — по кругу",
+        "summary": "Три участника расположены по круговой схеме с направлением каждого корпуса к соседнему. Название описательное; роли и взаимодействия не закреплены за полом или позицией в круге.",
+        "sources": []
+      },
+      "body_sha256": "6f103c9100f140e35cc9bb1f0b67761b7902322a7c7fcc3ba090d303187c6ecb",
+      "sources": [
+        {
+          "name": "NCSF: Negotiation",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "scope": "NCSF: состав и участие каждого; геометрическая схема редакционная.",
+      "related_pose_codes": [
+        "group-three-parallel",
+        "group-four-pairs"
+      ],
+      "related_pages": [
+        "e3e856d9-844f-57b2-9f15-0dea48a7c3d5"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "a1366e19-a915-5f5d-9bf5-c45a25bc70ae"
+        }
+      ]
+    },
+    {
+      "code": "group-four-pairs",
+      "baseline": {
+        "code": "group-four-pairs",
+        "title": "Вчетвером — две пары рядом",
+        "summary": "Четыре участника образуют две пары, расположенные рядом на общей поверхности. Положение внутри каждой пары выбирается отдельно; запись описывает именно групповой состав.",
+        "sources": []
+      },
+      "body_sha256": "f12a3bc14858f345ebc791414eb798a343753b66161ae7145a7cdfd20331bad9",
+      "sources": [
+        {
+          "name": "NCSF: Negotiation",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "scope": "NCSF: состав и участие каждого; геометрическая схема редакционная.",
+      "related_pose_codes": [
+        "group-three-parallel",
+        "group-three-circle"
+      ],
+      "related_pages": [
+        "e3e856d9-844f-57b2-9f15-0dea48a7c3d5"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "a1366e19-a915-5f5d-9bf5-c45a25bc70ae"
+        }
+      ]
+    },
+    {
+      "code": "protocol-standing-attention",
+      "baseline": {
+        "code": "protocol-standing-attention",
+        "title": "Внимание — стоя",
+        "summary": "Вертикальное положение с близко расположенными стопами, выпрямленным корпусом и руками вдоль тела. Протокольное значение определяется договорённостью участников, а не самой позой.",
+        "sources": []
+      },
+      "body_sha256": "bcb9198a913fc0156c6e9d16202717ecbf3dae6c384c304bb20a8b431f7399bb",
+      "sources": [
+        {
+          "name": "Kneel: Postures",
+          "url": "https://getkneel.com/blog/submissive-positions-guide"
+        }
+      ],
+      "scope": "Современный пример значения протокола; название и договорённости не универсальны.",
+      "related_pose_codes": [
+        "equipment-cross-standing",
+        "equipment-frame-standing"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "76088f6f-5f8b-5617-9099-2116dc079e8f"
+        }
+      ]
+    },
+    {
+      "code": "protocol-seated-waiting",
+      "baseline": {
+        "code": "protocol-seated-waiting",
+        "title": "Ожидание — сидя",
+        "summary": "Положение сидя на стуле с опорой стопами на поверхность и кистями на бёдрах. Это описательный сидячий вариант ожидания, отдельный от положений на коленях.",
+        "sources": []
+      },
+      "body_sha256": "5e98691b0f5d8fd9b9c9bc4bb433e6ee53ee98e61aa1e9bd16ab2a6f939a53c5",
+      "sources": [
+        {
+          "name": "Kneel: Postures",
+          "url": "https://getkneel.com/blog/submissive-positions-guide"
+        }
+      ],
+      "scope": "Современный пример значения протокола; название и договорённости не универсальны.",
+      "related_pose_codes": [
+        "protocol-standing-attention",
+        "protocol-kneeling-presentation"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "76088f6f-5f8b-5617-9099-2116dc079e8f"
+        }
+      ]
+    },
+    {
+      "code": "protocol-kneeling-presentation",
+      "baseline": {
+        "code": "protocol-kneeling-presentation",
+        "title": "Представление — на коленях",
+        "summary": "Положение на разведённых коленях с вертикальным корпусом, кистями за головой и локтями в стороны. Описательный вариант семейства Present; название не задаёт автоматически права другого участника.",
+        "sources": []
+      },
+      "body_sha256": "331bb6a8fc7acdb53624abfc993a1bc77df813c51b64f17ba3960ee6e7a344ce",
+      "sources": [
+        {
+          "name": "Kneel: Postures",
+          "url": "https://getkneel.com/blog/submissive-positions-guide"
+        }
+      ],
+      "scope": "Современный пример значения протокола; название и договорённости не универсальны.",
+      "related_pose_codes": [
+        "protocol-standing-attention",
+        "protocol-seated-waiting"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "76088f6f-5f8b-5617-9099-2116dc079e8f"
+        }
+      ]
+    },
+    {
+      "code": "protocol-kneeling-bow",
+      "baseline": {
+        "code": "protocol-kneeling-bow",
+        "title": "Поклон — на коленях",
+        "summary": "Положение на коленях с наклонённым вперёд корпусом, опущенной к поверхности головой и руками впереди. Соответствует общему семейству Prostrate / Bow; значение жеста зависит от частного протокола.",
+        "sources": []
+      },
+      "body_sha256": "a81c028f34a19d836045f3ff2cc646fc96d9e6a06df2eff3bc1e2a385a30a6a9",
+      "sources": [
+        {
+          "name": "Kneel: Postures",
+          "url": "https://getkneel.com/blog/submissive-positions-guide"
+        }
+      ],
+      "scope": "Современный пример значения протокола; название и договорённости не универсальны.",
+      "related_pose_codes": [
+        "protocol-kneeling-presentation",
+        "slave-kneeling-hands-forward"
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ],
+      "related_references": [
+        {
+          "kind": "pose-categories",
+          "uid": "76088f6f-5f8b-5617-9099-2116dc079e8f"
+        }
+      ]
+    }
+  ]
+}

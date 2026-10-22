@@ -1,0 +1,218 @@
+{
+  "pose-categories": [
+    {
+      "uid": "d290e170-cb85-57c1-b021-6319deb5e13b",
+      "name": "Оральные",
+      "description": "Положения для односторонней оральной близости. Названия вариантов описывают расположение партнёров.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "oral",
+        "aliases": []
+      }
+    },
+    {
+      "uid": "5d81948e-b7d2-5511-97da-57281cc00e14",
+      "name": "Взаимные",
+      "description": "Положения для взаимной оральной близости, включая основные варианты «69».",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "mutual",
+        "aliases": []
+      }
+    }
+  ],
+  "poses": [
+    {
+      "uid": "07103e52-493f-57f0-bee8-b7483bcfafa7",
+      "name": "Оральная — лёжа на спине",
+      "description": "Один участник лежит на спине, второй располагается перед ним на коленях. Односторонний вариант с опорой спины на поверхность.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "oral-supine-front",
+        "aliases": [
+          "Оральная близость"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position#Oral_sex_positions"
+          ],
+          "note": "Нейтральное описательное название варианта. Источники подтверждают семейство и основные положения, а не отдельный универсальный термин."
+        }
+      },
+      "category_uid": "d290e170-cb85-57c1-b021-6319deb5e13b"
+    },
+    {
+      "uid": "0fe76eeb-5d67-5b55-96b4-a2f12706ae50",
+      "name": "Оральная — лёжа рядом сбоку",
+      "description": "Один участник лежит на спине, второй находится рядом со стороны его ног. Оба корпуса имеют опору на общую поверхность.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "oral-supine-side",
+        "aliases": [
+          "Оральная близость"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position#Oral_sex_positions"
+          ],
+          "note": "Нейтральное описательное название варианта. Источники подтверждают семейство и основные положения, а не отдельный универсальный термин."
+        }
+      },
+      "category_uid": "d290e170-cb85-57c1-b021-6319deb5e13b"
+    },
+    {
+      "uid": "8b13b861-e296-5538-9551-827124662b3b",
+      "name": "Оральная — сидя на стуле",
+      "description": "Один участник сидит на стуле, второй находится перед ним на коленях. Расположение отличается от лежачих вариантов вертикальным корпусом сидящего партнёра.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "oral-chair-front",
+        "aliases": [
+          "Оральная близость"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position#Oral_sex_positions"
+          ],
+          "note": "Нейтральное описательное название варианта. Источники подтверждают семейство и основные положения, а не отдельный универсальный термин."
+        }
+      },
+      "category_uid": "d290e170-cb85-57c1-b021-6319deb5e13b"
+    },
+    {
+      "uid": "fe5497e4-596a-59cb-b45a-5707df14aeb7",
+      "name": "Оральная — сидя на краю кровати",
+      "description": "Один участник сидит на краю кровати, второй располагается перед ним на коленях. Верхняя часть тела сидящего участника остаётся вертикальной.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "oral-bed-edge",
+        "aliases": [
+          "Оральная близость"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position#Oral_sex_positions"
+          ],
+          "note": "Нейтральное описательное название варианта. Источники подтверждают семейство и основные положения, а не отдельный универсальный термин."
+        }
+      },
+      "category_uid": "d290e170-cb85-57c1-b021-6319deb5e13b"
+    },
+    {
+      "uid": "da4a884b-30f6-56db-93c2-d6493fd87ed2",
+      "name": "Оральная — стоя перед партнёром",
+      "description": "Один участник стоит, второй находится перед ним на коленях. В справочнике описывается только взаимное расположение тел.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "oral-standing-front",
+        "aliases": [
+          "Оральная близость"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position#Oral_sex_positions"
+          ],
+          "note": "Нейтральное описательное название варианта. Источники подтверждают семейство и основные положения, а не отдельный универсальный термин."
+        }
+      },
+      "category_uid": "d290e170-cb85-57c1-b021-6319deb5e13b"
+    },
+    {
+      "uid": "36d67c14-ca5b-5171-9055-53fb45993e55",
+      "name": "Оральная — над лежащим партнёром",
+      "description": "Один участник лежит на спине, второй располагается над верхней частью его корпуса с опорой на колени. Односторонний вариант, отличный от взаимной «69».",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "oral-above-supine-partner",
+        "aliases": [
+          "Оральная близость"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position#Oral_sex_positions"
+          ],
+          "note": "Нейтральное описательное название варианта. Источники подтверждают семейство и основные положения, а не отдельный универсальный термин."
+        }
+      },
+      "category_uid": "d290e170-cb85-57c1-b021-6319deb5e13b"
+    },
+    {
+      "uid": "5bba9ece-9edc-5437-ad72-1983d5e74f2c",
+      "name": "69 — лёжа",
+      "description": "Партнёры расположены один над другим в противоположных направлениях. Нижний участник лежит на спине, верхний имеет отдельную опору на руки и колени.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "mutual-69-lying",
+        "aliases": [
+          "Sixty-nine",
+          "Взаимная оральная"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position#Oral_sex_positions",
+            "https://www.webmd.com/sex/what-is-69-sex-position"
+          ],
+          "note": "Нейтральное описательное название варианта. Источники подтверждают семейство и основные положения, а не отдельный универсальный термин."
+        }
+      },
+      "category_uid": "5d81948e-b7d2-5511-97da-57281cc00e14"
+    },
+    {
+      "uid": "99027a04-5d8c-5436-9c8a-29acd333ab1d",
+      "name": "69 — на боку",
+      "description": "Оба партнёра лежат на боку в противоположных направлениях. В отличие от варианта один над другим, оба корпуса опираются непосредственно на поверхность.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "mutual-69-side",
+        "aliases": [
+          "Sixty-nine",
+          "Взаимная оральная"
+        ],
+        "provenance": {
+          "kind": "editorial_variant",
+          "source_scope": "family_only",
+          "family_sources": [
+            "https://en.wikipedia.org/wiki/Sex_position#Oral_sex_positions",
+            "https://www.webmd.com/sex/what-is-69-sex-position"
+          ],
+          "note": "Нейтральное описательное название варианта. Источники подтверждают семейство и основные положения, а не отдельный универсальный термин."
+        }
+      },
+      "category_uid": "5d81948e-b7d2-5511-97da-57281cc00e14"
+    }
+  ]
+}

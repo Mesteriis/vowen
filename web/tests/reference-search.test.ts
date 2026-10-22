@@ -80,3 +80,17 @@ describe('existing catalogue groups',()=>{
     expect(searchReferences(rows,'',[],'other','После практики')).toEqual([])
   })
 })
+
+
+describe('pose catalogue search',()=>{
+  it('combines pose aliases with explicit category filtering',()=>{
+    const poses=[
+      {name:'Ложки',description:'Парное положение на боку.',category_uid:'side',extra:{aliases:['Ложечки']}},
+      {name:'Наду',description:'Протокольное положение.',category_uid:'protocol',extra:{aliases:['Nadu']}},
+    ]
+    const categories=[{uid:'side',name:'На боку'},{uid:'protocol',name:'Протокольные положения'}]
+    expect(searchReferences(poses,'ложечки',categories,'side')).toEqual([poses[0]])
+    expect(searchReferences(poses,'протокольные',categories)).toEqual([poses[1]])
+    expect(searchReferences(poses,'nadu',categories,'side')).toEqual([])
+  })
+})

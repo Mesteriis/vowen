@@ -14,10 +14,10 @@ import kotlinx.serialization.json.JsonArray
 import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.contentOrNull
 
-data class ReferenceActions(val load:suspend (String)->List<ReferenceEntry>,val add:(PracticeCreate)->Unit)
+data class ReferenceActions(val load:suspend (String)->List<ReferenceEntry>,val add:(PracticeCreate)->Unit,val wikiLinks:(suspend (String)->List<WikiReferenceLink>)?=null)
 
 @Composable
-fun NativeSpaceSettingsScreen(member:Member,busy:Boolean,completed:Int,administration:AdministrationActions,references:ReferenceActions?){
+fun NativeSpaceSettingsScreen(member:Member,busy:Boolean,completed:Int,administration:AdministrationActions,references:ReferenceActions?,onWikiPage:((String)->Unit)?=null){
  val ru=member.language=="ru"
  var tab by remember{mutableIntStateOf(0)}
  if(member.is_admin!=true){Text(if(ru)"Нужны права администратора." else "Administrator access required.");return}
@@ -26,23 +26,27 @@ fun NativeSpaceSettingsScreen(member:Member,busy:Boolean,completed:Int,administr
    Tab(selected=tab==0,onClick={tab=0},text={Text(if(ru)"Администраторы" else "Administrators")})
    Tab(selected=tab==1,onClick={tab=1},text={Text(if(ru)"Справочники" else "References")},modifier=Modifier.testTag("settings-references"))
   }
-  if(tab==1&&references!=null)NativeReferenceScreen(ru,busy,completed,references) else NativeAdministrationScreen(member,busy,completed,administration)
+  if(tab==1&&references!=null)NativeReferenceScreen(ru,busy,completed,references,onWikiPage) else NativeAdministrationScreen(member,busy,completed,administration)
  }
 }
 
 @Composable
-fun NativeReferenceScreen(ru:Boolean,busy:Boolean,completed:Int,actions:ReferenceActions){
+fun NativeReferenceScreen(ru:Boolean,busy:Boolean,completed:Int,actions:ReferenceActions,onWikiPage:((String)->Unit)?=null){
  fun t(en:String,r:String)=if(ru)r else en
- val kinds=listOf("biological-sex" to t("Biological sex","Биологический пол"),"genders" to t("Gender","Гендер"),"practices" to t("Practices","Практики"),"practice-categories" to t("Practice categories","Категории практик"),"participant-compositions" to t("Participant composition","Состав участников"),"devices" to t("Devices and accessories","Девайсы и аксессуары"),"body-parts" to t("Body parts","Части тела"),"materials" to t("Materials","Материалы"),"role-scenarios" to t("Role scenarios","Ролевые сценарии"),"interaction-formats" to t("Interaction formats","Форматы взаимодействия"),"venues" to t("Venues","Места проведения"),"health-conditions" to t("Health conditions","Заболевания и состояния"),"allergens" to t("Allergens","Аллергены"),"timezones" to t("Timezones","Часовые пояса"),"relationship-types" to t("Relationship types","Виды отношений"))
+ val kinds=listOf("biological-sex" to t("Biological sex","Биологический пол"),"genders" to t("Gender","Гендер"),"practices" to t("Practices","Практики"),"practice-categories" to t("Practice categories","Категории практик"),"poses" to t("Poses","Позы"),"pose-categories" to t("Pose categories","Категории поз"),"participant-compositions" to t("Participant composition","Состав участников"),"devices" to t("Devices and accessories","Девайсы и аксессуары"),"body-parts" to t("Body parts","Части тела"),"materials" to t("Materials","Материалы"),"role-scenarios" to t("Role scenarios","Ролевые сценарии"),"interaction-formats" to t("Interaction formats","Форматы взаимодействия"),"venues" to t("Venues","Места проведения"),"health-conditions" to t("Health conditions","Заболевания и состояния"),"allergens" to t("Allergens","Аллергены"),"timezones" to t("Timezones","Часовые пояса"),"relationship-types" to t("Relationship types","Виды отношений"))
  var kind by remember{mutableStateOf("biological-sex")}
+ val categorized=kind=="practices"||kind=="poses"
  var query by remember{mutableStateOf("")}
  var filterCategory by remember{mutableStateOf<String?>(null)}
  var filterGroup by remember{mutableStateOf<String?>(null)}
  var groupMenu by remember{mutableStateOf(false)}
  var filterMenu by remember{mutableStateOf(false)}
  var menu by remember{mutableStateOf(false)}
+ var wikiLinks by remember{mutableStateOf<Map<String,String>>(emptyMap())}
+ var wikiLinksFailed by remember{mutableStateOf(false)}
  var rows by remember{mutableStateOf<List<ReferenceEntry>>(emptyList())}
  var categories by remember{mutableStateOf<List<ReferenceEntry>>(emptyList())}
+ var compositions by remember{mutableStateOf<List<ReferenceEntry>>(emptyList())}
  var devices by remember{mutableStateOf<List<ReferenceEntry>>(emptyList())}
  var bodyParts by remember{mutableStateOf<List<ReferenceEntry>>(emptyList())}
  var deviceUids by remember{mutableStateOf<Set<String>>(emptySet())}
@@ -59,14 +63,14 @@ fun NativeReferenceScreen(ru:Boolean,busy:Boolean,completed:Int,actions:Referenc
  var icon by remember{mutableStateOf("")}
  var thumbnail by remember{mutableStateOf("")}
  var extra by remember{mutableStateOf("{}")}
- LaunchedEffect(kind,completed,reload){query="";filterCategory=null;filterGroup=null;rows=emptyList();limit=50;failed=false;loading=true;try{rows=actions.load(kind);categories=if(kind=="practices")actions.load("practice-categories") else emptyList();devices=if(kind=="practices")actions.load("devices") else emptyList();bodyParts=if(kind=="practices")actions.load("body-parts") else emptyList()}catch(e:Exception){if(e is kotlinx.coroutines.CancellationException)throw e;failed=true}finally{loading=false}}
+ LaunchedEffect(kind,completed,reload){query="";filterCategory=null;filterGroup=null;rows=emptyList();wikiLinks=emptyMap();wikiLinksFailed=false;limit=50;failed=false;loading=true;try{rows=actions.load(kind);categories=when(kind){"practices"->actions.load("practice-categories");"poses"->actions.load("pose-categories");else->emptyList()};devices=if(kind=="practices"||kind=="poses")actions.load("devices") else emptyList();compositions=if(kind=="poses")actions.load("participant-compositions") else emptyList();bodyParts=if(kind=="practices")actions.load("body-parts") else emptyList();actions.wikiLinks?.let{load->try{wikiLinks=load(kind).associate{it.reference_uid to it.page_uid}}catch(e:Exception){if(e is kotlinx.coroutines.CancellationException)throw e;wikiLinksFailed=true}}}catch(e:Exception){if(e is kotlinx.coroutines.CancellationException)throw e;failed=true}finally{loading=false}}
  fun aliases(entry:ReferenceEntry)=(entry.extra?.get("aliases") as? JsonArray)?.mapNotNull{(it as? JsonPrimitive)?.contentOrNull}?:emptyList()
  fun group(entry:ReferenceEntry)=(entry.extra?.get("group") as? JsonPrimitive)?.contentOrNull?.trim().orEmpty()
- val groups=rows.filter{kind!="practices"||filterCategory==null||it.category_uid==filterCategory}.map{group(it)}.filter{it.isNotBlank()}.distinct().sorted()
+ val groups=rows.filter{!categorized||filterCategory==null||it.category_uid==filterCategory}.map{group(it)}.filter{it.isNotBlank()}.distinct().sorted()
  LaunchedEffect(filterCategory){filterGroup=null}
  fun normalized(value:String)=value.lowercase(java.util.Locale.ROOT).replace('ё','е').trim()
  val words=normalized(query).split(Regex("\\s+")).filter{it.isNotBlank()}
- val visibleRows=rows.filter{entry->(kind!="practices"||filterCategory==null||entry.category_uid==filterCategory)&&(filterGroup==null||group(entry)==filterGroup)&&words.all{word->normalized(listOf(entry.name,entry.description,group(entry),categories.find{it.uid==entry.category_uid}?.name?:"").plus(aliases(entry)).joinToString(" ")).contains(word)}}
+ val visibleRows=rows.filter{entry->(!categorized||filterCategory==null||entry.category_uid==filterCategory)&&(filterGroup==null||group(entry)==filterGroup)&&words.all{word->normalized(listOf(entry.name,entry.description,group(entry),categories.find{it.uid==entry.category_uid}?.name?:"").plus(aliases(entry)).joinToString(" ")).contains(word)}}
  LaunchedEffect(query,filterCategory,filterGroup){limit=50}
  Column(verticalArrangement=Arrangement.spacedBy(16.dp)){
   Box{
@@ -78,9 +82,10 @@ fun NativeReferenceScreen(ru:Boolean,busy:Boolean,completed:Int,actions:Referenc
    if(kind=="practices")OutlinedButton(onClick={deviceUids=emptySet();bodyPartUids=emptySet();categoryUid=null;name="";description="";icon="";thumbnail="";extra="{}";editor=true},enabled=!busy,modifier=Modifier.testTag("new-practice")){Text(t("Add practice","Добавить практику"))}
   }
   OutlinedTextField(query,{query=it},label={Text(t("Search name or alias","Поиск по названию или синониму"))},singleLine=true,modifier=Modifier.fillMaxWidth())
-  if(kind=="practices")Box{OutlinedButton(onClick={filterMenu=true}){Text(categories.find{it.uid==filterCategory}?.name?:t("All categories","Все категории"))};DropdownMenu(expanded=filterMenu,onDismissRequest={filterMenu=false}){DropdownMenuItem(text={Text(t("All categories","Все категории"))},onClick={filterCategory=null;filterMenu=false});categories.forEach{category->DropdownMenuItem(text={Text(category.name)},onClick={filterCategory=category.uid;filterMenu=false})}}}
+  if(categorized)Box{OutlinedButton(onClick={filterMenu=true}){Text(categories.find{it.uid==filterCategory}?.name?:t("All categories","Все категории"))};DropdownMenu(expanded=filterMenu,onDismissRequest={filterMenu=false}){DropdownMenuItem(text={Text(t("All categories","Все категории"))},onClick={filterCategory=null;filterMenu=false});categories.forEach{category->DropdownMenuItem(text={Text(category.name)},onClick={filterCategory=category.uid;filterMenu=false})}}}
   if(groups.isNotEmpty())Box{OutlinedButton(onClick={groupMenu=true}){Text(filterGroup?:t("All groups","Все группы"))};DropdownMenu(expanded=groupMenu,onDismissRequest={groupMenu=false}){DropdownMenuItem(text={Text(t("All groups","Все группы"))},onClick={filterGroup=null;groupMenu=false});groups.forEach{value->DropdownMenuItem(text={Text(value)},onClick={filterGroup=value;groupMenu=false})}}}
   if(loading)Text(t("Loading…","Загрузка…"))
+  if(wikiLinksFailed)Text(t("Could not load article links. Reload the catalogue.","Не удалось загрузить ссылки на статьи. Обновите справочник."))
   if(failed)Text(t("Could not load catalogue.","Не удалось загрузить справочник."))
   Text("${visibleRows.size} / ${rows.size} "+t("entries","записей"),style=MaterialTheme.typography.bodySmall)
   visibleRows.take(limit).forEach{entry->
@@ -90,9 +95,10 @@ fun NativeReferenceScreen(ru:Boolean,busy:Boolean,completed:Int,actions:Referenc
     if(aliases(entry).isNotEmpty())Text(aliases(entry).joinToString(", "),style=MaterialTheme.typography.bodySmall)
     if(group(entry).isNotBlank())Text(t("Group: ","Группа: ")+group(entry),style=MaterialTheme.typography.bodySmall)
     if(entry.description.isNotBlank())Text(entry.description,style=MaterialTheme.typography.bodySmall)
-    if(kind=="practices")Text(t("Category: ","Категория: ")+(categories.find{it.uid==entry.category_uid}?.name?:t("None","Не выбрана")),style=MaterialTheme.typography.bodySmall)
+    if(categorized)Text(t("Category: ","Категория: ")+(categories.find{it.uid==entry.category_uid}?.name?:t("None","Не выбрана")),style=MaterialTheme.typography.bodySmall)
+    wikiLinks[entry.uid]?.let{pageUid->if(onWikiPage!=null)TextButton(onClick={onWikiPage(pageUid)},enabled=!busy,modifier=Modifier.testTag("reference-wiki-${entry.uid}")){Text(t("Article in Wiki","Статья в Wiki"))}}
     TextButton(onClick={details=!details}){Text(t("Details","Подробнее"))}
-    if(details){Text("uid: ${entry.uid}",style=MaterialTheme.typography.bodySmall);Text("thumbnail: ${entry.thumbnail?:t("None","Нет")}",style=MaterialTheme.typography.bodySmall);Text("icon: ${entry.icon?:t("None","Нет")}",style=MaterialTheme.typography.bodySmall);Text("url: ${entry.url?:t("None","Нет")}",style=MaterialTheme.typography.bodySmall);Text(t("Devices: ","Девайсы: ")+devices.filter{entry.device_uids?.contains(it.uid)==true}.joinToString{it.name},style=MaterialTheme.typography.bodySmall);Text(t("Body parts: ","Части тела: ")+bodyParts.filter{entry.body_part_uids?.contains(it.uid)==true}.joinToString{it.name},style=MaterialTheme.typography.bodySmall);Text("extra: ${entry.extra}",style=MaterialTheme.typography.bodySmall)}
+    if(details){Text("uid: ${entry.uid}",style=MaterialTheme.typography.bodySmall);Text("thumbnail: ${entry.thumbnail?:t("None","Нет")}",style=MaterialTheme.typography.bodySmall);Text("icon: ${entry.icon?:t("None","Нет")}",style=MaterialTheme.typography.bodySmall);Text("url: ${entry.url?:t("None","Нет")}",style=MaterialTheme.typography.bodySmall);Text(t("Devices: ","Девайсы: ")+devices.filter{entry.device_uids?.contains(it.uid)==true}.joinToString{it.name},style=MaterialTheme.typography.bodySmall);if(kind=="practices"){Text(t("Body parts: ","Части тела: ")+bodyParts.filter{entry.body_part_uids?.contains(it.uid)==true}.joinToString{it.name},style=MaterialTheme.typography.bodySmall);};if(kind=="poses"){Text(t("Example compositions: ","Примеры состава участников: ")+compositions.filter{entry.composition_uids?.contains(it.uid)==true}.joinToString{it.name},style=MaterialTheme.typography.bodySmall)};Text("extra: ${entry.extra}",style=MaterialTheme.typography.bodySmall)}
     HorizontalDivider()
    }
   }

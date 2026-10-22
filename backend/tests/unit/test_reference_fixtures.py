@@ -5,12 +5,14 @@ from uuid import UUID
 from vowen.modules.references.fixtures import CATALOGUES, fixture_rows
 
 
-def test_reference_v15_counts_links_taxonomy_and_stable_concepts():
+def test_current_reference_counts_links_taxonomy_and_stable_concepts():
     counts = {
         "biological-sex": 3,
         "genders": 7,
         "practices": 93,
         "practice-categories": 13,
+        "pose-categories": 14,
+        "poses": 106,
         "participant-compositions": 10,
         "devices": 62,
         "body-parts": 23,
@@ -29,9 +31,11 @@ def test_reference_v15_counts_links_taxonomy_and_stable_concepts():
         assert len({row["uid"] for row in rows}) == len(rows)
         assert len({row["name"].casefold() for row in rows}) == len(rows)
         assert all(row["url"] is None and row["description"].strip() for row in rows)
-        assert all(
-            row["icon"] is None and row["thumbnail"].startswith("/references/") for row in rows
-        )
+        assert all(row["icon"] is None for row in rows)
+        if kind in {"poses", "pose-categories"}:
+            assert all(row["thumbnail"] is None for row in rows)
+        else:
+            assert all(row["thumbnail"].startswith("/references/") for row in rows)
     names = {row["name"] for row in fixture_rows("practices")}
     assert {"Анальный секс", "Вагинальный секс", "Оральный секс", "Мастурбация"} <= names
     assert not {"Активное слушание", "Совместная прогулка", "Уход за обувью"} & names
@@ -117,6 +121,8 @@ def test_fixation_and_care_structure_reuses_existing_entries_and_catalogues():
     from vowen.modules.references.fixtures import link_rows
 
     for kind in CATALOGUES:
+        if kind in {"poses", "pose-categories"}:
+            continue  # v9 predates the pose catalogues.
         original = json.loads(
             files("vowen.modules.references").joinpath("fixtures/v9", kind + ".json").read_text()
         )
@@ -172,6 +178,8 @@ def test_device_expansion_preserves_v12_and_adds_only_24_stable_device_entries()
     }
     new = []
     for kind in CATALOGUES:
+        if kind in {"poses", "pose-categories"}:
+            continue  # These catalogues first appear in v16.
         previous = json.loads(
             files("vowen.modules.references").joinpath("fixtures/v12", kind + ".json").read_text()
         )
@@ -242,6 +250,8 @@ def test_v15_additions_preserve_v14_and_have_stable_ids():
 
     namespace = UUID("3e181b46-6a16-4c04-8acb-667ba0fd25a9")
     for kind in CATALOGUES:
+        if kind in {"poses", "pose-categories"}:
+            continue  # These catalogues first appear in v16.
         previous = json.loads(
             files("vowen.modules.references").joinpath("fixtures/v14", kind + ".json").read_text()
         )

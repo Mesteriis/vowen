@@ -10,6 +10,7 @@ android {
  buildFeatures { compose = true }
 }
 dependencies {
+ implementation(libs.commonmark)
  implementation(libs.compose.ui); implementation(libs.compose.material); implementation(libs.activity.compose)
  implementation(libs.coroutines.android); implementation(libs.serialization.json); implementation(libs.okhttp)
  testImplementation(libs.junit)

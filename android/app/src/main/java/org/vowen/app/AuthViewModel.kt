@@ -87,6 +87,7 @@ class AuthViewModel(application:Application):AndroidViewModel(application) {
  fun changeRelation(relation:Relation,agreement:String,scopes:List<String>)=run {
   api.change(relation,RelationChange(agreement_text=agreement,expected_version=relation.version,scopes=scopes));loadWorkspace(true)
  }
+ val wikiApi by lazy { WikiApi(api) }
  suspend fun referenceEntries(kind:String):List<ReferenceEntry> = api.referenceEntries(kind)
  fun addPractice(command:PracticeCreate)=run {api.addPractice(command);loadWorkspace(true)}
  suspend fun administration():AdministrationView=api.administration()

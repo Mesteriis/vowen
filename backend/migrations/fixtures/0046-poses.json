@@ -1,0 +1,434 @@
+{
+  "pose-categories": [
+    {
+      "uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89",
+      "name": "Лёжа на спине",
+      "description": "Парные позы с основным положением лёжа на спине.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "supine",
+        "aliases": []
+      }
+    },
+    {
+      "uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc",
+      "name": "Лёжа на животе",
+      "description": "Парные позы с основным положением лёжа на животе.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "prone",
+        "aliases": []
+      }
+    },
+    {
+      "uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f",
+      "name": "На боку",
+      "description": "Боковые положения участников.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "side",
+        "aliases": []
+      }
+    },
+    {
+      "uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e",
+      "name": "Сидя",
+      "description": "Позы с основным сидячим положением.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "seated",
+        "aliases": []
+      }
+    },
+    {
+      "uid": "50db3b5b-1c02-5560-a940-afc89bee4272",
+      "name": "Стоя",
+      "description": "Позы с основным положением стоя.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "standing",
+        "aliases": []
+      }
+    },
+    {
+      "uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed",
+      "name": "На коленях",
+      "description": "Позы с основным положением на коленях.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "kneeling",
+        "aliases": []
+      }
+    },
+    {
+      "uid": "fe4cb364-14f4-59cc-bd48-e0f934606243",
+      "name": "Партнёр сверху",
+      "description": "Парные позы с верхним расположением одного из участников.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "partner-on-top",
+        "aliases": []
+      }
+    },
+    {
+      "uid": "76088f6f-5f8b-5617-9099-2116dc079e8f",
+      "name": "Протокольные положения",
+      "description": "Именованные положения для согласованных протоколов динамики.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "protocol",
+        "aliases": []
+      }
+    }
+  ],
+  "poses": [
+    {
+      "uid": "1cd572ee-0f65-52b5-a4d0-70d881b71889",
+      "name": "Миссионерская",
+      "description": "Парная поза лицом к лицу с положением одного участника на спине.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "missionary",
+        "aliases": [
+          "Классическая"
+        ]
+      },
+      "category_uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+    },
+    {
+      "uid": "c10de705-c76a-5510-921f-76c072316451",
+      "name": "Лёжа на спине с опорой",
+      "description": "Вариант положения на спине с дополнительной опорой.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "supine-supported",
+        "aliases": []
+      },
+      "category_uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+    },
+    {
+      "uid": "900e817b-2280-54f0-b50b-b9ea1e2e894a",
+      "name": "На краю кровати",
+      "description": "Положение на спине у края кровати.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "bed-edge-supine",
+        "aliases": [
+          "На краю постели"
+        ]
+      },
+      "category_uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+    },
+    {
+      "uid": "57e5a667-13b2-5818-a37c-a42a1c43caa3",
+      "name": "Плашмя",
+      "description": "Парное положение лёжа на животе.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "flat-prone",
+        "aliases": [
+          "Лёжа на животе"
+        ]
+      },
+      "category_uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc"
+    },
+    {
+      "uid": "d4ac9a34-8606-5885-8f03-a93e492a1770",
+      "name": "Лёжа на животе с опорой",
+      "description": "Вариант положения на животе с дополнительной опорой.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "prone-supported",
+        "aliases": []
+      },
+      "category_uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc"
+    },
+    {
+      "uid": "0a836a19-0b4e-518d-8f6b-61d257b54ad0",
+      "name": "На животе у края кровати",
+      "description": "Положение на животе у края кровати.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "bed-edge-prone",
+        "aliases": []
+      },
+      "category_uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc"
+    },
+    {
+      "uid": "1ee5d2e7-b9e4-5c56-bf10-24c61fe6f78e",
+      "name": "Ложки",
+      "description": "Парное положение на боку в одном направлении.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "spooning",
+        "aliases": [
+          "Ложечки"
+        ]
+      },
+      "category_uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f"
+    },
+    {
+      "uid": "7794fbd1-1f47-5a6f-9127-7c216d5fb8a2",
+      "name": "На боку лицом к лицу",
+      "description": "Парное боковое положение лицом друг к другу.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "side-face-to-face",
+        "aliases": []
+      },
+      "category_uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f"
+    },
+    {
+      "uid": "76a6b416-a3c8-548f-b732-45cbe2eb2b4a",
+      "name": "Перекрёстная на боку",
+      "description": "Боковое положение с перекрёстным расположением участников.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "side-crossed",
+        "aliases": []
+      },
+      "category_uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f"
+    },
+    {
+      "uid": "02af237e-d32b-5695-beb9-e125e09f674c",
+      "name": "Лотос",
+      "description": "Парная сидячая поза лицом к лицу.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "lotus",
+        "aliases": []
+      },
+      "category_uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+    },
+    {
+      "uid": "dd115af3-ab45-58ea-b6a7-b82be4746afd",
+      "name": "На стуле лицом к лицу",
+      "description": "Сидячий вариант с использованием стула.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "chair-face-to-face",
+        "aliases": []
+      },
+      "category_uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+    },
+    {
+      "uid": "e25d5832-b43c-5162-96e0-5860d3a15e3e",
+      "name": "Сидя спиной к партнёру",
+      "description": "Парное сидячее положение в одном направлении.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "seated-facing-away",
+        "aliases": []
+      },
+      "category_uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+    },
+    {
+      "uid": "7df2c3ec-0528-58c0-a68e-32f0df227e8b",
+      "name": "Стоя лицом к лицу",
+      "description": "Парное положение стоя лицом друг к другу.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "standing-face-to-face",
+        "aliases": []
+      },
+      "category_uid": "50db3b5b-1c02-5560-a940-afc89bee4272"
+    },
+    {
+      "uid": "c979147c-462d-5b90-abd9-56cc34fccdc3",
+      "name": "Стоя сзади",
+      "description": "Парное положение стоя в одном направлении.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "standing-rear",
+        "aliases": []
+      },
+      "category_uid": "50db3b5b-1c02-5560-a940-afc89bee4272"
+    },
+    {
+      "uid": "f6d7b859-7393-5f2f-95b2-fef9f9554317",
+      "name": "Стоя у стены",
+      "description": "Положение стоя с опорой у стены.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "standing-wall",
+        "aliases": []
+      },
+      "category_uid": "50db3b5b-1c02-5560-a940-afc89bee4272"
+    },
+    {
+      "uid": "ea660aa1-a4b5-5107-89c6-dec04274e3fe",
+      "name": "На четвереньках",
+      "description": "Парная поза с положением одного участника на четвереньках.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "all-fours",
+        "aliases": [
+          "Догги-стайл",
+          "Doggy style"
+        ]
+      },
+      "category_uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed"
+    },
+    {
+      "uid": "4842d601-ec04-5683-91bc-18627d32b62e",
+      "name": "На коленях лицом к лицу",
+      "description": "Парное положение на коленях лицом друг к другу.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "kneeling-face-to-face",
+        "aliases": []
+      },
+      "category_uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed"
+    },
+    {
+      "uid": "a1f1281d-3309-54c3-9d59-40c171df8175",
+      "name": "На коленях с опорой",
+      "description": "Вариант положения на коленях с дополнительной опорой.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "kneeling-supported",
+        "aliases": []
+      },
+      "category_uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed"
+    },
+    {
+      "uid": "a18c08d3-98e7-52ee-9904-9dba21bde834",
+      "name": "Наездница",
+      "description": "Парная поза с расположением верхнего участника лицом к партнёру.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "cowgirl",
+        "aliases": [
+          "Партнёр сверху лицом к лицу"
+        ]
+      },
+      "category_uid": "fe4cb364-14f4-59cc-bd48-e0f934606243"
+    },
+    {
+      "uid": "bb93077e-52c7-5e73-bafb-afc7069c98a8",
+      "name": "Обратная наездница",
+      "description": "Вариант верхнего расположения спиной к партнёру.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "reverse-cowgirl",
+        "aliases": []
+      },
+      "category_uid": "fe4cb364-14f4-59cc-bd48-e0f934606243"
+    },
+    {
+      "uid": "83778cd8-64c5-5611-bf62-1ede506f5793",
+      "name": "Сверху с опорой",
+      "description": "Вариант верхнего расположения с дополнительной опорой.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "on-top-supported",
+        "aliases": []
+      },
+      "category_uid": "fe4cb364-14f4-59cc-bd48-e0f934606243"
+    },
+    {
+      "uid": "e8056ca0-a622-5b3e-b570-dc051b6cb12e",
+      "name": "Наду",
+      "description": "Протокольное положение на коленях.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "nadu",
+        "aliases": [
+          "Nadu"
+        ]
+      },
+      "category_uid": "76088f6f-5f8b-5617-9099-2116dc079e8f"
+    },
+    {
+      "uid": "cd6ba6d9-f48a-51f0-b6ff-0c20a5b464f4",
+      "name": "Тауэр",
+      "description": "Вариант протокольного положения на коленях.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "tower",
+        "aliases": [
+          "Tower",
+          "Башня"
+        ]
+      },
+      "category_uid": "76088f6f-5f8b-5617-9099-2116dc079e8f"
+    },
+    {
+      "uid": "5d0cf79b-31a7-5b89-9649-20850fcec6a2",
+      "name": "Инспекция",
+      "description": "Именованное положение для протокола осмотра.",
+      "icon": null,
+      "thumbnail": null,
+      "url": null,
+      "extra": {
+        "code": "inspection",
+        "aliases": [
+          "Inspection"
+        ]
+      },
+      "category_uid": "76088f6f-5f8b-5617-9099-2116dc079e8f"
+    }
+  ]
+}

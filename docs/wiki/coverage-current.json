@@ -1,0 +1,2639 @@
+{
+  "scope": "all current reference fixtures",
+  "catalogues": 17,
+  "entries": 438,
+  "articles_present": 438,
+  "gaps": {},
+  "structural_complete": true,
+  "limitation": "Fixture audit only; sources present are not proof of factual review or live links.",
+  "items": [
+    {
+      "kind": "biological-sex",
+      "uid": "544bd110-55b4-5367-8aa9-56f2ab9bf6ec",
+      "name": "Мужской",
+      "gaps": []
+    },
+    {
+      "kind": "biological-sex",
+      "uid": "a411eb1b-df65-5a8a-b9ee-05b5a9419fd8",
+      "name": "Женский",
+      "gaps": []
+    },
+    {
+      "kind": "biological-sex",
+      "uid": "48f08dbf-fb07-5813-91ff-a0dd0a6218c0",
+      "name": "Интерсекс",
+      "gaps": []
+    },
+    {
+      "kind": "genders",
+      "uid": "34838003-cbf4-50ca-8ce6-495e9644af75",
+      "name": "Мужчина",
+      "gaps": []
+    },
+    {
+      "kind": "genders",
+      "uid": "820b04fa-20e5-5e6b-8394-d57389c2d8f5",
+      "name": "Женщина",
+      "gaps": []
+    },
+    {
+      "kind": "genders",
+      "uid": "fc1f8f67-89f0-5dbe-a70c-dee814672fbe",
+      "name": "Небинарный",
+      "gaps": []
+    },
+    {
+      "kind": "genders",
+      "uid": "285d6682-da2f-5ce6-9b17-c64ced49db5b",
+      "name": "Агендер",
+      "gaps": []
+    },
+    {
+      "kind": "genders",
+      "uid": "c8d89ef0-0cab-5bd5-b8c1-0e3db270c79f",
+      "name": "Гендерфлюидный",
+      "gaps": []
+    },
+    {
+      "kind": "genders",
+      "uid": "4f486b7d-ba65-5d36-9281-e903fee94234",
+      "name": "Бигендер",
+      "gaps": []
+    },
+    {
+      "kind": "genders",
+      "uid": "9763079b-2603-52c4-b58b-328f863528ca",
+      "name": "Другое",
+      "gaps": []
+    },
+    {
+      "kind": "practice-categories",
+      "uid": "43712f95-6e05-5eaa-a5a2-d27c06482e47",
+      "name": "Секс и стимуляция",
+      "gaps": []
+    },
+    {
+      "kind": "practice-categories",
+      "uid": "5bd72ca0-1700-5abf-858d-0547df45ffc3",
+      "name": "Мастурбация",
+      "gaps": []
+    },
+    {
+      "kind": "practice-categories",
+      "uid": "5b5243c6-220c-58bb-a6e5-032890402f73",
+      "name": "Секс-игрушки",
+      "gaps": []
+    },
+    {
+      "kind": "practice-categories",
+      "uid": "a2b31394-9367-573c-955a-b0d4e3f9b9fe",
+      "name": "Бондаж и ограничение подвижности",
+      "gaps": []
+    },
+    {
+      "kind": "practice-categories",
+      "uid": "7e95dd6b-bb69-5bb9-b3a1-6c0a26939c24",
+      "name": "Сенсорные практики",
+      "gaps": []
+    },
+    {
+      "kind": "practice-categories",
+      "uid": "912fa5e5-b35b-5192-af4f-cb6b604a1564",
+      "name": "Телесное воздействие",
+      "gaps": []
+    },
+    {
+      "kind": "practice-categories",
+      "uid": "a4f7a9ba-4a9e-533d-b2fd-8badc14af21b",
+      "name": "Контроль оргазма",
+      "gaps": []
+    },
+    {
+      "kind": "practice-categories",
+      "uid": "13e560e0-4658-5d78-a459-ba14d83af5b8",
+      "name": "Ролевые практики",
+      "gaps": []
+    },
+    {
+      "kind": "practice-categories",
+      "uid": "5748b2b8-f601-5265-aad8-c23ef9780233",
+      "name": "Обмен властью и протоколы",
+      "gaps": []
+    },
+    {
+      "kind": "practice-categories",
+      "uid": "a2d15e96-70cc-525b-b187-542ed07c4a59",
+      "name": "Фетиши",
+      "gaps": []
+    },
+    {
+      "kind": "practice-categories",
+      "uid": "ffb84262-30b8-54ce-98c0-d42970c03b37",
+      "name": "Восстановление и забота",
+      "gaps": []
+    },
+    {
+      "kind": "practice-categories",
+      "uid": "4963fafa-3af2-5baa-92bb-91e4a91573c4",
+      "name": "Дистанционные практики",
+      "gaps": []
+    },
+    {
+      "kind": "practice-categories",
+      "uid": "b6121e04-1d0e-517a-b7ef-cce763010f67",
+      "name": "Групповые практики",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "fda43b94-747d-5e60-92c6-5fda0ae53f51",
+      "name": "Вагинальный секс",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "7c52a9f0-deae-58df-8994-031baf1f74ee",
+      "name": "Анальный секс",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "3e7b4ff4-de6b-55ae-8a69-5d011e365e9b",
+      "name": "Оральный секс",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "e55ddcd3-43fd-5182-b2b9-97e64409fcf8",
+      "name": "Куннилингус",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "a471310d-8844-5e72-933e-719a769f564f",
+      "name": "Фелляция",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "c5af0a7d-622e-5f1f-8e46-7563868f69eb",
+      "name": "Анилингус",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "bd2abb9f-2cf5-52ea-9e00-33191a9ea709",
+      "name": "Взаимный оральный секс",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "9dbf9534-cd39-5b0e-af71-0d0c1c83b169",
+      "name": "Непроникающий секс",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "0f8e6a45-a791-58bb-b885-13dd6a800ff4",
+      "name": "Межбедренный секс",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "331d0827-b027-5770-a40f-9a6e6a01472e",
+      "name": "Межгрудный секс",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "cba2ee71-5df2-553e-b938-8cfdc3c6ad15",
+      "name": "Трибадизм",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "503108c8-97de-5f67-913b-adb75753900b",
+      "name": "Фроттаж",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "3390b986-66ba-5ae9-bacd-a5e95c9751a4",
+      "name": "Мануальная стимуляция",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "4e333b5d-ee86-5c6d-bdea-ecba2f611063",
+      "name": "Фингеринг",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "66e5b228-4b20-57f9-baa7-c1afeae89869",
+      "name": "Анальная стимуляция пальцами",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "695b1a33-cd13-53f4-bd8e-22837389e986",
+      "name": "Клиторальная стимуляция",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "9e72931b-ce5b-5a79-b0a6-d432f9435c15",
+      "name": "Стимуляция простаты",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "ff37ceb8-312b-5e93-8693-0a04e326f877",
+      "name": "Стимуляция сосков",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "4e87c082-0bb8-5296-bebb-6550e45e3219",
+      "name": "Мастурбация",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "cfe32429-c60b-5e9e-a20f-bf05d2078ffc",
+      "name": "Взаимная мастурбация",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "f4699e5b-d255-5850-899e-08893909c258",
+      "name": "Секстинг",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "2d00c97b-0c2c-5000-b1e5-11346e5974bb",
+      "name": "Секс по телефону",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "75b29142-9bb9-5415-a9a6-1017bd5bf7d1",
+      "name": "Секс по видеосвязи",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "a9e8faf3-dd3a-5ea2-958c-db4cd2c6328b",
+      "name": "Дистанционное управление секс-игрушкой",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "62e9c88a-ddb1-512f-a704-5df2b0239651",
+      "name": "Секс с игрушками",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "65ca1bfd-d395-5c6f-8be7-025c43d5b995",
+      "name": "Использование вибратора",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "4d5452b7-ba53-5643-93a4-87646edc3cf0",
+      "name": "Использование фаллоимитатора",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "0886115f-dfcd-57de-ad1d-b88da5817730",
+      "name": "Использование анальной пробки",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "35de7866-494b-5d79-90da-c75883dd27fd",
+      "name": "Использование анальных бус",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "9c62923b-8cca-50b8-9729-f84109f61bb8",
+      "name": "Страпон-секс",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "f00c8d46-5efb-5647-862a-083fb5d2f28e",
+      "name": "Пеггинг",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "b7ab9335-d44a-50f4-ac3a-56cb14d410af",
+      "name": "Двойная стимуляция",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "5917efab-8f10-5596-aa3b-774520a37a8b",
+      "name": "Анальная стимуляция игрушкой",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "c2383526-eef0-5745-932d-0cdecd763d68",
+      "name": "Эротический массаж",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "7a7572b7-692e-5d7c-80c2-d9e3e7cd2ab6",
+      "name": "Поцелуи",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "d94bead1-4c60-53e6-8be7-57fb50148387",
+      "name": "Петтинг",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "6d39254a-0e66-5d07-bcfc-04017a70864b",
+      "name": "Стриптиз",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "a157d029-55e8-5675-907e-c13f45bb604c",
+      "name": "Приватный танец",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "ce92c899-2d4a-5a8c-873d-7b7cd7482883",
+      "name": "Обнажённое позирование",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "3ff1429b-053d-5917-9e26-b3e99fe7be43",
+      "name": "Интимная фотосъёмка",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "f8f0aaad-bc1c-5d5f-8e5e-b6b37e3b5c1b",
+      "name": "Интимная видеосъёмка",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "937fefbc-2666-5f92-a479-8ce6e46dd5d3",
+      "name": "Наблюдение за партнёром",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "970905b0-56e7-5cc6-a4c2-2be5d302d54b",
+      "name": "Демонстрация тела партнёру",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "62b4a457-e5af-5fe3-a3a4-14d5acff107b",
+      "name": "Бондаж",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "0670e567-269d-5c65-896e-7477453261c7",
+      "name": "Верёвочный бондаж",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "cfc7f289-3bf1-5fa2-9626-dbd5f710fda2",
+      "name": "Сибари",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "faab733d-6a81-5377-a354-696825ba3946",
+      "name": "Бондаж с манжетами",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "58aecb41-3edb-5fb1-9306-c87763f9d11e",
+      "name": "Сенсорная депривация",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "65c88c6e-6450-5024-85fe-4b83c76a946a",
+      "name": "Повязка на глаза",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "f5b7c0ca-281d-51b7-82ca-c30b6cba9cd0",
+      "name": "Щекотка",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "60be494c-7dcd-5cfc-b430-6ee76033d897",
+      "name": "Практики с пером",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "447881f6-b624-51b6-996f-b1452d05d0f4",
+      "name": "Восковые практики",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "9d2e14f0-a5aa-5e85-ad02-bd936eea69e9",
+      "name": "Практики со льдом",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "276fcac2-d18c-5e9d-89be-8a2b409d3a21",
+      "name": "Спанкинг",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "766884f2-2037-5a2c-a03a-de6abe952834",
+      "name": "Практики с паддлом",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "2d4342ca-6979-502a-bcd0-80b4438ee082",
+      "name": "Флоггинг",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "50e8d644-dd48-58fb-87c3-091a1035aa5d",
+      "name": "Практики со стеком",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "14dba989-518a-556e-9a59-e09b7ee72810",
+      "name": "Канинг",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "ed9604e9-66ee-544d-85a7-d05f58f25d3e",
+      "name": "Практики с колесом Вартенберга",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "75ca3b67-75d4-5bc7-9795-9f0cfed72b2d",
+      "name": "Практики с зажимами",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "09984499-cbe6-58ef-8ae9-b7b99833c8a3",
+      "name": "Тизинг",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "5a4dd0fe-bf6b-5cf5-aaad-e21f5237e6ed",
+      "name": "Эджинг",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "eedb7d63-f3d1-5515-b12a-866de1f08e04",
+      "name": "Контроль оргазма",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "f5788e6a-7e9b-5856-9b11-743db4a56660",
+      "name": "Отказ от оргазма",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "b9d3af7b-7f12-524d-8297-905b58418373",
+      "name": "Практики целомудрия",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "7505d90e-73ad-5a7a-aac0-5f4f5615c01f",
+      "name": "Выполнение команд",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "f7791c5d-bd98-55eb-8455-a76fdb2fa4fe",
+      "name": "Протоколы",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "ea4b99aa-70d0-5b1d-98c8-1023909d70ad",
+      "name": "Практики служения",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "cbe31b4c-4db6-5c6b-a620-2b6fab952a9b",
+      "name": "Похвала",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "c8fc7591-10a1-5ca3-9b3f-c21a6cdfb325",
+      "name": "Эротическое унижение",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "116aebda-4167-50e9-8bdc-c24ff1427c73",
+      "name": "Объективация",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "9171b79d-eb59-5bc0-b148-61a0032e7d29",
+      "name": "Поклонение телу",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "4e406954-d785-54f0-a177-dee5341fe788",
+      "name": "Поклонение стопам",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "a48b709f-acc5-51a0-9a94-61da508e3285",
+      "name": "Поклонение обуви",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "df8b928c-36b9-54f1-91a8-5a9c94e40a36",
+      "name": "Пет-плей",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "4e7ceb4c-2c01-536f-af37-d3b63f9bda99",
+      "name": "Пони-плей",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "8e7d4987-b812-5f2c-8968-84962b658265",
+      "name": "Ролевые игры",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "4334ca8f-6c36-5ee4-ae85-ebcea59c22d5",
+      "name": "Обмен властью",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "ab72d397-b61f-58bb-a32e-adb85c56c026",
+      "name": "Обмен ролями",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "812594cf-04bc-5ea7-ad67-d85c6df52afd",
+      "name": "Практики с униформой",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "b175d93f-3375-5f82-a24a-f11e9d335abc",
+      "name": "Латекс-фетиш",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "c5c1a188-d4cb-550e-ae0c-440556e12c1a",
+      "name": "Кожа-фетиш",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "4631d14c-5d07-51f1-ae9a-ebe8686f1311",
+      "name": "Фетиш белья",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "deda82ad-b98f-545d-9089-2aae477dcd50",
+      "name": "Фетиш чулок",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "bd28a4a3-778b-5d5e-b890-cb733fb99344",
+      "name": "Фетиш каблуков",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "afc36234-3776-5183-ba77-12a530332a89",
+      "name": "Практики с ошейником",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "2d9f9efc-502b-5d37-acee-5fbecc7c9bab",
+      "name": "Практики с поводком",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "c742fe75-56cd-5ed1-94b8-56b6cfcaf226",
+      "name": "Массаж",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "25b4ae15-a3c3-56da-9cfb-2a0396576630",
+      "name": "Забота после практики",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "3d97bb5b-a853-57fe-8dc4-d5b2fa980b46",
+      "name": "Секс втроём",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "ec12bef2-907d-511d-91bc-1b1df88dc9e7",
+      "name": "Групповой секс",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "65f9b954-e240-5933-8feb-91e2c7cef09f",
+      "name": "Обмен партнёрами",
+      "gaps": []
+    },
+    {
+      "kind": "practices",
+      "uid": "2644eb5f-8710-5f68-a7d4-b804700ca526",
+      "name": "Свинг",
+      "gaps": []
+    },
+    {
+      "kind": "pose-categories",
+      "uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89",
+      "name": "Лёжа на спине",
+      "gaps": []
+    },
+    {
+      "kind": "pose-categories",
+      "uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc",
+      "name": "Лёжа на животе",
+      "gaps": []
+    },
+    {
+      "kind": "pose-categories",
+      "uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f",
+      "name": "На боку",
+      "gaps": []
+    },
+    {
+      "kind": "pose-categories",
+      "uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e",
+      "name": "Сидя",
+      "gaps": []
+    },
+    {
+      "kind": "pose-categories",
+      "uid": "50db3b5b-1c02-5560-a940-afc89bee4272",
+      "name": "Стоя",
+      "gaps": []
+    },
+    {
+      "kind": "pose-categories",
+      "uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed",
+      "name": "На коленях",
+      "gaps": []
+    },
+    {
+      "kind": "pose-categories",
+      "uid": "fe4cb364-14f4-59cc-bd48-e0f934606243",
+      "name": "Партнёр сверху",
+      "gaps": []
+    },
+    {
+      "kind": "pose-categories",
+      "uid": "76088f6f-5f8b-5617-9099-2116dc079e8f",
+      "name": "Протокольные положения",
+      "gaps": []
+    },
+    {
+      "kind": "pose-categories",
+      "uid": "b6c629db-c3c1-5ba4-9708-9771dced1811",
+      "name": "Позы рабыни",
+      "gaps": []
+    },
+    {
+      "kind": "pose-categories",
+      "uid": "d290e170-cb85-57c1-b021-6319deb5e13b",
+      "name": "Оральные",
+      "gaps": []
+    },
+    {
+      "kind": "pose-categories",
+      "uid": "5d81948e-b7d2-5511-97da-57281cc00e14",
+      "name": "Взаимные",
+      "gaps": []
+    },
+    {
+      "kind": "pose-categories",
+      "uid": "b318a5cf-6497-56fc-9ea3-bda1be2c71f2",
+      "name": "С дополнительными опорами",
+      "gaps": []
+    },
+    {
+      "kind": "pose-categories",
+      "uid": "d3ea34c1-6593-5855-bf4a-9aa42f0fed2e",
+      "name": "С оборудованием",
+      "gaps": []
+    },
+    {
+      "kind": "pose-categories",
+      "uid": "a1366e19-a915-5f5d-9bf5-c45a25bc70ae",
+      "name": "Для трёх и более участников",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "1cd572ee-0f65-52b5-a4d0-70d881b71889",
+      "name": "Миссионерская",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "c10de705-c76a-5510-921f-76c072316451",
+      "name": "Лёжа на спине с опорой",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "900e817b-2280-54f0-b50b-b9ea1e2e894a",
+      "name": "На краю кровати",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "57e5a667-13b2-5818-a37c-a42a1c43caa3",
+      "name": "Плашмя",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "d4ac9a34-8606-5885-8f03-a93e492a1770",
+      "name": "Лёжа на животе с опорой",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "0a836a19-0b4e-518d-8f6b-61d257b54ad0",
+      "name": "На животе у края кровати",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "1ee5d2e7-b9e4-5c56-bf10-24c61fe6f78e",
+      "name": "Ложки",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "7794fbd1-1f47-5a6f-9127-7c216d5fb8a2",
+      "name": "На боку лицом к лицу",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "76a6b416-a3c8-548f-b732-45cbe2eb2b4a",
+      "name": "Перекрёстная на боку",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "02af237e-d32b-5695-beb9-e125e09f674c",
+      "name": "Лотос",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "dd115af3-ab45-58ea-b6a7-b82be4746afd",
+      "name": "На стуле лицом к лицу",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "e25d5832-b43c-5162-96e0-5860d3a15e3e",
+      "name": "Сидя спиной к партнёру",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "7df2c3ec-0528-58c0-a68e-32f0df227e8b",
+      "name": "Стоя лицом к лицу",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "c979147c-462d-5b90-abd9-56cc34fccdc3",
+      "name": "Стоя сзади",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "f6d7b859-7393-5f2f-95b2-fef9f9554317",
+      "name": "Стоя у стены",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "ea660aa1-a4b5-5107-89c6-dec04274e3fe",
+      "name": "На четвереньках",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "4842d601-ec04-5683-91bc-18627d32b62e",
+      "name": "На коленях лицом к лицу",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "a1f1281d-3309-54c3-9d59-40c171df8175",
+      "name": "На коленях с опорой",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "a18c08d3-98e7-52ee-9904-9dba21bde834",
+      "name": "Наездница",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "bb93077e-52c7-5e73-bafb-afc7069c98a8",
+      "name": "Обратная наездница",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "83778cd8-64c5-5611-bf62-1ede506f5793",
+      "name": "Сверху с опорой",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "e8056ca0-a622-5b3e-b570-dc051b6cb12e",
+      "name": "Наду",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "cd6ba6d9-f48a-51f0-b6ff-0c20a5b464f4",
+      "name": "Тауэр",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "5d0cf79b-31a7-5b89-9649-20850fcec6a2",
+      "name": "Инспекция",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "46cf6475-f5c8-5077-beb8-be58fdc81b9e",
+      "name": "Клубок на боку",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "79a493aa-7773-550a-9ea5-eabe31899a89",
+      "name": "На коленях, руки за спиной",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "18df2208-448a-5c38-b32b-0df042ea8461",
+      "name": "На животе с захватом щиколоток",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "12c6913e-6c3a-5eec-bf8c-744819977b90",
+      "name": "На коленях с опорой на руки сзади",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "0622cdc3-2a66-5e73-8ecd-537a9113e8bd",
+      "name": "Инспекция на носках — вариант",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "94a0a1f7-d9dd-59c8-a3c4-19c5c0639b5a",
+      "name": "На спине с поднятыми разведёнными ногами",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "84e7e3a8-7444-5c09-aae7-1d867c87820f",
+      "name": "Наклон вперёд, руки за спиной",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "58e45d59-d5c7-54f3-9e41-8b84120ac07e",
+      "name": "На коленях с прогибом назад",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "6098a200-74bd-5f12-9454-a59b426391b9",
+      "name": "На коленях с удержанием щиколоток",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "7cd43384-4407-517d-84bf-555044e6ec46",
+      "name": "На коленях с вытянутыми руками",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "c4b0e6b9-793b-538d-9d21-325b4a2b17a7",
+      "name": "Наклон с опорой на стул — Bent Over",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "f9837e4d-d5fd-501e-9ab3-58614c70c51e",
+      "name": "На коленях у стула, руки за спиной",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "cfd11dd2-a0af-51d4-a142-373a38a9f43b",
+      "name": "На животе, ноги вместе",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "8efc2ec6-5232-52a6-bc32-6402ee5077a5",
+      "name": "На животе с поднятыми голенями",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "d08bad71-a2f8-5f2d-9671-81e251b83905",
+      "name": "Звезда на животе — Spread Eagle, вариант",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "ab10d915-8e55-5eb9-9b0c-002084177be0",
+      "name": "На коленях с глубоким отклонением назад",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "65b4f699-258a-58a9-9465-ba4e39c395d6",
+      "name": "Звезда на спине — Spread, вариант",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "0eda63ad-2427-5dac-9800-505e21dbf9cc",
+      "name": "Бабочка у края кровати",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "dcd9fafe-cfab-511c-bca7-d77128a00297",
+      "name": "На спине с согнутыми коленями",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "9551bb72-ed7d-5ea2-acd2-d09ca34ab289",
+      "name": "На спине с ногами на плечах партнёра",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "60579f23-eb6c-5f7f-aa99-ccf0cf03e319",
+      "name": "На спине с одной поднятой ногой",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "c20ec854-b9ba-51f4-93a7-819b76f99c60",
+      "name": "На спине с обхватом талии ногами",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "bdd844be-831d-527d-9569-0314ac6161ad",
+      "name": "На спине с ногами вместе",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "d82c7935-025b-58d4-bf6e-9ac3a7fc66c7",
+      "name": "На спине перед сидящим на пятках партнёром",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "ac1ce94a-112f-5d5a-a115-9f2142bc1dc6",
+      "name": "Поперёк кровати лицом к лицу",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "462ecf44-3705-5333-9516-e49324a930a3",
+      "name": "На спине с опорой под коленями",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "b919abe4-2239-50c1-95d0-c2eaeebf3469",
+      "name": "На животе с опорой на предплечья",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "cb724fbb-49b5-50db-9a17-89a4a48973df",
+      "name": "На животе с разведёнными ногами",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "d544ee21-9449-544d-9850-900f3165be87",
+      "name": "На животе с коленом в сторону",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "7fa4bbc5-820c-57a7-abba-78c8e8884645",
+      "name": "На животе с опорой под тазом",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "321ffe35-7dac-5286-9d64-ff5a98b77f7f",
+      "name": "Полулёжа на животе у края кровати",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "550995c5-b420-51c4-ba83-d3bdfefdfc01",
+      "name": "Ложки с согнутыми коленями",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "d47291c7-9d40-5fa2-a671-fbab0d9e2b80",
+      "name": "Ложки с прямыми ногами",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "e8e7f217-af8f-5e84-80f0-2b5615287e9b",
+      "name": "На боку с опорой под верхней ногой",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "b5c223e2-4b31-5e5d-86d9-4e7c7a549b24",
+      "name": "На боку лицом к лицу, ноги переплетены",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "f8ff0993-05dd-5a48-842b-3d438de7590b",
+      "name": "Т-образное положение на боку",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "563f98e0-d43e-5d39-bc79-1fea22beb7d0",
+      "name": "Лотос с отклонением назад",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "46e44314-3f87-5248-b115-f1611165e44a",
+      "name": "Лотос с выпрямленными ногами",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "da423ca9-b77b-51d2-b730-e10eb38501b8",
+      "name": "На стуле спиной к сидящему партнёру",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "73ebbcf8-17ce-53b9-8b38-169db0a97557",
+      "name": "На диване лицом к лицу",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "c2155cb0-606d-56a1-acc0-5f96d1ff5b79",
+      "name": "Сидя на краю кровати лицом к лицу",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "dd0fcefd-cfc0-58f9-b19b-f2176cf531cc",
+      "name": "Боком на коленях сидящего партнёра",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "91fbb919-1c71-5cf1-a6cb-a969615d6aad",
+      "name": "Полусидя у изголовья",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "d75b1e18-fc70-5441-b25c-23fda49f43ea",
+      "name": "На стуле спиной к партнёру с опорой для рук",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "c08574af-2f24-5ccd-91e3-173ca62f169f",
+      "name": "Сидя на полу навстречу друг другу",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "5eb7831e-30f5-5352-b3df-4d4060124d88",
+      "name": "Наклон стоя с опорой на стол",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "2b0d15de-f37d-509e-8e5d-e3307d3e4a66",
+      "name": "Стоя с опорой ладонями о стену",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "75df1644-0bb8-56a8-81b1-7ebe5f1cc073",
+      "name": "Стоя с одной ногой на опоре",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "48d6fac1-af35-5ddd-bc8f-6cb9a016dcd3",
+      "name": "Стоя перед партнёром на краю кровати",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "19cd50d5-1c4f-5925-b670-71d8a6012c41",
+      "name": "Стоя бок о бок",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "6311573f-13ee-59c5-b1c6-f5b8a2cf7d27",
+      "name": "На коленях и предплечьях",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "77f1ef3d-064c-578b-8dae-8e8c52575f01",
+      "name": "На коленях с опорой грудью на подушку",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "696e2e2f-9b8a-5896-8e12-d16a087fd0cc",
+      "name": "На коленях у изголовья",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "2f156245-dee3-5dc2-873e-6b1bd67ff417",
+      "name": "На коленях бок о бок",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "b221106b-7c4e-55dc-9ac6-162fe117eb1e",
+      "name": "На колене с вынесенной вперёд стопой",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "123d875c-1844-5a4c-ae0e-10a1816de394",
+      "name": "Наездница с наклоном вперёд",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "d7ef7869-ad0e-536d-8ddf-eeca7d7de88d",
+      "name": "Наездница с отклонением назад",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "f42ce07b-7f3b-5556-b661-43d081def8d2",
+      "name": "Обратная наездница с наклоном вперёд",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "63b7c621-d279-5a7b-9be2-e1eba40724e7",
+      "name": "Сверху с опорой на стопы",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "edb85dee-1251-5aec-9289-a982a2942cfa",
+      "name": "Сверху с асимметричной опорой",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "07103e52-493f-57f0-bee8-b7483bcfafa7",
+      "name": "Оральная — лёжа на спине",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "0fe76eeb-5d67-5b55-96b4-a2f12706ae50",
+      "name": "Оральная — лёжа рядом сбоку",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "8b13b861-e296-5538-9551-827124662b3b",
+      "name": "Оральная — сидя на стуле",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "fe5497e4-596a-59cb-b45a-5707df14aeb7",
+      "name": "Оральная — сидя на краю кровати",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "da4a884b-30f6-56db-93c2-d6493fd87ed2",
+      "name": "Оральная — стоя перед партнёром",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "36d67c14-ca5b-5171-9055-53fb45993e55",
+      "name": "Оральная — над лежащим партнёром",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "5bba9ece-9edc-5437-ad72-1983d5e74f2c",
+      "name": "69 — лёжа",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "99027a04-5d8c-5436-9c8a-29acd333ab1d",
+      "name": "69 — на боку",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "9fddfd20-e252-5725-9ed6-742919ffa3ff",
+      "name": "Полусидя на клиновидной подушке",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "44a57913-bc65-5b7f-ac54-5d453ff86e87",
+      "name": "На боку с опорой под спиной",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "c9ad6e91-ad3d-5184-90f3-da7199d52bc4",
+      "name": "На коленях с валиком под предплечьями",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "78142a00-f7e2-5424-9d01-53b127ff87e4",
+      "name": "Стоя у креста для фиксации",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "3ae5c900-3486-5e66-b2bd-e392fa1e6bce",
+      "name": "На бондажной скамье",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "a2aa6faf-30df-540b-a8d6-d6a3cc779c42",
+      "name": "Стоя у рамы",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "1fe8b219-c0ce-5bc3-9dac-43de6e46803b",
+      "name": "Лёжа с подкроватной системой",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "fa7a1916-aafa-5238-85b0-6c317782b468",
+      "name": "Втроём — параллельно лёжа",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "85870020-561b-5a85-be60-b6cbb645ddb1",
+      "name": "Втроём — по кругу",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "5de10f55-6aed-5d38-8f70-825edbabc5bc",
+      "name": "Вчетвером — две пары рядом",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "379a57ef-552c-5d55-be1c-aaaaf53cd851",
+      "name": "Внимание — стоя",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "79fb5be0-1a46-52f0-a6d9-43c8caf09111",
+      "name": "Ожидание — сидя",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "61eea956-e4e7-5b97-824f-674190df9672",
+      "name": "Представление — на коленях",
+      "gaps": []
+    },
+    {
+      "kind": "poses",
+      "uid": "7a201e63-459a-5ed1-b526-30ffb4cab69f",
+      "name": "Поклон — на коленях",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "8cbd10d4-b837-54ce-a695-f9658cba1549",
+      "name": "Рука",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "a2cc6691-f01e-5089-9426-9de4abc935fe",
+      "name": "Стек",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "5dbd11f3-1aad-5a0c-9ab2-91b211a03fc2",
+      "name": "Падл",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "0e82ef84-d568-57f1-805c-5af778c0f6b0",
+      "name": "Плеть",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "ab5f93b0-765b-51e7-97b7-1bdca690e114",
+      "name": "Флоггер",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "ac811f97-86f6-5049-92e5-8b4d066be3d3",
+      "name": "Трость",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "aa101887-2340-5511-9c2f-43aa3341cef2",
+      "name": "Верёвка",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "4b5be8c6-f0f5-5b9c-b582-455e603ba1e0",
+      "name": "Манжеты",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "0b092f61-3c51-5638-9733-d03f97791969",
+      "name": "Ошейник",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "ea5bf105-f3ff-5195-a117-b74454fad6b1",
+      "name": "Поводок",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "8c5711d0-d6cd-5f7c-a8d5-ebb316151971",
+      "name": "Повязка на глаза",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "90183409-1be3-5750-b6bc-e2207950dcec",
+      "name": "Перо",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "8173644f-9d03-5827-bded-5621722bb3ef",
+      "name": "Мягкая кисть",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "672e4e78-5e8a-5807-8385-6334186f94e2",
+      "name": "Колесо Вартенберга",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "9f7c58eb-4a2e-51b6-9a2d-fb0dadcf437c",
+      "name": "Зажимы",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "250da7c5-0a62-55bc-83b1-5077be1c0025",
+      "name": "Вибратор",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "936232f6-5a49-59e3-9f26-a994b7a98ac2",
+      "name": "Фаллоимитатор",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "d2181b11-44e2-5fef-a601-f76f752ec730",
+      "name": "Страпон",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "959ac8bb-620f-5823-b522-474fead546d1",
+      "name": "Анальная пробка",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "61e78434-d0a0-537a-bd5b-3f5efd5ad165",
+      "name": "Анальные бусы",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "175218fa-2c01-5008-814e-3cffd9504aba",
+      "name": "Дистанционный контроллер",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "50ec3b62-058a-5ae4-8d41-b239497b1790",
+      "name": "Массажное масло",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "4ec8f933-2359-5a63-83ad-3dc735304d7c",
+      "name": "Массажный мяч",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "bb42b6ca-9c69-5b22-b34a-87042b1b0b63",
+      "name": "Массажный ролик",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "81caf531-9668-5eb5-879f-dc9ffb8fc707",
+      "name": "Секс-машина",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "7cabb6ef-3c32-533c-b5e0-e136ad5992e1",
+      "name": "Виброседло",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "1fc021b7-f3ec-5b81-b5f5-741660ade49d",
+      "name": "Пульсатор",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "6165026a-5211-542e-a094-ae5bd78dbbc7",
+      "name": "Ванд-массажёр",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "e74cd957-00d9-5d2a-9095-5d3ef04e1716",
+      "name": "Волновой стимулятор",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "caaba6dd-960c-5e7c-bed7-4ec3654c64e9",
+      "name": "Виброкольцо",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "5903bf91-113c-5cea-adb0-d17190eb01b1",
+      "name": "Мастурбатор",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "8f834a7d-6f83-5dbd-8756-961ef4decb81",
+      "name": "Массажёр простаты",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "d4315792-484e-57c4-97ce-4f1d4cad49f8",
+      "name": "Двусторонний фаллоимитатор",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "65eb3898-e678-583e-ae2f-ca6551de5451",
+      "name": "Фаллоимитатор на присоске",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "a6a3db1a-66a0-5979-b63e-d9699058f6dc",
+      "name": "Распорка",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "f8e66776-dc53-5849-8419-a3597ee1da0a",
+      "name": "Фиксирующие ремни",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "192b4665-19aa-54ab-be66-afb6f7cb8745",
+      "name": "Бондажная лента",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "64e4b951-21c2-5352-bcc8-504315753764",
+      "name": "Подкроватная система фиксации",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "47659341-ab29-5c20-a36f-eb1b75a7e01e",
+      "name": "Бондажная портупея",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "6bfd7cbf-3a15-56aa-99e7-87430a4fa948",
+      "name": "Манжеты для лодыжек",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "178734c2-24d2-5eec-85cd-f8ae1d02a4f4",
+      "name": "Крест для фиксации",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "1854dd2d-7d12-50e6-a183-20414c069749",
+      "name": "Бондажная скамья",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "4a84172c-525c-5818-9d0e-aaf6d8d82ce0",
+      "name": "Рама для подвеса",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "bb7a6dff-5000-5e70-9c86-9f8c849e9be9",
+      "name": "Шариковый кляп",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "8073f07a-ee68-56de-acd8-8cb5b2045fe0",
+      "name": "Кожаный ремень",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "21b509f1-28f1-556e-8ab2-e359f83d34fd",
+      "name": "Слэппер",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "7bf15d28-4c51-5730-aba6-ece6a70adb15",
+      "name": "Вибропуля",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "43fdc421-d31b-58d4-99ce-9ed4c66ad15a",
+      "name": "Виброяйцо",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "5ad599e1-a427-5592-8c7b-8cf91fbd1844",
+      "name": "Пальчиковый вибратор",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "c6e288ef-9895-5b5f-9b51-9ca979b4e751",
+      "name": "Парный вибратор",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "90b5e279-6cf5-5086-a9a2-08bffe31053d",
+      "name": "Вибратор-кролик",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "216021b8-fe52-51ba-8557-3606bd6f4a3d",
+      "name": "Гибкий вибратор",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "d84fd566-4d97-543e-9d20-101aac870270",
+      "name": "Вибропробка",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "86426ff3-2edc-5762-941a-2c9476fb61ed",
+      "name": "Массажная свеча",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "abe43b92-ac86-5ca4-9b9c-03fde26bb3e4",
+      "name": "Стеклянный стимулятор",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "f194798c-ead9-570d-a694-f42c8f911643",
+      "name": "Металлический стимулятор",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "1475b31a-c3eb-50d6-9c8c-4e53e871c123",
+      "name": "Набор расширителей",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "2db2c594-7cfa-5665-a892-da5964d5544f",
+      "name": "Невибрирующее кольцо",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "59cdb7cc-bde7-582b-983a-76606556d437",
+      "name": "Пояс верности",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "a7306bb3-11ec-5534-bda4-d0b8f3110135",
+      "name": "Позиционная подушка",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "3c48272f-553a-5b83-ab6a-47ae5c463919",
+      "name": "Клиновидная подушка",
+      "gaps": []
+    },
+    {
+      "kind": "devices",
+      "uid": "50e23fa0-b1f7-5dce-bca7-02132f1b4b3a",
+      "name": "Мягкий валик",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "362b72eb-c26b-5a86-957f-ea52bfa8b898",
+      "name": "Голова",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "0c2c7247-ddfc-526a-95f2-48564f8ef596",
+      "name": "Лицо",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "0c824dc0-3e1f-5bda-a0e6-3ec5b5e43c0e",
+      "name": "Волосы",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "6bc790ed-b239-5bde-9abc-c0e81c94d070",
+      "name": "Шея",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "5ea10366-48a9-59f2-a7e9-d74c2ebf5d05",
+      "name": "Плечи",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "1b2eb9d5-2273-5940-83db-2d194f2f197e",
+      "name": "Спина",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "b6f11c0f-7a80-5e14-9fd0-0c4a842b6a8d",
+      "name": "Грудь",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "9e3bf9d6-24ff-5928-abd7-1604569166a1",
+      "name": "Живот",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "23076ad2-b0fd-519e-874a-472c1de5f11a",
+      "name": "Руки",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "5aff07fd-f593-53a3-a339-2baac0399a65",
+      "name": "Запястья",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "54e59072-b66f-5ae5-a8cb-c4260edb3b63",
+      "name": "Кисти",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "82fca007-ff42-5548-8b42-764bbb038244",
+      "name": "Пальцы рук",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "be88de68-e56c-5300-967d-70f6e870b3bd",
+      "name": "Ягодицы",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "f3778747-f333-5af8-86b8-9bb9e552cb98",
+      "name": "Бёдра",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "325bdcce-42c0-52e4-a12b-ec142f924f96",
+      "name": "Ноги",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "f7ce1915-3321-5ffb-bfda-ebdb754440aa",
+      "name": "Колени",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "e8547c40-9019-5eb6-a5f6-c8fccf3a38c5",
+      "name": "Стопы",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "32a9b42b-2f6b-5ae5-b42d-967de8f04fde",
+      "name": "Гениталии",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "e3ac74a6-b7a3-5548-ab42-3ee434c4ddf8",
+      "name": "Вульва",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "f3cfb42b-aada-5916-a583-01f2e23f5d41",
+      "name": "Пенис",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "05d13db2-da8b-5996-ba29-675d69f70182",
+      "name": "Анальная область",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "bc643921-6a5e-5ebb-8c91-929d1c2b7c14",
+      "name": "Соски",
+      "gaps": []
+    },
+    {
+      "kind": "body-parts",
+      "uid": "8be620ef-222f-5dae-8f8e-e2177ad902cb",
+      "name": "Промежность",
+      "gaps": []
+    },
+    {
+      "kind": "materials",
+      "uid": "16297193-e5e1-504b-8383-6d67a4022907",
+      "name": "Латекс",
+      "gaps": []
+    },
+    {
+      "kind": "materials",
+      "uid": "2fced2fc-1101-5401-8296-dfd102f3949e",
+      "name": "Натуральная кожа",
+      "gaps": []
+    },
+    {
+      "kind": "materials",
+      "uid": "a0c0e983-f138-5c06-bf01-d358c9234b4f",
+      "name": "Искусственная кожа",
+      "gaps": []
+    },
+    {
+      "kind": "materials",
+      "uid": "c2fd3271-ba29-5330-944b-b6470ba19088",
+      "name": "Силикон",
+      "gaps": []
+    },
+    {
+      "kind": "materials",
+      "uid": "65bc1f5a-a54d-5f9b-9d06-33313e5cdb13",
+      "name": "Стекло",
+      "gaps": []
+    },
+    {
+      "kind": "materials",
+      "uid": "40ab35a1-fd8a-5c9e-9835-4e5d42215506",
+      "name": "Нержавеющая сталь",
+      "gaps": []
+    },
+    {
+      "kind": "materials",
+      "uid": "df3b3735-afd1-578d-b87d-0366b96c716f",
+      "name": "Алюминий",
+      "gaps": []
+    },
+    {
+      "kind": "materials",
+      "uid": "1cd9dbc8-3ddc-5435-a2cb-8f01ea7a0756",
+      "name": "Дерево",
+      "gaps": []
+    },
+    {
+      "kind": "materials",
+      "uid": "f23c978d-9ea8-5fdc-bda9-4cfd24a0f42e",
+      "name": "Бамбук",
+      "gaps": []
+    },
+    {
+      "kind": "materials",
+      "uid": "fb3aaf08-afd0-5b66-91dd-feb534638f21",
+      "name": "Хлопок",
+      "gaps": []
+    },
+    {
+      "kind": "materials",
+      "uid": "d8963399-9416-5934-991e-fdc87fc0068a",
+      "name": "Лён",
+      "gaps": []
+    },
+    {
+      "kind": "materials",
+      "uid": "6eb493a1-81ee-5c9b-a1db-a5cca67ff60f",
+      "name": "Шёлк",
+      "gaps": []
+    },
+    {
+      "kind": "materials",
+      "uid": "b6166cad-3afa-5e12-b621-990a560e4794",
+      "name": "Атлас",
+      "gaps": []
+    },
+    {
+      "kind": "materials",
+      "uid": "7a0330e6-9909-5679-a296-ca9bbafb60ab",
+      "name": "Нейлон",
+      "gaps": []
+    },
+    {
+      "kind": "materials",
+      "uid": "2125ab20-1a1b-59fb-baaa-07eae69767be",
+      "name": "Неопрен",
+      "gaps": []
+    },
+    {
+      "kind": "role-scenarios",
+      "uid": "2f3ddda2-68c3-5937-865f-d514168a7e2a",
+      "name": "Наставник и ученик",
+      "gaps": []
+    },
+    {
+      "kind": "role-scenarios",
+      "uid": "11ea1162-3595-5c1b-b47a-b2a6f2ede669",
+      "name": "Хозяин и гость",
+      "gaps": []
+    },
+    {
+      "kind": "role-scenarios",
+      "uid": "8e0ae2fd-ab8c-5767-a40f-485b8e91e03a",
+      "name": "Господин и дворецкий",
+      "gaps": []
+    },
+    {
+      "kind": "role-scenarios",
+      "uid": "c4f3b3bf-40e8-5432-8985-98d64ba55eb9",
+      "name": "Руководитель и ассистент",
+      "gaps": []
+    },
+    {
+      "kind": "role-scenarios",
+      "uid": "837bed5a-bec3-5899-96a8-dd9f3d3ec0b2",
+      "name": "Инструктор и стажёр",
+      "gaps": []
+    },
+    {
+      "kind": "role-scenarios",
+      "uid": "23cded76-4604-5eb3-9083-e45e15cbb1b6",
+      "name": "Королевский двор",
+      "gaps": []
+    },
+    {
+      "kind": "role-scenarios",
+      "uid": "badf0156-0dfe-517c-9968-6dfd27f28fe1",
+      "name": "Фантазийные персонажи",
+      "gaps": []
+    },
+    {
+      "kind": "role-scenarios",
+      "uid": "1a8975e7-ebcd-5496-b3ed-df2512602fdb",
+      "name": "Питомец и хозяин",
+      "gaps": []
+    },
+    {
+      "kind": "role-scenarios",
+      "uid": "6e7d35f1-d74a-52ce-aa16-48dbad674d67",
+      "name": "Пони и тренер",
+      "gaps": []
+    },
+    {
+      "kind": "role-scenarios",
+      "uid": "12c3abbb-bc57-5ef4-8580-4b065b09371e",
+      "name": "Церемония",
+      "gaps": []
+    },
+    {
+      "kind": "role-scenarios",
+      "uid": "f7e66508-da02-56cc-b3fb-35f2736a8f04",
+      "name": "Служение",
+      "gaps": []
+    },
+    {
+      "kind": "role-scenarios",
+      "uid": "8b882734-713f-5544-9369-90524a8fb7dc",
+      "name": "Обмен ролями",
+      "gaps": []
+    },
+    {
+      "kind": "interaction-formats",
+      "uid": "5aa174c5-4c7b-50b5-bbe0-d275e1877d53",
+      "name": "Очно",
+      "gaps": []
+    },
+    {
+      "kind": "interaction-formats",
+      "uid": "2ed3dfc0-fbc3-58ed-93c1-973387c0c903",
+      "name": "Дистанционно",
+      "gaps": []
+    },
+    {
+      "kind": "interaction-formats",
+      "uid": "c7f5b4e1-c1df-59fb-bb22-4c9fba52cb07",
+      "name": "Смешанный формат",
+      "gaps": []
+    },
+    {
+      "kind": "venues",
+      "uid": "00526d54-fdc2-5391-96d1-be860fc61593",
+      "name": "Дом",
+      "gaps": []
+    },
+    {
+      "kind": "venues",
+      "uid": "62931376-afec-5187-97dd-a9a4e2cccc3c",
+      "name": "Студия",
+      "gaps": []
+    },
+    {
+      "kind": "venues",
+      "uid": "8d2fc02e-a5b8-5ba0-952a-3d21b3f71a3d",
+      "name": "Клуб",
+      "gaps": []
+    },
+    {
+      "kind": "venues",
+      "uid": "28a4c5c6-c9e5-52bf-a3e6-71bfdc4daa94",
+      "name": "Отель",
+      "gaps": []
+    },
+    {
+      "kind": "venues",
+      "uid": "d89689c8-54fa-5ece-9d14-528369f863f8",
+      "name": "Частное мероприятие",
+      "gaps": []
+    },
+    {
+      "kind": "venues",
+      "uid": "6a7dbcc1-90ca-5733-9861-ea428fcdcda5",
+      "name": "Другое частное пространство",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "572fdc4c-05df-5420-81a7-2008a96945f1",
+      "name": "Гемофилия",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "80650151-ae80-5a7f-9901-6d9e6ad676c2",
+      "name": "Болезнь Виллебранда",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "a64de32b-2bdc-5564-8ff8-8c4b260f96a5",
+      "name": "Бронхиальная астма",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "4183ab0a-1a38-5214-a4cc-e6367e5a20fa",
+      "name": "Эпилепсия",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "1ea361f5-fa68-51b1-a87b-79bae25bf662",
+      "name": "Сахарный диабет",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "2cc4b287-b3c6-5724-adf8-313354a4ac45",
+      "name": "Периферическая нейропатия",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "97e512e2-299b-54a5-8a3c-644799c658f2",
+      "name": "Остеопороз",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "28cd8d21-7eb1-5c1b-ace4-ee3c51fcec3f",
+      "name": "Синдромы Элерса — Данлоса",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "2cee4d03-dd98-5e9c-98ec-e30b54424301",
+      "name": "Артериальная гипертензия",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "519263bb-330b-5710-881a-9587102c9577",
+      "name": "Нарушения сердечного ритма",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "a7ffd44d-ff13-50f0-9173-36b0a3a477a5",
+      "name": "Атопический дерматит",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "ef2a87aa-5449-5406-959d-7b8c2ffd6ad5",
+      "name": "Псориаз",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "ead4ab8b-9461-5144-ba83-22361f9c1446",
+      "name": "Аллергический контактный дерматит",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "bcae4c38-6f85-50ce-9052-936a2ba2d51d",
+      "name": "Посттравматическое стрессовое расстройство",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "292b034f-9461-505e-9f81-73e95c11f1cf",
+      "name": "Паническое расстройство",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "247502f8-9974-5e7d-8f99-3de938ffc09e",
+      "name": "ВИЧ-инфекция",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "c263d5e1-c088-50a0-8b51-1f4ac360d188",
+      "name": "Гепатит B",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "9ace8c30-4856-5743-bfc1-82f68e78a21b",
+      "name": "Гепатит C",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "f2d26b5c-855b-56a1-8e7b-88e2f5da6aae",
+      "name": "Генитальный герпес",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "88875330-cb2c-5cce-a103-ba5fd783aa7d",
+      "name": "Папилломавирусная инфекция",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "299c9483-9678-53d2-ab39-963b53341059",
+      "name": "Сифилис",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "7d11a04d-c8dc-5e4b-bbfc-ba560b0ca40a",
+      "name": "Гонорея",
+      "gaps": []
+    },
+    {
+      "kind": "health-conditions",
+      "uid": "9d4e9693-ef5c-5a7c-934c-4cadc8a9266e",
+      "name": "Хламидийная инфекция",
+      "gaps": []
+    },
+    {
+      "kind": "allergens",
+      "uid": "14678fb0-0165-57cb-bd17-ebc9f5c7e3e6",
+      "name": "Белки натурального латекса",
+      "gaps": []
+    },
+    {
+      "kind": "allergens",
+      "uid": "60c0687b-cbc1-50c2-ae21-e6935de201c7",
+      "name": "Никель",
+      "gaps": []
+    },
+    {
+      "kind": "allergens",
+      "uid": "42540ec9-a2e5-5cd1-aa70-729e3ed005dc",
+      "name": "Кобальт",
+      "gaps": []
+    },
+    {
+      "kind": "allergens",
+      "uid": "21e831b4-4fc5-5927-877a-d0c1b649c10f",
+      "name": "Хроматы",
+      "gaps": []
+    },
+    {
+      "kind": "allergens",
+      "uid": "a32632fb-92b5-5722-aca2-5a99de191cf2",
+      "name": "Тиурамы",
+      "gaps": []
+    },
+    {
+      "kind": "allergens",
+      "uid": "4938fb9e-55ea-51eb-9422-d50173ca22fa",
+      "name": "Карбаматы резины",
+      "gaps": []
+    },
+    {
+      "kind": "allergens",
+      "uid": "3179d43f-b4fc-5c09-bf28-f68ccf316670",
+      "name": "Меркаптобензотиазол",
+      "gaps": []
+    },
+    {
+      "kind": "allergens",
+      "uid": "fa7e3d16-7614-5638-a8ba-ef1f5b3746f7",
+      "name": "Парфюмерные отдушки",
+      "gaps": []
+    },
+    {
+      "kind": "allergens",
+      "uid": "3dc3b9af-0ba6-5108-9020-c0cdc5eb840d",
+      "name": "Изотиазолиноны MI/MCI",
+      "gaps": []
+    },
+    {
+      "kind": "allergens",
+      "uid": "539fee66-6bcf-52da-b0f7-0d641cc234d7",
+      "name": "Формальдегид",
+      "gaps": []
+    },
+    {
+      "kind": "allergens",
+      "uid": "28c9a18d-3696-5835-8abf-adeabab29670",
+      "name": "Канифоль",
+      "gaps": []
+    },
+    {
+      "kind": "allergens",
+      "uid": "773fd253-11dc-5d7f-b819-f70bd7544ef0",
+      "name": "Акрилаты и метакрилаты",
+      "gaps": []
+    },
+    {
+      "kind": "allergens",
+      "uid": "9117f996-1533-5dd9-828e-0e76060df8fc",
+      "name": "Эпоксидные смолы",
+      "gaps": []
+    },
+    {
+      "kind": "allergens",
+      "uid": "865e1b88-53c6-5fb9-b132-6332ca4f7d7c",
+      "name": "Ланолин",
+      "gaps": []
+    },
+    {
+      "kind": "allergens",
+      "uid": "4db9b666-f08c-52ad-ad0f-126b72316643",
+      "name": "Местные анестетики: каин-смесь",
+      "gaps": []
+    },
+    {
+      "kind": "allergens",
+      "uid": "5056276f-cf5b-543f-a8f0-582cccaba9f2",
+      "name": "Хлоргексидин",
+      "gaps": []
+    },
+    {
+      "kind": "participant-compositions",
+      "uid": "6ba6dbc1-4beb-5b7b-983b-fdf28f7c7e25",
+      "name": "Соло",
+      "gaps": []
+    },
+    {
+      "kind": "participant-compositions",
+      "uid": "bf8da8fc-be86-5b48-88d9-1f51b941a113",
+      "name": "МЖ",
+      "gaps": []
+    },
+    {
+      "kind": "participant-compositions",
+      "uid": "f85ee33a-6fca-5903-9f7d-3491f759abf8",
+      "name": "ММ",
+      "gaps": []
+    },
+    {
+      "kind": "participant-compositions",
+      "uid": "9e664667-54f4-5d92-af4a-a0564c90c863",
+      "name": "ЖЖ",
+      "gaps": []
+    },
+    {
+      "kind": "participant-compositions",
+      "uid": "ad7fe7c8-6a5a-5d09-ac3f-2497a8dd20a5",
+      "name": "МЖМ",
+      "gaps": []
+    },
+    {
+      "kind": "participant-compositions",
+      "uid": "74704304-4c61-5ec4-b707-d8be7d9e7d29",
+      "name": "ЖМЖ",
+      "gaps": []
+    },
+    {
+      "kind": "participant-compositions",
+      "uid": "81e71656-2ae9-5998-8d7f-da2ac0439003",
+      "name": "МММ",
+      "gaps": []
+    },
+    {
+      "kind": "participant-compositions",
+      "uid": "be14611e-0ed5-5c79-b000-3322e377f771",
+      "name": "ЖЖЖ",
+      "gaps": []
+    },
+    {
+      "kind": "participant-compositions",
+      "uid": "2fb5b2e5-8f72-565e-aa7d-e78cf0bf97af",
+      "name": "ММЖЖ",
+      "gaps": []
+    },
+    {
+      "kind": "participant-compositions",
+      "uid": "fabea1ac-ea1e-5c9e-a9ee-7529bf681f71",
+      "name": "Другой состав",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "fc7b8867-8ac9-5cdd-9082-fdbcafa26518",
+      "name": "UTC",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "1ee479dd-6d59-5557-9a15-1c0407a84577",
+      "name": "Pacific/Honolulu",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "d5a5077a-a38c-594e-98c0-371f8ba00ad6",
+      "name": "America/Anchorage",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "70a7cbd7-6bcc-531f-a415-67c1a0c9e880",
+      "name": "America/Los_Angeles",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "31aaaf83-5864-5ed9-97be-9d36afd1ecf4",
+      "name": "America/Denver",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "353c7181-0929-5919-b8fa-99c4bedd4b4e",
+      "name": "America/Chicago",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "8ddcc987-a0e7-5fe4-be4a-4d9c56016bc0",
+      "name": "America/New_York",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "fc169817-e590-54df-acfa-f6edd2877392",
+      "name": "America/Sao_Paulo",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "a43f66da-c649-5b6e-9a16-d65681e2414f",
+      "name": "Atlantic/Azores",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "8232a2b1-400b-59c4-9c88-04d7d652be7f",
+      "name": "Europe/London",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "f4a2187d-84d5-589c-a745-3c1953fbb276",
+      "name": "Europe/Madrid",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "71682f4d-428d-5f76-a8ce-0d4cda4fc6f9",
+      "name": "Europe/Helsinki",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "61e1db2f-5ed8-58d1-9f1e-72d9a97f27aa",
+      "name": "Europe/Moscow",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "5a9d4ce1-2f7c-594b-8419-d3889c0719d8",
+      "name": "Asia/Dubai",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "0321e74d-e743-581c-b50b-02311a61a907",
+      "name": "Asia/Karachi",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "1892b3bb-b5ae-5d77-b651-fa9d2ac5ec73",
+      "name": "Asia/Kolkata",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "17e47dfa-14fa-5aa3-9744-8f5fba0f55d0",
+      "name": "Asia/Dhaka",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "0c8aa6a7-6433-5e99-80b5-628015c1f209",
+      "name": "Asia/Bangkok",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "44140e02-0a71-5581-a99f-308d935026c0",
+      "name": "Asia/Shanghai",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "3b273fca-477d-575c-86b4-0f6a2c872e0e",
+      "name": "Asia/Tokyo",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "9059546e-cde3-5e86-beca-6467f0609d46",
+      "name": "Australia/Adelaide",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "3ae2b1d2-44ac-5659-9c99-1463594eac4e",
+      "name": "Australia/Sydney",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "77c10ea7-4f3c-58c5-96e2-4f78b6f42d2c",
+      "name": "Pacific/Auckland",
+      "gaps": []
+    },
+    {
+      "kind": "timezones",
+      "uid": "78e8971d-f38a-5c07-bc56-43576e8bef25",
+      "name": "Pacific/Kiritimati",
+      "gaps": []
+    },
+    {
+      "kind": "relationship-types",
+      "uid": "7d0b1145-fc3d-5424-b91b-7fa47b8a8c63",
+      "name": "Романтические",
+      "gaps": []
+    },
+    {
+      "kind": "relationship-types",
+      "uid": "88d9d026-2c44-5d05-bb2b-a346ea07dfb3",
+      "name": "Партнёрские",
+      "gaps": []
+    },
+    {
+      "kind": "relationship-types",
+      "uid": "5cb76595-bb2d-5c88-8204-b2f92849c7a1",
+      "name": "Дружеские",
+      "gaps": []
+    },
+    {
+      "kind": "relationship-types",
+      "uid": "2bea76a7-7bee-5019-a918-9f365223093f",
+      "name": "D/s",
+      "gaps": []
+    },
+    {
+      "kind": "relationship-types",
+      "uid": "64a315cb-a85f-56a5-9978-a678c7be53a9",
+      "name": "Switch-динамика",
+      "gaps": []
+    },
+    {
+      "kind": "relationship-types",
+      "uid": "d5255b14-b89f-5986-bdd2-bf78715d8d5f",
+      "name": "Игровые",
+      "gaps": []
+    },
+    {
+      "kind": "relationship-types",
+      "uid": "b716500a-195d-5eed-897b-3d5a4de17443",
+      "name": "Наставничество",
+      "gaps": []
+    },
+    {
+      "kind": "relationship-types",
+      "uid": "5778b46f-5562-5d38-a127-7de059d06018",
+      "name": "Другое",
+      "gaps": []
+    }
+  ]
+}

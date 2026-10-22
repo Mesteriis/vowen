@@ -34,6 +34,7 @@ from vowen.modules.rituals.evidence import router as evidence_router
 from vowen.modules.rituals.router import router as rituals_router
 from vowen.modules.rules.router import router as rules_router
 from vowen.modules.surveys.router import router as surveys_router
+from vowen.modules.wiki.router import router as wiki_router
 
 
 def create_app(settings: Settings) -> FastAPI:
@@ -75,6 +76,7 @@ def create_app(settings: Settings) -> FastAPI:
     app.include_router(participant_profiles_router)
     app.include_router(notifications_router)
     app.include_router(surveys_router)
+    app.include_router(wiki_router)
     app.include_router(rules_router)
     app.include_router(rituals_router)
     app.include_router(evidence_router)

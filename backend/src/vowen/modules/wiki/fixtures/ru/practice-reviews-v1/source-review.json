@@ -1,0 +1,248 @@
+{
+  "checked_on": "2026-10-22",
+  "method": "Проверены указанные документы; определения каталога отделены от области подтверждения источника. Переводы полных публикаций не выполнялись.",
+  "sources": [
+    {
+      "name": "NCSF — Statement on Power Exchange Relationships",
+      "url": "https://ncsfreedom.org/wp-content/uploads/2019/12/Power-Exchange-Statement.pdf",
+      "publisher": "NCSF",
+      "scope": "Рамка обмена властью, а не единый протокол любой пары.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NCSF — BDSM Glossary and Resources",
+      "url": "https://ncsfreedom.org/wp-content/uploads/2022/07/BDSM-Glossary-and-Resources.pdf",
+      "publisher": "NCSF",
+      "scope": "Термины bondage, collar, aftercare и fetish; не инструкции по воздействию.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NCSF — What Professionals Need to Know about Kink (2024)",
+      "url": "https://ncsfreedom.org/wp-content/uploads/2024/04/What-Professionals-Need-to-Know-about-Kink-2024.pdf",
+      "publisher": "NCSF",
+      "scope": "Классы ролевых практик и фетишистских образов; не отдельное определение каждого названия Vowen.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Options for Sexual Health — Talking to Partners About Sex",
+      "url": "https://www.optionsforsexualhealth.org/facts/sex/talking-about-sex/",
+      "publisher": "Options for Sexual Health",
+      "scope": "Обсуждение предпочтений и обратной связи; не универсальный сценарий похвалы.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "PDX PAH — Welcome to Pet Play",
+      "url": "https://www.pdxpah.com/",
+      "publisher": "Portland Pets and Handlers",
+      "scope": "Самоописание конкретного сообщества человеческого pet play.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "The Manège — A Virtual Pony Play Academy",
+      "url": "https://themanege.org/",
+      "publisher": "The Manège / Pony Girl Ginger",
+      "scope": "Описание конкретной образовательной инициативы pony play; не общие правила всех участников.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Shibari Study — Glossary",
+      "url": "https://www.shibaristudy.com/glossary",
+      "publisher": "Shibari Study",
+      "scope": "Терминология верёвочного бондажа; не подтверждение пригодности конкретной обвязки.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Scarleteen — What’s Sex?",
+      "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0",
+      "publisher": "Scarleteen",
+      "scope": "Определения и различение форм сексуального контакта; без воспроизведения техник.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Options for Sexual Health — What is Sex?",
+      "url": "https://www.optionsforsexualhealth.org/facts/sex/",
+      "publisher": "Options for Sexual Health",
+      "scope": "Различие индивидуальных значений слова «секс», дистанционных и совместных форм.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Merriam-Webster Medical — Intercrural",
+      "url": "https://www.merriam-webster.com/medical/intercrural",
+      "publisher": "Merriam-Webster",
+      "scope": "Лексическое значение межбедренного расположения; не рекомендации по практике.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Merriam-Webster Medical — Intermammary",
+      "url": "https://www.merriam-webster.com/medical/intermammary",
+      "publisher": "Merriam-Webster",
+      "scope": "Лексическое значение расположения между грудями; не критерии внешности.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Cleveland Clinic — Prostate Massage",
+      "url": "https://health.clevelandclinic.org/prostate-massage",
+      "publisher": "Cleveland Clinic / Petar Bajic, MD",
+      "scope": "Различие сексуального контекста и недоказанных лечебных обещаний.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "EFF — Why Communication Metadata Matters",
+      "url": "https://ssd.eff.org/module/why-metadata-matters",
+      "publisher": "Electronic Frontier Foundation",
+      "scope": "Содержимое и метаданные сообщений/файлов; не обещание приватности от владельца сервера.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Lovense — Remote Tips",
+      "url": "https://www.lovense.com/guide/remote",
+      "publisher": "Lovense",
+      "scope": "Управление и каналы связи в экосистеме этого производителя; не все игрушки.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "SH:24 — How to clean your sex toys",
+      "url": "https://sh24.org.uk/help-centre/how-to-clean-your-sex-toys",
+      "publisher": "SH:24 / Helen Burkitt",
+      "scope": "Осмотр и уход по инструкции конкретного изделия; не общая техника применения.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Merriam-Webster — Striptease",
+      "url": "https://www.merriam-webster.com/dictionary/striptease",
+      "publisher": "Merriam-Webster",
+      "scope": "Словарное значение выступления; без хореографии или сценария.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Merriam-Webster — Lap dance",
+      "url": "https://www.merriam-webster.com/dictionary/lap%20dance",
+      "publisher": "Merriam-Webster",
+      "scope": "Узкое английское значение; русский заголовок каталога шире и требует уточнения.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NCSF — Negotiation Guide",
+      "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf",
+      "publisher": "NCSF",
+      "scope": "Разговор о конкретных ощущениях, условиях и ограничениях; не технические параметры.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Kamiloğlu et al. (2024) — Tickling induces a unique type of spontaneous laughter",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11576105/",
+      "publisher": "Roza G. Kamiloğlu et al.; Biology Letters; DOI 10.1098/rsbl.2024.0543",
+      "scope": "Исследование смеха при щекотке; не измерение согласия и не прогноз реакции каждого человека.",
+      "checked_on": "2026-10-22",
+      "access": "full_text_xml",
+      "reviewed_section": "Abstract",
+      "retrieval_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11576105/fullTextXML"
+    },
+    {
+      "name": "NHS — Burns and scalds",
+      "url": "https://www.nhs.uk/conditions/burns-and-scalds/",
+      "publisher": "NHS",
+      "scope": "Термическое повреждение кожи; не подбор свечей и не температура практики.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Frostbite",
+      "url": "https://www.nhs.uk/conditions/frostbite/",
+      "publisher": "NHS",
+      "scope": "Холодовое повреждение и изменение чувствительности; не длительность контакта со льдом.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "The Stockroom — Paddles",
+      "url": "https://stockroom.com/collections/paddles",
+      "publisher": "The Stockroom",
+      "scope": "Каталог класса предметов; рекламные обещания и советы продавца не переносятся в Wiki.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "The Stockroom — Floggers",
+      "url": "https://stockroom.com/collections/floggers",
+      "publisher": "The Stockroom",
+      "scope": "Различие класса инструментов по конструкции; не инструкция по воздействию.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "The Stockroom — Riding Crops",
+      "url": "https://stockroom.com/collections/crops",
+      "publisher": "The Stockroom",
+      "scope": "Конкретный класс предметов; не общий допуск и не параметры применения.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "The Stockroom — Canes",
+      "url": "https://stockroom.com/collections/canes",
+      "publisher": "The Stockroom",
+      "scope": "Назначение каталожной группы; без советов об участках и силе.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Sklar — Wartenberg Pinwheel 06-3375",
+      "url": "https://www.sklarcorp.com/p/sklar-wartenberg-pinwheel/06-3375",
+      "publisher": "Sklar Corporation",
+      "scope": "Устройство конкретного диагностического инструмента; не одобрение BDSM-применения.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Lovense — Gemini",
+      "url": "https://www.lovense.com/app-controlled-vibrating-nipple-clamps-clit-clamps",
+      "publisher": "Lovense",
+      "scope": "Пример конкретного зажимного устройства; не характеристики всех зажимов.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "ISSM — What is edging?",
+      "url": "https://www.issm.info/sexual-health-qa/what-is-edging-and-why-might-it-be-employed",
+      "publisher": "International Society for Sexual Medicine / Rachel Baxter",
+      "scope": "Значение откладывания оргазма; техники и лечебные схемы не воспроизводятся.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "CUH — Chronic pain and intimacy",
+      "url": "https://www.cuh.nhs.uk/patient-information/chronic-pain-and-intimacy/",
+      "publisher": "Cambridge University Hospitals NHS Foundation Trust",
+      "scope": "Разные формы близости и индивидуальный комфорт; не курс медицинского массажа.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+      "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf",
+      "publisher": "NCSF",
+      "scope": "Различение форм и отдельных договорённостей нескольких участников; не единый сценарий.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    }
+  ]
+}

@@ -1,0 +1,453 @@
+{
+  "checked_on": "2026-10-22",
+  "method": "Краткие самостоятельные русские пояснения по устройству и различиям. Проверены указанные первичные документы/каталоги/инструкции; область подтверждения ограничена в каждой карточке. Полные публикации не переводились. Рекламные гарантии и лечебные режимы не заимствуются.",
+  "sources": [
+    {
+      "name": "The Stockroom — Crops",
+      "url": "https://stockroom.com/collections/crops",
+      "publisher": "The Stockroom",
+      "scope": "Классификация и конструкция предметов этой группы; не медицинский допуск, техника применения или подтверждение рекламных обещаний.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Paddles",
+      "url": "https://stockroom.com/collections/paddles",
+      "publisher": "The Stockroom",
+      "scope": "Классификация и конструкция предметов этой группы; не медицинский допуск, техника применения или подтверждение рекламных обещаний.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Whips",
+      "url": "https://stockroom.com/collections/whips",
+      "publisher": "The Stockroom",
+      "scope": "Классификация и конструкция предметов этой группы; не медицинский допуск, техника применения или подтверждение рекламных обещаний.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Floggers",
+      "url": "https://stockroom.com/collections/floggers",
+      "publisher": "The Stockroom",
+      "scope": "Классификация и конструкция предметов этой группы; не медицинский допуск, техника применения или подтверждение рекламных обещаний.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Canes",
+      "url": "https://stockroom.com/collections/canes",
+      "publisher": "The Stockroom",
+      "scope": "Классификация и конструкция предметов этой группы; не медицинский допуск, техника применения или подтверждение рекламных обещаний.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Slappers Straps",
+      "url": "https://stockroom.com/collections/slappers-straps",
+      "publisher": "The Stockroom",
+      "scope": "Классификация и конструкция предметов этой группы; не медицинский допуск, техника применения или подтверждение рекламных обещаний.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Cuffs Shackles",
+      "url": "https://stockroom.com/collections/cuffs-shackles",
+      "publisher": "The Stockroom",
+      "scope": "Классификация и конструкция предметов этой группы; не медицинский допуск, техника применения или подтверждение рекламных обещаний.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Spreader Bars",
+      "url": "https://stockroom.com/collections/spreader-bars",
+      "publisher": "The Stockroom",
+      "scope": "Классификация и конструкция предметов этой группы; не медицинский допуск, техника применения или подтверждение рекламных обещаний.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Collars",
+      "url": "https://stockroom.com/collections/collars",
+      "publisher": "The Stockroom",
+      "scope": "Классификация и конструкция предметов этой группы; не медицинский допуск, техника применения или подтверждение рекламных обещаний.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Leashes Leads",
+      "url": "https://stockroom.com/collections/leashes-leads",
+      "publisher": "The Stockroom",
+      "scope": "Классификация и конструкция предметов этой группы; не медицинский допуск, техника применения или подтверждение рекламных обещаний.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Body Harness Restraints",
+      "url": "https://stockroom.com/collections/body-harness-restraints",
+      "publisher": "The Stockroom",
+      "scope": "Классификация и конструкция предметов этой группы; не медицинский допуск, техника применения или подтверждение рекламных обещаний.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Rope Straps Chains",
+      "url": "https://stockroom.com/collections/rope-straps-chains",
+      "publisher": "The Stockroom",
+      "scope": "Классификация и конструкция предметов этой группы; не медицинский допуск, техника применения или подтверждение рекламных обещаний.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Suspension Equipment",
+      "url": "https://stockroom.com/collections/suspension-equipment",
+      "publisher": "The Stockroom",
+      "scope": "Классификация и конструкция предметов этой группы; не медицинский допуск, техника применения или подтверждение рекламных обещаний.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Dungeon Furniture",
+      "url": "https://stockroom.com/collections/dungeon-furniture",
+      "publisher": "The Stockroom",
+      "scope": "Классификация и конструкция предметов этой группы; не медицинский допуск, техника применения или подтверждение рекламных обещаний.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Blindfolds",
+      "url": "https://stockroom.com/collections/blindfolds",
+      "publisher": "The Stockroom",
+      "scope": "Классификация и конструкция предметов этой группы; не медицинский допуск, техника применения или подтверждение рекламных обещаний.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Ball Gags",
+      "url": "https://stockroom.com/collections/ball-gags",
+      "publisher": "The Stockroom",
+      "scope": "Классификация и конструкция предметов этой группы; не медицинский допуск, техника применения или подтверждение рекламных обещаний.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "Liberator — Sex Pillows",
+      "url": "https://www.liberator.com/collections/sex-pillows",
+      "publisher": "Liberator",
+      "scope": "Классификация и конструкция предметов этой группы; не медицинский допуск, техника применения или подтверждение рекламных обещаний.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "OpenStax — Anatomical Terminology",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-6-anatomical-terminology",
+      "publisher": "OpenStax",
+      "scope": "Термины кисти, ладонной и тыльной стороны; не руководство по ручному воздействию.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Merriam-Webster — Brush",
+      "url": "https://www.merriam-webster.com/dictionary/brush",
+      "publisher": "Merriam-Webster",
+      "scope": "Предметное значение brush: ворс/щетина и основание; не утверждения о сенсорном эффекте.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "The Stockroom — Starburst Feather Tickler",
+      "url": "https://stockroom.com/products/starburst-feather-tickler-sensation-play",
+      "publisher": "The Stockroom",
+      "scope": "Пример пучка перьев на рукояти, а не универсальные свойства любого пера.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Sklar — Wartenberg Pinwheel 06-3375",
+      "url": "https://www.sklarcorp.com/p/sklar-wartenberg-pinwheel/06-3375",
+      "publisher": "Sklar Corporation",
+      "scope": "Металлическое колесо со штифтами и рукоятью; клиническое назначение чувствительности не является допуском к иным практикам.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Lovense — Gemini",
+      "url": "https://www.lovense.com/app-controlled-vibrating-nipple-clamps-clit-clamps",
+      "publisher": "Lovense",
+      "scope": "Пример зажимного механизма с вибрацией; не все виды зажимов и не безопасные параметры давления.",
+      "checked_on": "2026-10-22",
+      "access": "product_page",
+      "reviewed_section": "Название модели, описание конструкции и механизма; рекламные обещания не используются."
+    },
+    {
+      "name": "SH:24 — How to clean your sex toys",
+      "url": "https://sh24.org.uk/help-centre/how-to-clean-your-sex-toys",
+      "publisher": "SH:24 / Helen Burkitt",
+      "scope": "Уход зависит от материала и инструкции конкретного изделия; не конструкция всех моделей и не универсальный способ стерилизации.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "The Stockroom — All Dildos",
+      "url": "https://stockroom.com/collections/all-dildos",
+      "publisher": "The Stockroom",
+      "scope": "Класс предметов и примеры формы/конструкции; не лечебные свойства и не параметры применения.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Strapons & Dildo Harnesses",
+      "url": "https://stockroom.com/collections/strapons-dildo-harnesses",
+      "publisher": "The Stockroom",
+      "scope": "Класс предметов и примеры формы/конструкции; не лечебные свойства и не параметры применения.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Anal Plugs",
+      "url": "https://stockroom.com/collections/anal-plugs",
+      "publisher": "The Stockroom",
+      "scope": "Класс предметов и примеры формы/конструкции; не лечебные свойства и не параметры применения.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Anal Beads",
+      "url": "https://stockroom.com/collections/anal-beads",
+      "publisher": "The Stockroom",
+      "scope": "Класс предметов и примеры формы/конструкции; не лечебные свойства и не параметры применения.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Cock Rings",
+      "url": "https://stockroom.com/collections/cock-rings",
+      "publisher": "The Stockroom",
+      "scope": "Класс предметов и примеры формы/конструкции; не лечебные свойства и не параметры применения.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Masturbators",
+      "url": "https://stockroom.com/collections/masturbators",
+      "publisher": "The Stockroom",
+      "scope": "Класс предметов и примеры формы/конструкции; не лечебные свойства и не параметры применения.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Glass & Metal Dildos",
+      "url": "https://stockroom.com/collections/glass-metal-dildos",
+      "publisher": "The Stockroom",
+      "scope": "Класс предметов и примеры формы/конструкции; не лечебные свойства и не параметры применения.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Chastity Gear",
+      "url": "https://stockroom.com/collections/all-chastity",
+      "publisher": "The Stockroom",
+      "scope": "Класс предметов и примеры формы/конструкции; не лечебные свойства и не параметры применения.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "The Stockroom — Massage Oils",
+      "url": "https://stockroom.com/collections/massage-oils",
+      "publisher": "The Stockroom",
+      "scope": "Отдельная товарная группа массажных масел; состав и совместимость нельзя переносить с одной марки на другую.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "Decathlon — Massagers",
+      "url": "https://www.decathlon.ca/en/nutrition-health/massagers",
+      "publisher": "Decathlon",
+      "scope": "Мячи и ролики как разные формы механических массажных принадлежностей; не доказательство заявлений о восстановлении.",
+      "checked_on": "2026-10-22",
+      "access": "catalogue_text"
+    },
+    {
+      "name": "Lovense — Sex Machine Guide",
+      "url": "https://www.lovense.com/guide/lovense-sex-machine",
+      "publisher": "Lovense",
+      "scope": "Устройство с приводом, блоком управления и питанием; разные ограничения очистки частей конкретной модели.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Motorbunny — Compatible Devices Overview",
+      "url": "https://support.motorbunny.com/en/articles/13-compatible-devices-overview",
+      "publisher": "Motorbunny",
+      "scope": "Различение ride-on vibration/rotation и thrusting; Bluetooth-подключение только перечисленных совместимых моделей.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Lovense — Spinel",
+      "url": "https://www.lovense.com/spinel-app-controlled-ultra-high-speed-thrusting-vibrating-dildo",
+      "publisher": "Lovense",
+      "scope": "Различие поступательного движения и вибрации в конкретном устройстве.",
+      "checked_on": "2026-10-22",
+      "access": "product_page",
+      "reviewed_section": "Название модели, описание конструкции и механизма; рекламные обещания не используются."
+    },
+    {
+      "name": "Lovense — Domi 2",
+      "url": "https://www.lovense.com/super-powerful-wand-massager",
+      "publisher": "Lovense",
+      "scope": "Пример формы с рукоятью и головкой, а также управления; без рекламного превосходства.",
+      "checked_on": "2026-10-22",
+      "access": "product_page",
+      "reviewed_section": "Название модели, описание конструкции и механизма; рекламные обещания не используются."
+    },
+    {
+      "name": "Lovense — Tenera 2",
+      "url": "https://www.lovense.com/tenera-2-best-clit-sucker-vibrator-clitoral-stimulator",
+      "publisher": "Lovense",
+      "scope": "Воздушные импульсы через рабочую насадку конкретной модели; не медицинский вакуумный прибор.",
+      "checked_on": "2026-10-22",
+      "access": "product_page",
+      "reviewed_section": "Название модели, описание конструкции и механизма; рекламные обещания не используются."
+    },
+    {
+      "name": "Lovense — Lapis",
+      "url": "https://www.lovense.com/lapis-strapless-strap-on-double-sided-dildo",
+      "publisher": "Lovense",
+      "scope": "Пример двухсторонней конструкции; не требование вибрации или отсутствия ремней для всего класса.",
+      "checked_on": "2026-10-22",
+      "access": "product_page",
+      "reviewed_section": "Название модели, описание конструкции и механизма; рекламные обещания не используются."
+    },
+    {
+      "name": "Lovense — Mission 2",
+      "url": "https://www.lovense.com/mission-2-best-touch-sense-vibrating-dildo-with-suction-cup",
+      "publisher": "Lovense",
+      "scope": "Присоска как элемент основания конкретного изделия; не подтверждение крепления к любой поверхности.",
+      "checked_on": "2026-10-22",
+      "access": "product_page",
+      "reviewed_section": "Название модели, описание конструкции и механизма; рекламные обещания не используются."
+    },
+    {
+      "name": "Lovense — Exomoon",
+      "url": "https://www.lovense.com/lipstick-bullet-vibrator",
+      "publisher": "Lovense",
+      "scope": "Компактная вытянутая форма и органы управления; размеры модели не задают стандарт категории.",
+      "checked_on": "2026-10-22",
+      "access": "product_page",
+      "reviewed_section": "Название модели, описание конструкции и механизма; рекламные обещания не используются."
+    },
+    {
+      "name": "Lovense — Vulse",
+      "url": "https://www.lovense.com/vulse-wireless-g-spot-egg-vibrator",
+      "publisher": "Lovense",
+      "scope": "Пример овальной носимой конструкции; дополнительные механизмы этой модели не свойственны всем виброяйцам.",
+      "checked_on": "2026-10-22",
+      "access": "product_page",
+      "reviewed_section": "Название модели, описание конструкции и механизма; рекламные обещания не используются."
+    },
+    {
+      "name": "Lovense — Dolce",
+      "url": "https://www.lovense.com/adjustable-dual-clit-gspot-vibrator",
+      "publisher": "Lovense",
+      "scope": "Регулируемая двухконтурная форма; пример устройства, а не правило совместимости всех парных изделий.",
+      "checked_on": "2026-10-22",
+      "access": "product_page",
+      "reviewed_section": "Название модели, описание конструкции и механизма; рекламные обещания не используются."
+    },
+    {
+      "name": "Lovense — Nora",
+      "url": "https://www.lovense.com/rabbit-vibrator",
+      "publisher": "Lovense",
+      "scope": "Основной корпус и отдельная внешняя ветвь; дополнительные функции зависят от модели.",
+      "checked_on": "2026-10-22",
+      "access": "product_page",
+      "reviewed_section": "Название модели, описание конструкции и механизма; рекламные обещания не используются."
+    },
+    {
+      "name": "Lovense — Hush 2",
+      "url": "https://www.lovense.com/vibrating-butt-plug?code=hush2s",
+      "publisher": "Lovense",
+      "scope": "Пример пробки со встроенной вибрацией и управлением; не универсальные размеры.",
+      "checked_on": "2026-10-22",
+      "access": "product_page",
+      "reviewed_section": "Название модели, описание конструкции и механизма; рекламные обещания не используются."
+    },
+    {
+      "name": "Sportsheets — Under the Bed Restraint System",
+      "url": "https://www.sportsheets.com/collections/restraints/products/under-the-bed-restraint-system%C2%AE",
+      "publisher": "Sportsheets",
+      "scope": "Система ремней под матрасом и отдельных манжет; не расчёт допустимой нагрузки кровати.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "reviewed_section": "Название группы, примеры изделий и описание класса/формы."
+    },
+    {
+      "name": "Satisfyer — Finger Vibrators",
+      "url": "https://www.satisfyer.com/int/products/vibrators/finger-vibrators",
+      "publisher": "Satisfyer",
+      "scope": "Небольшое устройство для ношения на пальцах/кисти; не перенос IPX7 и ухода на весь класс.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "LELO — Flickering Touch Massage Candle: instructions",
+      "url": "https://assets.lelo.com/dx/static/2024-12/LELO_GSPR_regulation_LELO%20Flickering%20Touch%20Massage%20Candle.pdf?VersionId=3Ql70PjJduzdlxrpai1qpfqEWlKbf1PQ",
+      "publisher": "LELO",
+      "scope": "Наружное применение конкретного продукта и прямой запрет использования как интимной смазки; параметры нагрева в статью не переносятся.",
+      "checked_on": "2026-10-22",
+      "access": "full_text_pdf"
+    },
+    {
+      "name": "Leeds Teaching Hospitals NHS Trust — Vaginal Dilators",
+      "url": "https://www.leedsth.nhs.uk/patients/resources/vaginal-dilators/",
+      "publisher": "Leeds Teaching Hospitals NHS Trust",
+      "scope": "Определение медицинского набора разных размеров и необходимость оценки специалистом. Разделы What is a vaginal dilator и введение; не самостоятельная схема лечения.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "reviewed_section": "Введение и What is a vaginal dilator; схемы применения не заимствуются."
+    },
+    {
+      "name": "Cleveland Clinic — Are There Benefits of a Prostate Massage?",
+      "url": "https://health.clevelandclinic.org/prostate-massage",
+      "publisher": "Cleveland Clinic / Petar Bajic",
+      "scope": "Нет доказанной терапевтической пользы для заявленных состояний; различение медицинского и сексуального контекста, без техники.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Earthlite — Full Round Bolster",
+      "url": "https://www.earthlite.com/full-round-bolster.html",
+      "publisher": "Earthlite",
+      "scope": "Круглая геометрия, пеноматериал и обивка конкретного массажного валика; не обещание лечения или допуск для фиксации.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    }
+  ]
+}

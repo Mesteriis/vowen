@@ -28,6 +28,8 @@ used = {'IdentitySection':'IdentitySection','PartnerPreference':'PartnerPreferen
         'RitualReportView':'RitualReport','OccurrenceView':'RitualOccurrence','RitualNoticeView':'RitualNotice'}
 
 
+used.update({name:name for name in schemas if name.startswith('Wiki')})
+
 def kotlin_type(prop):
     if 'anyOf' in prop:
         choices=[p for p in prop['anyOf'] if p.get('type')!='null']

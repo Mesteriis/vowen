@@ -43,6 +43,17 @@ class Practice(ReferenceEntry):
     )
 
 
+class PoseCategory(ReferenceEntry):
+    __tablename__ = "reference_pose_categories"
+
+
+class Pose(ReferenceEntry):
+    __tablename__ = "reference_poses"
+    category_uid: Mapped[UUID] = mapped_column(
+        ForeignKey("reference_pose_categories.uid", ondelete="RESTRICT"), index=True
+    )
+
+
 class ParticipantComposition(ReferenceEntry):
     __tablename__ = "reference_participant_compositions"
 
@@ -53,6 +64,28 @@ class Device(ReferenceEntry):
 
 class BodyPart(ReferenceEntry):
     __tablename__ = "reference_body_parts"
+
+
+class PoseDevice(Base):
+    __tablename__ = "reference_pose_devices"
+    pose_uid: Mapped[UUID] = mapped_column(
+        ForeignKey("reference_poses.uid", ondelete="CASCADE"), primary_key=True
+    )
+    device_uid: Mapped[UUID] = mapped_column(
+        ForeignKey("reference_devices.uid", ondelete="RESTRICT"), primary_key=True, index=True
+    )
+
+
+class PoseComposition(Base):
+    __tablename__ = "reference_pose_compositions"
+    pose_uid: Mapped[UUID] = mapped_column(
+        ForeignKey("reference_poses.uid", ondelete="CASCADE"), primary_key=True
+    )
+    composition_uid: Mapped[UUID] = mapped_column(
+        ForeignKey("reference_participant_compositions.uid", ondelete="RESTRICT"),
+        primary_key=True,
+        index=True,
+    )
 
 
 class PracticeDevice(Base):
@@ -112,6 +145,8 @@ for model in (
     Gender,
     Practice,
     PracticeCategory,
+    PoseCategory,
+    Pose,
     ParticipantComposition,
     Device,
     BodyPart,

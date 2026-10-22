@@ -1,0 +1,127 @@
+{
+  "scope": "Все записи всех справочников CATALOGUES",
+  "catalogues": [
+    {
+      "kind": "biological-sex",
+      "entries": 3,
+      "dedicated_pages": 0,
+      "entries_linked_from_editorial": 0,
+      "sources_audited_per_entry": false
+    },
+    {
+      "kind": "genders",
+      "entries": 7,
+      "dedicated_pages": 0,
+      "entries_linked_from_editorial": 0,
+      "sources_audited_per_entry": false
+    },
+    {
+      "kind": "practice-categories",
+      "entries": 13,
+      "dedicated_pages": 0,
+      "entries_linked_from_editorial": 0,
+      "sources_audited_per_entry": false
+    },
+    {
+      "kind": "practices",
+      "entries": 93,
+      "dedicated_pages": 93,
+      "entries_linked_from_editorial": 60,
+      "sources_audited_per_entry": false
+    },
+    {
+      "kind": "pose-categories",
+      "entries": 14,
+      "dedicated_pages": 0,
+      "entries_linked_from_editorial": 0,
+      "sources_audited_per_entry": false
+    },
+    {
+      "kind": "poses",
+      "entries": 106,
+      "dedicated_pages": 106,
+      "entries_linked_from_editorial": 9,
+      "sources_audited_per_entry": false
+    },
+    {
+      "kind": "devices",
+      "entries": 62,
+      "dedicated_pages": 62,
+      "entries_linked_from_editorial": 39,
+      "sources_audited_per_entry": false
+    },
+    {
+      "kind": "body-parts",
+      "entries": 23,
+      "dedicated_pages": 0,
+      "entries_linked_from_editorial": 0,
+      "sources_audited_per_entry": false
+    },
+    {
+      "kind": "materials",
+      "entries": 15,
+      "dedicated_pages": 0,
+      "entries_linked_from_editorial": 0,
+      "sources_audited_per_entry": false
+    },
+    {
+      "kind": "role-scenarios",
+      "entries": 12,
+      "dedicated_pages": 0,
+      "entries_linked_from_editorial": 0,
+      "sources_audited_per_entry": false
+    },
+    {
+      "kind": "interaction-formats",
+      "entries": 3,
+      "dedicated_pages": 0,
+      "entries_linked_from_editorial": 0,
+      "sources_audited_per_entry": false
+    },
+    {
+      "kind": "venues",
+      "entries": 6,
+      "dedicated_pages": 0,
+      "entries_linked_from_editorial": 0,
+      "sources_audited_per_entry": false
+    },
+    {
+      "kind": "health-conditions",
+      "entries": 23,
+      "dedicated_pages": 0,
+      "entries_linked_from_editorial": 0,
+      "sources_audited_per_entry": false
+    },
+    {
+      "kind": "allergens",
+      "entries": 16,
+      "dedicated_pages": 0,
+      "entries_linked_from_editorial": 0,
+      "sources_audited_per_entry": false
+    },
+    {
+      "kind": "participant-compositions",
+      "entries": 10,
+      "dedicated_pages": 0,
+      "entries_linked_from_editorial": 0,
+      "sources_audited_per_entry": false
+    },
+    {
+      "kind": "timezones",
+      "entries": 24,
+      "dedicated_pages": 0,
+      "entries_linked_from_editorial": 0,
+      "sources_audited_per_entry": false
+    },
+    {
+      "kind": "relationship-types",
+      "entries": 8,
+      "dedicated_pages": 0,
+      "entries_linked_from_editorial": 0,
+      "sources_audited_per_entry": false
+    }
+  ],
+  "total_entries": 438,
+  "dedicated_pages": 261,
+  "editorial_articles": 49
+}

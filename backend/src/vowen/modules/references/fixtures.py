@@ -18,6 +18,10 @@ from vowen.modules.references.models import (
     InteractionFormat,
     Material,
     ParticipantComposition,
+    Pose,
+    PoseCategory,
+    PoseComposition,
+    PoseDevice,
     Practice,
     PracticeBodyPart,
     PracticeCategory,
@@ -34,6 +38,8 @@ ReferenceKind = Literal[
     "genders",
     "practices",
     "practice-categories",
+    "pose-categories",
+    "poses",
     "participant-compositions",
     "devices",
     "body-parts",
@@ -51,6 +57,8 @@ CATALOGUES: dict[ReferenceKind, type[ReferenceEntry]] = {
     "genders": Gender,
     "practice-categories": PracticeCategory,
     "practices": Practice,
+    "pose-categories": PoseCategory,
+    "poses": Pose,
     "devices": Device,
     "body-parts": BodyPart,
     "materials": Material,
@@ -66,7 +74,11 @@ CATALOGUES: dict[ReferenceKind, type[ReferenceEntry]] = {
 
 
 def fixture_rows(kind: ReferenceKind) -> list[dict[str, Any]]:
-    source = files("vowen.modules.references").joinpath("fixtures/v15", kind + ".json")
+    if kind in {"practices", "devices", "body-parts", "practice-categories"}:
+        version = "v21"
+    else:
+        version = "v20" if kind in {"pose-categories", "poses"} else "v15"
+    source = files("vowen.modules.references").joinpath("fixtures", version, kind + ".json")
     rows: list[dict[str, Any]] = json.loads(source.read_text(encoding="utf-8"))
     for row in rows:
         row["uid"] = UUID(row["uid"])
@@ -86,9 +98,16 @@ async def seed_references(db: AsyncSession) -> None:
     await db.execute(
         insert(PracticeBodyPart).values(link_rows("practice-body-parts")).on_conflict_do_nothing()
     )
+    await db.execute(insert(PoseDevice).values(link_rows("pose-devices")).on_conflict_do_nothing())
+    await db.execute(
+        insert(PoseComposition).values(link_rows("pose-compositions")).on_conflict_do_nothing()
+    )
 
 
-def link_rows(kind: Literal["practice-devices", "practice-body-parts"]) -> list[dict[str, UUID]]:
-    source = files("vowen.modules.references").joinpath("fixtures/v15", kind + ".json")
+def link_rows(
+    kind: Literal["practice-devices", "practice-body-parts", "pose-devices", "pose-compositions"],
+) -> list[dict[str, UUID]]:
+    version = "v20" if kind in {"pose-devices", "pose-compositions"} else "v15"
+    source = files("vowen.modules.references").joinpath("fixtures", version, kind + ".json")
     data: list[dict[str, str]] = json.loads(source.read_text(encoding="utf-8"))
     return [{key: UUID(value) for key, value in row.items()} for row in data]

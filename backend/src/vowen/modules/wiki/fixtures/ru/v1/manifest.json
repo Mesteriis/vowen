@@ -1,0 +1,1052 @@
+{
+  "language": "ru",
+  "version": 1,
+  "sections": {
+    "dynamics": "Динамика и договорённости",
+    "practices": "Обзоры практик",
+    "equipment": "Позы и девайсы",
+    "health": "Забота, здоровье и приватность"
+  },
+  "articles": [
+    {
+      "key": "bdsm",
+      "section": "dynamics",
+      "title": "БДСМ: практики, сцены и динамика",
+      "summary": "Как различать отдельную практику, ролевую сцену и продолжительные отношения.",
+      "practice_codes": [
+        "power-exchange",
+        "roleplay"
+      ],
+      "device_codes": [],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — BDSM Glossary and Resources",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2022/07/BDSM-Glossary-and-Resources.pdf"
+        }
+      ]
+    },
+    {
+      "key": "roles",
+      "section": "dynamics",
+      "title": "Доминант, сабмиссив и свитч",
+      "summary": "Роли в конкретных отношениях, обмен ролями и различие между ролью и действием.",
+      "practice_codes": [
+        "power-exchange",
+        "role-reversal"
+      ],
+      "device_codes": [],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — BDSM Glossary and Resources",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2022/07/BDSM-Glossary-and-Resources.pdf"
+        }
+      ]
+    },
+    {
+      "key": "negotiation",
+      "section": "dynamics",
+      "title": "Предварительный разговор о практике",
+      "summary": "Ожидания, условия встречи и конкретные формулировки договорённостей.",
+      "practice_codes": [
+        "power-exchange"
+      ],
+      "device_codes": [],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ]
+    },
+    {
+      "key": "boundaries",
+      "section": "dynamics",
+      "title": "Предпочтения, границы и табу",
+      "summary": "Чем интерес отличается от готовности участвовать и как поддерживать актуальность предпочтений.",
+      "practice_codes": [
+        "power-exchange",
+        "orgasm-control"
+      ],
+      "device_codes": [],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consent to Kink",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2022/01/Best-Practices-for-Consent-to-Kink.pdf"
+        }
+      ]
+    },
+    {
+      "key": "signals",
+      "section": "dynamics",
+      "title": "Стоп-слова и сигналы обратной связи",
+      "summary": "Обычная речь, система светофора и доступные невербальные сигналы.",
+      "practice_codes": [
+        "sensory-restriction",
+        "bondage"
+      ],
+      "device_codes": [
+        "blindfold",
+        "cuffs"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — BDSM Glossary and Resources",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2022/07/BDSM-Glossary-and-Resources.pdf"
+        }
+      ]
+    },
+    {
+      "key": "protocols",
+      "section": "dynamics",
+      "title": "Протоколы в D/s-отношениях",
+      "summary": "Символические действия, область их применения и понятные исключения.",
+      "practice_codes": [
+        "protocol",
+        "command-play"
+      ],
+      "device_codes": [
+        "collar"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — Statement on Power Exchange Relationships",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2019/12/Power-Exchange-Statement.pdf"
+        }
+      ]
+    },
+    {
+      "key": "service",
+      "section": "dynamics",
+      "title": "Практики служения",
+      "summary": "Задачи, ожидания, ресурсы и обратная связь без невысказанных требований.",
+      "practice_codes": [
+        "service",
+        "praise"
+      ],
+      "device_codes": [],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ]
+    },
+    {
+      "key": "rituals",
+      "section": "dynamics",
+      "title": "Ритуалы близости",
+      "summary": "Как выбрать повторяемое действие, которое сохраняет смысл в обычной жизни.",
+      "practice_codes": [
+        "protocol",
+        "service",
+        "praise"
+      ],
+      "device_codes": [],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ]
+    },
+    {
+      "key": "rules",
+      "section": "dynamics",
+      "title": "Правила и дисциплина в отношениях",
+      "summary": "Конкретные формулировки, пересмотр договорённостей и разбор нарушений.",
+      "practice_codes": [
+        "protocol",
+        "command-play"
+      ],
+      "device_codes": [],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — Statement on Power Exchange Relationships",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2019/12/Power-Exchange-Statement.pdf"
+        }
+      ]
+    },
+    {
+      "key": "aftercare",
+      "section": "health",
+      "title": "Забота после практики: aftercare",
+      "summary": "Завершение интенсивного эпизода и разные потребности всех участников.",
+      "practice_codes": [
+        "aftercare",
+        "massage"
+      ],
+      "device_codes": [
+        "massage-ball",
+        "massage-roller"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — BDSM Glossary and Resources",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2022/07/BDSM-Glossary-and-Resources.pdf"
+        }
+      ]
+    },
+    {
+      "key": "bondage",
+      "section": "practices",
+      "title": "Бондаж: формы и назначение",
+      "summary": "Чем отличаются декоративные формы, ограничение подвижности и подвес.",
+      "practice_codes": [
+        "bondage",
+        "cuffs"
+      ],
+      "device_codes": [
+        "cuffs",
+        "bondage-straps",
+        "bondage-tape",
+        "under-bed-restraints",
+        "spreader-bar"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — BDSM Glossary and Resources",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2022/07/BDSM-Glossary-and-Resources.pdf"
+        }
+      ]
+    },
+    {
+      "key": "shibari",
+      "section": "practices",
+      "title": "Сибари и кинбаку",
+      "summary": "Верёвочное взаимодействие, эстетика, технические различия и выбор обучения.",
+      "practice_codes": [
+        "shibari",
+        "rope-bondage"
+      ],
+      "device_codes": [
+        "rope",
+        "suspension-frame"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "Shibari Study — Glossary",
+          "url": "https://www.shibaristudy.com/glossary"
+        }
+      ]
+    },
+    {
+      "key": "sensory",
+      "section": "practices",
+      "title": "Сенсорные практики",
+      "summary": "Восприятие, предсказуемость и различие между мягкими и температурными элементами.",
+      "practice_codes": [
+        "sensory-restriction",
+        "blindfold",
+        "feather-play",
+        "wax-play",
+        "ice-play",
+        "tickling"
+      ],
+      "device_codes": [
+        "blindfold",
+        "feather",
+        "brush"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — BDSM Glossary and Resources",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2022/07/BDSM-Glossary-and-Resources.pdf"
+        }
+      ]
+    },
+    {
+      "key": "impact",
+      "section": "practices",
+      "title": "Телесное воздействие: язык и инструменты",
+      "summary": "Спанкинг, падл, флоггер и другие классы предметов; почему шкала силы условна.",
+      "practice_codes": [
+        "spanking",
+        "paddle",
+        "flogger",
+        "crop",
+        "caning"
+      ],
+      "device_codes": [
+        "hand",
+        "paddle",
+        "flogger",
+        "crop",
+        "cane",
+        "whip",
+        "slapper"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — BDSM Glossary and Resources",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2022/07/BDSM-Glossary-and-Resources.pdf"
+        }
+      ]
+    },
+    {
+      "key": "roleplay",
+      "section": "practices",
+      "title": "Ролевые игры и выход из образа",
+      "summary": "Общий сценарий, смысл персонажа и граница между игрой и повседневным общением.",
+      "practice_codes": [
+        "roleplay",
+        "pet-play",
+        "pony-play",
+        "uniform-play"
+      ],
+      "device_codes": [
+        "collar",
+        "leash"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — What Professionals Need to Know about Kink (2024)",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2024/04/What-Professionals-Need-to-Know-about-Kink-2024.pdf"
+        }
+      ]
+    },
+    {
+      "key": "fetishes",
+      "section": "practices",
+      "title": "Фетиши материалов и образов",
+      "summary": "Кожа, латекс, бельё и обувь: свойства интереса без предположений о готовом сценарии.",
+      "practice_codes": [
+        "latex",
+        "leather",
+        "lingerie",
+        "stockings",
+        "heels",
+        "boot-worship"
+      ],
+      "device_codes": [],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — What Professionals Need to Know about Kink (2024)",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2024/04/What-Professionals-Need-to-Know-about-Kink-2024.pdf"
+        }
+      ]
+    },
+    {
+      "key": "intimacy",
+      "section": "practices",
+      "title": "Словарь сексуальной близости",
+      "summary": "Нейтральные определения и различие между видом контакта, идентичностью и предпочтением.",
+      "practice_codes": [
+        "vaginal-sex",
+        "anal-sex",
+        "oral-sex",
+        "masturbation",
+        "nonpenetrative-sex",
+        "manual-stimulation"
+      ],
+      "device_codes": [],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "Planned Parenthood Toronto — Making Sex Feel Good",
+          "url": "https://ppt.on.ca/factsheets/making-sex-feel-good/"
+        }
+      ]
+    },
+    {
+      "key": "sexual-health",
+      "section": "health",
+      "title": "Сексуальное здоровье: разговор и обследования",
+      "summary": "Общие ориентиры по инфекциям, барьерной защите и обращению за консультацией.",
+      "practice_codes": [],
+      "device_codes": [],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "ВОЗ — Sexually transmitted infections (STIs)",
+          "url": "https://www.who.int/news-room/fact-sheets/detail/sexually-transmitted-infections-(stis)"
+        },
+        {
+          "name": "NHS — Sexually transmitted infections (STIs)",
+          "url": "https://www.nhs.uk/conditions/sexually-transmitted-infections-stis/"
+        }
+      ]
+    },
+    {
+      "key": "group",
+      "section": "practices",
+      "title": "Групповые форматы и несколько партнёров",
+      "summary": "Состав участников, самостоятельные договорённости и приватность каждого человека.",
+      "practice_codes": [
+        "group-sex",
+        "threesome",
+        "partner-exchange",
+        "swinging"
+      ],
+      "device_codes": [],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ]
+    },
+    {
+      "key": "positions",
+      "section": "equipment",
+      "title": "Как читать описание позы",
+      "summary": "Названия, опоры, адаптация и отличие современной подборки от исторического источника.",
+      "practice_codes": [],
+      "device_codes": [
+        "positioning-cushion",
+        "wedge-cushion",
+        "bolster-cushion"
+      ],
+      "pose_codes": [
+        "missionary",
+        "supine-supported",
+        "bed-edge-supine"
+      ],
+      "sources": [
+        {
+          "name": "Shibari Study — Glossary",
+          "url": "https://www.shibaristudy.com/glossary"
+        }
+      ]
+    },
+    {
+      "key": "protocol-positions",
+      "section": "equipment",
+      "title": "Протокольные положения и позы рабыни",
+      "summary": "Различие между формой положения, договорённым смыслом и литературным названием.",
+      "practice_codes": [
+        "protocol"
+      ],
+      "device_codes": [],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "Gorean Codex — Positions (любительская литературная подборка)",
+          "url": "https://goreancodex.wordpress.com/positions/"
+        }
+      ]
+    },
+    {
+      "key": "devices",
+      "section": "equipment",
+      "title": "Как выбирать и понимать девайсы",
+      "summary": "Назначение предмета, свойства конкретной модели и сведения, которых не видно на фотографии.",
+      "practice_codes": [
+        "sex-toys",
+        "remote-toys"
+      ],
+      "device_codes": [
+        "vibrator",
+        "dildo",
+        "sex-machine",
+        "remote-controller",
+        "vibrating-saddle"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "We-Vibe — How do I clean my products?",
+          "url": "https://care.we-vibe.com/s/article/how-to-clean-products?language=en_US"
+        }
+      ]
+    },
+    {
+      "key": "materials",
+      "section": "equipment",
+      "title": "Материалы и контактные поверхности",
+      "summary": "Состав, покрытия, совместимость средств и индивидуальная чувствительность.",
+      "practice_codes": [],
+      "device_codes": [
+        "rope",
+        "cuffs",
+        "glass-stimulator",
+        "steel-stimulator",
+        "massage-oil"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "Cambridge University Hospitals — Latex allergy",
+          "url": "https://www.cuh.nhs.uk/patient-information/information-for-patients-with-latex-allergy/"
+        }
+      ]
+    },
+    {
+      "key": "device-care",
+      "section": "equipment",
+      "title": "Очистка, осмотр и хранение девайсов",
+      "summary": "Различие между очисткой и стерилизацией, ограничения обработки и организация коллекции.",
+      "practice_codes": [
+        "sex-toys"
+      ],
+      "device_codes": [
+        "vibrator",
+        "dildo",
+        "anal-plug",
+        "cuffs",
+        "rope"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "SH:24 — How to clean your sex toys; Helen Burkitt",
+          "url": "https://sh24.org.uk/help-centre/how-to-clean-your-sex-toys"
+        }
+      ]
+    },
+    {
+      "key": "privacy",
+      "section": "health",
+      "title": "Приватность, фотографии и личные сведения",
+      "summary": "Создание, хранение и публикация записей — отдельные решения.",
+      "practice_codes": [
+        "intimate-photography",
+        "intimate-video",
+        "sexting",
+        "video-sex"
+      ],
+      "device_codes": [],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "EFF — Why Communication Metadata Matters",
+          "url": "https://ssd.eff.org/module/why-metadata-matters"
+        },
+        {
+          "name": "EFF — условия использования: CC BY 4.0",
+          "url": "https://www.eff.org/copyright"
+        }
+      ]
+    },
+    {
+      "key": "relationship-context",
+      "section": "dynamics",
+      "title": "Несколько отношений: отдельные договорённости",
+      "summary": "Как сохранять самостоятельность каждой связи, когда человек участвует в нескольких динамиках.",
+      "practice_codes": [
+        "power-exchange",
+        "role-reversal"
+      ],
+      "device_codes": [],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ]
+    },
+    {
+      "key": "distance-dynamics",
+      "section": "dynamics",
+      "title": "Дистанционная динамика и повседневная связь",
+      "summary": "Ритм общения, асинхронные задания и переход между перепиской и личной встречей.",
+      "practice_codes": [
+        "power-exchange",
+        "protocol",
+        "service"
+      ],
+      "device_codes": [
+        "remote-controller"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "Lovense — Remote quick tips",
+          "url": "https://www.lovense.com/guide/remote"
+        }
+      ]
+    },
+    {
+      "key": "collar-symbolism",
+      "section": "equipment",
+      "title": "Ошейник: предмет, символ и договорённость",
+      "summary": "Чем значение ошейника в конкретных отношениях отличается от свойств самого изделия.",
+      "practice_codes": [
+        "collar",
+        "protocol",
+        "power-exchange"
+      ],
+      "device_codes": [
+        "collar",
+        "leash"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — BDSM Glossary and Resources",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2022/07/BDSM-Glossary-and-Resources.pdf"
+        }
+      ]
+    },
+    {
+      "key": "praise-feedback",
+      "section": "dynamics",
+      "title": "Похвала, признание и награды",
+      "summary": "Как различать тёплую обратную связь, ролевую похвалу и заранее оговорённое поощрение.",
+      "practice_codes": [
+        "praise",
+        "service",
+        "protocol"
+      ],
+      "device_codes": [],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "Options for Sexual Health — Talking to Partners About Sex",
+          "url": "https://www.optionsforsexualhealth.org/facts/sex/talking-about-sex/"
+        }
+      ]
+    },
+    {
+      "key": "scene-debrief",
+      "section": "dynamics",
+      "title": "Разговор после сцены: что сохранить и что изменить",
+      "summary": "Как отделять впечатления от оценок и превращать обратную связь в конкретные договорённости.",
+      "practice_codes": [
+        "aftercare",
+        "roleplay"
+      ],
+      "device_codes": [],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "Options for Sexual Health — Talking to Partners About Sex",
+          "url": "https://www.optionsforsexualhealth.org/facts/sex/talking-about-sex/"
+        }
+      ]
+    },
+    {
+      "key": "learning-resources",
+      "section": "practices",
+      "title": "Как выбирать обучение и справочные материалы",
+      "summary": "Различие между обзором, демонстрацией и обучением конкретному навыку.",
+      "practice_codes": [
+        "bondage",
+        "shibari",
+        "roleplay"
+      ],
+      "device_codes": [
+        "rope"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — Kink Education Must Be Adult-Focused and Expert-Led",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2025/06/Kink-Education-Must-Be-Adult-Focused-and-Expert-Led.pdf"
+        }
+      ]
+    },
+    {
+      "key": "posing-language",
+      "section": "equipment",
+      "title": "Позирование: положение, ракурс и образ",
+      "summary": "Как описывать постановку кадра, не смешивая геометрию тела и символику роли.",
+      "practice_codes": [
+        "intimate-photography",
+        "nude-posing"
+      ],
+      "device_codes": [
+        "positioning-cushion"
+      ],
+      "pose_codes": [
+        "protocol-standing-attention",
+        "protocol-seated-waiting"
+      ],
+      "sources": [
+        {
+          "name": "EFF — Why Communication Metadata Matters",
+          "url": "https://ssd.eff.org/module/why-metadata-matters"
+        },
+        {
+          "name": "EFF — условия использования: CC BY 4.0",
+          "url": "https://www.eff.org/copyright"
+        }
+      ]
+    },
+    {
+      "key": "equipment-collection",
+      "section": "equipment",
+      "title": "Коллекция девайсов: карточки, комплекты и история",
+      "summary": "Как организовать сведения о предметах и не путать общий справочник с конкретным изделием.",
+      "practice_codes": [
+        "sex-toys"
+      ],
+      "device_codes": [
+        "cuffs",
+        "remote-controller",
+        "massage-roller"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "SH:24 — How to clean your sex toys; Helen Burkitt",
+          "url": "https://sh24.org.uk/help-centre/how-to-clean-your-sex-toys"
+        }
+      ]
+    },
+    {
+      "key": "risk-frameworks",
+      "section": "dynamics",
+      "title": "SSC и RACK: принципы и пределы сокращений",
+      "summary": "Что означают распространённые аббревиатуры и почему они не заменяют обсуждение конкретного взаимодействия.",
+      "practice_codes": [
+        "power-exchange",
+        "bondage"
+      ],
+      "device_codes": [],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — BDSM Glossary and Resources",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2022/07/BDSM-Glossary-and-Resources.pdf"
+        }
+      ]
+    },
+    {
+      "key": "extended-dynamics",
+      "section": "dynamics",
+      "title": "Динамика 24/7 и TPE: область договорённостей",
+      "summary": "Как отличать длительность динамики, широту полномочий и конкретные повседневные обязанности.",
+      "practice_codes": [
+        "power-exchange",
+        "protocol",
+        "service"
+      ],
+      "device_codes": [
+        "collar"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — Statement on Power Exchange Relationships",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2019/12/Power-Exchange-Statement.pdf"
+        }
+      ]
+    },
+    {
+      "key": "pet-play",
+      "section": "practices",
+      "title": "Pet play: образ, игра и сообщество",
+      "summary": "Человеческая ролевая игра с образом животного; различия между личной сценой, образом и социальной встречей.",
+      "practice_codes": [
+        "pet-play",
+        "roleplay",
+        "praise"
+      ],
+      "device_codes": [
+        "collar",
+        "leash"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "PDX PAH — Welcome to Pet Play",
+          "url": "https://www.pdxpah.com/"
+        }
+      ]
+    },
+    {
+      "key": "pony-play",
+      "section": "practices",
+      "title": "Pony play: роли, эстетика и обучение",
+      "summary": "Чем образ пони отличается от обязательного сценария и как читать материалы конкретного сообщества.",
+      "practice_codes": [
+        "pony-play",
+        "roleplay",
+        "protocol"
+      ],
+      "device_codes": [
+        "collar"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "The Manège — A Virtual Pony Play Academy",
+          "url": "https://themanege.org/"
+        }
+      ]
+    },
+    {
+      "key": "humiliation-objectification",
+      "section": "practices",
+      "title": "Унижение и объективация: различать смысл и форму",
+      "summary": "Нейтральный разбор ролевых обозначений, индивидуального значения слов и границ сценария.",
+      "practice_codes": [
+        "erotic-humiliation",
+        "objectification",
+        "roleplay"
+      ],
+      "device_codes": [],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — What Professionals Need to Know about Kink (2024)",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2024/04/What-Professionals-Need-to-Know-about-Kink-2024.pdf"
+        }
+      ]
+    },
+    {
+      "key": "community-events",
+      "section": "dynamics",
+      "title": "Тематические встречи: участие, наблюдение и приватность",
+      "summary": "Как отличать правила площадки от личной договорённости и не путать наблюдение с приглашением.",
+      "practice_codes": [
+        "roleplay",
+        "protocol",
+        "intimate-photography"
+      ],
+      "device_codes": [],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — Sample Consent Policy for Clubs and Events",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Sample-Consent-Policy-for-Clubs-and-Events.pdf"
+        }
+      ]
+    },
+    {
+      "key": "dynamics-pause",
+      "section": "dynamics",
+      "title": "Пауза, пересмотр и завершение динамики",
+      "summary": "Чем временное изменение формата отличается от нового соглашения и прекращения отношений.",
+      "practice_codes": [
+        "power-exchange",
+        "protocol"
+      ],
+      "device_codes": [
+        "collar"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — Statement on Power Exchange Relationships",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2019/12/Power-Exchange-Statement.pdf"
+        }
+      ]
+    },
+    {
+      "key": "reading-research",
+      "section": "health",
+      "title": "Как читать исследования о практиках и предпочтениях",
+      "summary": "Выборка, формулировка вопроса и разница между интересом, опытом и идентичностью.",
+      "practice_codes": [
+        "roleplay",
+        "bondage",
+        "power-exchange"
+      ],
+      "device_codes": [],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "Herbenick et al. (2017) — Sexual diversity in the United States",
+          "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0181198"
+        }
+      ]
+    },
+    {
+      "key": "orgasm-control-overview",
+      "section": "practices",
+      "title": "Тизинг, эджинг и контроль оргазма",
+      "summary": "Различия между ожиданием, откладыванием завершения и ролевой договорённостью.",
+      "practice_codes": [
+        "teasing",
+        "edging",
+        "orgasm-control",
+        "orgasm-denial",
+        "chastity"
+      ],
+      "device_codes": [
+        "chastity-belt"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "ISSM — What is edging and why might it be employed?",
+          "url": "https://www.issm.info/sexual-health-qa/what-is-edging-and-why-might-it-be-employed"
+        }
+      ]
+    },
+    {
+      "key": "sensory-instruments",
+      "section": "equipment",
+      "title": "Зажимы и колесо Вартенберга: устройство и различия",
+      "summary": "Как различать конструкции сенсорных инструментов и проверять сведения о конкретной модели.",
+      "practice_codes": [
+        "clamps",
+        "pinwheel",
+        "sensory-restriction"
+      ],
+      "device_codes": [
+        "clamps",
+        "pinwheel"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "Sklar — Wartenberg Pinwheel, 06-3375",
+          "url": "https://www.sklarcorp.com/p/sklar-wartenberg-pinwheel/06-3375"
+        }
+      ]
+    },
+    {
+      "key": "gags-communication",
+      "section": "equipment",
+      "title": "Кляпы и обратная связь",
+      "summary": "Предмет, ролевая символика и доступность общения рассматриваются отдельно.",
+      "practice_codes": [
+        "sensory-restriction",
+        "roleplay"
+      ],
+      "device_codes": [
+        "ball-gag"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NCSF — BDSM Glossary and Resources",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2022/07/BDSM-Glossary-and-Resources.pdf"
+        }
+      ]
+    },
+    {
+      "key": "restraints-and-supports",
+      "section": "equipment",
+      "title": "Манжеты, портупеи и опоры: разные задачи",
+      "summary": "Чем ограничение подвижности отличается от позиционирования и несущей конструкции.",
+      "practice_codes": [
+        "bondage",
+        "cuffs",
+        "rope-bondage"
+      ],
+      "device_codes": [
+        "cuffs",
+        "ankle-cuffs",
+        "bondage-harness",
+        "bondage-straps",
+        "under-bed-restraints",
+        "positioning-cushion",
+        "spreader-bar"
+      ],
+      "pose_codes": [
+        "supported-reclining-wedge",
+        "equipment-bed-restraints"
+      ],
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ]
+    },
+    {
+      "key": "lubricants-barriers",
+      "section": "health",
+      "title": "Смазки, барьерные средства и совместимость",
+      "summary": "Как разделять состав средства, материал барьера и требования конкретного изделия.",
+      "practice_codes": [
+        "sex-toys",
+        "nonpenetrative-sex"
+      ],
+      "device_codes": [
+        "vibrator",
+        "dildo",
+        "anal-plug",
+        "massage-oil"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NHS — Condoms",
+          "url": "https://www.nhs.uk/contraception/methods-of-contraception/condoms/"
+        }
+      ]
+    },
+    {
+      "key": "allergies-and-products",
+      "section": "health",
+      "title": "Аллергии, раздражение и состав предметов",
+      "summary": "Что важно знать о материалах и почему запись в справочнике не заменяет диагностику.",
+      "practice_codes": [
+        "latex",
+        "leather"
+      ],
+      "device_codes": [
+        "cuffs",
+        "collar",
+        "massage-oil"
+      ],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "NHS — Allergies",
+          "url": "https://www.nhs.uk/conditions/allergies/"
+        },
+        {
+          "name": "Cambridge University Hospitals — Latex allergy",
+          "url": "https://www.cuh.nhs.uk/patient-information/information-for-patients-with-latex-allergy/"
+        }
+      ]
+    },
+    {
+      "key": "mobility-and-adaptation",
+      "section": "health",
+      "title": "Ограниченная подвижность: адаптация формы и смысла",
+      "summary": "Опоры, доступная коммуникация и изменение ритуала без оценки человека по силуэту.",
+      "practice_codes": [
+        "protocol",
+        "massage"
+      ],
+      "device_codes": [
+        "positioning-cushion",
+        "wedge-cushion",
+        "bolster-cushion"
+      ],
+      "pose_codes": [
+        "protocol-seated-waiting",
+        "supported-side-back",
+        "supported-kneeling-forearms"
+      ],
+      "sources": [
+        {
+          "name": "Cambridge University Hospitals — Chronic pain and intimacy",
+          "url": "https://www.cuh.nhs.uk/patient-information/chronic-pain-and-intimacy/"
+        }
+      ]
+    },
+    {
+      "key": "health-discussion",
+      "section": "health",
+      "title": "Здоровье, лекарства и ограничения: как подготовить разговор",
+      "summary": "Какие сведения помогают согласовать условия и что остаётся вопросом медицинского специалиста.",
+      "practice_codes": [
+        "power-exchange",
+        "aftercare"
+      ],
+      "device_codes": [],
+      "pose_codes": [],
+      "sources": [
+        {
+          "name": "Cambridge University Hospitals — Chronic pain and intimacy",
+          "url": "https://www.cuh.nhs.uk/patient-information/chronic-pain-and-intimacy/"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5279 @@
+{
+  "language": "ru",
+  "version": 1,
+  "articles": [
+    {
+      "reference": {
+        "kind": "interaction-formats",
+        "uid": "5aa174c5-4c7b-50b5-bbe0-d275e1877d53"
+      },
+      "summary": "Участники находятся в одном месте.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "interaction-formats",
+          "uid": "2ed3dfc0-fbc3-58ed-93c1-973387c0c903"
+        },
+        {
+          "kind": "interaction-formats",
+          "uid": "c7f5b4e1-c1df-59fb-bb22-4c9fba52cb07"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f",
+        "5211d5f1-bfd4-5405-b266-e86869c70af0"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "interaction-formats",
+        "uid": "2ed3dfc0-fbc3-58ed-93c1-973387c0c903"
+      },
+      "summary": "Участники взаимодействуют на расстоянии.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "interaction-formats",
+          "uid": "c7f5b4e1-c1df-59fb-bb22-4c9fba52cb07"
+        },
+        {
+          "kind": "interaction-formats",
+          "uid": "5aa174c5-4c7b-50b5-bbe0-d275e1877d53"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f",
+        "5211d5f1-bfd4-5405-b266-e86869c70af0"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "interaction-formats",
+        "uid": "c7f5b4e1-c1df-59fb-bb22-4c9fba52cb07"
+      },
+      "summary": "Сочетание очного и дистанционного взаимодействия.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "interaction-formats",
+          "uid": "5aa174c5-4c7b-50b5-bbe0-d275e1877d53"
+        },
+        {
+          "kind": "interaction-formats",
+          "uid": "2ed3dfc0-fbc3-58ed-93c1-973387c0c903"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f",
+        "5211d5f1-bfd4-5405-b266-e86869c70af0"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "venues",
+        "uid": "00526d54-fdc2-5391-96d1-be860fc61593"
+      },
+      "summary": "Домашнее пространство.",
+      "sources": [
+        {
+          "name": "NCSF — Sample Consent Policy for Clubs and Events",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Sample-Consent-Policy-for-Clubs-and-Events.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "venues",
+          "uid": "28a4c5c6-c9e5-52bf-a3e6-71bfdc4daa94"
+        },
+        {
+          "kind": "venues",
+          "uid": "62931376-afec-5187-97dd-a9a4e2cccc3c"
+        }
+      ],
+      "related_pages": [
+        "3020b06b-2db9-5f05-8705-2026f8ab8937",
+        "c8046c8d-73fc-57ef-9e06-a8f1a9abd179"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "venues",
+        "uid": "62931376-afec-5187-97dd-a9a4e2cccc3c"
+      },
+      "summary": "Арендованное или собственное оборудованное помещение.",
+      "sources": [
+        {
+          "name": "NCSF — Sample Consent Policy for Clubs and Events",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Sample-Consent-Policy-for-Clubs-and-Events.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "venues",
+          "uid": "8d2fc02e-a5b8-5ba0-952a-3d21b3f71a3d"
+        },
+        {
+          "kind": "venues",
+          "uid": "d89689c8-54fa-5ece-9d14-528369f863f8"
+        }
+      ],
+      "related_pages": [
+        "3020b06b-2db9-5f05-8705-2026f8ab8937",
+        "c8046c8d-73fc-57ef-9e06-a8f1a9abd179"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "venues",
+        "uid": "8d2fc02e-a5b8-5ba0-952a-3d21b3f71a3d"
+      },
+      "summary": "Клубное пространство.",
+      "sources": [
+        {
+          "name": "NCSF — Sample Consent Policy for Clubs and Events",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Sample-Consent-Policy-for-Clubs-and-Events.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "venues",
+          "uid": "d89689c8-54fa-5ece-9d14-528369f863f8"
+        },
+        {
+          "kind": "venues",
+          "uid": "62931376-afec-5187-97dd-a9a4e2cccc3c"
+        }
+      ],
+      "related_pages": [
+        "3020b06b-2db9-5f05-8705-2026f8ab8937",
+        "c8046c8d-73fc-57ef-9e06-a8f1a9abd179"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "venues",
+        "uid": "28a4c5c6-c9e5-52bf-a3e6-71bfdc4daa94"
+      },
+      "summary": "Номер или отдельное пространство отеля.",
+      "sources": [
+        {
+          "name": "NCSF — Sample Consent Policy for Clubs and Events",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Sample-Consent-Policy-for-Clubs-and-Events.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "venues",
+          "uid": "00526d54-fdc2-5391-96d1-be860fc61593"
+        },
+        {
+          "kind": "venues",
+          "uid": "6a7dbcc1-90ca-5733-9861-ea428fcdcda5"
+        }
+      ],
+      "related_pages": [
+        "3020b06b-2db9-5f05-8705-2026f8ab8937",
+        "c8046c8d-73fc-57ef-9e06-a8f1a9abd179"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "venues",
+        "uid": "d89689c8-54fa-5ece-9d14-528369f863f8"
+      },
+      "summary": "Пространство закрытого мероприятия.",
+      "sources": [
+        {
+          "name": "NCSF — Sample Consent Policy for Clubs and Events",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Sample-Consent-Policy-for-Clubs-and-Events.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "venues",
+          "uid": "8d2fc02e-a5b8-5ba0-952a-3d21b3f71a3d"
+        },
+        {
+          "kind": "venues",
+          "uid": "6a7dbcc1-90ca-5733-9861-ea428fcdcda5"
+        }
+      ],
+      "related_pages": [
+        "3020b06b-2db9-5f05-8705-2026f8ab8937",
+        "c8046c8d-73fc-57ef-9e06-a8f1a9abd179"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "venues",
+        "uid": "6a7dbcc1-90ca-5733-9861-ea428fcdcda5"
+      },
+      "summary": "Иное выбранное частное пространство.",
+      "sources": [
+        {
+          "name": "NCSF — Sample Consent Policy for Clubs and Events",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Sample-Consent-Policy-for-Clubs-and-Events.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "venues",
+          "uid": "00526d54-fdc2-5391-96d1-be860fc61593"
+        },
+        {
+          "kind": "venues",
+          "uid": "62931376-afec-5187-97dd-a9a4e2cccc3c"
+        }
+      ],
+      "related_pages": [
+        "3020b06b-2db9-5f05-8705-2026f8ab8937",
+        "c8046c8d-73fc-57ef-9e06-a8f1a9abd179"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "relationship-types",
+        "uid": "7d0b1145-fc3d-5424-b91b-7fa47b8a8c63"
+      },
+      "summary": "Романтические отношения.",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "relationship-types",
+          "uid": "88d9d026-2c44-5d05-bb2b-a346ea07dfb3"
+        },
+        {
+          "kind": "relationship-types",
+          "uid": "5cb76595-bb2d-5c88-8204-b2f92849c7a1"
+        }
+      ],
+      "related_pages": [
+        "474255d2-d2fc-5d1f-8e80-7db1880fa66e",
+        "da670df8-0dc9-5e07-96cd-a27adea7941a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "relationship-types",
+        "uid": "88d9d026-2c44-5d05-bb2b-a346ea07dfb3"
+      },
+      "summary": "Партнёрство и совместная жизнь.",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "relationship-types",
+          "uid": "7d0b1145-fc3d-5424-b91b-7fa47b8a8c63"
+        },
+        {
+          "kind": "relationship-types",
+          "uid": "5778b46f-5562-5d38-a127-7de059d06018"
+        }
+      ],
+      "related_pages": [
+        "474255d2-d2fc-5d1f-8e80-7db1880fa66e",
+        "da670df8-0dc9-5e07-96cd-a27adea7941a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "relationship-types",
+        "uid": "5cb76595-bb2d-5c88-8204-b2f92849c7a1"
+      },
+      "summary": "Дружеские отношения.",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "relationship-types",
+          "uid": "7d0b1145-fc3d-5424-b91b-7fa47b8a8c63"
+        },
+        {
+          "kind": "relationship-types",
+          "uid": "d5255b14-b89f-5986-bdd2-bf78715d8d5f"
+        }
+      ],
+      "related_pages": [
+        "474255d2-d2fc-5d1f-8e80-7db1880fa66e",
+        "da670df8-0dc9-5e07-96cd-a27adea7941a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "relationship-types",
+        "uid": "2bea76a7-7bee-5019-a918-9f365223093f"
+      },
+      "summary": "Отношения с распределением ролей Dominant / Submissive.",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "relationship-types",
+          "uid": "64a315cb-a85f-56a5-9978-a678c7be53a9"
+        },
+        {
+          "kind": "relationship-types",
+          "uid": "d5255b14-b89f-5986-bdd2-bf78715d8d5f"
+        }
+      ],
+      "related_pages": [
+        "474255d2-d2fc-5d1f-8e80-7db1880fa66e",
+        "da670df8-0dc9-5e07-96cd-a27adea7941a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "relationship-types",
+        "uid": "64a315cb-a85f-56a5-9978-a678c7be53a9"
+      },
+      "summary": "Отношения с изменяемым распределением D/s-ролей.",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "relationship-types",
+          "uid": "2bea76a7-7bee-5019-a918-9f365223093f"
+        },
+        {
+          "kind": "relationship-types",
+          "uid": "d5255b14-b89f-5986-bdd2-bf78715d8d5f"
+        }
+      ],
+      "related_pages": [
+        "474255d2-d2fc-5d1f-8e80-7db1880fa66e",
+        "da670df8-0dc9-5e07-96cd-a27adea7941a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "relationship-types",
+        "uid": "d5255b14-b89f-5986-bdd2-bf78715d8d5f"
+      },
+      "summary": "Взаимодействие вокруг отдельных практик и встреч.",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "relationship-types",
+          "uid": "2bea76a7-7bee-5019-a918-9f365223093f"
+        },
+        {
+          "kind": "relationship-types",
+          "uid": "b716500a-195d-5eed-897b-3d5a4de17443"
+        }
+      ],
+      "related_pages": [
+        "474255d2-d2fc-5d1f-8e80-7db1880fa66e",
+        "da670df8-0dc9-5e07-96cd-a27adea7941a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "relationship-types",
+        "uid": "b716500a-195d-5eed-897b-3d5a4de17443"
+      },
+      "summary": "Отношения наставничества.",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "relationship-types",
+          "uid": "d5255b14-b89f-5986-bdd2-bf78715d8d5f"
+        },
+        {
+          "kind": "relationship-types",
+          "uid": "5cb76595-bb2d-5c88-8204-b2f92849c7a1"
+        }
+      ],
+      "related_pages": [
+        "474255d2-d2fc-5d1f-8e80-7db1880fa66e",
+        "da670df8-0dc9-5e07-96cd-a27adea7941a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "relationship-types",
+        "uid": "5778b46f-5562-5d38-a127-7de059d06018"
+      },
+      "summary": "Другой выбранный участниками вид отношений.",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "relationship-types",
+          "uid": "7d0b1145-fc3d-5424-b91b-7fa47b8a8c63"
+        },
+        {
+          "kind": "relationship-types",
+          "uid": "88d9d026-2c44-5d05-bb2b-a346ea07dfb3"
+        },
+        {
+          "kind": "relationship-types",
+          "uid": "5cb76595-bb2d-5c88-8204-b2f92849c7a1"
+        }
+      ],
+      "related_pages": [
+        "474255d2-d2fc-5d1f-8e80-7db1880fa66e",
+        "da670df8-0dc9-5e07-96cd-a27adea7941a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "participant-compositions",
+        "uid": "6ba6dbc1-4beb-5b7b-983b-fdf28f7c7e25"
+      },
+      "summary": "Один участник; пол и гендер не указаны.",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "participant-compositions",
+          "uid": "fabea1ac-ea1e-5c9e-a9ee-7529bf681f71"
+        },
+        {
+          "kind": "participant-compositions",
+          "uid": "bf8da8fc-be86-5b48-88d9-1f51b941a113"
+        }
+      ],
+      "related_pages": [
+        "e3e856d9-844f-57b2-9f15-0dea48a7c3d5",
+        "474255d2-d2fc-5d1f-8e80-7db1880fa66e"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "participant-compositions",
+        "uid": "bf8da8fc-be86-5b48-88d9-1f51b941a113"
+      },
+      "summary": "Участников: 2; мужчин: 1, женщин: 1. Порядок букв не задаёт роли или взаимодействие.",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "participant-compositions",
+          "uid": "f85ee33a-6fca-5903-9f7d-3491f759abf8"
+        },
+        {
+          "kind": "participant-compositions",
+          "uid": "9e664667-54f4-5d92-af4a-a0564c90c863"
+        }
+      ],
+      "related_pages": [
+        "e3e856d9-844f-57b2-9f15-0dea48a7c3d5",
+        "474255d2-d2fc-5d1f-8e80-7db1880fa66e"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "participant-compositions",
+        "uid": "f85ee33a-6fca-5903-9f7d-3491f759abf8"
+      },
+      "summary": "Участников: 2; мужчин: 2, женщин: 0. Порядок букв не задаёт роли или взаимодействие.",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "participant-compositions",
+          "uid": "bf8da8fc-be86-5b48-88d9-1f51b941a113"
+        },
+        {
+          "kind": "participant-compositions",
+          "uid": "9e664667-54f4-5d92-af4a-a0564c90c863"
+        }
+      ],
+      "related_pages": [
+        "e3e856d9-844f-57b2-9f15-0dea48a7c3d5",
+        "474255d2-d2fc-5d1f-8e80-7db1880fa66e"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "participant-compositions",
+        "uid": "9e664667-54f4-5d92-af4a-a0564c90c863"
+      },
+      "summary": "Участников: 2; мужчин: 0, женщин: 2. Порядок букв не задаёт роли или взаимодействие.",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "participant-compositions",
+          "uid": "bf8da8fc-be86-5b48-88d9-1f51b941a113"
+        },
+        {
+          "kind": "participant-compositions",
+          "uid": "f85ee33a-6fca-5903-9f7d-3491f759abf8"
+        }
+      ],
+      "related_pages": [
+        "e3e856d9-844f-57b2-9f15-0dea48a7c3d5",
+        "474255d2-d2fc-5d1f-8e80-7db1880fa66e"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "participant-compositions",
+        "uid": "ad7fe7c8-6a5a-5d09-ac3f-2497a8dd20a5"
+      },
+      "summary": "Участников: 3; мужчин: 2, женщин: 1. Порядок букв не задаёт роли или взаимодействие.",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "participant-compositions",
+          "uid": "74704304-4c61-5ec4-b707-d8be7d9e7d29"
+        },
+        {
+          "kind": "participant-compositions",
+          "uid": "81e71656-2ae9-5998-8d7f-da2ac0439003"
+        },
+        {
+          "kind": "participant-compositions",
+          "uid": "be14611e-0ed5-5c79-b000-3322e377f771"
+        }
+      ],
+      "related_pages": [
+        "e3e856d9-844f-57b2-9f15-0dea48a7c3d5",
+        "474255d2-d2fc-5d1f-8e80-7db1880fa66e"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "participant-compositions",
+        "uid": "74704304-4c61-5ec4-b707-d8be7d9e7d29"
+      },
+      "summary": "Участников: 3; мужчин: 1, женщин: 2. Порядок букв не задаёт роли или взаимодействие.",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "participant-compositions",
+          "uid": "ad7fe7c8-6a5a-5d09-ac3f-2497a8dd20a5"
+        },
+        {
+          "kind": "participant-compositions",
+          "uid": "81e71656-2ae9-5998-8d7f-da2ac0439003"
+        },
+        {
+          "kind": "participant-compositions",
+          "uid": "be14611e-0ed5-5c79-b000-3322e377f771"
+        }
+      ],
+      "related_pages": [
+        "e3e856d9-844f-57b2-9f15-0dea48a7c3d5",
+        "474255d2-d2fc-5d1f-8e80-7db1880fa66e"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "participant-compositions",
+        "uid": "81e71656-2ae9-5998-8d7f-da2ac0439003"
+      },
+      "summary": "Участников: 3; мужчин: 3, женщин: 0. Порядок букв не задаёт роли или взаимодействие.",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "participant-compositions",
+          "uid": "ad7fe7c8-6a5a-5d09-ac3f-2497a8dd20a5"
+        },
+        {
+          "kind": "participant-compositions",
+          "uid": "74704304-4c61-5ec4-b707-d8be7d9e7d29"
+        }
+      ],
+      "related_pages": [
+        "e3e856d9-844f-57b2-9f15-0dea48a7c3d5",
+        "474255d2-d2fc-5d1f-8e80-7db1880fa66e"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "participant-compositions",
+        "uid": "be14611e-0ed5-5c79-b000-3322e377f771"
+      },
+      "summary": "Участников: 3; мужчин: 0, женщин: 3. Порядок букв не задаёт роли или взаимодействие.",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "participant-compositions",
+          "uid": "ad7fe7c8-6a5a-5d09-ac3f-2497a8dd20a5"
+        },
+        {
+          "kind": "participant-compositions",
+          "uid": "74704304-4c61-5ec4-b707-d8be7d9e7d29"
+        }
+      ],
+      "related_pages": [
+        "e3e856d9-844f-57b2-9f15-0dea48a7c3d5",
+        "474255d2-d2fc-5d1f-8e80-7db1880fa66e"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "participant-compositions",
+        "uid": "2fb5b2e5-8f72-565e-aa7d-e78cf0bf97af"
+      },
+      "summary": "Участников: 4; мужчин: 2, женщин: 2. Порядок букв не задаёт роли или взаимодействие.",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "participant-compositions",
+          "uid": "ad7fe7c8-6a5a-5d09-ac3f-2497a8dd20a5"
+        },
+        {
+          "kind": "participant-compositions",
+          "uid": "74704304-4c61-5ec4-b707-d8be7d9e7d29"
+        }
+      ],
+      "related_pages": [
+        "e3e856d9-844f-57b2-9f15-0dea48a7c3d5",
+        "474255d2-d2fc-5d1f-8e80-7db1880fa66e"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "participant-compositions",
+        "uid": "fabea1ac-ea1e-5c9e-a9ee-7529bf681f71"
+      },
+      "summary": "Число участников, пол и гендер не уточняются.",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "participant-compositions",
+          "uid": "6ba6dbc1-4beb-5b7b-983b-fdf28f7c7e25"
+        },
+        {
+          "kind": "participant-compositions",
+          "uid": "bf8da8fc-be86-5b48-88d9-1f51b941a113"
+        },
+        {
+          "kind": "participant-compositions",
+          "uid": "2fb5b2e5-8f72-565e-aa7d-e78cf0bf97af"
+        }
+      ],
+      "related_pages": [
+        "e3e856d9-844f-57b2-9f15-0dea48a7c3d5",
+        "474255d2-d2fc-5d1f-8e80-7db1880fa66e"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "fc7b8867-8ac9-5cdd-9082-fdbcafa26518"
+      },
+      "summary": "Всемирное координированное время: значение идентификатора UTC и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "8232a2b1-400b-59c4-9c88-04d7d652be7f"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "1ee479dd-6d59-5557-9a15-1c0407a84577"
+      },
+      "summary": "Гонолулу, Гавайи: значение идентификатора Pacific/Honolulu и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "d5a5077a-a38c-594e-98c0-371f8ba00ad6"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "d5a5077a-a38c-594e-98c0-371f8ba00ad6"
+      },
+      "summary": "Анкоридж, Аляска: значение идентификатора America/Anchorage и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "1ee479dd-6d59-5557-9a15-1c0407a84577"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "70a7cbd7-6bcc-531f-a415-67c1a0c9e880"
+      },
+      "summary": "Лос-Анджелес: значение идентификатора America/Los_Angeles и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "8ddcc987-a0e7-5fe4-be4a-4d9c56016bc0"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "31aaaf83-5864-5ed9-97be-9d36afd1ecf4"
+      },
+      "summary": "Денвер: значение идентификатора America/Denver и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "353c7181-0929-5919-b8fa-99c4bedd4b4e"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "353c7181-0929-5919-b8fa-99c4bedd4b4e"
+      },
+      "summary": "Чикаго: значение идентификатора America/Chicago и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "8ddcc987-a0e7-5fe4-be4a-4d9c56016bc0"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "8ddcc987-a0e7-5fe4-be4a-4d9c56016bc0"
+      },
+      "summary": "Нью-Йорк: значение идентификатора America/New_York и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "8232a2b1-400b-59c4-9c88-04d7d652be7f"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "fc169817-e590-54df-acfa-f6edd2877392"
+      },
+      "summary": "Сан-Паулу: значение идентификатора America/Sao_Paulo и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "fc7b8867-8ac9-5cdd-9082-fdbcafa26518"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "a43f66da-c649-5b6e-9a16-d65681e2414f"
+      },
+      "summary": "Азорские острова: значение идентификатора Atlantic/Azores и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "8232a2b1-400b-59c4-9c88-04d7d652be7f"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "8232a2b1-400b-59c4-9c88-04d7d652be7f"
+      },
+      "summary": "Лондон: значение идентификатора Europe/London и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "fc7b8867-8ac9-5cdd-9082-fdbcafa26518"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "f4a2187d-84d5-589c-a745-3c1953fbb276"
+      },
+      "summary": "Мадрид: значение идентификатора Europe/Madrid и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "8232a2b1-400b-59c4-9c88-04d7d652be7f"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "71682f4d-428d-5f76-a8ce-0d4cda4fc6f9"
+      },
+      "summary": "Хельсинки: значение идентификатора Europe/Helsinki и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "61e1db2f-5ed8-58d1-9f1e-72d9a97f27aa"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "61e1db2f-5ed8-58d1-9f1e-72d9a97f27aa"
+      },
+      "summary": "Москва: значение идентификатора Europe/Moscow и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "71682f4d-428d-5f76-a8ce-0d4cda4fc6f9"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "5a9d4ce1-2f7c-594b-8419-d3889c0719d8"
+      },
+      "summary": "Дубай: значение идентификатора Asia/Dubai и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "0321e74d-e743-581c-b50b-02311a61a907"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "0321e74d-e743-581c-b50b-02311a61a907"
+      },
+      "summary": "Карачи: значение идентификатора Asia/Karachi и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "1892b3bb-b5ae-5d77-b651-fa9d2ac5ec73"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "1892b3bb-b5ae-5d77-b651-fa9d2ac5ec73"
+      },
+      "summary": "Калькутта: значение идентификатора Asia/Kolkata и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "0321e74d-e743-581c-b50b-02311a61a907"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "17e47dfa-14fa-5aa3-9744-8f5fba0f55d0"
+      },
+      "summary": "Дакка: значение идентификатора Asia/Dhaka и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "1892b3bb-b5ae-5d77-b651-fa9d2ac5ec73"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "0c8aa6a7-6433-5e99-80b5-628015c1f209"
+      },
+      "summary": "Бангкок: значение идентификатора Asia/Bangkok и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "44140e02-0a71-5581-a99f-308d935026c0"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "44140e02-0a71-5581-a99f-308d935026c0"
+      },
+      "summary": "Шанхай: значение идентификатора Asia/Shanghai и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "3b273fca-477d-575c-86b4-0f6a2c872e0e"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "3b273fca-477d-575c-86b4-0f6a2c872e0e"
+      },
+      "summary": "Токио: значение идентификатора Asia/Tokyo и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "44140e02-0a71-5581-a99f-308d935026c0"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "9059546e-cde3-5e86-beca-6467f0609d46"
+      },
+      "summary": "Аделаида: значение идентификатора Australia/Adelaide и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "3ae2b1d2-44ac-5659-9c99-1463594eac4e"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "3ae2b1d2-44ac-5659-9c99-1463594eac4e"
+      },
+      "summary": "Сидней: значение идентификатора Australia/Sydney и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "9059546e-cde3-5e86-beca-6467f0609d46"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "77c10ea7-4f3c-58c5-96e2-4f78b6f42d2c"
+      },
+      "summary": "Окленд: значение идентификатора Pacific/Auckland и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "78e8971d-f38a-5c07-bc56-43576e8bef25"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "timezones",
+        "uid": "78e8971d-f38a-5c07-bc56-43576e8bef25"
+      },
+      "summary": "Киритимати: значение идентификатора Pacific/Kiritimati и согласование времени.",
+      "sources": [
+        {
+          "name": "IANA — Time Zone Database: теория и идентификаторы",
+          "url": "https://data.iana.org/time-zones/tzdb/theory.html"
+        },
+        {
+          "name": "IANA — таблица региональных зон",
+          "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "timezones",
+          "uid": "77c10ea7-4f3c-58c5-96e2-4f78b6f42d2c"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "practice-categories",
+        "uid": "43712f95-6e05-5eaa-a5a2-d27c06482e47"
+      },
+      "summary": "Группа названий сексуальных контактов и стимуляции. Она отвечает на вопрос о виде взаимодействия, а не о составе пары или пространственном положении.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "practices",
+          "uid": "fda43b94-747d-5e60-92c6-5fda0ae53f51"
+        },
+        {
+          "kind": "practices",
+          "uid": "7c52a9f0-deae-58df-8994-031baf1f74ee"
+        },
+        {
+          "kind": "practices",
+          "uid": "3e7b4ff4-de6b-55ae-8a69-5d011e365e9b"
+        },
+        {
+          "kind": "practices",
+          "uid": "e55ddcd3-43fd-5182-b2b9-97e64409fcf8"
+        },
+        {
+          "kind": "practices",
+          "uid": "a471310d-8844-5e72-933e-719a769f564f"
+        },
+        {
+          "kind": "practices",
+          "uid": "c5af0a7d-622e-5f1f-8e46-7563868f69eb"
+        },
+        {
+          "kind": "practices",
+          "uid": "bd2abb9f-2cf5-52ea-9e00-33191a9ea709"
+        },
+        {
+          "kind": "practices",
+          "uid": "9dbf9534-cd39-5b0e-af71-0d0c1c83b169"
+        },
+        {
+          "kind": "practices",
+          "uid": "0f8e6a45-a791-58bb-b885-13dd6a800ff4"
+        },
+        {
+          "kind": "practices",
+          "uid": "331d0827-b027-5770-a40f-9a6e6a01472e"
+        },
+        {
+          "kind": "practices",
+          "uid": "cba2ee71-5df2-553e-b938-8cfdc3c6ad15"
+        },
+        {
+          "kind": "practices",
+          "uid": "503108c8-97de-5f67-913b-adb75753900b"
+        },
+        {
+          "kind": "practices",
+          "uid": "3390b986-66ba-5ae9-bacd-a5e95c9751a4"
+        },
+        {
+          "kind": "practices",
+          "uid": "4e333b5d-ee86-5c6d-bdea-ecba2f611063"
+        },
+        {
+          "kind": "practices",
+          "uid": "66e5b228-4b20-57f9-baa7-c1afeae89869"
+        },
+        {
+          "kind": "practices",
+          "uid": "695b1a33-cd13-53f4-bd8e-22837389e986"
+        },
+        {
+          "kind": "practices",
+          "uid": "9e72931b-ce5b-5a79-b0a6-d432f9435c15"
+        },
+        {
+          "kind": "practices",
+          "uid": "ff37ceb8-312b-5e93-8693-0a04e326f877"
+        },
+        {
+          "kind": "practices",
+          "uid": "7a7572b7-692e-5d7c-80c2-d9e3e7cd2ab6"
+        },
+        {
+          "kind": "practices",
+          "uid": "d94bead1-4c60-53e6-8be7-57fb50148387"
+        },
+        {
+          "kind": "practices",
+          "uid": "6d39254a-0e66-5d07-bcfc-04017a70864b"
+        },
+        {
+          "kind": "practices",
+          "uid": "a157d029-55e8-5675-907e-c13f45bb604c"
+        },
+        {
+          "kind": "practices",
+          "uid": "ce92c899-2d4a-5a8c-873d-7b7cd7482883"
+        },
+        {
+          "kind": "practices",
+          "uid": "3ff1429b-053d-5917-9e26-b3e99fe7be43"
+        },
+        {
+          "kind": "practices",
+          "uid": "f8f0aaad-bc1c-5d5f-8e5e-b6b37e3b5c1b"
+        },
+        {
+          "kind": "practices",
+          "uid": "937fefbc-2666-5f92-a479-8ce6e46dd5d3"
+        },
+        {
+          "kind": "practices",
+          "uid": "970905b0-56e7-5cc6-a4c2-2be5d302d54b"
+        }
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "practice-categories",
+        "uid": "5bd72ca0-1700-5abf-858d-0547df45ffc3"
+      },
+      "summary": "Категория практик самостоятельной стимуляции и её согласованных форм в присутствии партнёра.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "practices",
+          "uid": "4e87c082-0bb8-5296-bebb-6550e45e3219"
+        },
+        {
+          "kind": "practices",
+          "uid": "cfe32429-c60b-5e9e-a20f-bf05d2078ffc"
+        }
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "practice-categories",
+        "uid": "5b5243c6-220c-58bb-a6e5-032890402f73"
+      },
+      "summary": "Практики, в которых используется интимный девайс. Здесь сгруппированы взаимодействия, тогда как устройство и материал предмета относятся к отдельным справочникам.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "practices",
+          "uid": "a9e8faf3-dd3a-5ea2-958c-db4cd2c6328b"
+        },
+        {
+          "kind": "practices",
+          "uid": "62e9c88a-ddb1-512f-a704-5df2b0239651"
+        },
+        {
+          "kind": "practices",
+          "uid": "65ca1bfd-d395-5c6f-8be7-025c43d5b995"
+        },
+        {
+          "kind": "practices",
+          "uid": "4d5452b7-ba53-5643-93a4-87646edc3cf0"
+        },
+        {
+          "kind": "practices",
+          "uid": "0886115f-dfcd-57de-ad1d-b88da5817730"
+        },
+        {
+          "kind": "practices",
+          "uid": "35de7866-494b-5d79-90da-c75883dd27fd"
+        },
+        {
+          "kind": "practices",
+          "uid": "9c62923b-8cca-50b8-9729-f84109f61bb8"
+        },
+        {
+          "kind": "practices",
+          "uid": "f00c8d46-5efb-5647-862a-083fb5d2f28e"
+        },
+        {
+          "kind": "practices",
+          "uid": "b7ab9335-d44a-50f4-ac3a-56cb14d410af"
+        },
+        {
+          "kind": "practices",
+          "uid": "5917efab-8f10-5596-aa3b-774520a37a8b"
+        }
+      ],
+      "related_pages": [
+        "b9898d31-a309-51a1-ad96-87cb2b26f8fd"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "practice-categories",
+        "uid": "a2b31394-9367-573c-955a-b0d4e3f9b9fe"
+      },
+      "summary": "Практики ограничения подвижности с помощью предметов или согласованных положений. Категория объединяет разные способы организации ограничения, но не задаёт их технику.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "practices",
+          "uid": "62b4a457-e5af-5fe3-a3a4-14d5acff107b"
+        },
+        {
+          "kind": "practices",
+          "uid": "0670e567-269d-5c65-896e-7477453261c7"
+        },
+        {
+          "kind": "practices",
+          "uid": "cfc7f289-3bf1-5fa2-9626-dbd5f710fda2"
+        },
+        {
+          "kind": "practices",
+          "uid": "faab733d-6a81-5377-a354-696825ba3946"
+        }
+      ],
+      "related_pages": [
+        "a678d391-507f-57f7-ab19-660fd269154e"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "practice-categories",
+        "uid": "7e95dd6b-bb69-5bb9-b3a1-6c0a26939c24"
+      },
+      "summary": "Практики с акцентом на ощущения и изменение восприятия. Группа описывает направленность опыта, а не одну обязательную комбинацию воздействий.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "practices",
+          "uid": "58aecb41-3edb-5fb1-9306-c87763f9d11e"
+        },
+        {
+          "kind": "practices",
+          "uid": "65c88c6e-6450-5024-85fe-4b83c76a946a"
+        },
+        {
+          "kind": "practices",
+          "uid": "f5b7c0ca-281d-51b7-82ca-c30b6cba9cd0"
+        },
+        {
+          "kind": "practices",
+          "uid": "60be494c-7dcd-5cfc-b430-6ee76033d897"
+        },
+        {
+          "kind": "practices",
+          "uid": "447881f6-b624-51b6-996f-b1452d05d0f4"
+        },
+        {
+          "kind": "practices",
+          "uid": "9d2e14f0-a5aa-5e85-ad02-bd936eea69e9"
+        },
+        {
+          "kind": "practices",
+          "uid": "ed9604e9-66ee-544d-85a7-d05f58f25d3e"
+        },
+        {
+          "kind": "practices",
+          "uid": "75ca3b67-75d4-5bc7-9795-9f0cfed72b2d"
+        },
+        {
+          "kind": "practices",
+          "uid": "09984499-cbe6-58ef-8ae9-b7b99833c8a3"
+        }
+      ],
+      "related_pages": [
+        "d7465735-07a5-57cb-8e94-4a714e212dae"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "practice-categories",
+        "uid": "912fa5e5-b35b-5192-af4f-cb6b604a1564"
+      },
+      "summary": "Практики телесного воздействия, для которых существенны инструмент и характер взаимодействия. Это тематическая группа, а не универсальное назначение наказания.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "practices",
+          "uid": "276fcac2-d18c-5e9d-89be-8a2b409d3a21"
+        },
+        {
+          "kind": "practices",
+          "uid": "766884f2-2037-5a2c-a03a-de6abe952834"
+        },
+        {
+          "kind": "practices",
+          "uid": "2d4342ca-6979-502a-bcd0-80b4438ee082"
+        },
+        {
+          "kind": "practices",
+          "uid": "50e8d644-dd48-58fb-87c3-091a1035aa5d"
+        },
+        {
+          "kind": "practices",
+          "uid": "14dba989-518a-556e-9a59-e09b7ee72810"
+        }
+      ],
+      "related_pages": [
+        "85eef360-c76c-58ce-9bc6-6399e879cb70"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "practice-categories",
+        "uid": "a4f7a9ba-4a9e-533d-b2fd-8badc14af21b"
+      },
+      "summary": "Практики, в которых предметом договорённости становится контроль оргазма. Интерес к этому формату не равнозначен согласию на любой режим контроля.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "practices",
+          "uid": "5a4dd0fe-bf6b-5cf5-aaad-e21f5237e6ed"
+        },
+        {
+          "kind": "practices",
+          "uid": "eedb7d63-f3d1-5515-b12a-866de1f08e04"
+        },
+        {
+          "kind": "practices",
+          "uid": "f5788e6a-7e9b-5856-9b11-743db4a56660"
+        },
+        {
+          "kind": "practices",
+          "uid": "b9d3af7b-7f12-524d-8297-905b58418373"
+        }
+      ],
+      "related_pages": [
+        "ad338590-7318-5522-8577-6aeddf9b9d62"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "practice-categories",
+        "uid": "13e560e0-4658-5d78-a459-ba14d83af5b8"
+      },
+      "summary": "Взаимодействия через выбранные образы и игровые сценарии. Роль в сцене может отличаться от повседневного статуса участника и его D/s-роли.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "practices",
+          "uid": "df8b928c-36b9-54f1-91a8-5a9c94e40a36"
+        },
+        {
+          "kind": "practices",
+          "uid": "4e7ceb4c-2c01-536f-af37-d3b63f9bda99"
+        },
+        {
+          "kind": "practices",
+          "uid": "8e7d4987-b812-5f2c-8968-84962b658265"
+        },
+        {
+          "kind": "practices",
+          "uid": "ab72d397-b61f-58bb-a32e-adb85c56c026"
+        },
+        {
+          "kind": "practices",
+          "uid": "812594cf-04bc-5ea7-ad67-d85c6df52afd"
+        }
+      ],
+      "related_pages": [
+        "180b25b1-488c-503f-befd-2147f803c6c8"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "practice-categories",
+        "uid": "5748b2b8-f601-5265-aad8-c23ef9780233"
+      },
+      "summary": "Практики, связанные с распределением инициативы, полномочий, служением и протоколами.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "practices",
+          "uid": "7505d90e-73ad-5a7a-aac0-5f4f5615c01f"
+        },
+        {
+          "kind": "practices",
+          "uid": "f7791c5d-bd98-55eb-8455-a76fdb2fa4fe"
+        },
+        {
+          "kind": "practices",
+          "uid": "ea4b99aa-70d0-5b1d-98c8-1023909d70ad"
+        },
+        {
+          "kind": "practices",
+          "uid": "cbe31b4c-4db6-5c6b-a620-2b6fab952a9b"
+        },
+        {
+          "kind": "practices",
+          "uid": "c8fc7591-10a1-5ca3-9b3f-c21a6cdfb325"
+        },
+        {
+          "kind": "practices",
+          "uid": "116aebda-4167-50e9-8bdc-c24ff1427c73"
+        },
+        {
+          "kind": "practices",
+          "uid": "9171b79d-eb59-5bc0-b148-61a0032e7d29"
+        },
+        {
+          "kind": "practices",
+          "uid": "4334ca8f-6c36-5ee4-ae85-ebcea59c22d5"
+        },
+        {
+          "kind": "practices",
+          "uid": "afc36234-3776-5183-ba77-12a530332a89"
+        },
+        {
+          "kind": "practices",
+          "uid": "2d9f9efc-502b-5d37-acee-5fbecc7c9bab"
+        }
+      ],
+      "related_pages": [
+        "400282a3-dffd-5a46-8856-28068036126a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "practice-categories",
+        "uid": "a2d15e96-70cc-525b-b187-542ed07c4a59"
+      },
+      "summary": "Практики и интересы, в которых особое значение придаётся предмету, материалу, образу или отдельной особенности.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "practices",
+          "uid": "4e406954-d785-54f0-a177-dee5341fe788"
+        },
+        {
+          "kind": "practices",
+          "uid": "a48b709f-acc5-51a0-9a94-61da508e3285"
+        },
+        {
+          "kind": "practices",
+          "uid": "b175d93f-3375-5f82-a24a-f11e9d335abc"
+        },
+        {
+          "kind": "practices",
+          "uid": "c5c1a188-d4cb-550e-ae0c-440556e12c1a"
+        },
+        {
+          "kind": "practices",
+          "uid": "4631d14c-5d07-51f1-ae9a-ebe8686f1311"
+        },
+        {
+          "kind": "practices",
+          "uid": "deda82ad-b98f-545d-9089-2aae477dcd50"
+        },
+        {
+          "kind": "practices",
+          "uid": "bd28a4a3-778b-5d5e-b890-cb733fb99344"
+        }
+      ],
+      "related_pages": [
+        "c5134084-bba8-5c62-9a44-9bdca5448c42"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "practice-categories",
+        "uid": "ffb84262-30b8-54ce-98c0-d42970c03b37"
+      },
+      "summary": "Практики восстановления, внимания и заботы после взаимодействия или отдельно от него.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "practices",
+          "uid": "c2383526-eef0-5745-932d-0cdecd763d68"
+        },
+        {
+          "kind": "practices",
+          "uid": "c742fe75-56cd-5ed1-94b8-56b6cfcaf226"
+        },
+        {
+          "kind": "practices",
+          "uid": "25b4ae15-a3c3-56da-9cfb-2a0396576630"
+        }
+      ],
+      "related_pages": [
+        "61dd7ae7-e1ff-5f28-ac7f-1195f58bf67b"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "practice-categories",
+        "uid": "4963fafa-3af2-5baa-92bb-91e4a91573c4"
+      },
+      "summary": "Практики, выполняемые при физическом разделении участников и с использованием связи.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "practices",
+          "uid": "f4699e5b-d255-5850-899e-08893909c258"
+        },
+        {
+          "kind": "practices",
+          "uid": "2d00c97b-0c2c-5000-b1e5-11346e5974bb"
+        },
+        {
+          "kind": "practices",
+          "uid": "75b29142-9bb9-5415-a9a6-1017bd5bf7d1"
+        }
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "practice-categories",
+        "uid": "b6121e04-1d0e-517a-b7ef-cce763010f67"
+      },
+      "summary": "Практики с несколькими участниками. Здесь описывается совместный формат, а конкретное число и состав людей задаются отдельно.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "practices",
+          "uid": "3d97bb5b-a853-57fe-8dc4-d5b2fa980b46"
+        },
+        {
+          "kind": "practices",
+          "uid": "ec12bef2-907d-511d-91bc-1b1df88dc9e7"
+        },
+        {
+          "kind": "practices",
+          "uid": "65f9b954-e240-5933-8feb-91e2c7cef09f"
+        },
+        {
+          "kind": "practices",
+          "uid": "2644eb5f-8710-5f68-a7d4-b804700ca526"
+        }
+      ],
+      "related_pages": [
+        "e3e856d9-844f-57b2-9f15-0dea48a7c3d5"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "pose-categories",
+        "uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89"
+      },
+      "summary": "Основное положение одного из участников — лёжа на спине. Это пространственный признак, а не указание на D/s-роль.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "poses",
+          "uid": "1cd572ee-0f65-52b5-a4d0-70d881b71889"
+        },
+        {
+          "kind": "poses",
+          "uid": "c10de705-c76a-5510-921f-76c072316451"
+        },
+        {
+          "kind": "poses",
+          "uid": "900e817b-2280-54f0-b50b-b9ea1e2e894a"
+        },
+        {
+          "kind": "poses",
+          "uid": "0eda63ad-2427-5dac-9800-505e21dbf9cc"
+        },
+        {
+          "kind": "poses",
+          "uid": "dcd9fafe-cfab-511c-bca7-d77128a00297"
+        },
+        {
+          "kind": "poses",
+          "uid": "9551bb72-ed7d-5ea2-acd2-d09ca34ab289"
+        },
+        {
+          "kind": "poses",
+          "uid": "60579f23-eb6c-5f7f-aa99-ccf0cf03e319"
+        },
+        {
+          "kind": "poses",
+          "uid": "c20ec854-b9ba-51f4-93a7-819b76f99c60"
+        },
+        {
+          "kind": "poses",
+          "uid": "bdd844be-831d-527d-9569-0314ac6161ad"
+        },
+        {
+          "kind": "poses",
+          "uid": "d82c7935-025b-58d4-bf6e-9ac3a7fc66c7"
+        },
+        {
+          "kind": "poses",
+          "uid": "ac1ce94a-112f-5d5a-a115-9f2142bc1dc6"
+        },
+        {
+          "kind": "poses",
+          "uid": "462ecf44-3705-5333-9516-e49324a930a3"
+        }
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "pose-categories",
+        "uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc"
+      },
+      "summary": "Основное положение одного из участников — лёжа на животе. Категория объединяет варианты по ориентации корпуса.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "poses",
+          "uid": "57e5a667-13b2-5818-a37c-a42a1c43caa3"
+        },
+        {
+          "kind": "poses",
+          "uid": "d4ac9a34-8606-5885-8f03-a93e492a1770"
+        },
+        {
+          "kind": "poses",
+          "uid": "0a836a19-0b4e-518d-8f6b-61d257b54ad0"
+        },
+        {
+          "kind": "poses",
+          "uid": "b919abe4-2239-50c1-95d0-c2eaeebf3469"
+        },
+        {
+          "kind": "poses",
+          "uid": "cb724fbb-49b5-50db-9a17-89a4a48973df"
+        },
+        {
+          "kind": "poses",
+          "uid": "d544ee21-9449-544d-9850-900f3165be87"
+        },
+        {
+          "kind": "poses",
+          "uid": "7fa4bbc5-820c-57a7-abba-78c8e8884645"
+        },
+        {
+          "kind": "poses",
+          "uid": "321ffe35-7dac-5286-9d64-ff5a98b77f7f"
+        }
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "pose-categories",
+        "uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f"
+      },
+      "summary": "Боковые положения одного или нескольких участников. Сторона и взаимная ориентация уточняются в названии конкретного варианта.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "poses",
+          "uid": "1ee5d2e7-b9e4-5c56-bf10-24c61fe6f78e"
+        },
+        {
+          "kind": "poses",
+          "uid": "7794fbd1-1f47-5a6f-9127-7c216d5fb8a2"
+        },
+        {
+          "kind": "poses",
+          "uid": "76a6b416-a3c8-548f-b732-45cbe2eb2b4a"
+        },
+        {
+          "kind": "poses",
+          "uid": "550995c5-b420-51c4-ba83-d3bdfefdfc01"
+        },
+        {
+          "kind": "poses",
+          "uid": "d47291c7-9d40-5fa2-a671-fbab0d9e2b80"
+        },
+        {
+          "kind": "poses",
+          "uid": "e8e7f217-af8f-5e84-80f0-2b5615287e9b"
+        },
+        {
+          "kind": "poses",
+          "uid": "b5c223e2-4b31-5e5d-86d9-4e7c7a549b24"
+        },
+        {
+          "kind": "poses",
+          "uid": "f8ff0993-05dd-5a48-842b-3d438de7590b"
+        }
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "pose-categories",
+        "uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e"
+      },
+      "summary": "Положения, в которых основной признак — сидячая опора. Мебель и расположение партнёров описываются отдельно.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "poses",
+          "uid": "02af237e-d32b-5695-beb9-e125e09f674c"
+        },
+        {
+          "kind": "poses",
+          "uid": "dd115af3-ab45-58ea-b6a7-b82be4746afd"
+        },
+        {
+          "kind": "poses",
+          "uid": "e25d5832-b43c-5162-96e0-5860d3a15e3e"
+        },
+        {
+          "kind": "poses",
+          "uid": "563f98e0-d43e-5d39-bc79-1fea22beb7d0"
+        },
+        {
+          "kind": "poses",
+          "uid": "46e44314-3f87-5248-b115-f1611165e44a"
+        },
+        {
+          "kind": "poses",
+          "uid": "da423ca9-b77b-51d2-b730-e10eb38501b8"
+        },
+        {
+          "kind": "poses",
+          "uid": "73ebbcf8-17ce-53b9-8b38-169db0a97557"
+        },
+        {
+          "kind": "poses",
+          "uid": "c2155cb0-606d-56a1-acc0-5f96d1ff5b79"
+        },
+        {
+          "kind": "poses",
+          "uid": "dd0fcefd-cfc0-58f9-b19b-f2176cf531cc"
+        },
+        {
+          "kind": "poses",
+          "uid": "91fbb919-1c71-5cf1-a6cb-a969615d6aad"
+        },
+        {
+          "kind": "poses",
+          "uid": "d75b1e18-fc70-5441-b25c-23fda49f43ea"
+        },
+        {
+          "kind": "poses",
+          "uid": "c08574af-2f24-5ccd-91e3-173ca62f169f"
+        }
+      ],
+      "related_pages": [
+        "6f4c8e6f-2fe5-5616-8657-88ee787e2648"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "pose-categories",
+        "uid": "50db3b5b-1c02-5560-a940-afc89bee4272"
+      },
+      "summary": "Положения с основной опорой стоя. Группа описывает положение тела, а не длительность его удержания.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "poses",
+          "uid": "7df2c3ec-0528-58c0-a68e-32f0df227e8b"
+        },
+        {
+          "kind": "poses",
+          "uid": "c979147c-462d-5b90-abd9-56cc34fccdc3"
+        },
+        {
+          "kind": "poses",
+          "uid": "f6d7b859-7393-5f2f-95b2-fef9f9554317"
+        },
+        {
+          "kind": "poses",
+          "uid": "5eb7831e-30f5-5352-b3df-4d4060124d88"
+        },
+        {
+          "kind": "poses",
+          "uid": "2b0d15de-f37d-509e-8e5d-e3307d3e4a66"
+        },
+        {
+          "kind": "poses",
+          "uid": "75df1644-0bb8-56a8-81b1-7ebe5f1cc073"
+        },
+        {
+          "kind": "poses",
+          "uid": "48d6fac1-af35-5ddd-bc8f-6cb9a016dcd3"
+        },
+        {
+          "kind": "poses",
+          "uid": "19cd50d5-1c4f-5925-b670-71d8a6012c41"
+        }
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "pose-categories",
+        "uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed"
+      },
+      "summary": "Положения, объединённые опорой на колени. Само положение не сообщает о подчинённости или назначении ритуала.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "poses",
+          "uid": "ea660aa1-a4b5-5107-89c6-dec04274e3fe"
+        },
+        {
+          "kind": "poses",
+          "uid": "4842d601-ec04-5683-91bc-18627d32b62e"
+        },
+        {
+          "kind": "poses",
+          "uid": "a1f1281d-3309-54c3-9d59-40c171df8175"
+        },
+        {
+          "kind": "poses",
+          "uid": "6311573f-13ee-59c5-b1c6-f5b8a2cf7d27"
+        },
+        {
+          "kind": "poses",
+          "uid": "77f1ef3d-064c-578b-8dae-8e8c52575f01"
+        },
+        {
+          "kind": "poses",
+          "uid": "696e2e2f-9b8a-5896-8e12-d16a087fd0cc"
+        },
+        {
+          "kind": "poses",
+          "uid": "2f156245-dee3-5dc2-873e-6b1bd67ff417"
+        },
+        {
+          "kind": "poses",
+          "uid": "b221106b-7c4e-55dc-9ac6-162fe117eb1e"
+        }
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "pose-categories",
+        "uid": "fe4cb364-14f4-59cc-bd48-e0f934606243"
+      },
+      "summary": "Парные положения с верхним пространственным расположением одного участника. Слово «сверху» здесь описывает геометрию.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "poses",
+          "uid": "a18c08d3-98e7-52ee-9904-9dba21bde834"
+        },
+        {
+          "kind": "poses",
+          "uid": "bb93077e-52c7-5e73-bafb-afc7069c98a8"
+        },
+        {
+          "kind": "poses",
+          "uid": "83778cd8-64c5-5611-bf62-1ede506f5793"
+        },
+        {
+          "kind": "poses",
+          "uid": "123d875c-1844-5a4c-ae0e-10a1816de394"
+        },
+        {
+          "kind": "poses",
+          "uid": "d7ef7869-ad0e-536d-8ddf-eeca7d7de88d"
+        },
+        {
+          "kind": "poses",
+          "uid": "f42ce07b-7f3b-5556-b661-43d081def8d2"
+        },
+        {
+          "kind": "poses",
+          "uid": "63b7c621-d279-5a7b-9be2-e1eba40724e7"
+        },
+        {
+          "kind": "poses",
+          "uid": "edb85dee-1251-5aec-9289-a982a2942cfa"
+        }
+      ],
+      "related_pages": [
+        "da670df8-0dc9-5e07-96cd-a27adea7941a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "pose-categories",
+        "uid": "76088f6f-5f8b-5617-9099-2116dc079e8f"
+      },
+      "summary": "Именованные положения, которым участники придают значение в согласованном протоколе.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "poses",
+          "uid": "e8056ca0-a622-5b3e-b570-dc051b6cb12e"
+        },
+        {
+          "kind": "poses",
+          "uid": "cd6ba6d9-f48a-51f0-b6ff-0c20a5b464f4"
+        },
+        {
+          "kind": "poses",
+          "uid": "5d0cf79b-31a7-5b89-9649-20850fcec6a2"
+        },
+        {
+          "kind": "poses",
+          "uid": "379a57ef-552c-5d55-be1c-aaaaf53cd851"
+        },
+        {
+          "kind": "poses",
+          "uid": "79fb5be0-1a46-52f0-a6d9-43c8caf09111"
+        },
+        {
+          "kind": "poses",
+          "uid": "61eea956-e4e7-5b97-824f-674190df9672"
+        },
+        {
+          "kind": "poses",
+          "uid": "7a201e63-459a-5ed1-b526-30ffb4cab69f"
+        }
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "pose-categories",
+        "uid": "b6c629db-c3c1-5ba4-9708-9771dced1811"
+      },
+      "summary": "Подборка протокольных положений и описательных вариантов под названием «позы рабыни». Название отражает тематическую подборку, а не статус всех пользователей.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "poses",
+          "uid": "46cf6475-f5c8-5077-beb8-be58fdc81b9e"
+        },
+        {
+          "kind": "poses",
+          "uid": "79a493aa-7773-550a-9ea5-eabe31899a89"
+        },
+        {
+          "kind": "poses",
+          "uid": "18df2208-448a-5c38-b32b-0df042ea8461"
+        },
+        {
+          "kind": "poses",
+          "uid": "12c6913e-6c3a-5eec-bf8c-744819977b90"
+        },
+        {
+          "kind": "poses",
+          "uid": "0622cdc3-2a66-5e73-8ecd-537a9113e8bd"
+        },
+        {
+          "kind": "poses",
+          "uid": "94a0a1f7-d9dd-59c8-a3c4-19c5c0639b5a"
+        },
+        {
+          "kind": "poses",
+          "uid": "84e7e3a8-7444-5c09-aae7-1d867c87820f"
+        },
+        {
+          "kind": "poses",
+          "uid": "58e45d59-d5c7-54f3-9e41-8b84120ac07e"
+        },
+        {
+          "kind": "poses",
+          "uid": "6098a200-74bd-5f12-9454-a59b426391b9"
+        },
+        {
+          "kind": "poses",
+          "uid": "7cd43384-4407-517d-84bf-555044e6ec46"
+        },
+        {
+          "kind": "poses",
+          "uid": "c4b0e6b9-793b-538d-9d21-325b4a2b17a7"
+        },
+        {
+          "kind": "poses",
+          "uid": "f9837e4d-d5fd-501e-9ab3-58614c70c51e"
+        },
+        {
+          "kind": "poses",
+          "uid": "cfd11dd2-a0af-51d4-a142-373a38a9f43b"
+        },
+        {
+          "kind": "poses",
+          "uid": "8efc2ec6-5232-52a6-bc32-6402ee5077a5"
+        },
+        {
+          "kind": "poses",
+          "uid": "d08bad71-a2f8-5f2d-9671-81e251b83905"
+        },
+        {
+          "kind": "poses",
+          "uid": "ab10d915-8e55-5eb9-9b0c-002084177be0"
+        },
+        {
+          "kind": "poses",
+          "uid": "65b4f699-258a-58a9-9465-ba4e39c395d6"
+        }
+      ],
+      "related_pages": [
+        "e3d93b1e-517a-56f1-94e3-b998772a2893"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "pose-categories",
+        "uid": "d290e170-cb85-57c1-b021-6319deb5e13b"
+      },
+      "summary": "Пространственные варианты для односторонней оральной близости. Категория служит навигацией по положениям, без описания техники сексуальных действий.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "poses",
+          "uid": "07103e52-493f-57f0-bee8-b7483bcfafa7"
+        },
+        {
+          "kind": "poses",
+          "uid": "0fe76eeb-5d67-5b55-96b4-a2f12706ae50"
+        },
+        {
+          "kind": "poses",
+          "uid": "8b13b861-e296-5538-9551-827124662b3b"
+        },
+        {
+          "kind": "poses",
+          "uid": "fe5497e4-596a-59cb-b45a-5707df14aeb7"
+        },
+        {
+          "kind": "poses",
+          "uid": "da4a884b-30f6-56db-93c2-d6493fd87ed2"
+        },
+        {
+          "kind": "poses",
+          "uid": "36d67c14-ca5b-5171-9055-53fb45993e55"
+        }
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "pose-categories",
+        "uid": "5d81948e-b7d2-5511-97da-57281cc00e14"
+      },
+      "summary": "Положения для взаимной оральной близости, включая названия семейства «69». Это тематическая группировка расположений участников.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "poses",
+          "uid": "5bba9ece-9edc-5437-ad72-1983d5e74f2c"
+        },
+        {
+          "kind": "poses",
+          "uid": "99027a04-5d8c-5436-9c8a-29acd333ab1d"
+        }
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "pose-categories",
+        "uid": "b318a5cf-6497-56fc-9ea3-bda1be2c71f2"
+      },
+      "summary": "Варианты, в названии или описании которых предусмотрена дополнительная опора: подушка, валик либо клиновидная подставка.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "poses",
+          "uid": "9fddfd20-e252-5725-9ed6-742919ffa3ff"
+        },
+        {
+          "kind": "poses",
+          "uid": "44a57913-bc65-5b7f-ac54-5d453ff86e87"
+        },
+        {
+          "kind": "poses",
+          "uid": "c9ad6e91-ad3d-5184-90f3-da7199d52bc4"
+        }
+      ],
+      "related_pages": [
+        "6c23aac7-225d-5b98-aa36-9fe3254eb1e5"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "pose-categories",
+        "uid": "d3ea34c1-6593-5855-bf4a-9aa42f0fed2e"
+      },
+      "summary": "Положения у специализированного оборудования. Конкретный предмет связывается с позой через справочник девайсов.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "poses",
+          "uid": "78142a00-f7e2-5424-9d01-53b127ff87e4"
+        },
+        {
+          "kind": "poses",
+          "uid": "3ae5c900-3486-5e66-b2bd-e392fa1e6bce"
+        },
+        {
+          "kind": "poses",
+          "uid": "a2aa6faf-30df-540b-a8d6-d6a3cc779c42"
+        },
+        {
+          "kind": "poses",
+          "uid": "1fe8b219-c0ce-5bc3-9dac-43de6e46803b"
+        }
+      ],
+      "related_pages": [
+        "6c23aac7-225d-5b98-aa36-9fe3254eb1e5"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "pose-categories",
+        "uid": "a1366e19-a915-5f5d-9bf5-c45a25bc70ae"
+      },
+      "summary": "Общие пространственные положения для трёх и более взрослых участников. Категория не фиксирует половой или гендерный состав группы.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "poses",
+          "uid": "fa7a1916-aafa-5238-85b0-6c317782b468"
+        },
+        {
+          "kind": "poses",
+          "uid": "85870020-561b-5a85-be60-b6cbb645ddb1"
+        },
+        {
+          "kind": "poses",
+          "uid": "5de10f55-6aed-5d38-8f70-825edbabc5bc"
+        }
+      ],
+      "related_pages": [
+        "e3e856d9-844f-57b2-9f15-0dea48a7c3d5"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "biological-sex",
+        "uid": "544bd110-55b4-5367-8aa9-56f2ab9bf6ec"
+      },
+      "summary": "Категория мужских половых характеристик; не синоним гендера «мужчина».",
+      "sources": [
+        {
+          "name": "ВОЗ — Gender and health",
+          "url": "https://www.who.int/health-topics/gender"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "genders",
+          "uid": "34838003-cbf4-50ca-8ce6-495e9644af75"
+        },
+        {
+          "kind": "biological-sex",
+          "uid": "48f08dbf-fb07-5813-91ff-a0dd0a6218c0"
+        }
+      ],
+      "related_pages": [
+        "da670df8-0dc9-5e07-96cd-a27adea7941a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "biological-sex",
+        "uid": "a411eb1b-df65-5a8a-b9ee-05b5a9419fd8"
+      },
+      "summary": "Категория женских половых характеристик; не синоним гендера «женщина».",
+      "sources": [
+        {
+          "name": "ВОЗ — Gender and health",
+          "url": "https://www.who.int/health-topics/gender"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "genders",
+          "uid": "820b04fa-20e5-5e6b-8394-d57389c2d8f5"
+        },
+        {
+          "kind": "biological-sex",
+          "uid": "48f08dbf-fb07-5813-91ff-a0dd0a6218c0"
+        }
+      ],
+      "related_pages": [
+        "da670df8-0dc9-5e07-96cd-a27adea7941a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "biological-sex",
+        "uid": "48f08dbf-fb07-5813-91ff-a0dd0a6218c0"
+      },
+      "summary": "Обобщающее обозначение вариаций половых характеристик.",
+      "sources": [
+        {
+          "name": "ВОЗ — Gender and health",
+          "url": "https://www.who.int/health-topics/gender"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "biological-sex",
+          "uid": "544bd110-55b4-5367-8aa9-56f2ab9bf6ec"
+        },
+        {
+          "kind": "biological-sex",
+          "uid": "a411eb1b-df65-5a8a-b9ee-05b5a9419fd8"
+        }
+      ],
+      "related_pages": [
+        "da670df8-0dc9-5e07-96cd-a27adea7941a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "genders",
+        "uid": "34838003-cbf4-50ca-8ce6-495e9644af75"
+      },
+      "summary": "Мужчина — гендерное самоопределение участника.",
+      "sources": [
+        {
+          "name": "ВОЗ — Gender and health",
+          "url": "https://www.who.int/health-topics/gender"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "biological-sex",
+          "uid": "544bd110-55b4-5367-8aa9-56f2ab9bf6ec"
+        },
+        {
+          "kind": "genders",
+          "uid": "fc1f8f67-89f0-5dbe-a70c-dee814672fbe"
+        }
+      ],
+      "related_pages": [
+        "da670df8-0dc9-5e07-96cd-a27adea7941a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "genders",
+        "uid": "820b04fa-20e5-5e6b-8394-d57389c2d8f5"
+      },
+      "summary": "Женщина — гендерное самоопределение участницы.",
+      "sources": [
+        {
+          "name": "ВОЗ — Gender and health",
+          "url": "https://www.who.int/health-topics/gender"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "biological-sex",
+          "uid": "a411eb1b-df65-5a8a-b9ee-05b5a9419fd8"
+        },
+        {
+          "kind": "genders",
+          "uid": "fc1f8f67-89f0-5dbe-a70c-dee814672fbe"
+        }
+      ],
+      "related_pages": [
+        "da670df8-0dc9-5e07-96cd-a27adea7941a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "genders",
+        "uid": "fc1f8f67-89f0-5dbe-a70c-dee814672fbe"
+      },
+      "summary": "Небинарное самоопределение не ограничивается исключительно категориями мужчины или женщины.",
+      "sources": [
+        {
+          "name": "PFLAG National Glossary",
+          "url": "https://pflag.org/glossary/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "genders",
+          "uid": "285d6682-da2f-5ce6-9b17-c64ced49db5b"
+        },
+        {
+          "kind": "genders",
+          "uid": "c8d89ef0-0cab-5bd5-b8c1-0e3db270c79f"
+        },
+        {
+          "kind": "genders",
+          "uid": "4f486b7d-ba65-5d36-9281-e903fee94234"
+        }
+      ],
+      "related_pages": [
+        "da670df8-0dc9-5e07-96cd-a27adea7941a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "genders",
+        "uid": "285d6682-da2f-5ce6-9b17-c64ced49db5b"
+      },
+      "summary": "Агендер — самоопределение без переживания собственной гендерной принадлежности.",
+      "sources": [
+        {
+          "name": "PFLAG National Glossary",
+          "url": "https://pflag.org/glossary/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "genders",
+          "uid": "fc1f8f67-89f0-5dbe-a70c-dee814672fbe"
+        },
+        {
+          "kind": "genders",
+          "uid": "9763079b-2603-52c4-b58b-328f863528ca"
+        }
+      ],
+      "related_pages": [
+        "da670df8-0dc9-5e07-96cd-a27adea7941a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "genders",
+        "uid": "c8d89ef0-0cab-5bd5-b8c1-0e3db270c79f"
+      },
+      "summary": "Гендерфлюидное самоопределение может меняться со временем.",
+      "sources": [
+        {
+          "name": "PFLAG National Glossary",
+          "url": "https://pflag.org/glossary/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "genders",
+          "uid": "fc1f8f67-89f0-5dbe-a70c-dee814672fbe"
+        },
+        {
+          "kind": "genders",
+          "uid": "4f486b7d-ba65-5d36-9281-e903fee94234"
+        }
+      ],
+      "related_pages": [
+        "da670df8-0dc9-5e07-96cd-a27adea7941a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "genders",
+        "uid": "4f486b7d-ba65-5d36-9281-e903fee94234"
+      },
+      "summary": "Бигендерное самоопределение включает два гендера.",
+      "sources": [
+        {
+          "name": "PFLAG National Glossary",
+          "url": "https://pflag.org/glossary/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "genders",
+          "uid": "c8d89ef0-0cab-5bd5-b8c1-0e3db270c79f"
+        },
+        {
+          "kind": "genders",
+          "uid": "fc1f8f67-89f0-5dbe-a70c-dee814672fbe"
+        }
+      ],
+      "related_pages": [
+        "da670df8-0dc9-5e07-96cd-a27adea7941a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "genders",
+        "uid": "9763079b-2603-52c4-b58b-328f863528ca"
+      },
+      "summary": "Вариант для самоописания, не представленного отдельным пунктом справочника.",
+      "sources": [
+        {
+          "name": "ВОЗ — Gender and health",
+          "url": "https://www.who.int/health-topics/gender"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "genders",
+          "uid": "fc1f8f67-89f0-5dbe-a70c-dee814672fbe"
+        },
+        {
+          "kind": "genders",
+          "uid": "285d6682-da2f-5ce6-9b17-c64ced49db5b"
+        }
+      ],
+      "related_pages": [
+        "da670df8-0dc9-5e07-96cd-a27adea7941a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "role-scenarios",
+        "uid": "2f3ddda2-68c3-5937-865f-d514168a7e2a"
+      },
+      "summary": "Сценарий между взрослыми, построенный вокруг объяснения, освоения темы и обратной связи. Образ ученика не означает несовершеннолетие.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "role-scenarios",
+          "uid": "837bed5a-bec3-5899-96a8-dd9f3d3ec0b2"
+        },
+        {
+          "kind": "role-scenarios",
+          "uid": "c4f3b3bf-40e8-5432-8985-98d64ba55eb9"
+        }
+      ],
+      "related_pages": [
+        "180b25b1-488c-503f-befd-2147f803c6c8"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "role-scenarios",
+        "uid": "11ea1162-3595-5c1b-b47a-b2a6f2ede669"
+      },
+      "summary": "Сценарий приёма гостя: приглашение, приветствие, порядок общения и атмосфера выбранного пространства.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "role-scenarios",
+          "uid": "8e0ae2fd-ab8c-5767-a40f-485b8e91e03a"
+        },
+        {
+          "kind": "role-scenarios",
+          "uid": "12c3abbb-bc57-5ef4-8580-4b065b09371e"
+        }
+      ],
+      "related_pages": [
+        "180b25b1-488c-503f-befd-2147f803c6c8"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "role-scenarios",
+        "uid": "8e0ae2fd-ab8c-5767-a40f-485b8e91e03a"
+      },
+      "summary": "Сценарий обслуживания с образом дворецкого: внимание к поручениям, обстановке и манере общения.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "role-scenarios",
+          "uid": "f7e66508-da02-56cc-b3fb-35f2736a8f04"
+        },
+        {
+          "kind": "role-scenarios",
+          "uid": "11ea1162-3595-5c1b-b47a-b2a6f2ede669"
+        }
+      ],
+      "related_pages": [
+        "9bfdf2b0-7592-53d2-929b-99012f3f9908"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "role-scenarios",
+        "uid": "c4f3b3bf-40e8-5432-8985-98d64ba55eb9"
+      },
+      "summary": "Взрослый ролевой сценарий организации задач и поручений в условной деловой обстановке.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "role-scenarios",
+          "uid": "2f3ddda2-68c3-5937-865f-d514168a7e2a"
+        },
+        {
+          "kind": "role-scenarios",
+          "uid": "f7e66508-da02-56cc-b3fb-35f2736a8f04"
+        }
+      ],
+      "related_pages": [
+        "180b25b1-488c-503f-befd-2147f803c6c8"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "role-scenarios",
+        "uid": "837bed5a-bec3-5899-96a8-dd9f3d3ec0b2"
+      },
+      "summary": "Сценарий взрослой тренировки, в котором внимание направлено на задания, попытки и обратную связь.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "role-scenarios",
+          "uid": "2f3ddda2-68c3-5937-865f-d514168a7e2a"
+        },
+        {
+          "kind": "role-scenarios",
+          "uid": "8b882734-713f-5544-9369-90524a8fb7dc"
+        }
+      ],
+      "related_pages": [
+        "180b25b1-488c-503f-befd-2147f803c6c8"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "role-scenarios",
+        "uid": "23cded76-4604-5eb3-9083-e45e15cbb1b6"
+      },
+      "summary": "Церемониальный сценарий с придворными образами, обращениями и заранее выбранным порядком взаимодействия.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "role-scenarios",
+          "uid": "12c3abbb-bc57-5ef4-8580-4b065b09371e"
+        },
+        {
+          "kind": "role-scenarios",
+          "uid": "badf0156-0dfe-517c-9968-6dfd27f28fe1"
+        }
+      ],
+      "related_pages": [
+        "400282a3-dffd-5a46-8856-28068036126a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "role-scenarios",
+        "uid": "badf0156-0dfe-517c-9968-6dfd27f28fe1"
+      },
+      "summary": "Сценарий в вымышленном мире, где участники выбирают образы совершеннолетних персонажей.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "role-scenarios",
+          "uid": "23cded76-4604-5eb3-9083-e45e15cbb1b6"
+        },
+        {
+          "kind": "role-scenarios",
+          "uid": "8b882734-713f-5544-9369-90524a8fb7dc"
+        }
+      ],
+      "related_pages": [
+        "180b25b1-488c-503f-befd-2147f803c6c8"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "role-scenarios",
+        "uid": "1a8975e7-ebcd-5496-b3ed-df2512602fdb"
+      },
+      "summary": "Ролевой сценарий между взрослыми людьми с образом питомца и человека, взаимодействующего с ним.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "role-scenarios",
+          "uid": "6e7d35f1-d74a-52ce-aa16-48dbad674d67"
+        },
+        {
+          "kind": "role-scenarios",
+          "uid": "f7e66508-da02-56cc-b3fb-35f2736a8f04"
+        }
+      ],
+      "related_pages": [
+        "21efff1b-45cf-5c52-948e-873f8182bd64"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "role-scenarios",
+        "uid": "6e7d35f1-d74a-52ce-aa16-48dbad674d67"
+      },
+      "summary": "Взрослый ролевой сценарий с образом пони и сопровождающей ролью тренера или хендлера.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "role-scenarios",
+          "uid": "1a8975e7-ebcd-5496-b3ed-df2512602fdb"
+        },
+        {
+          "kind": "role-scenarios",
+          "uid": "837bed5a-bec3-5899-96a8-dd9f3d3ec0b2"
+        }
+      ],
+      "related_pages": [
+        "19d2fd94-d464-54bf-909c-e20b1586ada0"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "role-scenarios",
+        "uid": "12c3abbb-bc57-5ef4-8580-4b065b09371e"
+      },
+      "summary": "Формальный сценарий с последовательностью условных действий, обращений и символов.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "role-scenarios",
+          "uid": "23cded76-4604-5eb3-9083-e45e15cbb1b6"
+        },
+        {
+          "kind": "role-scenarios",
+          "uid": "11ea1162-3595-5c1b-b47a-b2a6f2ede669"
+        }
+      ],
+      "related_pages": [
+        "e9e08e95-f10b-5999-870b-1ec3b68b3d7a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "role-scenarios",
+        "uid": "f7e66508-da02-56cc-b3fb-35f2736a8f04"
+      },
+      "summary": "Сценарий внимания к поручениям и потребностям другого участника, где служение является выбранной формой взаимодействия.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "role-scenarios",
+          "uid": "8e0ae2fd-ab8c-5767-a40f-485b8e91e03a"
+        },
+        {
+          "kind": "role-scenarios",
+          "uid": "c4f3b3bf-40e8-5432-8985-98d64ba55eb9"
+        }
+      ],
+      "related_pages": [
+        "9bfdf2b0-7592-53d2-929b-99012f3f9908"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "role-scenarios",
+        "uid": "8b882734-713f-5544-9369-90524a8fb7dc"
+      },
+      "summary": "Сценарий согласованной смены образов или распределения инициативы между взрослыми участниками.",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "role-scenarios",
+          "uid": "837bed5a-bec3-5899-96a8-dd9f3d3ec0b2"
+        },
+        {
+          "kind": "role-scenarios",
+          "uid": "badf0156-0dfe-517c-9968-6dfd27f28fe1"
+        }
+      ],
+      "related_pages": [
+        "da670df8-0dc9-5e07-96cd-a27adea7941a"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "materials",
+        "uid": "16297193-e5e1-504b-8383-6d67a4022907"
+      },
+      "summary": "Латексный материал, обычно связанный с каучуковой основой. «Латекс» не сообщает полный состав изделия и не равнозначен силикону.",
+      "sources": [
+        {
+          "name": "HSE — Latex allergies",
+          "url": "https://www.hse.gov.uk/skin/employ/latex.htm"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "materials",
+          "uid": "c2fd3271-ba29-5330-944b-b6470ba19088"
+        },
+        {
+          "kind": "materials",
+          "uid": "2125ab20-1a1b-59fb-baaa-07eae69767be"
+        }
+      ],
+      "related_pages": [
+        "7a1d50dd-2453-5e5a-87ea-00aa84e4a547"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "materials",
+        "uid": "2fced2fc-1101-5401-8296-dfd102f3949e"
+      },
+      "summary": "Материал из обработанной кожи животного происхождения. Порода сырья, дубление и отделка — разные характеристики.",
+      "sources": [
+        {
+          "name": "CCI — Caring for leather, skin and fur",
+          "url": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/caring-leather-skin-fur.html"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "materials",
+          "uid": "a0c0e983-f138-5c06-bf01-d358c9234b4f"
+        },
+        {
+          "kind": "materials",
+          "uid": "fb3aaf08-afd0-5b66-91dd-feb534638f21"
+        }
+      ],
+      "related_pages": [
+        "7a1d50dd-2453-5e5a-87ea-00aa84e4a547"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "materials",
+        "uid": "a0c0e983-f138-5c06-bf01-d358c9234b4f"
+      },
+      "summary": "Материал, имитирующий внешний вид натуральной кожи. Имитация может быть многослойной; вид поверхности не раскрывает полимер и основу.",
+      "sources": [
+        {
+          "name": "CCI — Caring for plastics and rubbers",
+          "url": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/caring-plastics-rubbers.html"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "materials",
+          "uid": "2fced2fc-1101-5401-8296-dfd102f3949e"
+        },
+        {
+          "kind": "materials",
+          "uid": "2125ab20-1a1b-59fb-baaa-07eae69767be"
+        }
+      ],
+      "related_pages": [
+        "7a1d50dd-2453-5e5a-87ea-00aa84e4a547"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "materials",
+        "uid": "c2fd3271-ba29-5330-944b-b6470ba19088"
+      },
+      "summary": "Силикон — семейство синтетических полимерных материалов. Название не задаёт единую твёрдость, чистоту или качество поверхности.",
+      "sources": [
+        {
+          "name": "CCI — Caring for plastics and rubbers",
+          "url": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/caring-plastics-rubbers.html"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "materials",
+          "uid": "16297193-e5e1-504b-8383-6d67a4022907"
+        },
+        {
+          "kind": "materials",
+          "uid": "65bc1f5a-a54d-5f9b-9d06-33313e5cdb13"
+        }
+      ],
+      "related_pages": [
+        "f6cbfb6e-9ef7-5f23-90bc-e05e66099984"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "materials",
+        "uid": "65bc1f5a-a54d-5f9b-9d06-33313e5cdb13"
+      },
+      "summary": "Стекло — неорганический материал для жёстких предметов. Разные составы и обработка дают разные изделия; прозрачность не является паспортом качества.",
+      "sources": [
+        {
+          "name": "CCI — Caring for ceramic and glass objects",
+          "url": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/ceramics-glass-preventive-conservation.html"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "materials",
+          "uid": "40ab35a1-fd8a-5c9e-9835-4e5d42215506"
+        },
+        {
+          "kind": "materials",
+          "uid": "c2fd3271-ba29-5330-944b-b6470ba19088"
+        }
+      ],
+      "related_pages": [
+        "f6cbfb6e-9ef7-5f23-90bc-e05e66099984"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "materials",
+        "uid": "40ab35a1-fd8a-5c9e-9835-4e5d42215506"
+      },
+      "summary": "Группа сталей с повышенной коррозионной стойкостью. Марка сплава, покрытие и состояние поверхности — разные сведения.",
+      "sources": [
+        {
+          "name": "CCI — Caring for metal objects",
+          "url": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/metal-objects.html"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "materials",
+          "uid": "df3b3735-afd1-578d-b87d-0366b96c716f"
+        },
+        {
+          "kind": "materials",
+          "uid": "65bc1f5a-a54d-5f9b-9d06-33313e5cdb13"
+        }
+      ],
+      "related_pages": [
+        "7a1d50dd-2453-5e5a-87ea-00aa84e4a547"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "materials",
+        "uid": "df3b3735-afd1-578d-b87d-0366b96c716f"
+      },
+      "summary": "Алюминий и его сплавы — металлические материалы. Анодирование, окраска и сам сплав не являются одним свойством.",
+      "sources": [
+        {
+          "name": "CCI — Caring for metal objects",
+          "url": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/metal-objects.html"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "materials",
+          "uid": "40ab35a1-fd8a-5c9e-9835-4e5d42215506"
+        },
+        {
+          "kind": "materials",
+          "uid": "1cd9dbc8-3ddc-5435-a2cb-8f01ea7a0756"
+        }
+      ],
+      "related_pages": [
+        "7a1d50dd-2453-5e5a-87ea-00aa84e4a547"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "materials",
+        "uid": "1cd9dbc8-3ddc-5435-a2cb-8f01ea7a0756"
+      },
+      "summary": "Древесный материал с природной структурой. Порода дерева и финишная обработка описываются отдельно.",
+      "sources": [
+        {
+          "name": "CCI — Caring for basketry and plant materials",
+          "url": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/basketry-plant-materials.html"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "materials",
+          "uid": "f23c978d-9ea8-5fdc-bda9-4cfd24a0f42e"
+        },
+        {
+          "kind": "materials",
+          "uid": "2fced2fc-1101-5401-8296-dfd102f3949e"
+        }
+      ],
+      "related_pages": [
+        "7a1d50dd-2453-5e5a-87ea-00aa84e4a547"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "materials",
+        "uid": "f23c978d-9ea8-5fdc-bda9-4cfd24a0f42e"
+      },
+      "summary": "Растительный материал из бамбука. Цельный стебель, клеёная заготовка и текстильная переработка — разные формы.",
+      "sources": [
+        {
+          "name": "CCI — Caring for basketry and plant materials",
+          "url": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/basketry-plant-materials.html"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "materials",
+          "uid": "1cd9dbc8-3ddc-5435-a2cb-8f01ea7a0756"
+        },
+        {
+          "kind": "materials",
+          "uid": "fb3aaf08-afd0-5b66-91dd-feb534638f21"
+        }
+      ],
+      "related_pages": [
+        "7a1d50dd-2453-5e5a-87ea-00aa84e4a547"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "materials",
+        "uid": "fb3aaf08-afd0-5b66-91dd-feb534638f21"
+      },
+      "summary": "Хлопок — растительное текстильное волокно. Волокнистый состав и способ переплетения ткани описывают разные свойства.",
+      "sources": [
+        {
+          "name": "CCI — Caring for textiles and costumes",
+          "url": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/textiles-costumes.html"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "materials",
+          "uid": "d8963399-9416-5934-991e-fdc87fc0068a"
+        },
+        {
+          "kind": "materials",
+          "uid": "b6166cad-3afa-5e12-b621-990a560e4794"
+        }
+      ],
+      "related_pages": [
+        "7a1d50dd-2453-5e5a-87ea-00aa84e4a547"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "materials",
+        "uid": "d8963399-9416-5934-991e-fdc87fc0068a"
+      },
+      "summary": "Лён — текстильное волокно растительного происхождения. Состав «лён» не задаёт конкретное переплетение и обработку полотна.",
+      "sources": [
+        {
+          "name": "CCI — Caring for textiles and costumes",
+          "url": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/textiles-costumes.html"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "materials",
+          "uid": "fb3aaf08-afd0-5b66-91dd-feb534638f21"
+        },
+        {
+          "kind": "materials",
+          "uid": "6eb493a1-81ee-5c9b-a1db-a5cca67ff60f"
+        }
+      ],
+      "related_pages": [
+        "7a1d50dd-2453-5e5a-87ea-00aa84e4a547"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "materials",
+        "uid": "6eb493a1-81ee-5c9b-a1db-a5cca67ff60f"
+      },
+      "summary": "Шёлк — белковое текстильное волокно. Шёлк обозначает волокно, а атлас — тип переплетения.",
+      "sources": [
+        {
+          "name": "CCI — Caring for textiles and costumes",
+          "url": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/textiles-costumes.html"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "materials",
+          "uid": "b6166cad-3afa-5e12-b621-990a560e4794"
+        },
+        {
+          "kind": "materials",
+          "uid": "7a0330e6-9909-5679-a296-ca9bbafb60ab"
+        }
+      ],
+      "related_pages": [
+        "7a1d50dd-2453-5e5a-87ea-00aa84e4a547"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "materials",
+        "uid": "b6166cad-3afa-5e12-b621-990a560e4794"
+      },
+      "summary": "Атлас — ткань с атласным переплетением. Переплетение может выполняться из разных волокон; «атлас» не равно «шёлк».",
+      "sources": [
+        {
+          "name": "CCI — Caring for textiles and costumes",
+          "url": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/textiles-costumes.html"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "materials",
+          "uid": "6eb493a1-81ee-5c9b-a1db-a5cca67ff60f"
+        },
+        {
+          "kind": "materials",
+          "uid": "fb3aaf08-afd0-5b66-91dd-feb534638f21"
+        }
+      ],
+      "related_pages": [
+        "7a1d50dd-2453-5e5a-87ea-00aa84e4a547"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "materials",
+        "uid": "7a0330e6-9909-5679-a296-ca9bbafb60ab"
+      },
+      "summary": "Нейлон — синтетический полиамидный материал. Волокно, ткань, ременная лента и покрытие — разные конструкции.",
+      "sources": [
+        {
+          "name": "CCI — Caring for plastics and rubbers",
+          "url": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/caring-plastics-rubbers.html"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "materials",
+          "uid": "fb3aaf08-afd0-5b66-91dd-feb534638f21"
+        },
+        {
+          "kind": "materials",
+          "uid": "2125ab20-1a1b-59fb-baaa-07eae69767be"
+        }
+      ],
+      "related_pages": [
+        "7a1d50dd-2453-5e5a-87ea-00aa84e4a547"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "materials",
+        "uid": "2125ab20-1a1b-59fb-baaa-07eae69767be"
+      },
+      "summary": "Неопрен — название полихлоропренового каучукового материала. Листовая основа, вспененная структура и текстильная облицовка различаются.",
+      "sources": [
+        {
+          "name": "CCI — Caring for plastics and rubbers",
+          "url": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/caring-plastics-rubbers.html"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "materials",
+          "uid": "16297193-e5e1-504b-8383-6d67a4022907"
+        },
+        {
+          "kind": "materials",
+          "uid": "a0c0e983-f138-5c06-bf01-d358c9234b4f"
+        }
+      ],
+      "related_pages": [
+        "7a1d50dd-2453-5e5a-87ea-00aa84e4a547"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "362b72eb-c26b-5a86-957f-ea52bfa8b898"
+      },
+      "summary": "Голова — верхняя область тела. Не тождественна лицу или волосам: это разные по охвату записи.",
+      "sources": [
+        {
+          "name": "OpenStax — Anatomical Terminology",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-6-anatomical-terminology"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "0c2c7247-ddfc-526a-95f2-48564f8ef596"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "0c824dc0-3e1f-5bda-a0e6-3ec5b5e43c0e"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "6bc790ed-b239-5bde-9abc-c0e81c94d070"
+        }
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "0c2c7247-ddfc-526a-95f2-48564f8ef596"
+      },
+      "summary": "Лицо — передняя область головы. Взгляд, мимика и положение лица не описывают голову целиком.",
+      "sources": [
+        {
+          "name": "OpenStax — Anatomical Terminology",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-6-anatomical-terminology"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "362b72eb-c26b-5a86-957f-ea52bfa8b898"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "6bc790ed-b239-5bde-9abc-c0e81c94d070"
+        }
+      ],
+      "related_pages": [
+        "45e79c10-3f45-52f9-a917-3b3397098beb"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "0c824dc0-3e1f-5bda-a0e6-3ec5b5e43c0e"
+      },
+      "summary": "Волосы — кератиновые структуры, связанные с кожными фолликулами. Видимая часть волоса и фолликул — разные структуры.",
+      "sources": [
+        {
+          "name": "OpenStax — Accessory Structures of the Skin",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/5-2-accessory-structures-of-the-skin"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "362b72eb-c26b-5a86-957f-ea52bfa8b898"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "0c2c7247-ddfc-526a-95f2-48564f8ef596"
+        }
+      ],
+      "related_pages": [
+        "1594db7d-8945-53a1-98b3-19841591664c"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "6bc790ed-b239-5bde-9abc-c0e81c94d070"
+      },
+      "summary": "Шея — область между головой и туловищем. Название не уточняет переднюю, боковую или заднюю поверхность.",
+      "sources": [
+        {
+          "name": "OpenStax — Anatomical Terminology",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-6-anatomical-terminology"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "362b72eb-c26b-5a86-957f-ea52bfa8b898"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "5ea10366-48a9-59f2-a7e9-d74c2ebf5d05"
+        }
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "5ea10366-48a9-59f2-a7e9-d74c2ebf5d05"
+      },
+      "summary": "Плечевая область соединяет верхнюю конечность с туловищем. В бытовой речи «плечо» может означать и область сустава, и участок руки.",
+      "sources": [
+        {
+          "name": "OpenStax — Anatomical Terminology",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-6-anatomical-terminology"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "23076ad2-b0fd-519e-874a-472c1de5f11a"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "1b2eb9d5-2273-5940-83db-2d194f2f197e"
+        }
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "1b2eb9d5-2273-5940-83db-2d194f2f197e"
+      },
+      "summary": "Спина — задняя область туловища. Это широкая область, а не одно место с одинаковыми свойствами.",
+      "sources": [
+        {
+          "name": "OpenStax — Anatomical Terminology",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-6-anatomical-terminology"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "5ea10366-48a9-59f2-a7e9-d74c2ebf5d05"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "be88de68-e56c-5300-967d-70f6e870b3bd"
+        }
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "b6f11c0f-7a80-5e14-9fd0-0c4a842b6a8d"
+      },
+      "summary": "Грудь — передняя область верхней части туловища. Грудная клетка, молочные железы и соски — не взаимозаменяемые названия.",
+      "sources": [
+        {
+          "name": "OpenStax — Anatomical Terminology",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-6-anatomical-terminology"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "bc643921-6a5e-5ebb-8c91-929d1c2b7c14"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "9e3bf9d6-24ff-5928-abd7-1604569166a1"
+        }
+      ],
+      "related_pages": [
+        "1594db7d-8945-53a1-98b3-19841591664c"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "9e3bf9d6-24ff-5928-abd7-1604569166a1"
+      },
+      "summary": "Живот — передняя брюшная область туловища. Обозначение области не является названием отдельного внутреннего органа.",
+      "sources": [
+        {
+          "name": "OpenStax — Anatomical Terminology",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-6-anatomical-terminology"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "b6f11c0f-7a80-5e14-9fd0-0c4a842b6a8d"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "f3778747-f333-5af8-86b8-9bb9e552cb98"
+        }
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "23076ad2-b0fd-519e-874a-472c1de5f11a"
+      },
+      "summary": "Руки — бытовое обозначение верхних конечностей. Плечо, предплечье, запястье и кисть — более узкие области.",
+      "sources": [
+        {
+          "name": "OpenStax — Anatomical Terminology",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-6-anatomical-terminology"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "5aff07fd-f593-53a3-a339-2baac0399a65"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "54e59072-b66f-5ae5-a8cb-c4260edb3b63"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "5ea10366-48a9-59f2-a7e9-d74c2ebf5d05"
+        }
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "5aff07fd-f593-53a3-a339-2baac0399a65"
+      },
+      "summary": "Запястье — область перехода предплечья к кисти. Не тождественно всей руке или ладони.",
+      "sources": [
+        {
+          "name": "OpenStax — Anatomical Terminology",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-6-anatomical-terminology"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "23076ad2-b0fd-519e-874a-472c1de5f11a"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "54e59072-b66f-5ae5-a8cb-c4260edb3b63"
+        }
+      ],
+      "related_pages": [
+        "6c23aac7-225d-5b98-aa36-9fe3254eb1e5"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "54e59072-b66f-5ae5-a8cb-c4260edb3b63"
+      },
+      "summary": "Кисть — концевая часть верхней конечности. Ладонь и тыльная поверхность кисти — разные ориентиры.",
+      "sources": [
+        {
+          "name": "OpenStax — Anatomical Terminology",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-6-anatomical-terminology"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "5aff07fd-f593-53a3-a339-2baac0399a65"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "82fca007-ff42-5548-8b42-764bbb038244"
+        }
+      ],
+      "related_pages": [
+        "45e79c10-3f45-52f9-a917-3b3397098beb"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "82fca007-ff42-5548-8b42-764bbb038244"
+      },
+      "summary": "Пальцы рук — части кисти. Запись относится к пальцам рук, а не стоп.",
+      "sources": [
+        {
+          "name": "OpenStax — Anatomical Terminology",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-6-anatomical-terminology"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "54e59072-b66f-5ae5-a8cb-c4260edb3b63"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "5aff07fd-f593-53a3-a339-2baac0399a65"
+        }
+      ],
+      "related_pages": [
+        "45e79c10-3f45-52f9-a917-3b3397098beb"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "be88de68-e56c-5300-967d-70f6e870b3bd"
+      },
+      "summary": "Ягодицы — задняя область таза. Отличаются от бёдер и анальной области.",
+      "sources": [
+        {
+          "name": "OpenStax — Anatomical Terminology",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-6-anatomical-terminology"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "f3778747-f333-5af8-86b8-9bb9e552cb98"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "1b2eb9d5-2273-5940-83db-2d194f2f197e"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "05d13db2-da8b-5996-ba29-675d69f70182"
+        }
+      ],
+      "related_pages": [
+        "1594db7d-8945-53a1-98b3-19841591664c"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "f3778747-f333-5af8-86b8-9bb9e552cb98"
+      },
+      "summary": "Бедро — участок нижней конечности выше колена. В бытовой речи «бёдра» иногда обозначают также контур таза.",
+      "sources": [
+        {
+          "name": "OpenStax — Anatomical Terminology",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-6-anatomical-terminology"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "325bdcce-42c0-52e4-a12b-ec142f924f96"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "f7ce1915-3321-5ffb-bfda-ebdb754440aa"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "be88de68-e56c-5300-967d-70f6e870b3bd"
+        }
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "325bdcce-42c0-52e4-a12b-ec142f924f96"
+      },
+      "summary": "Ноги — бытовое обозначение нижних конечностей. Бёдра, колени, голени и стопы — отдельные ориентиры.",
+      "sources": [
+        {
+          "name": "OpenStax — Anatomical Terminology",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-6-anatomical-terminology"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "f3778747-f333-5af8-86b8-9bb9e552cb98"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "f7ce1915-3321-5ffb-bfda-ebdb754440aa"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "e8547c40-9019-5eb6-a5f6-c8fccf3a38c5"
+        }
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "f7ce1915-3321-5ffb-bfda-ebdb754440aa"
+      },
+      "summary": "Коленная область находится между бедром и голенью. Передняя поверхность колена и подколенная область различаются.",
+      "sources": [
+        {
+          "name": "OpenStax — Anatomical Terminology",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-6-anatomical-terminology"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "325bdcce-42c0-52e4-a12b-ec142f924f96"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "f3778747-f333-5af8-86b8-9bb9e552cb98"
+        }
+      ],
+      "related_pages": [
+        "6f4c8e6f-2fe5-5616-8657-88ee787e2648"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "e8547c40-9019-5eb6-a5f6-c8fccf3a38c5"
+      },
+      "summary": "Стопа — концевая часть нижней конечности. Подошва, тыл стопы и пальцы — разные ориентиры.",
+      "sources": [
+        {
+          "name": "OpenStax — Anatomical Terminology",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-6-anatomical-terminology"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "325bdcce-42c0-52e4-a12b-ec142f924f96"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "f7ce1915-3321-5ffb-bfda-ebdb754440aa"
+        }
+      ],
+      "related_pages": [
+        "4b899100-e978-505a-a248-d54da87ceca6"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "32a9b42b-2f6b-5ae5-b42d-967de8f04fde"
+      },
+      "summary": "Гениталии — общее обозначение половых органов. В справочнике это широкая группа, а вульва и пенис представлены отдельно.",
+      "sources": [
+        {
+          "name": "OpenStax — Anatomy and Physiology of the Ovarian Reproductive System",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/27-2-anatomy-and-physiology-of-the-ovarian-reproductive-system"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "e3ac74a6-b7a3-5548-ab42-3ee434c4ddf8"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "f3cfb42b-aada-5916-a583-01f2e23f5d41"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "8be620ef-222f-5dae-8f8e-e2177ad902cb"
+        }
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "e3ac74a6-b7a3-5548-ab42-3ee434c4ddf8"
+      },
+      "summary": "Вульва — совокупность наружных половых структур. Вульва и влагалище — разные анатомические термины.",
+      "sources": [
+        {
+          "name": "OpenStax — Anatomy and Physiology of the Ovarian Reproductive System",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/27-2-anatomy-and-physiology-of-the-ovarian-reproductive-system"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "32a9b42b-2f6b-5ae5-b42d-967de8f04fde"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "8be620ef-222f-5dae-8f8e-e2177ad902cb"
+        }
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "f3cfb42b-aada-5916-a583-01f2e23f5d41"
+      },
+      "summary": "Пенис — наружный половой орган. Название органа не определяет гендер человека.",
+      "sources": [
+        {
+          "name": "OpenStax — Anatomy and Physiology of the Testicular Reproductive System",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/27-1-anatomy-and-physiology-of-the-testicular-reproductive-system"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "32a9b42b-2f6b-5ae5-b42d-967de8f04fde"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "8be620ef-222f-5dae-8f8e-e2177ad902cb"
+        }
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "05d13db2-da8b-5996-ba29-675d69f70182"
+      },
+      "summary": "Анальная область — область анального отверстия и прилежащей поверхности. Наружная область, анальный канал и прямая кишка — разные понятия.",
+      "sources": [
+        {
+          "name": "OpenStax — The Small and Large Intestines",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-5-the-small-and-large-intestines"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "8be620ef-222f-5dae-8f8e-e2177ad902cb"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "be88de68-e56c-5300-967d-70f6e870b3bd"
+        }
+      ],
+      "related_pages": [
+        "1594db7d-8945-53a1-98b3-19841591664c"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "bc643921-6a5e-5ebb-8c91-929d1c2b7c14"
+      },
+      "summary": "Сосок — отдельная структура молочной железы. Сосок, ареола и грудь в целом не являются одним названием.",
+      "sources": [
+        {
+          "name": "OpenStax — Anatomy and Physiology of the Ovarian Reproductive System",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/27-2-anatomy-and-physiology-of-the-ovarian-reproductive-system"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "b6f11c0f-7a80-5e14-9fd0-0c4a842b6a8d"
+        }
+      ],
+      "related_pages": [
+        "1594db7d-8945-53a1-98b3-19841591664c"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "body-parts",
+        "uid": "8be620ef-222f-5dae-8f8e-e2177ad902cb"
+      },
+      "summary": "Промежность — анатомическая область нижней части таза. Внешний ориентир между наружными половыми органами и анусом — только часть описания этой области.",
+      "sources": [
+        {
+          "name": "OpenStax — Axial Muscles of the Abdominal Wall and Thorax",
+          "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-4-axial-muscles-of-the-abdominal-wall-and-thorax"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "body-parts",
+          "uid": "32a9b42b-2f6b-5ae5-b42d-967de8f04fde"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "05d13db2-da8b-5996-ba29-675d69f70182"
+        }
+      ],
+      "related_pages": [
+        "1594db7d-8945-53a1-98b3-19841591664c"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "572fdc4c-05df-5420-81a7-2008a96945f1"
+      },
+      "summary": "Гемофилия — заболевание, при котором нарушено свёртывание крови.",
+      "sources": [
+        {
+          "name": "NHS — Гемофилия",
+          "url": "https://www.nhs.uk/conditions/haemophilia/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "health-conditions",
+          "uid": "80650151-ae80-5a7f-9901-6d9e6ad676c2"
+        }
+      ],
+      "related_pages": [
+        "8028e002-295a-571f-83c7-bd8a675ac029"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "80650151-ae80-5a7f-9901-6d9e6ad676c2"
+      },
+      "summary": "Болезнь Виллебранда — нарушение свёртывания, связанное с повышенной кровоточивостью.",
+      "sources": [
+        {
+          "name": "NHS — Болезнь Виллебранда",
+          "url": "https://www.nhs.uk/conditions/von-willebrand-disease/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "health-conditions",
+          "uid": "572fdc4c-05df-5420-81a7-2008a96945f1"
+        }
+      ],
+      "related_pages": [
+        "8028e002-295a-571f-83c7-bd8a675ac029"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "a64de32b-2bdc-5564-8ff8-8c4b260f96a5"
+      },
+      "summary": "Бронхиальная астма — заболевание, затрагивающее дыхание.",
+      "sources": [
+        {
+          "name": "NHS — Бронхиальная астма",
+          "url": "https://www.nhs.uk/conditions/asthma/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "allergens",
+          "uid": "fa7e3d16-7614-5638-a8ba-ef1f5b3746f7"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "292b034f-9461-505e-9f81-73e95c11f1cf"
+        }
+      ],
+      "related_pages": [
+        "8028e002-295a-571f-83c7-bd8a675ac029"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "4183ab0a-1a38-5214-a4cc-e6367e5a20fa"
+      },
+      "summary": "Эпилепсия — заболевание мозга, связанное с эпилептическими приступами.",
+      "sources": [
+        {
+          "name": "NHS — Эпилепсия",
+          "url": "https://www.nhs.uk/conditions/epilepsy/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "health-conditions",
+          "uid": "292b034f-9461-505e-9f81-73e95c11f1cf"
+        }
+      ],
+      "related_pages": [
+        "8028e002-295a-571f-83c7-bd8a675ac029"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "1ea361f5-fa68-51b1-a87b-79bae25bf662"
+      },
+      "summary": "Сахарный диабет — группа состояний с повышенным уровнем глюкозы крови.",
+      "sources": [
+        {
+          "name": "NHS — Сахарный диабет",
+          "url": "https://www.nhs.uk/conditions/diabetes/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "health-conditions",
+          "uid": "2cc4b287-b3c6-5724-adf8-313354a4ac45"
+        }
+      ],
+      "related_pages": [
+        "8028e002-295a-571f-83c7-bd8a675ac029"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "2cc4b287-b3c6-5724-adf8-313354a4ac45"
+      },
+      "summary": "Периферическая нейропатия — поражение нервов вне головного и спинного мозга.",
+      "sources": [
+        {
+          "name": "NHS — Периферическая нейропатия",
+          "url": "https://www.nhs.uk/conditions/peripheral-neuropathy/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "health-conditions",
+          "uid": "1ea361f5-fa68-51b1-a87b-79bae25bf662"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "54e59072-b66f-5ae5-a8cb-c4260edb3b63"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "e8547c40-9019-5eb6-a5f6-c8fccf3a38c5"
+        }
+      ],
+      "related_pages": [
+        "8028e002-295a-571f-83c7-bd8a675ac029"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "97e512e2-299b-54a5-8a3c-644799c658f2"
+      },
+      "summary": "Остеопороз — заболевание, при котором кости становятся более хрупкими.",
+      "sources": [
+        {
+          "name": "NHS — Остеопороз",
+          "url": "https://www.nhs.uk/conditions/osteoporosis/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "health-conditions",
+          "uid": "28cd8d21-7eb1-5c1b-ace4-ee3c51fcec3f"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "1b2eb9d5-2273-5940-83db-2d194f2f197e"
+        }
+      ],
+      "related_pages": [
+        "6f4c8e6f-2fe5-5616-8657-88ee787e2648"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "28cd8d21-7eb1-5c1b-ace4-ee3c51fcec3f"
+      },
+      "summary": "Синдромы Элерса — Данлоса — группа наследственных заболеваний соединительной ткани.",
+      "sources": [
+        {
+          "name": "NHS — Синдромы Элерса — Данлоса",
+          "url": "https://www.nhs.uk/conditions/ehlers-danlos-syndromes/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "health-conditions",
+          "uid": "97e512e2-299b-54a5-8a3c-644799c658f2"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "f7ce1915-3321-5ffb-bfda-ebdb754440aa"
+        }
+      ],
+      "related_pages": [
+        "6f4c8e6f-2fe5-5616-8657-88ee787e2648"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "2cee4d03-dd98-5e9c-98ec-e30b54424301"
+      },
+      "summary": "Артериальная гипертензия — состояние повышенного артериального давления.",
+      "sources": [
+        {
+          "name": "NHS — Артериальная гипертензия",
+          "url": "https://www.nhs.uk/conditions/high-blood-pressure/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "health-conditions",
+          "uid": "519263bb-330b-5710-881a-9587102c9577"
+        }
+      ],
+      "related_pages": [
+        "8028e002-295a-571f-83c7-bd8a675ac029"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "519263bb-330b-5710-881a-9587102c9577"
+      },
+      "summary": "Аритмия — нарушение частоты или регулярности сердцебиения.",
+      "sources": [
+        {
+          "name": "NHS — Нарушения сердечного ритма",
+          "url": "https://www.nhs.uk/conditions/arrhythmia/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "health-conditions",
+          "uid": "2cee4d03-dd98-5e9c-98ec-e30b54424301"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "292b034f-9461-505e-9f81-73e95c11f1cf"
+        }
+      ],
+      "related_pages": [
+        "8028e002-295a-571f-83c7-bd8a675ac029"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "a7ffd44d-ff13-50f0-9173-36b0a3a477a5"
+      },
+      "summary": "Атопический дерматит — воспалительное заболевание кожи, часто сопровождающееся зудом и сухостью.",
+      "sources": [
+        {
+          "name": "NHS — Атопический дерматит",
+          "url": "https://www.nhs.uk/conditions/atopic-eczema/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "health-conditions",
+          "uid": "ead4ab8b-9461-5144-ba83-22361f9c1446"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "ef2a87aa-5449-5406-959d-7b8c2ffd6ad5"
+        }
+      ],
+      "related_pages": [
+        "7f6c24da-23a8-542a-b1c7-59dbb4ae85c1"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "ef2a87aa-5449-5406-959d-7b8c2ffd6ad5"
+      },
+      "summary": "Псориаз — заболевание кожи с участками изменённой, часто шелушащейся поверхности.",
+      "sources": [
+        {
+          "name": "NHS — Псориаз",
+          "url": "https://www.nhs.uk/conditions/psoriasis/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "health-conditions",
+          "uid": "a7ffd44d-ff13-50f0-9173-36b0a3a477a5"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "ead4ab8b-9461-5144-ba83-22361f9c1446"
+        }
+      ],
+      "related_pages": [
+        "8028e002-295a-571f-83c7-bd8a675ac029"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "ead4ab8b-9461-5144-ba83-22361f9c1446"
+      },
+      "summary": "Аллергический контактный дерматит — воспалительная реакция кожи на аллерген.",
+      "sources": [
+        {
+          "name": "NHS — Аллергический контактный дерматит",
+          "url": "https://www.nhs.uk/conditions/contact-dermatitis/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "allergens",
+          "uid": "60c0687b-cbc1-50c2-ae21-e6935de201c7"
+        },
+        {
+          "kind": "allergens",
+          "uid": "fa7e3d16-7614-5638-a8ba-ef1f5b3746f7"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "a7ffd44d-ff13-50f0-9173-36b0a3a477a5"
+        }
+      ],
+      "related_pages": [
+        "7f6c24da-23a8-542a-b1c7-59dbb4ae85c1"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "bcae4c38-6f85-50ce-9052-936a2ba2d51d"
+      },
+      "summary": "ПТСР — психическое расстройство, которое может развиться после травматических событий.",
+      "sources": [
+        {
+          "name": "NHS — Посттравматическое стрессовое расстройство",
+          "url": "https://www.nhs.uk/mental-health/conditions/ptsd-post-traumatic-stress-disorder/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "health-conditions",
+          "uid": "292b034f-9461-505e-9f81-73e95c11f1cf"
+        }
+      ],
+      "related_pages": [
+        "1594db7d-8945-53a1-98b3-19841591664c"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "292b034f-9461-505e-9f81-73e95c11f1cf"
+      },
+      "summary": "Паническое расстройство — тревожное расстройство с повторяющимися приступами паники.",
+      "sources": [
+        {
+          "name": "NHS — Паническое расстройство",
+          "url": "https://www.nhs.uk/mental-health/conditions/panic-disorder/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "health-conditions",
+          "uid": "bcae4c38-6f85-50ce-9052-936a2ba2d51d"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "519263bb-330b-5710-881a-9587102c9577"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "a64de32b-2bdc-5564-8ff8-8c4b260f96a5"
+        }
+      ],
+      "related_pages": [
+        "8028e002-295a-571f-83c7-bd8a675ac029"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "247502f8-9974-5e7d-8f99-3de938ffc09e"
+      },
+      "summary": "ВИЧ-инфекция вызывается вирусом иммунодефицита человека и затрагивает иммунную систему.",
+      "sources": [
+        {
+          "name": "NHS — ВИЧ-инфекция",
+          "url": "https://www.nhs.uk/conditions/hiv-and-aids/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "health-conditions",
+          "uid": "c263d5e1-c088-50a0-8b51-1f4ac360d188"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "9ace8c30-4856-5743-bfc1-82f68e78a21b"
+        }
+      ],
+      "related_pages": [
+        "cd94adc5-1815-5601-8e51-6180078e7450"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "c263d5e1-c088-50a0-8b51-1f4ac360d188"
+      },
+      "summary": "Гепатит B — вирусная инфекция, поражающая печень.",
+      "sources": [
+        {
+          "name": "NHS — Гепатит B",
+          "url": "https://www.nhs.uk/conditions/hepatitis-b/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "health-conditions",
+          "uid": "9ace8c30-4856-5743-bfc1-82f68e78a21b"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "247502f8-9974-5e7d-8f99-3de938ffc09e"
+        }
+      ],
+      "related_pages": [
+        "cd94adc5-1815-5601-8e51-6180078e7450"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "9ace8c30-4856-5743-bfc1-82f68e78a21b"
+      },
+      "summary": "Гепатит C — вирусная инфекция, поражающая печень.",
+      "sources": [
+        {
+          "name": "NHS — Гепатит C",
+          "url": "https://www.nhs.uk/conditions/hepatitis-c/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "health-conditions",
+          "uid": "c263d5e1-c088-50a0-8b51-1f4ac360d188"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "247502f8-9974-5e7d-8f99-3de938ffc09e"
+        }
+      ],
+      "related_pages": [
+        "cd94adc5-1815-5601-8e51-6180078e7450"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "f2d26b5c-855b-56a1-8e7b-88e2f5da6aae"
+      },
+      "summary": "Генитальный герпес связан с вирусом простого герпеса и проявлениями в генитальной области.",
+      "sources": [
+        {
+          "name": "NHS — Генитальный герпес",
+          "url": "https://www.nhs.uk/conditions/genital-herpes/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "health-conditions",
+          "uid": "88875330-cb2c-5cce-a103-ba5fd783aa7d"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "32a9b42b-2f6b-5ae5-b42d-967de8f04fde"
+        }
+      ],
+      "related_pages": [
+        "cd94adc5-1815-5601-8e51-6180078e7450"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "88875330-cb2c-5cce-a103-ba5fd783aa7d"
+      },
+      "summary": "ВПЧ — группа вирусов папилломы человека, затрагивающих кожу и слизистые.",
+      "sources": [
+        {
+          "name": "NHS — Папилломавирусная инфекция",
+          "url": "https://www.nhs.uk/conditions/human-papilloma-virus-hpv/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "health-conditions",
+          "uid": "f2d26b5c-855b-56a1-8e7b-88e2f5da6aae"
+        },
+        {
+          "kind": "body-parts",
+          "uid": "32a9b42b-2f6b-5ae5-b42d-967de8f04fde"
+        }
+      ],
+      "related_pages": [
+        "cd94adc5-1815-5601-8e51-6180078e7450"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "299c9483-9678-53d2-ab39-963b53341059"
+      },
+      "summary": "Сифилис — инфекция, передающаяся в том числе половым путём.",
+      "sources": [
+        {
+          "name": "NHS — Сифилис",
+          "url": "https://www.nhs.uk/conditions/syphilis/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "health-conditions",
+          "uid": "7d11a04d-c8dc-5e4b-bbfc-ba560b0ca40a"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "9d4e9693-ef5c-5a7c-934c-4cadc8a9266e"
+        }
+      ],
+      "related_pages": [
+        "cd94adc5-1815-5601-8e51-6180078e7450"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "7d11a04d-c8dc-5e4b-bbfc-ba560b0ca40a"
+      },
+      "summary": "Гонорея — инфекция, передающаяся половым путём.",
+      "sources": [
+        {
+          "name": "NHS — Гонорея",
+          "url": "https://www.nhs.uk/conditions/gonorrhoea/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "health-conditions",
+          "uid": "9d4e9693-ef5c-5a7c-934c-4cadc8a9266e"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "299c9483-9678-53d2-ab39-963b53341059"
+        }
+      ],
+      "related_pages": [
+        "cd94adc5-1815-5601-8e51-6180078e7450"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "health-conditions",
+        "uid": "9d4e9693-ef5c-5a7c-934c-4cadc8a9266e"
+      },
+      "summary": "Хламидийная инфекция — инфекция, передающаяся половым путём.",
+      "sources": [
+        {
+          "name": "NHS — Хламидийная инфекция",
+          "url": "https://www.nhs.uk/conditions/chlamydia/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "health-conditions",
+          "uid": "7d11a04d-c8dc-5e4b-bbfc-ba560b0ca40a"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "299c9483-9678-53d2-ab39-963b53341059"
+        }
+      ],
+      "related_pages": [
+        "cd94adc5-1815-5601-8e51-6180078e7450"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "allergens",
+        "uid": "14678fb0-0165-57cb-bd17-ebc9f5c7e3e6"
+      },
+      "summary": "Белки натурального каучукового латекса могут вызывать аллергию.",
+      "sources": [
+        {
+          "name": "HSE — Latex allergies",
+          "url": "https://www.hse.gov.uk/skin/employ/latex.htm"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "materials",
+          "uid": "16297193-e5e1-504b-8383-6d67a4022907"
+        },
+        {
+          "kind": "allergens",
+          "uid": "a32632fb-92b5-5722-aca2-5a99de191cf2"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "ead4ab8b-9461-5144-ba83-22361f9c1446"
+        }
+      ],
+      "related_pages": [
+        "7f6c24da-23a8-542a-b1c7-59dbb4ae85c1"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "allergens",
+        "uid": "60c0687b-cbc1-50c2-ae21-e6935de201c7"
+      },
+      "summary": "Никель — металл, способный вызывать аллергический контактный дерматит.",
+      "sources": [
+        {
+          "name": "Nickel allergy",
+          "url": "https://dermnetnz.org/topics/nickel-allergy"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "allergens",
+          "uid": "42540ec9-a2e5-5cd1-aa70-729e3ed005dc"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "ead4ab8b-9461-5144-ba83-22361f9c1446"
+        }
+      ],
+      "related_pages": [
+        "7f6c24da-23a8-542a-b1c7-59dbb4ae85c1"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "allergens",
+        "uid": "42540ec9-a2e5-5cd1-aa70-729e3ed005dc"
+      },
+      "summary": "Кобальт — металл, способный вызывать контактную аллергию.",
+      "sources": [
+        {
+          "name": "Allergy to cobalt",
+          "url": "https://dermnetnz.org/topics/allergy-to-cobalt"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "allergens",
+          "uid": "60c0687b-cbc1-50c2-ae21-e6935de201c7"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "ead4ab8b-9461-5144-ba83-22361f9c1446"
+        }
+      ],
+      "related_pages": [
+        "7f6c24da-23a8-542a-b1c7-59dbb4ae85c1"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "allergens",
+        "uid": "21e831b4-4fc5-5927-877a-d0c1b649c10f"
+      },
+      "summary": "Хроматы и другие соли хрома могут вызывать контактную аллергию.",
+      "sources": [
+        {
+          "name": "Chrome allergy",
+          "url": "https://dermnetnz.org/topics/chrome-allergy"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "materials",
+          "uid": "2fced2fc-1101-5401-8296-dfd102f3949e"
+        },
+        {
+          "kind": "allergens",
+          "uid": "60c0687b-cbc1-50c2-ae21-e6935de201c7"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "ead4ab8b-9461-5144-ba83-22361f9c1446"
+        }
+      ],
+      "related_pages": [
+        "7f6c24da-23a8-542a-b1c7-59dbb4ae85c1"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "allergens",
+        "uid": "a32632fb-92b5-5722-aca2-5a99de191cf2"
+      },
+      "summary": "Тиурамы — группа ускорителей производства резины, способных вызывать контактную аллергию.",
+      "sources": [
+        {
+          "name": "Allergy to rubber accelerators",
+          "url": "https://dermnetnz.org/topics/allergy-to-rubber-accelerators"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "allergens",
+          "uid": "4938fb9e-55ea-51eb-9422-d50173ca22fa"
+        },
+        {
+          "kind": "allergens",
+          "uid": "3179d43f-b4fc-5c09-bf28-f68ccf316670"
+        },
+        {
+          "kind": "allergens",
+          "uid": "14678fb0-0165-57cb-bd17-ebc9f5c7e3e6"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "ead4ab8b-9461-5144-ba83-22361f9c1446"
+        }
+      ],
+      "related_pages": [
+        "7f6c24da-23a8-542a-b1c7-59dbb4ae85c1"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "allergens",
+        "uid": "4938fb9e-55ea-51eb-9422-d50173ca22fa"
+      },
+      "summary": "Карбаматы резины относятся к добавкам, связанным с контактной аллергией.",
+      "sources": [
+        {
+          "name": "Allergy to rubber accelerators",
+          "url": "https://dermnetnz.org/topics/allergy-to-rubber-accelerators"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "allergens",
+          "uid": "a32632fb-92b5-5722-aca2-5a99de191cf2"
+        },
+        {
+          "kind": "allergens",
+          "uid": "3179d43f-b4fc-5c09-bf28-f68ccf316670"
+        },
+        {
+          "kind": "allergens",
+          "uid": "14678fb0-0165-57cb-bd17-ebc9f5c7e3e6"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "ead4ab8b-9461-5144-ba83-22361f9c1446"
+        }
+      ],
+      "related_pages": [
+        "7f6c24da-23a8-542a-b1c7-59dbb4ae85c1"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "allergens",
+        "uid": "3179d43f-b4fc-5c09-bf28-f68ccf316670"
+      },
+      "summary": "Меркаптобензотиазол (MBT) — представитель бензотиазольных ускорителей производства резины.",
+      "sources": [
+        {
+          "name": "Allergy to rubber accelerators",
+          "url": "https://dermnetnz.org/topics/allergy-to-rubber-accelerators"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "allergens",
+          "uid": "a32632fb-92b5-5722-aca2-5a99de191cf2"
+        },
+        {
+          "kind": "allergens",
+          "uid": "4938fb9e-55ea-51eb-9422-d50173ca22fa"
+        },
+        {
+          "kind": "allergens",
+          "uid": "14678fb0-0165-57cb-bd17-ebc9f5c7e3e6"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "ead4ab8b-9461-5144-ba83-22361f9c1446"
+        }
+      ],
+      "related_pages": [
+        "7f6c24da-23a8-542a-b1c7-59dbb4ae85c1"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "allergens",
+        "uid": "fa7e3d16-7614-5638-a8ba-ef1f5b3746f7"
+      },
+      "summary": "Парфюмерные отдушки — группа ароматических компонентов, некоторые из которых вызывают контактную аллергию.",
+      "sources": [
+        {
+          "name": "Fragrance allergy",
+          "url": "https://dermnetnz.org/topics/fragrance-allergy"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "allergens",
+          "uid": "3dc3b9af-0ba6-5108-9020-c0cdc5eb840d"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "ead4ab8b-9461-5144-ba83-22361f9c1446"
+        }
+      ],
+      "related_pages": [
+        "7f6c24da-23a8-542a-b1c7-59dbb4ae85c1"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "allergens",
+        "uid": "3dc3b9af-0ba6-5108-9020-c0cdc5eb840d"
+      },
+      "summary": "Изотиазолиноны MI/MCI — консерванты, связанные с контактной аллергией.",
+      "sources": [
+        {
+          "name": "Methylisothiazolinone allergy",
+          "url": "https://dermnetnz.org/topics/methylisothiazolinone-allergy"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "allergens",
+          "uid": "539fee66-6bcf-52da-b0f7-0d641cc234d7"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "ead4ab8b-9461-5144-ba83-22361f9c1446"
+        }
+      ],
+      "related_pages": [
+        "7f6c24da-23a8-542a-b1c7-59dbb4ae85c1"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "allergens",
+        "uid": "539fee66-6bcf-52da-b0f7-0d641cc234d7"
+      },
+      "summary": "Формальдегид может действовать как раздражитель и контактный аллерген.",
+      "sources": [
+        {
+          "name": "Formaldehyde allergy",
+          "url": "https://dermnetnz.org/topics/formaldehyde-allergy"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "allergens",
+          "uid": "3dc3b9af-0ba6-5108-9020-c0cdc5eb840d"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "ead4ab8b-9461-5144-ba83-22361f9c1446"
+        }
+      ],
+      "related_pages": [
+        "7f6c24da-23a8-542a-b1c7-59dbb4ae85c1"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "allergens",
+        "uid": "28c9a18d-3696-5835-8abf-adeabab29670"
+      },
+      "summary": "Канифоль, или colophony/rosin, — смоляной материал, способный вызывать контактную аллергию.",
+      "sources": [
+        {
+          "name": "Rosin allergy",
+          "url": "https://dermnetnz.org/topics/rosin-allergy"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "allergens",
+          "uid": "773fd253-11dc-5d7f-b819-f70bd7544ef0"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "ead4ab8b-9461-5144-ba83-22361f9c1446"
+        }
+      ],
+      "related_pages": [
+        "7f6c24da-23a8-542a-b1c7-59dbb4ae85c1"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "allergens",
+        "uid": "773fd253-11dc-5d7f-b819-f70bd7544ef0"
+      },
+      "summary": "Акрилаты и метакрилаты — группа веществ, отдельные формы которых могут вызывать контактную аллергию.",
+      "sources": [
+        {
+          "name": "Allergy to acrylates",
+          "url": "https://dermnetnz.org/topics/allergy-to-acrylate"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "allergens",
+          "uid": "9117f996-1533-5dd9-828e-0e76060df8fc"
+        },
+        {
+          "kind": "allergens",
+          "uid": "28c9a18d-3696-5835-8abf-adeabab29670"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "ead4ab8b-9461-5144-ba83-22361f9c1446"
+        }
+      ],
+      "related_pages": [
+        "7f6c24da-23a8-542a-b1c7-59dbb4ae85c1"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "allergens",
+        "uid": "9117f996-1533-5dd9-828e-0e76060df8fc"
+      },
+      "summary": "Эпоксидная система может включать смолу, отвердитель, разбавители и другие добавки.",
+      "sources": [
+        {
+          "name": "Allergy to epoxy resin",
+          "url": "https://dermnetnz.org/topics/allergy-to-epoxy-resin"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "allergens",
+          "uid": "773fd253-11dc-5d7f-b819-f70bd7544ef0"
+        },
+        {
+          "kind": "materials",
+          "uid": "1cd9dbc8-3ddc-5435-a2cb-8f01ea7a0756"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "ead4ab8b-9461-5144-ba83-22361f9c1446"
+        }
+      ],
+      "related_pages": [
+        "7f6c24da-23a8-542a-b1c7-59dbb4ae85c1"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "allergens",
+        "uid": "865e1b88-53c6-5fb9-b132-6332ca4f7d7c"
+      },
+      "summary": "Ланолин — продукт из овечьей шерсти, используемый в наружных средствах и косметике.",
+      "sources": [
+        {
+          "name": "Contact reactions to lanolin",
+          "url": "https://dermnetnz.org/topics/contact-reactions-to-lanolin"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "allergens",
+          "uid": "fa7e3d16-7614-5638-a8ba-ef1f5b3746f7"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "ead4ab8b-9461-5144-ba83-22361f9c1446"
+        }
+      ],
+      "related_pages": [
+        "7f6c24da-23a8-542a-b1c7-59dbb4ae85c1"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "allergens",
+        "uid": "4db9b666-f08c-52ad-ad0f-126b72316643"
+      },
+      "summary": "Каин-смесь — обозначение смеси местных анестетиков в контактном аллергологическом тестировании.",
+      "sources": [
+        {
+          "name": "Benzocaine contact allergy",
+          "url": "https://dermnetnz.org/topics/allergy-to-benzocaine"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "allergens",
+          "uid": "5056276f-cf5b-543f-a8f0-582cccaba9f2"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "ead4ab8b-9461-5144-ba83-22361f9c1446"
+        }
+      ],
+      "related_pages": [
+        "7f6c24da-23a8-542a-b1c7-59dbb4ae85c1"
+      ]
+    },
+    {
+      "reference": {
+        "kind": "allergens",
+        "uid": "5056276f-cf5b-543f-a8f0-582cccaba9f2"
+      },
+      "summary": "Хлоргексидин — антисептическое вещество, способное вызывать аллергическую реакцию.",
+      "sources": [
+        {
+          "name": "NHS — Side effects of chlorhexidine",
+          "url": "https://www.nhs.uk/medicines/chlorhexidine/side-effects-of-chlorhexidine/"
+        }
+      ],
+      "related_references": [
+        {
+          "kind": "allergens",
+          "uid": "4db9b666-f08c-52ad-ad0f-126b72316643"
+        },
+        {
+          "kind": "health-conditions",
+          "uid": "ead4ab8b-9461-5144-ba83-22361f9c1446"
+        }
+      ],
+      "related_pages": [
+        "7f6c24da-23a8-542a-b1c7-59dbb4ae85c1"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,328 @@
+{
+  "version": 1,
+  "checked_on": "2026-10-22",
+  "method": "Краткий русский пересказ указанных тезисов; прочие пояснения авторские. Не полный перевод внешних статей.",
+  "sources": {
+    "glossary": {
+      "name": "NCSF — BDSM Glossary and Resources",
+      "url": "https://ncsfreedom.org/wp-content/uploads/2022/07/BDSM-Glossary-and-Resources.pdf",
+      "publisher": "National Coalition for Sexual Freedom",
+      "scope": "Определения сообщества; не медицинская инструкция.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "bdsm",
+        "roles",
+        "signals",
+        "aftercare",
+        "bondage",
+        "sensory",
+        "impact",
+        "collar-symbolism",
+        "risk-frameworks",
+        "gags-communication"
+      ]
+    },
+    "negotiation": {
+      "name": "NCSF — Negotiation Guide",
+      "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf",
+      "publisher": "National Coalition for Sexual Freedom",
+      "scope": "Вопросы предварительного обсуждения; не готовый сценарий.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "negotiation",
+        "service",
+        "rituals",
+        "restraints-and-supports"
+      ]
+    },
+    "best": {
+      "name": "NCSF — Best Practices for Consent to Kink",
+      "url": "https://ncsfreedom.org/wp-content/uploads/2022/01/Best-Practices-for-Consent-to-Kink.pdf",
+      "publisher": "National Coalition for Sexual Freedom",
+      "scope": "Рекомендации сообщества; юридические части относятся к контексту США.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "boundaries"
+      ]
+    },
+    "power": {
+      "name": "NCSF — Statement on Power Exchange Relationships",
+      "url": "https://ncsfreedom.org/wp-content/uploads/2019/12/Power-Exchange-Statement.pdf",
+      "publisher": "National Coalition for Sexual Freedom",
+      "scope": "Позиция организации об обмене властью; не местная юридическая консультация.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "protocols",
+        "rules",
+        "extended-dynamics",
+        "dynamics-pause"
+      ]
+    },
+    "kink": {
+      "name": "NCSF — What Professionals Need to Know about Kink (2024)",
+      "url": "https://ncsfreedom.org/wp-content/uploads/2024/04/What-Professionals-Need-to-Know-about-Kink-2024.pdf",
+      "publisher": "National Coalition for Sexual Freedom",
+      "scope": "Обзор терминологии и контекста для специалистов.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "roleplay",
+        "fetishes",
+        "humiliation-objectification"
+      ]
+    },
+    "cnm": {
+      "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+      "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf",
+      "publisher": "National Coalition for Sexual Freedom",
+      "scope": "Вопросы для отдельных договорённостей нескольких партнёров.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "group",
+        "relationship-context"
+      ]
+    },
+    "rope": {
+      "name": "Shibari Study — Glossary",
+      "url": "https://www.shibaristudy.com/glossary",
+      "publisher": "Shibari Study",
+      "scope": "Терминология одной образовательной платформы, не универсальная историческая классификация.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "shibari",
+        "positions"
+      ]
+    },
+    "health": {
+      "name": "ВОЗ — Sexually transmitted infections (STIs)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/sexually-transmitted-infections-(stis)",
+      "publisher": "World Health Organization",
+      "scope": "Общие сведения об ИППП; не индивидуальные назначения.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "sexual-health"
+      ]
+    },
+    "nhs": {
+      "name": "NHS — Sexually transmitted infections (STIs)",
+      "url": "https://www.nhs.uk/conditions/sexually-transmitted-infections-stis/",
+      "publisher": "NHS",
+      "scope": "Общие сведения о симптомах и обследованиях; организация помощи описана для Великобритании.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "sexual-health"
+      ]
+    },
+    "care": {
+      "name": "SH:24 — How to clean your sex toys; Helen Burkitt",
+      "url": "https://sh24.org.uk/help-centre/how-to-clean-your-sex-toys",
+      "publisher": "SH:24",
+      "scope": "Общие принципы ухода; ограничения конкретного изделия проверяются отдельно.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "device-care",
+        "equipment-collection"
+      ]
+    },
+    "latex": {
+      "name": "Cambridge University Hospitals — Latex allergy",
+      "url": "https://www.cuh.nhs.uk/patient-information/information-for-patients-with-latex-allergy/",
+      "publisher": "Cambridge University Hospitals NHS Foundation Trust",
+      "scope": "Различие аллергии на латекс и реакций на компоненты резины.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "materials",
+        "allergies-and-products"
+      ]
+    },
+    "eff": {
+      "name": "EFF — Why Communication Metadata Matters",
+      "url": "https://ssd.eff.org/module/why-metadata-matters",
+      "publisher": "Electronic Frontier Foundation",
+      "scope": "Метаданные файлов и общения; не гарантия анонимности.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "privacy",
+        "posing-language"
+      ]
+    },
+    "gor": {
+      "name": "Gorean Codex — Positions (любительская литературная подборка)",
+      "url": "https://goreancodex.wordpress.com/positions/",
+      "publisher": "Gorean Codex",
+      "scope": "Толкования художественного мира Gor; не нормативная BDSM-практика.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "protocol-positions"
+      ]
+    },
+    "lovense": {
+      "name": "Lovense — Remote quick tips",
+      "url": "https://www.lovense.com/guide/remote",
+      "publisher": "Lovense",
+      "scope": "Документация приложения определённого производителя; не всех дистанционных устройств.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "distance-dynamics"
+      ]
+    },
+    "wevibe": {
+      "name": "We-Vibe — How do I clean my products?",
+      "url": "https://care.we-vibe.com/s/article/how-to-clean-products?language=en_US",
+      "publisher": "We-Vibe / WOW Tech",
+      "scope": "Указания изготовителя для его изделий; не универсальный режим обработки.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "devices"
+      ]
+    },
+    "talk": {
+      "name": "Options for Sexual Health — Talking to Partners About Sex",
+      "url": "https://www.optionsforsexualhealth.org/facts/sex/talking-about-sex/",
+      "publisher": "Options for Sexual Health",
+      "scope": "Общение о предпочтениях; не исследование эффективности наград.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "praise-feedback",
+        "scene-debrief"
+      ]
+    },
+    "pleasure": {
+      "name": "Planned Parenthood Toronto — Making Sex Feel Good",
+      "url": "https://ppt.on.ca/factsheets/making-sex-feel-good/",
+      "publisher": "Planned Parenthood Toronto",
+      "scope": "Разнообразие форм близости и общение; без описания техник.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "intimacy"
+      ]
+    },
+    "education": {
+      "name": "NCSF — Kink Education Must Be Adult-Focused and Expert-Led",
+      "url": "https://ncsfreedom.org/wp-content/uploads/2025/06/Kink-Education-Must-Be-Adult-Focused-and-Expert-Led.pdf",
+      "publisher": "National Coalition for Sexual Freedom",
+      "scope": "Позиция о подготовке преподавателей для взрослых, а не система сертификации.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "learning-resources"
+      ]
+    },
+    "pets": {
+      "name": "PDX PAH — Welcome to Pet Play",
+      "url": "https://www.pdxpah.com/",
+      "publisher": "Portland Pets & Handlers",
+      "scope": "Описание конкретного сообщества human-pet play; не стандарт всех групп.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "pet-play"
+      ]
+    },
+    "ponies": {
+      "name": "The Manège — A Virtual Pony Play Academy",
+      "url": "https://themanege.org/",
+      "publisher": "The Manège / Pony Girl Ginger",
+      "scope": "Самоописание образовательного сообщества pony play; не руководство по нагрузкам.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "pony-play"
+      ]
+    },
+    "events": {
+      "name": "NCSF — Sample Consent Policy for Clubs and Events",
+      "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Sample-Consent-Policy-for-Clubs-and-Events.pdf",
+      "publisher": "National Coalition for Sexual Freedom",
+      "scope": "Образец правил мероприятия, а не действующий регламент любой площадки.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "community-events"
+      ]
+    },
+    "research": {
+      "name": "Herbenick et al. (2017) — Sexual diversity in the United States",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0181198",
+      "publisher": "PLOS ONE / Debby Herbenick et al.",
+      "scope": "Поперечный опрос совершеннолетних в США 2015 года; ограничения популяции и самоотчёта.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "reading-research"
+      ]
+    },
+    "edging": {
+      "name": "ISSM — What is edging and why might it be employed?",
+      "url": "https://www.issm.info/sexual-health-qa/what-is-edging-and-why-might-it-be-employed",
+      "publisher": "International Society for Sexual Medicine / Rachel Baxter",
+      "scope": "Определение и общение об ожиданиях; не индивидуальное лечение.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "orgasm-control-overview"
+      ]
+    },
+    "sklar": {
+      "name": "Sklar — Wartenberg Pinwheel, 06-3375",
+      "url": "https://www.sklarcorp.com/p/sklar-wartenberg-pinwheel/06-3375",
+      "publisher": "Sklar Corporation",
+      "scope": "Описание одной модели диагностического инструмента; не подтверждение безопасности BDSM-применения.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "sensory-instruments"
+      ]
+    },
+    "condoms": {
+      "name": "NHS — Condoms",
+      "url": "https://www.nhs.uk/contraception/methods-of-contraception/condoms/",
+      "publisher": "NHS",
+      "scope": "Материалы презервативов и совместимость смазок; не характеристики всех девайсов.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "lubricants-barriers"
+      ]
+    },
+    "allergies": {
+      "name": "NHS — Allergies",
+      "url": "https://www.nhs.uk/conditions/allergies/",
+      "publisher": "NHS",
+      "scope": "Общие сведения об аллергии; не диагностика по записи в профиле.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "allergies-and-products"
+      ]
+    },
+    "pain": {
+      "name": "Cambridge University Hospitals — Chronic pain and intimacy",
+      "url": "https://www.cuh.nhs.uk/patient-information/chronic-pain-and-intimacy/",
+      "publisher": "Cambridge University Hospitals NHS Foundation Trust",
+      "scope": "Общение и адаптация близости при хронической боли; не допуск к телесной нагрузке.",
+      "checked_on": "2026-10-22",
+      "access": "full_text",
+      "article_keys": [
+        "mobility-and-adaptation",
+        "health-discussion"
+      ]
+    }
+  }
+}

@@ -46,6 +46,19 @@ class Api(private val state: InstanceSession,
    response.body?.string()?:""
   }
  }
+ suspend fun wikiThumbnail(path:String):ByteArray=withContext(Dispatchers.IO){
+  require(wikiLocalThumbnail(path))
+  val origin=state.origin
+  client.newCall(Request.Builder().url(origin+path).build()).execute().use{response->
+   check(response.isSuccessful&&response.header("Content-Type").orEmpty().startsWith("image/"))
+   val body=response.body?:error("Missing image")
+   require(body.contentLength()<=2*1024*1024)
+   val output=java.io.ByteArrayOutputStream()
+   body.byteStream().use{stream->val buffer=ByteArray(8192);var count=stream.read(buffer);while(count>=0){require(output.size()+count<=2*1024*1024);output.write(buffer,0,count);count=stream.read(buffer)}}
+   check(state.origin==origin)
+   output.toByteArray()
+  }
+ }
  suspend fun challenge(nonce:String):Challenge = json.decodeFromString(call("/auth/android/challenges","POST",json.encodeToString(ChallengeRequest(client_nonce=nonce,device_label="Android")),false))
  suspend fun status(challenge:Challenge,nonce:String):ChallengeStatus = json.decodeFromString(call("/auth/android/challenges/${challenge.challenge_id}/status","POST",json.encodeToString(Proof(poll_secret=challenge.poll_secret,client_nonce=nonce)),false))
  suspend fun consume(challenge:Challenge,nonce:String):Tokens = json.decodeFromString(call("/auth/android/challenges/${challenge.challenge_id}/consume","POST",json.encodeToString(Proof(poll_secret=challenge.poll_secret,client_nonce=nonce)),false))

@@ -1,0 +1,455 @@
+{
+  "version": 1,
+  "checked_on": "2026-10-22",
+  "method": "Авторские определения внутренних категорий и рекомендации по планированию отделены от сведений первичных источников; область применимости указана для каждого документа.",
+  "sources": [
+    {
+      "name": "NCSF — Negotiation Guide",
+      "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf",
+      "publisher": "National Coalition for Sexual Freedom",
+      "scope": "Вопросы предварительного обсуждения; не готовый сценарий.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+      "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf",
+      "publisher": "National Coalition for Sexual Freedom",
+      "scope": "Вопросы для отдельных договорённостей нескольких партнёров.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NCSF — Sample Consent Policy for Clubs and Events",
+      "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Sample-Consent-Policy-for-Clubs-and-Events.pdf",
+      "publisher": "National Coalition for Sexual Freedom",
+      "scope": "Образец правил мероприятия, а не действующий регламент любой площадки.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "IANA — Time Zone Database: теория и идентификаторы",
+      "url": "https://data.iana.org/time-zones/tzdb/theory.html",
+      "publisher": "Internet Assigned Numbers Authority (IANA)",
+      "scope": "Устройство региональных идентификаторов, отличие набора правил от фиксированного смещения, изменчивость правил.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "IANA — таблица региональных зон",
+      "url": "https://data.iana.org/time-zones/tzdb/zone1970.tab",
+      "publisher": "Internet Assigned Numbers Authority (IANA)",
+      "scope": "Соответствие идентификаторов и регионов; не перечень всех городов или обещание постоянного смещения.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "ВОЗ — Gender and health",
+      "url": "https://www.who.int/health-topics/gender",
+      "publisher": "World Health Organization",
+      "scope": "Различие половых характеристик, гендера и гендерной идентичности; не описание анатомии конкретного участника.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "PFLAG National Glossary",
+      "url": "https://pflag.org/glossary/",
+      "publisher": "PFLAG National",
+      "scope": "Краткие определения agender, bigender, genderfluid и nonbinary; это словарь сообщества, а не диагностический стандарт.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "CCI — Caring for plastics and rubbers",
+      "url": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/caring-plastics-rubbers.html",
+      "publisher": "Julia Fenn; R. Scott Williams / Canadian Conservation Institute",
+      "scope": "Полимеры, составы и отличия каучуков; не инструкция по интимному применению.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "CCI — Caring for leather, skin and fur",
+      "url": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/caring-leather-skin-fur.html",
+      "publisher": "Carole Dignard; Janet Mason / Canadian Conservation Institute",
+      "scope": "Происхождение и обработка кожи; музейные сведения не заменяют паспорт изделия.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "CCI — Caring for textiles and costumes",
+      "url": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/textiles-costumes.html",
+      "publisher": "Canadian Conservation Institute",
+      "scope": "Волокна, переплетения и отделка; различие атласного переплетения и волокнистого состава.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "CCI — Caring for metal objects",
+      "url": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/metal-objects.html",
+      "publisher": "Canadian Conservation Institute",
+      "scope": "Металлы, сплавы и покрытия; не сертификация изделий для тела.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "CCI — Caring for ceramic and glass objects",
+      "url": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/ceramics-glass-preventive-conservation.html",
+      "publisher": "Canadian Conservation Institute",
+      "scope": "Стекло и стеклянные предметы; не допуск конкретного изделия к интимному использованию.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "CCI — Caring for basketry and plant materials",
+      "url": "https://www.canada.ca/en/conservation-institute/services/preventive-conservation/guidelines-collections/basketry-plant-materials.html",
+      "publisher": "Canadian Conservation Institute",
+      "scope": "Древесные и другие растительные материалы; бамбук и обработка поверхности.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "OpenStax — Anatomical Terminology",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/1-6-anatomical-terminology",
+      "publisher": "J. Gordon Betts et al. / OpenStax, Rice University",
+      "scope": "Региональные анатомические термины и положение тела; без рекомендаций по воздействию.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "OpenStax — Accessory Structures of the Skin",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/5-2-accessory-structures-of-the-skin",
+      "publisher": "J. Gordon Betts et al. / OpenStax, Rice University",
+      "scope": "Волос и фолликул; не техника взаимодействия с волосами.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "OpenStax — Anatomy and Physiology of the Ovarian Reproductive System",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/27-2-anatomy-and-physiology-of-the-ovarian-reproductive-system",
+      "publisher": "J. Gordon Betts et al. / OpenStax, Rice University",
+      "scope": "Вульва и молочная железа; нейтральные анатомические определения.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "OpenStax — Anatomy and Physiology of the Testicular Reproductive System",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/27-1-anatomy-and-physiology-of-the-testicular-reproductive-system",
+      "publisher": "J. Gordon Betts et al. / OpenStax, Rice University",
+      "scope": "Строение наружных половых органов; не вывод о гендере владельца тела.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "OpenStax — The Small and Large Intestines",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/23-5-the-small-and-large-intestines",
+      "publisher": "J. Gordon Betts et al. / OpenStax, Rice University",
+      "scope": "Анальный канал и наружное отверстие; не описание сексуальных техник.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "OpenStax — Axial Muscles of the Abdominal Wall and Thorax",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/11-4-axial-muscles-of-the-abdominal-wall-and-thorax",
+      "publisher": "J. Gordon Betts et al. / OpenStax, Rice University",
+      "scope": "Границы промежности и её анатомические подразделения.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "HSE — Latex allergies",
+      "url": "https://www.hse.gov.uk/skin/employ/latex.htm",
+      "publisher": "Health and Safety Executive (UK)",
+      "scope": "Происхождение натурального каучукового латекса и отличие состава материала от аллергии; без рекомендаций по BDSM-применению.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Гемофилия",
+      "url": "https://www.nhs.uk/conditions/haemophilia/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Гемофилия; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Болезнь Виллебранда",
+      "url": "https://www.nhs.uk/conditions/von-willebrand-disease/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Болезнь Виллебранда; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Бронхиальная астма",
+      "url": "https://www.nhs.uk/conditions/asthma/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Бронхиальная астма; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Эпилепсия",
+      "url": "https://www.nhs.uk/conditions/epilepsy/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Эпилепсия; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Сахарный диабет",
+      "url": "https://www.nhs.uk/conditions/diabetes/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Сахарный диабет; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Периферическая нейропатия",
+      "url": "https://www.nhs.uk/conditions/peripheral-neuropathy/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Периферическая нейропатия; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Остеопороз",
+      "url": "https://www.nhs.uk/conditions/osteoporosis/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Остеопороз; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Синдромы Элерса — Данлоса",
+      "url": "https://www.nhs.uk/conditions/ehlers-danlos-syndromes/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Синдромы Элерса — Данлоса; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Артериальная гипертензия",
+      "url": "https://www.nhs.uk/conditions/high-blood-pressure/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Артериальная гипертензия; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Нарушения сердечного ритма",
+      "url": "https://www.nhs.uk/conditions/arrhythmia/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Нарушения сердечного ритма; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Атопический дерматит",
+      "url": "https://www.nhs.uk/conditions/atopic-eczema/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Атопический дерматит; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Псориаз",
+      "url": "https://www.nhs.uk/conditions/psoriasis/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Псориаз; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Аллергический контактный дерматит",
+      "url": "https://www.nhs.uk/conditions/contact-dermatitis/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Аллергический контактный дерматит; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Посттравматическое стрессовое расстройство",
+      "url": "https://www.nhs.uk/mental-health/conditions/ptsd-post-traumatic-stress-disorder/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Посттравматическое стрессовое расстройство; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Паническое расстройство",
+      "url": "https://www.nhs.uk/mental-health/conditions/panic-disorder/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Паническое расстройство; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — ВИЧ-инфекция",
+      "url": "https://www.nhs.uk/conditions/hiv-and-aids/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки ВИЧ-инфекция; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Гепатит B",
+      "url": "https://www.nhs.uk/conditions/hepatitis-b/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Гепатит B; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Гепатит C",
+      "url": "https://www.nhs.uk/conditions/hepatitis-c/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Гепатит C; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Генитальный герпес",
+      "url": "https://www.nhs.uk/conditions/genital-herpes/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Генитальный герпес; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Папилломавирусная инфекция",
+      "url": "https://www.nhs.uk/conditions/human-papilloma-virus-hpv/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Папилломавирусная инфекция; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Сифилис",
+      "url": "https://www.nhs.uk/conditions/syphilis/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Сифилис; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Гонорея",
+      "url": "https://www.nhs.uk/conditions/gonorrhoea/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Гонорея; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Хламидийная инфекция",
+      "url": "https://www.nhs.uk/conditions/chlamydia/",
+      "publisher": "NHS",
+      "scope": "Определение и отмеченные общие признаки Хламидийная инфекция; не индивидуальные ограничения или рекомендации для BDSM.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Nickel allergy",
+      "url": "https://dermnetnz.org/topics/nickel-allergy",
+      "publisher": "DermNet / Amanda Oakley; Ian Coulson",
+      "scope": "Идентификация Никель и контактных реакций; не доказательство состава всех изделий.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Allergy to cobalt",
+      "url": "https://dermnetnz.org/topics/allergy-to-cobalt",
+      "publisher": "DermNet / Vanessa Ngan; Elena Redl; Martin Keefe",
+      "scope": "Идентификация Кобальт и контактных реакций; не доказательство состава всех изделий.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Chrome allergy",
+      "url": "https://dermnetnz.org/topics/chrome-allergy",
+      "publisher": "DermNet / Vanessa Ngan; Jannet Gomez; Amanda Oakley",
+      "scope": "Идентификация Хроматы и контактных реакций; не доказательство состава всех изделий.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Allergy to rubber accelerators",
+      "url": "https://dermnetnz.org/topics/allergy-to-rubber-accelerators",
+      "publisher": "DermNet / Vanessa Ngan",
+      "scope": "Идентификация Тиурамы и контактных реакций; не доказательство состава всех изделий.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Fragrance allergy",
+      "url": "https://dermnetnz.org/topics/fragrance-allergy",
+      "publisher": "DermNet / Elaine Luther; Helen Gordon; Amanda Oakley",
+      "scope": "Идентификация Парфюмерные отдушки и контактных реакций; не доказательство состава всех изделий.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Methylisothiazolinone allergy",
+      "url": "https://dermnetnz.org/topics/methylisothiazolinone-allergy",
+      "publisher": "DermNet / Lynne Gordon; Amanda Oakley",
+      "scope": "Идентификация Изотиазолиноны MI/MCI и контактных реакций; не доказательство состава всех изделий.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Formaldehyde allergy",
+      "url": "https://dermnetnz.org/topics/formaldehyde-allergy",
+      "publisher": "DermNet / Vanessa Ngan; Ian Coulson",
+      "scope": "Идентификация Формальдегид и контактных реакций; не доказательство состава всех изделий.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Rosin allergy",
+      "url": "https://dermnetnz.org/topics/rosin-allergy",
+      "publisher": "DermNet / Vanessa Ngan; Ian Coulson",
+      "scope": "Идентификация Канифоль и контактных реакций; не доказательство состава всех изделий.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Allergy to acrylates",
+      "url": "https://dermnetnz.org/topics/allergy-to-acrylate",
+      "publisher": "DermNet / Vanessa Ngan",
+      "scope": "Идентификация Акрилаты и метакрилаты и контактных реакций; не доказательство состава всех изделий.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Allergy to epoxy resin",
+      "url": "https://dermnetnz.org/topics/allergy-to-epoxy-resin",
+      "publisher": "DermNet / Vanessa Ngan; Ian Coulson",
+      "scope": "Идентификация Эпоксидные смолы и контактных реакций; не доказательство состава всех изделий.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Contact reactions to lanolin",
+      "url": "https://dermnetnz.org/topics/contact-reactions-to-lanolin",
+      "publisher": "DermNet / Libby Whittaker; Ian Coulson",
+      "scope": "Идентификация Ланолин и контактных реакций; не доказательство состава всех изделий.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "Benzocaine contact allergy",
+      "url": "https://dermnetnz.org/topics/allergy-to-benzocaine",
+      "publisher": "DermNet / Philippa Dickison; Saxon D Smith; Amanda Oakley",
+      "scope": "Идентификация Местные анестетики: каин-смесь и контактных реакций; не доказательство состава всех изделий.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    },
+    {
+      "name": "NHS — Side effects of chlorhexidine",
+      "url": "https://www.nhs.uk/medicines/chlorhexidine/side-effects-of-chlorhexidine/",
+      "publisher": "NHS",
+      "scope": "Идентификация Хлоргексидин и контактных реакций; не доказательство состава всех изделий.",
+      "checked_on": "2026-10-22",
+      "access": "full_text"
+    }
+  ]
+}

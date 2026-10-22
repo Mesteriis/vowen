@@ -1,0 +1,145 @@
+[
+  {
+    "uid": "43712f95-6e05-5eaa-a5a2-d27c06482e47",
+    "name": "Секс и стимуляция",
+    "description": "Группа названий сексуальных контактов и стимуляции. Она отвечает на вопрос о виде взаимодействия, а не о составе пары или пространственном положении.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "sex"
+    },
+    "thumbnail": "/references/practice-categories/sex-transparent.png"
+  },
+  {
+    "uid": "5bd72ca0-1700-5abf-858d-0547df45ffc3",
+    "name": "Мастурбация",
+    "description": "Категория практик самостоятельной стимуляции и её согласованных форм в присутствии партнёра.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "masturbation"
+    },
+    "thumbnail": "/references/practice-categories/masturbation-transparent.png"
+  },
+  {
+    "uid": "5b5243c6-220c-58bb-a6e5-032890402f73",
+    "name": "Секс-игрушки",
+    "description": "Практики, в которых используется интимный девайс. Здесь сгруппированы взаимодействия, тогда как устройство и материал предмета относятся к отдельным справочникам.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "toys"
+    },
+    "thumbnail": "/references/practice-categories/toys-transparent.png"
+  },
+  {
+    "uid": "a2b31394-9367-573c-955a-b0d4e3f9b9fe",
+    "name": "Бондаж и ограничение подвижности",
+    "description": "Практики ограничения подвижности с помощью предметов или согласованных положений. Категория объединяет разные способы организации ограничения, но не задаёт их технику.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "bondage"
+    },
+    "thumbnail": "/references/practice-categories/bondage-transparent.png"
+  },
+  {
+    "uid": "7e95dd6b-bb69-5bb9-b3a1-6c0a26939c24",
+    "name": "Сенсорные практики",
+    "description": "Практики с акцентом на ощущения и изменение восприятия. Группа описывает направленность опыта, а не одну обязательную комбинацию воздействий.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "sensory"
+    },
+    "thumbnail": "/references/practice-categories/sensory-transparent.png"
+  },
+  {
+    "uid": "912fa5e5-b35b-5192-af4f-cb6b604a1564",
+    "name": "Телесное воздействие",
+    "description": "Практики телесного воздействия, для которых существенны инструмент и характер взаимодействия. Это тематическая группа, а не универсальное назначение наказания.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "impact"
+    },
+    "thumbnail": "/references/practice-categories/impact-transparent.png"
+  },
+  {
+    "uid": "a4f7a9ba-4a9e-533d-b2fd-8badc14af21b",
+    "name": "Контроль оргазма",
+    "description": "Практики, в которых предметом договорённости становится контроль оргазма. Интерес к этому формату не равнозначен согласию на любой режим контроля.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "orgasm-control"
+    },
+    "thumbnail": "/references/practice-categories/orgasm-control-transparent.png"
+  },
+  {
+    "uid": "13e560e0-4658-5d78-a459-ba14d83af5b8",
+    "name": "Ролевые практики",
+    "description": "Взаимодействия через выбранные образы и игровые сценарии. Роль в сцене может отличаться от повседневного статуса участника и его D/s-роли.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "roleplay"
+    },
+    "thumbnail": "/references/practice-categories/roleplay-transparent.png"
+  },
+  {
+    "uid": "5748b2b8-f601-5265-aad8-c23ef9780233",
+    "name": "Обмен властью и протоколы",
+    "description": "Практики, связанные с распределением инициативы, полномочий, служением и протоколами.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "power-exchange"
+    },
+    "thumbnail": "/references/practice-categories/power-exchange-transparent.png"
+  },
+  {
+    "uid": "a2d15e96-70cc-525b-b187-542ed07c4a59",
+    "name": "Фетиши",
+    "description": "Практики и интересы, в которых особое значение придаётся предмету, материалу, образу или отдельной особенности.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "fetishes"
+    },
+    "thumbnail": "/references/practice-categories/fetishes-transparent.png"
+  },
+  {
+    "uid": "ffb84262-30b8-54ce-98c0-d42970c03b37",
+    "name": "Восстановление и забота",
+    "description": "Практики восстановления, внимания и заботы после взаимодействия или отдельно от него.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "care"
+    },
+    "thumbnail": "/references/practice-categories/care-transparent.png"
+  },
+  {
+    "uid": "4963fafa-3af2-5baa-92bb-91e4a91573c4",
+    "name": "Дистанционные практики",
+    "description": "Практики, выполняемые при физическом разделении участников и с использованием связи.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "remote"
+    },
+    "thumbnail": "/references/practice-categories/remote-transparent.png"
+  },
+  {
+    "uid": "b6121e04-1d0e-517a-b7ef-cce763010f67",
+    "name": "Групповые практики",
+    "description": "Практики с несколькими партнёрами; состав выбирается отдельно.",
+    "icon": null,
+    "url": null,
+    "extra": {
+      "code": "group"
+    },
+    "thumbnail": "/references/practice-categories/group-transparent.png"
+  }
+]

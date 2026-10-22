@@ -9,6 +9,7 @@ from vowen.modules.identity.models import AdministrationState
 from vowen.modules.references.equipment import add_links, populate_links
 from vowen.modules.references.fixtures import CATALOGUES, ReferenceKind
 from vowen.modules.references.models import Practice, PracticeCategory
+from vowen.modules.references.pose_links import populate_pose_links
 from vowen.modules.references.schemas import PracticeCreate, ReferenceView
 
 router = APIRouter(prefix="/api/v1")
@@ -19,7 +20,11 @@ async def entries(kind: ReferenceKind, principal: Member, db: DB) -> list[Refere
     model = CATALOGUES[kind]
     rows = await db.scalars(select(model).order_by(model.name, model.uid))
     views = [ReferenceView.model_validate(row) for row in rows]
-    return await populate_links(db, views) if kind == "practices" else views
+    if kind == "practices":
+        return await populate_links(db, views)
+    if kind == "poses":
+        return await populate_pose_links(db, views)
+    return views
 
 
 @router.post("/administration/practices", response_model=ReferenceView, status_code=201)

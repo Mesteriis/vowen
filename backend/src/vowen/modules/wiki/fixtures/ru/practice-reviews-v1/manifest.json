@@ -1,0 +1,2311 @@
+{
+  "language": "ru",
+  "version": 1,
+  "reviews": [
+    {
+      "code": "power-exchange",
+      "sources": [
+        {
+          "name": "NCSF — Statement on Power Exchange Relationships",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2019/12/Power-Exchange-Statement.pdf"
+        }
+      ],
+      "scope": "Источник рассматривает согласованный обмен полномочиями. Он не подтверждает автоматическое право доступа к чужим данным и не устанавливает протокол вашей пары.",
+      "related_practice_codes": [
+        "protocol",
+        "role-reversal"
+      ],
+      "related_pages": [
+        "8aa89442-cbb2-5ec2-baa7-43d84f882b98"
+      ],
+      "baseline": {
+        "code": "power-exchange",
+        "title": "Обмен властью",
+        "summary": "Обмен властью — договорённость о ведущей и подчинённой ролях в определённых областях взаимодействия. Для участников могут быть важны структура, забота, ответственность или символическая передача инициативы. Роль сама по себе не сообщает, какие именно решения переданы партнёру.",
+        "sources": [
+          {
+            "name": "NCSF — согласование конкретных практик",
+            "url": "https://ncsfreedom.org/wp-content/uploads/2022/01/Best-Practices-for-Consent-to-Kink.pdf"
+          }
+        ]
+      },
+      "body_sha256": "7b1dfd7afe972368d50676e7808824e9e57ac449dcbd36da386a3c6623f506d9"
+    },
+    {
+      "code": "protocol",
+      "sources": [
+        {
+          "name": "NCSF — Statement on Power Exchange Relationships",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2019/12/Power-Exchange-Statement.pdf"
+        }
+      ],
+      "scope": "Документ помогает различать договорённость о полномочиях и отдельные условные действия. Значение слова «протокол» в этой карточке — рабочее описание каталога, а не выдержка из обязательного регламента.",
+      "related_practice_codes": [
+        "command-play",
+        "service"
+      ],
+      "related_pages": [
+        "400282a3-dffd-5a46-8856-28068036126a"
+      ],
+      "baseline": {
+        "code": "protocol",
+        "title": "Протоколы",
+        "summary": "Протокол — согласованная форма обращения или поведения с понятным контекстом. Он может обозначать приветствие, начало разговора, подачу предмета или завершение встречи. Главная особенность — общий символический смысл, а не сложность последовательности.",
+        "sources": []
+      },
+      "body_sha256": "d7e81e18d897a916fb9be6a1062bebb5aaea9d3a618234d8c7c96a37d8c34f4f"
+    },
+    {
+      "code": "command-play",
+      "sources": [
+        {
+          "name": "NCSF — Statement on Power Exchange Relationships",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2019/12/Power-Exchange-Statement.pdf"
+        }
+      ],
+      "scope": "Источник относится к рамке распределения полномочий. Название «выполнение команд» в каталоге не означает бессрочного или неограниченного права отдавать любые распоряжения.",
+      "related_practice_codes": [
+        "protocol",
+        "service"
+      ],
+      "related_pages": [
+        "400282a3-dffd-5a46-8856-28068036126a"
+      ],
+      "baseline": {
+        "code": "command-play",
+        "title": "Выполнение команд",
+        "summary": "Выполнение команд — формат, в котором участники придают отдельное значение ясному предложению действия и выбранной ведущей роли. Это может быть короткий эпизод или элемент протокола. Команда не становится понятной только из-за повелительной интонации: её содержание и контекст всё равно нуждаются в общем смысле.",
+        "sources": []
+      },
+      "body_sha256": "fb8c535a25808bbe80493d39ad1cfa02bfb60ab5128a1ff3109e5caeb6e4084a"
+    },
+    {
+      "code": "service",
+      "sources": [
+        {
+          "name": "NCSF — Statement on Power Exchange Relationships",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2019/12/Power-Exchange-Statement.pdf"
+        }
+      ],
+      "scope": "Источник рассматривает согласованные обязанности. Конкретные формы служения описаны редакционно: документ не назначает одинаковый перечень поручений каждому участнику.",
+      "related_practice_codes": [
+        "command-play",
+        "worship"
+      ],
+      "related_pages": [
+        "9bfdf2b0-7592-53d2-929b-99012f3f9908"
+      ],
+      "baseline": {
+        "code": "service",
+        "title": "Практики служения",
+        "summary": "Практики служения — действия помощи и внимания, которым участники придают отдельное ролевое значение. Это может быть подготовка пространства, организация встречи или забота о вещах партнёра. Отличие от обычных домашних обязанностей находится в договорённости, а не в названии выполненного дела.",
+        "sources": []
+      },
+      "body_sha256": "d1404c56b68fe4cd267248c4d2ab4eb2cab81f1dbdbaa9296adee5cb8a005fb2"
+    },
+    {
+      "code": "role-reversal",
+      "sources": [
+        {
+          "name": "NCSF — What Professionals Need to Know about Kink (2024)",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2024/04/What-Professionals-Need-to-Know-about-Kink-2024.pdf"
+        }
+      ],
+      "scope": "В источнике роли рассматриваются как часть игрового взаимодействия. Смена роли в отдельном эпизоде не определяет автоматически идентичность Switch или административные полномочия Vowen.",
+      "related_practice_codes": [
+        "roleplay",
+        "power-exchange"
+      ],
+      "related_pages": [
+        "da670df8-0dc9-5e07-96cd-a27adea7941a"
+      ],
+      "baseline": {
+        "code": "role-reversal",
+        "title": "Обмен ролями",
+        "summary": "Обмен ролями — согласованная смена привычной или ранее выбранной позиции во взаимодействии. Это может быть отдельный эпизод, эксперимент с новым контекстом или обычная часть предпочтений свитча. Один опыт не обязывает человека менять постоянное описание себя.",
+        "sources": []
+      },
+      "body_sha256": "be4946b7bd48bc3937cc727dbcc76c82b9a233cb52b6ab73e4e0fc2097b6d036"
+    },
+    {
+      "code": "praise",
+      "sources": [
+        {
+          "name": "Options for Sexual Health — Talking to Partners About Sex",
+          "url": "https://www.optionsforsexualhealth.org/facts/sex/talking-about-sex/"
+        }
+      ],
+      "scope": "Источник поддерживает конкретное обсуждение того, что человеку нравится. Карточка не представляет похвалу готовой психологической методикой или универсальной наградой.",
+      "related_practice_codes": [
+        "service",
+        "aftercare"
+      ],
+      "related_pages": [
+        "7cfe129e-e26b-513a-aa11-6cf6ff2b8704"
+      ],
+      "baseline": {
+        "code": "praise",
+        "title": "Похвала",
+        "summary": "Похвала — положительная вербальная обратная связь, которой участники могут придавать особый эмоциональный или ролевой смысл. Важны не только слова, но и контекст, интонация и то, насколько обращение соответствует предпочтениям человека. Универсальной формулы приятной похвалы нет.",
+        "sources": []
+      },
+      "body_sha256": "1f6ad2bad72fb9d52a353123890a526a81f2d356ae2f089240e9b89cec360274"
+    },
+    {
+      "code": "roleplay",
+      "sources": [
+        {
+          "name": "NCSF — What Professionals Need to Know about Kink (2024)",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2024/04/What-Professionals-Need-to-Know-about-Kink-2024.pdf"
+        }
+      ],
+      "scope": "Источник описывает ролевую игру как один из классов kink. Имена отдельных сценариев в нашем справочнике — авторская навигация, а не исчерпывающая классификация NCSF.",
+      "related_practice_codes": [
+        "uniform-play",
+        "role-reversal"
+      ],
+      "related_pages": [
+        "180b25b1-488c-503f-befd-2147f803c6c8"
+      ],
+      "baseline": {
+        "code": "roleplay",
+        "title": "Ролевые игры",
+        "summary": "Ролевая игра — взаимодействие взрослых участников в условных образах и выбранной ситуации. Сюжет может быть подробно подготовлен или обозначен одной узнаваемой деталью. Костюм и сложный реквизит необязательны: общий смысл создаётся договорённостью.",
+        "sources": []
+      },
+      "body_sha256": "297920113668feaf3418b35e6d05fc26ccdd1e85c6a39d73809f1546e4384179"
+    },
+    {
+      "code": "uniform-play",
+      "sources": [
+        {
+          "name": "NCSF — What Professionals Need to Know about Kink (2024)",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2024/04/What-Professionals-Need-to-Know-about-Kink-2024.pdf"
+        }
+      ],
+      "scope": "В источнике упомянуты образ, одежда и реквизит ролевой игры. Изображение формы не наделяет участника реальными служебными полномочиями.",
+      "related_practice_codes": [
+        "roleplay",
+        "lingerie"
+      ],
+      "related_pages": [
+        "180b25b1-488c-503f-befd-2147f803c6c8"
+      ],
+      "baseline": {
+        "code": "uniform-play",
+        "title": "Практики с униформой",
+        "summary": "Практики с униформой используют одежду и узнаваемые элементы образа как часть согласованной ролевой ситуации. Интерес может быть связан с силуэтом, символикой, материалом или условным распределением ролей. Костюм не определяет заранее весь сценарий и не является реальным подтверждением полномочий.",
+        "sources": []
+      },
+      "body_sha256": "d6c5afe1e337f13d9a715decd00667c57d8c8893aeedecd322311efe3103f878"
+    },
+    {
+      "code": "erotic-humiliation",
+      "sources": [
+        {
+          "name": "NCSF — What Professionals Need to Know about Kink (2024)",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2024/04/What-Professionals-Need-to-Know-about-Kink-2024.pdf"
+        }
+      ],
+      "scope": "Источник рассматривает унижение в контексте согласованного взаимодействия. Он не превращает нежелательную оценку человека в практику по одному названию.",
+      "related_practice_codes": [
+        "objectification",
+        "praise"
+      ],
+      "related_pages": [
+        "22a89a5f-0fc1-5670-a3f2-f16ddf3b288f"
+      ],
+      "baseline": {
+        "code": "erotic-humiliation",
+        "title": "Эротическое унижение",
+        "summary": "Эротическое унижение — ролевой формат, в котором заранее выбранные слова или условные ситуации получают особое значение внутри согласованной сцены. Это описание практики между взрослыми участниками, а не общее разрешение обращаться с человеком пренебрежительно.",
+        "sources": []
+      },
+      "body_sha256": "aeafdc77d9d12115e3342f4139def9d3fe4edfc61ac9d7389a0f9b4773494b67"
+    },
+    {
+      "code": "objectification",
+      "sources": [
+        {
+          "name": "NCSF — What Professionals Need to Know about Kink (2024)",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2024/04/What-Professionals-Need-to-Know-about-Kink-2024.pdf"
+        }
+      ],
+      "scope": "Материал помогает различать согласованный игровой контекст и обращение с человеком вне этой рамки. Наша карточка объясняет рабочее значение термина, а не юридический статус участника.",
+      "related_practice_codes": [
+        "erotic-humiliation",
+        "power-exchange"
+      ],
+      "related_pages": [
+        "22a89a5f-0fc1-5670-a3f2-f16ddf3b288f"
+      ],
+      "baseline": {
+        "code": "objectification",
+        "title": "Объективация",
+        "summary": "Объективация в тематической практике — условная игра с представлением участника как части композиции, предмета или заданной функции. За пределами такой договорённости это слово имеет более широкие социальные значения. Их не стоит смешивать с личным выбором краткого ролевого формата.",
+        "sources": []
+      },
+      "body_sha256": "7198415781003b0bc34c72cf39f6dbc9c5c84d987daf0a4d2375e74d8eecaf1e"
+    },
+    {
+      "code": "worship",
+      "sources": [
+        {
+          "name": "NCSF — What Professionals Need to Know about Kink (2024)",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2024/04/What-Professionals-Need-to-Know-about-Kink-2024.pdf"
+        }
+      ],
+      "scope": "Источник даёт рамку ролей и фетишистских интересов. Конкретное значение поклонения телу описано в каталоге; оно не является требованием к внешности или самооценке другого человека.",
+      "related_practice_codes": [
+        "service",
+        "foot-worship"
+      ],
+      "related_pages": [
+        "c5134084-bba8-5c62-9a44-9bdca5448c42"
+      ],
+      "baseline": {
+        "code": "worship",
+        "title": "Поклонение телу",
+        "summary": "Поклонение телу — условное название форм внимания, в которых участники подчёркивают восхищение, заботу или символическое почтение. Содержание может быть словесным, эстетическим или тактильным. Единого обязательного действия, определяющего весь формат, нет.",
+        "sources": []
+      },
+      "body_sha256": "b3a9f7d2e84965c59a3488e0c48f7d6ea18f2701943ebedde5d608243d2f9c4a"
+    },
+    {
+      "code": "foot-worship",
+      "sources": [
+        {
+          "name": "NCSF — BDSM Glossary and Resources",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2022/07/BDSM-Glossary-and-Resources.pdf"
+        }
+      ],
+      "scope": "Словарь приводит интерес к стопам как пример фетишистского интереса. Он не задаёт конкретных действий и не приравнивает эстетическое предпочтение к выбору любого контакта.",
+      "related_practice_codes": [
+        "worship",
+        "boot-worship"
+      ],
+      "related_pages": [
+        "c5134084-bba8-5c62-9a44-9bdca5448c42"
+      ],
+      "baseline": {
+        "code": "foot-worship",
+        "title": "Поклонение стопам",
+        "summary": "Поклонение стопам — тематическое название внимания к стопам как значимой части образа или взаимодействия. Для участников могут быть важны эстетика, ритуальное значение или определённая форма заботы. Конкретные действия не следует выводить из одного названия предпочтения.",
+        "sources": []
+      },
+      "body_sha256": "65af611a02e184a3c284570b76631155a54e2f6e515dcda9a2b00b796a237411"
+    },
+    {
+      "code": "boot-worship",
+      "sources": [
+        {
+          "name": "NCSF — What Professionals Need to Know about Kink (2024)",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2024/04/What-Professionals-Need-to-Know-about-Kink-2024.pdf"
+        }
+      ],
+      "scope": "Источник рассматривает роль предметов и образа. Поклонение обуви в нашем каталоге отличается от интереса к стопам; единой обязательной формы этой практики источник не устанавливает.",
+      "related_practice_codes": [
+        "foot-worship",
+        "heels"
+      ],
+      "related_pages": [
+        "c5134084-bba8-5c62-9a44-9bdca5448c42"
+      ],
+      "baseline": {
+        "code": "boot-worship",
+        "title": "Поклонение обуви",
+        "summary": "Поклонение обуви — формат внимания к обуви как к значимому предмету образа, символу роли или объекту эстетического интереса. Он может быть связан с материалом, силуэтом, звуком или личным значением конкретной пары. Это не единый набор действий.",
+        "sources": []
+      },
+      "body_sha256": "dc40f4ddb5bd44ea0d553f7539df83fa0ae44a471db30b61aa1c7005a4216271"
+    },
+    {
+      "code": "latex",
+      "sources": [
+        {
+          "name": "NCSF — BDSM Glossary and Resources",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2022/07/BDSM-Glossary-and-Resources.pdf"
+        }
+      ],
+      "scope": "Словарь использует латексную одежду как пример фетишистского интереса. Это подтверждает тематический контекст, а не состав или переносимость конкретного изделия.",
+      "related_practice_codes": [
+        "leather",
+        "lingerie"
+      ],
+      "related_pages": [
+        "c5134084-bba8-5c62-9a44-9bdca5448c42"
+      ],
+      "baseline": {
+        "code": "latex",
+        "title": "Латекс-фетиш",
+        "summary": "Латекс-фетиш — интерес к латексной одежде, аксессуарам или их характерным свойствам. Значимыми могут быть блеск, фактура, звук, силуэт или процесс создания образа. Для одного человека важен собственный костюм, для другого — наблюдение за образом партнёра.",
+        "sources": []
+      },
+      "body_sha256": "ec8fb42df61e5430d268c1d469bdbca7dc9f28f70607fffe3bcacf8ab21f42d9"
+    },
+    {
+      "code": "leather",
+      "sources": [
+        {
+          "name": "NCSF — What Professionals Need to Know about Kink (2024)",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2024/04/What-Professionals-Need-to-Know-about-Kink-2024.pdf"
+        }
+      ],
+      "scope": "Источник описывает значение фетишистской одежды и образа. Кожа как материал и интерес к кожаному образу — разные записи; свойства предмета уточняют отдельно.",
+      "related_practice_codes": [
+        "latex",
+        "boot-worship"
+      ],
+      "related_pages": [
+        "c5134084-bba8-5c62-9a44-9bdca5448c42"
+      ],
+      "baseline": {
+        "code": "leather",
+        "title": "Кожа-фетиш",
+        "summary": "Кожа-фетиш — предпочтение, связанное с кожаной одеждой, аксессуарами и их эстетическими или тактильными свойствами. Интерес может относиться к запаху, фактуре, силуэту или культурному образу. Натуральная кожа и искусственные материалы могут выглядеть похоже, но различаться составом и уходом.",
+        "sources": []
+      },
+      "body_sha256": "7480b742199d1b4a39764098562706b86d0ec95a03a2cba6ef0802b15b3a08a8"
+    },
+    {
+      "code": "lingerie",
+      "sources": [
+        {
+          "name": "NCSF — What Professionals Need to Know about Kink (2024)",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2024/04/What-Professionals-Need-to-Know-about-Kink-2024.pdf"
+        }
+      ],
+      "scope": "Источник относится к фетишистским образам и одежде в общем. Выделение белья в отдельный пункт — выбор нашего каталога, а не медицинская или обязательная классификация.",
+      "related_practice_codes": [
+        "stockings",
+        "uniform-play"
+      ],
+      "related_pages": [
+        "c5134084-bba8-5c62-9a44-9bdca5448c42"
+      ],
+      "baseline": {
+        "code": "lingerie",
+        "title": "Фетиш белья",
+        "summary": "Фетиш белья — выраженный интерес к предметам белья как части личного или совместного образа. Внимание может быть связано с материалом, кроем, цветом или символическим значением вещи. Оно не определяет гендер, ориентацию или роль человека.",
+        "sources": []
+      },
+      "body_sha256": "7028d7d9197653a825567b399d50a98e039884c65c635c2b68e556c05b9eca8f"
+    },
+    {
+      "code": "stockings",
+      "sources": [
+        {
+          "name": "NCSF — What Professionals Need to Know about Kink (2024)",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2024/04/What-Professionals-Need-to-Know-about-Kink-2024.pdf"
+        }
+      ],
+      "scope": "Источник описывает роль образа и одежды. Чулки выделены в отдельное предпочтение редакционно: из него не следует интерес к любому другому предмету костюма.",
+      "related_practice_codes": [
+        "lingerie",
+        "heels"
+      ],
+      "related_pages": [
+        "c5134084-bba8-5c62-9a44-9bdca5448c42"
+      ],
+      "baseline": {
+        "code": "stockings",
+        "title": "Фетиш чулок",
+        "summary": "Фетиш чулок — интерес к чулкам как к значимой детали образа. Для человека могут быть важны силуэт, фактура, цвет, отделка или связанные личные ассоциации. Чулки, колготки и другие похожие предметы могут восприниматься по-разному; их не стоит считать одним предпочтением без уточнения.",
+        "sources": []
+      },
+      "body_sha256": "2ece502d23588ef694d17bd20425a318f658148c6ced654ef7bcb11e9cd5c028"
+    },
+    {
+      "code": "heels",
+      "sources": [
+        {
+          "name": "NCSF — What Professionals Need to Know about Kink (2024)",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2024/04/What-Professionals-Need-to-Know-about-Kink-2024.pdf"
+        }
+      ],
+      "scope": "Источник поддерживает общий контекст фетишистского образа. Карточка не задаёт требования к высоте каблука, ходьбе или нагрузке; это не техническая инструкция по обуви.",
+      "related_practice_codes": [
+        "stockings",
+        "boot-worship"
+      ],
+      "related_pages": [
+        "c5134084-bba8-5c62-9a44-9bdca5448c42"
+      ],
+      "baseline": {
+        "code": "heels",
+        "title": "Фетиш каблуков",
+        "summary": "Фетиш каблуков — интерес к обуви с каблуком, её силуэту, звуку или роли в образе. Для одних людей важна конкретная форма, для других — сочетание с одеждой или личный смысл. Сам термин не определяет высоту каблука и не задаёт обязательного стандарта внешности.",
+        "sources": []
+      },
+      "body_sha256": "b7abfc0ac8412248774c9cb1db41da643cef56d8a3d2473e52acc23e54e3083f"
+    },
+    {
+      "code": "collar",
+      "sources": [
+        {
+          "name": "NCSF — BDSM Glossary and Resources",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2022/07/BDSM-Glossary-and-Resources.pdf"
+        }
+      ],
+      "scope": "Словарь описывает символическое значение ошейника в некоторых отношениях. Он не утверждает, что любой ошейник означает принадлежность или одинаковые обязательства.",
+      "related_practice_codes": [
+        "leash",
+        "protocol"
+      ],
+      "related_pages": [
+        "53649845-e449-5f83-9ab3-295c7b6e7bf3"
+      ],
+      "baseline": {
+        "code": "collar",
+        "title": "Практики с ошейником",
+        "summary": "Практики с ошейником могут обозначать выбранный образ, принадлежность к конкретной договорённости или личный ритуал. Значение аксессуара устанавливают участники. Единого обязательного толкования его ношения в БДСМ нет, а посторонний человек не получает полномочий из-за увиденного символа.",
+        "sources": []
+      },
+      "body_sha256": "0bde116f05b2e0b2f6ef1892e7fb473048ce3c1dd80fa9d314a16b98384133f0"
+    },
+    {
+      "code": "leash",
+      "sources": [
+        {
+          "name": "NCSF — What Professionals Need to Know about Kink (2024)",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2024/04/What-Professionals-Need-to-Know-about-Kink-2024.pdf"
+        }
+      ],
+      "scope": "Источник рассматривает реквизит в контексте ролей. Поводок как предмет и символическая практика с ним различаются; карточка не описывает способы тяги или нагрузки.",
+      "related_practice_codes": [
+        "collar",
+        "pet-play"
+      ],
+      "related_pages": [
+        "53649845-e449-5f83-9ab3-295c7b6e7bf3"
+      ],
+      "baseline": {
+        "code": "leash",
+        "title": "Практики с поводком",
+        "summary": "Практики с поводком используют соединительный аксессуар как часть ролевого, протокольного или визуального взаимодействия. Для участников может быть значимо символическое сопровождение, образ или согласованная последовательность действий. Предмет сам по себе не устанавливает права физически управлять человеком.",
+        "sources": []
+      },
+      "body_sha256": "bbc579dd9963881f05f4eeefb46ba0b83e39024b4fe0510188882bdba01b0df3"
+    },
+    {
+      "code": "pet-play",
+      "sources": [
+        {
+          "name": "PDX PAH — Welcome to Pet Play",
+          "url": "https://www.pdxpah.com/"
+        }
+      ],
+      "scope": "Источник — самоописание сообщества людей, выбирающих образы питомцев и хендлеров. Его локальные события и принятые слова не являются общими правилами всех участников pet play.",
+      "related_practice_codes": [
+        "pony-play",
+        "roleplay"
+      ],
+      "related_pages": [
+        "21efff1b-45cf-5c52-948e-873f8182bd64"
+      ],
+      "baseline": {
+        "code": "pet-play",
+        "title": "Пет-плей",
+        "summary": "Пет-плей — ролевая практика, в которой взрослый участник выбирает образ питомца или связанный с ним способ взаимодействия. Для одних важны игра и движение, для других — забота, отдых от обычных задач или символические ритуалы. Образ не сообщает заранее одинаковых правил.",
+        "sources": []
+      },
+      "body_sha256": "0feedcf7d3d2012f04befd30444abe9aec1f21833169c416d838e43caaec2805"
+    },
+    {
+      "code": "pony-play",
+      "sources": [
+        {
+          "name": "The Manège — A Virtual Pony Play Academy",
+          "url": "https://themanege.org/"
+        }
+      ],
+      "scope": "Источник описывает образовательную инициативу pony play. Это пример существующей культуры образа, а не разрешение на конкретное оборудование, нагрузку или программу тренировок.",
+      "related_practice_codes": [
+        "pet-play",
+        "roleplay"
+      ],
+      "related_pages": [
+        "19d2fd94-d464-54bf-909c-e20b1586ada0"
+      ],
+      "baseline": {
+        "code": "pony-play",
+        "title": "Пони-плей",
+        "summary": "Пони-плей — ролевая практика с образом лошади или пони, выбранным взрослыми участниками. В неё могут входить костюм, условные сигналы, движение или эстетическая композиция. Формат не обязан включать всё перечисленное и не имеет единого обязательного протокола.",
+        "sources": []
+      },
+      "body_sha256": "5cbcafbf86659f5d660506bec2963d006fa809e1bd32f6ce0b13305c7c69593d"
+    },
+    {
+      "code": "aftercare",
+      "sources": [
+        {
+          "name": "NCSF — BDSM Glossary and Resources",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2022/07/BDSM-Glossary-and-Resources.pdf"
+        }
+      ],
+      "scope": "Словарь описывает aftercare как заботу после сцены. Наша карточка раскрывает варианты обсуждения потребностей, а не назначает всем одинаковые действия или длительность восстановления.",
+      "related_practice_codes": [
+        "praise",
+        "service"
+      ],
+      "related_pages": [
+        "61dd7ae7-e1ff-5f28-ac7f-1195f58bf67b"
+      ],
+      "baseline": {
+        "code": "aftercare",
+        "title": "Забота после практики",
+        "summary": "Aftercare — время и действия, помогающие завершить интенсивное взаимодействие и вернуться к обычному состоянию. Потребности различаются: кому-то нужны разговор и близость, кому-то тишина, привычная обстановка или возможность побыть одному. Универсальный набор жестов не подходит всем.",
+        "sources": []
+      },
+      "body_sha256": "d950497a267d04bf54d2ff27d785234bb8254dd2400f5dbfa69f089edd880ed1"
+    },
+    {
+      "code": "bondage",
+      "sources": [
+        {
+          "name": "NCSF — BDSM Glossary and Resources",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2022/07/BDSM-Glossary-and-Resources.pdf"
+        }
+      ],
+      "scope": "Словарь использует bondage как общее понятие ограничения подвижности. Техника фиксации и параметры конкретных предметов из этого определения не следуют.",
+      "related_practice_codes": [
+        "rope-bondage",
+        "cuffs"
+      ],
+      "related_pages": [
+        "a678d391-507f-57f7-ab19-660fd269154e"
+      ],
+      "baseline": {
+        "code": "bondage",
+        "title": "Бондаж",
+        "summary": "Бондаж — согласованное ограничение подвижности с помощью подходящих предметов или конструкций. Для участников могут быть важны ощущение опоры, временная передача инициативы, внешний образ или внимание к телу. Эти цели не обязательно сочетаются, поэтому общее название полезно уточнять.",
+        "sources": []
+      },
+      "body_sha256": "1844ffe06d2c9eab263e287d7cefe571d76f079c24437944a09b78c226655e76"
+    },
+    {
+      "code": "rope-bondage",
+      "sources": [
+        {
+          "name": "Shibari Study — Glossary",
+          "url": "https://www.shibaristudy.com/glossary"
+        }
+      ],
+      "scope": "Словарь помогает различать терминологию верёвочных форм. Карточка не воспроизводит уроки, схемы узлов и параметры нагрузок.",
+      "related_practice_codes": [
+        "shibari",
+        "bondage"
+      ],
+      "related_pages": [
+        "f325525d-95e6-5c09-bc8d-521c89ff1534"
+      ],
+      "baseline": {
+        "code": "rope-bondage",
+        "title": "Верёвочный бондаж",
+        "summary": "Верёвочный бондаж — направление ограничения подвижности или создания декоративных форм с помощью верёвки. Оно может существовать как личная практика, учебное занятие, фотографическая композиция или перформанс. Сходная внешняя форма не делает эти контексты одинаковыми.",
+        "sources": []
+      },
+      "body_sha256": "eb1d2b3dae090dd2b36af7b65e77ba99e22576133d5f44c1f6ba5f895f626ca4"
+    },
+    {
+      "code": "shibari",
+      "sources": [
+        {
+          "name": "Shibari Study — Glossary",
+          "url": "https://www.shibaristudy.com/glossary"
+        }
+      ],
+      "scope": "Словарь относится к языку shibari и rope bondage. Он не доказывает единственное историческое происхождение каждой современной формы и не заменяет практическое обучение.",
+      "related_practice_codes": [
+        "rope-bondage",
+        "bondage"
+      ],
+      "related_pages": [
+        "f325525d-95e6-5c09-bc8d-521c89ff1534"
+      ],
+      "baseline": {
+        "code": "shibari",
+        "title": "Сибари",
+        "summary": "Сибари — одно из названий японских и вдохновлённых ими направлений верёвочного бондажа. В разных школах акценты различаются: рисунок, композиция, взаимодействие участников или переживание ограничения. Термин пересекается с кинбаку, но единого обязательного разграничения в современном употреблении нет.",
+        "sources": []
+      },
+      "body_sha256": "e8c17ba99f9cb35b7e7245d1968f5f590e61dc429651c49a6e847c051d84e7a0"
+    },
+    {
+      "code": "cuffs",
+      "sources": [
+        {
+          "name": "NCSF — BDSM Glossary and Resources",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2022/07/BDSM-Glossary-and-Resources.pdf"
+        }
+      ],
+      "scope": "В словаре манжеты приведены как пример средств ограничения. Общая категория не определяет посадку, способ крепления и пригодность выбранной модели.",
+      "related_practice_codes": [
+        "bondage",
+        "rope-bondage"
+      ],
+      "related_pages": [
+        "6c23aac7-225d-5b98-aa36-9fe3254eb1e5"
+      ],
+      "baseline": {
+        "code": "cuffs",
+        "title": "Бондаж с манжетами",
+        "summary": "Бондаж с манжетами — ограничение подвижности с использованием готовых охватывающих изделий и совместимых соединений. Для одного участника важен символический момент застёгивания, для другого — определённое положение или ощущение удержания. Эти ожидания стоит различать до выбора комплекта.",
+        "sources": []
+      },
+      "body_sha256": "69832a1c732050dbf7d59b05eadb8e3b7e1f37e2423fa99e4759508a17ac77a6"
+    },
+    {
+      "code": "vaginal-sex",
+      "sources": [
+        {
+          "name": "Scarleteen — What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Источник различает виды контакта. Карточка использует анатомическое значение, а не вывод о гендере или роли участников.",
+      "related_practice_codes": [
+        "anal-sex",
+        "nonpenetrative-sex"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "vaginal-sex",
+        "title": "Вагинальный секс",
+        "summary": "Вагинальный секс — термин для сексуального контакта с вовлечением влагалища. В разговоре он может использоваться в узком или более широком значении, поэтому конкретные ожидания лучше уточнять. Название не определяет гендер, ориентацию или D/s-роли участников.",
+        "sources": []
+      },
+      "body_sha256": "ca0efdcbae4f5b67ec2fd41f882601e49b4d136207789a8278caa2ff9d41ea12"
+    },
+    {
+      "code": "anal-sex",
+      "sources": [
+        {
+          "name": "Scarleteen — What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Источник различает широкий анальный контекст и проникающий контакт. Название само по себе не задаёт действия, интенсивность или распределение ролей.",
+      "related_practice_codes": [
+        "anal-fingering",
+        "anilingus"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "anal-sex",
+        "title": "Анальный секс",
+        "summary": "Анальный секс — название сексуального контакта с вовлечением анальной области; в более узком употреблении имеется в виду проникающий контакт. Смысл термина лучше уточнять обычными словами, поскольку разные люди используют его неодинаково. Он не определяет ориентацию, гендер или распределение ведущих ролей.",
+        "sources": []
+      },
+      "body_sha256": "dc903d80bd391ca89555c5a3ba9220a85c959228b6e55fca68e8697d9af0a324"
+    },
+    {
+      "code": "oral-sex",
+      "sources": [
+        {
+          "name": "Scarleteen — What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Источник отдельно называет формы орального контакта. Здесь приведено нейтральное определение, без техник и без предположения о гендере участника.",
+      "related_practice_codes": [
+        "cunnilingus",
+        "fellatio",
+        "anilingus"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "oral-sex",
+        "title": "Оральный секс",
+        "summary": "Оральный секс — общее обозначение сексуальных контактов с участием рта. Оно объединяет несколько разных практик и не сообщает конкретного действия без уточнения. В справочнике отдельно представлены куннилингус, фелляция и другие термины, позволяющие точнее описывать предпочтения.",
+        "sources": [
+          {
+            "name": "Planned Parenthood — Sex and Pleasure: общие определения",
+            "url": "https://www.plannedparenthood.org/learn/sex-pleasure-and-sexual-dysfunction/sex-and-pleasure"
+          }
+        ]
+      },
+      "body_sha256": "211d7f6f99a3c5ca440344b408baefbeb4a5fb02e36857046b52251461048261"
+    },
+    {
+      "code": "cunnilingus",
+      "sources": [
+        {
+          "name": "Scarleteen — What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Источник различает оральные формы и называет вульву как анатомический ориентир. Это значение термина, а не инструкция или вывод об идентичности человека.",
+      "related_practice_codes": [
+        "oral-sex",
+        "fellatio"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "cunnilingus",
+        "title": "Куннилингус",
+        "summary": "Куннилингус — вид орального сексуального контакта с вульвой. Термин помогает отличить конкретную практику от общего названия оральной близости. Он относится к анатомическому контексту и не определяет гендерную идентичность, ориентацию или D/s-роль человека.",
+        "sources": []
+      },
+      "body_sha256": "48ffbb5ad14cf10210869d880996775660caead44b0925af4c7346214e1365b5"
+    },
+    {
+      "code": "fellatio",
+      "sources": [
+        {
+          "name": "Scarleteen — What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Источник различает виды орального контакта. Анатомическое название не сообщает ориентацию или роль, а технические способы в Wiki не воспроизводятся.",
+      "related_practice_codes": [
+        "oral-sex",
+        "cunnilingus"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "fellatio",
+        "title": "Фелляция",
+        "summary": "Фелляция — вид орального сексуального контакта с пенисом. Это конкретный термин внутри более широкой категории орального секса. Он не определяет ориентацию или гендер участников и сам по себе не сообщает, кто занимает ведущую позицию во взаимодействии.",
+        "sources": []
+      },
+      "body_sha256": "59eb1834bca1f093410b9a44d4f2efda06a31108fbc1b2818ece7f24e9061233"
+    },
+    {
+      "code": "anilingus",
+      "sources": [
+        {
+          "name": "Scarleteen — What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Источник выделяет оральный контакт с анальной областью отдельно. Карточка не смешивает его с игрушками или проникающим контактом.",
+      "related_practice_codes": [
+        "oral-sex",
+        "anal-sex"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "anilingus",
+        "title": "Анилингус",
+        "summary": "Анилингус — вид орального сексуального контакта с анальной областью. Он отличается от фелляции, куннилингуса и анального проникающего контакта, хотя общие каталожные названия могут создавать путаницу. Уточнение термина помогает обсуждать именно выбранную практику.",
+        "sources": []
+      },
+      "body_sha256": "753fe995836031b5c3fcb599ff5adcbe16a11331a0756b851fb68a9120bdcb68"
+    },
+    {
+      "code": "mutual-oral",
+      "sources": [
+        {
+          "name": "Scarleteen — What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Источник включает взаимные форматы близости. Взаимность не задаёт обязательную одновременность или одинаковые предпочтения; это отдельное редакционное уточнение.",
+      "related_practice_codes": [
+        "oral-sex",
+        "mutual-masturbation"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "mutual-oral",
+        "title": "Взаимный оральный секс",
+        "summary": "Взаимный оральный секс — формат, в котором взрослые участники выбирают оральную близость по отношению друг к другу. Взаимность может пониматься как общий характер эпизода, а не обязательная одновременность. Конкретное содержание требуется уточнять, а не выводить из одного названия.",
+        "sources": []
+      },
+      "body_sha256": "a9dde116d5f70b2e0dcdd5384dbb5a65a858aa3dd76cbd65669b20e69f0f1cda"
+    },
+    {
+      "code": "nonpenetrative-sex",
+      "sources": [
+        {
+          "name": "Options for Sexual Health — What is Sex?",
+          "url": "https://www.optionsforsexualhealth.org/facts/sex/"
+        }
+      ],
+      "scope": "Источник объясняет, почему сексуальная близость не сводится к проникновению. Общая категория не перечисляет за человека все желаемые действия.",
+      "related_practice_codes": [
+        "petting",
+        "frottage"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "nonpenetrative-sex",
+        "title": "Непроникающий секс",
+        "summary": "Непроникающий секс — общее название форм сексуальной близости без выбранного проникающего контакта. Категория может объединять разные действия, поэтому она не задаёт конкретный сценарий. Такой формат не является неполной или обязательной подготовительной версией другого вида близости.",
+        "sources": []
+      },
+      "body_sha256": "fd8af4be39ea0928f55ff9415ea814797133e919a65b419309b327e65c8e8fef"
+    },
+    {
+      "code": "intercrural-sex",
+      "sources": [
+        {
+          "name": "Merriam-Webster Medical — Intercrural",
+          "url": "https://www.merriam-webster.com/medical/intercrural"
+        },
+        {
+          "name": "Options for Sexual Health — What is Sex?",
+          "url": "https://www.optionsforsexualhealth.org/facts/sex/"
+        }
+      ],
+      "scope": "Словарь подтверждает межбедренное значение термина; материал об интимности объясняет более широкую категорию непроникающих форм. Техника и медицинские гарантии из словарной статьи не выводятся.",
+      "related_practice_codes": [
+        "nonpenetrative-sex",
+        "intermammary-sex"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "intercrural-sex",
+        "title": "Межбедренный секс",
+        "summary": "Межбедренный секс — термин для непроникающего сексуального контакта с вовлечением области между бёдрами. Он описывает отдельную категорию, а не универсальную замену другому виду близости. Значение слова полезно уточнить, поскольку бытовые описания могут различаться.",
+        "sources": []
+      },
+      "body_sha256": "7534bafbd61fd1af0b518cddaea9fea1360e0032004de442d0a82a21e4540cef"
+    },
+    {
+      "code": "intermammary-sex",
+      "sources": [
+        {
+          "name": "Merriam-Webster Medical — Intermammary",
+          "url": "https://www.merriam-webster.com/medical/intermammary"
+        },
+        {
+          "name": "Options for Sexual Health — What is Sex?",
+          "url": "https://www.optionsforsexualhealth.org/facts/sex/"
+        }
+      ],
+      "scope": "Словарь подтверждает расположение между грудями, а не определённый стандарт тела. Карточка каталога связывает это слово с отдельным предпочтением без описания техники.",
+      "related_practice_codes": [
+        "nonpenetrative-sex",
+        "nipple-stimulation"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "intermammary-sex",
+        "title": "Межгрудный секс",
+        "summary": "Межгрудный секс — название непроникающего сексуального контакта с вовлечением области груди. Термин описывает вид взаимодействия, а не критерий внешности или форму тела, которой человек должен соответствовать. В разных каталогах могут встречаться другие названия той же категории.",
+        "sources": []
+      },
+      "body_sha256": "901f1c29a06a2eb3ac26f450f423aec35dc64e37cf80f70b2152df3e336a7ca0"
+    },
+    {
+      "code": "tribadism",
+      "sources": [
+        {
+          "name": "Scarleteen — What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Источник называет tribbing и сопоставляет его с фроттажем. Термин описывает вид контакта, а не неизменный набор поз или гендерных ролей.",
+      "related_practice_codes": [
+        "frottage",
+        "nonpenetrative-sex"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "tribadism",
+        "title": "Трибадизм",
+        "summary": "Трибадизм — название некоторых форм непроникающего сексуального контакта с соприкосновением наружных гениталий. В бытовой речи термин может использоваться шире или смешиваться с названиями поз. Для точного обсуждения важнее понятное определение, чем знание одного жаргонного слова.",
+        "sources": []
+      },
+      "body_sha256": "242933649685389ab6684de836b28f7a11b5b3f1e17ec7376d7837de0f08819c"
+    },
+    {
+      "code": "frottage",
+      "sources": [
+        {
+          "name": "Scarleteen — What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Источник упоминает фроттаж среди разных сексуальных форм. Разграничение выбранного взаимодействия и нежелательного контакта — обязательная смысловая граница этой карточки.",
+      "related_practice_codes": [
+        "tribadism",
+        "petting"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "frottage",
+        "title": "Фроттаж",
+        "summary": "Фроттаж в согласованном сексуальном контексте — контакт с трением тел или их частей. Термин может охватывать разные непроникающие формы и не задаёт конкретного положения, одежды или результата. Его необходимо отличать от нежелательного контакта с человеком, который не выбирал участие.",
+        "sources": []
+      },
+      "body_sha256": "dae3c4a432c75b0d6bade45a11bb2118089357402f0d4b629f4050142b10dabc"
+    },
+    {
+      "code": "manual-stimulation",
+      "sources": [
+        {
+          "name": "Scarleteen — What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Источник различает мануальные формы и анатомические области. Общая категория не подменяет отдельное предпочтение конкретного человека.",
+      "related_practice_codes": [
+        "fingering",
+        "anal-fingering"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "manual-stimulation",
+        "title": "Мануальная стимуляция",
+        "summary": "Мануальная стимуляция — общее название сексуального взаимодействия с использованием рук. Оно объединяет разные формы контакта и не определяет конкретную область тела. Для содержательного разговора полезно уточнять предпочтение более точными словами.",
+        "sources": []
+      },
+      "body_sha256": "c9539f3a16a8c41fa71a3011f88985a9b08c7b47e8dc64b4d86995766c881da0"
+    },
+    {
+      "code": "fingering",
+      "sources": [
+        {
+          "name": "Scarleteen — What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Источник относит fingering к мануальным формам. В Wiki оставлено словарное значение; детали способов контакта не переносятся из внешних материалов.",
+      "related_practice_codes": [
+        "manual-stimulation",
+        "anal-fingering"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "fingering",
+        "title": "Фингеринг",
+        "summary": "Фингеринг — заимствованный термин для некоторых форм сексуального контакта пальцами; в узком употреблении обычно подразумевают вагинальный контакт. Поскольку слово используется неодинаково, конкретный смысл лучше уточнять. Оно не определяет ориентацию, гендер или ведущую роль.",
+        "sources": []
+      },
+      "body_sha256": "0ec55feb37ebf1483a08fb320cc938bca904c6285ab3c1a3c61ee991a9a25ed7"
+    },
+    {
+      "code": "anal-fingering",
+      "sources": [
+        {
+          "name": "Scarleteen — What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Источник различает мануальный и анальный контекст. Это помогает не смешивать область тела, наличие игрушки и способ взаимодействия в одной общей отметке.",
+      "related_practice_codes": [
+        "manual-stimulation",
+        "anal-sex"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "anal-fingering",
+        "title": "Анальная стимуляция пальцами",
+        "summary": "Анальная стимуляция пальцами — отдельная форма мануального сексуального контакта с вовлечением анальной области. Она отличается от вагинального контакта и использования аксессуаров, хотя в разговоре эти темы иногда объединяют. Конкретные предпочтения полезно обозначать раздельно.",
+        "sources": []
+      },
+      "body_sha256": "e2aec1e4d3adab7ef1e7c8232554463baa65fd09eac5cc57c923cd3fcaafed9a"
+    },
+    {
+      "code": "clitoral-stimulation",
+      "sources": [
+        {
+          "name": "Scarleteen — What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Источник включает разные формы сексуального внимания к телу. Карточка называет область, но не назначает единственный способ или обязательный результат.",
+      "related_practice_codes": [
+        "manual-stimulation",
+        "cunnilingus"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "clitoral-stimulation",
+        "title": "Клиторальная стимуляция",
+        "summary": "Клиторальная стимуляция — общее название сексуального воздействия с вовлечением клитора. Термин описывает анатомический контекст, но не единственный способ взаимодействия. Он может встречаться рядом с мануальными, оральными и аппаратными формами, которые остаются отдельными предпочтениями.",
+        "sources": []
+      },
+      "body_sha256": "84350e897d84cba120e3f4ecf3e3fe002ce3b52838bfb234fbd9ecb1a68cd7c7"
+    },
+    {
+      "code": "prostate-stimulation",
+      "sources": [
+        {
+          "name": "Cleveland Clinic — Prostate Massage",
+          "url": "https://health.clevelandclinic.org/prostate-massage"
+        }
+      ],
+      "scope": "Cleveland Clinic отделяет сексуальный контекст от недоказанных лечебных обещаний. Wiki не представляет такую практику лечением и не воспроизводит способы воздействия.",
+      "related_practice_codes": [
+        "anal-fingering",
+        "sex-toys"
+      ],
+      "related_pages": [
+        "8028e002-295a-571f-83c7-bd8a675ac029"
+      ],
+      "baseline": {
+        "code": "prostate-stimulation",
+        "title": "Стимуляция простаты",
+        "summary": "Стимуляция простаты в интимном контексте — термин, связанный с воздействием на эту анатомическую область. Он может встречаться в описаниях аксессуаров и личных предпочтений, но не означает медицинской процедуры. Название не определяет ориентацию, гендер или роль человека.",
+        "sources": []
+      },
+      "body_sha256": "9b861f51cbb0403c1e3499636c582d480f34cd770164f896830115f836ce1c62"
+    },
+    {
+      "code": "nipple-stimulation",
+      "sources": [
+        {
+          "name": "Scarleteen — What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Источник прямо выделяет внимание к груди и соскам среди возможных форм. Из интереса к этой области не следует выбор зажимов или других предметов.",
+      "related_practice_codes": [
+        "clamps",
+        "petting"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "nipple-stimulation",
+        "title": "Стимуляция сосков",
+        "summary": "Стимуляция сосков — общее название внимания к соответствующей области в согласованном интимном взаимодействии. Термин объединяет разные по характеру контакты и не определяет использование конкретных предметов. Интерес к одному варианту не описывает готовности ко всем остальным.",
+        "sources": []
+      },
+      "body_sha256": "0165f24ed70012e35f23776deeaeae9769d974af5ceb12ccb3bde01e97c0e12f"
+    },
+    {
+      "code": "masturbation",
+      "sources": [
+        {
+          "name": "Scarleteen — What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Источник определяет самостоятельную форму и отличает её от взаимодействия с партнёром. Нормативная частота, обязательный результат и техника в карточке не задаются.",
+      "related_practice_codes": [
+        "mutual-masturbation",
+        "sex-toys"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "masturbation",
+        "title": "Мастурбация",
+        "summary": "Мастурбация — самостоятельное сексуальное взаимодействие с собственным телом, которое может происходить наедине или в заранее выбранном совместном контексте. Использование аксессуаров необязательно. Сам факт практики не сообщает состояние отношений, ориентацию или предпочтительную D/s-роль человека.",
+        "sources": []
+      },
+      "body_sha256": "f005dfd30e29316d7a15f3d2e6c6bcb0a6cd5f9adb82db542c0bb97ae2bd5370"
+    },
+    {
+      "code": "mutual-masturbation",
+      "sources": [
+        {
+          "name": "Scarleteen — What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Источник отличает совместный контекст от одиночного. Неоднозначность слова «взаимная» поясняется редакционно, чтобы участники могли назвать конкретный смысл.",
+      "related_practice_codes": [
+        "masturbation",
+        "manual-stimulation"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "mutual-masturbation",
+        "title": "Взаимная мастурбация",
+        "summary": "Взаимная мастурбация — общее название совместного формата, в котором участники выбирают самостоятельное сексуальное взаимодействие в присутствии друг друга либо согласованные мануальные формы. В бытовой речи термин неоднозначен, поэтому конкретный смысл важно уточнить.",
+        "sources": []
+      },
+      "body_sha256": "726a2fe78320680dccef60ed601172e285229537f6a1cd948ab9a9615c648d33"
+    },
+    {
+      "code": "sexting",
+      "sources": [
+        {
+          "name": "Options for Sexual Health — What is Sex?",
+          "url": "https://www.optionsforsexualhealth.org/facts/sex/"
+        },
+        {
+          "name": "EFF — Why Communication Metadata Matters",
+          "url": "https://ssd.eff.org/module/why-metadata-matters"
+        }
+      ],
+      "scope": "Первый источник помещает секстинг среди дистанционных форм, второй различает содержание и метаданные общения. Wiki не обещает невозможность сохранения или пересылки сообщений.",
+      "related_practice_codes": [
+        "phone-sex",
+        "video-sex"
+      ],
+      "related_pages": [
+        "c8046c8d-73fc-57ef-9e06-a8f1a9abd179"
+      ],
+      "baseline": {
+        "code": "sexting",
+        "title": "Секстинг",
+        "summary": "Секстинг — обмен интимными сообщениями между взрослыми участниками, выбравшими такой формат общения. Он может быть текстовым или включать другие материалы. Личная переписка не означает автоматического разрешения создавать изображения, сохранять их или пересылать третьим лицам.",
+        "sources": [
+          {
+            "name": "Planned Parenthood — What is sexting?",
+            "url": "https://www.plannedparenthood.org/blog/what-is-sexting"
+          }
+        ]
+      },
+      "body_sha256": "2a10a2070fa412a223471002cd2320c4d187a4d91fa3f73dc6e055df411cce0f"
+    },
+    {
+      "code": "phone-sex",
+      "sources": [
+        {
+          "name": "Options for Sexual Health — What is Sex?",
+          "url": "https://www.optionsforsexualhealth.org/facts/sex/"
+        },
+        {
+          "name": "EFF — Why Communication Metadata Matters",
+          "url": "https://ssd.eff.org/module/why-metadata-matters"
+        }
+      ],
+      "scope": "Источники различают дистанционную близость и сведения о коммуникации. Согласованный голосовой разговор не означает выбора записи или видеоканала.",
+      "related_practice_codes": [
+        "sexting",
+        "video-sex"
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ],
+      "baseline": {
+        "code": "phone-sex",
+        "title": "Секс по телефону",
+        "summary": "Секс по телефону — интимное голосовое взаимодействие взрослых участников, выбравших такой способ общения. Оно может быть самостоятельным эпизодом или частью отношений на расстоянии. Само наличие звонка не сообщает готовности к интимной теме, поэтому формат должен быть понятен обеим сторонам.",
+        "sources": []
+      },
+      "body_sha256": "cb6424fead1123ea96fba4ca7885878b9367c16413f28eda41ce415eeb025984"
+    },
+    {
+      "code": "video-sex",
+      "sources": [
+        {
+          "name": "Options for Sexual Health — What is Sex?",
+          "url": "https://www.optionsforsexualhealth.org/facts/sex/"
+        },
+        {
+          "name": "EFF — Why Communication Metadata Matters",
+          "url": "https://ssd.eff.org/module/why-metadata-matters"
+        }
+      ],
+      "scope": "Материалы помогают различать дистанционный формат, содержание и метаданные. Отсутствие сохранённого видео в одном приложении не является гарантией отсутствия других копий.",
+      "related_practice_codes": [
+        "phone-sex",
+        "intimate-video"
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ],
+      "baseline": {
+        "code": "video-sex",
+        "title": "Секс по видеосвязи",
+        "summary": "Секс по видеосвязи — интимное дистанционное взаимодействие взрослых участников с передачей изображения в реальном времени. Видимый кадр и содержание общения определяются отдельно. Готовность к голосовому разговору не означает выбора видеоканала или определённого объёма визуальной информации.",
+        "sources": []
+      },
+      "body_sha256": "50e196af13fd5b4f4b75dab858634de0134cf2ec0abf292cd44567dff9d40036"
+    },
+    {
+      "code": "remote-toys",
+      "sources": [
+        {
+          "name": "Lovense — Remote Tips",
+          "url": "https://www.lovense.com/guide/remote"
+        }
+      ],
+      "scope": "Официальная документация показывает каналы управления совместимыми устройствами Lovense. Это пример одной экосистемы, а не обещание одинаковой связи и прав управления для всех игрушек.",
+      "related_practice_codes": [
+        "sex-toys",
+        "video-sex"
+      ],
+      "related_pages": [
+        "33025885-afc2-513b-876f-81dc6254591f"
+      ],
+      "baseline": {
+        "code": "remote-toys",
+        "title": "Дистанционное управление секс-игрушкой",
+        "summary": "Дистанционное управление секс-игрушкой — формат, в котором управление совместимым устройством передаётся другому взрослому участнику по выбранному каналу связи. Пульт, локальное приложение и интернет-доступ имеют разные свойства. Сам факт технического соединения не определяет содержание договорённости.",
+        "sources": []
+      },
+      "body_sha256": "1c315ddf7ad95597214fd6b5aa4b3e175f17c154cd0e9bbf796475e21019d1f8"
+    },
+    {
+      "code": "sex-toys",
+      "sources": [
+        {
+          "name": "SH:24 — How to clean your sex toys",
+          "url": "https://sh24.org.uk/help-centre/how-to-clean-your-sex-toys"
+        }
+      ],
+      "scope": "Источник объясняет осмотр и уход с учётом конкретной модели. Он не превращает любую игрушку в медицинское изделие и не задаёт универсальный способ интимного использования.",
+      "related_practice_codes": [
+        "vibrator",
+        "dildo"
+      ],
+      "related_pages": [
+        "b9898d31-a309-51a1-ad96-87cb2b26f8fd"
+      ],
+      "baseline": {
+        "code": "sex-toys",
+        "title": "Секс с игрушками",
+        "summary": "Секс с игрушками — широкое обозначение интимного взаимодействия с предназначенными для этого аксессуарами. Предметы могут отличаться назначением, материалом, формой и наличием электроники. Интерес к категории не означает готовности использовать любой девайс или любой его режим.",
+        "sources": []
+      },
+      "body_sha256": "4125fee5df4aa81fd107224ed9ee5a875578cd4559584eddf3a10e89c0a5e498"
+    },
+    {
+      "code": "vibrator",
+      "sources": [
+        {
+          "name": "SH:24 — How to clean your sex toys",
+          "url": "https://sh24.org.uk/help-centre/how-to-clean-your-sex-toys"
+        }
+      ],
+      "scope": "Источник поддерживает различение электроники, материалов и ухода. Название класса не задаёт настройки, способы применения или одинаковый результат для каждого устройства.",
+      "related_practice_codes": [
+        "sex-toys",
+        "double-stimulation"
+      ],
+      "related_pages": [
+        "b9898d31-a309-51a1-ad96-87cb2b26f8fd"
+      ],
+      "baseline": {
+        "code": "vibrator",
+        "title": "Использование вибратора",
+        "summary": "Использование вибратора — интимное взаимодействие с устройством, создающим механические колебания. Это самостоятельная категория, внутри которой различаются модели и способы участия. Наличие мотора не делает изделие универсально подходящим и не определяет обязательный результат.",
+        "sources": []
+      },
+      "body_sha256": "9041a0e1efd7cf4a1d89b225e6996fd3d214a1e3d640bfa55558c06f08fc69d1"
+    },
+    {
+      "code": "dildo",
+      "sources": [
+        {
+          "name": "SH:24 — How to clean your sex toys",
+          "url": "https://sh24.org.uk/help-centre/how-to-clean-your-sex-toys"
+        }
+      ],
+      "scope": "Источник относится к уходу за интимными аксессуарами по инструкции. Классификация предмета не определяет медицинскую пригодность, размеры или способ использования конкретной модели.",
+      "related_practice_codes": [
+        "sex-toys",
+        "strap-on"
+      ],
+      "related_pages": [
+        "b9898d31-a309-51a1-ad96-87cb2b26f8fd"
+      ],
+      "baseline": {
+        "code": "dildo",
+        "title": "Использование фаллоимитатора",
+        "summary": "Использование фаллоимитатора — интимный формат с аксессуаром предусмотренного назначения, который может иметь анатомическую или условную форму. Категория не определяет материал, размер и гибкость предмета. Отсутствие электроники не означает одинаковой конструкции всех изделий.",
+        "sources": []
+      },
+      "body_sha256": "7b3fb37c98d55fc87e4a7c2066f02170d805df78e9f052d1e6e13952839239c7"
+    },
+    {
+      "code": "anal-plug",
+      "sources": [
+        {
+          "name": "SH:24 — How to clean your sex toys",
+          "url": "https://sh24.org.uk/help-centre/how-to-clean-your-sex-toys"
+        }
+      ],
+      "scope": "Источник рассматривает осмотр и уход за специализированными аксессуарами. Карточка различает конструкцию пробки и других предметов, не предлагая схемы применения.",
+      "related_practice_codes": [
+        "anal-beads",
+        "rimming-toy"
+      ],
+      "related_pages": [
+        "b9898d31-a309-51a1-ad96-87cb2b26f8fd"
+      ],
+      "baseline": {
+        "code": "anal-plug",
+        "title": "Использование анальной пробки",
+        "summary": "Использование анальной пробки — отдельный формат интимного взаимодействия со специализированным аксессуаром соответствующего назначения. Он не является синонимом всех анальных практик. Интерес к одному предмету не определяет готовность к другим видам контакта или к длительному применению.",
+        "sources": []
+      },
+      "body_sha256": "1d98c2cbdbb74188f6ef508948b3d82400986f106e1cae03b553e73f05d0920d"
+    },
+    {
+      "code": "anal-beads",
+      "sources": [
+        {
+          "name": "SH:24 — How to clean your sex toys",
+          "url": "https://sh24.org.uk/help-centre/how-to-clean-your-sex-toys"
+        }
+      ],
+      "scope": "Источник поддерживает отдельный учёт материала, конструкции и очистки. Похожесть области использования не делает бусы и пробку взаимозаменяемыми.",
+      "related_practice_codes": [
+        "anal-plug",
+        "rimming-toy"
+      ],
+      "related_pages": [
+        "b9898d31-a309-51a1-ad96-87cb2b26f8fd"
+      ],
+      "baseline": {
+        "code": "anal-beads",
+        "title": "Использование анальных бус",
+        "summary": "Использование анальных бус — интимная практика со специализированным аксессуаром из последовательно соединённых элементов. Сегментированная форма отличает его от пробки, но сама по себе не описывает желаемого сценария и не определяет подходящие параметры конкретному человеку.",
+        "sources": []
+      },
+      "body_sha256": "dbe30b12e3db9eb9668bbe170f9ba2ad28132e5441ca141b2fecf21a6e2b84f3"
+    },
+    {
+      "code": "strap-on",
+      "sources": [
+        {
+          "name": "Scarleteen — What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        },
+        {
+          "name": "SH:24 — How to clean your sex toys",
+          "url": "https://sh24.org.uk/help-centre/how-to-clean-your-sex-toys"
+        }
+      ],
+      "scope": "Материалы различают игрушки как часть взаимодействия и уход за ними. Название системы не определяет ориентацию участников и не заменяет характеристики конкретного крепления.",
+      "related_practice_codes": [
+        "dildo",
+        "pegging"
+      ],
+      "related_pages": [
+        "b9898d31-a309-51a1-ad96-87cb2b26f8fd"
+      ],
+      "baseline": {
+        "code": "strap-on",
+        "title": "Страпон-секс",
+        "summary": "Страпон-секс — интимное взаимодействие с системой, удерживающей совместимый аксессуар с помощью портупеи или другой предусмотренной конструкции. Термин описывает использование системы, но не единственный вид контакта. Конкретные действия требуют отдельного уточнения.",
+        "sources": []
+      },
+      "body_sha256": "b9c0aecabb1e1257fc6050726a39f39fbbbf2dd423fe64718e959980f0fd8cb7"
+    },
+    {
+      "code": "pegging",
+      "sources": [
+        {
+          "name": "Options for Sexual Health — What is Sex?",
+          "url": "https://www.optionsforsexualhealth.org/facts/sex/"
+        },
+        {
+          "name": "SH:24 — How to clean your sex toys",
+          "url": "https://sh24.org.uk/help-centre/how-to-clean-your-sex-toys"
+        }
+      ],
+      "scope": "В каталоге этим словом обозначен выбранный формат со страпоном; источники подтверждают различие индивидуальных значений и необходимость учитывать конкретное изделие. Они не устанавливают обязательные гендерные роли этого пункта.",
+      "related_practice_codes": [
+        "strap-on",
+        "anal-sex"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "pegging",
+        "title": "Пеггинг",
+        "summary": "Пеггинг — термин, который обычно используют для анального сексуального контакта со страпоном; в распространённом узком значении описывается взаимодействие женщины с мужчиной. Участники и сообщества могут применять слово шире, поэтому выбранный смысл полезно уточнить.",
+        "sources": []
+      },
+      "body_sha256": "438496cf03a3d0d3c146d6d76f7ca8cfbc44612a296a6388c1661f100a5230b5"
+    },
+    {
+      "code": "double-stimulation",
+      "sources": [
+        {
+          "name": "SH:24 — How to clean your sex toys",
+          "url": "https://sh24.org.uk/help-centre/how-to-clean-your-sex-toys"
+        }
+      ],
+      "scope": "Название в каталоге описывает сочетание функций или областей, а не стандартизованную технику. Источник напоминает о различиях конкретных моделей и их инструкций; обещания усиленного результата не делаются.",
+      "related_practice_codes": [
+        "vibrator",
+        "clitoral-stimulation"
+      ],
+      "related_pages": [
+        "b9898d31-a309-51a1-ad96-87cb2b26f8fd"
+      ],
+      "baseline": {
+        "code": "double-stimulation",
+        "title": "Двойная стимуляция",
+        "summary": "Двойная стимуляция — общее обозначение выбранного сочетания двух видов или областей сексуального внимания. Сам термин не определяет, какие именно элементы имеются в виду. Он может встречаться в описании совместной практики или устройства с несколькими функциями.",
+        "sources": []
+      },
+      "body_sha256": "e8a3bb510eafb1d1d6ebcb58a25b9c92bfc90eaf52cd48e77b4f985834270f55"
+    },
+    {
+      "code": "rimming-toy",
+      "sources": [
+        {
+          "name": "SH:24 — How to clean your sex toys",
+          "url": "https://sh24.org.uk/help-centre/how-to-clean-your-sex-toys"
+        }
+      ],
+      "scope": "Источник поддерживает отдельный учёт специализированного предмета и ухода. Внутренний код этой записи не выдаётся за перевод оральной практики: русский заголовок описывает игрушку в анальном контексте.",
+      "related_practice_codes": [
+        "anal-plug",
+        "anilingus"
+      ],
+      "related_pages": [
+        "b9898d31-a309-51a1-ad96-87cb2b26f8fd"
+      ],
+      "baseline": {
+        "code": "rimming-toy",
+        "title": "Анальная стимуляция игрушкой",
+        "summary": "Анальная стимуляция игрушкой — общая категория интимного взаимодействия со специализированным аксессуаром в анальном контексте. Здесь название задаёт область и наличие предмета, а не конкретную технику. Эту категорию не следует смешивать с оральным контактом: это разные виды взаимодействия и самостоятельные предпочтения.",
+        "sources": []
+      },
+      "body_sha256": "7cd005262df43f05da9bb9d2136b5e32d5e1cbd8c3291cb4eef2032dd02809be"
+    },
+    {
+      "code": "erotic-massage",
+      "sources": [
+        {
+          "name": "Scarleteen — What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Источник перечисляет сексуальный массаж среди возможных форм. Здесь это личное значение взаимодействия, а не медицинская процедура, квалификация исполнителя или обещание лечения.",
+      "related_practice_codes": [
+        "massage",
+        "petting"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "erotic-massage",
+        "title": "Эротический массаж",
+        "summary": "Эротический массаж — совместный формат прикосновений, которому взрослые участники придают интимный контекст. Он отличается от медицинской процедуры и от обещания определённого продолжения встречи. Само название не определяет области контакта и полный набор действий.",
+        "sources": []
+      },
+      "body_sha256": "deeb011f6ecfb742a367edf66da506a13fade223d11e03135d87cef66e4f46e5"
+    },
+    {
+      "code": "kissing",
+      "sources": [
+        {
+          "name": "Scarleteen — What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Источник включает поцелуи в широкий круг возможных сексуальных форм, но не объявляет любой поцелуй сексуальным. Значение конкретного эпизода определяется участниками.",
+      "related_practice_codes": [
+        "petting",
+        "erotic-massage"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "kissing",
+        "title": "Поцелуи",
+        "summary": "Поцелуи — форма телесного и эмоционального взаимодействия, которая может иметь романтический, дружеский, ритуальный или сексуальный смысл. Этот смысл определяется контекстом и участниками. Сам по себе поцелуй не сообщает готовность к дальнейшей интимной близости.",
+        "sources": []
+      },
+      "body_sha256": "bd83cf9fea1a0480fa7d57632931044e63b1402470eb53cb7493388322964aa8"
+    },
+    {
+      "code": "petting",
+      "sources": [
+        {
+          "name": "Scarleteen — What’s Sex?",
+          "url": "https://www.scarleteen.com/read/sex-sexuality/whats-sex-0"
+        }
+      ],
+      "scope": "Источник рассматривает ласки отдельно от сведения всей близости к проникновению. Слово в каталоге остаётся широким: оно не перечисляет автоматически все ожидаемые прикосновения.",
+      "related_practice_codes": [
+        "kissing",
+        "nonpenetrative-sex"
+      ],
+      "related_pages": [
+        "aaf817c7-8399-53eb-afb0-fc2804708fde"
+      ],
+      "baseline": {
+        "code": "petting",
+        "title": "Петтинг",
+        "summary": "Петтинг — широкое название интимных ласк и прикосновений; в распространённом употреблении обычно подразумевают непроникающий формат. Объём понятия различается, поэтому одно слово не определяет конкретные действия и личные границы участников.",
+        "sources": []
+      },
+      "body_sha256": "7384f1718c0d0df62478bd50ce6fb4e9ebff3c9f6f662b6e69c44611157747d9"
+    },
+    {
+      "code": "striptease",
+      "sources": [
+        {
+          "name": "Merriam-Webster — Striptease",
+          "url": "https://www.merriam-webster.com/dictionary/striptease"
+        }
+      ],
+      "scope": "Словарь подтверждает сценическое значение постепенного изменения костюма. Хореография, эротический сценарий и право зрителя на физический контакт из определения не следуют.",
+      "related_practice_codes": [
+        "lap-dance",
+        "nude-posing"
+      ],
+      "related_pages": [
+        "45e79c10-3f45-52f9-a917-3b3397098beb"
+      ],
+      "baseline": {
+        "code": "striptease",
+        "title": "Стриптиз",
+        "summary": "Стриптиз — сценический или личный формат движения и изменения костюма, которому придают эстетическое либо интимное значение. У взрослых участников он может существовать как самостоятельный эпизод. Наблюдение за выступлением не создаёт права на прикосновения или дальнейшее взаимодействие.",
+        "sources": []
+      },
+      "body_sha256": "9132962a1c484fb4a565c6c1ad182c6d86c08e5b8e1e19f893ae38d54213a602"
+    },
+    {
+      "code": "lap-dance",
+      "sources": [
+        {
+          "name": "Merriam-Webster — Lap dance",
+          "url": "https://www.merriam-webster.com/dictionary/lap%20dance"
+        }
+      ],
+      "scope": "У английского lap dance более узкое значение, чем у русского заголовка «Приватный танец» в нашем каталоге. Это различие оставлено явным; название не выдаётся за универсальное разрешение на прикосновение.",
+      "related_practice_codes": [
+        "striptease",
+        "roleplay"
+      ],
+      "related_pages": [
+        "45e79c10-3f45-52f9-a917-3b3397098beb"
+      ],
+      "baseline": {
+        "code": "lap-dance",
+        "title": "Приватный танец",
+        "summary": "Приватный танец — согласованный формат выступления для ограниченного круга взрослых зрителей или одного партнёра. В разных контекстах термин может подразумевать разную дистанцию и участие аудитории. Поэтому его не следует понимать как универсальное разрешение на физический контакт.",
+        "sources": []
+      },
+      "body_sha256": "c7db2eaeb519021d8bfd0b3575ecbcd0c26a74f5b19d5236bd5cf429339215eb"
+    },
+    {
+      "code": "nude-posing",
+      "sources": [
+        {
+          "name": "EFF — Why Communication Metadata Matters",
+          "url": "https://ssd.eff.org/module/why-metadata-matters"
+        }
+      ],
+      "scope": "Источник подтверждает, что фотографии могут содержать сведения помимо видимого изображения. Жанровое описание позирования — редакционное; из него нельзя выводить доступ к съёмке или публикации.",
+      "related_practice_codes": [
+        "intimate-photography",
+        "exhibitionism"
+      ],
+      "related_pages": [
+        "45e79c10-3f45-52f9-a917-3b3397098beb"
+      ],
+      "baseline": {
+        "code": "nude-posing",
+        "title": "Обнажённое позирование",
+        "summary": "Обнажённое позирование — выбранное взрослым человеком представление собственного тела в определённом визуальном контексте. Оно может быть художественным, личным или частью согласованной ролевой композиции. Позирование не определяет дальнейшие действия и не делает человека доступным для прикосновений.",
+        "sources": []
+      },
+      "body_sha256": "f22e54db4e2488a84691df1dbae955e997a99dc397d1e45640e6237a1ca2613e"
+    },
+    {
+      "code": "intimate-photography",
+      "sources": [
+        {
+          "name": "EFF — Why Communication Metadata Matters",
+          "url": "https://ssd.eff.org/module/why-metadata-matters"
+        }
+      ],
+      "scope": "EFF объясняет различие изображения и файловых/коммуникационных метаданных. Материал не обещает анонимности и не определяет за участника аудиторию или разрешённые способы публикации.",
+      "related_practice_codes": [
+        "nude-posing",
+        "intimate-video"
+      ],
+      "related_pages": [
+        "c8046c8d-73fc-57ef-9e06-a8f1a9abd179"
+      ],
+      "baseline": {
+        "code": "intimate-photography",
+        "title": "Интимная фотосъёмка",
+        "summary": "Интимная фотосъёмка — создание изображений взрослых участников в выбранном ими личном или художественном контексте. Уровень открытости, узнаваемость и назначение кадра не определяются одним словом «интимный». Эти параметры лучше обсуждать отдельно.",
+        "sources": []
+      },
+      "body_sha256": "a0a9326eed2197de44963f29e2e27091f0fbde2df69c83239cd509f737d51f67"
+    },
+    {
+      "code": "intimate-video",
+      "sources": [
+        {
+          "name": "EFF — Why Communication Metadata Matters",
+          "url": "https://ssd.eff.org/module/why-metadata-matters"
+        }
+      ],
+      "scope": "Источник помогает различать содержимое записи и сведения о создании/передаче файла. Запись, видеозвонок и публикация в каталоге рассматриваются отдельно.",
+      "related_practice_codes": [
+        "intimate-photography",
+        "video-sex"
+      ],
+      "related_pages": [
+        "c8046c8d-73fc-57ef-9e06-a8f1a9abd179"
+      ],
+      "baseline": {
+        "code": "intimate-video",
+        "title": "Интимная видеосъёмка",
+        "summary": "Интимная видеосъёмка — создание видеоматериала со взрослыми участниками в заранее выбранном ими личном или художественном контексте. В отличие от фотографии запись может включать голос, последовательность действий и дополнительные узнаваемые детали. Содержание и назначение определяют явно.",
+        "sources": []
+      },
+      "body_sha256": "154d57db8b092d88635660d67269e749e5533aa2dfa91ea6c6da59b5db4de525"
+    },
+    {
+      "code": "voyeurism",
+      "sources": [
+        {
+          "name": "NCSF — What Professionals Need to Know about Kink (2024)",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2024/04/What-Professionals-Need-to-Know-about-Kink-2024.pdf"
+        }
+      ],
+      "scope": "NCSF выделяет наблюдение в согласованном контексте. Здесь слово не используется как оправдание скрытого подглядывания или записи; клинический диагноз по предпочтению не устанавливается.",
+      "related_practice_codes": [
+        "exhibitionism",
+        "intimate-photography"
+      ],
+      "related_pages": [
+        "3020b06b-2db9-5f05-8705-2026f8ab8937"
+      ],
+      "baseline": {
+        "code": "voyeurism",
+        "title": "Наблюдение за партнёром",
+        "summary": "Наблюдение за партнёром в этой Wiki — формат, при котором взрослые участники осознанно выбирают присутствие наблюдателя и понятный ему контекст. Это необходимо отличать от скрытого подглядывания, записи и вмешательства в чужую личную жизнь.",
+        "sources": []
+      },
+      "body_sha256": "78266af27dc7583a704d7eb69fff3013480859039c07e3378810a35e900f7e52"
+    },
+    {
+      "code": "exhibitionism",
+      "sources": [
+        {
+          "name": "NCSF — What Professionals Need to Know about Kink (2024)",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2024/04/What-Professionals-Need-to-Know-about-Kink-2024.pdf"
+        }
+      ],
+      "scope": "Источник различает демонстрацию тела в kink-контексте. Наш русский пункт относится к выбранной аудитории и не приравнивает интерес к обязательной публичности.",
+      "related_practice_codes": [
+        "voyeurism",
+        "nude-posing"
+      ],
+      "related_pages": [
+        "3020b06b-2db9-5f05-8705-2026f8ab8937"
+      ],
+      "baseline": {
+        "code": "exhibitionism",
+        "title": "Демонстрация тела партнёру",
+        "summary": "Демонстрация тела партнёру — формат самопредставления, который взрослый человек выбирает для согласованной аудитории. Здесь речь идёт о личной или художественной ситуации, а не о вовлечении посторонних людей без их решения. Название предпочтения не делает публичность обязательной.",
+        "sources": []
+      },
+      "body_sha256": "07125ac396163a8309e8b2c9772e35112ced4b2c61bcad2025083e161eb0c877"
+    },
+    {
+      "code": "sensory-restriction",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "scope": "Руководство поддерживает отдельное обсуждение ощущений и условий. Общее название ограничения восприятия не задаёт медицинский режим, одинаковое переживание или право добавлять новые действия.",
+      "related_practice_codes": [
+        "blindfold",
+        "bondage"
+      ],
+      "related_pages": [
+        "d7465735-07a5-57cb-8e94-4a714e212dae"
+      ],
+      "baseline": {
+        "code": "sensory-restriction",
+        "title": "Сенсорная депривация",
+        "summary": "Сенсорная депривация в тематической речи — временное ограничение одного или нескольких каналов восприятия. Это может быть уменьшение зрительной или звуковой информации в согласованном контексте. Термин не означает одинакового состояния у всех участников и не описывает медицинскую процедуру.",
+        "sources": []
+      },
+      "body_sha256": "247659d609f942d232bb444aceab99afc04a81c274694a24c6ba8b4d2acffc2a"
+    },
+    {
+      "code": "blindfold",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "scope": "Источник относится к обсуждению конкретных условий, а не к конструкции повязки. Наличие предмета не заменяет разговор о том, какие изменения зрительного контроля человек выбирает.",
+      "related_practice_codes": [
+        "sensory-restriction",
+        "feather-play"
+      ],
+      "related_pages": [
+        "d7465735-07a5-57cb-8e94-4a714e212dae"
+      ],
+      "baseline": {
+        "code": "blindfold",
+        "title": "Повязка на глаза",
+        "summary": "Практика с повязкой на глаза временно уменьшает зрительный контроль в заранее понятном контексте. Она может использоваться для спокойного сенсорного внимания или как часть ролевой сцены. Сам предмет не создаёт автоматического разрешения на новые действия.",
+        "sources": []
+      },
+      "body_sha256": "2031d6fc5979de4db83cf595943340cf89a3ff86b342070d07c430d0ee6391c5"
+    },
+    {
+      "code": "tickling",
+      "sources": [
+        {
+          "name": "Kamiloğlu et al. (2024) — Tickling induces a unique type of spontaneous laughter",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11576105/"
+        },
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "scope": "Исследование Kamiloğlu и соавторов изучает характер смеха при щекотке и контроль голоса; оно не измеряет согласие. Разграничение смеха и желания продолжать — редакционный вывод для общения, а не диагностический тест.",
+      "related_practice_codes": [
+        "feather-play",
+        "sensory-restriction"
+      ],
+      "related_pages": [
+        "d7465735-07a5-57cb-8e94-4a714e212dae"
+      ],
+      "baseline": {
+        "code": "tickling",
+        "title": "Щекотка",
+        "summary": "Щекотка — взаимодействие, вызывающее характерные непроизвольные реакции на прикосновение. В согласованной практике могут быть важны игра, неожиданность и совместное внимание. Однако смех сам по себе не является подтверждением удовольствия: человек может смеяться и одновременно хотеть прекратить действие.",
+        "sources": []
+      },
+      "body_sha256": "e15b6bbd38f21e6f6e46f45064ca4cdf23f64bd7c3ad10abd454bc21650aaf79"
+    },
+    {
+      "code": "feather-play",
+      "sources": [
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "scope": "Источник помогает обсуждать желаемые ощущения отдельно от используемого предмета. Лёгкость пера не определяет индивидуальное восприятие или интерес к щекотке.",
+      "related_practice_codes": [
+        "tickling",
+        "blindfold"
+      ],
+      "related_pages": [
+        "d7465735-07a5-57cb-8e94-4a714e212dae"
+      ],
+      "baseline": {
+        "code": "feather-play",
+        "title": "Практики с пером",
+        "summary": "Практики с пером относятся к тактильным и сенсорным форматам. Перо позволяет выделить внимание к лёгкому касанию, фактуре и ожиданию. Общая цель может быть спокойной или игровой, но она не выводится автоматически из мягкости предмета.",
+        "sources": []
+      },
+      "body_sha256": "d870965170a7762ab33a4bb8a40dd53bc664432e2db7b3be7c7c35dbae5b82fb"
+    },
+    {
+      "code": "wax-play",
+      "sources": [
+        {
+          "name": "NHS — Burns and scalds",
+          "url": "https://www.nhs.uk/conditions/burns-and-scalds/"
+        },
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "scope": "NHS объясняет термическое повреждение, а не подбирает свечи для тематических практик. В Wiki не выводятся из памятки температура, расстояние или длительность контакта.",
+      "related_practice_codes": [
+        "ice-play",
+        "feather-play"
+      ],
+      "related_pages": [
+        "d7465735-07a5-57cb-8e94-4a714e212dae"
+      ],
+      "baseline": {
+        "code": "wax-play",
+        "title": "Восковые практики",
+        "summary": "Восковые практики — тематические форматы, в которых используется воск и связанные с ним температурные или визуальные свойства. Для участников могут различаться интерес к рисунку, текстуре и ощущению тепла. Эти цели не следует объединять в одно предполагаемое предпочтение.",
+        "sources": [
+          {
+            "name": "NHS — ожоги: общие сведения о повреждении тканей",
+            "url": "https://www.nhs.uk/conditions/burns-and-scalds/"
+          }
+        ]
+      },
+      "body_sha256": "e4b5f5461b73d5c2a9f64b45bfa00f0a719c99a09110bf3c72cc1122e594ecd7"
+    },
+    {
+      "code": "ice-play",
+      "sources": [
+        {
+          "name": "NHS — Frostbite",
+          "url": "https://www.nhs.uk/conditions/frostbite/"
+        },
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "scope": "NHS описывает холодовое повреждение и возможные изменения чувствительности. Это не источник «безопасного времени» контакта со льдом и не режим практики.",
+      "related_practice_codes": [
+        "wax-play",
+        "sensory-restriction"
+      ],
+      "related_pages": [
+        "d7465735-07a5-57cb-8e94-4a714e212dae"
+      ],
+      "baseline": {
+        "code": "ice-play",
+        "title": "Практики со льдом",
+        "summary": "Практики со льдом используют холод как заметный сенсорный элемент. Для человека могут быть важны контраст, ожидание или визуальная составляющая. Сходство с обычным охлаждением напитка или бытовым прикосновением не описывает условия контакта с телом.",
+        "sources": []
+      },
+      "body_sha256": "a6f024545117f9c95a45bedefe4c9ef42684e56dc79f811e0d174d91cf7f617c"
+    },
+    {
+      "code": "spanking",
+      "sources": [
+        {
+          "name": "NCSF — What Professionals Need to Know about Kink (2024)",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2024/04/What-Professionals-Need-to-Know-about-Kink-2024.pdf"
+        }
+      ],
+      "scope": "NCSF рассматривает спанкинг среди телесных практик. Название не определяет наказание, дозировку или обязательную роль участника; схемы воздействия не воспроизводятся.",
+      "related_practice_codes": [
+        "paddle",
+        "caning"
+      ],
+      "related_pages": [
+        "85eef360-c76c-58ce-9bc6-6399e879cb70"
+      ],
+      "baseline": {
+        "code": "spanking",
+        "title": "Спанкинг",
+        "summary": "Спанкинг — форма согласованного телесного воздействия, обычно связываемая с использованием ладони. В разных сообществах слово может употребляться шире, поэтому конкретный инструмент и контекст полезно называть отдельно. Интерес к ощущениям и дисциплинарный смысл не являются одним и тем же.",
+        "sources": []
+      },
+      "body_sha256": "da186a6004078c671996b6ab4199fb688e1dad2911d7abd405e2b83e80994d82"
+    },
+    {
+      "code": "paddle",
+      "sources": [
+        {
+          "name": "The Stockroom — Paddles",
+          "url": "https://stockroom.com/collections/paddles"
+        }
+      ],
+      "scope": "Каталог показывает паддлы как отдельный класс предметов. Рекомендации продавца о простоте и предсказуемости не используются как доказательство безопасности или индивидуальной пригодности.",
+      "related_practice_codes": [
+        "spanking",
+        "flogger"
+      ],
+      "related_pages": [
+        "85eef360-c76c-58ce-9bc6-6399e879cb70"
+      ],
+      "baseline": {
+        "code": "paddle",
+        "title": "Практики с паддлом",
+        "summary": "Практики с паддлом относятся к телесному воздействию с использованием инструмента, имеющего плоскую рабочую часть. Контекст может быть игровым, сенсорным или дисциплинарным. Наличие предмета не определяет автоматически роль участника или смысл эпизода.",
+        "sources": []
+      },
+      "body_sha256": "3b7dc4db587bdaebd9b726faae2ba28cb8a308d901d54df715dd3c77c6c4017a"
+    },
+    {
+      "code": "flogger",
+      "sources": [
+        {
+          "name": "The Stockroom — Floggers",
+          "url": "https://stockroom.com/collections/floggers"
+        }
+      ],
+      "scope": "Каталог подтверждает отдельную группу инструментов с хвостами. Это сведения о классе, а не инструкция по участкам тела, силе или ожидаемым ощущениям каждого человека.",
+      "related_practice_codes": [
+        "paddle",
+        "crop"
+      ],
+      "related_pages": [
+        "85eef360-c76c-58ce-9bc6-6399e879cb70"
+      ],
+      "baseline": {
+        "code": "flogger",
+        "title": "Флоггинг",
+        "summary": "Флоггинг — телесная практика с инструментом, имеющим пучок гибких хвостов. Для одних участников важны ощущения и ритм, для других — зрительный образ, звук или ролевой контекст. Эти интересы стоит различать, поскольку одинаковое название не описывает одинаковой сцены.",
+        "sources": []
+      },
+      "body_sha256": "2c685e77e0e958ec1307d3ade247fee9471de28d6232405856419c19403d656e"
+    },
+    {
+      "code": "crop",
+      "sources": [
+        {
+          "name": "The Stockroom — Riding Crops",
+          "url": "https://stockroom.com/collections/crops"
+        }
+      ],
+      "scope": "Каталог выделяет стеки отдельно от тростей и флоггеров. Из этой классификации не выводятся техника, допустимая сила или режим воздействия.",
+      "related_practice_codes": [
+        "caning",
+        "flogger"
+      ],
+      "related_pages": [
+        "85eef360-c76c-58ce-9bc6-6399e879cb70"
+      ],
+      "baseline": {
+        "code": "crop",
+        "title": "Практики со стеком",
+        "summary": "Практика со стеком — телесное взаимодействие с гибким инструментом, имеющим рукоять, основу и наконечник. Она относится к общему направлению телесного воздействия, но не является синонимом спанкинга ладонью или работы с тростью. Названия инструментов описывают разные конструкции.",
+        "sources": []
+      },
+      "body_sha256": "ebd4989fd79a67b8202498149cbd1defa7e39b97af92c082bfdb2ee7a30b36e6"
+    },
+    {
+      "code": "caning",
+      "sources": [
+        {
+          "name": "The Stockroom — Canes",
+          "url": "https://stockroom.com/collections/canes"
+        }
+      ],
+      "scope": "Каталог выделяет трости как класс инструмента. Исторические рекламные образы и советы о применении не переносятся в Wiki и не задают правила отношений.",
+      "related_practice_codes": [
+        "crop",
+        "spanking"
+      ],
+      "related_pages": [
+        "85eef360-c76c-58ce-9bc6-6399e879cb70"
+      ],
+      "baseline": {
+        "code": "caning",
+        "title": "Канинг",
+        "summary": "Канинг — телесная практика с использованием трости соответствующего назначения. В тематической речи слово обычно относится к классу инструмента, а не к конкретной системе правил или роли участников. Дисциплинарный и игровой контексты могут различаться и требуют отдельного обсуждения.",
+        "sources": []
+      },
+      "body_sha256": "be453d09e444f70ea078c62f8c69526a35791b9f67ad487da5cd19e1b7bcb438"
+    },
+    {
+      "code": "pinwheel",
+      "sources": [
+        {
+          "name": "Sklar — Wartenberg Pinwheel 06-3375",
+          "url": "https://www.sklarcorp.com/p/sklar-wartenberg-pinwheel/06-3375"
+        }
+      ],
+      "scope": "Sklar описывает устройство конкретного диагностического инструмента. Медицинское назначение не объявляется подтверждением безопасности интимного применения, а технические способы не воспроизводятся.",
+      "related_practice_codes": [
+        "clamps",
+        "feather-play"
+      ],
+      "related_pages": [
+        "3e26456e-3a09-55bc-b6f1-590595c5ea8c"
+      ],
+      "baseline": {
+        "code": "pinwheel",
+        "title": "Практики с колесом Вартенберга",
+        "summary": "Практики с колесом Вартенберга используют характерный инструмент с вращающимся диском и выступами для сенсорного взаимодействия. Важны ожидание, фактура и внимание к локальному ощущению. Название прибора не делает происходящее медицинским обследованием.",
+        "sources": []
+      },
+      "body_sha256": "b92c2e6b9c012bb455a3cf46dd638af9627b71bc0177d75d3c0018e5a96cb715"
+    },
+    {
+      "code": "clamps",
+      "sources": [
+        {
+          "name": "Lovense — Gemini",
+          "url": "https://www.lovense.com/app-controlled-vibrating-nipple-clamps-clit-clamps"
+        }
+      ],
+      "scope": "Производитель описывает конкретное зажимное устройство Gemini. Его функции и рекламные заявления не распространяются на все зажимы; Wiki не задаёт силу сжатия или длительность.",
+      "related_practice_codes": [
+        "pinwheel",
+        "nipple-stimulation"
+      ],
+      "related_pages": [
+        "3e26456e-3a09-55bc-b6f1-590595c5ea8c"
+      ],
+      "baseline": {
+        "code": "clamps",
+        "title": "Практики с зажимами",
+        "summary": "Практики с зажимами основаны на локальном сжатии с помощью предназначенных для этого аксессуаров. Для участников могут быть важны ощущение, визуальная составляющая или ролевой смысл. Эти варианты не задают единого формата и не определяют продолжительность эпизода.",
+        "sources": []
+      },
+      "body_sha256": "8f72f3ca9bf0cd9fc6f30e4490c77258b9c2044270df31a6677930ac359bf586"
+    },
+    {
+      "code": "teasing",
+      "sources": [
+        {
+          "name": "ISSM — What is edging?",
+          "url": "https://www.issm.info/sexual-health-qa/what-is-edging-and-why-might-it-be-employed"
+        },
+        {
+          "name": "NCSF — Negotiation Guide",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2023/06/Negotiation-Guide.pdf"
+        }
+      ],
+      "scope": "ISSM объясняет откладывание оргазма, но тизинг в нашем каталоге шире этого понятия. Контекст ожидания и индивидуальные договорённости описаны редакционно, без техник стимуляции.",
+      "related_practice_codes": [
+        "edging",
+        "orgasm-control"
+      ],
+      "related_pages": [
+        "ad338590-7318-5522-8577-6aeddf9b9d62"
+      ],
+      "baseline": {
+        "code": "teasing",
+        "title": "Тизинг",
+        "summary": "Тизинг — игра с ожиданием, вниманием и изменением предсказуемости в согласованном взаимодействии. Его содержание может быть словесным, ролевым или сенсорным. В отличие от конкретного инструмента термин описывает организацию переживания, а не один фиксированный набор действий.",
+        "sources": []
+      },
+      "body_sha256": "7ccab007b8cf86feb90f71c5fdf30e43d24a3eda2ede296e87d8692394a61d47"
+    },
+    {
+      "code": "edging",
+      "sources": [
+        {
+          "name": "ISSM — What is edging?",
+          "url": "https://www.issm.info/sexual-health-qa/what-is-edging-and-why-might-it-be-employed"
+        }
+      ],
+      "scope": "ISSM даёт определение откладывания оргазма. Из внешней статьи не переносятся техники, интервалы или схемы лечения, а результат не гарантируется.",
+      "related_practice_codes": [
+        "teasing",
+        "orgasm-denial"
+      ],
+      "related_pages": [
+        "ad338590-7318-5522-8577-6aeddf9b9d62"
+      ],
+      "baseline": {
+        "code": "edging",
+        "title": "Эджинг",
+        "summary": "Эджинг — практика управления приближением к оргазму и его отсрочки в выбранном участниками формате. Она может быть самостоятельной или совместной и не обязательно связана с D/s-динамикой. Термин описывает цель организации переживания, а не универсальную технику или обещанный результат.",
+        "sources": []
+      },
+      "body_sha256": "ac40e000ed3574a6c12357050af22ed3152ef69ceb5dbc6197e1e72e4f02324e"
+    },
+    {
+      "code": "orgasm-control",
+      "sources": [
+        {
+          "name": "ISSM — What is edging?",
+          "url": "https://www.issm.info/sexual-health-qa/what-is-edging-and-why-might-it-be-employed"
+        },
+        {
+          "name": "NCSF — Statement on Power Exchange Relationships",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2019/12/Power-Exchange-Statement.pdf"
+        }
+      ],
+      "scope": "Материалы различают откладывание оргазма и рамку передачи решений. Более широкая категория каталога не объявляется медицинской методикой или единым режимом.",
+      "related_practice_codes": [
+        "edging",
+        "chastity"
+      ],
+      "related_pages": [
+        "ad338590-7318-5522-8577-6aeddf9b9d62"
+      ],
+      "baseline": {
+        "code": "orgasm-control",
+        "title": "Контроль оргазма",
+        "summary": "Контроль оргазма — общее обозначение форм, в которых участники придают отдельное значение решению о достижении или отсрочке оргазма. Это может быть личное предпочтение, краткая игра или часть D/s-договорённости. Сам термин не определяет продолжительность и не означает постоянной передачи решений.",
+        "sources": []
+      },
+      "body_sha256": "c58d1ca9470fc7e1ba878fbae2dc7cc57bfcc37e473362ac9774e4164f608c78"
+    },
+    {
+      "code": "orgasm-denial",
+      "sources": [
+        {
+          "name": "NCSF — Statement on Power Exchange Relationships",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2019/12/Power-Exchange-Statement.pdf"
+        },
+        {
+          "name": "ISSM — What is edging?",
+          "url": "https://www.issm.info/sexual-health-qa/what-is-edging-and-why-might-it-be-employed"
+        }
+      ],
+      "scope": "Отложенный оргазм и выбранный отказ от цели эпизода — разные значения. Источники дают контекст договорённостей и терминов, но не назначают продолжительность ограничений.",
+      "related_practice_codes": [
+        "edging",
+        "chastity"
+      ],
+      "related_pages": [
+        "ad338590-7318-5522-8577-6aeddf9b9d62"
+      ],
+      "baseline": {
+        "code": "orgasm-denial",
+        "title": "Отказ от оргазма",
+        "summary": "Отказ от оргазма в тематическом контексте — заранее выбранный формат, в котором достижение оргазма не является целью определённого эпизода или периода. Он может иметь символический или ролевой смысл. Это не тождественно нежелательной невозможности получить удовольствие или медицинскому затруднению.",
+        "sources": []
+      },
+      "body_sha256": "b84fcde579a6babe11309ab1d7ab1a86bd193c6a877bdd0a4a2d52dfd5671816"
+    },
+    {
+      "code": "chastity",
+      "sources": [
+        {
+          "name": "NCSF — Statement on Power Exchange Relationships",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2019/12/Power-Exchange-Statement.pdf"
+        }
+      ],
+      "scope": "Документ относится к согласованным полномочиям и ограничениям. Он не сертифицирует аксессуары и не устанавливает сроки ношения; предмет и содержание договорённости различаются.",
+      "related_practice_codes": [
+        "orgasm-denial",
+        "power-exchange"
+      ],
+      "related_pages": [
+        "8aa89442-cbb2-5ec2-baa7-43d84f882b98"
+      ],
+      "baseline": {
+        "code": "chastity",
+        "title": "Практики целомудрия",
+        "summary": "Практики целомудрия в тематической речи — договорённости о выбранных ограничениях и их символическом значении. Они могут обходиться без предметов или включать специальный аксессуар. Наличие замка или пояса не является обязательным признаком формата и не делает его содержание понятным без разговора.",
+        "sources": []
+      },
+      "body_sha256": "18ce8eb7c3bf49d05b1315a8417ce67d26364288e799edba1caa344a3ed02a5d"
+    },
+    {
+      "code": "massage",
+      "sources": [
+        {
+          "name": "CUH — Chronic pain and intimacy",
+          "url": "https://www.cuh.nhs.uk/patient-information/chronic-pain-and-intimacy/"
+        }
+      ],
+      "scope": "CUH рассматривает разнообразие близости при индивидуальных ограничениях. Это источник для разговора о комфорте, а не инструкция по медицинскому массажу или подтверждение квалификации партнёра.",
+      "related_practice_codes": [
+        "erotic-massage",
+        "aftercare"
+      ],
+      "related_pages": [
+        "6f4c8e6f-2fe5-5616-8657-88ee787e2648"
+      ],
+      "baseline": {
+        "code": "massage",
+        "title": "Массаж",
+        "summary": "Массаж в личном взаимодействии может быть способом заботы, отдыха и внимания к ощущениям партнёра. Это не обязательно медицинская процедура и не всегда часть эротического сценария. Конкретный смысл полезно назвать, чтобы участники не предполагали разные продолжения одной встречи.",
+        "sources": []
+      },
+      "body_sha256": "a9b16ea4404f328967831e6a863ee5aaabea15f82da8649305d025fcc3770f6e"
+    },
+    {
+      "code": "threesome",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "scope": "NCSF рассматривает отдельные договорённости нескольких участников. Само число три — описание состава; оно не задаёт ориентацию, роли или форму длительных отношений.",
+      "related_practice_codes": [
+        "group-sex",
+        "partner-exchange"
+      ],
+      "related_pages": [
+        "e3e856d9-844f-57b2-9f15-0dea48a7c3d5"
+      ],
+      "baseline": {
+        "code": "threesome",
+        "title": "Секс втроём",
+        "summary": "Секс втроём — формат сексуального взаимодействия трёх взрослых участников. Состав сам по себе не определяет роли, ориентацию или конкретные действия. Краткие обозначения сочетаний пола или гендера могут использоваться в каталогах, но не описывают индивидуальные предпочтения людей.",
+        "sources": []
+      },
+      "body_sha256": "9c19939db41f3cf2b1f5175f19e07619e2e1e7f011e1ccea8e26913817debb34"
+    },
+    {
+      "code": "group-sex",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "scope": "Источник помогает различать договорённости с каждым участником. Совместный эпизод не приравнивается к единому типу отношений и не создаёт общих полномочий над группой.",
+      "related_practice_codes": [
+        "threesome",
+        "swinging"
+      ],
+      "related_pages": [
+        "e3e856d9-844f-57b2-9f15-0dea48a7c3d5"
+      ],
+      "baseline": {
+        "code": "group-sex",
+        "title": "Групповой секс",
+        "summary": "Групповой секс — общее название сексуального взаимодействия нескольких взрослых участников. Оно сообщает число вовлечённых людей лишь приблизительно и не задаёт состав, роли или действия. Для понимания конкретной встречи требуется больше сведений, чем одна отметка интереса к групповому формату.",
+        "sources": []
+      },
+      "body_sha256": "f08fbbf15833a1f51b0e69b3b5ef1b8b01776ddb9976b7fbec75486922d2427f"
+    },
+    {
+      "code": "partner-exchange",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "scope": "Источник различает формы согласованной немоногамии. Условное название «обмен» не означает передачу человека или возможность отвечать за его решения.",
+      "related_practice_codes": [
+        "swinging",
+        "group-sex"
+      ],
+      "related_pages": [
+        "474255d2-d2fc-5d1f-8e80-7db1880fa66e"
+      ],
+      "baseline": {
+        "code": "partner-exchange",
+        "title": "Обмен партнёрами",
+        "summary": "Обмен партнёрами — условное название формата, в котором взрослые участники нескольких пар договариваются о взаимодействии за пределами привычных парных связей. Слово «обмен» не означает передачи человека или права распоряжаться его решениями.",
+        "sources": []
+      },
+      "body_sha256": "5f1ca67ac3c04bdd30d6ec430ca1a0f8595ce2775ea143c42934bc3d8bb467d4"
+    },
+    {
+      "code": "swinging",
+      "sources": [
+        {
+          "name": "NCSF — Best Practices for Consensual Non-Monogamy",
+          "url": "https://ncsfreedom.org/wp-content/uploads/2021/07/Best-Practices-for-Consensual-Nonmonogamy.pdf"
+        }
+      ],
+      "scope": "NCSF прямо называет swinging среди форм CNM. Это не универсальный свод правил: каталог оставляет условия конкретной встречи отдельными сведениями.",
+      "related_practice_codes": [
+        "partner-exchange",
+        "threesome"
+      ],
+      "related_pages": [
+        "e3e856d9-844f-57b2-9f15-0dea48a7c3d5"
+      ],
+      "baseline": {
+        "code": "swinging",
+        "title": "Свинг",
+        "summary": "Свинг — одно из названий согласованных форм сексуальных встреч с другими взрослыми партнёрами, часто в контексте существующих пар. Конкретные сообщества и участники могут вкладывать в термин разные условия. Он не является единым набором обязательных правил и не описывает автоматически все отношения человека.",
+        "sources": []
+      },
+      "body_sha256": "a670eaf5ff8ccf178a1fb3789937a181910509ac118b9f2f7f4d9c26357e1ff8"
+    }
+  ]
+}

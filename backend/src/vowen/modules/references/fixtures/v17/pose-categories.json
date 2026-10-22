@@ -1,0 +1,110 @@
+[
+  {
+    "uid": "6eb8f026-3eba-55f0-b6fe-6bd4045c4b89",
+    "name": "Лёжа на спине",
+    "description": "Парные позы с основным положением лёжа на спине.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "supine",
+      "aliases": []
+    }
+  },
+  {
+    "uid": "f515ad1c-1f73-5120-9e79-b15ebae084fc",
+    "name": "Лёжа на животе",
+    "description": "Парные позы с основным положением лёжа на животе.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "prone",
+      "aliases": []
+    }
+  },
+  {
+    "uid": "a72401d4-2f73-55fb-92dc-e7f11b12bd6f",
+    "name": "На боку",
+    "description": "Боковые положения участников.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "side",
+      "aliases": []
+    }
+  },
+  {
+    "uid": "aca9429e-61c9-52a3-9a9c-c2bcb2d79b9e",
+    "name": "Сидя",
+    "description": "Позы с основным сидячим положением.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "seated",
+      "aliases": []
+    }
+  },
+  {
+    "uid": "50db3b5b-1c02-5560-a940-afc89bee4272",
+    "name": "Стоя",
+    "description": "Позы с основным положением стоя.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "standing",
+      "aliases": []
+    }
+  },
+  {
+    "uid": "cbb7c898-deb0-57c4-b064-0a0c9ea6a0ed",
+    "name": "На коленях",
+    "description": "Позы с основным положением на коленях.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "kneeling",
+      "aliases": []
+    }
+  },
+  {
+    "uid": "fe4cb364-14f4-59cc-bd48-e0f934606243",
+    "name": "Партнёр сверху",
+    "description": "Парные позы с верхним расположением одного из участников.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "partner-on-top",
+      "aliases": []
+    }
+  },
+  {
+    "uid": "76088f6f-5f8b-5617-9099-2116dc079e8f",
+    "name": "Протокольные положения",
+    "description": "Именованные положения для согласованных протоколов динамики.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "protocol",
+      "aliases": []
+    }
+  },
+  {
+    "uid": "b6c629db-c3c1-5ba4-9708-9771dced1811",
+    "name": "Позы рабыни",
+    "description": "Протокольные положения и описательные варианты по предоставленным референсам. Названия и назначение зависят от конкретного протокола; степень соответствия источникам указана отдельно.",
+    "icon": null,
+    "thumbnail": null,
+    "url": null,
+    "extra": {
+      "code": "slave-poses",
+      "aliases": []
+    }
+  }
+]
